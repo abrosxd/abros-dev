@@ -3,12 +3,12 @@ const projects = [
     {
       "id": 0,
       "title": "DEUS",
-      "img": "main/projects/DEUS/avatar.jpg",
+      "img": "main/projects/DEUS/avatar.png",
       "overlay": "main/projects/DEUS/overlay.png",
-      "outline": "#ffffff",
+      "outline": "#00ff00",
       "content-ru":
         [
-          {"h4-super": "Защита вашего контента"},
+          {"h4-super": "DEUS - защита вашего контента"},
           {"img-super": "main/projects/DEUS/avatar.jpg"},
           {"p-title": "Тут текст"},
           {"img-super": "main/projects/DEUS/avatar.jpg"},

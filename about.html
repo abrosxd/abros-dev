@@ -1,0 +1,612 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--metatextblock-->
+		<title>ABROS - Обо мне</title>
+		<meta name="description" content="Daniel Abros - Обо мне">
+		<meta property="og:title" content="Daniel Abros - Обо мне">
+		<meta property="og:description" content="Daniel Abros - Обо мне">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="main/img/logo.jpg">
+		<!--/metatextblock-->
+		<link rel="icon" type="image/jpg" sizes="32x32" href="main/img/logo.jpg">
+		<!-- Assets -->
+		<link rel="stylesheet" href="main/css/style.css">
+		<script src="main/js/facts.js"></script>
+        <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	</head>
+	<body>
+        <h1 class="logo">ABROS</h1>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const logo = document.querySelector('.logo');
+
+                function getRandomColor() {
+                    const letters = '0123456789ABCDEF';
+                    let color = '#';
+                    for (let i = 0; i < 6; i++) {
+                        color += letters[Math.floor(Math.random() * 16)];
+                    }
+                    return color;
+                }
+
+                function setRandomColor() {
+                    const newColor = getRandomColor();
+                    logo.style.backgroundColor = `${newColor}80`;
+                }
+
+                function updateColor() {
+                    logo.classList.add('color-transition');
+                    setRandomColor();
+                    setTimeout(() => {
+                        logo.classList.remove('color-transition');
+                    }, 1000);
+                }
+
+                setInterval(updateColor, 5000);
+            });
+
+        </script>
+
+        <nav class="navigation">
+            <ul class="menu">
+                <li class="section">
+                    <a class="button" href="index.html">Портфолио</a>
+                </li>
+                <li class="section" id="projects-trigger">
+                    <a class="button">Проекты</a>
+                    <ul class="submenu" id="projects-submenu">
+                        <li><a class="button" title="Система защиты контента" href="https://deusnotam.github.io" target="_blank">DEUS</a></li>
+                    </ul>
+                </li>
+                <li class="section">
+                    <a class="button active" href="about.html">Обо мне</a>
+                </li>
+            </ul>
+
+            <ul class="lang">
+                <li class="section" id="lang-trigger">
+                    <a class="button active">RU</a>
+                    <ul class="submenu" id="lang-submenu">
+                        <li>
+                            <a class="button" href="#">...</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="links">
+                <li class="section" id="links-trigger">
+                    <a class="button">
+                        <svg fill="#ffffff" width="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke-width="0"></g>
+                            <g stroke-linecap="round" stroke-linejoin="round"></g>
+                            <path d="m1311.326 891.546-61.666-61.666 107.294-107.407-159.698-159.698-107.52 107.633-61.553-60.311 384.338-384.904 282.127 281.45-383.322 384.903ZM891.863 1309.43 508.54 1694.332l-283.143-281.45 384.339-384.903 61.214 61.214-110.005 109.892 159.699 159.699 110.117-110.005 61.102 60.65Zm962.484-961.92-283.03-283.03c-88.546-86.288-231.19-85.95-317.93 1.016L868.484 450.398c-87.53 87.642-87.53 230.061 0 317.704l61.666 61.778-99.502 99.502-60.31-60.198c-42.127-43.144-98.372-67.087-158.57-67.426h-1.355c-60.197 0-116.894 23.605-159.812 66.41L65.698 1253.184c-87.642 87.642-87.642 230.061 0 317.704L348.84 1854.03c43.822 43.821 101.309 65.732 158.909 65.732 57.487 0 115.087-21.91 158.908-65.732l384.903-384.903c43.257-43.257 66.862-100.518 66.523-161.168-.452-60.197-24.396-116.442-66.523-157.665l-61.214-61.102 99.614-99.614 61.666 61.78c43.821 43.707 101.309 65.618 158.909 65.618 57.487 0 115.087-21.91 158.795-65.732l385.016-384.903c86.852-86.852 87.304-229.497 0-318.833Z" fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <ul class="submenu" id="links-submenu">
+                        <li>
+                            <a class="button" title="Telegram" href="https://t.me/abrosxd" target="_blank">
+                                <svg width="20px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g stroke-width="0"></g>
+                                    <g stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <circle cx="16" cy="16" r="14" fill="url(#paint0_linear_87_7225)"></circle>
+                                    <path d="M22.9866 10.2088C23.1112 9.40332 22.3454 8.76755 21.6292 9.082L7.36482 15.3448C6.85123 15.5703 6.8888 16.3483 7.42147 16.5179L10.3631 17.4547C10.9246 17.6335 11.5325 17.541 12.0228 17.2023L18.655 12.6203C18.855 12.4821 19.073 12.7665 18.9021 12.9426L14.1281 17.8646C13.665 18.3421 13.7569 19.1512 14.314 19.5005L19.659 22.8523C20.2585 23.2282 21.0297 22.8506 21.1418 22.1261L22.9866 10.2088Z" fill="white"></path>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_87_7225" x1="16" y1="2" x2="16" y2="30" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#37BBFE"></stop>
+                                            <stop offset="1" stop-color="#37BBFE"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="button" title="X (Twitter)" href="https://twitter.com/abrosxd" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0,0,256,256">
+                                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <g transform="scale(5.12,5.12)">
+                                            <path d="M5.91992,6l14.66211,21.375l-14.35156,16.625h3.17969l12.57617,-14.57812l10,14.57813h12.01367l-15.31836,-22.33008l13.51758,-15.66992h-3.16992l-11.75391,13.61719l-9.3418,-13.61719zM9.7168,8h7.16406l23.32227,34h-7.16406z"></path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="button" title="VK" href="https://vk.com/abrosxd" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0 0 48 48">
+                                    <path fill="#1976d2" d="M24,4C13,4,4,13,4,24s9,20,20,20s20-9,20-20S35,4,24,4z"></path>
+                                    <path fill="#fff" d="M25.2,33.2c-9,0-14.1-6.1-14.3-16.4h4.5c0.1,7.5,3.5,10.7,6.1,11.3V16.8h4.2v6.5c2.6-0.3,5.3-3.2,6.2-6.5h4.2	c-0.7,4-3.7,7-5.8,8.2c2.1,1,5.5,3.6,6.7,8.2h-4.7c-1-3.1-3.5-5.5-6.8-5.9v5.9H25.2z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="button" title="Instagram" href="https://www.instagram.com/abrosxd" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0 0 48 48">
+                                    <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0" stop-color="#fd5"></stop>
+                                        <stop offset=".328" stop-color="#ff543f"></stop>
+                                        <stop offset=".348" stop-color="#fc5245"></stop>
+                                        <stop offset=".504" stop-color="#e64771"></stop>
+                                        <stop offset=".643" stop-color="#d53e91"></stop>
+                                        <stop offset=".761" stop-color="#cc39a4"></stop>
+                                        <stop offset=".841" stop-color="#c837ab"></stop>
+                                    </radialGradient>
+                                    <path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path>
+                                    <radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0" stop-color="#4168c9"></stop>
+                                        <stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop>
+                                    </radialGradient>
+                                    <path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path>
+                                    <path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path>
+                                    <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle>
+                                    <path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <script>
+                function initializeSubMenu(triggerId, submenuId) {
+                    const trigger = document.getElementById(triggerId);
+                    const submenu = document.getElementById(submenuId);
+            
+                    var touchStartX = 0;
+                    var touchEndX = 0;
+            
+                    trigger.addEventListener('click', function (event) {
+                        event.stopPropagation();
+                        toggleSubMenu();
+                    });
+            
+                    document.addEventListener('click', function (event) {
+                        if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
+                            hideSubMenu();
+                        }
+                    });
+            
+                    document.addEventListener('touchstart', function (event) {
+                        if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
+                            hideSubMenu();
+                        }
+            
+                        touchStartX = event.touches[0].clientX;
+                    });
+            
+                    document.addEventListener('touchmove', function (event) {
+                        touchEndX = event.touches[0].clientX;
+                        var swipeDistance = touchEndX - touchStartX;
+            
+                        if (Math.abs(swipeDistance) > 10) {
+                            hideSubMenu();
+                        }
+                    });
+            
+                    function toggleSubMenu() {
+                        if (submenu.classList.contains('active')) {
+                            hideSubMenu();
+                        } else {
+                            showSubMenu();
+                        }
+                    }
+            
+                    function showSubMenu() {
+                        submenu.style.opacity = '1';
+                        submenu.style.visibility = 'visible';
+                        submenu.classList.add('active');
+                    }
+            
+                    function hideSubMenu() {
+                        submenu.style.opacity = '0';
+                        submenu.style.visibility = 'hidden';
+                        submenu.classList.remove('active');
+                    }
+            
+                    function isDescendant(parent, child) {
+                        var node = child.parentNode;
+                        while (node !== null) {
+                            if (node === parent) {
+                                return true;
+                            }
+                            node = node.parentNode;
+                        }
+                        return false;
+                    }
+                }
+            
+                // Инициализация подменю
+                initializeSubMenu('projects-trigger', 'projects-submenu');
+                initializeSubMenu('links-trigger', 'links-submenu');
+                initializeSubMenu('lang-trigger', 'lang-submenu');
+            </script>
+        </nav>
+
+        <img class="bg" src="main/img/about-bg.svg">
+        
+        <div class="bgvid">
+            <video autoplay muted loop>
+                <source src="main/vid/tetra.mp4" type="video/mp4">
+                Ваш браузер не поддерживает тег video.
+            </video>
+        </div>
+
+        <div class="dot-grid"></div>
+
+        <div class="aboutcontainer">          
+            <div class="aboutgrid aboutgrid-cols aboutgap-4">
+
+                <div class="aboutflex aboutflex-col aboutgap-4">
+
+                    <div class="aboutcard hello">
+                        <img src="main/img/me.jpg">
+                        <p>👋 Хай — Я Данил , Веб-разработчик / Веб-дизайнер. Здесь ты сможешь найти всё обо мне и даже больше.</p>
+                    </div>
+
+                    <div class="aboutcard time" id="timeCard">
+                        <div style="align-self: center;">
+                            <span>Мое время</span>
+                            <span class="tag" style="background-color: #a8cfff80; color: #0051ff;">Warszawa</span>
+                        </div>
+                        <div class="timeblock">
+                            <div class="date">
+                                <p class="day" id="currentDay">ЧТ</p>
+                                <p id="currentDate">09/03</p>
+                            </div>
+                            <div class="time">
+                                <span id="currentTime">15:01:36</span>
+                            </div>
+                        </div>
+                        <script>
+                            function updateDateTime() {
+                                var nowInWarsaw = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Warsaw"}));
+                            
+                                var daysOfWeek = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+                                var currentDay = daysOfWeek[nowInWarsaw.getDay()];
+                            
+                                var currentDate = nowInWarsaw.getDate().toString().padStart(2, '0') + '/' + (nowInWarsaw.getMonth() + 1).toString().padStart(2, '0');
+                            
+                                var currentTime = nowInWarsaw.toLocaleTimeString('en-US', { hour12: false });
+                            
+                                document.getElementById('currentDay').innerText = currentDay;
+                                document.getElementById('currentDate').innerText = currentDate;
+                                document.getElementById('currentTime').innerText = currentTime;
+                            }
+                            
+                            document.addEventListener('DOMContentLoaded', function() {
+                                updateDateTime();
+                                setInterval(updateDateTime, 1000);
+                            });
+                        </script>
+                    </div>
+
+                    <div class="aboutcard notes" style="padding: 0;">
+                        <div class="notescontainer" id="notesContainer">
+
+                            <div class="note">
+                                <a>
+                                    <span class="notetitle">Новости</span>
+                                    <span class="notetext">Ну то, что вы видите этот сайт - можно считать новостью 🤗</span>
+                                    <div class="noteshape" style="background-color: rgb(72, 154, 255);"></div>
+                                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTM0cHlobXc1aDVkN2ptaWhlODM0eXV0cW1tdXBmbXdza3VlMjV2NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kfqjGTVX3YE6Y/giphy.gif">
+                                </a>
+                            </div>
+
+                            <div class="note">
+                                <a>
+                                    <span class="notetitle">Курсы</span>
+                                    <span class="notetext">Ничего нет - расслабтесь 😅</span>
+                                    <div class="noteshape" style="background-color: azure;"></div>
+                                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTkxcXFtajBnZnFrNzUzdmhqdWU5anUyNnB0aHVzdHpuZ25oNWU5ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SwOyrG5xAmOI1pv0Rf/giphy.gif">
+                                </a>
+                            </div>
+
+                            <div class="note">
+                                <a>
+                                    <span class="notetitle">Крипта</span>
+                                    <span class="notetext">Близится халвинг. Ваши прогнозы? 🤔</span>
+                                    <div class="noteshape" style="background-color: rgb(110, 68, 0);"></div>
+                                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGRza3pxNW0zcmV1dHh1NXQ5c21oNm9paXJ2aXQxcXZybzQzaGhqNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/oNFP9kltPi7fp8TUAV/giphy.gif">
+                                </a>
+                            </div>
+                            
+                        </div>
+                        <script>
+                            $(document).ready(function(){
+                                $('#notesContainer').slick({
+                                    infinite: true,
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1,
+                                    autoplay: true,
+                                    autoplaySpeed: 10000,
+                                    arrows: false,
+                                });
+                            });
+                        </script>
+                    </div>
+
+                    <div class="aboutcard pay">
+                        <span>Донаты и реквизиты</span>
+                        <p id="coinText" style="margin: 0;"></p>
+                        <div class="tab-menu">
+                            <button class="button active" onclick="selectCoin('BTC')">BTC</button>
+                            <button class="button" onclick="selectCoin('ETH')">ETH</button>
+                            <button class="button" onclick="selectCoin('XRP')">XRP</button>
+                            <button class="button" onclick="selectCoin('TRX')">TRX</button>
+                            <button class="button" onclick="selectCoin('DOGE')">DOGE</button>
+                            <button class="button" onclick="selectCoin('SOL')">SOL</button>
+                            <button class="button" onclick="selectCoin('TON')">TON</button>
+                            <button class="button" onclick="selectCoin('LTC')">LTC</button>
+                            <button class="button" onclick="selectCoin('BCH')">BCH</button>
+                        </div>
+                        <div class="tab-content">
+                            <div id="coinAddressQR" style="display: flex; justify-content: center;"></div>
+                            <div style="display: flex; margin-top: 2rem;">
+                                <input id="coinAddress" value="" style="font-size: 13px; width: 80%; background-color: rgba(255, 255, 255, 0.2); color: white; border: none;" readonly>
+                                <button class="button" onclick="copyAddress()" style="font-size: 13px;">Скопировать</button>
+                            </div>
+                        </div>
+                        <script>
+                            const coinData = {
+                                BTC: {
+                                    text: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(255 147 0 / 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+                                    address: 'bc1qrpmcy4zz7g6rtfxka8j4nk3yka72kmacvmam0a'
+                                },
+                                ETH: {
+                                    text: 'Отправляйте только <span style="color: #fff; background-color: rgb(141 176 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Ethereum(ETH) или активы в сети Ethereum(ERC20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+                                    address: '0x96800af5023619eA338551a8E20b612C8Dd6192C'
+                                },
+                                XRP: {
+                                    text: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 0 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">XRP(XRP)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+                                    address: 'raHW9xPXB3YiQqkraR2DT1oH8vUr7X5EQT'
+                                },
+                                TON: {
+                                    text: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 78 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">TON(TON)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+                                    address: 'EQAmDD_sRSt-LuVtw9wBfxq8v7eCH-XP3oA8wQuQ5s2EN_wB'
+                                },
+                                TRX: {
+                                    text: 'Отправляйте только <span style="color: #fff; background-color: rgb(255 0 0 / 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron(TRX) или активы в сети Tron(TRС20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+                                    address: 'TRD7vypAmXBP5qmXeejGUMXjgUMAMuS3mY'
+                                },
+                                SOL: {
+                                    text: 'Отправляйте только <span style="color: #acffec; background-color: rgb(171 0 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana(SOL) или активы в сети Solana(SPL)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+                                    address: '8y1QfdDF4XGEWNM5Aj7N19c93MT31kjn3Cu3p5V7YhnX'
+                                },
+                                LTC: {
+                                    text: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 47 178 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin(LTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+                                    address: 'ltc1qrrv5lx0epj37qnp2ltyhrdq6srlky4typzy026'
+                                },
+                                BCH: {
+                                    text: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(16 255 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin_Cash(BCH)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+                                    address: 'qq8mpv5fkse5062t7sn0al8545x4lnx03u2wxr4k22'
+                                },
+                                DOGE: {
+                                    text: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(255 215 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Dogecoin(DOGE)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+                                    address: 'DMHtna8VCEB1BUeP2a9ki9TkiFSDMxtbo1'
+                                },
+                            };
+                        
+                            const qrCodeInstance = new QRCode(document.getElementById('coinAddressQR'), {
+                                width: 240,
+                                height: 240
+                            });
+    
+                            function selectCoin(coin) {
+                                const buttons = document.querySelectorAll('.tab-menu button');
+                                buttons.forEach(button => button.classList.remove('active'));
+    
+                                const selectedButton = Array.from(buttons).find(button => button.textContent === coin);
+                                selectedButton.classList.add('active');
+    
+                                const data = coinData[coin];
+                                document.getElementById('coinText').innerHTML = `${data.text}`;
+                                document.getElementById('coinAddress').value = data.address;
+    
+                                document.getElementById('coinAddressQR').classList.add('fade-out');
+    
+                                setTimeout(() => {
+                                    qrCodeInstance.clear();
+                                    qrCodeInstance.makeCode(data.address);
+                                    
+                                    const qrCodeImg = document.querySelector('#coinAddressQR img');
+                                    qrCodeImg.onclick = copyAddress;
+                                    qrCodeImg.style.cursor = 'pointer';
+    
+                                    document.getElementById('coinAddressQR').classList.remove('fade-out');
+                                }, 500);
+                            }
+    
+                            function copyAddress() {
+                                var addressInput = document.getElementById('coinAddress');
+                                addressInput.select();
+                                document.execCommand('copy');
+     
+                                var copyButton = document.querySelector('.tab-content button');
+                                copyButton.textContent = 'Скопировано';
+                                copyButton.classList.add('copy-success');
+    
+                                setTimeout(() => {
+                                    copyButton.textContent = 'Скопировать';
+                                    copyButton.classList.remove('copy-success');
+                                }, 2000);
+                            }
+    
+                            selectCoin('BTC');
+                        </script>
+                    </div>
+
+                    <div class="aboutcard price">
+                        <span>Ответы на вопросы</span>
+                        <div class="pricecontainer">
+
+                            <div class="card-header button">Тильда — хорошее решение?</div>
+                        <div class="card-content">
+                            <p>Тильда — отличный выбор, для небольших проектов или для больших, но с бюджетом. Почему именно так? Все дело в том, что Тильда это конструктор сайтов, за счет гибкости платформы после разработки сайта вы сможете даже сами корректировать тексты и менять картинки. Но придется мирится с тем, что у неё есть или покупать подписки и платить за дополнительную разработку. В любом случае это до сих пор дешевле чем разработка сайта с нуля.</p>
+                        </div>
+                        
+                        <div class="card-header button">Почему такая цена?</div>
+                        <div class="card-content">
+                            <p>Сделать сайт, написать модификацию, улучшить модификацию — не так просто и быстро как кажется. Процесс разработки включает множество неявных этапов, которые напрямую влияют на результат. Разработка - процесс тонкий и кропотливый. В ходе работы зачастую происходят правки, которые увеличивают сложность и время работы над проектом. Это долгая работа, которая требует определенных навыков, ради которых я постоянно прохожу обучение, поэтому стоимость за разработку не может быть низкой</p>
+                        </div>
+
+                        </div>
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function() {
+                                const cardHeaders = document.querySelectorAll(".aboutcard .card-header");
+  
+                                cardHeaders.forEach(function(header) {
+                                    header.addEventListener("click", function() {
+                                        const content = this.nextElementSibling;
+      
+                                        document.querySelectorAll(".aboutcard .card-header").forEach(function(item) {
+                                            item.classList.remove("active");
+                                        });
+                                        document.querySelectorAll(".aboutcard .card-content").forEach(function(item) {
+                                            item.classList.remove("active");
+                                        });
+      
+                                        this.classList.add("active");
+                                        content.classList.add("active");
+                                    });
+                                });
+                            });
+
+                        </script>
+                    </div>
+                </div>
+
+                <div class="aboutflex aboutflex-col aboutgap-4">
+
+                    <div class="aboutcard gallery">
+                        <span>Фотоальбом</span>
+                        <div id="imageGallery" class="slick-carousel">
+
+                            <div><img src="main/img/gallery/1.jpeg"></div>
+                            <div><img src="main/img/gallery/2.jpeg"></div>
+                            <div><img src="main/img/gallery/3.png"></div>
+                            <div><img src="main/img/gallery/4.png"></div>
+                            <div><img src="main/img/gallery/5.png"></div>
+
+                        </div>
+                        <script>
+                            $(document).ready(function(){
+                                $('#imageGallery').slick({
+                                    infinite: true,
+                                    slidesToShow: 2,
+                                    slidesToScroll: 1,
+                                    autoplay: true,
+                                    autoplaySpeed: 3000,
+                                    arrows: false,
+                                });
+                            });
+                        </script>
+                    </div>
+
+                    <div class="aboutcard stack">
+                        <span>Стек</span>
+                        <div style="line-height: 1.7;">
+
+                            <span class="tag" style="background-color: #ffb20080; color: #000000;">Tilda</span>
+                            <span class="tag" style="background-color: #ffffff80; color: #2532eb;">VS Code</span>
+                            <span class="tag" style="background-color: #00000080; color: #25eb8f;">Figma</span>
+                            <span class="tag" style="background-color: #0015ff80; color: #ffffff;">NocoDB</span>
+                            <span class="tag" style="background-color: #ff590080; color: #ffffff;">HTML</span>
+                            <span class="tag" style="background-color: #f6ff0080; color: #000000;">JavaScript</span>
+                            <span class="tag" style="background-color: #0015ff80; color: #ffffff;">CSS</span>
+
+                        </div>
+                    </div>
+
+                    <div class="aboutcard randomfacts">
+                        <span>Случайный факт</span>
+                        <div>
+                            <img style="height: 50px; border-radius: 10px;" id="factImage"src="">
+                            <p id="factText">текст</p>
+                            <span class="button" onclick="showAnotherFact()" style="display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon text-2xl" width="25px" viewBox="0 0 256 256">
+                                    <g fill="currentColor" fill-rule="evenodd">
+                                        <path d="M47.895 88.097c.001-4.416 3.064-9.837 6.854-12.117l66.257-39.858c3.785-2.277 9.915-2.277 13.707.008l66.28 39.934c3.786 2.28 6.853 7.703 6.852 12.138l-.028 79.603c-.001 4.423-3.069 9.865-6.848 12.154l-66.4 40.205c-3.781 2.29-9.903 2.289-13.69-.01l-66.167-40.185c-3.78-2.295-6.842-7.733-6.84-12.151zm13.936-6.474l65.834 36.759l62.766-36.278l-62.872-36.918L61.83 81.623zM57.585 93.52c0 1.628-1.065 71.86-1.065 71.86c-.034 2.206 1.467 4.917 3.367 6.064l61.612 37.182l.567-77.413s-64.48-39.322-64.48-37.693zm76.107 114.938l60.912-38.66c2.332-1.48 4.223-4.915 4.223-7.679V93.125l-65.135 37.513z"></path>
+                                        <path d="M77.76 132.287c-4.782 2.762-11.122.735-14.16-4.526c-3.037-5.261-1.622-11.765 3.16-14.526c4.783-2.762 11.123-.735 14.16 4.526c3.038 5.261 1.623 11.765-3.16 14.526m32 21c-4.782 2.762-11.122.735-14.16-4.526c-3.037-5.261-1.622-11.765 3.16-14.526c4.783-2.762 11.123-.735 14.16 4.526c3.038 5.261 1.623 11.765-3.16 14.526m-32 16c-4.782 2.762-11.122.735-14.16-4.526c-3.037-5.261-1.622-11.765 3.16-14.526c4.783-2.762 11.123-.735 14.16 4.526c3.038 5.261 1.623 11.765-3.16 14.526m32 21c-4.782 2.762-11.122.735-14.16-4.526c-3.037-5.261-1.622-11.765 3.16-14.526c4.783-2.762 11.123-.735 14.16 4.526c3.038 5.261 1.623 11.765-3.16 14.526m78.238-78.052c-4.783-2.762-11.122-.735-14.16 4.526c-3.037 5.261-1.623 11.765 3.16 14.526c4.783 2.762 11.123.735 14.16-4.526c3.038-5.261 1.623-11.765-3.16-14.526m-16.238 29c-4.782-2.762-11.122-.735-14.16 4.526c-3.037 5.261-1.622 11.765 3.16 14.526c4.783 2.762 11.123.735 14.16-4.526c3.038-5.261 1.623-11.765-3.16-14.526m-17 28c-4.782-2.762-11.122-.735-14.16 4.526c-3.037 5.261-1.622 11.765 3.16 14.526c4.783 2.762 11.123.735 14.16-4.526c3.038-5.261 1.623-11.765-3.16-14.526M128.5 69c-6.351 0-11.5 4.925-11.5 11s5.149 11 11.5 11S140 86.075 140 80s-5.149-11-11.5-11"></path>
+                                    </g>
+                                </svg>
+                                <p style="margin: 0; padding-left: 10px;">Другой факт</p>
+                            </span>
+                        </div>
+                        <script>
+                            let shownFacts = [];
+                            function showRandomFact() {
+                                if (shownFacts.length === facts.length) {
+                                    shownFacts = [];
+                                }
+
+                                let randomIndex;
+                                do {
+                                    randomIndex = Math.floor(Math.random() * facts.length);
+                                } while (shownFacts.includes(randomIndex));
+
+                                shownFacts.push(randomIndex);
+
+                                const randomFact = facts[randomIndex];
+
+                                document.getElementById('factImage').src = randomFact.img;
+                                document.getElementById('factText').textContent = randomFact.text;
+                            }
+
+                            showRandomFact();
+
+                            function showAnotherFact() {
+                                showRandomFact();
+                            }
+                        </script>
+                    </div>
+
+                    <div class="aboutcard tools">
+                        <div class="aboutgrid aboutgap-4" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+
+                            <div class="aboutflex aboutflex-col aboutgap-4">
+                                <p style="margin: 0;">Софт</p>
+
+                                <a href="https://code.visualstudio.com" target="_blank">
+                                    <img src="https://yt3.googleusercontent.com/_q52i8bUAEvcb7JR4e-eNTv23y2A_wg5sCz0NC0GrGtcw1CRMWJSOPVHUDh_bngD0q4gMvVeoA=s900-c-k-c0x00ffffff-no-rj">
+                                    <p class="text">Visual Studio Code — редактор исходного кода, разработанный Microsoft для Windows, Linux и macOS.</p>
+                                </a>
+                                <a href="https://creativecloud.adobe.com" target="_blank">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Adobe_Creative_Cloud_rainbow_icon.svg/1200px-Adobe_Creative_Cloud_rainbow_icon.svg.png">
+                                    <p class="text">Photoshop, Illustrator, Premiere Pro, After Effects и многое другое в одной подписке Adobe Creative Cloud.</p>
+                                </a>
+                                <a href="https://creativecloud.adobe.com" target="_blank">
+                                    <img src="https://maxst.icons8.com/vue-static/icon/menu/logo.svg">
+                                    <p class="text">Сайт с иконками, иллюстрациями, фотографиями и 3D моделями для ваших проектов.</p>
+                                </a>
+
+                            </div>
+
+                            <div class="aboutflex aboutflex-col aboutgap-4">
+                                <p style="margin: 0;">Уроки</p>
+
+                                <a>
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/d/d0/Dogecoin_Logo.png">
+                                    <p class="text">Скоро тут появятся уроки, а пока вот вам Dogecoin.</p>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aboutcard twitter" style="padding: 0;">
+                        <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/abrosxd?ref_src=twsrc%5Etfw">Tweets by abrosxd</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+	</body>
+</html>

@@ -624,10 +624,9 @@ nav {
     right: 24px;
 
     @media (max-width: 767px) {
-        top: 50px;
+        top: 24px;
         bottom: auto;
-        right: 50%;
-        transform: translateX(50%);
+        right: 80px;
     }
 }
 

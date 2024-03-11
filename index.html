@@ -294,14 +294,6 @@
                     }, interval);
                 }
     
-                document.body.addEventListener('click', function () {
-                    if (!userInteracted) {
-                        userInteracted = true;
-                        fadeIn(audio, 1000);
-                        toggleButton.classList.add('playing');
-                    }
-                });
-    
                 toggleButton.addEventListener('click', function () {
                     if (audio.paused) {
                         fadeIn(audio, 1000);

@@ -15,7 +15,8 @@
 		<!-- Assets -->
 		<link rel="stylesheet" href="main/css/style.css">
 		<script src="main/js/facts.js"></script>
-		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<!-- 		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script> -->
+		<script src="https://cdn.jsdelivr.net/npm/qrcanvas@3.1.2/lib/qrcanvas.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -392,7 +393,7 @@
                                 },
                             };
                         
-                            const qrCodeInstance = new QRCanvas(document.getElementById('coinAddressQR'), {
+                            const qrCodeInstance = new QRCode(document.getElementById('coinAddressQR'), {
                                 width: 240,
                                 height: 240,
 				rounded: true,

@@ -925,10 +925,6 @@ main {
     transition: opacity 0.5s ease-in-out;
 }
 
-#coinAddressQR canvas {
-    border-radius: 50%;
-}
-
 #coinAddressQR.fade-out {
     opacity: 0;
 }

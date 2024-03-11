@@ -5,11 +5,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--metatextblock-->
 		<title>ABROS - Портфолио</title>
-		<meta name="description" content="Daniel Abros - Портфолио">
+		<meta name="description" content="Привет 👋 Меня зовут Данил и я Веб-разработчик. Добро пожаловать на мой сайт!">
 		<meta property="og:title" content="Daniel Abros - Портфолио">
-		<meta property="og:description" content="Daniel Abros - Портфолио">
+		<meta property="og:description" content="Привет 👋 Меня зовут Данил и я Веб-разработчик. Добро пожаловать на мой сайт!">
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="main/img/logo.jpg">
+        <meta property="og:url" content="https://abros.me">
+        <meta name="twitter:card" content="summary_large_image">
 		<!--/metatextblock-->
 		<link rel="icon" type="image/png" sizes="32x32" href="main/img/logo.jpg">
 		<!-- Assets -->
@@ -148,6 +150,23 @@
                     </ul>
                 </li>
             </ul>
+
+            <ul class="music">
+                <li class="section">
+                    <a class="button" id="toggleMusic">
+                        <div class="center">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
             <script>
                 function initializeSubMenu(triggerId, submenuId) {
                     const trigger = document.getElementById(triggerId);
@@ -222,6 +241,77 @@
                 initializeSubMenu('lang-trigger', 'lang-submenu');
             </script>
         </nav>
+
+        <div class="bgmusic">
+            <audio id="backgroundMusic" loop>
+                <source src="main/sounds/bgmusic.mp3" type="audio/mp3">
+                Ваш браузер не поддерживает тег audio.
+            </audio>
+            <script>
+                const audio = document.getElementById('backgroundMusic');
+                const toggleButton = document.getElementById('toggleMusic');
+                let userInteracted = false;
+    
+                function fadeIn(element, duration) {
+                    element.volume = 0;
+                    element.play().then(() => {
+                        if (userInteracted) {
+                            element.volume = 1;
+                        }
+                    });
+    
+                    let currentTime = 0;
+                    const interval = 50;
+                    const targetVolume = 1;
+                    const volumeChange = targetVolume / (duration / interval);
+    
+                    const fadeInterval = setInterval(() => {
+                        currentTime += interval;
+                        element.volume = Math.min(targetVolume, element.volume + volumeChange);
+    
+                        if (currentTime >= duration) {
+                            clearInterval(fadeInterval);
+                            element.volume = Math.min(targetVolume, 1);
+                        }
+                    }, interval);
+                }
+    
+                function fadeOut(element, duration) {
+                    let currentTime = 0;
+                    const interval = 50;
+                    const currentVolume = element.volume;
+                    const volumeChange = currentVolume / (duration / interval);
+    
+                    const fadeInterval = setInterval(() => {
+                        currentTime += interval;
+                        element.volume = Math.max(0, element.volume - volumeChange);
+    
+                        if (currentTime >= duration) {
+                            clearInterval(fadeInterval);
+                            element.pause();
+                            element.volume = Math.max(0, element.volume);
+                        }
+                    }, interval);
+                }
+    
+                document.body.addEventListener('click', function () {
+                    if (!userInteracted) {
+                        userInteracted = true;
+                        fadeIn(audio, 1000);
+                        toggleButton.classList.add('playing');
+                    }
+                });
+    
+                toggleButton.addEventListener('click', function () {
+                    if (audio.paused) {
+                        fadeIn(audio, 1000);
+                    } else {
+                        fadeOut(audio, 1000);
+                    }
+                    toggleButton.classList.toggle('playing');
+                });
+            </script>
+        </div>
 
         <div class="dot-grid"></div>
 

@@ -543,7 +543,7 @@ nav {
     overflow: hidden;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background: rgba(53, 53, 53, .4);
+    background: rgba(53, 53, 53, 0.4);
     color: #fff;
     pointer-events: auto;
 }
@@ -828,7 +828,7 @@ main {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 3;
-  }
+}
 
 .popup {
     opacity: 0;
@@ -851,18 +851,23 @@ main {
     transition: opacity .3s, visibility 0s 0s;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     font-family: var(--font-basic);
-  }
+}
 
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 4;
-  }
+.popup-menu {
+    position: fixed;
+    z-index: 3;
+    bottom: 24px;
+    left: 50%;
+    display: flex;
+    gap: 8px;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+    .popup-menu {
+        bottom: 54px;
+    }
+}
 
 .popuph4 {
     font-size: 7vw;

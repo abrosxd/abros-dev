@@ -416,17 +416,11 @@
         </script>
         
         <div class="overlay-popup" id="overlay-popup" onclick="closePopup()"></div>
-        <span class="close-btn" id="close-btn" onclick="closePopup()">
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0,0,256,256">
-                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-                    <g transform="scale(8.53333,8.53333)">
-                        <path d="M7,4c-0.25587,0 -0.51203,0.09747 -0.70703,0.29297l-2,2c-0.391,0.391 -0.391,1.02406 0,1.41406l7.29297,7.29297l-7.29297,7.29297c-0.391,0.391 -0.391,1.02406 0,1.41406l2,2c0.391,0.391 1.02406,0.391 1.41406,0l7.29297,-7.29297l7.29297,7.29297c0.39,0.391 1.02406,0.391 1.41406,0l2,-2c0.391,-0.391 0.391,-1.02406 0,-1.41406l-7.29297,-7.29297l7.29297,-7.29297c0.391,-0.39 0.391,-1.02406 0,-1.41406l-2,-2c-0.391,-0.391 -1.02406,-0.391 -1.41406,0l-7.29297,7.29297l-7.29297,-7.29297c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297z"></path>
-                    </g>
-                </g>
-            </svg>
-        </span>
-        <div id="popup" class="popup">
-            <div id="popup-content"></div>
+        <div>
+            <div class="popup-menu" id="popup-menu"></div>
+            <div id="popup" class="popup">
+                <div id="popup-content"></div>
+            </div>
         </div>
         <script>
             function openPopup(id) {
@@ -455,37 +449,42 @@
                   popupContent.appendChild(paragraph);
                 }
               });
-
-              const linkButton = document.createElement('a');
-              linkButton.href = project.url;
-              linkButton.target = '_blank';
-              linkButton.classList.add('button');
-              linkButton.textContent = project.buttonText;
-              popupContent.appendChild(linkButton);
+              const popupMenu = document.getElementById('popup-menu');
+              popupMenu.innerHTML = `
+              <a class="button" href="${project.url}" target="_blank">${project.buttonText}</a>
+              <span class="button close-btn" id="close-btn" onclick="closePopup()">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0,0,256,256">
+                    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                        <g transform="scale(8.53333,8.53333)">
+                            <path d="M7,4c-0.25587,0 -0.51203,0.09747 -0.70703,0.29297l-2,2c-0.391,0.391 -0.391,1.02406 0,1.41406l7.29297,7.29297l-7.29297,7.29297c-0.391,0.391 -0.391,1.02406 0,1.41406l2,2c0.391,0.391 1.02406,0.391 1.41406,0l7.29297,-7.29297l7.29297,7.29297c0.39,0.391 1.02406,0.391 1.41406,0l2,-2c0.391,-0.391 0.391,-1.02406 0,-1.41406l-7.29297,-7.29297l7.29297,-7.29297c0.391,-0.39 0.391,-1.02406 0,-1.41406l-2,-2c-0.391,-0.391 -1.02406,-0.391 -1.41406,0l-7.29297,7.29297l-7.29297,-7.29297c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297z"></path>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+            `;
           
               const overlay = document.getElementById('overlay-popup');
               const popup = document.getElementById('popup');
-              const closebtn = document.getElementById('close-btn');
           
               overlay.style.opacity = 1;
               overlay.style.visibility = 'visible';
               popup.style.opacity = 1;
               popup.style.visibility = 'visible';
-              closebtn.style.opacity = 1;
-              closebtn.style.visibility = 'visible';
+              popupMenu.style.opacity = 1;
+              popupMenu.style.visibility = 'visible';
             }
           
             function closePopup() {
               const overlay = document.getElementById('overlay-popup');
               const popup = document.getElementById('popup');
-              const closebtn = document.getElementById('close-btn');
+              const popupMenu = document.getElementById('popup-menu');
           
               overlay.style.opacity = 0;
               overlay.style.visibility = 'hidden';
               popup.style.opacity = 0;
               popup.style.visibility = 'hidden';
-              closebtn.style.opacity = 0;
-              closebtn.style.visibility = 'hidden';
+              popupMenu.style.opacity = 0;
+              popupMenu.style.visibility = 'hidden';
 
               history.replaceState(null, document.title, window.location.pathname + window.location.search);
             }

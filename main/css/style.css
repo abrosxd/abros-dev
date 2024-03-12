@@ -48,8 +48,10 @@ ul {
     padding: 0 12px;
     border-radius: 2px;
     transition: background-color 1s, color 2s;
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    .logo {
         top: 16px;
         font-size: x-large;
     }
@@ -544,8 +546,10 @@ nav {
     background: rgba(53, 53, 53, .4);
     color: #fff;
     pointer-events: auto;
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    .button {
         height: 32px;
     }
 }
@@ -564,8 +568,10 @@ nav {
     position: fixed;
     top: 24px;
     left: 24px;
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    .menu {
         padding: 0 16px 16px;
         bottom: 0;
         top: auto;
@@ -582,8 +588,10 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     /* margin-right: 10px; */
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    #projects-submenu {
         top: -40px;
     }
 }
@@ -602,8 +610,10 @@ nav {
     position: fixed;
     bottom: 24px;
     left: 24px;
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    .links {
         top: 24px;
         bottom: auto;
     }
@@ -612,8 +622,10 @@ nav {
 #links-submenu {
     top: -160px;
     flex-wrap: wrap;
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    #links-submenu {
         top: 32px;
     }
 }
@@ -622,8 +634,10 @@ nav {
     position: fixed;
     bottom: 24px;
     right: 24px;
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    .music {
         top: 24px;
         bottom: auto;
         right: 80px;
@@ -758,8 +772,10 @@ main {
     will-change: transform; /* Добавлено для оптимизации */
     z-index: 2;
     border-radius: 5px;
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    .project-card {
         width: 190px;
         height: 255px;
     }
@@ -781,8 +797,10 @@ main {
 
 .project-card:hover .overlay {
     opacity: 1;
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    .project-card:hover .overlay {
         opacity: 0;
     }
 }
@@ -851,8 +869,10 @@ main {
     margin: 0;
     font-weight: 700;
     line-height: 0.7;
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    .popuph4 {
         font-size: 60px;
     }
 }
@@ -861,8 +881,10 @@ main {
     font-size: 24px;
     margin: 0;
     margin-top: 20px;
+}
 
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+    .popuptitle {
         font-size: 16px;
     }
 }
@@ -890,8 +912,17 @@ main {
     box-sizing: border-box;
     font-family: var(--font-basic);
     z-index: 2;
-    @media (min-width: 60rem) {
+}
+
+@media (min-width: 60rem) {
+    .aboutcontainer {
         max-width: 60rem;
+    }
+}
+
+@media (max-width: 60rem) {
+    .aboutcontainer {
+        padding-bottom: 64px;
     }
 }
 
@@ -905,7 +936,10 @@ main {
 
 .aboutgrid-cols {
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    @media (min-width: 640px) {
+}
+
+@media (min-width: 640px) {
+    .aboutgrid-cols {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
@@ -1078,8 +1112,10 @@ main {
     width: 420px;
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    
-    @media (max-width: 640px) {
+}
+
+@media (max-width: 640px) {
+    .notetext {
         width: 350px;
     }
 }
@@ -1097,7 +1133,10 @@ main {
     transform: translateY(-50%);
     top: 50%;
     z-index: 0;
-    @media (max-width: 1440px) {
+}
+
+@media (max-width: 1440px) {
+    .bg {
         display: none;
     }
 }
@@ -1105,14 +1144,17 @@ main {
 .bgvid {
     position: fixed;
     right: -35px;
-    @media (max-width: 1440px) {
+}
+
+@media (max-width: 1440px) {
+    .bgvid {
         transform: translatex(50%);
         right: 50%;
         opacity: 0.5;
     }
 }
 
-.aboutcard.price .pricecontainer .card-content {
+.aboutcard.faq .faqcontainer .card-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
@@ -1120,7 +1162,7 @@ main {
     padding: 0 10px;
 }
   
-.aboutcard.price .pricecontainer .card-content.active {
+.aboutcard.faq .faqcontainer .card-content.active {
     max-height: 1000px;
     transition: max-height 0.3s ease-in-out;
 }

@@ -460,7 +460,7 @@
               linkButton.href = project.url;
               linkButton.target = '_blank';
               linkButton.classList.add('button');
-              linkButton.textContent = 'Перейти к проекту';
+              linkButton.textContent = project.buttonText;
               popupContent.appendChild(linkButton);
           
               const overlay = document.getElementById('overlay-popup');
@@ -486,6 +486,8 @@
               popup.style.visibility = 'hidden';
               closebtn.style.opacity = 0;
               closebtn.style.visibility = 'hidden';
+
+              history.replaceState(null, document.title, window.location.pathname + window.location.search);
             }
           
             const projectCard = document.querySelectorAll('.project-card');
@@ -493,7 +495,18 @@
               card.addEventListener('click', () => {
                 const projectId = parseInt(card.id);
                 openPopup(projectId);
+                window.location.hash = `#${projects[projectId].hash}`;
               });
+            });
+
+            window.addEventListener('load', () => {
+                const hash = window.location.hash.substr(1);
+                if (hash) {
+                    const project = projects.find(project => project.hash === hash);
+                    if (project) {
+                        openPopup(project.id);
+                    }
+                }
             });
           </script>
 	</body>

@@ -326,6 +326,46 @@
 
         <div class="dot-grid"></div>
 
+        <div class="preloadbg">
+            <div class="preload">
+                <div class="Z aa"></div>
+                <div class="Z ac"></div>
+                <div class="Z af"></div>
+                <div class="Z ah"></div>
+                <div class="Z aj"></div>
+                <div class="Z al"></div>
+                <div class="Z an"></div>
+                <div class="Z ap"></div>
+                <div class="Z ar"></div>
+                <div class="Z at"></div>
+                <div class="Z av"></div>
+                <div class="Z ax"></div>
+                <div class="Z az"></div>
+                <div class="Z aB"></div>
+                <div class="Z aE"></div>
+                <div class="Z aG"></div>
+                <div class="Z aI"></div>
+                <div class="Z aK"></div>
+            </div>
+        </div>
+        <script>
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    var preloadDiv = document.querySelector('.preloadbg');
+                    if (preloadDiv) {
+                        preloadDiv.style.opacity = '0';
+                        preloadDiv.style.visibility = 'hidden';
+                    }
+                }, 500);
+            });
+        </script>
+        <script>
+            window.addEventListener('beforeunload', function(event) {
+              document.querySelector('.preloadbg').style.opacity = '1';
+              document.querySelector('.preloadbg').style.visibility = 'visible';
+            });
+            </script>
+
         <div class="aboutcontainer">          
             <div class="aboutgrid aboutgrid-cols aboutgap-4">
 
@@ -384,8 +424,8 @@
 
                                 noteElement.innerHTML = `
                                 <a href="${note.link}">
-                                    <span class="notetitle">${note.title}</span>
-                                    <span class="notetext">${note.text}</span>
+                                    <span class="notetitle">${note.titleRU}</span>
+                                    <span class="notetext">${note.textRU}</span>
                                     <div class="noteshape" style="background-color: ${note.color};"></div>
                                     <img src="${note.img}">
                                     </a>
@@ -440,7 +480,7 @@
                                 selectedButton.classList.add('active');
     
                                 const data = coinData[coin];
-                                document.getElementById('coinText').innerHTML = `${data.text}`;
+                                document.getElementById('coinText').innerHTML = `${data.textRU}`;
                                 document.getElementById('coinAddress').value = data.address;
     
                                 document.getElementById('coinAddressQR').classList.add('fade-out');
@@ -486,9 +526,9 @@
                             faq.forEach(faq => {
                                 const faqElement = document.createElement("div");
                                 faqElement.innerHTML = `
-                                <div class="card-header button">${faq.title}</div>
+                                <div class="card-header button">${faq.titleRU}</div>
                                 <div class="card-content">
-                                    <p>${faq.text}</p>
+                                    <p>${faq.textRU}</p>
                                 </div>
                                 `;
                                 faqContainer.appendChild(faqElement);
@@ -564,7 +604,7 @@
                         <span>Случайный факт</span>
                         <div>
                             <img style="height: 50px; border-radius: 10px;" id="factImage"src="">
-                            <p id="factText">текст</p>
+                            <p id="factText"></p>
                             <span class="button" onclick="showAnotherFact()" style="display: flex; align-items: center; justify-content: center; border-radius: 10px;">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon text-2xl" width="25px" viewBox="0 0 256 256">
                                     <g fill="currentColor" fill-rule="evenodd">
@@ -592,7 +632,7 @@
                                 const randomFact = facts[randomIndex];
 
                                 document.getElementById('factImage').src = randomFact.img;
-                                document.getElementById('factText').textContent = randomFact.text;
+                                document.getElementById('factText').textContent = randomFact.textRU;
                             }
 
                             showRandomFact();
@@ -618,7 +658,7 @@
                                     softElement.target = '_blank';
                                     softElement.innerHTML = `
                                         <img src="${soft.img}">
-                                        <p class="text">${soft.text}</p>
+                                        <p class="text">${soft.textRU}</p>
                                     `;
                                     softContainer.appendChild(softElement);
                                 });
@@ -636,7 +676,7 @@
                                     lessonsElement.target = '_blank';
                                     lessonsElement.innerHTML = `
                                         <img src="${lessons.img}">
-                                        <p class="text">${lessons.text}</p>
+                                        <p class="text">${lessons.textRU}</p>
                                     `;
                                     lessonsContainer.appendChild(lessonsElement);
                                 });

@@ -312,26 +312,35 @@
 
         <div class="dot-grid"></div>
 
-        <div class="preload">
-            <div class="Z aa"></div>
-            <div class="Z ac"></div>
-            <div class="Z af"></div>
-            <div class="Z ah"></div>
-            <div class="Z aj"></div>
-            <div class="Z al"></div>
-            <div class="Z an"></div>
-            <div class="Z ap"></div>
-            <div class="Z ar"></div>
-            <div class="Z at"></div>
-            <div class="Z av"></div>
-            <div class="Z ax"></div>
-            <div class="Z az"></div>
-            <div class="Z aB"></div>
-            <div class="Z aE"></div>
-            <div class="Z aG"></div>
-            <div class="Z aI"></div>
-            <div class="Z aK"></div>
+        <div class="preloadbg">
+            <div class="preload">
+                <div class="Z aa"></div>
+                <div class="Z ac"></div>
+                <div class="Z af"></div>
+                <div class="Z ah"></div>
+                <div class="Z aj"></div>
+                <div class="Z al"></div>
+                <div class="Z an"></div>
+                <div class="Z ap"></div>
+                <div class="Z ar"></div>
+                <div class="Z at"></div>
+                <div class="Z av"></div>
+                <div class="Z ax"></div>
+                <div class="Z az"></div>
+                <div class="Z aB"></div>
+                <div class="Z aE"></div>
+                <div class="Z aG"></div>
+                <div class="Z aI"></div>
+                <div class="Z aK"></div>
+            </div>
         </div>
+        <script>
+            window.addEventListener('beforeunload', function(event) {
+              // При переходе на другую страницу
+              document.querySelector('.preloadbg').style.opacity = '1';
+              document.querySelector('.preloadbg').style.visibility = 'visible';
+            });
+            </script>
 
         <main id="main">
             <div class="container"></div>
@@ -339,7 +348,7 @@
         <script>
             const main = document.getElementById('main');
             const container = document.querySelector('.container');
-            const preload = document.querySelector('.preload');
+            const preload = document.querySelector('.preloadbg');
             const projectCards = [];
             let loadedImages = 0;
         
@@ -354,7 +363,8 @@
         
             function checkLoad() {
                 if (loadedImages === projects.length * 2) {
-                    preload.style.display = 'none';
+                    preload.style.opacity = '0';
+                    preload.style.visibility = 'hidden';
                     projectCards.forEach(card => card.style.display = 'block');
         
                     if (window.innerWidth > 768) {
@@ -433,7 +443,7 @@
               const popupContent = document.getElementById('popup-content');
               popupContent.innerHTML = '';
           
-              project['content-ru'].forEach(item => {
+              project['contentRU'].forEach(item => {
                 const key = Object.keys(item)[0];
                 const value = item[key];
           
@@ -456,7 +466,7 @@
               });
               const popupMenu = document.getElementById('popup-menu');
               popupMenu.innerHTML = `
-              <a class="button" href="${project.url}" target="_blank">${project.buttonText}</a>
+              <a class="button" href="${project.url}" target="_blank">${project.buttonTextRU}</a>
               <span class="button close-btn" id="close-btn" onclick="closePopup()">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0,0,256,256">
                     <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">

@@ -62,6 +62,17 @@ ul {
     color: white;
 }
 
+.preloadbg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 3;
+    background-color: black;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
 .preload {
     z-index: 2;
     top: 50%;
@@ -848,7 +859,6 @@ main {
     border-radius: 5px;
     overflow-x: hidden;
     overflow-y: auto;
-    transition: opacity .3s, visibility 0s 0s;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     font-family: var(--font-basic);
 }

@@ -457,6 +457,7 @@
                   popupContent.appendChild(paragraph);
                 }
               });
+
               const popupMenu = document.getElementById('popup-menu');
               popupMenu.innerHTML = `
               <a class="button" href="${project.url}" target="_blank">${project.buttonTextRU}</a>
@@ -468,8 +469,8 @@
                         </g>
                     </g>
                 </svg>
-            </span>
-            `;
+              </span>
+              `;
           
               const overlay = document.getElementById('overlay-popup');
               const popup = document.getElementById('popup');
@@ -480,6 +481,8 @@
               popup.style.visibility = 'visible';
               popupMenu.style.opacity = 1;
               popupMenu.style.visibility = 'visible';
+
+              window.location.hash = `#${project.hash}`;
             }
           
             function closePopup() {
@@ -498,11 +501,10 @@
             }
           
             const projectCard = document.querySelectorAll('.project-card');
-            projectCard.forEach(card => {
+             projectCard.forEach(card => {
               card.addEventListener('click', () => {
-                const projectId = parseInt(card.id);
+                const projectId = parseInt(card.id) ;
                 openPopup(projectId);
-                window.location.hash = `#${projects[projectId].hash}`;
               });
             });
 
@@ -515,6 +517,6 @@
                     }
                 }
             });
-          </script>
+        </script>
 	</body>
 </html>

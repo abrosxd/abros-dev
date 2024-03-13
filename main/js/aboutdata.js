@@ -168,6 +168,19 @@ const stack = [
     "bgcolor": "#0015ff80"
   },
 
+  {
+    "title": "Photoshop",
+    "color": "#32AAFF",
+    "bgcolor": "#001E3680"
+  },
+
+  {
+    "title": "Illustrator",
+    "color": "#FF9B00",
+    "bgcolor": "#32000080"
+  },
+
+
 ];
 
 const coinData = {

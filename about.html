@@ -21,6 +21,72 @@
         <link rel="android-chrome-512x512" href="main/img/icon/android-chrome-512x512.png">
 		<!-- Assets -->
 		<link rel="stylesheet" href="main/css/style.css">
+        <script>
+            // Функция для установки куки
+            function setCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+    
+            // Функция для получения куки
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+    
+            // Функция для удаления куки
+            function eraseCookie(name) {
+                document.cookie = name + '=; Max-Age=-99999999;';
+            }
+    
+            // Функция для перезагрузки страницы
+            function reloadPage() {
+                window.location.reload();
+            }
+    
+            // Функция для изменения языка
+            function changeLanguage(lang) {
+                setCookie('currentLanguage', lang, 365); // Устанавливаем куки с выбранным языком
+                reloadPage(); // Перезагружаем страницу
+            }
+
+            const currentLanguageCookie = getCookie('currentLanguage');
+    
+            // Ожидаем загрузки DOM
+            document.addEventListener("DOMContentLoaded", function() { // Получаем значение текущего языка из куки
+                const langTrigger = document.getElementById('lang-trigger');
+                const langSubmenu = document.getElementById('lang-submenu');
+    
+                // Проверяем, установлен ли текущий язык в куки
+                if (currentLanguageCookie) {
+                    // Если установлен, изменяем переменную currentLanguage на значение из куки
+                    langSubmenu.querySelectorAll('a').forEach(function(elem) {
+                        if (elem.getAttribute('lang') === currentLanguageCookie) {
+                            currentLanguage = currentLanguageCookie;
+                        }
+                    });
+                }
+    
+                // Назначаем обработчик клика на каждую кнопку языка
+                langSubmenu.querySelectorAll('a').forEach(function(elem) {
+                    elem.addEventListener('click', function() {
+                        const lang = this.getAttribute('lang');
+                        changeLanguage(lang);
+                    });
+                });
+            });
+        </script>
 		<script src="main/js/aboutdata.js"></script>
 		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -79,10 +145,22 @@
 
             <ul class="lang">
                 <li class="section" id="lang-trigger">
-                    <a class="button">RU</a>
+                    <div class="button">
+                        <svg width="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g stroke-width="0"></g>
+                            <g stroke-linecap="round" stroke-linejoin="round"></g>
+                            <path d="M20.58 19.37L17.59 11.01C17.38 10.46 16.91 10.12 16.37 10.12C15.83 10.12 15.37 10.46 15.14 11.03L12.16 19.37C12.02 19.76 12.22 20.19 12.61 20.33C13 20.47 13.43 20.27 13.57 19.88L14.19 18.15H18.54L19.16 19.88C19.27 20.19 19.56 20.38 19.87 20.38C19.95 20.38 20.04 20.37 20.12 20.34C20.51 20.2 20.71 19.77 20.57 19.38L20.58 19.37ZM14.74 16.64L16.38 12.05L18.02 16.64H14.74ZM12.19 7.85C9.92999 11.42 7.89 13.58 5.41 15.02C5.29 15.09 5.16 15.12 5.04 15.12C4.78 15.12 4.53 14.99 4.39 14.75C4.18 14.39 4.3 13.93 4.66 13.73C6.75999 12.51 8.48 10.76 10.41 7.86H4.12C3.71 7.86 3.37 7.52 3.37 7.11C3.37 6.7 3.71 6.36 4.12 6.36H7.87V4.38C7.87 3.97 8.21 3.63 8.62 3.63C9.02999 3.63 9.37 3.97 9.37 4.38V6.36H13.12C13.53 6.36 13.87 6.7 13.87 7.11C13.87 7.52 13.53 7.86 13.12 7.86H12.18L12.19 7.85ZM12.23 15.12C12.1 15.12 11.97 15.09 11.85 15.02C11.2 14.64 10.57 14.22 9.97999 13.78C9.64999 13.53 9.58 13.06 9.83 12.73C10.08 12.4 10.55 12.33 10.88 12.58C11.42 12.99 12.01 13.37 12.61 13.72C12.97 13.93 13.09 14.39 12.88 14.75C12.74 14.99 12.49 15.12 12.23 15.12Z" fill="#ffffff"></path>
+                        </svg>
+                    </div>
                     <ul class="submenu" id="lang-submenu">
                         <li>
-                            <a class="button" href="#">...</a>
+                            <a class="button" lang="EN">EN</a>
+                        </li>
+                        <li>
+                            <a class="button" lang="RU">RU</a>
+                        </li>
+                        <li>
+                            <a class="button" lang="PL">PL</a>
                         </li>
                     </ul>
                 </li>
@@ -250,6 +328,7 @@
                 initializeSubMenu('links-trigger', 'links-submenu');
                 initializeSubMenu('lang-trigger', 'lang-submenu');
             </script>
+            
         </nav>
 
         <img class="bg" src="main/img/about-bg.svg">
@@ -418,8 +497,8 @@
 
                                 noteElement.innerHTML = `
                                 <a href="${note.link}">
-                                    <span class="notetitle">${note.titleRU}</span>
-                                    <span class="notetext">${note.textRU}</span>
+                                    <span class="notetitle">${note.title[currentLanguage]}</span>
+                                    <span class="notetext">${note.text[currentLanguage]}</span>
                                     <div class="noteshape" style="background-color: ${note.color};"></div>
                                     <img src="${note.img}">
                                     </a>
@@ -474,7 +553,7 @@
                                 selectedButton.classList.add('active');
     
                                 const data = coinData[coin];
-                                document.getElementById('coinText').innerHTML = `${data.textRU}`;
+                                document.getElementById('coinText').innerHTML = `${data.text[currentLanguage]}`;
                                 document.getElementById('coinAddress').value = data.address;
     
                                 document.getElementById('coinAddressQR').classList.add('fade-out');
@@ -523,8 +602,8 @@
                                 reviewElement.innerHTML = `
                                     <div class="reviewcontainer">
                                         <img class="reviewimg" src="${review.img}">
-                                        <span class="reviewname">${review.nameRU}</span>
-                                        <span class="reviewtext">«${review.textRU}»</span>
+                                        <span class="reviewname">${review.name[currentLanguage]}</span>
+                                        <span class="reviewtext">«${review.text[currentLanguage]}»</span>
                                     </div>
                                     `;
 
@@ -552,9 +631,9 @@
                             faq.forEach(faq => {
                                 const faqElement = document.createElement("div");
                                 faqElement.innerHTML = `
-                                <div class="faq-header button">${faq.titleRU}</div>
+                                <div class="faq-header button">${faq.title[currentLanguage]}</div>
                                 <div class="faq-content">
-                                    <p>${faq.textRU}</p>
+                                    <p>${faq.text[currentLanguage]}</p>
                                 </div>
                                 `;
                                 faqContainer.appendChild(faqElement);
@@ -662,7 +741,7 @@
                                 const randomFact = facts[randomIndex];
 
                                 document.getElementById('factImage').src = randomFact.img;
-                                document.getElementById('factText').textContent = randomFact.textRU;
+                                document.getElementById('factText').textContent = randomFact.text[currentLanguage];
                             }
 
                             showRandomFact();
@@ -688,7 +767,7 @@
                                     softElement.target = '_blank';
                                     softElement.innerHTML = `
                                         <img src="${soft.img}">
-                                        <p class="text">${soft.textRU}</p>
+                                        <p class="text">${soft.text[currentLanguage]}</p>
                                     `;
                                     softContainer.appendChild(softElement);
                                 });
@@ -706,7 +785,7 @@
                                     lessonsElement.target = '_blank';
                                     lessonsElement.innerHTML = `
                                         <img src="${lessons.img}">
-                                        <p class="text">${lessons.textRU}</p>
+                                        <p class="text">${lessons.text[currentLanguage]}</p>
                                     `;
                                     lessonsContainer.appendChild(lessonsElement);
                                 });

@@ -60,24 +60,34 @@ const faq = [
     },
     text: {
       RU: "Тильда — отличный выбор, для небольших проектов или для больших, но с бюджетом. Почему именно так? Все дело в том, что Тильда это конструктор сайтов, за счет гибкости платформы после разработки сайта вы сможете даже сами корректировать тексты и менять картинки. Но придется мирится с тем, что у неё есть или покупать подписки и платить за дополнительную разработку. В любом случае это до сих пор дешевле чем разработка сайта с нуля.",
+      EN: "Тильда — отличный выбор, для небольших проектов или для больших, но с бюджетом. Почему именно так? Все дело в том, что Тильда это конструктор сайтов, за счет гибкости платформы после разработки сайта вы сможете даже сами корректировать тексты и менять картинки. Но придется мирится с тем, что у неё есть или покупать подписки и платить за дополнительную разработку. В любом случае это до сих пор дешевле чем разработка сайта с нуля.",
+      PL: "Tilda — to doskonały wybór dla małych projektów lub dla dużych, ale z budżetem. Dlaczego właśnie? Rzecz w tym, że Tilda jest projektantem stron internetowych, ze względu na elastyczność platformy po rozwinięciu strony, możesz nawet samodzielnie dostosować teksty i zmienić obrazki. Ale trzeba znosić fakt, że ona ma lub kupuje subskrypcje i płacić za dodatkowy rozwój. W każdym razie jest to nadal tańsze niż tworzenie witryny od podstaw.",
     },
   },
 
   {
     title: {
       RU: "Почему такая цена?",
+      EN: "Почему такая цена?",
+      PL: "Dlaczego taka cena?",
     },
     text: {
       RU: "Сделать сайт, написать модификацию, улучшить модификацию — не так просто и быстро как кажется. Процесс разработки включает множество неявных этапов, которые напрямую влияют на результат. Разработка - процесс тонкий и кропотливый. В ходе работы зачастую происходят правки, которые увеличивают сложность и время работы над проектом. Это долгая работа, которая требует определенных навыков, ради которых я постоянно прохожу обучение, поэтому стоимость за разработку не может быть низкой.",
+      EN: "Сделать сайт, написать модификацию, улучшить модификацию — не так просто и быстро как кажется. Процесс разработки включает множество неявных этапов, которые напрямую влияют на результат. Разработка - процесс тонкий и кропотливый. В ходе работы зачастую происходят правки, которые увеличивают сложность и время работы над проектом. Это долгая работа, которая требует определенных навыков, ради которых я постоянно прохожу обучение, поэтому стоимость за разработку не может быть низкой.",
+      PL: "Zrób stronę, napisz modyfikację, ulepsz modyfikację — nie tak prostą i szybką, jak się wydaje. Proces rozwoju obejmuje wiele ukrytych kroków, które bezpośrednio wpływają na wynik. Rozwój to delikatny i żmudny proces. W toku prac często pojawiają się edycje zwiększające złożoność i czas pracy nad projektem. Jest to długa praca, która wymaga pewnych umiejętności, do których stale przechodzę szkolenia, więc koszt rozwoju nie może być niski.",
     },
   },
 
   {
     title: {
       RU: "В чем отличие правок от редакций?",
+      EN: "В чем отличие правок от редакций?",
+      PL: "Jaka jest różnica między edycjami a edycjami?",
     },
     text: {
       RU: "Правки - это когда вы просите внести мелкие изменения: поменять цвет, передвинуть кнопку, скруглить края...<br><br>Редакции - это когда вы просите внести крупные изменения: поменять функционал, изменить дизайн блока, сделать новый блок...",
+      EN: "Правки - это когда вы просите внести мелкие изменения: поменять цвет, передвинуть кнопку, скруглить края...<br><br>Редакции - это когда вы просите внести крупные изменения: поменять функционал, изменить дизайн блока, сделать новый блок...",
+      PL: "Edycje są wtedy, gdy prosisz o drobne zmiany: zmień kolor, przesuń przycisk, przekręć krawędzie ... < br >< br > Edycje - to wtedy prosisz o większe zmiany: zmień funkcjonalność, zmień projekt bloku, zrób nowy blok...",
     },
   },
 
@@ -89,6 +99,8 @@ const facts = [
     img: "https://avatars.githubusercontent.com/u/50206778?s=200&v=4",
     text: {
       RU: "Если кто-то из вас когда-то жаловался, что Airtable платный. То я нашел для вас Nocodb, обязательно погуглите!",
+      EN: "Если кто-то из вас когда-то жаловался, что Airtable платный. То я нашел для вас Nocodb, обязательно погуглите!",
+      PL: "Jeśli ktoś z Was kiedyś skarżył się, że Airtable otrzymuje zapłatę. Znalazłem dla ciebie Nocodb, koniecznie google!",
     },
   },
 

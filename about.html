@@ -66,30 +66,40 @@
         <nav class="navigation">
             <ul class="menu">
                 <li class="section">
-                    <a class="button" key="0" href="/">Портфолио</a>
+                    <a class="button tportfolio" href="/">Портфолио</a>
                 </li>
                 <li class="section" id="projects-trigger">
-                    <a class="button" key="1">Проекты</a>
+                    <a class="button tprojects">Проекты</a>
                     <ul class="submenu" id="projects-submenu">
                         <li><a class="button" title="Система защиты контента" href="https://deusnotam.github.io" target="_blank">DEUS</a></li>
                     </ul>
                 </li>
                 <li class="section">
-                    <a class="button active" key="2" href="/about">Обо мне</a>
+                    <a class="button active tabout" href="/about">Обо мне</a>
                 </li>
             </ul>
             <script>
-                function updateMenuText(language) {
-    menu.forEach((item, index) => {
-        const menuItem = document.querySelector(`.menu .section:nth-child(${index + 1}) .button`);
-        const key = Object.keys(item)[0];
-        menuItem.textContent = menu[index][key][language];
-    });
-}
+                function changeMenuText(language) {
+                    const portfolioElement = document.querySelector('.tportfolio');
+                    if (portfolioElement) {
+                        const portfolioText = menu[0].portfolio[language];
+                        portfolioElement.textContent = portfolioText;
+                    }
 
-// Предполагается, что переменная currentLanguage содержит текущий выбранный язык, например, "RU", "EN" или "PL".
-// Запускаем функцию обновления текста меню согласно текущему языку
-updateMenuText(currentLanguage);
+                    const projectsElement = document.querySelector('.tprojects');
+                    if (projectsElement) {
+                        const projectsText = menu[1].projects[language];
+                        projectsElement.textContent = projectsText;
+                    }
+
+                    const aboutElement = document.querySelector('.tabout');
+                    if (aboutElement) {
+                        const aboutText = menu[2].about[language];
+                        aboutElement.textContent = aboutText;
+                    }
+                }
+
+                changeMenuText(currentLanguage);
             </script>
 
             <ul class="lang">

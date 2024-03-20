@@ -510,6 +510,37 @@
                         </script>
                     </div>
 
+                    <div class="aboutcard reviews">
+                        <div class="reviewscontainer" id="reviewsContainer"></div>
+                        <script>
+                            const reviewsContainer = document.getElementById("reviewsContainer");
+
+                            reviews.forEach(review => {
+                                const reviewElement = document.createElement("div");
+                                reviewElement.className = "review";
+
+                                reviewElement.innerHTML = `
+                                    <div class="reviewcontainer">
+                                        <img class="reviewimg" src="${review.img}">
+                                        <span class="reviewname">${review.nameRU}</span>
+                                        <span class="reviewtext">«${review.textRU}»</span>
+                                    </div>
+                                    `;
+
+                                    reviewsContainer.appendChild(reviewElement);
+                                });
+
+                                $('#reviewsContainer').slick({
+                                    infinite: true,
+                                    slidesToShow: 1,
+                                    slidesToScroll: 1,
+                                    autoplay: true,
+                                    autoplaySpeed: 10000,
+                                    arrows: false,
+                                });
+                        </script>
+                    </div>
+
                     <div class="aboutcard faq">
                         <span>Ответы на вопросы</span>
                         <div class="faqcontainer" id="faqContainer"></div>
@@ -520,8 +551,8 @@
                             faq.forEach(faq => {
                                 const faqElement = document.createElement("div");
                                 faqElement.innerHTML = `
-                                <div class="card-header button">${faq.titleRU}</div>
-                                <div class="card-content">
+                                <div class="faq-header button">${faq.titleRU}</div>
+                                <div class="faq-content">
                                     <p>${faq.textRU}</p>
                                 </div>
                                 `;
@@ -529,21 +560,25 @@
                             });
 
                             document.addEventListener("DOMContentLoaded", function() {
-                                const cardHeaders = document.querySelectorAll(".aboutcard .card-header");
+                                const cardHeaders = document.querySelectorAll(".aboutcard .faq-header");
   
                                 cardHeaders.forEach(function(header) {
                                     header.addEventListener("click", function() {
                                         const content = this.nextElementSibling;
+
+                                        const isActive = this.classList.contains("active");
       
-                                        document.querySelectorAll(".aboutcard .card-header").forEach(function(item) {
+                                        document.querySelectorAll(".aboutcard .faq-header").forEach(function(item) {
                                             item.classList.remove("active");
                                         });
-                                        document.querySelectorAll(".aboutcard .card-content").forEach(function(item) {
+                                        document.querySelectorAll(".aboutcard .faq-content").forEach(function(item) {
                                             item.classList.remove("active");
                                         });
       
-                                        this.classList.add("active");
-                                        content.classList.add("active");
+                                        if (!isActive) {
+                                            this.classList.add("active");
+                                            content.classList.add("active");
+                                        }
                                     });
                                 });
                             });
@@ -659,7 +694,7 @@
                             </script>
 
                             <div class="aboutflex aboutflex-col aboutgap-4" id="lessonsContainer">
-                                <p style="margin: 0;">Уроки</p>
+                                <p style="margin: 0;">Материал</p>
                             </div>
                             <script>
                                 const lessonsContainer = document.getElementById("lessonsContainer");

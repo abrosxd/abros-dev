@@ -21,6 +21,7 @@
         <link rel="android-chrome-512x512" href="main/img/icon/android-chrome-512x512.png">
 		<!-- Assets -->
 		<link rel="stylesheet" href="main/css/style.css">
+        <script src="main/js/langdata.js"></script>
         <script src="main/js/lang.js"></script>
         <script src="main/js/aboutdata.js"></script>
 		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
@@ -80,15 +81,12 @@
             <script>
                 function updateMenuText() {
                     const menuItems = document.querySelectorAll('.menu .section .button');
-
                     menuItems.forEach(item => {
                         const menuItemKey = item.parentElement.classList[0];
                         const menuItemText = menu.find(menuItem => menuItem.hasOwnProperty(menuItemKey))[menuItemKey][currentLanguage];
-
                         item.textContent = menuItemText;
                     });
                 }
-                
                 updateMenuText();
             </script>
 

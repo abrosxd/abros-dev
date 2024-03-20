@@ -42,20 +42,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function replaceTextWithRussian() {
-        // Получаем все элементы меню
         const menuItems = document.querySelectorAll('.menu .section');
     
-        // Проходимся по каждому элементу меню
         menuItems.forEach((menuItem, index) => {
-            // Получаем ключ объекта меню из массива menu
             const menuItemKey = Object.keys(menu[index])[0];
-            // Получаем русский текст из объекта меню
             const russianText = menu[index][menuItemKey].RU;
-            // Устанавливаем русский текст в элемент меню
             menuItem.querySelector('.button').textContent = russianText;
         });
     }
     
-    // Вызываем функцию для замены текста на русский язык
     replaceTextWithRussian();
 });

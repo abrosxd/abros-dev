@@ -66,33 +66,32 @@
         <nav class="navigation">
             <ul class="menu">
                 <li class="section">
-                    <a class="button" href="/">Портфолио</a>
+                    <a class="button" key="0" href="/">Портфолио</a>
                 </li>
                 <li class="section" id="projects-trigger">
-                    <a class="button">Проекты</a>
+                    <a class="button" key="1">Проекты</a>
                     <ul class="submenu" id="projects-submenu">
                         <li><a class="button" title="Система защиты контента" href="https://deusnotam.github.io" target="_blank">DEUS</a></li>
                     </ul>
                 </li>
                 <li class="section">
-                    <a class="button active" href="/about">Обо мне</a>
+                    <a class="button active" key="2" href="/about">Обо мне</a>
                 </li>
             </ul>
             <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    function updateMenuText() {
-                        const menuItems = document.querySelectorAll('.menu .section .button');
-                        menuItems.forEach(item => {
-                            const parentElement = item.parentElement;
-                            if (parentElement.classList.contains('section')) {
-                                const menuItemKey = parentElement.classList[0];
-                                const menuItemText = menu.find(menuItem => menuItem.hasOwnProperty(menuItemKey))[menuItemKey][currentLanguage];
-                                item.textContent = menuItemText;
-                            }
-                        });
-                    }
-                    updateMenuText();
-                });
+                function updateMenuText() {
+    const menuItems = document.querySelectorAll('.menu .section a.button');
+    menuItems.forEach((menuItem, index) => {
+        const key = menuItem.getAttribute('key');
+        const menuItemText = menu[index][key][currentLanguage];
+        menuItem.textContent = menuItemText;
+    });
+}
+
+// Вызываем функцию обновления текста меню при загрузке страницы
+window.onload = function() {
+    updateMenuText();
+};
             </script>
 
             <ul class="lang">

@@ -4,9 +4,13 @@ const notes = [
     link: "#",
     title: {
       RU: "Новости",
+      EN: "Новости",
+      PL: "Новости",
     },
     text: {
       RU: "Ну то, что вы видите этот сайт - можно считать новостью 🤗",
+      EN: "Ну то, что вы видите этот сайт - можно считать новостью 🤗",
+      PL: "Cóż, to, co widzisz na tej stronie, można uznać za aktualności 🤗",
     },
     color: "rgb(72, 154, 255)",
     img: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTM0cHlobXc1aDVkN2ptaWhlODM0eXV0cW1tdXBmbXdza3VlMjV2NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kfqjGTVX3YE6Y/giphy.gif",

@@ -32,8 +32,8 @@
                 }
                 document.cookie = name + "=" + (value || "") + expires + "; path=/";
             }
-    
-            // Функция для получения куки
+        
+            // Функция для получения значения куки
             function getCookie(name) {
                 var nameEQ = name + "=";
                 var ca = document.cookie.split(';');
@@ -44,49 +44,38 @@
                 }
                 return null;
             }
-    
+        
             // Функция для удаления куки
             function eraseCookie(name) {
                 document.cookie = name + '=; Max-Age=-99999999;';
             }
-    
-            // Функция для перезагрузки страницы
+        
+            // Функция для обновления страницы
             function reloadPage() {
                 window.location.reload();
             }
-    
-            // Функция для изменения языка
-            function changeLanguage(lang) {
-                setCookie('currentLanguage', lang, 365); // Устанавливаем куки с выбранным языком
-                reloadPage(); // Перезагружаем страницу
-            }
-
-            const currentLanguageCookie = getCookie('currentLanguage');
-    
-            // Ожидаем загрузки DOM
-            document.addEventListener("DOMContentLoaded", function() { // Получаем значение текущего языка из куки
-                const langTrigger = document.getElementById('lang-trigger');
-                const langSubmenu = document.getElementById('lang-submenu');
-    
-                // Проверяем, установлен ли текущий язык в куки
-                if (currentLanguageCookie) {
-                    // Если установлен, изменяем переменную currentLanguage на значение из куки
-                    langSubmenu.querySelectorAll('a').forEach(function(elem) {
-                        if (elem.getAttribute('lang') === currentLanguageCookie) {
-                            currentLanguage = currentLanguageCookie;
-                        }
-                    });
-                }
-    
-                // Назначаем обработчик клика на каждую кнопку языка
-                langSubmenu.querySelectorAll('a').forEach(function(elem) {
-                    elem.addEventListener('click', function() {
-                        const lang = this.getAttribute('lang');
-                        changeLanguage(lang);
-                    });
-                });
+        
+            // Проверяем, есть ли уже сохраненное значение языка в куки
+            var savedLanguage = getCookie("currentLanguage");
+        
+            // Если значение не найдено, устанавливаем английский язык по умолчанию
+            var currentLanguage = savedLanguage || "EN";
+        
+            // Здесь можно вставить ваш код, который использует переменную currentLanguage
+        
+            // При выборе языка пользователем обновляем значение переменной и куки
+            document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.submenu .button').forEach(function(item) {
+            item.addEventListener('click', function() {
+                var currentLanguage = this.getAttribute('lang');
+                setCookie("currentLanguage", currentLanguage, 30); // Сохраняем язык в куки на 30 дней
+                reloadPage(); // Перезагружаем страницу после изменения языка
             });
+        });
+    });
         </script>
+        
+        
 		<script src="main/js/aboutdata.js"></script>
 		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>

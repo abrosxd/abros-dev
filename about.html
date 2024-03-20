@@ -83,9 +83,12 @@
                     function updateMenuText() {
                         const menuItems = document.querySelectorAll('.menu .section .button');
                         menuItems.forEach(item => {
-                            const menuItemKey = item.parentElement.classList[0];
-                            const menuItemText = menu.find(menuItem => menuItem.hasOwnProperty(menuItemKey))[menuItemKey][currentLanguage];
-                            item.textContent = menuItemText;
+                            const parentElement = item.parentElement;
+                            if (parentElement.classList.contains('section')) {
+                                const menuItemKey = parentElement.classList[0];
+                                const menuItemText = menu.find(menuItem => menuItem.hasOwnProperty(menuItemKey))[menuItemKey][currentLanguage];
+                                item.textContent = menuItemText;
+                            }
                         });
                     }
                     updateMenuText();

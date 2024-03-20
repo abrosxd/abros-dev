@@ -465,12 +465,23 @@
 
                     <div class="aboutcard hello">
                         <img src="main/img/me.jpg">
-                        <p>👋 Хай — Я Данил , Веб-разработчик / Веб-дизайнер. Здесь ты сможешь найти всё обо мне и даже больше.</p>
+                        <p class="thello">👋 Хай — Я Данил , Веб-разработчик / Веб-дизайнер. Здесь ты сможешь найти всё обо мне и даже больше.</p>
                     </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                        function changeHelloText(language) {
+                            const helloElement = document.querySelector('.thello');
+                            const helloText = aboutinfome[language];
+                            helloElement.textContent = helloText;
+                        }
+        
+                        changeHelloText(currentLanguage);
+                    });
+                    </script>
 
                     <div class="aboutcard time" id="timeCard">
                         <div style="align-self: center;">
-                            <span>Мое время</span>
+                            <span class="ttime">Мое время</span>
                             <span class="tag" style="background-color: #a8cfff80; color: #0051ff;">Warszawa</span>
                         </div>
                         <div class="timeblock">
@@ -483,10 +494,19 @@
                             </div>
                         </div>
                         <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            function changeTimeText(language) {
+                                const timeElement = document.querySelector('.ttime');
+                                const timeText = aboutinfotime[0].title[language];
+                                timeElement.textContent = timeText;
+                            }
+
+                            changeTimeText(currentLanguage);
+
                             function updateDateTime() {
                                 var nowInWarsaw = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Warsaw"}));
                             
-                                var daysOfWeek = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+                                var daysOfWeek = aboutinfotime[1].days[language];
                                 var currentDay = daysOfWeek[nowInWarsaw.getDay()];
                             
                                 var currentDate = nowInWarsaw.getDate().toString().padStart(2, '0') + '/' + (nowInWarsaw.getMonth() + 1).toString().padStart(2, '0');
@@ -497,11 +517,10 @@
                                 document.getElementById('currentDate').innerText = currentDate;
                                 document.getElementById('currentTime').innerText = currentTime;
                             }
-                            
-                            document.addEventListener('DOMContentLoaded', function() {
+                                                     
                                 updateDateTime();
                                 setInterval(updateDateTime, 1000);
-                            });
+                        });
                         </script>
                     </div>
 
@@ -538,7 +557,7 @@
                     </div>
 
                     <div class="aboutcard pay">
-                        <span>Донаты и реквизиты</span>
+                        <span class="tpay">Донаты и реквизиты</span>
                         <p id="coinText" style="margin: 0;"></p>
                         <div class="tab-menu">
                             <button class="button active" onclick="selectCoin('BTC')">BTC</button>
@@ -555,7 +574,7 @@
                             <div id="coinAddressQR" style="display: flex; justify-content: center;"></div>
                             <div style="display: flex; margin-top: 2rem;">
                                 <input id="coinAddress" value="" style="font-size: 13px; width: 80%; background-color: rgba(255, 255, 255, 0.2); color: white; border: none;" readonly>
-                                <button class="button" onclick="copyAddress()" style="font-size: 13px;">Скопировать</button>
+                                <button class="button tpaybutton" onclick="copyAddress()" style="font-size: 13px;">Скопировать</button>
                             </div>
                         </div>
                         <script>                       
@@ -595,21 +614,36 @@
                                 document.execCommand('copy');
      
                                 var copyButton = document.querySelector('.tab-content button');
-                                copyButton.textContent = 'Скопировано';
+                                copyButton.textContent = `${aboutinfopay[3].buttonclick[currentLanguage]}`;
                                 copyButton.classList.add('copy-success');
     
                                 setTimeout(() => {
-                                    copyButton.textContent = 'Скопировать';
+                                    copyButton.textContent = `${aboutinfopay[2].button[currentLanguage]}`;
                                     copyButton.classList.remove('copy-success');
                                 }, 2000);
                             }
     
                             selectCoin('BTC');
+
+
+                            document.addEventListener('DOMContentLoaded', function() {
+                                function changePayText(language) {
+                                    const payElement = document.querySelector('.tpay');
+                                    const payText = aboutinfopay[0].title[language];
+                                    payElement.textContent = payText;
+
+                                    const paybuttonElement = document.querySelector('.tpaybutton');
+                                    const paybuttonText = aboutinfopay[2].button[language];
+                                    paybuttonElement.textContent = paybuttonText;
+                                }
+        
+                                changePayText(currentLanguage);
+                            });
                         </script>
                     </div>
 
                     <div class="aboutcard reviews">
-                        <span>Отзывы</span>
+                        <span class="treviews">Отзывы</span>
                         <div class="reviewscontainer" id="reviewsContainer"></div>
                         <script>
                             const reviewsContainer = document.getElementById("reviewsContainer");
@@ -637,11 +671,21 @@
                                     autoplaySpeed: 5000,
                                     arrows: false,
                                 });
+
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    function changeReviewsText(language) {
+                                        const reviewsElement = document.querySelector('.treviews');
+                                        const reviewsText = aboutinforeviews[language];
+                                        reviewsElement.textContent = reviewsText;
+                                    }
+        
+                                    changeReviewsText(currentLanguage);
+                                });
                         </script>
                     </div>
 
                     <div class="aboutcard faq">
-                        <span>Ответы на вопросы</span>
+                        <span class="tfaq">Ответы на вопросы</span>
                         <div class="faqcontainer" id="faqContainer"></div>
 
                         <script>
@@ -680,6 +724,14 @@
                                         }
                                     });
                                 });
+
+                                function changeFAQText(language) {
+                                    const faqElement = document.querySelector('.tfaq');
+                                    const faqText = aboutinfofaq[language];
+                                    faqElement.textContent = faqText;
+                                }
+        
+                                changeFAQText(currentLanguage);
                             });
 
                         </script>

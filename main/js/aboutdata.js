@@ -150,6 +150,8 @@ const soft = [
     img: "https://yt3.googleusercontent.com/_q52i8bUAEvcb7JR4e-eNTv23y2A_wg5sCz0NC0GrGtcw1CRMWJSOPVHUDh_bngD0q4gMvVeoA=s900-c-k-c0x00ffffff-no-rj",
     text: {
       RU: "Visual Studio Code — редактор исходного кода, разработанный Microsoft для Windows, Linux и macOS.",
+      EN: "Visual Studio Code — редактор исходного кода, разработанный Microsoft для Windows, Linux и macOS.",
+      PL: "Visual Studio Code — edytor kodu źródłowego opracowany przez Microsoft dla systemów Windows, Linux i macOS.",
     },
   },
 
@@ -159,6 +161,8 @@ const soft = [
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Adobe_Creative_Cloud_rainbow_icon.svg/1200px-Adobe_Creative_Cloud_rainbow_icon.svg.png",
     text: {
       RU: "Photoshop, Illustrator, Premiere Pro, After Effects и многое другое в одной подписке Adobe Creative Cloud.",
+      EN: "Photoshop, Illustrator, Premiere Pro, After Effects и многое другое в одной подписке Adobe Creative Cloud.",
+      PL: "Photoshop, Illustrator, Premiere Pro, After Effects i wiele więcej na jednej subskrypcji Adobe Creative Cloud.",
     },
   },
 
@@ -168,6 +172,8 @@ const soft = [
     img: "https://maxst.icons8.com/vue-static/icon/menu/logo.svg",
     text: {
       RU: "Сайт с иконками, иллюстрациями, фотографиями и 3D моделями для ваших проектов.",
+      EN: "Сайт с иконками, иллюстрациями, фотографиями и 3D моделями для ваших проектов.",
+      PL: "Strona z ikonami, ilustracjami, zdjęciami i modelami 3 D dla Twoich projektów.",
     },
   },
 
@@ -181,6 +187,8 @@ const lessons = [
     img: "https://upload.wikimedia.org/wikipedia/en/d/d0/Dogecoin_Logo.png",
     text: {
       RU: "Скоро тут появятся уроки, а пока вот вам Dogecoin.",
+      EN: "Скоро тут появятся уроки, а пока вот вам Dogecoin.",
+      PL: "Lekcje pojawią się tutaj wkrótce, ale na razie masz Dogecoin.",
     },
   },
 
@@ -237,15 +245,15 @@ const stack = [
   },
 
   {
-    "title": "HTML",
-    "color": "#ffffff",
-    "bgcolor": "#ff590080",
+    title: "HTML",
+    color: "#ffffff",
+    bgcolor: "#ff590080",
   },
 
   {
-    "title": "JavaScript",
-    "color": "#000000",
-    "bgcolor": "#f6ff0080",
+    title: "JavaScript",
+    color: "#000000",
+    bgcolor: "#f6ff0080",
   },
 
   {
@@ -273,54 +281,72 @@ const coinData = {
   BTC: {
     text: {
       RU: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(255 147 0 / 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      EN: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(255 147 0 / 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      PL: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(255 147 0 / 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
     },
     address: 'bc1qrpmcy4zz7g6rtfxka8j4nk3yka72kmacvmam0a',
   },
   ETH: {
     text: {
       RU: 'Отправляйте только <span style="color: #fff; background-color: rgb(141 176 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Ethereum(ETH) или активы в сети Ethereum(ERC20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      EN: 'Отправляйте только <span style="color: #fff; background-color: rgb(141 176 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Ethereum(ETH) или активы в сети Ethereum(ERC20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      PL: 'Отправляйте только <span style="color: #fff; background-color: rgb(141 176 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Ethereum(ETH) или активы в сети Ethereum(ERC20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
     },
     address: '0x96800af5023619eA338551a8E20b612C8Dd6192C',
   },
   XRP: {
     text: {
       RU: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 0 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">XRP(XRP)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      EN: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 0 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">XRP(XRP)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      PL: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 0 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">XRP(XRP)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
     },
     address: 'raHW9xPXB3YiQqkraR2DT1oH8vUr7X5EQT',
   },
   TON: {
     text: {
       RU: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 78 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">TON(TON)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      EN: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 78 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">TON(TON)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      PL: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 78 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">TON(TON)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
     },
     address: 'EQAmDD_sRSt-LuVtw9wBfxq8v7eCH-XP3oA8wQuQ5s2EN_wB',
   },
   TRX: {
     text: {
       RU: 'Отправляйте только <span style="color: #fff; background-color: rgb(255 0 0 / 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron(TRX) или активы в сети Tron(TRС20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      EN: 'Отправляйте только <span style="color: #fff; background-color: rgb(255 0 0 / 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron(TRX) или активы в сети Tron(TRС20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      PL: 'Отправляйте только <span style="color: #fff; background-color: rgb(255 0 0 / 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron(TRX) или активы в сети Tron(TRС20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
     },
     address: 'TRD7vypAmXBP5qmXeejGUMXjgUMAMuS3mY',
   },
   SOL: {
     text: {
       RU: 'Отправляйте только <span style="color: #acffec; background-color: rgb(171 0 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana(SOL) или активы в сети Solana(SPL)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      EN: 'Отправляйте только <span style="color: #acffec; background-color: rgb(171 0 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana(SOL) или активы в сети Solana(SPL)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      PL: 'Отправляйте только <span style="color: #acffec; background-color: rgb(171 0 255 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana(SOL) или активы в сети Solana(SPL)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
     },
     address: '8y1QfdDF4XGEWNM5Aj7N19c93MT31kjn3Cu3p5V7YhnX',
   },
   LTC: {
     text: {
       RU: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 47 178 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin(LTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      EN: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 47 178 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin(LTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      PL: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0 47 178 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin(LTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
     },
     address: 'ltc1qrrv5lx0epj37qnp2ltyhrdq6srlky4typzy026',
   },
   BCH: {
     text: {
       RU: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(16 255 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin_Cash(BCH)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      EN: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(16 255 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin_Cash(BCH)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      PL: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(16 255 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin_Cash(BCH)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
     },
     address: 'qq8mpv5fkse5062t7sn0al8545x4lnx03u2wxr4k22',
   },
   DOGE: {
     text: {
       RU: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(255 215 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Dogecoin(DOGE)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      EN: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(255 215 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Dogecoin(DOGE)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
+      PL: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(255 215 0 / 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Dogecoin(DOGE)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
     },
     address: 'DMHtna8VCEB1BUeP2a9ki9TkiFSDMxtbo1',
   },

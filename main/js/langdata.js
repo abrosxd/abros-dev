@@ -40,7 +40,7 @@ const aboutinfotime = [
     },
 
     {
-        daysOfWeek: {
+        days: {
             RU: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
             EN: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
             PL: ['Nd', 'Pn', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob'],

@@ -73,6 +73,25 @@
                     <a class="button" href="/about">Обо мне</a>
                 </li>
             </ul>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                function changeMenuText(language) {
+                    const portfolioElement = document.querySelector('.tportfolio');
+                    const portfolioText = menu[0].portfolio[language];
+                    portfolioElement.textContent = portfolioText;
+
+                    const projectsElement = document.querySelector('.tprojects');
+                    const projectsText = menu[1].projects[language];
+                    projectsElement.textContent = projectsText;
+
+                    const aboutElement = document.querySelector('.tabout');
+                    const aboutText = menu[2].about[language];
+                    aboutElement.textContent = aboutText;
+                }
+
+                changeMenuText(currentLanguage);
+            });
+            </script>
 
             <ul class="lang">
                 <li class="section" id="lang-trigger">

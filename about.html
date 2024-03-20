@@ -506,7 +506,7 @@
                             function updateDateTime() {
                                 var nowInWarsaw = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Warsaw"}));
                             
-                                var daysOfWeek = aboutinfotime[1].days[language];
+                                var daysOfWeek = aboutinfotime[1].days[currentLanguage];
                                 var currentDay = daysOfWeek[nowInWarsaw.getDay()];
                             
                                 var currentDate = nowInWarsaw.getDate().toString().padStart(2, '0') + '/' + (nowInWarsaw.getMonth() + 1).toString().padStart(2, '0');
@@ -633,7 +633,7 @@
                                     payElement.textContent = payText;
 
                                     const paybuttonElement = document.querySelector('.tpaybutton');
-                                    const paybuttonText = aboutinfopay[2].button[language];
+                                    const paybuttonText = aboutinfopay[1].button[language];
                                     paybuttonElement.textContent = paybuttonText;
                                 }
         
@@ -741,7 +741,7 @@
                 <div class="aboutflex aboutflex-col aboutgap-4">
 
                     <div class="aboutcard gallery">
-                        <span>Фотоальбом</span>
+                        <span class="tgallery">Фотоальбом</span>
                         <div id="imageGallery" class="slick-carousel"></div>
                         <script>
                             const galleryContainer = document.getElementById("imageGallery");
@@ -762,11 +762,21 @@
                                     arrows: false,
                                 });
                             });
+
+                            document.addEventListener('DOMContentLoaded', function() {
+                                function changeGalleryText(language) {
+                                    const galleryElement = document.querySelector('.tgallery');
+                                    const galleryText = aboutinfogallery[language];
+                                    galleryElement.textContent = galleryText;
+                                }
+        
+                                changeGalleryText(currentLanguage);
+                            });
                         </script>
                     </div>
 
                     <div class="aboutcard stack">
-                        <span>Стек</span>
+                        <span class="tstack">Стек</span>
                         <div id="stackGallery" style="line-height: 1.7; display: flex; flex-wrap: wrap;"></div>
                         <script>
                             const stackContainer = document.getElementById("stackGallery");
@@ -777,11 +787,21 @@
                                 stackElement.innerHTML = `<span class="tag" style="background-color: ${stack.bgcolor}; color: ${stack.color};">${stack.title}</span>`;
                                 stackContainer.appendChild(stackElement);
                             });
+
+                            document.addEventListener('DOMContentLoaded', function() {
+                                function changeStackText(language) {
+                                    const stackElement = document.querySelector('.tstack');
+                                    const stackText = aboutinfostack[language];
+                                    stackElement.textContent = stackText;
+                                }
+        
+                                changeStackText(currentLanguage);
+                            });
                         </script>
                     </div>
 
                     <div class="aboutcard randomfacts">
-                        <span>Случайный факт</span>
+                        <span class="tfacts">Случайный факт</span>
                         <div>
                             <img style="height: 50px; border-radius: 10px;" id="factImage"src="">
                             <p id="factText"></p>
@@ -792,7 +812,7 @@
                                         <path d="M77.76 132.287c-4.782 2.762-11.122.735-14.16-4.526c-3.037-5.261-1.622-11.765 3.16-14.526c4.783-2.762 11.123-.735 14.16 4.526c3.038 5.261 1.623 11.765-3.16 14.526m32 21c-4.782 2.762-11.122.735-14.16-4.526c-3.037-5.261-1.622-11.765 3.16-14.526c4.783-2.762 11.123-.735 14.16 4.526c3.038 5.261 1.623 11.765-3.16 14.526m-32 16c-4.782 2.762-11.122.735-14.16-4.526c-3.037-5.261-1.622-11.765 3.16-14.526c4.783-2.762 11.123-.735 14.16 4.526c3.038 5.261 1.623 11.765-3.16 14.526m32 21c-4.782 2.762-11.122.735-14.16-4.526c-3.037-5.261-1.622-11.765 3.16-14.526c4.783-2.762 11.123-.735 14.16 4.526c3.038 5.261 1.623 11.765-3.16 14.526m78.238-78.052c-4.783-2.762-11.122-.735-14.16 4.526c-3.037 5.261-1.623 11.765 3.16 14.526c4.783 2.762 11.123.735 14.16-4.526c3.038-5.261 1.623-11.765-3.16-14.526m-16.238 29c-4.782-2.762-11.122-.735-14.16 4.526c-3.037 5.261-1.622 11.765 3.16 14.526c4.783 2.762 11.123.735 14.16-4.526c3.038-5.261 1.623-11.765-3.16-14.526m-17 28c-4.782-2.762-11.122-.735-14.16 4.526c-3.037 5.261-1.622 11.765 3.16 14.526c4.783 2.762 11.123.735 14.16-4.526c3.038-5.261 1.623-11.765-3.16-14.526M128.5 69c-6.351 0-11.5 4.925-11.5 11s5.149 11 11.5 11S140 86.075 140 80s-5.149-11-11.5-11"></path>
                                     </g>
                                 </svg>
-                                <p style="margin: 0; padding-left: 10px;">Другой факт</p>
+                                <p class="tfactsbutton" style="margin: 0; padding-left: 10px;">Другой факт</p>
                             </span>
                         </div>
                         <script>
@@ -820,6 +840,20 @@
                             function showAnotherFact() {
                                 showRandomFact();
                             }
+
+                            document.addEventListener('DOMContentLoaded', function() {
+                                function changeFactsText(language) {
+                                    const factsElement = document.querySelector('.tfacts');
+                                    const factsText = aboutinforandomfacts[0].title[language];
+                                    factsElement.textContent = factsText;
+
+                                    const factsbuttonElement = document.querySelector('.tfactsbutton');
+                                    const factsbuttonText = aboutinforandomfacts[1].button[language];
+                                    factsbuttonElement.textContent = factsbuttonText;
+                                }
+        
+                                changeFactsText(currentLanguage);
+                            });
                         </script>
                     </div>
 
@@ -827,7 +861,7 @@
                         <div class="aboutgrid aboutgap-4" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
 
                             <div class="aboutflex aboutflex-col aboutgap-4" id="softContainer">
-                                <p style="margin: 0;">Софт</p>
+                                <p class="tsoft" style="margin: 0;">Софт</p>
                             </div>
                             <script>
                                 const softContainer = document.getElementById("softContainer");
@@ -845,7 +879,7 @@
                             </script>
 
                             <div class="aboutflex aboutflex-col aboutgap-4" id="lessonsContainer">
-                                <p style="margin: 0;">Материал</p>
+                                <p class="tmaterials" style="margin: 0;">Материал</p>
                             </div>
                             <script>
                                 const lessonsContainer = document.getElementById("lessonsContainer");
@@ -860,6 +894,20 @@
                                     `;
                                     lessonsContainer.appendChild(lessonsElement);
                                 });
+
+                                document.addEventListener('DOMContentLoaded', function() {
+                                function changeToolsText(language) {
+                                    const softElement = document.querySelector('.tsoft');
+                                    const softText = aboutinfotools[0].soft[language];
+                                    softElement.textContent = softText;
+
+                                    const materialsElement = document.querySelector('.tmaterials');
+                                    const materialsText = aboutinfotools[1].materials[language];
+                                    materialsElement.textContent = materialsText;
+                                }
+        
+                                changeToolsText(currentLanguage);
+                            });
                             </script>
                         </div>
                     </div>

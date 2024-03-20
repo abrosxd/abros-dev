@@ -4,7 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!--metatextblock-->
-		<title>ABROS - Обо мне</title>
+		<title>ABROS - About</title>
 		<meta name="description" content="Привет 👋 Меня зовут Данил и я Веб-разработчик. Добро пожаловать на мой сайт!">
 		<meta property="og:title" content="Daniel Abros - Обо мне">
 		<meta property="og:description" content="Привет 👋 Меня зовут Данил и я Веб-разработчик. Добро пожаловать на мой сайт!">
@@ -21,62 +21,8 @@
         <link rel="android-chrome-512x512" href="main/img/icon/android-chrome-512x512.png">
 		<!-- Assets -->
 		<link rel="stylesheet" href="main/css/style.css">
-        <script>
-            // Функция для установки куки
-            function setCookie(name, value, days) {
-                var expires = "";
-                if (days) {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + (value || "") + expires + "; path=/";
-            }
-        
-            // Функция для получения значения куки
-            function getCookie(name) {
-                var nameEQ = name + "=";
-                var ca = document.cookie.split(';');
-                for (var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-                }
-                return null;
-            }
-        
-            // Функция для удаления куки
-            function eraseCookie(name) {
-                document.cookie = name + '=; Max-Age=-99999999;';
-            }
-        
-            // Функция для обновления страницы
-            function reloadPage() {
-                window.location.reload();
-            }
-        
-            // Проверяем, есть ли уже сохраненное значение языка в куки
-            var savedLanguage = getCookie("currentLanguage");
-        
-            // Если значение не найдено, устанавливаем английский язык по умолчанию
-            var currentLanguage = savedLanguage || "EN";
-        
-            // Здесь можно вставить ваш код, который использует переменную currentLanguage
-        
-            // При выборе языка пользователем обновляем значение переменной и куки
-            document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.submenu .button').forEach(function(item) {
-            item.addEventListener('click', function() {
-                var currentLanguage = this.getAttribute('lang');
-                setCookie("currentLanguage", currentLanguage, 30); // Сохраняем язык в куки на 30 дней
-                reloadPage(); // Перезагружаем страницу после изменения языка
-            });
-        });
-    });
-        </script>
-        
-        
-		<script src="main/js/aboutdata.js"></script>
+        <script src="main/js/lang.js"></script>
+        <script src="main/js/aboutdata.js"></script>
 		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
@@ -131,6 +77,20 @@
                     <a class="button active" href="/about">Обо мне</a>
                 </li>
             </ul>
+            <script>
+                function updateMenuText() {
+                    const menuItems = document.querySelectorAll('.menu .section .button');
+
+                    menuItems.forEach(item => {
+                        const menuItemKey = item.parentElement.classList[0];
+                        const menuItemText = menu.find(menuItem => menuItem.hasOwnProperty(menuItemKey))[menuItemKey][currentLanguage];
+
+                        item.textContent = menuItemText;
+                    });
+                }
+                
+                updateMenuText();
+            </script>
 
             <ul class="lang">
                 <li class="section" id="lang-trigger">
@@ -143,13 +103,77 @@
                     </div>
                     <ul class="submenu" id="lang-submenu">
                         <li>
-                            <a class="button" lang="EN">EN</a>
+                            <a class="button" lang="EN">
+                                <svg width="20px" viewBox="0 -4 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g stroke-width="0"></g>
+                                    <g stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g clip-path="url(#clip0_503_2952)">
+                                        <rect width="28" height="20" rx="2" fill="white"></rect>
+                                        <mask id="mask0_503_2952" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="20">
+                                            <rect width="28" height="20" rx="2" fill="white"></rect>
+                                        </mask>
+                                        <g mask="url(#mask0_503_2952)">
+                                            <rect width="28" height="20" fill="#0A17A7"></rect>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M-1.28244 -1.91644L10.6667 6.14335V-1.33333H17.3334V6.14335L29.2825 -1.91644L30.7737 0.294324L21.3263 6.66667H28V13.3333H21.3263L30.7737 19.7057L29.2825 21.9165L17.3334 13.8567V21.3333H10.6667V13.8567L-1.28244 21.9165L-2.77362 19.7057L6.67377 13.3333H2.95639e-05V6.66667H6.67377L-2.77362 0.294324L-1.28244 -1.91644Z" fill="white"></path>
+                                            <path d="M18.668 6.33219L31.3333 -2" stroke="#DB1F35" stroke-width="0.666667" stroke-linecap="round"></path>
+                                            <path d="M20.0128 13.6975L31.3666 21.3503" stroke="#DB1F35" stroke-width="0.666667" stroke-linecap="round"></path>
+                                            <path d="M8.00555 6.31046L-3.83746 -1.67099" stroke="#DB1F35" stroke-width="0.666667" stroke-linecap="round"></path>
+                                            <path d="M9.29006 13.6049L-3.83746 22.3105" stroke="#DB1F35" stroke-width="0.666667" stroke-linecap="round"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12H12V20H16V12H28V8H16V0H12V8H0V12Z" fill="#E6273E"></path>
+                                        </g>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_503_2952">
+                                            <rect width="28" height="20" rx="2" fill="white"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
                         </li>
                         <li>
-                            <a class="button" lang="RU">RU</a>
+                            <a class="button" lang="RU">
+                                <svg width="20px" viewBox="0 -4 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g stroke-width="0"></g>
+                                    <g stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g clip-path="url(#clip0_503_2726)"> 
+                                        <rect x="0.25" y="0.25" width="27.5" height="19.5" rx="1.75" fill="white" stroke="#F5F5F5" stroke-width="0.5"></rect>
+                                        <mask id="mask0_503_2726" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="20">
+                                            <rect x="0.25" y="0.25" width="27.5" height="19.5" rx="1.75" fill="white" stroke="white" stroke-width="0.5"></rect>
+                                        </mask>
+                                        <g mask="url(#mask0_503_2726)"> 
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 13.3333H28V6.66667H0V13.3333Z" fill="#0C47B7"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 20H28V13.3333H0V20Z" fill="#E53B35"></path>
+                                        </g>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_503_2726">
+                                            <rect width="28" height="20" rx="2" fill="white"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
                         </li>
                         <li>
-                            <a class="button" lang="PL">PL</a>
+                            <a class="button" lang="PL">
+                                <svg width="20px" viewBox="0 -4 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g stroke-width="0"></g>
+                                    <g stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g clip-path="url(#clip0_503_4159)">
+                                        <rect x="0.25" y="0.25" width="27.5" height="19.5" rx="1.75" fill="white" stroke="#F5F5F5" stroke-width="0.5"></rect>
+                                        <mask id="mask0_503_4159" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="20">
+                                            <rect x="0.25" y="0.25" width="27.5" height="19.5" rx="1.75" fill="white" stroke="white" stroke-width="0.5"></rect>
+                                        </mask>
+                                        <g mask="url(#mask0_503_4159)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 20H28V9.33333H0V20Z" fill="#EB2A50"></path>
+                                        </g>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_503_4159">
+                                            <rect width="28" height="20" rx="2" fill="white"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
                         </li>
                     </ul>
                 </li>

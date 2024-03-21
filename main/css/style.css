@@ -1007,6 +1007,13 @@ main {
     justify-content: center;
 }
 
+.aboutcard.time .timeblock .date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .aboutcard.time .timeblock .date p {
     margin: 0;
 }

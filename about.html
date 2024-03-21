@@ -613,12 +613,12 @@
                                 addressInput.select();
                                 document.execCommand('copy');
      
-                                var copyButton = document.querySelector('.tab-content button');
+                                var copyButton = document.querySelector('.tpaybutton');
                                 copyButton.textContent = aboutinfopay[1].buttonclick[currentLanguage];
                                 copyButton.classList.add('copy-success');
     
                                 setTimeout(() => {
-                                    copyButton.textContent = aboutinfopay[2].button[currentLanguage];
+                                    copyButton.textContent = aboutinfopay[1].button[currentLanguage];
                                     copyButton.classList.remove('copy-success');
                                 }, 2000);
                             }

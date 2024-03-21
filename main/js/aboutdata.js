@@ -319,7 +319,7 @@ const coinData = {
     text: {
       RU: 'Отправляйте только <span style="color: #fff; background-color: rgba(255, 0, 0, 0.6); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron(TRX) или активы в сети Tron(TRС20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
       EN: 'Send only <span style="color: #fff; background-color: rgba(255, 0, 0, 0.6); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron(TRX) or assets on the Tron(TRС20) network</span> to this address. Sending other assets will result in permanent loss.',
-      PL: 'Send only <span style="color: #fff; background-color: rgba(255, 0, 0, 0.6); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron(TRX) or assets on the Tron(TRС20) network</span> to this address. Sending other assets will result in permanent loss.',
+      PL: 'Wyślij tylko <span style="color: #fff; background-color: rgba(255, 0, 0, 0.6); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron (TRX) lub aktywa na sieci Tron (TRC20)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.',
     },
     address: 'TRD7vypAmXBP5qmXeejGUMXjgUMAMuS3mY',
   },
@@ -327,7 +327,7 @@ const coinData = {
     text: {
       RU: 'Отправляйте только <span style="color: #acffec; background-color: rgba(171, 0, 255, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana(SOL) или активы в сети Solana(SPL)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
       EN: 'Send only <span style="color: #acffec; background-color: rgba(171, 0, 255, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana(SOL) or assets on the Solana(SPL) network</span> to this address. Sending other assets will result in permanent loss.',
-      PL: 'Send only <span style="color: #acffec; background-color: rgba(171, 0, 255, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana(SOL) or assets on the Solana(SPL) network</span> to this address. Sending other assets will result in permanent loss.',
+      PL: 'Wyślij tylko <span style="color: #acffec; background-color: rgba(171, 0, 255, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana (SOL) lub aktywa na sieci Solana (SPL)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.',
     },
     address: '8y1QfdDF4XGEWNM5Aj7N19c93MT31kjn3Cu3p5V7YhnX',
   },
@@ -335,7 +335,7 @@ const coinData = {
     text: {
       RU: 'Отправляйте только активы <span style="color: #fff; background-color: rgba(0, 47, 178, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin(LTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
       EN: 'Send only assets <span style="color: #fff; background-color: rgba(0, 47, 178, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin(LTC)</span> to this address. Sending other assets will result in permanent loss.',
-      PL: 'Send only assets <span style="color: #fff; background-color: rgba(0, 47, 178, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin(LTC)</span> to this address. Sending other assets will result in permanent loss.',
+      PL: 'Wyślij tylko aktywa <span style="color: #fff; background-color: rgba(0, 47, 178, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin (LTC)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.',
     },
     address: 'ltc1qrrv5lx0epj37qnp2ltyhrdq6srlky4typzy026',
   },
@@ -343,7 +343,7 @@ const coinData = {
     text: {
       RU: 'Отправляйте только активы <span style="color: #fff; background-color: rgba(16, 255, 0, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin_Cash(BCH)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
       EN: 'Send only assets <span style="color: #fff; background-color: rgba(16, 255, 0, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin_Cash(BCH)</span> to this address. Sending other assets will result in permanent loss.',
-      PL: 'Send only assets <span style="color: #fff; background-color: rgba(16, 255, 0, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin_Cash(BCH)</span> to this address. Sending other assets will result in permanent loss.',
+      PL: 'Wyślij tylko aktywa <span style="color: #fff; background-color: rgba(16, 255, 0, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin Cash (BCH)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.',
     },
     address: 'qq8mpv5fkse5062t7sn0al8545x4lnx03u2wxr4k22',
   },
@@ -351,7 +351,7 @@ const coinData = {
     text: {
       RU: 'Отправляйте только активы <span style="color: #fff; background-color: rgba(255, 215, 0, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Dogecoin(DOGE)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.',
       EN: 'Send only assets <span style="color: #fff; background-color: rgba(255, 215, 0, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Dogecoin(DOGE)</span> to this address. Sending other assets will result in permanent loss.',
-      PL: 'Send only assets <span style="color: #fff; background-color: rgba(255, 215, 0, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Dogecoin(DOGE)</span> to this address. Sending other assets will result in permanent loss.',
+      PL: 'Wyślij tylko aktywa <span style="color: #fff; background-color: rgba(255, 215, 0, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Dogecoin (DOGE)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.',
     },
     address: 'DMHtna8VCEB1BUeP2a9ki9TkiFSDMxtbo1',
   },

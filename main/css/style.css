@@ -1170,8 +1170,14 @@ main {
     }
 }
 
-.faq-header.button {
+.aboutcard.faq .faqcontainer .faq-header.button {
     font-size: 14px;
+}
+
+@media (max-width: 767px) {
+    .aboutcard.faq .faqcontainer .faq-header.button {
+        font-size: 12px;
+    }
 }
 
 .aboutcard.faq .faqcontainer .faq-content {
@@ -1181,6 +1187,12 @@ main {
     background-color: rgb(0 0 0 / 33%);
     padding: 0 10px;
     font-size: 14px;
+}
+
+@media (max-width: 767px) {
+    .aboutcard.faq .faqcontainer .faq-content {
+        font-size: 12px;
+    }
 }
   
 .aboutcard.faq .faqcontainer .faq-content.active {

@@ -574,7 +574,7 @@
                             <div id="coinAddressQR" style="display: flex; justify-content: center;"></div>
                             <div style="display: flex; margin-top: 2rem;">
                                 <input id="coinAddress" value="" style="font-size: 13px; width: 80%; background-color: rgba(255, 255, 255, 0.2); color: white; border: none;" readonly>
-                                <button class="button tpaybutton" onclick="copyAddress()" style="font-size: 13px;">Скопировать</button>
+                                <button class="button tpaybutton" onclick="copyAddress(currentLanguage)" style="font-size: 13px;">Скопировать</button>
                             </div>
                         </div>
                         <script>                       
@@ -608,17 +608,17 @@
                                 }, 500);
                             }
     
-                            function copyAddress() {
+                            function copyAddress(language) {
                                 var addressInput = document.getElementById('coinAddress');
                                 addressInput.select();
                                 document.execCommand('copy');
      
                                 var copyButton = document.querySelector('.tpaybutton');
-                                copyButton.textContent = aboutinfopay[1].buttonclick[currentLanguage];
+                                copyButton.textContent = aboutinfopay[1].buttonclick[language];
                                 copyButton.classList.add('copy-success');
     
                                 setTimeout(() => {
-                                    copyButton.textContent = aboutinfopay[1].button[currentLanguage];
+                                    copyButton.textContent = aboutinfopay[1].button[language];
                                     copyButton.classList.remove('copy-success');
                                 }, 2000);
                             }

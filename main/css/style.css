@@ -1055,6 +1055,10 @@ main {
     font-size: 12px;
 }
 
+.tradingprice {
+    background-color: rgb(0 0 0 / 40%);
+}
+
 .aboutcard.pay .tab-menu {
     display: flex;
 }

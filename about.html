@@ -558,6 +558,54 @@
 
                     <div class="aboutcard pay">
                         <span class="tpay">Донаты и реквизиты</span>
+                        <div class="tradingprice">
+                            <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                            {
+                                "symbols": [
+                                    {
+                                        "description": "",
+                                        "proName": "COINBASE:BTCUSD"
+                                    },
+                                    {
+                                        "description": "",
+                                        "proName": "COINBASE:ETHUSD"
+                                    },
+                                    {
+                                        "description": "",
+                                        "proName": "COINBASE:XRPUSD"
+                                    },
+                                    {
+                                        "description": "",
+                                        "proName": "COINBASE:DOGEUSD"
+                                    },
+                                    {
+                                        "description": "",
+                                        "proName": "COINBASE:SOLUSD"
+                                    },
+                                    {
+                                        "description": "",
+                                        "proName": "COINBASE:LTCUSD"
+                                    },
+                                    {
+                                        "description": "",
+                                        "proName": "COINBASE:BCHUSD"
+                                    },
+                                    {
+                                        "description": "",
+                                        "proName": "COINBASE:USDTUSD"
+                                    }
+                                ],
+                                "showSymbolLogo": true,
+                                "isTransparent": true,
+                                "displayMode": "adaptive",
+                                "colorTheme": "dark",
+                                "locale": "en"
+                            }
+                            </script>
+                        </div>
+                    </div>
                         <p id="coinText" style="margin: 0;"></p>
                         <div class="tab-menu">
                             <button class="button active" onclick="selectCoin('BTC')">BTC</button>

@@ -862,6 +862,10 @@ main {
     font-family: var(--font-basic);
 }
 
+.popup::-webkit-scrollbar {
+    display: none;
+}
+
 .popup-menu {
     position: fixed;
     z-index: 5;
@@ -879,7 +883,7 @@ main {
 }
 
 .popuph4 {
-    font-size: 7vw;
+    font-size: 170px;
     margin: 0;
     font-weight: 700;
     line-height: 0.7;

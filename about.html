@@ -825,14 +825,19 @@
 
                     <div class="aboutcard stack">
                         <span class="tstack">Стек</span>
-                        <div id="stackGallery" style="line-height: 1.7; display: flex; flex-wrap: wrap;"></div>
+                        <div id="stackGallery" style="line-height: 1.7; display: flex; flex-wrap: wrap; justify-content: center;"></div>
                         <script>
                             const stackContainer = document.getElementById("stackGallery");
 
                             stack.forEach(stack => {
                                 const stackElement = document.createElement("div");
                                 stackElement.style.marginRight = '5px';
-                                stackElement.innerHTML = `<span class="tag" style="background-color: ${stack.bgcolor}; color: ${stack.color};">${stack.title}</span>`;
+                                stackElement.innerHTML = `
+                                <div class="tag" style="background-color: ${stack.bgcolor}; color: ${stack.color};">
+                                    <img class="tagimg" src="${stack.img}">
+                                    <span>${stack.title}</span>
+                                </div>
+                                `;
                                 stackContainer.appendChild(stackElement);
                             });
 

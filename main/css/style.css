@@ -990,8 +990,17 @@ main {
 }
 
 .tag {
-    padding: 2px 5px;
+    padding: 1px 5px;
     border-radius: 7px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.tagimg {
+    margin-right: 5px;
+    height: 20px;
+    border-radius: 5px;
 }
 
 .aboutcard.hello img {

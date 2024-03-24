@@ -2,50 +2,6 @@ const projects = [
 
   {
     id: 2,
-    title: "VADI",
-    img: "main/projects/VADI/avatar.png",
-    overlay: "main/projects/VADI/overlay.png",
-    outline: "#006CFF",
-    content: {
-      RU: [
-        { type: 'h4-super', value: "Дизайн для стримера VADI" },
-        { type: 'p-title', value: "Дизайн игрового оверлея выполнен в неоновом стиле по запросу заказчика. Также была добавлена шапка, которая не слишком привлекает внимание, но содержит нужную информацию о стриме." },
-        { type: 'img-super', value: "main/projects/VADI/gameoverlay.png" },
-        { type: 'p-title', value: "Дизайн браузерного оверлея был дополнительным желанием, так как иногда стрим проходит не в игровом формате, а в познавательно-развлекательном." },
-        { type: 'img-super', value: "main/projects/VADI/browseroverlay.png" },
-        { type: 'p-title', value: "Создание стикер-пака оказалось более сложным, так как заказчик сам не знал, что именно ему нужно. Пришлось потратить немало времени на отслеживание часто используемых фраз и приколов среди зрителей." },
-        { type: 'img-super', value: "main/projects/VADI/emoji.png" },
-      ],
-      EN: [
-        { type: 'h4-super', value: "Design for streamer VADI" },
-        { type: 'p-title', value: "The design of the gaming overlay was done in neon style as per the customer's request. Also, a header was added that does not attract too much attention but contains the necessary information about the stream." },
-        { type: 'img-super', value: "main/projects/VADI/gameoverlay.png" },
-        { type: 'p-title', value: "Designing a browser overlay was an additional wish, as sometimes the stream is not in gaming format, but in an informative-entertaining format." },
-        { type: 'img-super', value: "main/projects/VADI/browseroverlay.png" },
-        { type: 'p-title', value: "Creating a sticker pack was more difficult because the client himself did not know exactly what he needed. It took a lot of time to track frequently used phrases and jokes among viewers." },
-        { type: 'img-super', value: "main/projects/VADI/emoji.png" },
-      ],
-      PL: [
-        { type: 'h4-super', value: "Projekt dla streamera VADI" },
-        { type: 'p-title', value: "Projekt nakładki gry wykonano w stylu neonowym na życzenie klienta. Dodano również nagłówek, który nie przyciąga zbyt wiele uwagi, ale zawiera potrzebne informacje o transmisji." },
-        { type: 'img-super', value: "main/projects/VADI/gameoverlay.png" },
-        { type: 'p-title', value: "Projekt nakładki na przeglądarkę był dodatkowym życzeniem, ponieważ czasami transmisja odbywa się nie w formacie gry, ale w formie poznawczo-rozrywkowej." },
-        { type: 'img-super', value: "main/projects/VADI/browseroverlay.png" },
-        { type: 'p-title', value: "Tworzenie pakietu naklejek było bardziej skomplikowane, ponieważ klient sam nie wiedział dokładnie, czego potrzebuje. Zajęło to dużo czasu na śledzenie często używanych fraz i dowcipów wśród widzów." },
-        { type: 'img-super', value: "main/projects/VADI/emoji.png" },
-      ],
-    },
-    hash: "VADI",
-    buttonText: {
-      RU: "YouTube канал стримера",
-      EN: "Streamer's YouTube channel",
-      PL: "Kanał YouTube streamera",
-    },
-    url: "https://www.youtube.com/@VadiHS"
-  },
-
-  {
-    id: 1,
     title: "DEUS",
     img: "main/projects/DEUS/avatar.png",
     overlay: "main/projects/DEUS/overlay.png",
@@ -132,6 +88,50 @@ const projects = [
       PL: "Przejdź na stronę projektu",
     },
     url: "https://deusnotam.github.io"
+  },
+
+  {
+    id: 1,
+    title: "VADI",
+    img: "main/projects/VADI/avatar.png",
+    overlay: "main/projects/VADI/overlay.png",
+    outline: "#006CFF",
+    content: {
+      RU: [
+        { type: 'h4-super', value: "Дизайн для стримера VADI" },
+        { type: 'p-title', value: "Дизайн игрового оверлея выполнен в неоновом стиле по запросу заказчика. Также была добавлена шапка, которая не слишком привлекает внимание, но содержит нужную информацию о стриме." },
+        { type: 'img-super', value: "main/projects/VADI/gameoverlay.png" },
+        { type: 'p-title', value: "Дизайн браузерного оверлея был дополнительным желанием, так как иногда стрим проходит не в игровом формате, а в познавательно-развлекательном." },
+        { type: 'img-super', value: "main/projects/VADI/browseroverlay.png" },
+        { type: 'p-title', value: "Создание стикер-пака оказалось более сложным, так как заказчик сам не знал, что именно ему нужно. Пришлось потратить немало времени на отслеживание часто используемых фраз и приколов среди зрителей." },
+        { type: 'img-super', value: "main/projects/VADI/emoji.png" },
+      ],
+      EN: [
+        { type: 'h4-super', value: "Design for streamer VADI" },
+        { type: 'p-title', value: "The design of the gaming overlay was done in neon style as per the customer's request. Also, a header was added that does not attract too much attention but contains the necessary information about the stream." },
+        { type: 'img-super', value: "main/projects/VADI/gameoverlay.png" },
+        { type: 'p-title', value: "Designing a browser overlay was an additional wish, as sometimes the stream is not in gaming format, but in an informative-entertaining format." },
+        { type: 'img-super', value: "main/projects/VADI/browseroverlay.png" },
+        { type: 'p-title', value: "Creating a sticker pack was more difficult because the client himself did not know exactly what he needed. It took a lot of time to track frequently used phrases and jokes among viewers." },
+        { type: 'img-super', value: "main/projects/VADI/emoji.png" },
+      ],
+      PL: [
+        { type: 'h4-super', value: "Projekt dla streamera VADI" },
+        { type: 'p-title', value: "Projekt nakładki gry wykonano w stylu neonowym na życzenie klienta. Dodano również nagłówek, który nie przyciąga zbyt wiele uwagi, ale zawiera potrzebne informacje o transmisji." },
+        { type: 'img-super', value: "main/projects/VADI/gameoverlay.png" },
+        { type: 'p-title', value: "Projekt nakładki na przeglądarkę był dodatkowym życzeniem, ponieważ czasami transmisja odbywa się nie w formacie gry, ale w formie poznawczo-rozrywkowej." },
+        { type: 'img-super', value: "main/projects/VADI/browseroverlay.png" },
+        { type: 'p-title', value: "Tworzenie pakietu naklejek było bardziej skomplikowane, ponieważ klient sam nie wiedział dokładnie, czego potrzebuje. Zajęło to dużo czasu na śledzenie często używanych fraz i dowcipów wśród widzów." },
+        { type: 'img-super', value: "main/projects/VADI/emoji.png" },
+      ],
+    },
+    hash: "VADI",
+    buttonText: {
+      RU: "YouTube канал стримера",
+      EN: "Streamer's YouTube channel",
+      PL: "Kanał YouTube streamera",
+    },
+    url: "https://www.youtube.com/@VadiHS"
   },
 
   {

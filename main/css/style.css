@@ -1062,6 +1062,7 @@ main {
 .tradingprice {
     background-color: rgb(0 0 0 / 40%);
     border-radius: 10px;
+    pointer-events: none;
 }
 
 .aboutcard.pay .tab-menu {

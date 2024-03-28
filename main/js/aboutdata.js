@@ -142,6 +142,20 @@ const reviews = [
     },
   },
 
+  {
+    img: "main/img/reviews/AnnaMoiseenko.jpeg",
+    name: {
+      RU: "Анна Моисеенко",
+      EN: "Anna Moiseenko",
+      PL: "Anna Moiseenko",
+    },
+    text: {
+      RU: "Огонь) спасибо большое) спас меня от огромного пласта работы😂",
+      EN: "Fire) thank you so much) saved me from a huge workload 😂",
+      PL: "Ogień) bardzo dziękuję) uratowałeś mnie od ogromnej pracy 😂",
+    },
+  },
+
 ];
 
 

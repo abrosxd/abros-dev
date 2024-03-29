@@ -63,12 +63,6 @@
                 <li class="section">
                     <a class="button active tportfolio" href="/">Портфолио</a>
                 </li>
-                <li class="section" id="projects-trigger">
-                    <a class="button tprojects">Проекты</a>
-                    <ul class="submenu" id="projects-submenu">
-                        <li><a class="button" title="Система защиты контента" href="https://deusnotam.github.io" target="_blank">DEUS</a></li>
-                    </ul>
-                </li>
                 <li class="section">
                     <a class="button tabout" href="/about">Обо мне</a>
                 </li>
@@ -80,12 +74,8 @@
                     const portfolioText = menu[0].portfolio[language];
                     portfolioElement.textContent = portfolioText;
 
-                    const projectsElement = document.querySelector('.tprojects');
-                    const projectsText = menu[1].projects[language];
-                    projectsElement.textContent = projectsText;
-
                     const aboutElement = document.querySelector('.tabout');
-                    const aboutText = menu[2].about[language];
+                    const aboutText = menu[1].about[language];
                     aboutElement.textContent = aboutText;
                 }
 
@@ -338,7 +328,6 @@
                 }
             
                 // Инициализация подменю
-                initializeSubMenu('projects-trigger', 'projects-submenu');
                 initializeSubMenu('links-trigger', 'links-submenu');
                 initializeSubMenu('lang-trigger', 'lang-submenu');
             </script>

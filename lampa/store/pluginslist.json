@@ -24,13 +24,6 @@
 			"descr": "Фильмы и сериалы в онлайн.",
 			"available_lampa": 1
 		},
-		{
-			"name": "Онлайн Stream 2",
-			"author": "@???",
-			"link": "http://llpp.in/v/vod.js",
-			"descr": "Фильмы и сериалы в онлайн.",
-			"available_lampa": 1
-		},
         {
 		  "name": "Онлайн Мод",
 		  "author": "@t_anton",

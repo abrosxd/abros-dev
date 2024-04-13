@@ -5,17 +5,10 @@
       "title": "Популярные",
       "results": [
         {
-		  "name": "Онлайн Мод",
-		  "author": "@t_anton",
-		  "link": "https://nb557.github.io/plugins/online_mod.js",
-		  "descr": "Фильмы и сериалы в онлайн, больше 10 балансеров для просмотра.",
-		  "available_lampa": 1
-		},
-		{
-		  "name": "MODS's",
-		  "author": "@modss_group",
-		  "link": "http://lampa.stream/modss",
-		  "descr": "Фильмы и сериалы в онлайн. На выбор доступно 17 балансеров и различные дополнения через меню настроек Modss.",
+		  "name": "Тут мог быть ваш мод",
+		  "author": "@abros",
+		  "link": " ",
+		  "descr": "Пока что рейтинг не определён, но скоро тут точно что-то будет.",
 		  "available_lampa": 1
 		}
       ],
@@ -24,6 +17,20 @@
     {
       "title": "Видео",
       "results": [
+		{
+			"name": "Онлайн Stream",
+			"author": "@???",
+			"link": "http://arkmv.ru/vod",
+			"descr": "Фильмы и сериалы в онлайн.",
+			"available_lampa": 1
+		},
+		{
+			"name": "Онлайн Stream 2",
+			"author": "@???",
+			"link": "http://llpp.in/v/vod.js",
+			"descr": "Фильмы и сериалы в онлайн.",
+			"available_lampa": 1
+		},
         {
 		  "name": "Онлайн Мод",
 		  "author": "@t_anton",
@@ -39,29 +46,62 @@
 		  "available_lampa": 1
 		},
 		{
-		  "name": "Онлайн Prestige",
-		  "author": "",
-		  "link": "https://bwa.to/plugins/prestige.js",
-		  "descr": "Старый, но еще рабочий плагин для онлайн просмотра, 3 балансера",
-		  "available_lampa": 1
-		},
-		{
-		  "name": "BwaJS",
+		  "name": "BwaJS - Только онлайн",
 		  "author": "@bwato",
 		  "link": "https://bwa.to/o",
 		  "descr": "Нужна поддержка WebAssembly и версия Chrome > 80",
 		  "available_lampa": 1
 		},
 		{
+			"name": "BwaJS - Онлайн и Клубничка 18+",
+			"author": "@bwato",
+			"link": "https://bwa.to/f",
+			"descr": "Нужна поддержка WebAssembly и версия Chrome > 80",
+			"available_lampa": 1
+		  },
+		{
 		  "name": "Showy",
 		  "author": "Showy",
 		  "link": "http://showy.online/m.js",
 		  "descr": "Онлайн, поддержка 4к",
 		  "available_lampa": 1
+		},
+		{
+			"name": "YouTube",
+			"author": "@???",
+			"link": "http://llpp.in/anti.js",
+			"descr": "Удаляет Трейлеры, добавляет YouTube.",
+			"available_lampa": 1
 		}
       ],
       "hpu": "video"
     },
+	{
+		"title": "Телевидение",
+		"results": [
+		   {
+			"name": "ТВ by skaz",
+			"author": "@helpiptv",
+			"link": "http://skaz.tv/tv.js",
+			"descr": "Бесплатные каналы и 1400+ каналов по подписке, IPTV плейлисты @skaztv_bot",
+			"available_lampa": 1
+		  },
+		  {
+			"name": "Kulik",
+			"author": "@SawamuraRen",
+			"link": "http://cdn.kulik.uz/cors",
+			"descr": "Просмотр IPTV каналов, отсортированных по различным категориям. Есть возможность поменять стиль плагина, сервер вещания, а также добавить каналы в избранное",
+			"available_lampa": 1
+		  },{
+			"name": "ТВ by skaz 2.0",
+			"author": "@helpiptv",
+			"link": "http://skaz.tv/tv2.js",
+			"descr": "Версия ТВ by skaz плагина на основе IPTV",
+			"available_lampa": 1
+		  }
+		],
+		"hpu": "tv"
+	  },
     {
       "title": "Управление",
       "results": [
@@ -118,49 +158,9 @@
       "hpu": "control"
     },
     {
-      "title": "Телевидение",
-      "results": [
-		 {
-		  "name": "ТВ by skaz",
-		  "author": "@helpiptv",
-		  "link": "http://skaz.tv/tv.js",
-		  "descr": "Бесплатные каналы и 1400+ каналов по подписке, IPTV плейлисты @skaztv_bot",
-		  "available_lampa": 1
-		},
-		{
-		  "name": "Kulik",
-		  "author": "@SawamuraRen",
-		  "link": "http://cdn.kulik.uz/cors",
-		  "descr": "Просмотр IPTV каналов, отсортированных по различным категориям. Есть возможность поменять стиль плагина, сервер вещания, а также добавить каналы в избранное",
-		  "available_lampa": 1
-		},{
-		  "name": "ТВ by skaz 2.0",
-		  "author": "@helpiptv",
-		  "link": "http://skaz.tv/tv2.js",
-		  "descr": "Версия ТВ by skaz плагина на основе IPTV",
-		  "available_lampa": 1
-		},
-        {
-		  "name": "Клубничка 18+",
-		  "author": "@sisi",
-		  "link": "https://sisi.am/nyam.js",
-		  "descr": "Онлайн просмотр контента для взрослых, больше 30 сайтов",
-		  "available_lampa": 1
-		}
-      ],
-      "hpu": "tv"
-    },
-    {
       "title": "Разное",
       "results": [
-	      {
-		  "name": "Радио Рекорд (мод плагина от @Tw1cker)",
-		  "author": "@elenatv99",
-		  "link": "https://lampaplugins.github.io/store/record.js",
-		  "descr": "Радио Рекорд + Радио Вера)))",
-		  "available_lampa": 1
-		},
-	      	{
+	    {
 		  "name": "Отзывы и рецензии",
 		  "author": "@elenatv99",
 		  "link": "https://skaz.tv/o.js",

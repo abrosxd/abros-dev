@@ -7,6 +7,13 @@ const menu = [
     },
   },
   {
+    projects: {
+      RU: "Проекты",
+      EN: "Projects",
+      PL: "Projekty",
+    },
+  },
+  {
     about: {
       RU: "Обо мне",
       EN: "About me",

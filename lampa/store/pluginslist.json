@@ -5,8 +5,10 @@
       "title": "Популярные",
       "results": [
         {
+		  "image": "https://cub.red/img/plugins/interface.jpg",
 		  "name": "Тут мог быть ваш мод",
 		  "author": "@abros",
+		  "premuim": "ABROS",
 		  "link": " ",
 		  "descr": "Пока что рейтинг не определён, но скоро тут точно что-то будет.",
 		  "available_lampa": 1
@@ -18,12 +20,11 @@
       "title": "Видео",
       "results": [
 		{
-			"image": "https://cub.red/img/plugins/interface.jpg",
-			"name": "Онлайн Stream",
-			"author": "@???",
-			"link": "http://arkmv.ru/vod",
-			"descr": "Фильмы и сериалы в онлайн.",
-			"available_lampa": 1
+		  "name": "Онлайн Stream",
+		  "author": "@???",
+		  "link": "http://arkmv.ru/vod",
+		  "descr": "Фильмы и сериалы в онлайн.",
+		  "available_lampa": 1
 		},
         {
 		  "name": "Онлайн Мод",

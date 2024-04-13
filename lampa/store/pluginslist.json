@@ -18,6 +18,7 @@
       "title": "Видео",
       "results": [
 		{
+			"image": "https://cub.red/img/plugins/interface.jpg",
 			"name": "Онлайн Stream",
 			"author": "@???",
 			"link": "http://arkmv.ru/vod",
@@ -58,13 +59,6 @@
 		  "link": "http://showy.online/m.js",
 		  "descr": "Онлайн, поддержка 4к",
 		  "available_lampa": 1
-		},
-		{
-			"name": "YouTube",
-			"author": "@???",
-			"link": "http://llpp.in/anti.js",
-			"descr": "Удаляет Трейлеры, добавляет YouTube.",
-			"available_lampa": 1
 		}
       ],
       "hpu": "video"

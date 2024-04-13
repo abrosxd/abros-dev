@@ -1,6 +1,57 @@
 const projects = [
 
   {
+    id: 3,
+    title: "Lampa Abros Store",
+    img: "main/projects/LampaAbrosStore/avatar.png",
+    overlay: "main/projects/LampaAbrosStore/overlay.png",
+    outline: "#ffffff",
+    content:
+    {
+      RU: [
+        { type: 'h4-super', value: "Abros Store - магазин плагинов для Lampa" },
+        { type: 'img-super', value: "main/projects/LampaAbrosStore/logo_mini.png" },
+        { type: 'p-title', value: "Данный проект представляет из себя плагин для онлайн кинотеатра Lampa. С его помощью можно в один клик устанавливать все возможные доступные плагины для данного кинотеатра." },
+        { type: 'p-title', value: "Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros Store." },
+        { type: 'img-super', value: "main/projects/LampaAbrosStore/storemenu.png" },
+        { type: 'p-title', value: "На данный момент добавлены лишь основные известные плагины, со временем магазин будет расширяться." },
+        { type: 'p-title', value: "Однако уже сейчас интегрирована проверка статуса плагина. Если какой-то плагин перестал работать - вы это увидите!" },
+        { type: 'img-super', value: "main/projects/LampaAbrosStore/checkstatus.png" },
+        { type: 'p-title', value: "Ознакомится с проектом подробнее можно кликнув по кнопке ниже." },
+      ],
+      EN: [
+        { type: 'h4-super', value: "Abros Store - a plugin store for Lampa" },
+        { type: 'img-super', value: "main/projects/LampaAbrosStore/logo_mini.png" },
+        { type: 'p-title', value: "This project is a plugin for the online cinema Lampa. With it, you can install all available plugins for this cinema with just one click." },
+        { type: 'p-title', value: "This store simplifies interaction with the Lampa service. Now, there's no need to search for plugins on the internet and add them manually; everything is already available in Abros Store." },
+        { type: 'img-super', value: "main/projects/LampaAbrosStore/storemenu.png" },
+        { type: 'p-title', value: "Currently, only the basic, well-known plugins have been added, but over time, the store will expand." },
+        { type: 'p-title', value: "However, the plugin status check has already been integrated. If any plugin stops working, you'll see it!" },
+        { type: 'img-super', value: "main/projects/LampaAbrosStore/checkstatus.png" },
+        { type: 'p-title', value: "To learn more about the project, click the button below." },
+      ],
+      PL: [
+        { type: 'h4-super', value: "Sklep Abros - sklep z wtyczkami do Lampy" },
+        { type: 'img-super', value: "main/projects/LampaAbrosStore/logo_mini.png" },
+        { type: 'p-title', value: "Ten projekt to wtyczka do internetowego kina Lampa. Za jej pomocą można jednym kliknięciem instalować wszystkie dostępne wtyczki dla tego kina." },
+        { type: 'p-title', value: "Ten sklep ułatwia korzystanie z usługi Lampa. Teraz nie trzeba już szukać wtyczek w internecie i dodawać ich ręcznie - wszystko jest już dostępne w Abros Store." },
+        { type: 'img-super', value: "main/projects/LampaAbrosStore/storemenu.png" },
+        { type: 'p-title', value: "Obecnie dodano tylko podstawowe, znane wtyczki, ale w przyszłości sklep będzie się rozwijał." },
+        { type: 'p-title', value: "Jednak już teraz zaimplementowano sprawdzanie stanu wtyczki. Jeśli któraś wtyczka przestanie działać, zauważysz to!" },
+        { type: 'img-super', value: "main/projects/LampaAbrosStore/checkstatus.png" },
+        { type: 'p-title', value: "Aby uzyskać więcej informacji na temat projektu, kliknij przycisk poniżej." },
+      ],
+    },
+    hash: "LampaAbrosStore",
+    buttonText: {
+      RU: "Перейти к проекту",
+      EN: "Go to project",
+      PL: "Przejdź do projektu",
+    },
+    url: "https://abros.me/lampa"
+  },
+
+  {
     id: 2,
     title: "DEUS",
     img: "main/projects/DEUS/avatar.png",

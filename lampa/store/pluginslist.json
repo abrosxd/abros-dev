@@ -8,7 +8,7 @@
 				"image": "https://cub.red/img/plugins/interface.jpg",
 				"name": "Наши контакты",
 				"available_lampa": 1,
-				"cub": "true"
+				"cub": true
 			}
 		],
 		"hpu": "theme"

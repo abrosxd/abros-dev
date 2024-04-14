@@ -5,6 +5,8 @@
       "title": "Популярные",
       "results": [
         {
+			"body": [
+				{
 			"image": "https://cub.red/img/plugins/interface.jpg",
 			"img": "https://cub.red/img/plugins/interface.jpg",
 			"src": "https://cub.red/img/plugins/interface.jpg",
@@ -15,6 +17,8 @@
 		        "descr": "Пока что рейтинг не определён, но скоро тут точно что-то будет.",
 		        "available_lampa": 1,
 			"cub": "heh"
+				}
+			]
 		}
       ],
       "hpu": "best"

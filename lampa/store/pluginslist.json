@@ -5,12 +5,7 @@
       "title": "Популярные",
       "results": [
         {
-		    "imagebox": [
-				{
-		          "image": "https://cub.red/img/plugins/interface.jpg"
-				}
-		    ],
-			"body": [
+		    "body": [
 		        {
 		        "name": "Тут мог быть ваш мод",
 		        "author": "@abros",
@@ -18,8 +13,7 @@
 		        "descr": "Пока что рейтинг не определён, но скоро тут точно что-то будет.",
 		        "available_lampa": 1
 		        }
-			],
-			"cub": "heh"
+			]
 		}
       ],
       "hpu": "best"

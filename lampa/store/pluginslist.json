@@ -4,17 +4,13 @@
 	{
 		"title": "Новости",
 		"results": [
-		  {
-			"image": "https://cub.red/img/plugins/interface.jpg",
-				  "name": "Наши контакты",
-				  "author": "@abros",
-				  "link": "https://abros.me/lampa",
-				  "descr": "Реклама, добавление ваших плагинов в магазин и многое другое. Всё в информации.",
-				  "instruction": "Переходи на наш сайт",
-				  "available_lampa": 0
+			{
+				"image": "https://cub.red/img/plugins/interface.jpg",
+				"name": "Наши контакты",
+				"available_lampa": 1
 		  }
 		],
-		"hpu": "recomend"
+		"hpu": "theme"
 	},
 	{
 		"title": "Рекомендуем",

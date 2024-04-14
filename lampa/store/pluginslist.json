@@ -7,7 +7,8 @@
 			{
 				"image": "https://cub.red/img/plugins/interface.jpg",
 				"name": "Наши контакты",
-				"available_lampa": 1
+				"available_lampa": 1,
+				"premium": "ABROS Store"
 			}
 		],
 		"hpu": "theme"
@@ -26,23 +27,6 @@
 		],
 		"hpu": "recomend"
 	},
-    {
-      "title": "Популярные",
-      "results": [
-        {
-			"image": "https://cub.red/img/plugins/interface.jpg",
-			"img": "https://cub.red/img/plugins/interface.jpg",
-			"src": "https://cub.red/img/plugins/interface.jpg",
-			"imagebox": "https://cub.red/img/plugins/interface.jpg",
-		        "name": "Тут мог быть ваш мод",
-		        "author": "@abros",
-		        "link": "https://abros.me/lampa/store.js",
-		        "descr": "Пока что рейтинг не определён, но скоро тут точно что-то будет.",
-		        "available_lampa": 1
-		}
-      ],
-      "hpu": "best"
-    },
     {
       "title": "Видео",
       "results": [

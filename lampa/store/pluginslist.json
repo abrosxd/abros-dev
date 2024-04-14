@@ -8,7 +8,7 @@
 				"image": "https://cub.red/img/plugins/interface.jpg",
 				"name": "Наши контакты",
 				"available_lampa": 1,
-				"premium": "ABROS Store"
+				"cub": "ABROS Store"
 			}
 		],
 		"hpu": "theme"
@@ -189,40 +189,6 @@
 		}
       ],
       "hpu": "other"
-    },
-	{
-		"title": "Разное2",
-		"results": [
-		  {
-			"name": "Отзывы и рецензии",
-			"author": "@elenatv99",
-			"link": "https://skaz.tv/o.js",
-			"descr": "Добавляет кнопку чтения отзывов с КиноПоиск в карточку фильма или сериала",
-			"available_lampa": 1
-		  },
-		  {
-			"name": "Предзагрузка ts",
-			"author": "@rootu",
-			"link": "https://plugin.rootu.top/ts-preload.js",
-			"descr": "Плагин визуализации предзагрузки торрентов для встроенного клиента TorrServer",
-			"available_lampa": 1
-		  },
-		  {
-			"name": "Приятные мелочи",
-			"author": "@AndreyURL54",
-			"link": "https://skaztv.online/js/tricks.js",
-			"descr": "Дополнение некоторых востребованных функций и дизайна, которых вам не хватало. (mod. Без проверки на MSX)",
-			"available_lampa": 1
-		  },
-		  {
-			"name": "Отключение Websocket",
-			"author": "@rootu",
-			"link": "http://plugin.rootu.top/wsoff.js",
-			"descr": "Плагин отключает протокол Websocket, помогает при ошибках на некоторых устройствах",
-			"available_lampa": 1
-		  }
-		],
-		"hpu": "ad"
-	  }
+    }
   ]
 }

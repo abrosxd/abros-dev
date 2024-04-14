@@ -38,7 +38,7 @@
         if (e.name === 'main') {
             e.body.find('[data-component="abros_store"]').on('hover:enter', function () {
                 Lampa.Extensions.show({
-                    store: 'https://abros.me/lampa/store/pluginslist.json',
+                    store: 'https://abros.me/lampastore/storelist.json',
                     with_installed: true
                 });
             });

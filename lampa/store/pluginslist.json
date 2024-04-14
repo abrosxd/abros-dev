@@ -5,8 +5,6 @@
       "title": "Популярные",
       "results": [
         {
-			"body": [
-				{
 			"image": "https://cub.red/img/plugins/interface.jpg",
 			"img": "https://cub.red/img/plugins/interface.jpg",
 			"src": "https://cub.red/img/plugins/interface.jpg",
@@ -15,10 +13,7 @@
 		        "author": "@abros",
 		        "link": "https://abros.me/lampa/store.js",
 		        "descr": "Пока что рейтинг не определён, но скоро тут точно что-то будет.",
-		        "available_lampa": 1,
-			"cub": "heh"
-				}
-			]
+		        "available_lampa": 1
 		}
       ],
       "hpu": "best"

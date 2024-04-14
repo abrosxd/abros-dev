@@ -2,13 +2,13 @@
   "secuses": true,
   "results": [
 	{
-		"title": "Новости",
+		"title": "Реклама",
 		"results": [
 			{
 				"image": "https://cub.red/img/plugins/interface.jpg",
 				"name": "Наши контакты",
 				"available_lampa": 1
-		  }
+			}
 		],
 		"hpu": "theme"
 	},
@@ -238,7 +238,7 @@
 			"available_lampa": 1
 		  }
 		],
-		"hpu": " "
+		"hpu": "ad"
 	  }
   ]
 }

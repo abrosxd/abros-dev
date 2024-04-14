@@ -594,16 +594,10 @@ nav {
     margin-right: 10px;
 }
 
-.imgprojectssubmenu {
-    height: 30px;
-    border-radius: 10px;
-}
-
 #projects-submenu {
     flex-wrap: wrap;
     justify-content: center;
-    left: 50%;
-    transform: translateX(-50%);
+    /* margin-right: 10px; */
 }
 
 @media (max-width: 767px) {

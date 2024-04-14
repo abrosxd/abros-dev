@@ -10,7 +10,7 @@ const menu = [
     projects: {
       RU: "Проекты",
       EN: "Projects",
-      PL: "Projekty",
+      PL: "Projektowanie",
     },
   },
   {

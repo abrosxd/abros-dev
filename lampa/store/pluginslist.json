@@ -5,6 +5,7 @@
       "title": "Популярные",
       "results": [
         {
+		  "image": "https://cub.red/img/plugins/interface.jpg",
 		  "name": "Тут мог быть ваш мод",
 		  "author": "@abros",
 		  "link": "https://abros.me/lampa/store.js",

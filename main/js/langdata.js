@@ -1,3 +1,4 @@
+// Menu
 const menu = [
   {
     portfolio: {
@@ -22,6 +23,14 @@ const menu = [
   },
 ];
 
+// 404
+const info404 = {
+  RU: "Как я вижу такой страницы нет...",
+  EN: "It looks like such a page doesn't exist...",
+  PL: "Wygląda na to, że taka strona nie istnieje...",
+};
+
+// About
 const aboutinfome = {
   RU: "👋 Хай — Я Данил, веб-дизайнер и веб-разработчик. Здесь ты найдешь всю нужную информацию обо мне и даже больше. Добро пожаловать!",
   EN: "👋 Hi - I'm Daniel, a web designer and web developer. Here you'll find all the necessary information about me and even more. Welcome!",

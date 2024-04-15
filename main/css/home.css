@@ -1,0 +1,175 @@
+main {
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    position: absolute;
+}
+
+.project-card {
+    position: relative;
+    margin: 10px;
+    width: 350px;
+    height: 470px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transform-style: preserve-3d; /* Добавлено для улучшения эффекта */
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform; /* Добавлено для оптимизации */
+    z-index: 2;
+    border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+    .project-card {
+        width: 190px;
+        height: 255px;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    transform: translateZ(30px);
+}
+
+.project-card:hover .overlay {
+    opacity: 1;
+}
+
+@media (max-width: 767px) {
+    .project-card:hover .overlay {
+        opacity: 0;
+    }
+}
+
+.project-card.mobcenter .overlay {
+    opacity: 1;
+}
+
+.project-outline {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.active-project {
+    display: none;
+}
+
+.overlay-popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+.popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    color: #fff;
+    background-color: black;
+    position: absolute;
+    z-index: 4;
+    width: var(--width);
+    height: var(--height);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 24px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: var(--font-basic);
+}
+
+.popup::-webkit-scrollbar {
+    display: none;
+}
+
+.popup-menu {
+    position: fixed;
+    z-index: 5;
+    bottom: 24px;
+    left: 50%;
+    display: flex;
+    gap: 8px;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+    .popup-menu {
+        bottom: 54px;
+    }
+}
+
+.popuph4 {
+    font-size: 6rem;
+    margin: 0;
+    font-weight: 700;
+    line-height: 0.7;
+}
+
+@media (max-width: 767px) {
+    .popuph4 {
+        font-size: 60px;
+    }
+}
+
+.popuptitle {
+    font-size: 24px;
+    margin: 0;
+    margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+    .popuptitle {
+        font-size: 16px;
+    }
+}
+
+.popupimg {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.popup .button {
+    margin-top: 20px;
+}

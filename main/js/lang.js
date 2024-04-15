@@ -29,10 +29,7 @@ function reloadPage() {
         
 var savedLanguage = getCookie("currentLanguage");
 
-if (savedLanguage) {
-    var currentLanguage = savedLanguage;
-} else {
-    currentLanguage = "EN";
+if (!savedLanguage) {
     setCookie("currentLanguage", currentLanguage, 30);
 }
         

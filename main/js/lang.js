@@ -29,6 +29,10 @@ function reloadPage() {
 }
         
 var savedLanguage = getCookie("currentLanguage");
+
+if (!savedLanguage) {
+    setCookie("currentLanguage", currentLanguage, 30);
+}
         
 var currentLanguage = savedLanguage || "EN";
         

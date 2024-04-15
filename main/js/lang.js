@@ -1,4 +1,3 @@
-
 function setCookie(name, value, days) {
     var expires = "";
     if (days) {
@@ -30,7 +29,10 @@ function reloadPage() {
         
 var savedLanguage = getCookie("currentLanguage");
 
-if (!savedLanguage) {
+if (savedLanguage) {
+    var currentLanguage = savedLanguage;
+} else {
+    currentLanguage = "EN";
     setCookie("currentLanguage", currentLanguage, 30);
 }
         

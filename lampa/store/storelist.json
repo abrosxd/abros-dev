@@ -5,7 +5,7 @@
 		"title": "Реклама",
 		"results": [
 			{
-				"image": "https://abros.me/lampastore/img/ads/abros.jpg",
+				"image": "https://abros.me/lampa/store/img/ads/abros.jpg",
 				"name": "ABROS Store",
 				"available_lampa": 1
 			}
@@ -16,7 +16,7 @@
 		"title": "Рекомендуем",
 		"results": [
 			{
-				"image": "https://abros.me/lampastore/img/recomend/Stream.png",
+				"image": "https://abros.me/lampa/store/img/recomend/Stream.png",
 				"name": "Stream",
 				"author": "@arkmv     (Бесплатный)",
 				"link": "http://arkmv.ru/vod",
@@ -24,7 +24,7 @@
 				"available_lampa": 1
 			},
 			{
-				"image": "https://abros.me/lampastore/img/recomend/Showy.png",
+				"image": "https://abros.me/lampa/store/img/recomend/Showy.png",
 				"name": "Showy",
 				"author": "Showy     (Бесплатный)",
 				"link": "http://showy.online/m.js",
@@ -32,7 +32,7 @@
 				"available_lampa": 1
 			},
 			{
-				"image": "https://abros.me/lampastore/img/recomend/Kulik.png",
+				"image": "https://abros.me/lampa/store/img/recomend/Kulik.png",
 				"name": "Kulik",
 				"author": "@SawamuraRen     (Бесплатно)",
 				"link": "http://cdn.kulik.uz/cors",
@@ -40,7 +40,7 @@
 				"available_lampa": 1
 			},
 			{
-				"image": "https://abros.me/lampastore/img/recomend/Feedback.png",
+				"image": "https://abros.me/lampa/store/img/recomend/Feedback.png",
 				"name": "Отзывы и рецензии",
 				"author": "@elenatv99       (Бесплатно)",
 				"link": "https://skaz.tv/o.js",
@@ -48,7 +48,7 @@
 				"available_lampa": 1
 			},
 			{
-				"image": "https://abros.me/lampastore/img/recomend/Tricks.png",
+				"image": "https://abros.me/lampa/store/img/recomend/Tricks.png",
 				"name": "Приятные мелочи",
 				"author": "@AndreyURL54       (Бесплатно)",
 				"link": "https://skaztv.online/js/tricks.js",

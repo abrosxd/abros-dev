@@ -109,7 +109,7 @@
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0.3);
-    color: #00ffb5;
+    color: #ffffff;
     box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.3);
     transition: background-color 0.3s ease;
     border-radius: 1rem;
@@ -119,6 +119,7 @@
 @media (max-width: 767px) {
     .lampa-plugins {
         top: 620px;
+        padding: 5px 10px;
     }
 }
 
@@ -131,4 +132,65 @@ td, th {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
+}
+
+.lampa-plugins .text {
+    text-align: center;
+    font-size: x-large;
+    font-family: var(--font-basic);
+}
+@media (max-width: 767px) {
+    .lampa-plugins .text {
+        font-size: large;
+    }
+}
+
+.lampa-instruction {
+    position: absolute;
+    top: 797px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+    border-radius: 1rem;
+    justify-content: center;
+    padding: 10px 50px;
+    width: 84%;
+}
+@media (max-width: 767px) {
+    .lampa-instruction {
+        top: 750px;
+        padding: 5px 10px;
+    }
+}
+
+.lampa-instruction .image {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.lampa-instruction .text {
+    text-align: center;
+    font-size: x-large;
+    font-family: var(--font-basic);
+}
+@media (max-width: 767px) {
+    .lampa-instruction .text {
+        font-size: large;
+    }
+}
+
+.lampa-instruction .step {
+    text-align: center;
+    font-size: x-large;
+    font-family: var(--font-basic);
+}
+@media (max-width: 767px) {
+    .lampa-instruction .step {
+        font-size: large;
+    }
 }

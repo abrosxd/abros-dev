@@ -67,6 +67,7 @@ body {
 .lampa-start-text {
     z-index: 1;
     position: sticky;
+    flex: 0 0 100%;
 }
 
 .lampa-start-text .text {

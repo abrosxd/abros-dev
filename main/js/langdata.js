@@ -129,3 +129,10 @@ const aboutinfotools = [
     },
   },
 ];
+
+// About
+const info404 = {
+  RU: "Как я вижу такой страницы нет...",
+  EN: "It looks like such a page doesn't exist...",
+  PL: "Wygląda na to, że taka strona nie istnieje...",
+};

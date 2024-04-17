@@ -23,11 +23,21 @@ if (!savedLanguage) {
 var currentLanguage = savedLanguage || "EN";
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.lang-sub .button').forEach(function(item) {
+    var buttons = document.querySelectorAll('.lang-sub .button');
+    
+    buttons.forEach(function(item) {
+        if (item.getAttribute('lang') === currentLanguage) {
+            item.classList.add('active');
+        }
         item.addEventListener('click', function() {
-            var newLanguage = this.getAttribute('lang'); // Используйте другое имя переменной, чтобы избежать конфликта
+            var newLanguage = this.getAttribute('lang');
             setLanguageInLocalStorage(newLanguage);
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+            this.classList.add('active');
             reloadPage();
         });
     });
 });
+

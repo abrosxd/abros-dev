@@ -123,11 +123,12 @@ body {
     justify-content: center;
     padding: 10px 50px;
     margin: 10px;
-    width: 100%;
+    width: 80%;
 }
 @media (max-width: 767px) {
     .lampa-plugins {
         padding: 0 0 70px 0;
+        width: 100%;
     }
 }
 
@@ -176,10 +177,12 @@ td, th {
     justify-content: center;
     padding: 10px 50px;
     margin: 10px;
+    width: 80%;
 }
 @media (max-width: 767px) {
     .lampa-instruction {
         padding: 5px 10px;
+        width: 100%;
     }
 }
 

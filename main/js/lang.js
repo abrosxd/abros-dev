@@ -23,7 +23,7 @@ if (!savedLanguage) {
 var currentLanguage = savedLanguage || "EN";
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.submenu .button').forEach(function(item) {
+    document.querySelectorAll('.lang-sub .button').forEach(function(item) {
         item.addEventListener('click', function() {
             var newLanguage = this.getAttribute('lang'); // Используйте другое имя переменной, чтобы избежать конфликта
             setLanguageInLocalStorage(newLanguage);

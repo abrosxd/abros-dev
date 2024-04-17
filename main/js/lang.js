@@ -30,16 +30,4 @@ document.addEventListener('DOMContentLoaded', function() {
             reloadPage();
         });
     });
-
-    function replaceTextWithRussian() {
-        const menuItems = document.querySelectorAll('.menu .section');
-    
-        menuItems.forEach((menuItem, index) => {
-            const menuItemKey = Object.keys(menu[index])[0];
-            const russianText = menu[index][menuItemKey].RU;
-            menuItem.querySelector('.button').textContent = russianText;
-        });
-    }
-    
-    replaceTextWithRussian();
 });

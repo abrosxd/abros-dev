@@ -127,7 +127,7 @@ body {
 }
 @media (max-width: 767px) {
     .lampa-plugins {
-        padding: 5px 10px 70px 10px;
+        padding-bottom:70px;
     }
 }
 

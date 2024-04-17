@@ -159,6 +159,11 @@ td, th {
     }
 }
 
+.lampa-plugins .table-container {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
 .lampa-instruction {
     position: sticky;
     display: flex;

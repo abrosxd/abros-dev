@@ -3,16 +3,30 @@
     --light: transparent;
 }
 
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: var(--font-basic);
+}
+@media (max-width: 767px) {
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
 .lampa-start {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 80px;
+    height: 160px;
+    position: sticky;
+    margin-top: 80px;
     z-index: 0;
 }
 @media (max-width: 767px) {
     .lampa-start {
-        top: 65px;
+        margin-top: 65px;
     }
 }
 
@@ -52,10 +66,7 @@
 
 .lampa-start-text {
     z-index: 1;
-    position: absolute;
-    top: 245px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: sticky;
 }
 
 .lampa-start-text .text {
@@ -70,10 +81,7 @@
 }
 
 .lampa-connect {
-    position: absolute;
-    top: 500px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: sticky;
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0.3);
@@ -84,6 +92,7 @@
     justify-content: center;
     width: min-content;
     padding: 10px 50px;
+    margin: 10px;
 }
 
 .lampa-connect:hover {
@@ -102,10 +111,7 @@
 }
 
 .lampa-plugins {
-    position: absolute;
-    top: 650px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: sticky;
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0.3);
@@ -115,17 +121,24 @@
     border-radius: 1rem;
     justify-content: center;
     padding: 10px 50px;
+    margin: 10px;
+    width: 100%;
 }
 @media (max-width: 767px) {
     .lampa-plugins {
-        top: 620px;
-        padding: 5px 10px;
+        padding: 5px 10px 70px 10px;
     }
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
+    font-size: medium;
+}
+@media (max-width: 767px) {
+    table {
+        font-size: small;
+    }
 }
 
 td, th {
@@ -146,10 +159,7 @@ td, th {
 }
 
 .lampa-instruction {
-    position: absolute;
-    top: 797px;
-    left: 50%;
-    transform: translateX(-50%);
+    position: sticky;
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0.3);
@@ -159,11 +169,10 @@ td, th {
     border-radius: 1rem;
     justify-content: center;
     padding: 10px 50px;
-    width: 84%;
+    margin: 10px;
 }
 @media (max-width: 767px) {
     .lampa-instruction {
-        top: 750px;
         padding: 5px 10px;
     }
 }

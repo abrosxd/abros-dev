@@ -1,6 +1,51 @@
 const projects = [
 
   {
+    id: 4,
+    title: "Grushka Endoterapia",
+    img: "main/projects/GrushkaEndo/avatar.png",
+    overlay: "main/projects/GrushkaEndo/overlay.png",
+    outline: "#ffffff",
+    content:
+    {
+      RU: [
+        { type: 'h4-super', value: "Вёрстка лендинга для салона красоты Grushka" },
+        { type: 'img-super', value: "main/projects/GrushkaEndo/logo_mini.png" },
+        { type: 'p-title', value: "Задача состояла в том, чтобы перенести уже имеющийся сайт на платформе Tilda на отдельный хостинг." },
+        { type: 'p-title', value: "Сложность заключалась в том, что Tilda наложила ограничения на аккаунт из-за чего сайт был заблокирован, а экспорт не доступен. Поэтому они обратились ко мне." },
+        { type: 'p-title', value: "И вот конечный результат!" },
+        { type: 'img-super', value: "main/projects/GrushkaEndo/site.png" },
+        { type: 'p-title', value: "Посмотреть сайт можно кликнув по кнопке ниже." },
+      ],
+      EN: [
+        { type: 'h4-super', value: "Designing a landing page for Grushka beauty salon" },
+        { type: 'img-super', value: "main/projects/GrushkaEndo/logo_mini.png" },
+        { type: 'p-title', value: "The task was to transfer the existing website from the Tilda platform to a separate hosting." },
+        { type: 'p-title', value: "The difficulty was that Tilda imposed restrictions on the account, resulting in the website being blocked, and export was not available. That's why they reached out to me." },
+        { type: 'p-title', value: "And here is the final result!" },
+        { type: 'img-super', value: "main/projects/GrushkaEndo/site.png" },
+        { type: 'p-title', value: "To view the website, click the button below." },
+      ],
+      PL: [
+        { type: 'h4-super', value: "Projektowanie strony internetowej (landing page) dla salonu urody Grushka" },
+        { type: 'img-super', value: "main/projects/GrushkaEndo/logo_mini.png" },
+        { type: 'p-title', value: "Zadaniem było przeniesienie istniejącej już strony internetowej na platformie Tilda na osobny hosting." },
+        { type: 'p-title', value: "Trudność polegała na tym, że Tilda nałożyła ograniczenia na konto, co spowodowało zablokowanie strony, a eksport nie był możliwy. Dlatego zwrócili się do mnie." },
+        { type: 'p-title', value: "I oto ostateczny rezultat!" },
+        { type: 'img-super', value: "main/projects/GrushkaEndo/site.png" },
+        { type: 'p-title', value: "Aby zobaczyć stronę, kliknij przycisk poniżej." },
+      ],
+    },
+    hash: "GrushkaEndo",
+    buttonText: {
+      RU: "Перейти на сайт",
+      EN: "Go to website",
+      PL: "Przejdź do strony",
+    },
+    url: "https://cosmetologia.site"
+  },
+
+  {
     id: 3,
     title: "Lampa Abros Store",
     img: "main/projects/LampaAbrosStore/avatar.png",

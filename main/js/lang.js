@@ -25,8 +25,8 @@ var currentLanguage = savedLanguage || "EN";
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.submenu .button').forEach(function(item) {
         item.addEventListener('click', function() {
-            var currentLanguage = this.getAttribute('lang');
-            setLanguageInLocalStorage(currentLanguage);
+            var newLanguage = this.getAttribute('lang'); // Используйте другое имя переменной, чтобы избежать конфликта
+            setLanguageInLocalStorage(newLanguage);
             reloadPage();
         });
     });

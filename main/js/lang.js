@@ -1,13 +1,13 @@
 function setLanguageInLocalStorage(language) {
-    localStorage.setItem("Language", language);
+    localStorage.setItem("AbrosLanguage", language);
 }
 
 function getLanguageFromLocalStorage() {
-    return localStorage.getItem("Language");
+    return localStorage.getItem("AbrosLanguage");
 }
 
 function eraseLanguageFromLocalStorage() {
-    localStorage.removeItem("Language");
+    localStorage.removeItem("AbrosLanguage");
 }
 
 function reloadPage() {

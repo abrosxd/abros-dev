@@ -10,6 +10,10 @@ function eraseLanguageFromLocalStorage() {
     localStorage.removeItem("Language");
 }
 
+function reloadPage() {
+    window.location.reload();
+}
+
 var savedLanguage = getLanguageFromLocalStorage();
 
 if (!savedLanguage) {

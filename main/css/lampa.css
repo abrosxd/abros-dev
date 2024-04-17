@@ -1,0 +1,134 @@
+:root {
+    --swing: 1.03deg;
+    --light: transparent;
+}
+
+.lampa-start {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 80px;
+    z-index: 0;
+}
+@media (max-width: 767px) {
+    .lampa-start {
+        top: 65px;
+    }
+}
+
+.lampa-start .beam {
+    height: 100vh;
+    background-color: hsla(0,0%,0%,0.95);
+    mask: conic-gradient(
+      from var(--swing) at 50% 4%, 
+      #000000 0deg 155deg,
+      var(--light) 170deg 190deg,
+      #000000 205deg 360deg
+      );
+   -webkit-mask: conic-gradient(
+      from var(--swing) at 50% 4%, 
+      #000000 0deg 155deg,
+      transparent 170deg 190deg,
+      #000000 205deg 360deg
+      );
+}
+  
+.lampa-start .lamp {
+    width: 80px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform-origin: center 30px;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.lampa-start .block {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lampa-start-text {
+    z-index: 1;
+    position: absolute;
+    top: 245px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lampa-start-text .text {
+    text-align: center;
+    font-size: xxx-large;
+    font-family: var(--font-basic);
+}
+@media (max-width: 767px) {
+    .lampa-start-text .text {
+        font-size: xx-large;
+    }
+}
+
+.lampa-connect {
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #00ffb5;
+    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+    border-radius: 1rem;
+    justify-content: center;
+    width: min-content;
+    padding: 10px 50px;
+}
+
+.lampa-connect:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.lampa-connect .url {
+    text-align: center;
+    font-size: x-large;
+    font-family: var(--font-basic);
+}
+@media (max-width: 767px) {
+    .lampa-connect .url {
+        font-size: medium;
+    }
+}
+
+.lampa-plugins {
+    position: absolute;
+    top: 650px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #00ffb5;
+    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease;
+    border-radius: 1rem;
+    justify-content: center;
+    padding: 10px 50px;
+}
+@media (max-width: 767px) {
+    .lampa-plugins {
+        top: 620px;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}

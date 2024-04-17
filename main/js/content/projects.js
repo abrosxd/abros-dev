@@ -5,7 +5,7 @@ const projects = [
     title: "Grushka Endoterapia",
     img: "main/projects/GrushkaEndo/avatar.png",
     overlay: "main/projects/GrushkaEndo/overlay.png",
-    outline: "#ffffff",
+    outline: "#e29e70",
     content:
     {
       RU: [

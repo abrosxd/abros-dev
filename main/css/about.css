@@ -170,10 +170,6 @@
     opacity: 0;
 }
 
-.copy-success {
-    color: #4CAF50;
-}
-
 #coinAddressQR img {
     display: block;
     padding: 15px;

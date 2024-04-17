@@ -27,6 +27,7 @@
 		<link rel="stylesheet" href="main/css/style.css">
         <link rel="stylesheet" href="main/css/lampa.css">
         <script src="main/js/jquery-3.7.1.min.js"></script>
+        <script src="main/js/gsap.min.js"></script>
         <script src="main/js/content/langdata.js"></script>
         <script src="main/js/lang.js"></script>
 	</head>
@@ -73,7 +74,7 @@
                     <ul class="submenu" id="projects-submenu">
                         <li>
                             <a class="button active" title="Lampa Abros Store" href="/lampa">
-                                <img class="imgprojectssubmenu" src="main/projects/LampaAbrosStore/logo.png">
+                                <img class="imgprojectssubmenu" style="background-color: #1d1f20;" src="main/projects/LampaAbrosStore/logo.svg">
                                 <p>Lampa Abros Store</p>
                             </a>
                         </li>
@@ -453,6 +454,104 @@
                 }, 500);
             });
         </script>
+
+        <div class="lampa-start">
+            <div class="block">
+                <img class="background" src="main/projects/LampaAbrosStore/logo.svg">
+            </div>
+            <div class="beam"></div>
+            <svg class="lamp" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 133 175" fill="none">
+                <rect width="40" height="35" x="46" y="85" fill="#272B28" rx="5"/>
+                <path fill="#7f7f7f" d="M133 175H0a66 66 0 01133 0z"/>
+                <path stroke="#272B28" stroke-width="6" d="M66 0v99"/>
+            </svg>
+            <script>
+                const beam = document.querySelector('.lampa-start .beam');
+                const lamp = document.querySelector('.lampa-start .lamp');
+
+                gsap.fromTo(beam, { 
+                    '--swing': '0.97turn',
+                }, { 
+                    '--swing': '1.03turn',
+                    duration: 1,
+                    repeat:-1,
+                    yoyo: true,
+                    ease: Power1.easeInOut
+                });
+
+                gsap.fromTo(lamp, { 
+                    rotate: '-8.5deg'
+                }, { 
+                    rotate: '8.5deg',
+                    duration: 1,
+                    repeat:-1,
+                    yoyo: true,
+                    ease: Power1.easeInOut
+                });
+            </script>
+        </div>
+        <div class="lampa-start-text">
+            <p class="text">Abros Store<br>Большой магазин плагинов для Lampa</p>
+        </div>
+        <div class="lampa-connect">
+            <p class="url">https://abros.me/lampa/store.js</p>
+            <button class="button">Скопировать</button>
+            <script>
+                $(document).ready(function(){
+                    $(".lampa-connect .button").click(function(){
+                        var urlText = $(".url").text();
+        
+                        var tempInput = $("<input>");
+                        $("body").append(tempInput);
+                        tempInput.val(urlText).select();
+                        document.execCommand("copy");
+                        tempInput.remove();
+        
+                        $(".lampa-connect .button").text("Скопировано").addClass("copy-success");
+
+                        setTimeout(function(){
+                            $(".lampa-connect .button").text("Скопировать").removeClass("copy-success");
+                        }, 2000);
+                    });
+                });
+            </script>
+        </div>
+        <div class="lampa-plugins">
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Автор</th>
+                        <th>Категория</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <script>
+                fetch('lampa/store/storelist.json') // Загружаем файл JSON
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.querySelector('#data-table tbody');
+                        data.results.forEach(section => {
+                            if (section.hpu !== "theme" && section.hpu !== "recomend" && section.hpu !== "best") {
+                                section.results.forEach(item => {
+                                    const row = document.createElement('tr');
+                                    row.innerHTML = `
+                                        <td>${item.name}</td>
+                                        <td>${item.author}</td>
+                                        <td>${item.descr}</td>
+                                        <td>${section.hpu}</td>
+                                    `;
+                                    tableBody.appendChild(row);
+                                });
+                            }
+                        });
+                    })
+                    .catch(error => console.error('Error fetching JSON:', error));
+            </script>
+        </div>
 
 	</body>
 </html>

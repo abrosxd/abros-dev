@@ -39,7 +39,7 @@
     function addAdSection() {
         if (!Lampa.main) return;
 
-        var adAbrosStoreComponent = '[class="adAbrosstore"]';
+        var adAbrosStoreComponent = '.adAbrosstore';;
         var adAbrosStoreExist = Lampa.main().render().find(adAbrosStoreComponent).length > 0;
 
         if (!adAbrosStoreExist) {
@@ -51,11 +51,11 @@
             '</div>';
 
             var $adAbrosStoreHTML = $(Lampa.Lang.translate(adAbrosStoreHTML));
-            Lampa.main().render().find('[class="head"]').after($adAbrosStoreHTML);
+            Lampa.main().render().find('.head').after($adAbrosStoreHTML);
             Lampa.main().update();
         }
         
-        fetch('https://abros.me/lampa/store//adlist.json')
+        fetch('https://abros.me/lampa/store/adlist.json')
             .then(response => response.json())
             .then(data => {
                 var bodyElement = document.querySelector('.adAbrosStore__body');

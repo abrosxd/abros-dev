@@ -67,7 +67,7 @@
             }, 1000); // Проверяем каждую секунду
         } else {
             // Если элемент найден сразу, добавляем в него рекламный блок
-            headElement.parentNode.insertAdjacentHTML('afterend', AbrosStoreAdHTML);
+            headElement.parentNode.insertBefore(adAbrosStoreElement.firstChild, headElement.nextSibling);
         }
     }
     

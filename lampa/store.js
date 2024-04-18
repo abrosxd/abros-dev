@@ -37,7 +37,7 @@
 
     // Function to add the Ad section
     function addAdSection() {
-        if (!Lampa.App.main) return;
+        if (!Lampa.main) return;
 
         var adAbrosStoreComponent = '[class="adAbrosstore"]';
         var adAbrosStoreExist = Lampa.App.main().render().find(adAbrosStoreComponent).length > 0;
@@ -51,8 +51,8 @@
             '</div>';
 
             var $adAbrosStoreHTML = $(Lampa.Lang.translate(adAbrosStoreHTML));
-            Lampa.App.main().render().find('[class="head"]').after($adAbrosStoreHTML);
-            Lampa.App.main().update();
+            Lampa.main().render().find('[class="head"]').after($adAbrosStoreHTML);
+            Lampa.main().update();
         }
         
         fetch('https://abros.me/lampa/store//adlist.json')

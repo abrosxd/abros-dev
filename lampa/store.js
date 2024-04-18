@@ -46,7 +46,7 @@
     });
 
     function addAbrosStoreAd() {
-        var activitysSlides = document.querySelector('.activitys__slides');
+        var activitysSlides = document.querySelector('.activity .layer--width');
         var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
                                 '<div class="adAbrosStore__head">' +
                                 '<div class="adAbrosStore__title">Реклама</div>' +

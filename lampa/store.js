@@ -47,8 +47,8 @@
 
     function addAbrosStoreAd() {
 
-        var AbrosStoreComponent = '#app';
-        var AbrosStoreExist = Lampa.main().render().find(AbrosStoreComponent).length > 0;
+        var AbrosStoreComponent = '.adAbrosstore';
+        var AbrosStoreExist = Lampa.Template.main().render().find(AbrosStoreComponent).length > 0;
 
         if (!AbrosStoreExist) {
             var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
@@ -59,8 +59,8 @@
             '</div>';
 
             var $AbrosStoreAdHTML = $(Lampa.Lang.translate(AbrosStoreAdHTML));
-            Lampa.main().render().find('.head').before($AbrosStoreAdHTML);
-            Lampa.main().update();
+            Lampa.Template.main().render().find('.head').before($AbrosStoreAdHTML);
+            Lampa.Template.main().update();
         }
     }
 

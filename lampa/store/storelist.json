@@ -2,17 +2,6 @@
   "secuses": true,
   "results": [
 	{
-		"title": "Реклама",
-		"results": [
-			{
-				"image": "https://abros.me/lampa/store/img/ads/abros.jpg",
-				"name": "ABROS Store",
-				"available_lampa": 1
-			}
-		],
-		"hpu": "theme"
-	},
-	{
 		"title": "Рекомендуем",
 		"results": [
 			{

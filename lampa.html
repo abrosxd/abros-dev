@@ -568,7 +568,7 @@
                     .then(data => {
                         const tableBody = document.querySelector('#data-table tbody');
                         data.results.forEach(section => {
-                            if (section.hpu !== "theme" && section.hpu !== "recomend" && section.hpu !== "best") {
+                            if (section.hpu !== "recomend" && section.hpu !== "best") {
                                 section.results.forEach(item => {
                                     const row = document.createElement('tr');
                                     row.innerHTML = `

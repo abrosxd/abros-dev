@@ -9,7 +9,67 @@
 
 (function () {
     'use strict';
+    
+    // Ad
+    var newHTML = '<div class="adAbrosstore">' +
+    '<div class="adAbrosStore__head">' +
+    '<div class="adAbrosStore__title">Реклама</div>' +
+'</div>' +
+'<div class="adAbrosStore__body"></div>' +
+'</div>';
 
+// Находим элемент head в документе
+var headElement = document.querySelector('head');
+
+// Создаем новый элемент div для вставки HTML-кода
+var newDiv = document.createElement('div');
+newDiv.innerHTML = newHTML;
+
+// Вставляем новый div после элемента head
+headElement.parentNode.insertBefore(newDiv, headElement.nextSibling);
+
+// Загружаем файл adstore.json
+fetch('https://abros.me/lampa/store//adlist.json')
+.then(response => response.json())
+.then(data => {
+var bodyElement = document.querySelector('.adAbrosStore__body');
+data.reklama.forEach(function(cardData) {
+var cardElement = document.createElement('div');
+cardElement.classList.add('adAbrosStore__card');
+
+var viewElement = document.createElement('div');
+viewElement.classList.add('adAbrosStore__card__view');
+
+var imageElement = document.createElement('img');
+imageElement.classList.add('adAbrosStore__card__img');
+imageElement.src = cardData.image;
+
+var authorElement = document.createElement('div');
+authorElement.classList.add('adAbrosStore__card__author');
+authorElement.textContent = cardData.author;
+
+var textElement = document.createElement('div');
+textElement.classList.add('adAbrosStore__card__text');
+textElement.textContent = cardData.text;
+
+var linkElement = document.createElement('a');
+linkElement.classList.add('adAbrosStore__card__link');
+linkElement.textContent = cardData.link;
+
+viewElement.appendChild(imageElement);
+viewElement.appendChild(authorElement);
+viewElement.appendChild(textElement);
+viewElement.appendChild(linkElement);
+
+cardElement.appendChild(viewElement);
+
+bodyElement.appendChild(cardElement);
+});
+})
+.catch(error => console.error('Ошибка загрузки файла adstore.json:', error));
+
+
+// Store
     function addAbrosStore() {
         if (!Lampa.Settings.main) return;
 

@@ -46,23 +46,31 @@
     });
 
     function addAbrosStoreAd() {
-
-        var AbrosStoreComponent = '.adAbrosstore';
-        var AbrosStoreExist = Lampa.Listener.main().render().find(AbrosStoreComponent).length > 0;
-
-        if (!AbrosStoreExist) {
-            var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
-            '<div class="adAbrosStore__head">' +
-            '<div class="adAbrosStore__title">Реклама</div>' +
-            '</div>' +
-            '<div class="adAbrosStore__body"></div>' +
-            '</div>';
-
-            var $AbrosStoreAdHTML = $(Lampa.Lang.translate(AbrosStoreAdHTML));
-            Lampa.Listener.main().render().find('.head').before($AbrosStoreAdHTML);
-            Lampa.Listener.main().update();
+        var headElement = document.querySelector('.head');
+        var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
+                                '<div class="adAbrosStore__head">' +
+                                '<div class="adAbrosStore__title">Реклама</div>' +
+                                '</div>' +
+                                '<div class="adAbrosStore__body"></div>' +
+                                '</div>';
+        
+        // Проверяем, найден ли элемент с классом "head"
+        if (!headElement) {
+            // Если элемент не найден, запускаем цикл, который будет искать его
+            var searchHeadInterval = setInterval(function() {
+                headElement = document.querySelector('.head');
+                if (headElement) {
+                    // Как только элемент найден, добавляем в него рекламный блок и останавливаем цикл
+                    headElement.insertAdjacentHTML('beforeend', AbrosStoreAdHTML);
+                    clearInterval(searchHeadInterval);
+                }
+            }, 1000); // Проверяем каждую секунду
+        } else {
+            // Если элемент найден сразу, добавляем в него рекламный блок
+            headElement.insertAdjacentHTML('beforeend', AbrosStoreAdHTML);
         }
     }
+    
 
     if (window.appready) {
         addAbrosStore();

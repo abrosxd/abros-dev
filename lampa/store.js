@@ -57,12 +57,12 @@
         // Проверяем, найден ли элемент с классом "head"
         if (!activitysSlides) {
             // Если элемент не найден, запускаем цикл, который будет искать его
-            var searchHeadInterval = setInterval(function() {
-                headElement = document.querySelector('.head');
-                if (headElement) {
+            var searchInterval = setInterval(function() {
+                mainElement = document.querySelector('.activity .layer--width');
+                if (mainElement) {
                     // Как только элемент найден, добавляем в него рекламный блок и останавливаем цикл
                     activitysSlides.innerHTML += AbrosStoreAdHTML;
-                    clearInterval(searchHeadInterval);
+                    clearInterval(searchInterval);
                 }
             }, 1000); // Проверяем каждую секунду
         } else {

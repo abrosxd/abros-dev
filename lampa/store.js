@@ -37,10 +37,10 @@
 
     // Function to add the Ad section
     function addAdSection() {
-        if (!Lampa.main) return;
+        if (!Lampa.Template.main) return;
 
         var adAbrosStoreComponent = '.adAbrosstore';;
-        var adAbrosStoreExist = Lampa.main().render().find(adAbrosStoreComponent).length > 0;
+        var adAbrosStoreExist = Lampa.Template.main().render().find(adAbrosStoreComponent).length > 0;
 
         if (!adAbrosStoreExist) {
             var adAbrosStoreHTML = '<div class="adAbrosstore">' +
@@ -51,8 +51,9 @@
             '</div>';
 
             var $adAbrosStoreHTML = $(Lampa.Lang.translate(adAbrosStoreHTML));
-            Lampa.main().render().find('.head').after($adAbrosStoreHTML);
-            Lampa.main().update();
+            Lampa.Template.main().render().find('.head').after($adAbrosStoreHTML);
+            Lampa.Template.main().update();
+            resetTemplates();
         }
         
         fetch('https://abros.me/lampa/store/adlist.json')

@@ -61,15 +61,16 @@
                 headElement = document.querySelector('.head');
                 if (headElement) {
                     // Как только элемент найден, добавляем в него рекламный блок и останавливаем цикл
-                    headElement.insertAdjacentHTML('beforeend', AbrosStoreAdHTML);
+                    headElement.parentNode.insertAdjacentHTML('afterend', AbrosStoreAdHTML);
                     clearInterval(searchHeadInterval);
                 }
             }, 1000); // Проверяем каждую секунду
         } else {
             // Если элемент найден сразу, добавляем в него рекламный блок
-            headElement.insertAdjacentHTML('beforeend', AbrosStoreAdHTML);
+            headElement.parentNode.insertAdjacentHTML('afterend', AbrosStoreAdHTML);
         }
     }
+    
     
 
     if (window.appready) {

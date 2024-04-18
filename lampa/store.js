@@ -46,7 +46,7 @@
     });
 
     function addAbrosStoreAd() {
-        var activitysSlides = document.querySelector('.activity .layer--width');
+        var activitysSlides = document.querySelector('.activity');
         var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
                                 '<div class="adAbrosStore__head">' +
                                 '<div class="adAbrosStore__title">Реклама</div>' +
@@ -58,7 +58,7 @@
         if (!activitysSlides) {
             // Если элемент не найден, запускаем цикл, который будет искать его
             var searchInterval = setInterval(function() {
-                mainElement = document.querySelector('.activity .layer--width');
+                mainElement = document.querySelector('.activity');
                 if (mainElement) {
                     // Как только элемент найден, добавляем в него рекламный блок и останавливаем цикл
                     activitysSlides.innerHTML += AbrosStoreAdHTML;

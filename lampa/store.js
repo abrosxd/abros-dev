@@ -39,7 +39,7 @@
     function addAdSection() {
         if (!Lampa.App.main) return;
 
-        var adAbrosStoreComponent = '[class="adAbrosstore]';
+        var adAbrosStoreComponent = '[class="adAbrosstore"]';
         var adAbrosStoreExist = Lampa.App.main().render().find(adAbrosStoreComponent).length > 0;
 
         if (!adAbrosStoreExist) {

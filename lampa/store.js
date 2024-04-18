@@ -10,7 +10,6 @@
 (function () {
     'use strict';
 
-    // Function to add the Abros Store component
     function addAbrosStore() {
         if (!Lampa.Settings.main) return;
 
@@ -35,65 +34,6 @@
         }
     }
 
-    // Function to add the Ad section
-    function addAdSection() {
-
-        var adAbrosStoreComponent = '#app';;
-        var adAbrosStoreExist = Lampa.Listener.main().render().find(adAbrosStoreComponent).length > 0;
-
-        if (!adAbrosStoreExist) {
-            var adAbrosStoreHTML = '<div class="adAbrosstore">' +
-            '<div class="adAbrosStore__head">' +
-            '<div class="adAbrosStore__title">Реклама</div>' +
-            '</div>' +
-            '<div class="adAbrosStore__body"></div>' +
-            '</div>';
-
-            var $adAbrosStoreHTML = $(Lampa.Lang.translate(adAbrosStoreHTML));
-            Lampa.Listener.main().render().find('.head').after($adAbrosStoreHTML);
-            Lampa.Listener.main().update();
-            resetTemplates();
-        }
-        
-        fetch('https://abros.me/lampa/store/adlist.json')
-            .then(response => response.json())
-            .then(data => {
-                var bodyElement = document.querySelector('.adAbrosStore__body');
-                data.reklama.forEach(function (cardData) {
-                    var cardElement = document.createElement('div');
-                    cardElement.classList.add('adAbrosStore__card');
-
-                    var viewElement = document.createElement('div');
-                    viewElement.classList.add('adAbrosStore__card__view');
-
-                    var imageElement = document.createElement('img');
-                    imageElement.classList.add('adAbrosStore__card__img');
-                    imageElement.src = cardData.image;
-
-                    var authorElement = document.createElement('div');
-                    authorElement.classList.add('adAbrosStore__card__author');
-                    authorElement.textContent = cardData.author;
-
-                    var textElement = document.createElement('div');
-                    textElement.classList.add('adAbrosStore__card__text');
-                    textElement.textContent = cardData.text;
-
-                    var linkElement = document.createElement('a');
-                    linkElement.classList.add('adAbrosStore__card__link');
-                    linkElement.textContent = cardData.link;
-
-                    viewElement.appendChild(imageElement);
-                    viewElement.appendChild(authorElement);
-                    viewElement.appendChild(textElement);
-                    viewElement.appendChild(linkElement);
-
-                    cardElement.appendChild(viewElement);
-                    bodyElement.appendChild(cardElement);
-                });
-            })
-            .catch(error => console.error('Ошибка загрузки файла adstore.json:', error));
-    }
-
     Lampa.Settings.listener.follow('open', function (e) {
         if (e.name === 'main') {
             e.body.find('[data-component="abros_store"]').on('hover:enter', function () {
@@ -105,14 +45,33 @@
         }
     });
 
+    function addAbrosStoreAd() {
+
+        var AbrosStoreComponent = '#app';
+        var AbrosStoreExist = Lampa.main().render().find(AbrosStoreComponent).length > 0;
+
+        if (!AbrosStoreExist) {
+            var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
+            '<div class="adAbrosStore__head">' +
+            '<div class="adAbrosStore__title">Реклама</div>' +
+            '</div>' +
+            '<div class="adAbrosStore__body"></div>' +
+            '</div>';
+
+            var $AbrosStoreAdHTML = $(Lampa.Lang.translate(AbrosStoreAdHTML));
+            Lampa.main().render().find('.head').before($AbrosStoreAdHTML);
+            Lampa.main().update();
+        }
+    }
+
     if (window.appready) {
         addAbrosStore();
-        addAdSection(); // Call the function to add the Ad section
+        addAbrosStoreAd()
     } else {
         Lampa.Listener.follow('app', function (e) {
             if (e.type === 'ready') {
                 addAbrosStore();
-                addAdSection(); // Call the function to add the Ad section
+                addAbrosStoreAd()
             }
         });
     }

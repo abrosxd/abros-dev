@@ -61,7 +61,7 @@
                 headElement = document.querySelector('.head');
                 if (headElement) {
                     // Как только элемент найден, добавляем в него рекламный блок и останавливаем цикл
-                    headElement.insertAdjacentHTML('afterend', AbrosStoreAdHTML);
+                    headElement.parentNode.insertBefore(adAbrosStoreElement.firstChild, headElement.nextSibling);
                     clearInterval(searchHeadInterval);
                 }
             }, 1000); // Проверяем каждую секунду

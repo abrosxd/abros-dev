@@ -46,7 +46,7 @@
     });
 
     function addAbrosStoreAd() {
-        var headElement = document.querySelector('.head');
+        var activitysSlides = document.querySelector('.activitys__slides');
         var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
                                 '<div class="adAbrosStore__head">' +
                                 '<div class="adAbrosStore__title">Реклама</div>' +
@@ -55,19 +55,19 @@
                                 '</div>';
         
         // Проверяем, найден ли элемент с классом "head"
-        if (!headElement) {
+        if (!activitysSlides) {
             // Если элемент не найден, запускаем цикл, который будет искать его
             var searchHeadInterval = setInterval(function() {
                 headElement = document.querySelector('.head');
                 if (headElement) {
                     // Как только элемент найден, добавляем в него рекламный блок и останавливаем цикл
-                    headElement.insertAdjacentHTML('afterend', AbrosStoreAdHTML);
+                    activitysSlides.innerHTML += AbrosStoreAdHTML;
                     clearInterval(searchHeadInterval);
                 }
             }, 1000); // Проверяем каждую секунду
         } else {
             // Если элемент найден сразу, добавляем в него рекламный блок
-            headElement.insertAdjacentHTML('afterend', AbrosStoreAdHTML);
+            activitysSlides.innerHTML += AbrosStoreAdHTML;
         }
     }
     

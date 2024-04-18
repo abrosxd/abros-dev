@@ -37,8 +37,7 @@
 
     // Function to add the Ad section
     function addAdSection() {
-        if (!Lampa.Template.main) return;
-
+        
         var adAbrosStoreComponent = '#app';;
         var adAbrosStoreExist = Lampa.Template.main().render().find(adAbrosStoreComponent).length > 0;
 

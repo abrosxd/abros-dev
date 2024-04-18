@@ -37,9 +37,9 @@
 
     // Function to add the Ad section
     function addAdSection() {
-        
+
         var adAbrosStoreComponent = '#app';;
-        var adAbrosStoreExist = Lampa.Template.main().render().find(adAbrosStoreComponent).length > 0;
+        var adAbrosStoreExist = Lampa.Listener.main().render().find(adAbrosStoreComponent).length > 0;
 
         if (!adAbrosStoreExist) {
             var adAbrosStoreHTML = '<div class="adAbrosstore">' +
@@ -50,8 +50,8 @@
             '</div>';
 
             var $adAbrosStoreHTML = $(Lampa.Lang.translate(adAbrosStoreHTML));
-            Lampa.Template.main().render().find('.head').after($adAbrosStoreHTML);
-            Lampa.Template.main().update();
+            Lampa.Listener.main().render().find('.head').after($adAbrosStoreHTML);
+            Lampa.Listener.main().update();
             resetTemplates();
         }
         

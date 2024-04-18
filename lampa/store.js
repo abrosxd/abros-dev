@@ -40,7 +40,7 @@
         if (!Lampa.main) return;
 
         var adAbrosStoreComponent = '[class="adAbrosstore"]';
-        var adAbrosStoreExist = Lampa.App.main().render().find(adAbrosStoreComponent).length > 0;
+        var adAbrosStoreExist = Lampa.main().render().find(adAbrosStoreComponent).length > 0;
 
         if (!adAbrosStoreExist) {
             var adAbrosStoreHTML = '<div class="adAbrosstore">' +

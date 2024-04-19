@@ -91,17 +91,18 @@
 
                     adAbrosStoreBody.insertAdjacentHTML('beforeend', cardHTML);
                 });
+                if (adAbrosStoreBody) {
+                    $('#adAbrosStore__body').slick({
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                        arrows: false,
+                    });
+                }
             })
             .catch(error => console.error('Ошибка загрузки данных:', error));
-
-            $('#adAbrosStore__body').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                arrows: false,
-            });
         });
     }
 

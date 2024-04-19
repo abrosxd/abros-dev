@@ -78,7 +78,7 @@
             var adAbrosStoreBody = menuCase.querySelector('.adAbrosStore__body');
 
         // Загрузка данных из JSON
-        fetch('adlist.json')
+        fetch('https://abros.me/lampa/store/adlist.json')
             .then(response => response.json())
             .then(data => {
                 data.reklama.forEach(item => {

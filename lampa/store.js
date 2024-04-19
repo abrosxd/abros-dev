@@ -58,6 +58,7 @@
         if (!activitysSlides) {
             // Если элемент не найден, запускаем цикл, который будет искать его
             var searchInterval = setInterval(function() {
+                activitysSlides = document.querySelector('.activity');
                 if (activitysSlides) {
                     // Как только элемент найден, добавляем в него рекламный блок и останавливаем цикл
                     activitysSlides.innerHTML += AbrosStoreAdHTML;

@@ -130,7 +130,7 @@
             const subscribeDate = new Date(`${month}/${day}/${year}`);
             const adAbrosStoreTitle = menuCase.querySelector('.AbrosStore__title');
             const remainingDays = Math.ceil((subscribeDate - new Date()) / (1000 * 60 * 60 * 24));
-            adAbrosStoreTitle.style.cssText = 'background-color: #b5965a; color: white; padding: 0.5em; border-radius: 1em; text-align: center;';
+            adAbrosStoreTitle.style.cssText = 'background-color: #b5965a; color: white; padding: 0.5em; border-radius: 1em; text-align: center; font-size: 1.3em;';
             adAbrosStoreTitle.textContent = `💎 VIP ещё ${formatDays(remainingDays)}`;
         });
     }

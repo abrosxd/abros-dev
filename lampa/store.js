@@ -105,7 +105,7 @@
                     data.reklama.forEach(item => {
                         const cardHTML = `
                             <div class="adAbrosstore__card">
-                                <img class="adAbrosstore__card__image" style="border-radius: 1em;" src="${domain}${item.image}">
+                                <img class="adAbrosstore__card__image" style="border-radius: 1em;" src="${item.image}">
                                 <div class="adAbrosstore__card__text" style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%; color:${item.colortext}">${item.text}</div>
                             </div>`;
                         adAbrosStoreBody.insertAdjacentHTML('beforeend', cardHTML);

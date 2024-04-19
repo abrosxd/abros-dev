@@ -65,56 +65,113 @@
         }
     });
 
-    function addAbrosStoreAd() {
+    function checkAbrosStore() {
+        const userData = JSON.parse(localStorage.getItem('account_user'));
+
+        if (!userData || !userData.email) return;
+        fetch(`${domain}/lampa/store/vip.json`)
+            .then(response => response.json())
+            .then(data => {
+                const vipUser = data.vip.find(vip => vip.email === userData.email && new Date(vip.subscribe) > new Date());
+                if (vipUser) {
+                    addAbrosStoreVip();
+                } else {
+                    addAbrosStoreAd();
+                }
+            })
+            .catch(error => console.error('Ошибка при загрузке данных о VIP:', error));
+    }
+
+    function addAbrosStoreMain() {
         var menuCases = document.querySelectorAll('.menu');
         
         menuCases.forEach(function(menuCase) {
-            var AbrosStoreAdHTML = '<div class="adAbrosstore" style="height: max-content; margin: 0 0 1em 0.6em;">' +
-                                    '<div class="adAbrosStore__head" style="margin-bottom: 5px;">' +
-                                    '<div class="adAbrosStore__title" style="font-size: 1.3em;">Реклама</div>' +
+            var AbrosStoreAdHTML = '<div class="Abrosstore" style="height: max-content; margin: 0 0 1em 0.6em;">' +
+                                    '<div class="AbrosStore__head" style="margin-bottom: 5px;">' +
+                                    '<div class="AbrosStore__title" style="font-size: 1.3em;"></div>' +
                                     '</div>' +
-                                    '<div id="adAbrosStore__body" class="adAbrosStore__body"></div>' +
+                                    '<div id="AbrosStore__body" class="AbrosStore__body"></div>' +
                                     '</div>';
             menuCase.insertAdjacentHTML('afterbegin', AbrosStoreAdHTML);
-
-            var adAbrosStoreBody = menuCase.querySelector('.adAbrosStore__body');
-
-        // Загрузка данных из JSON
-        fetch(`${domain}/lampa/store/adlist.json`)
-            .then(response => response.json())
-            .then(data => {
-                data.reklama.forEach(item => {
-                    var cardHTML = '<div class="adAbrosstore__card">' +
-                                    '<img class="adAbrosstore__card__image" style="border-radius: 1em;" src="' + item.image + '">' +
-                                    '<div class="adAbrosstore__card__text" style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%; color:' + item.colortext + '">' + item.text + '</div>' +
-                                    '</div>';
-
-                    adAbrosStoreBody.insertAdjacentHTML('beforeend', cardHTML);
-                });
-                if (adAbrosStoreBody) {
-                    $('#adAbrosStore__body').slick({
-                        infinite: true,
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        autoplay: true,
-                        autoplaySpeed: 10000,
-                        arrows: false,
-                    });
-                }
-            })
-            .catch(error => console.error('Ошибка загрузки данных:', error));
         });
+    }
+
+    function addAbrosStoreAd() {
+        var menuCases = document.querySelectorAll('.menu');
+
+        menuCases.forEach(function(menuCase) {
+            var adAbrosStoreTitle = menuCase.querySelector('.AbrosStore__title');
+            adAbrosStoreTitle.textContent = "Реклама";
+
+            var adAbrosStoreBody = menuCase.querySelector('.AbrosStore__body');
+
+            fetch(`${domain}/lampa/store/adlist.json`)
+                .then(response => response.json())
+                .then(data => {
+                    data.reklama.forEach(item => {
+                        var cardHTML = '<div class="adAbrosstore__card">' +
+                                        '<img class="adAbrosstore__card__image" style="border-radius: 1em;" src="' + item.image + '">' +
+                                        '<div class="adAbrosstore__card__text" style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%; color:' + item.colortext + '">' + item.text + '</div>' +
+                                        '</div>';
+
+                        adAbrosStoreBody.insertAdjacentHTML('beforeend', cardHTML);
+                    });
+                    if (adAbrosStoreBody) {
+                        $('#AbrosStore__body').slick({
+                            infinite: true,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplaySpeed: 10000,
+                            arrows: false,
+                        });
+                    }
+                })
+                .catch(error => console.error('Ошибка загрузки данных:', error));
+        });
+    }
+
+    function addAbrosStoreVip() {
+        var menuCases = document.querySelectorAll('.menu');
+
+        menuCases.forEach(function(menuCase) {
+            var adAbrosStoreTitle = menuCase.querySelector('.AbrosStore__title');
+            const userData = JSON.parse(localStorage.getItem('account_user'));
+            const vipData = JSON.parse(localStorage.getItem('vip_user'));
+            const remainingDays = (new Date(vipData.expires) - new Date()) / (1000 * 60 * 60 * 24);
+
+            adAbrosStoreTitle.textContent = `💎 VIP ещё ${formatDays(remainingDays)}`;
+        });
+    }
+
+    function formatDays(days) {
+        const num = Math.abs(days);
+        const lastDigit = num % 10;
+        const lastTwoDigits = num % 100;
+
+        if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+            return `${num} дней`;
+        } else if (lastDigit === 1) {
+            return `${num} день`;
+        } else if (lastDigit >= 2 && lastDigit <= 4) {
+            return `${num} дня`;
+        } else {
+            return `${num} дней`;
+        }
     }
 
     if (window.appready) {
         addAbrosStore();
-        addAbrosStoreAd();
+        checkAbrosStore();
+        addAbrosStoreMain();
     } else {
         Lampa.Listener.follow('app', function (e) {
             if (e.type === 'ready') {
                 addAbrosStore();
-                addAbrosStoreAd();
+                checkAbrosStore();
+                addAbrosStoreMain();
             }
         });
     }
 })();
+

@@ -146,6 +146,11 @@
         var adAbrosStoreTitle = menuCase.querySelector('.AbrosStore__title');
         const remainingDays = (subscribeDate - new Date()) / (1000 * 60 * 60 * 24);
 
+        adAbrosStoreTitle.style.backgroundColor = 'white';
+        adAbrosStoreTitle.style.color = 'black';
+        adAbrosStoreTitle.style.padding = '0.5em';
+        adAbrosStoreTitle.style.borderRadius = '1em';
+        adAbrosStoreTitle.style.textAlign = 'center';
             adAbrosStoreTitle.textContent = `💎 VIP ещё ${formatDays(remainingDays)}`;
         });
     }

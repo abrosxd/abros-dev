@@ -53,7 +53,7 @@
                 // Перебираем добавленные узлы
                 mutation.addedNodes.forEach(function(node) {
                     // Проверяем, является ли добавленный узел элементом с классом .activity
-                    if (node.classList && node.classList.contains('activity')) {
+                    if (node.classList && node.classList.contains('scroll__body')) {
                         var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
                                                 '<div class="adAbrosStore__head">' +
                                                 '<div class="adAbrosStore__title">Реклама</div>' +

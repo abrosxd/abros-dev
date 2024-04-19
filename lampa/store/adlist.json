@@ -2,18 +2,8 @@
 	"reklama": [
 		{
 			"image": "https://abros.me/main/projects/GrushkaEndo/avatar.png",
-			"text": "Фильмы и сериалы в онлайн. Источники: Filmix, Rezka, Zetflix, Collaps, HDVB.",
+			"text": " ",
 			"colortext": "#fff"
-		},
-		{
-			"image": "https://abros.me/main/projects/GrushkaEndo/avatar.png",
-			"text": "Фильмы и сериалы в онлайн. Источники: Filmix, Rezka, Zetflix, Collaps, HDVB.",
-			"colortext": "orange"
-		},
-		{
-			"image": "https://abros.me/main/projects/GrushkaEndo/avatar.png",
-			"text": "Фильмы и сериалы в онлайн. Источники: Filmix, Rezka, Zetflix, Collaps, HDVB.",
-			"colortext": "#000"
 		}
 	]
 } 

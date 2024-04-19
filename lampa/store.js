@@ -67,9 +67,9 @@
         var menuCases = document.querySelectorAll('.menu');
         
         menuCases.forEach(function(menuCase) {
-            var AbrosStoreAdHTML = '<div class="adAbrosstore" style="height: max-content; padding-left: 0.6em;">' +
+            var AbrosStoreAdHTML = '<div class="adAbrosstore" style="height: max-content; margin: 0 0 1em 0.6em;">' +
                                     '<div class="adAbrosStore__head" style="margin-bottom: 5px;">' +
-                                    '<div class="adAbrosStore__title" style="font-size: 1.2em;">Реклама</div>' +
+                                    '<div class="adAbrosStore__title" style="font-size: 1.3em;">Реклама</div>' +
                                     '</div>' +
                                     '<div id="adAbrosStore__body" class="adAbrosStore__body"></div>' +
                                     '</div>';
@@ -84,7 +84,7 @@
                 data.reklama.forEach(item => {
                     var cardHTML = '<div class="adAbrosstore__card">' +
                                     '<img class="adAbrosstore__card__image" style="border-radius: 1em;" src="' + item.image + '">' +
-                                    '<div class="adAbrosstore__card__text" style="font-size: 1.4em; position: absolute; bottom: 0; margin: 4px; width: 14%; color:' + item.colortext + '">' + item.text + '</div>' +
+                                    '<div class="adAbrosstore__card__text" style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%; color:' + item.colortext + '">' + item.text + '</div>' +
                                     '</div>';
 
                     adAbrosStoreBody.insertAdjacentHTML('beforeend', cardHTML);

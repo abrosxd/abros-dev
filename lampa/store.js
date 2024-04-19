@@ -84,9 +84,11 @@
                 data.reklama.forEach(item => {
                     var cardHTML = '<div class="adAbrosstore__card">' +
                                     '<img class="adAbrosstore__card__image" src="' + item.image + '">' +
-                                    '<div class="adAbrosstore__card__author">' + item.author + '</div>' +
+                                    '<div class="adAbrosstore__card__author" style="position: absolute; top: 0; margin: 4px;">' + item.author + '</div>' +
+                                    '<div class="adAbrosstore__card__content">' +
                                     '<div class="adAbrosstore__card__text">' + item.text + '</div>' +
-                                    '<a class="adAbrosstore__card__link">' + item.link + '</a>' +
+                                    '<div class="adAbrosstore__card__link">' + item.link + '</div>' +
+                                    '</div>' +
                                     '</div>';
 
                     adAbrosStoreBody.insertAdjacentHTML('beforeend', cardHTML);
@@ -97,7 +99,7 @@
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         autoplay: true,
-                        autoplaySpeed: 5000,
+                        autoplaySpeed: 10000,
                         arrows: false,
                     });
                 }

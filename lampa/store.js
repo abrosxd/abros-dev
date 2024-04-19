@@ -53,7 +53,7 @@
                 // Перебираем добавленные узлы
                 mutation.addedNodes.forEach(function(node) {
                     // Проверяем, является ли добавленный узел элементом с классом .activity
-                    if (node.classList && node.classList.contains('scroll__body')) {
+                    if (node.classList && node.classList.contains('menu')) {
                         var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
                                                 '<div class="adAbrosStore__head">' +
                                                 '<div class="adAbrosStore__title">Реклама</div>' +
@@ -69,7 +69,7 @@
     
         // Начинаем наблюдение за изменениями в документе
         observer.observe(document.body, { childList: true, subtree: true });
-    } 
+    }
 
     if (window.appready) {
         addAbrosStore();

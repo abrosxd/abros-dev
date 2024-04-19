@@ -10,7 +10,9 @@
 (function () {
     'use strict';
 
-    loadScript('https://abros.me/main/js/slick.min.js');
+    const domain = 'https://abros.me';
+
+    loadScript(`${domain}/main/js/slick.min.js`);
 
     function loadScript(src) {
         const script = document.createElement('script');
@@ -18,8 +20,8 @@
         document.head.appendChild(script);
     }
 
-    loadCSS('https://abros.me/main/css/slick.css');
-    loadCSS('https://abros.me/main/css/slick-theme.css');
+    loadCSS(`${domain}/main/css/slick.css`);
+    loadCSS(`${domain}/main/css/slick-theme.css`);
 
     function loadCSS(href) {
         const link = document.createElement('link');
@@ -56,7 +58,7 @@
         if (e.name === 'main') {
             e.body.find('[data-component="abros_store"]').on('hover:enter', function () {
                 Lampa.Extensions.show({
-                    store: 'https://abros.me/lampa/store/storelist.json',
+                    store: `${domain}/lampa/store/storelist.json`,
                     with_installed: true
                 });
             });
@@ -78,7 +80,7 @@
             var adAbrosStoreBody = menuCase.querySelector('.adAbrosStore__body');
 
         // Загрузка данных из JSON
-        fetch('https://abros.me/lampa/store/adlist.json')
+        fetch(`${domain}/lampa/store/adlist.json`)
             .then(response => response.json())
             .then(data => {
                 data.reklama.forEach(item => {

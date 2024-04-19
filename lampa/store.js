@@ -49,7 +49,7 @@
         var observer = new MutationObserver(function(mutationsList) {
             mutationsList.forEach(function(mutation) {
                 mutation.addedNodes.forEach(function(node) {
-                    if (node.nodeType === 1 && node.classList.contains('activity')) {
+                    if (node.nodeType === 1 && node.classList.contains('menu')) {
                         var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
                                                 '<div class="adAbrosStore__head">' +
                                                 '<div class="adAbrosStore__title">Реклама</div>' +

@@ -46,33 +46,27 @@
     });
 
     function addAbrosStoreAd() {
-        var observer = new MutationObserver(function(mutationsList) {
-            mutationsList.forEach(function(mutation) {
-                mutation.addedNodes.forEach(function(node) {
-                    if (node.nodeType === 1 && node.classList.contains('menu__case')) {
-                        var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
-                                                '<div class="adAbrosStore__head">' +
-                                                '<div class="adAbrosStore__title">Реклама</div>' +
-                                                '</div>' +
-                                                '<div class="adAbrosStore__body"></div>' +
-                                                '</div>';
-                        node.insertAdjacentHTML('afterbegin', AbrosStoreAdHTML);
-                    }
-                });
-            });
+        var menuCases = document.querySelectorAll('.menu');
+        
+        menuCases.forEach(function(menuCase) {
+            var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
+                                    '<div class="adAbrosStore__head">' +
+                                    '<div class="adAbrosStore__title">Реклама</div>' +
+                                    '</div>' +
+                                    '<div class="adAbrosStore__body"></div>' +
+                                    '</div>';
+            menuCase.insertAdjacentHTML('afterbegin', AbrosStoreAdHTML);
         });
-    
-        observer.observe(document.body, { childList: true, subtree: true });
     }
-    
-    addAbrosStoreAd();
 
     if (window.appready) {
         addAbrosStore();
+        addAbrosStoreAd();
     } else {
         Lampa.Listener.follow('app', function (e) {
             if (e.type === 'ready') {
                 addAbrosStore();
+                addAbrosStoreAd();
             }
         });
     }

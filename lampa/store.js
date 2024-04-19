@@ -61,9 +61,10 @@
                 });
             });
         });
-
+    
         observer.observe(document.body, { childList: true, subtree: true });
     }
+    
     addAbrosStoreAd();
 
     if (window.appready) {

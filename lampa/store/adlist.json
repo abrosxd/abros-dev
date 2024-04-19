@@ -1,7 +1,7 @@
 {
 	"reklama": [
 		{
-			"image": "https://abros.me/lampa/store/img/reklama/abrosvip.png",
+			"image": "/lampa/store/img/reklama/abrosvip.png",
 			"text": " ",
 			"colortext": "#fff"
 		}

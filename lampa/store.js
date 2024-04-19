@@ -64,15 +64,14 @@
 
         observer.observe(document.body, { childList: true, subtree: true });
     }
+    addAbrosStoreAd();
 
     if (window.appready) {
         addAbrosStore();
-        addAbrosStoreAd()
     } else {
         Lampa.Listener.follow('app', function (e) {
             if (e.type === 'ready') {
                 addAbrosStore();
-                addAbrosStoreAd()
             }
         });
     }

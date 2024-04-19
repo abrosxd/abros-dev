@@ -86,7 +86,7 @@
                                     '<img class="adAbrosstore__card__image" src="' + item.image + '">' +
                                     '<div class="adAbrosstore__card__author">' + item.author + '</div>' +
                                     '<div class="adAbrosstore__card__text">' + item.text + '</div>' +
-                                    '<a class="adAbrosstore__card__link" href="' + item.link + '">Подробнее</a>' +
+                                    '<a class="adAbrosstore__card__link">' + item.link + '</a>' +
                                     '</div>';
 
                     adAbrosStoreBody.insertAdjacentHTML('beforeend', cardHTML);

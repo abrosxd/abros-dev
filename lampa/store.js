@@ -146,8 +146,8 @@
         var adAbrosStoreTitle = menuCase.querySelector('.AbrosStore__title');
         const remainingDays = Math.ceil((subscribeDate - new Date()) / (1000 * 60 * 60 * 24));
 
-        adAbrosStoreTitle.style.backgroundColor = 'white';
-        adAbrosStoreTitle.style.color = 'black';
+        adAbrosStoreTitle.style.backgroundColor = '#b5965a';
+        adAbrosStoreTitle.style.color = 'white';
         adAbrosStoreTitle.style.padding = '0.5em';
         adAbrosStoreTitle.style.borderRadius = '1em';
         adAbrosStoreTitle.style.textAlign = 'center';

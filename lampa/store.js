@@ -71,7 +71,7 @@
                                     '<div class="adAbrosStore__head">' +
                                     '<div class="adAbrosStore__title">Реклама</div>' +
                                     '</div>' +
-                                    '<div class="adAbrosStore__body"></div>' +
+                                    '<div id="adAbrosStore__body" class="adAbrosStore__body"></div>' +
                                     '</div>';
             menuCase.insertAdjacentHTML('afterbegin', AbrosStoreAdHTML);
 
@@ -94,7 +94,7 @@
             })
             .catch(error => console.error('Ошибка загрузки данных:', error));
 
-            $('.adAbrosStore__body').slick({
+            $('#adAbrosStore__body').slick({
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,

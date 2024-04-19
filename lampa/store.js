@@ -46,30 +46,24 @@
     });
 
     function addAbrosStoreAd() {
-        // Создаем новый экземпляр наблюдателя мутаций
         var observer = new MutationObserver(function(mutationsList) {
-            // Перебираем все мутации
             mutationsList.forEach(function(mutation) {
-                // Перебираем добавленные узлы
                 mutation.addedNodes.forEach(function(node) {
-                    // Проверяем, является ли добавленный узел элементом с классом .menu
-                    if (node.classList && node.classList.contains('menu')) {
+                    if (node.nodeType === 1 && node.classList.contains('menu')) {
                         var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
                                                 '<div class="adAbrosStore__head">' +
                                                 '<div class="adAbrosStore__title">Реклама</div>' +
                                                 '</div>' +
                                                 '<div class="adAbrosStore__body"></div>' +
                                                 '</div>';
-                        // Вставляем рекламный блок перед содержимым .menu
                         node.insertAdjacentHTML('afterbegin', AbrosStoreAdHTML);
                     }
                 });
             });
         });
-    
-        // Начинаем наблюдение за изменениями в документе
+
         observer.observe(document.body, { childList: true, subtree: true });
-    }   
+    }
 
     if (window.appready) {
         addAbrosStore();

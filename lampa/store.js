@@ -57,7 +57,7 @@
 
     function checkAbrosStore() {
         const userData = JSON.parse(localStorage.getItem('account_user'));
-        if (!userData || !userData.email || !JSON.parse(userData)) {
+        if (!userData || !JSON.parse(userData)?.email) {
             addAbrosStoreAd();
             return;
         }

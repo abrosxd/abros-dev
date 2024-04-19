@@ -73,17 +73,14 @@
         fetch(`${domain}/lampa/store/vip.json`)
             .then(response => response.json())
             .then(data => {
-                console.log("Data from vip.json:", data);
                 const currentDate = new Date();
-                console.log("Current Date:", currentDate);
                 const vipUser = data.vip.find(vip => {
                     const [day, month, year] = vip.subscribe.split('.');
                     const subscribeDate = new Date(`${month}/${day}/${year}`);
                     return vip.email === userData.email && subscribeDate > currentDate;
                 });
-                console.log("VIP User:", vipUser);
                 if (vipUser) {
-                    addAbrosStoreVip();
+                    addAbrosStoreVip(vipUser);
                 } else {
                     addAbrosStoreAd();
                 }
@@ -140,12 +137,11 @@
         });
     }
 
-    function addAbrosStoreVip() {
+    function addAbrosStoreVip(vipData) {
         var menuCases = document.querySelectorAll('.menu');
 
         menuCases.forEach(function(menuCase) {
             var adAbrosStoreTitle = menuCase.querySelector('.AbrosStore__title');
-            const vipData = vip.subscribe;
             const remainingDays = (new Date(vipData.expires) - new Date()) / (1000 * 60 * 60 * 24);
 
             adAbrosStoreTitle.textContent = `💎 VIP ещё ${formatDays(remainingDays)}`;

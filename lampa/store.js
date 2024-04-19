@@ -56,8 +56,13 @@
     });
 
     function checkAbrosStore() {
-        const userData = JSON.parse(localStorage.getItem('account_user'));
-        if (!userData || !JSON.parse(userData)?.email) {
+        const userDataJSON = localStorage.getItem('account_user');
+        if (!userDataJSON) {
+            addAbrosStoreAd();
+            return;
+        }
+        const userData = JSON.parse(userDataJSON);
+        if (!userData || !userData.email) {
             addAbrosStoreAd();
             return;
         }

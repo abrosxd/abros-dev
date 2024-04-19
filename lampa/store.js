@@ -67,12 +67,14 @@
 
     function checkAbrosStore() {
         const userData = JSON.parse(localStorage.getItem('account_user'));
-
+    
         if (!userData || !userData.email) return;
+    
         fetch(`${domain}/lampa/store/vip.json`)
             .then(response => response.json())
             .then(data => {
-                const vipUser = data.vip.find(vip => vip.email === userData.email && new Date(vip.subscribe) > new Date());
+                const currentDate = new Date();
+                const vipUser = data.vip.find(vip => vip.email === userData.email && new Date(vip.subscribe) > currentDate);
                 if (vipUser) {
                     addAbrosStoreVip();
                 } else {

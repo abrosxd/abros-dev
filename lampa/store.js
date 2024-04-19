@@ -136,7 +136,6 @@
 
         menuCases.forEach(function(menuCase) {
             var adAbrosStoreTitle = menuCase.querySelector('.AbrosStore__title');
-            const userData = JSON.parse(localStorage.getItem('account_user'));
             const vipData = JSON.parse(localStorage.getItem('vip_user'));
             const remainingDays = (new Date(vipData.expires) - new Date()) / (1000 * 60 * 60 * 24);
 

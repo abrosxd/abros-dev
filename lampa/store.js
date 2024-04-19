@@ -162,14 +162,14 @@
 
     if (window.appready) {
         addAbrosStore();
-        checkAbrosStore();
         addAbrosStoreMain();
+        checkAbrosStore();
     } else {
         Lampa.Listener.follow('app', function (e) {
             if (e.type === 'ready') {
                 addAbrosStore();
-                checkAbrosStore();
                 addAbrosStoreMain();
+                checkAbrosStore();
             }
         });
     }

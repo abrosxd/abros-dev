@@ -46,32 +46,30 @@
     });
 
     function addAbrosStoreAd() {
-        var activitysSlides = document.querySelector('.activity');
-        var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
-                                '<div class="adAbrosStore__head">' +
-                                '<div class="adAbrosStore__title">Реклама</div>' +
-                                '</div>' +
-                                '<div class="adAbrosStore__body"></div>' +
-                                '</div>';
-        
-        // Проверяем, найден ли элемент с классом "head"
-        if (!activitysSlides) {
-            // Если элемент не найден, запускаем цикл, который будет искать его
-            var searchInterval = setInterval(function() {
-                activitysSlides = document.querySelector('.activity');
-                if (activitysSlides) {
-                    // Как только элемент найден, добавляем в него рекламный блок и останавливаем цикл
-                    activitysSlides.innerHTML += AbrosStoreAdHTML;
-                    clearInterval(searchInterval);
-                }
-            }, 1000); // Проверяем каждую секунду
-        } else {
-            // Если элемент найден сразу, добавляем в него рекламный блок
-            activitysSlides.innerHTML += AbrosStoreAdHTML;
-        }
-    }
+        // Создаем новый экземпляр наблюдателя мутаций
+        var observer = new MutationObserver(function(mutationsList) {
+            // Перебираем все мутации
+            mutationsList.forEach(function(mutation) {
+                // Перебираем добавленные узлы
+                mutation.addedNodes.forEach(function(node) {
+                    // Проверяем, является ли добавленный узел элементом с классом .activity
+                    if (node.classList && node.classList.contains('activity')) {
+                        var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
+                                                '<div class="adAbrosStore__head">' +
+                                                '<div class="adAbrosStore__title">Реклама</div>' +
+                                                '</div>' +
+                                                '<div class="adAbrosStore__body"></div>' +
+                                                '</div>';
+                        // Вставляем рекламный блок перед содержимым .activity
+                        node.insertAdjacentHTML('afterbegin', AbrosStoreAdHTML);
+                    }
+                });
+            });
+        });
     
-    
+        // Начинаем наблюдение за изменениями в документе
+        observer.observe(document.body, { childList: true, subtree: true });
+    } 
 
     if (window.appready) {
         addAbrosStore();

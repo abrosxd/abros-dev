@@ -143,6 +143,8 @@
         menuCases.forEach(function(menuCase) {
             const [day, month, year] = vipData.subscribe.split('.');
                     const subscribeDate = new Date(`${month}/${day}/${year}`);
+                    console.log('subscribeDate:', subscribeDate); // Выводим дату начала подписки в консоль
+        console.log('vipData.expires:', vipData.expires);
             var adAbrosStoreTitle = menuCase.querySelector('.AbrosStore__title');
             const remainingDays = (new Date(vipData.expires) - new Date(subscribeDate)) / (1000 * 60 * 60 * 24);
 

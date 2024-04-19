@@ -73,8 +73,11 @@
         fetch(`${domain}/lampa/store/vip.json`)
             .then(response => response.json())
             .then(data => {
+                console.log("Data from vip.json:", data);
                 const currentDate = new Date();
+                console.log("Current Date:", currentDate);
                 const vipUser = data.vip.find(vip => vip.email === userData.email && new Date(vip.subscribe) > currentDate);
+                console.log("VIP User:", vipUser);
                 if (vipUser) {
                     addAbrosStoreVip();
                 } else {

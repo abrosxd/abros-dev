@@ -83,7 +83,7 @@
             .then(data => {
                 data.reklama.forEach(item => {
                     var cardHTML = '<div class="adAbrosstore__card">' +
-                                    '<img class="adAbrosstore__card__image" src="' + item.image + '">' +
+                                    '<img class="adAbrosstore__card__image" style="border-radius: 1em;" src="' + item.image + '">' +
                                     '<div class="adAbrosstore__card__author" style="position: absolute; top: 0; margin: 4px; font-size: 1.4em; color:' + item.colorauthor + ' ">' + item.author + '</div>' +
                                     '<div class="adAbrosstore__card__text" style="font-size: 1.4em; color:' + item.colortext + '">' + item.text + '</div>' +
                                     '</div>';

@@ -136,7 +136,7 @@
 
         menuCases.forEach(function(menuCase) {
             var adAbrosStoreTitle = menuCase.querySelector('.AbrosStore__title');
-            const vipData = JSON.parse(localStorage.getItem('vip_user'));
+            const vipData = vip.subscribe;
             const remainingDays = (new Date(vipData.expires) - new Date()) / (1000 * 60 * 60 * 24);
 
             adAbrosStoreTitle.textContent = `💎 VIP ещё ${formatDays(remainingDays)}`;

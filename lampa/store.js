@@ -67,7 +67,7 @@
         var menuCases = document.querySelectorAll('.menu');
         
         menuCases.forEach(function(menuCase) {
-            var AbrosStoreAdHTML = '<div class="adAbrosstore">' +
+            var AbrosStoreAdHTML = '<div class="adAbrosstore" style="height: max-content;">' +
                                     '<div class="adAbrosStore__head">' +
                                     '<div class="adAbrosStore__title">Реклама</div>' +
                                     '</div>' +

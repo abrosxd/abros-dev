@@ -142,9 +142,12 @@
 
         menuCases.forEach(function(menuCase) {
             const [day, month, year] = vipData.subscribe.split('.');
-            const subscribeDate = new Date(`${month}/${day}/${year}`);
+                    const subscribeDate = new Date(`${month}/${day}/${year}`);
+                    console.log('subscribeDate:', subscribeDate); // Выводим дату начала подписки в консоль
+        console.log('vipData.expires:', vipData.expires);
+        console.log('vipData:', vipData);
             var adAbrosStoreTitle = menuCase.querySelector('.AbrosStore__title');
-            const remainingDays = (new Date(vipData) - new Date(subscribeDate)) / (1000 * 60 * 60 * 24);
+            const remainingDays = (new Date(vipData.expires) - new Date(subscribeDate)) / (1000 * 60 * 60 * 24);
 
             adAbrosStoreTitle.textContent = `💎 VIP ещё ${formatDays(remainingDays)}`;
         });

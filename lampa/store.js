@@ -10,6 +10,24 @@
 (function () {
     'use strict';
 
+    loadScript('https://abros.me/main/js/slick.min.js');
+
+    function loadScript(src) {
+        const script = document.createElement('script');
+        script.src = src;
+        document.head.appendChild(script);
+    }
+
+    loadCSS('https://abros.me/main/css/slick.css');
+    loadCSS('https://abros.me/main/css/slick-theme.css');
+
+    function loadCSS(href) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+    }
+
     function addAbrosStore() {
         if (!Lampa.Settings.main) return;
 
@@ -56,6 +74,25 @@
                                     '<div class="adAbrosStore__body"></div>' +
                                     '</div>';
             menuCase.insertAdjacentHTML('afterbegin', AbrosStoreAdHTML);
+
+            var adAbrosStoreBody = menuCase.querySelector('.adAbrosStore__body');
+
+        // Загрузка данных из JSON
+        fetch('adlist.json')
+            .then(response => response.json())
+            .then(data => {
+                data.reklama.forEach(item => {
+                    var cardHTML = '<div class="adAbrosstore__card">' +
+                                    '<img class="adAbrosstore__card__image" src="' + item.image + '">' +
+                                    '<div class="adAbrosstore__card__author">' + item.author + '</div>' +
+                                    '<div class="adAbrosstore__card__text">' + item.text + '</div>' +
+                                    '<a class="adAbrosstore__card__link" href="' + item.link + '">Подробнее</a>' +
+                                    '</div>';
+
+                    adAbrosStoreBody.insertAdjacentHTML('beforeend', cardHTML);
+                });
+            })
+            .catch(error => console.error('Ошибка загрузки данных:', error));
         });
     }
 

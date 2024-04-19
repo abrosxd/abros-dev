@@ -76,9 +76,12 @@
                 console.log("Data from vip.json:", data);
                 const currentDate = new Date();
                 console.log("Current Date:", currentDate);
-                const vipUser = data.vip.find(vip => vip.email === userData.email && new Date(vip.subscribe) > currentDate);
+                const vipUser = data.vip.find(vip => {
+                    const [day, month, year] = vip.subscribe.split('.');
+                    const subscribeDate = new Date(`${month}/${day}/${year}`);
+                    return vip.email === userData.email && subscribeDate > currentDate;
+                });
                 console.log("VIP User:", vipUser);
-                console.log("VIP User:", userData.email);
                 if (vipUser) {
                     addAbrosStoreVip();
                 } else {

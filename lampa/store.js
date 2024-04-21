@@ -342,7 +342,7 @@ function showReload(reloadText){
     /* Реклама */
     function addADS(reklama) {
         document.querySelectorAll('.menu').forEach(menuCase => {
-            const adsbody = menuCase.querySelector('#adsbody');
+            const adsbody = menuCase.getElementById('adsbody');
             const ADSHTML = `
                 <div style="height: max-content; margin: 0 0 1em 0.6em;">
                     <div style="margin-bottom: 5px;">

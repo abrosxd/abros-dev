@@ -1,290 +1,257 @@
 {
-  "secuses": true,
-  "results": [
-	{
-		"title": "Рекомендуем",
-		"results": [
-			{
-				"image": "https://abros.me/lampa/store/img/recomend/Stream.png",
-				"name": "Stream",
-				"author": "@arkmv     (Бесплатный)",
-				"link": "http://arkmv.ru/vod",
-				"descr": "Фильмы и сериалы в онлайн. Источники: Filmix, Rezka, Zetflix, Collaps, HDVB.",
-				"available_lampa": 1
+	"plugins": [
+		{
+			"component": "as_video",
+			"param" : {
+				"name": "Showy"
 			},
-			{
-				"image": "https://abros.me/lampa/store/img/recomend/Showy.png",
+			"field": {
 				"name": "Showy",
-				"author": "Showy     (Бесплатный)",
-				"link": "http://showy.online/m.js",
-				"descr": "Фильмы и сериалы в онлайн, поддержка 4к. Источники: Rezka, Zetflix, VDBmovies, Ashdi, Collaps, HDVB, Kinotochka, VideoCDN, IRemux, Voidboost, Eneyida, Kinoukr, RedHeadSound.",
-				"available_lampa": 1
-			},
-			{
-				"image": "https://abros.me/lampa/store/img/recomend/Kulik.png",
-				"name": "Kulik",
-				"author": "@SawamuraRen     (Бесплатно)",
-				"link": "http://cdn.kulik.uz/cors",
-				"descr": "Просмотр IPTV каналов, отсортированных по различным категориям. Есть возможность поменять стиль плагина, сервер вещания, а также добавить каналы в избранное",
-				"available_lampa": 1
-			},
-			{
-				"image": "https://abros.me/lampa/store/img/recomend/Feedback.png",
-				"name": "Отзывы и рецензии",
-				"author": "@elenatv99       (Бесплатно)",
-				"link": "https://skaz.tv/o.js",
-				"descr": "Добавляет кнопку чтения отзывов с КиноПоиск в карточку фильма или сериала",
-				"available_lampa": 1
-			},
-			{
-				"image": "https://abros.me/lampa/store/img/recomend/Tricks.png",
-				"name": "Приятные мелочи",
-				"author": "@AndreyURL54       (Бесплатно)",
-				"link": "https://skaztv.online/js/tricks.js",
-				"descr": "Дополнение некоторых востребованных функций и дизайна, которых вам не хватало. (mod. Без проверки на MSX)",
-				"available_lampa": 1
+				"description": "Фильмы и сериалы в онлайн, поддержка 4к. Источники: Rezka, Zetflix, VDBmovies, Ashdi, Collaps, HDVB, Kinotochka, VideoCDN, IRemux, Voidboost, Eneyida, Kinoukr, RedHeadSound.",
+				"author": "Showy",
+				"link": "http://showy.online/m.js"
 			}
-		],
-		"hpu": "recomend"
-	},
-	{
-		"title": "Популярное",
-		"results": [
-			{
+		},
+	    {
+			"component": "as_video",
+			"param" : {
+				"name": "Stream"
+			},
+			"field": {
 				"name": "Stream",
-				"author": "@arkmv     (Бесплатный)",
-				"link": "http://arkmv.ru/vod",
-				"descr": "Фильмы и сериалы в онлайн. Источники: Filmix, Rezka, Zetflix, Collaps, HDVB.",
-				"available_lampa": 1
-			},
-			{
-				"name": "Онлайн Мод",
-				"author": "@t_anton     (Бесплатный)",
-				"link": "https://nb557.github.io/plugins/online_mod.js",
-				"descr": "Фильмы и сериалы в онлайн. Источники: VideoCDN, HDRezka, Kinobase, Collaps, CDNMovies, Filmix, Zetflix, RedHeadSound, CDNVideoHub, AniLibria, Kodik.",
-				"available_lampa": 1
-			},
-			{
-				"name": "BwaJS - Онлайн и Клубничка 18+",
-				"author": "@bwato     (Бесплатный)",
-				"link": "https://bwa.to/f",
-				"descr": "Тот же плагин что и предыдущий, но только добавляет контент 18+ Источники: Pornhub, Spankbang, Eporner, Porntrex, Xhamster, Xvideos, Xnxx, Bongacams, Chaturbate.",
-				"available_lampa": 1
-			},
-			{
-				"name": "Kulik",
-				"author": "@SawamuraRen     (Бесплатно)",
-				"link": "http://cdn.kulik.uz/cors",
-				"descr": "Просмотр IPTV каналов, отсортированных по различным категориям. Есть возможность поменять стиль плагина, сервер вещания, а также добавить каналы в избранное",
-				"available_lampa": 1
-			},
-			{
-				"name": "Добавляет пункт \"Парсер\" в меню",
-				"author": "@lampa      (Бесплатно)",
-				"link": "http://cub.red/plugin/etor",
-				"descr": "Плагин для ТВ, на которых Lampa установлена через официальные магазины LG Store и Tizen App Store. Включает в настройках отображение пунктов Парсер и Torrserver",
-				"available_lampa": 1
-			},
-			{
-				"name": "Публичные парсеры",
-				"author": "@lme       (Бесплатно)",
-				"link": "https://lampame.github.io/main/pubtorr.js",
-				"descr": "Сборник публичных парсеров отображением статуса доступности",
-				"available_lampa": 0
-			},
-			{
-				"name": "Отзывы и рецензии",
-				"author": "@elenatv99       (Бесплатно)",
-				"link": "https://skaz.tv/o.js",
-				"descr": "Добавляет кнопку чтения отзывов с КиноПоиск в карточку фильма или сериала",
-				"available_lampa": 1
-			},
-			{
-				"name": "Приятные мелочи",
-				"author": "@AndreyURL54       (Бесплатно)",
-				"link": "https://skaztv.online/js/tricks.js",
-				"descr": "Дополнение некоторых востребованных функций и дизайна, которых вам не хватало. (mod. Без проверки на MSX)",
-				"available_lampa": 1
+				"description": "Фильмы и сериалы в онлайн. Источники: Filmix, Rezka, Zetflix, Collaps, HDVB.",
+				"author": "@arkmv",
+				"link": "http://arkmv.ru/vod"
 			}
-		],
-		"hpu": "best"
-	},
-	{
-		"title": "Темы",
-		"results": [
-		  {
-			"name": "Netflix",
-			"author": "@abros     (Бесплатный)",
-			"link": "http://abros.me/lampa/plugins/theme/netflix.css",
-			"descr": "Тема в стиле Netflix.",
-			"available_lampa": 1
-		  }
-		],
-		"hpu": "theme"
-	  },
-    {
-      "title": "Видео",
-      "results": [
-		{
-		  "name": "Stream",
-		  "author": "@arkmv     (Бесплатный)",
-		  "link": "http://arkmv.ru/vod",
-		  "descr": "Фильмы и сериалы в онлайн. Источники: Filmix, Rezka, Zetflix, Collaps, HDVB.",
-		  "available_lampa": 1
-		},
-        {
-		  "name": "Онлайн Мод",
-		  "author": "@t_anton     (Бесплатный)",
-		  "link": "https://nb557.github.io/plugins/online_mod.js",
-		  "descr": "Фильмы и сериалы в онлайн. Источники: VideoCDN, HDRezka, Kinobase, Collaps, CDNMovies, Filmix, Zetflix, RedHeadSound, CDNVideoHub, AniLibria, Kodik.",
-		  "available_lampa": 1
 		},
 		{
-		  "name": "MODS's",
-		  "author": "@modss_group     (Подписка)",
-		  "link": "http://lampa.stream/modss",
-		  "descr": "Фильмы и сериалы в онлайн. На выбор доступно 17 балансеров и различные дополнения через меню настроек Modss.",
-		  "available_lampa": 1
+			"component": "as_video",
+			"param" : {
+				"name": "Online_mod"
+			},
+			"field": {
+				"name": "Онлайн Мод",
+				"description": "Фильмы и сериалы в онлайн. Источники: VideoCDN, HDRezka, Kinobase, Collaps, CDNMovies, Filmix, Zetflix, RedHeadSound, CDNVideoHub, AniLibria, Kodik.",
+				"author": "@t_anton",
+				"link": "https://nb557.github.io/plugins/online_mod.js"
+			}
 		},
 		{
-		  "name": "BwaJS - Только онлайн",
-		  "author": "@bwato     (Бесплатный)",
-		  "link": "https://bwa.to/o",
-		  "descr": "Фильмы и сериалы в онлайн. Источники: Rezka, Zetflix, VideoCDN, Ashdi, Collaps, Filmix, IRemux, RHS, Kinotochka, HDVB. Нужна поддержка WebAssembly и версия Chrome > 80.",
-		  "available_lampa": 1
+			"component": "as_video",
+			"param" : {
+				"name": "MODSs"
+			},
+			"field": {
+				"name": "MODS's",
+				"description": "Фильмы и сериалы в онлайн. На выбор доступно 17 балансеров и различные дополнения через меню настроек Modss.",
+				"author": "@modss_group",
+				"link": "http://lampa.stream/modss"
+			}
 		},
 		{
-			"name": "BwaJS - Онлайн и Клубничка 18+",
-			"author": "@bwato     (Бесплатный)",
-			"link": "https://bwa.to/f",
-			"descr": "Тот же плагин что и предыдущий, но только добавляет контент 18+ Источники: Pornhub, Spankbang, Eporner, Porntrex, Xhamster, Xvideos, Xnxx, Bongacams, Chaturbate.",
-			"available_lampa": 1
+			"component": "as_video",
+			"param" : {
+				"name": "BwaJS"
+			},
+			"field": {
+				"name": "BwaJS - Только онлайн",
+				"description": "Фильмы и сериалы в онлайн. Источники: Rezka, Zetflix, VideoCDN, Ashdi, Collaps, Filmix, IRemux, RHS, Kinotochka, HDVB. Нужна поддержка WebAssembly и версия Chrome > 80.",
+				"author": "@bwato",
+				"link": "https://bwa.to/o"
+			}
 		},
 		{
-		  "name": "Showy",
-		  "author": "Showy     (Бесплатный)",
-		  "link": "http://showy.online/m.js",
-		  "descr": "Фильмы и сериалы в онлайн, поддержка 4к. Источники: Rezka, Zetflix, VDBmovies, Ashdi, Collaps, HDVB, Kinotochka, VideoCDN, IRemux, Voidboost, Eneyida, Kinoukr, RedHeadSound.",
-		  "available_lampa": 1
+			"component": "as_video",
+			"param" : {
+				"name": "BwaJS18"
+			},
+			"field": {
+				"name": "BwaJS - Онлайн и Клубничка 18+",
+				"description": "Тот же плагин что и предыдущий, но только добавляет контент 18+ Источники: Pornhub, Spankbang, Eporner, Porntrex, Xhamster, Xvideos, Xnxx, Bongacams, Chaturbate.",
+				"author": "@bwato",
+				"link": "https://bwa.to/f"
+			}
+		},
+		{
+			"component": "as_tv",
+			"param" : {
+				"name": "TVskaz2"
+			},
+			"field": {
+				"name": "ТВ by skaz 2.0",
+				"description": "Версия ТВ by skaz плагина на основе IPTV",
+				"author": "@helpiptv",
+				"link": "http://skaz.tv/tv2.js"
+			}
+		},
+		{
+			"component": "as_tv",
+			"param" : {
+				"name": "TVskaz"
+			},
+			"field": {
+				"name": "ТВ by skaz",
+				"description": "Бесплатные каналы и 1400+ каналов по подписке, IPTV плейлисты @skaztv_bot",
+				"author": "@helpiptv",
+				"link": "http://skaz.tv/tv.js"
+			}
+		},
+		{
+			"component": "as_tv",
+			"param" : {
+				"name": "Kulik"
+			},
+			"field": {
+				"name": "Kulik",
+				"description": "Просмотр IPTV каналов, отсортированных по различным категориям. Есть возможность поменять стиль плагина, сервер вещания, а также добавить каналы в избранное",
+				"author": "@SawamuraRen",
+				"link": "http://cdn.kulik.uz/cors"
+			}
+		},
+		{
+			"component": "as_control",
+			"param" : {
+				"name": "AddParser"
+			},
+			"field": {
+				"name": "Добавляет пункт \"Парсер\" в меню",
+				"description": "Плагин для ТВ, на которых Lampa установлена через официальные магазины LG Store и Tizen App Store. Включает в настройках отображение пунктов Парсер и Torrserver",
+				"author": "@lampa",
+				"link": "http://cub.red/plugin/etor"
+			}
+		},
+		{
+			"component": "as_control",
+			"param" : {
+				"name": "PublicParser"
+			},
+			"field": {
+				"name": "Публичные парсеры",
+				"description": "Сборник публичных парсеров отображением статуса доступности",
+				"author": "@lme",
+				"link": "https://lampame.github.io/main/pubtorr.js"
+			}
+		},
+		{
+			"component": "as_control",
+			"param" : {
+				"name": "TypControl"
+			},
+			"field": {
+				"name": "Тип управления",
+				"description": "Позволяет выбрать тип управления (Пульт без мышки, Пульт с мышью, Тачскрин), а так же сбросить тип управления выбранный ранее",
+				"author": "@nemiroff",
+				"link": "https://nemiroff.github.io/lampa/select_weapon.js"
+			}
+		},
+		{
+			"component": "as_control",
+			"param" : {
+				"name": "AddCategory"
+			},
+			"field": {
+				"name": "Дополнительные категории",
+				"description": "Добавление категорий Мультфильмы, Netflix, Концерты, и прочее",
+				"author": "@lme",
+				"link": "https://lampame.github.io/main/nc/nc.js"
+			}
+		},
+		{
+			"component": "as_control",
+			"param" : {
+				"name": "OldStyle"
+			},
+			"field": {
+				"name": "Старый стиль (Закладки, Нравится, Позже)",
+				"description": "Возвращает в главное меню старый стиль отображения пунктов (Закладки, Нравится, Позже)",
+				"author": "@VitalikPVA",
+				"link": "http://github.freebie.tom.ru/want.js"
+			}
+		},
+		{
+			"component": "as_control",
+			"param" : {
+				"name": "ResetSubtitle"
+			},
+			"field": {
+				"name": "Сброс настроек субтитров",
+				"description": "Сбрасывает настройки субтитров по умолчанию",
+				"author": "@t_anton",
+				"link": "https://nb557.github.io/plugins/reset_subs.js"
+			}
+		},
+		{
+			"component": "as_control",
+			"param" : {
+				"name": "OffTouch"
+			},
+			"field": {
+				"name": "Выключение тача",
+				"description": "Выключает сенсорное управление, если оно было включено по ошибке",
+				"author": "@t_anton",
+				"link": "https://nb557.github.io/plugins/not_mobile.js"
+			}
+		},
+		{
+			"component": "as_other",
+			"param" : {
+				"name": "Comments"
+			},
+			"field": {
+				"name": "Отзывы и рецензии",
+				"description": "Добавляет кнопку чтения отзывов с КиноПоиск в карточку фильма или сериала",
+				"author": "@elenatv99",
+				"link": "https://skaz.tv/o.js"
+			}
+		},
+		{
+			"component": "as_other",
+			"param" : {
+				"name": "PreloadTS"
+			},
+			"field": {
+				"name": "Предзагрузка ts",
+				"description": "Плагин визуализации предзагрузки торрентов для встроенного клиента TorrServer",
+				"author": "@rootu",
+				"link": "https://plugin.rootu.top/ts-preload.js"
+			}
+		},
+		{
+			"component": "as_other",
+			"param" : {
+				"name": "Tricks"
+			},
+			"field": {
+				"name": "Приятные мелочи",
+				"description": "Дополнение некоторых востребованных функций и дизайна, которых вам не хватало. (mod. Без проверки на MSX)",
+				"author": "@AndreyURL54",
+				"link": "https://skaztv.online/js/tricks.js"
+			}
+		},
+		{
+			"component": "as_other",
+			"param" : {
+				"name": "OffWebsocket"
+			},
+			"field": {
+				"name": "Отключение Websocket",
+				"description": "Плагин отключает протокол Websocket, помогает при ошибках на некоторых устройствах",
+				"author": "@rootu",
+				"link": "http://plugin.rootu.top/wsoff.js"
+			}
 		}
-      ],
-      "hpu": "video"
-    },
-	{
-		"title": "Телевидение",
-		"results": [
-		   {
-			"name": "ТВ by skaz",
-			"author": "@helpiptv     (Подписка)",
-			"link": "http://skaz.tv/tv.js",
-			"descr": "Бесплатные каналы и 1400+ каналов по подписке, IPTV плейлисты @skaztv_bot",
-			"available_lampa": 1
-		  },
-		  {
-			"name": "Kulik",
-			"author": "@SawamuraRen     (Бесплатно)",
-			"link": "http://cdn.kulik.uz/cors",
-			"descr": "Просмотр IPTV каналов, отсортированных по различным категориям. Есть возможность поменять стиль плагина, сервер вещания, а также добавить каналы в избранное",
-			"available_lampa": 1
-		  },
-		  {
-			"name": "ТВ by skaz 2.0",
-			"author": "@helpiptv      (Подписка)",
-			"link": "http://skaz.tv/tv2.js",
-			"descr": "Версия ТВ by skaz плагина на основе IPTV",
-			"available_lampa": 1
-		  }
-		],
-		"hpu": "tv"
-	  },
-    {
-      "title": "Управление",
-      "results": [
+	],
+	"reklama": [
 		{
-		  "name": "Добавляет пункт \"Парсер\" в меню",
-		  "author": "@lampa      (Бесплатно)",
-		  "link": "http://cub.red/plugin/etor",
-		  "descr": "Плагин для ТВ, на которых Lampa установлена через официальные магазины LG Store и Tizen App Store. Включает в настройках отображение пунктов Парсер и Torrserver",
-		  "available_lampa": 1
-		},
-	    {
-		  "name": "Публичные парсеры",
-		  "author": "@lme       (Бесплатно)",
-		  "link": "https://lampame.github.io/main/pubtorr.js",
-		  "descr": "Сборник публичных парсеров отображением статуса доступности",
-		  "available_lampa": 0
-		},
-		{
-		  "name": "Тип управления",
-		  "author": "@nemiroff       (Бесплатно)",
-		  "link": "https://nemiroff.github.io/lampa/select_weapon.js",
-		  "descr": "Позволяет выбрать тип управления (Пульт без мышки, Пульт с мышью, Тачскрин), а так же сбросить тип управления выбранный ранее",
-		  "available_lampa": 1
-		},
-	        {
-		  "name": "Дополнительные категории",
-		  "author": "@lme       (Бесплатно)",
-		  "link": "https://lampame.github.io/main/nc/nc.js",
-		  "descr": "Добавление категорий Мультфильмы, Netflix, Концерты, и прочее",
-		  "available_lampa": 1
-		},
-		{
-		  "name": "Старый стиль (Закладки, Нравится, Позже)",
-		  "author": "@VitalikPVA       (Бесплатно)",
-		  "link": "http://github.freebie.tom.ru/want.js",
-		  "descr": "Возвращает в главное меню старый стиль отображения пунктов (Закладки, Нравится, Позже)",
-		  "available_lampa": 1
-		},
-		{
-		  "name": "Сброс настроек субтитров",
-		  "author": "@t_anton       (Бесплатно)",
-		  "link": "https://nb557.github.io/plugins/reset_subs.js",
-		  "descr": "Сбрасывает настройки субтитров по умолчанию",
-		  "available_lampa": 1
-		},
-		{
-		  "name": "Выключение тача",
-		  "author": "@t_anton       (Бесплатно)",
-		  "link": "https://nb557.github.io/plugins/not_mobile.js",
-		  "descr": "Выключает сенсорное управление, если оно было включено по ошибке",
-		  "available_lampa": 1
+			"image": "https://abros.me/lampa/store/img/reklama/abrosvip.png",
+			"text": " ",
+			"colortext": "#fff"
 		}
-      ],
-      "hpu": "control"
-    },
-    {
-      "title": "Разное",
-      "results": [
-	    {
-		  "name": "Отзывы и рецензии",
-		  "author": "@elenatv99       (Бесплатно)",
-		  "link": "https://skaz.tv/o.js",
-		  "descr": "Добавляет кнопку чтения отзывов с КиноПоиск в карточку фильма или сериала",
-		  "available_lampa": 1
-		},
+	],
+	"vip": [
 		{
-		  "name": "Предзагрузка ts",
-		  "author": "@rootu       (Бесплатно)",
-		  "link": "https://plugin.rootu.top/ts-preload.js",
-		  "descr": "Плагин визуализации предзагрузки торрентов для встроенного клиента TorrServer",
-		  "available_lampa": 1
-		},
-		{
-		  "name": "Приятные мелочи",
-		  "author": "@AndreyURL54       (Бесплатно)",
-		  "link": "https://skaztv.online/js/tricks.js",
-		  "descr": "Дополнение некоторых востребованных функций и дизайна, которых вам не хватало. (mod. Без проверки на MSX)",
-		  "available_lampa": 1
-		},
-		{
-		  "name": "Отключение Websocket",
-		  "author": "@rootu       (Бесплатно)",
-		  "link": "http://plugin.rootu.top/wsoff.js",
-		  "descr": "Плагин отключает протокол Websocket, помогает при ошибках на некоторых устройствах",
-		  "available_lampa": 1
+			"email": "danyaabros@gmail.com",
+			"subscribe": "19.05.2025"
 		}
-      ],
-      "hpu": "other"
-    }
-  ]
+	]
 }

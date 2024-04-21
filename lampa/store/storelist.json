@@ -1,7 +1,7 @@
 {
 	"plugins": [
 		{
-			"component": "as_video",
+			"component": "abros_online",
 			"param" : {
 				"name": "Showy"
 			},
@@ -13,7 +13,7 @@
 			}
 		},
 	    {
-			"component": "as_video",
+			"component": "abros_online",
 			"param" : {
 				"name": "Stream"
 			},
@@ -25,7 +25,7 @@
 			}
 		},
 		{
-			"component": "as_video",
+			"component": "abros_online",
 			"param" : {
 				"name": "Online_mod"
 			},
@@ -37,7 +37,7 @@
 			}
 		},
 		{
-			"component": "as_video",
+			"component": "abros_online",
 			"param" : {
 				"name": "MODSs"
 			},
@@ -49,7 +49,7 @@
 			}
 		},
 		{
-			"component": "as_video",
+			"component": "abros_online",
 			"param" : {
 				"name": "BwaJS"
 			},
@@ -61,7 +61,7 @@
 			}
 		},
 		{
-			"component": "as_video",
+			"component": "abros_online",
 			"param" : {
 				"name": "BwaJS18"
 			},
@@ -73,7 +73,7 @@
 			}
 		},
 		{
-			"component": "as_tv",
+			"component": "abros_tv",
 			"param" : {
 				"name": "TVskaz2"
 			},
@@ -85,7 +85,7 @@
 			}
 		},
 		{
-			"component": "as_tv",
+			"component": "abros_tv",
 			"param" : {
 				"name": "TVskaz"
 			},
@@ -97,7 +97,7 @@
 			}
 		},
 		{
-			"component": "as_tv",
+			"component": "abros_tv",
 			"param" : {
 				"name": "Kulik"
 			},
@@ -109,7 +109,7 @@
 			}
 		},
 		{
-			"component": "as_control",
+			"component": "abros_control",
 			"param" : {
 				"name": "AddParser"
 			},
@@ -121,7 +121,7 @@
 			}
 		},
 		{
-			"component": "as_control",
+			"component": "abros_control",
 			"param" : {
 				"name": "PublicParser"
 			},
@@ -133,7 +133,7 @@
 			}
 		},
 		{
-			"component": "as_control",
+			"component": "abros_control",
 			"param" : {
 				"name": "TypControl"
 			},
@@ -145,7 +145,7 @@
 			}
 		},
 		{
-			"component": "as_control",
+			"component": "abros_control",
 			"param" : {
 				"name": "AddCategory"
 			},
@@ -157,7 +157,7 @@
 			}
 		},
 		{
-			"component": "as_control",
+			"component": "abros_control",
 			"param" : {
 				"name": "OldStyle"
 			},
@@ -169,7 +169,7 @@
 			}
 		},
 		{
-			"component": "as_control",
+			"component": "abros_control",
 			"param" : {
 				"name": "ResetSubtitle"
 			},
@@ -181,7 +181,7 @@
 			}
 		},
 		{
-			"component": "as_control",
+			"component": "abros_control",
 			"param" : {
 				"name": "OffTouch"
 			},
@@ -193,7 +193,7 @@
 			}
 		},
 		{
-			"component": "as_other",
+			"component": "abros_other",
 			"param" : {
 				"name": "Comments"
 			},
@@ -205,7 +205,7 @@
 			}
 		},
 		{
-			"component": "as_other",
+			"component": "abros_other",
 			"param" : {
 				"name": "PreloadTS"
 			},
@@ -217,7 +217,7 @@
 			}
 		},
 		{
-			"component": "as_other",
+			"component": "abros_other",
 			"param" : {
 				"name": "Tricks"
 			},
@@ -229,7 +229,7 @@
 			}
 		},
 		{
-			"component": "as_other",
+			"component": "abros_other",
 			"param" : {
 				"name": "OffWebsocket"
 			},

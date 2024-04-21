@@ -373,9 +373,14 @@ function showReload(reloadText){
         document.querySelectorAll('.menu').forEach(menuCase => {
             let adsbody = menuCase.querySelector('#adsbody');
             if (!adsbody) {
-                adsbody = document.createElement('div');
-                adsbody.id = 'adsbody';
-                menuCase.appendChild(adsbody);
+                const ADSHTML = `
+                <div style="height: max-content; margin: 0 0 1em 0.6em;">
+                    <div style="margin-bottom: 5px;">
+                        <div style="font-size: 1.3em;">Реклама</div>
+                    </div>
+                    <div id="adsbody"></div>
+                </div>`;
+                menuCase.insertAdjacentHTML('afterbegin', ADSHTML);
             }
     
             const cardContainer = document.createElement('div');

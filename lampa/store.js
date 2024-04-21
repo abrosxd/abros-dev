@@ -47,7 +47,7 @@
             .then(data => {
                 var { plugins, reklama, vip } = data;
                 storeStart(plugins);
-                checkVIP(vip);
+                checkVIP(vip, reklama);
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
@@ -139,15 +139,15 @@ function showReload(reloadText){
         if (JSON.stringify(checkResult) !== '[]') {return true} else {return false}
     };
 
-    function checkVIP(vip) {
+    function checkVIP(vip, reklama) {
         const userDataJSON = localStorage.getItem('account_user');
         if (!userDataJSON) {
-            addADS();
+            addADS(reklama);
             return;
         }
         const userData = vip;
         if (!userData || !userData.email) {
-            addADS();
+            addADS(reklama);
             return;
         }
         const currentDate = new Date();
@@ -157,7 +157,7 @@ function showReload(reloadText){
             return vip.email === userData.email && subscribeDate > currentDate;
         });
         if (vipUser) addAccount(vipUser)
-        else addADS();
+        else addADS(reklama);
     }
 
     /* Создание магазина и его меню */
@@ -338,6 +338,35 @@ function showReload(reloadText){
             $('.settings-param-title').insertAfter($('.settings-param').first());
         }
     }
+
+    /* Реклама */
+    function addADS(reklama) {
+        document.querySelectorAll('.menu').forEach(menuCase => {
+            reklama.forEach(item => {
+                const ADSHTML = `
+                    <div style="height: max-content; margin: 0 0 1em 0.6em;">
+                        <div style="margin-bottom: 5px;">
+                            <div style="font-size: 1.3em;">Реклама</div>
+                        </div>
+                        <div id="abrosbody">
+                            <div>
+                                <img style="border-radius: 1em;" src="${item.image}">
+                                <div style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%; color:${item.colortext}">${item.text}</div>
+                            </div>
+                        </div>
+                    </div>`;
+                });
+            menuCase.insertAdjacentHTML('afterbegin', ADSHTML);
+        });
+        if (adAbrosStoreBody) $('#AbrosStore__body').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            arrows: false,
+        });
+    };
     
 
 

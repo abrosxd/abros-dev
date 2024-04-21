@@ -316,6 +316,8 @@ function showReload(reloadText){
             });
         }
         plugins.forEach(addPluginSettings);
+
+        addAccount();
     }
 
     /* Аккаунт */
@@ -369,7 +371,13 @@ function showReload(reloadText){
     /* Реклама */
     function addADS(reklama) {
         document.querySelectorAll('.menu').forEach(menuCase => {
-            const adsbody = menuCase.querySelector('#adsbody');
+            let adsbody = menuCase.querySelector('#adsbody');
+            if (!adsbody) {
+                adsbody = document.createElement('div');
+                adsbody.id = 'adsbody';
+                menuCase.appendChild(adsbody);
+            }
+    
             const cardContainer = document.createElement('div');
             reklama.forEach(item => {
                 const cardHTML = `

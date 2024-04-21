@@ -147,7 +147,605 @@ Lampa.SettingsApi.addComponent({
 						}
                             });
 					}
-		});  
+		});
+		
+		Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'TMDB',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+                    			//default: '1',
+						},
+					field: {
+						name: 'TMDB Proxy',
+						description: 'Проксирование постеров для сайта TMDB'
+                            },
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://cub.red/plugin/tmdb-proxy', 'TMDB Proxy', '@lampa', 'TMDB');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://cub.red/plugin/tmdb-proxy";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {
+						$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://cub.red/plugin/tmdb-proxy')
+						setTimeout(function() {	
+							$('div[data-name="TMDB"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="TMDB"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+       
+		Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Feedback',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Отзывы',
+						description: 'Добавляет в карточке кнопку с отзывами'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://newtv.mail66.org/o.js', 'Отзывы', '@elenatv99', 'Feedback');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://newtv.mail66.org/o.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('http://newtv.mail66.org/o.js')
+						setTimeout(function() {	
+							$('div[data-name="Feedback"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Feedback"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Feedback"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+       
+		Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Tricks',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Приятные мелочи',
+						description: 'Плагин позволяет на выбор установить различные дополнения (скринсейверы, стилизация кнопок, стиль плеера, часы в плеере и т.п.)'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://andreyurl54.github.io/diesel5/tricks.js', 'Приятные Мелочи', '@AndreyURL54', 'Tricks');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://andreyurl54.github.io/diesel5/tricks.js";
+							deletePlugin(pluginToRemoveUrl);
+						}	
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900');  hideInstall()
+						var myResult = checkPlugin('https://andreyurl54.github.io/diesel5/tricks.js')
+						setTimeout(function() {	
+							$('div[data-name="Tricks"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Tricks"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Tricks"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+		
+		Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Rating',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Рейтинг КиноПоиск и IMDB',
+						description: 'Показ рейтинга КиноПоиск и IMDB в карточке. Функционал аналогичен части из MODSs, так что их не следует использовать вместе'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://nb557.github.io/plugins/rating.js', 'Рейтинг КиноПоиск и IMDB', '@t_anton', 'Rating');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nb557.github.io/plugins/rating.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://nb557.github.io/plugins/rating.js')
+						setTimeout(function() {	
+							$('div[data-name="Rating"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Rating"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Rating"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Want',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Старый стиль пунктов (Закладки, Нравится, Позже)',
+						description: 'Плагин возвращает в главное меню старый стиль отображения пунктов (Закладки, Нравится, Позже)'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://github.freebie.tom.ru/want.js', 'Старый Стиль Пунктов (Закладки, Нравится, Позже)', '@VitalikPVA', 'Want');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://github.freebie.tom.ru/want.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('http://github.freebie.tom.ru/want.js')
+						setTimeout(function() {	
+							$('div[data-name="Want"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Want"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Want"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Sub_reset',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Сброс настроек субтитров',
+						description: 'Плагин сбрасывает настройки субтитров по умолчанию'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://nb557.github.io/plugins/reset_subs.js', 'Сброс Настроек Субтитров', '@t_anton', 'Sub_reset');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nb557.github.io/plugins/reset_subs.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://nb557.github.io/plugins/reset_subs.js')
+						setTimeout(function() {	
+							$('div[data-name="Sub_reset"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Sub_reset"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Sub_reset"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	         Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Mult',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Мультфильмы',
+						description: 'Плагин заменяет пункт Аниме на Мульт'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('http://193.233.134.21/plugins/mult.js', 'Мультфильмы', '@AndreyURL54', 'Mult');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://193.233.134.21/plugins/mult.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('http://193.233.134.21/plugins/mult.js')
+						setTimeout(function() {	
+							$('div[data-name="Mult"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Collections',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Коллекции',
+						description: 'Обнаружьте захватывающие коллекции фильмов и сериалов в главном меню приложения. От новинок до классики — каждая коллекция это увлекательное погружение в мир киноискусства'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://cub.red/plugin/collections', 'Коллекции', '@lampa', 'Collections');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://cub.red/plugin/collections";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://cub.red/plugin/collections')
+						setTimeout(function() {	
+							$('div[data-name="Collections"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Collections"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Collections"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Weather',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Погода',
+						description: 'Плагин будет поочередно показывать время и погоду, чередуя их показания'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/weather.js', 'Погода', '@scabrum', 'Weather');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/weather.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://bylampa.github.io/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Cub_off',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Cub Off',
+						description: 'Плагин убирает элементы, предлагающие оформить cub premium'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/cub_off.js', 'Cub Off', '@scabrum', 'Cub_off');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/cub_off.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://bylampa.github.io/cub_off.js')
+						setTimeout(function() {	
+							$('div[data-name="Cub_off"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Cub_off"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Cub_off"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Style_interface_fix',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Стильный интерфейс',
+						description: 'Новый стильный интерфейс для каталога TMDB и CUB. Понравится тем, кому нравится интерфейс в кинопоиске или netflix'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/interface.js', 'Стильный Интерфейс', '@lampa', 'Style_interface_fix');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/interface.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://bylampa.github.io/interface.js')
+						setTimeout(function() {	
+							$('div[data-name="Style_interface_fix"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Style_interface_fix"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Style_interface_fix"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'New_cat',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Дополнительные категории',
+						description: 'Плагин позволяет добавить на выбор в главное меню категории (Документалки, Концерты и Мультфильмы)'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://lampame.github.io/main/nc/nc.js', 'Дополнительные Категории', '@GwynnBleiidd', 'New_cat');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://lampame.github.io/main/nc/nc.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://lampame.github.io/main/nc/nc.js')
+						setTimeout(function() {	
+							$('div[data-name="New_cat"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="New_cat"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="New_cat"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'New_source',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Дополнительные источники',
+						description: 'Плагин добавляет дополнительные источники для получения информации о фильмах'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/source.js', 'Дополнительные Источники', '@scabrum', 'New_source');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/source.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://bylampa.github.io/source.js')
+						setTimeout(function() {	
+							$('div[data-name="New_source"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="New_source"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="New_source"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+	        			component: 'add_interface_plugin',
+					param: {
+						name: 'Start',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Start',
+						description: 'Плагин позволяет заходить на заблокированные карточки'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/start.js', 'Start', '@scabrum', 'Start');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/start.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://bylampa.github.io/start.js')
+						setTimeout(function() {	
+							$('div[data-name="Start"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Start"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Start"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		  });
+	          Lampa.SettingsApi.addParam({
+						component: 'add_interface_plugin',
+						param: {
+							name: 'goldtheme',
+							type: 'select',
+							values: {
+								1:	'Установить',
+								2:	'Удалить',
+							},
+						//default: '1',
+							},
+						field: {
+							name: 'Золотая тема',
+							description: 'Плагин включает золотую тему'
+						},
+						onChange: function(value) {
+							if (value == '1') {
+								itemON('https://bazzzilius.github.io/scripts/gold_theme.js', 'Золотая Тема', '@BazZziliuS', 'goldtheme');
+							}
+							if (value == '2') {
+								var pluginToRemoveUrl = "https://bazzzilius.github.io/scripts/gold_theme.js";
+								deletePlugin(pluginToRemoveUrl);
+							}
+						},
+								onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+							var myResult = checkPlugin('https://bazzzilius.github.io/scripts/gold_theme.js')
+							setTimeout(function() {	
+								$('div[data-name="goldtheme"]').append('<div class="settings-param__status one"></div>')
+								if (myResult) {
+									$('div[data-name="goldtheme"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+								} else {
+									$('div[data-name="goldtheme"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+								}
+							}, 100);
+						}
+		});
+	        Lampa.SettingsApi.addParam({
+						component: 'add_interface_plugin',
+						param: {
+							name: 'concert_search',
+							type: 'select',
+							values: {
+								1:	'Установить',
+								2:	'Удалить',
+							},
+						//default: '1',
+							},
+						field: {
+							name: 'Поиск концертов',
+							description: 'Плагин осуществляет поиск концертов через парсер Jackett'
+						},
+						onChange: function(value) {
+							if (value == '1') {
+								itemON('https://lampame.github.io/main/cts.js', 'Поиск Концертов', '@GwynnBleiidd', 'concert_search');
+							}
+							if (value == '2') {
+								var pluginToRemoveUrl = "https://lampame.github.io/main/cts.js";
+								deletePlugin(pluginToRemoveUrl);
+							}
+						},
+								onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+							var myResult = checkPlugin('https://lampame.github.io/main/cts.js')
+							setTimeout(function() {	
+								$('div[data-name="concert_search"]').append('<div class="settings-param__status one"></div>')
+								if (myResult) {
+									$('div[data-name="concert_search"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+								} else {
+									$('div[data-name="concert_search"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+								}
+							}, 100);
+						}
+		});
+	      /*  Lampa.SettingsApi.addParam({
+                                  component: 'add_interface_plugin',
+                                  param: {
+                                         name: 'Reboot_interface_plugin',
+                                         type: 'static',
+                                  },
+                                  field: {
+                                         name: '<div class="settings-folder" style="padding:0!important"><div style="display: block; margin: 0 auto;height:2.3em;padding-right:.1em"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g style="fill:none;stroke:#ffffff;stroke-width:12px;stroke-linecap:round;stroke-linejoin:round;"> <path d="m 50,10 0,35"></path> <path d="M 20,29 C 4,52 15,90 50,90 85,90 100,47 74,20"></path> </g> <path style="fill:#ffffff;" d="m 2,21 29,-2 2,29"></path> </g></svg></div></div>',
+					 description: '<div style="text-align: center;">Нажмите для перезагрузки Lampa</div>',
+	                           },
+                                   onRender: function (item) {
+                                      item.on('hover:enter', function(){
+                                         location.reload();
+                                      });
+                                   }
+	        });*/
+	        
 
         Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
@@ -159,12 +757,12 @@ Lampa.SettingsApi.addComponent({
 		});
 /* Управление */
 		Lampa.SettingsApi.addParam({
-					component: 'abrosstore',
+					component: 'add_plugin',
 					param: {
 						name: 'add_management_plugin',
-      		            type: 'static',
+      		                        	type: 'static',
 						default: true
-                        	},
+                        		},
 					field: {
                                 name: icon_add_management_plugin
                         },
@@ -177,6 +775,314 @@ Lampa.SettingsApi.addComponent({
 						});
 					}
 		});
+       
+		Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+                               		name: 'Exit_Menu',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    name: 'Выход',
+                                    description: 'Плагин добавляет пункт Выход в главное меню'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://tsynik.github.io/lampa/e.js', 'Выход', '@tsynik', 'Exit_Menu');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://tsynik.github.io/lampa/e.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://tsynik.github.io/lampa/e.js')
+						setTimeout(function() {	
+							$('div[data-name="Exit_Menu"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Exit_Menu"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Exit_Menu"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+       
+		Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'New_Version',
+						type: 'select',																																		
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Проверка новой версии',
+						description: 'Проверяет наличие новой версии приложения на Android TV'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://nemiroff.github.io/lampa/updater.js', 'Проверка Новой Версии', '@nemiroff', 'New_Version');
+							}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nemiroff.github.io/lampa/updater.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://nemiroff.github.io/lampa/updater.js')
+						setTimeout(function() {	
+							$('div[data-name="New_Version"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="New_Version"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="New_Version"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+       
+		Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+                               			name: 'Hot_Buttons',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+                            		field: {
+                                    		name: 'Горячие кнопки',
+                                    		description: 'Плагин вызывает меню плеера лампы по кнопкам пульта: 5 - плейлист, 8 - аудиодорожки, 0 - субтитры, channel+/- следующий/предыдущий файл в плейлисте'
+                            		},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://nnmdd.github.io/lampa_hotkeys/hotkeys.js', 'Горячие Кнопки', '@nnmd', 'Hot_Buttons');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nnmdd.github.io/lampa_hotkeys/hotkeys.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://nnmdd.github.io/lampa_hotkeys/hotkeys.js')
+						setTimeout(function() {	
+							$('div[data-name="Hot_Buttons"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Hot_Buttons"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Hot_Buttons"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+       
+		Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'DLNA',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'DLNA (Tizen, Orsay)',
+                                    		description: 'Плагин работает на устройстве Orsay, для Tizen необходимо обновить виджет до версии 1.9.1'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://cub.red/plugin/dlna', 'DLNA', '@lampa', 'DLNA');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://cub.red/plugin/dlna";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://cub.red/plugin/dlna')
+						setTimeout(function() {	
+							$('div[data-name="DLNA"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="DLNA"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="DLNA"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'Select_Weapon',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'Тип управления',
+                                    		description: 'Плагин при установке позволяет выбрать тип управления (Пульт без мышки, Пульт с мышью, Тачскрин), а так же сбросить тип управления выбранный ранее'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://nemiroff.github.io/lampa/select_weapon.js', 'Тип Управления', '@nemiroff', 'Select_Weapon');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nemiroff.github.io/lampa/select_weapon.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://nemiroff.github.io/lampa/select_weapon.js')
+						setTimeout(function() {	
+							$('div[data-name="Select_Weapon"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Select_Weapon"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Select_Weapon"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'Touch_off',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'Выключение тача',
+                                    		description: 'Плагин выключает сенсорное управление, если оно было включено по ошибке'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://nb557.github.io/plugins/not_mobile.js', 'Выключение Тача', '@t_anton', 'Touch_off');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nb557.github.io/plugins/not_mobile.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://nb557.github.io/plugins/not_mobile.js')
+						setTimeout(function() {	
+							$('div[data-name="Touch_off"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Touch_off"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Touch_off"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'Wsoff',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'Wsoff',
+                                    		description: 'Плагин отключения ошибки (Request was denied for security) на старых версиях Android.Не устанавливать, если ошибки нет'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('http://plugin.rootu.top/wsoff.js', 'Wsoff', '@rootu', 'Wsoff');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://plugin.rootu.top/wsoff.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://plugin.rootu.top/wsoff.js')
+						setTimeout(function() {	
+							$('div[data-name="Wsoff"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Wsoff"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Wsoff"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'Redirect',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'Смена сервера',
+                                    		description: 'Плагин позволяет сменить сервер приложения'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://bylampa.github.io/redirect.js', 'Смена Сервера', '@scabrum', 'Redirect');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/redirect.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://bylampa.github.io/redirect.js')
+						setTimeout(function() {	
+							$('div[data-name="Redirect"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Redirect"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Redirect"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+	      /*  Lampa.SettingsApi.addParam({
+                                  component: 'add_management_plugin',
+                                  param: {
+                                         name: 'Reboot_management_plugin',
+                                         type: 'static',
+                                  },
+                                  field: {
+                                         name: '<div class="settings-folder" style="padding:0!important"><div style="display: block; margin: 0 auto;height:2.3em;padding-right:.1em"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g style="fill:none;stroke:#ffffff;stroke-width:12px;stroke-linecap:round;stroke-linejoin:round;"> <path d="m 50,10 0,35"></path> <path d="M 20,29 C 4,52 15,90 50,90 85,90 100,47 74,20"></path> </g> <path style="fill:#ffffff;" d="m 2,21 29,-2 2,29"></path> </g></svg></div></div>',
+					 description: '<div style="text-align: center;">Нажмите для перезагрузки Lampa</div>',
+	                           },
+                                   onRender: function (item) {
+                                      item.on('hover:enter', function(){
+                                         location.reload();
+                                      });
+                                   }
+	        });*/
 
         Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
@@ -188,7 +1094,7 @@ Lampa.SettingsApi.addComponent({
 		});
 /* Онлайн */
 		Lampa.SettingsApi.addParam({
-					component: 'abrosstore',
+					component: 'add_plugin',
 					param: {
 						name: 'add_online_plugin',
 						type: 'static',
@@ -206,6 +1112,471 @@ Lampa.SettingsApi.addComponent({
 						});
 					}
 		});
+                 
+		Lampa.SettingsApi.addParam({
+					component: 'add_online_plugin',
+					param: {
+						name: 'Modss',
+						type: 'select',
+					values: {
+						1:	'Установить',
+						2:	'Удалить',
+					},
+					//default: '1',
+					},
+					field: {
+						name: 'Modss',
+						description: 'Плагин позволяет смотреть фильмы и сериалы в онлайн. На выбор доступно 17 балансеров и различные дополнения через меню настроек Modss. VIP 4K можно подключить через телеграм-бота @modssmy_bot'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://lampa.stream/modss', 'Modss', '@Nikolai4', 'Modss');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://lampa.stream/modss";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://lampa.stream/modss')
+						setTimeout(function() {	
+							$('div[data-name="Modss"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Modss"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Modss"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+        });
+        
+		Lampa.SettingsApi.addParam({
+					component: 'add_online_plugin',
+					param: {
+                                		name: 'Online_Mod',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+					},
+					//default: '1',
+              				},
+					field: {
+						name: 'Online_Mod',
+						description: 'Плагин позволяет смотреть фильмы и сериалы в онлайн. На выбор доступно 7 балансеров'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://nb557.github.io/plugins/online_mod.js', 'Online Mod', '@t_anton', 'Online_Mod');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nb557.github.io/plugins/online_mod.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://nb557.github.io/plugins/online_mod.js')
+						setTimeout(function() {	
+							$('div[data-name="Online_Mod"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Online_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+        });
+        
+		Lampa.SettingsApi.addParam({
+					component: 'add_online_plugin',
+					param: {
+                                		name: 'Онлайн_Prestige',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+					},
+					//default: '1',
+					},
+					field: {
+						name: 'Онлайн Prestige',
+						description: 'Аналог плагина Online от разработчика приложения Lampa, но с новым информативным интерфейсом для просмотра фильмов и сериалов в онлайн'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://bwa.to/plugins/prestige.js', 'Онлайн Prestige', '@lampa', 'Онлайн_Prestige');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bwa.to/plugins/prestige.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+               },
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://bwa.to/plugins/prestige.js')
+						setTimeout(function() {	
+							$('div[data-name="Онлайн_Prestige"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Онлайн_Prestige"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Онлайн_Prestige"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);				  
+					}
+        });
+        
+		Lampa.SettingsApi.addParam({
+					component: 'add_online_plugin',
+					param: {
+                               			name: 'Онлайн_BWA',
+                   				type: 'select',
+                   				values: {
+							1:	'Установить',
+							2:	'Удалить',
+                   				},
+					//default: '1',
+               				},
+					field: {
+                                  		name: 'Онлайн BWA',
+                                  		description: 'Плагин для просмотра фильмов и сериалов в онлайн'
+					},
+                           		onChange: function(value) {
+					if (value == '1') {
+						itemON('https://bwa.to/o', 'Онлайн BWA', '@rik', 'Онлайн_BWA');
+					}
+					if (value == '2') {
+						var pluginToRemoveUrl = "https://bwa.to/o";
+						deletePlugin(pluginToRemoveUrl);
+					}
+                },
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://bwa.to/o')
+						setTimeout(function() {	
+							$('div[data-name="Онлайн_BWA"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Онлайн_BWA"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+	       /* Lampa.SettingsApi.addParam({
+                                  component: 'add_online_plugin',
+                                  param: {
+                                         name: 'Reboot_online_plugin',
+                                         type: 'static',
+                                  },
+                                  field: {
+                                         name: '<div class="settings-folder" style="padding:0!important"><div style="display: block; margin: 0 auto;height:2.3em;padding-right:.1em"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g style="fill:none;stroke:#ffffff;stroke-width:12px;stroke-linecap:round;stroke-linejoin:round;"> <path d="m 50,10 0,35"></path> <path d="M 20,29 C 4,52 15,90 50,90 85,90 100,47 74,20"></path> </g> <path style="fill:#ffffff;" d="m 2,21 29,-2 2,29"></path> </g></svg></div></div>',
+					 description: '<div style="text-align: center;">Нажмите для перезагрузки Lampa</div>',
+	                           },
+                                   onRender: function (item) {
+                                      item.on('hover:enter', function(){
+                                         location.reload();
+                                      });
+                                   }
+		});	*/		   
+/* Торрент */
+		Lampa.Settings.listener.follow('open', function (e) {
+					if (e.name == 'main') {
+						Lampa.SettingsApi.addComponent({
+							component: 'add_torrent_plugin',
+							name: 'Torrents'
+						});
+					}
+		});
+                     
+		Lampa.SettingsApi.addParam({
+					component: 'add_plugin',
+					param: {
+                                   		name: 'add_torrent_plugin',
+                                   		type: 'static',
+                                   		default: true
+                           		},
+					field: {
+                                   		name: icon_add_torrent_plugin
+                           		},
+					onRender: function(item) {
+						item.on('hover:enter', function () {
+							Lampa.Settings.create('add_torrent_plugin');
+							Lampa.Controller.enabled().controller.back = function(){
+								Lampa.Settings.create('add_plugin');
+							}
+						});
+					}
+		});
+                     
+		Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'Switch_Parser',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+                  			},
+					field: {
+						name: 'Переключение парсеров',
+						description: 'Плагин позволяет переключаться между парсерами jackett из списка с уже забитыми правильными параметрами. В настройках парсера появится пункт со списком общедоступных jacketts'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://bylampa.github.io/jackett.js', 'Переключение Парсеров', '@AndreyURL54', 'Switch_Parser');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/jackett.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://bylampa.github.io/jackett.js')
+						setTimeout(function() {	
+							$('div[data-name="Switch_Parser"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Switch_Parser"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Switch_Parser"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
+         
+		Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'Tracks',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Tracks',
+						description: 'Плагин заменяет название аудиодорожек и субтитров в плеере (работает только в торрентах)'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://cub.red/plugin/tracks', 'Tracks', '@lampa', 'Tracks');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://cub.red/plugin/tracks";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://cub.red/plugin/tracks')
+						setTimeout(function() {	
+							$('div[data-name="Tracks"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Tracks"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Tracks"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+
+	        Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'Setting_torrents',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Настройка торрентов (Web OS, Tizen)',
+						description: 'Плагин для ТВ, на которых Lampa установлена через официальные магазины LG Store и Tizen App Store. Включает в настройках отображение пунктов Парсер и Torrserver, необходимых для просмотра торрентов'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://cub.red/plugin/etor', 'Настройка Торрентов', '@lampa', 'Setting_torrents');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://cub.red/plugin/etor";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://cub.red/plugin/etor')
+						setTimeout(function() {	
+							$('div[data-name="Setting_torrents"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Setting_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Setting_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'Check_server',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Поиск локального TorrServera',
+						description: 'Плагин позволяет произвести поиск вашего локального TorrServera'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://193.233.134.21/plugins/checker.js', 'Поиск Локального TorrServera', '@AndreyURL54', 'Check_server');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://193.233.134.21/plugins/checker.js";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://193.233.134.21/plugins/checker.js')
+						setTimeout(function() {	
+							$('div[data-name="Check_server"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Check_server"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Check_server"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+	         Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'Torr_download',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Закачка торрентов',
+						description: 'Плагин добавляет подключение торрент клиентов таких как qBittorent, Transmission с последующей возможностью загрузки торрента через него для локального просмотра'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://lampame.github.io/td/td.js', 'Закачка Торрентов', '@feliks', 'Torr_download');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://lampame.github.io/td/td.js";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://lampame.github.io/td/td.js')
+						setTimeout(function() {	
+							$('div[data-name="Torr_download"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Torr_download"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Torr_download"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'second_but_torrents',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Вторая кнопка Торренты',
+						description: 'Плагин добавляет вторую кнопку Торренты'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://github.freebie.tom.ru/torrents.js', 'Вторая Кнопка Торренты', '@VitalikPVA', 'second_but_torrents');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://github.freebie.tom.ru/torrents.js";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://github.freebie.tom.ru/torrents.js')
+						setTimeout(function() {	
+							$('div[data-name="second_but_torrents"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="second_but_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="second_but_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'free_torr',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Free Torrserver',
+						description: 'Плагин автоматически подставляет torrserver из своей базы'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://bylampa.github.io/freetorr.js', 'Free Torrserver', '@scabrum', 'free_torr');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/freetorr.js";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://bylampa.github.io/freetorr.js')
+						setTimeout(function() {	
+							$('div[data-name="free_torr"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="free_torr"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+	/*
+	        Lampa.SettingsApi.addParam({
+                                  component: 'add_torrent_plugin',
+                                  param: {
+                                         name: 'Reboot_torrent_plugin',
+                                         type: 'static',
+                                  },
+                                  field: {
+                                         name: '<div class="settings-folder" style="padding:0!important"><div style="display: block; margin: 0 auto;height:2.3em;padding-right:.1em"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g style="fill:none;stroke:#ffffff;stroke-width:12px;stroke-linecap:round;stroke-linejoin:round;"> <path d="m 50,10 0,35"></path> <path d="M 20,29 C 4,52 15,90 50,90 85,90 100,47 74,20"></path> </g> <path style="fill:#ffffff;" d="m 2,21 29,-2 2,29"></path> </g></svg></div></div>',
+					 description: '<div style="text-align: center;">Нажмите для перезагрузки Lampa</div>',
+	                           },
+                                   onRender: function (item) {
+                                      item.on('hover:enter', function(){
+                                         location.reload();
+                                      });
+                                   }
+		});*/			   
 	
 		Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
@@ -217,7 +1588,7 @@ Lampa.SettingsApi.addComponent({
 		});
 /* Телеканалы */
 		Lampa.SettingsApi.addParam({
-					component: 'abrosstore',
+					component: 'add_plugin',
 					param: {
 						name: 'add_tv_plugin',
 						type: 'static',
@@ -235,6 +1606,169 @@ Lampa.SettingsApi.addComponent({
 						});
 					}
 		});
+		
+		Lampa.SettingsApi.addParam({
+					component: 'add_tv_plugin',
+					param: {
+						name: 'Diesel',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Дизель ТВ',
+						description: 'Плагин для бесплатного просмотра телеканалов и коммерческих плейлистов с телепрограммой и записью архива'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://andreyurl54.github.io/diesel5/diesel.js', 'Дизель ТВ', '@AndreyURL54', 'Diesel');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://andreyurl54.github.io/diesel5/diesel.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://andreyurl54.github.io/diesel5/diesel.js')
+						setTimeout(function() {	
+							$('div[data-name="Diesel"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Diesel"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Diesel"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+		
+		Lampa.SettingsApi.addParam({
+					component: 'add_tv_plugin',
+					param: {
+						name: 'Kulik',
+                        			type: 'select',
+                        			values: {
+							1:	'Установить',
+							2:	'Удалить',
+                        		},
+					//default: '1',
+					},
+					field: {
+						name: 'Kulik',
+						description: 'Плагин для просмотра IPTV каналов, отсортированных по различным категориям. Есть возможность поменять стиль плагина, сервер вещания, а также добавить каналы в избранное'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://cdn.kulik.uz/cors', 'Kulik TV', '@SawamuraRen', 'Kulik');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://cdn.kulik.uz/cors";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://cdn.kulik.uz/cors')
+						setTimeout(function() {	
+							$('div[data-name="Kulik"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Kulik"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Kulik"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+
+		Lampa.SettingsApi.addParam({
+					component: 'add_tv_plugin',
+					param: {
+						name: 'IPTV',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+							name: 'IPTV',
+							description: 'Плагин для просмотра IPTV каналов. Сортировка каналов по группам и возможность добавить каналы в избранное. Работает только со своим плейлистом, добавленным на сайте https://cub.watch/iptv'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://cub.red/plugin/iptv', 'IPTV', '@lampa', 'IPTV');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://cub.red/plugin/iptv";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://cub.red/plugin/iptv')
+						setTimeout(function() {	
+							$('div[data-name="IPTV"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="IPTV"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="IPTV"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_tv_plugin',
+					param: {
+						name: 'Hack_TV',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+							name: 'Hack TV',
+							description: 'Плагин для просмотра IPTV каналов'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://bylampa.github.io/tv.js', 'Hack TV', '@scabrum', 'Hack_TV');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bylampa.github.io/tv.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://bylampa.github.io/tv.js')
+						setTimeout(function() {	
+							$('div[data-name="Hack_TV"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Hack_TV"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Hack_TV"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	       /* Lampa.SettingsApi.addParam({
+                                  component: 'add_tv_plugin',
+                                  param: {
+                                         name: 'Reboot_tv_plugin',
+                                         type: 'static',
+                                  },
+                                  field: {
+                                         name: '<div class="settings-folder" style="padding:0!important"><div style="display: block; margin: 0 auto;height:2.3em;padding-right:.1em"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g style="fill:none;stroke:#ffffff;stroke-width:12px;stroke-linecap:round;stroke-linejoin:round;"> <path d="m 50,10 0,35"></path> <path d="M 20,29 C 4,52 15,90 50,90 85,90 100,47 74,20"></path> </g> <path style="fill:#ffffff;" d="m 2,21 29,-2 2,29"></path> </g></svg></div></div>',
+					 description: '<div style="text-align: center;">Нажмите для перезагрузки Lampa</div>',
+	                           },
+                                   onRender: function (item) {
+                                      item.on('hover:enter', function(){
+                                         location.reload();
+                                      });
+                                   }
+		});*/			   
 
 		Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
@@ -246,7 +1780,7 @@ Lampa.SettingsApi.addComponent({
 		});
 /* Радио */
 		Lampa.SettingsApi.addParam({
-					component: 'abrosstore',
+					component: 'add_plugin',
 					param: {
 						name: 'add_radio_plugin',
 						type: 'static',
@@ -264,9 +1798,217 @@ Lampa.SettingsApi.addComponent({
 						});
 					}
 		});
+		
+		Lampa.SettingsApi.addParam({
+					component: 'add_radio_plugin',
+					param: {
+						name: 'Record',
+                        			type: 'select',
+                        			values: {
+							1:	'Установить',
+							2:	'Удалить',
+                        			},
+					//default: '1',
+					},
+					field: {
+						name: 'Радио Record',
+						description: 'Прослушивание радио от радиостанции Radio Record. Доступно более 50 жанров, найдется и на ваш вкус'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://cub.red/plugin/radio', 'Радио Record', '@lampa', 'Record');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://cub.red/plugin/radio";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://cub.red/plugin/radio')
+						setTimeout(function() {	
+							$('div[data-name="Record"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Record"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Record"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+		
+		Lampa.SettingsApi.addParam({
+					component: 'add_radio_plugin',
+					param: {
+						name: 'Record_Mod',
+       				                type: 'select',
+                       				values: {
+							1:	'Установить',
+							2:	'Удалить',
+                        			},
+					//default: '1',
+					},
+					field: {
+						name: 'Радио Record Mod',
+						description: 'Всё тот же плагин Радио Record, но с единым списком станций без разделения на жанры'
+					},
+					onChange: function(value) {
+                        			if (value == '1') {
+							itemON('https://lampame.github.io/main/rradio.js', 'Радио Record Mod', '@GwynnBleiidd', 'Record_Mod');
+                     				}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://lampame.github.io/main/rradio.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+                    },
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://lampame.github.io/main/rradio.js')
+						setTimeout(function() {	
+							$('div[data-name="Record_Mod"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Record_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Record_Mod"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	       /* Lampa.SettingsApi.addParam({
+                                  component: 'add_radio_plugin',
+                                  param: {
+                                         name: 'Reboot_radio_plugin',
+                                         type: 'static',
+                                  },
+                                  field: {
+                                         name: '<div class="settings-folder" style="padding:0!important"><div style="display: block; margin: 0 auto;height:2.3em;padding-right:.1em"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g style="fill:none;stroke:#ffffff;stroke-width:12px;stroke-linecap:round;stroke-linejoin:round;"> <path d="m 50,10 0,35"></path> <path d="M 20,29 C 4,52 15,90 50,90 85,90 100,47 74,20"></path> </g> <path style="fill:#ffffff;" d="m 2,21 29,-2 2,29"></path> </g></svg></div></div>',
+					 description: '<div style="text-align: center;">Нажмите для перезагрузки Lampa</div>',
+	                           },
+                                   onRender: function (item) {
+                                      item.on('hover:enter', function(){
+                                         location.reload();
+                                      });
+                                   }
+		});*/			   
+/* Клубника */
+		Lampa.Settings.listener.follow('open', function (e) {
+					if (e.name == 'main') {
+						Lampa.SettingsApi.addComponent({
+                            component: 'add_sisi_plugin',
+							name: 'Sisi'
+						});
+					}
+		});
+		
+		Lampa.SettingsApi.addParam({
+					component: 'add_plugin',
+					param: {
+						name: 'add_sisi_plugin',
+						type: 'static',
+						default: true
+					},
+					field: {
+						name: icon_add_sisi_plugin
+					},
+					onRender: function(item) {
+						item.on('hover:enter', function () {
+							Lampa.Settings.create('add_sisi_plugin');
+							Lampa.Controller.enabled().controller.back = function(){
+								Lampa.Settings.create('add_plugin');
+							}
+						});
+					}
+		});
+		
+		Lampa.SettingsApi.addParam({
+					component: 'add_sisi_plugin',
+					param: {
+						name: 'Sisi',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+						//default: '1',
+					},
+					field: {
+						name: 'Клубничка',
+						description: 'Плагин для просмотра контента 18+'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://bwa.to/s', 'Клубничка', '@rik', 'Sisi');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://bwa.to/s";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://bwa.to/s')
+						setTimeout(function() {	
+							$('div[data-name="Sisi"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Sisi"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Sisi"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+	       /* Lampa.SettingsApi.addParam({
+					component: 'add_sisi_plugin',
+					param: {
+						name: 'Nyam',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+						//default: '1',
+					},
+					field: {
+						name: 'Sisi Nyam',
+						description: 'Другая версия плагина Клубничка (частично платная)'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://sisi.am/nyam.js', 'Sisi Nyam', '@rik', 'Nyam');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://sisi.am/nyam.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://sisi.am/nyam.js')
+						setTimeout(function() {	
+							$('div[data-name="Nyam"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Nyam"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});*/
+	        /*Lampa.SettingsApi.addParam({
+                                  component: 'add_sisi_plugin',
+                                  param: {
+                                         name: 'Reboot_sisi_plugin',
+                                         type: 'static',
+                                  },
+                                  field: {
+                                         name: '<div class="settings-folder" style="padding:0!important"><div style="display: block; margin: 0 auto;height:2.3em;padding-right:.1em"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g style="fill:none;stroke:#ffffff;stroke-width:12px;stroke-linecap:round;stroke-linejoin:round;"> <path d="m 50,10 0,35"></path> <path d="M 20,29 C 4,52 15,90 50,90 85,90 100,47 74,20"></path> </g> <path style="fill:#ffffff;" d="m 2,21 29,-2 2,29"></path> </g></svg></div></div>',
+					 description: '<div style="text-align: center;">Нажмите для перезагрузки Lampa</div>',
+	                           },
+                                   onRender: function (item) {
+                                      item.on('hover:enter', function(){
+                                         location.reload();
+                                      });
+                                   }
+		}); */
 /* Реклама */
 Lampa.SettingsApi.addParam({
-					component: 'abrosstore',
+					component: 'add_plugin',
 					param: {
 						name: 'add_ads',
       		                        	type: 'title'

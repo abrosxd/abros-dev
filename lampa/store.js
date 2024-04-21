@@ -62,11 +62,11 @@
         Lampa.Settings.listener.follow('open', function (e) {
             if (e.name == 'main') {
                 Lampa.SettingsApi.addComponent({
-                    component: 'abros_online',
+                    component: 'abros',
                     name: 'Online'
                 });
                 setTimeout(function() {
-                    $('div[data-component="interface"]').remove();
+                    // $('div[data-component="abros_online"]').remove();
                 }, 0);
                 $("#hideInstall").remove();
                 /* Сдвигаем раздел выше */

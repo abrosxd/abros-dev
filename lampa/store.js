@@ -358,7 +358,7 @@ function showReload(reloadText){
                 });
             menuCase.insertAdjacentHTML('afterbegin', ADSHTML);
         });
-        if (adAbrosStoreBody) $('#AbrosStore__body').slick({
+        if (adAbrosStoreBody) $('#abrosbody').slick({
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,

@@ -91,6 +91,15 @@
                 });
             }
         });
+
+        Lampa.Settings.listener.follow('open', function (e) {
+            if (e.name == 'main') {
+                Lampa.SettingsApi.addComponent({
+                    component: 'abros_online',
+                    name: 'Онлайн'
+                });
+            }
+        });
 }
     
 

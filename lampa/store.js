@@ -321,6 +321,23 @@ function showReload(reloadText){
     /* Аккаунт */
     function addAccount(vipUser) {
         if (vipUser) {
+            Lampa.SettingsApi.addParam({
+                component: 'add_plugin',
+                param: {
+                    name: 'add_ads',
+                    type: 'title'
+                },
+                field: {
+                    name: ads
+                },
+                onRender: function (item) {
+                    setTimeout(function() {
+       //   $('.settings-param-title').insertBefore($('.settings-param').first())
+            $('.settings-param-title').insertAfter($('.settings-param').last())
+            },0);
+            }
+
+     });
             const AccountHTML = `
                 <div class="ad-server" style="margin: 0em 0em;">
                     <div class="ad-server__text">Поздравляем! Ваш статус Vip активирован.</div>
@@ -342,7 +359,6 @@ function showReload(reloadText){
     /* Реклама */
     function addADS(reklama) {
         document.querySelectorAll('.menu').forEach(menuCase => {
-            const adsbody = menuCase.querySelector('#adsbody');
             const ADSHTML = `
                 <div style="height: max-content; margin: 0 0 1em 0.6em;">
                     <div style="margin-bottom: 5px;">
@@ -352,23 +368,24 @@ function showReload(reloadText){
                 </div>`;
             menuCase.insertAdjacentHTML('afterbegin', ADSHTML);
             reklama.forEach(item => {
+                const adsbody = menuCase.querySelector('#adsbody');
                 const cardHTML = `
                     <div>
                         <img style="border-radius: 1em;" src="${item.image}">
                         <div style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%; color:${item.colortext}">${item.text}</div>
                     </div>`;
                 adsbody.insertAdjacentHTML('beforeend', cardHTML);
+                if (adsbody) {
+                    $('#adsbody').slick({
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 10000,
+                        arrows: false,
+                    });
+                }
             });
-            if (adsbody) {
-                $('#adsbody').slick({
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 10000,
-                    arrows: false,
-                });
-            }
         });
     }
 

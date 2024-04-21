@@ -152,10 +152,10 @@ function showReload(reloadText){
             return;
         }
         const currentDate = new Date();
-        const vipUser = vip.find(vip => {
-            const [day, month, year] = vip.subscribe.split('.');
+        const vipUser = vip.find(item => {
+            const [day, month, year] = item.subscribe.split('.');
             const subscribeDate = new Date(`${month}/${day}/${year}`);
-            return vip.email === userData.email && subscribeDate > currentDate;
+            return item.email === userData.email && subscribeDate > currentDate;
         });
         if (vipUser) addAccount(vipUser)
         else addADS(reklama);

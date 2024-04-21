@@ -109,6 +109,19 @@
 		],
 		"hpu": "best"
 	},
+	{
+		"title": "Темы",
+		"results": [
+		  {
+			"name": "Netflix",
+			"author": "@abros     (Бесплатный)",
+			"link": "http://abros.me/lampa/plugins/theme/netflix.css",
+			"descr": "Тема в стиле Netflix.",
+			"available_lampa": 1
+		  }
+		],
+		"hpu": "theme"
+	  },
     {
       "title": "Видео",
       "results": [

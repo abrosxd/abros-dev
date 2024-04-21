@@ -421,14 +421,30 @@ $(document).ready(function () {
             });
     
             if (adsbody.length) {
-                adsbody.slick({
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 10000,
-                    arrows: false,
-                });
+                // Check if the Slick library is loaded
+                if (typeof $.fn.slick !== 'undefined') {
+                    // Slick library is loaded, initialize the carousel
+                    adsbody.slick({
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 10000,
+                        arrows: false,
+                    });
+                } else {
+                    // Slick library is not loaded yet, wait for it to load
+                    $(document).on('slickLoaded', function() {
+                        adsbody.slick({
+                            infinite: true,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplaySpeed: 10000,
+                            arrows: false,
+                        });
+                    });
+                }
             }
         });
     }

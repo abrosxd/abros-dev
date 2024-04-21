@@ -62,7 +62,7 @@
         Lampa.Settings.listener.follow('open', function (e) {
             if (e.name == 'main') {
                 Lampa.SettingsApi.addComponent({
-                    component: 'abros',
+                    component: 'abros_online',
                     name: 'Online'
                 });
                 setTimeout(function() {

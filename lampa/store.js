@@ -144,12 +144,14 @@ function showReload(reloadText){
         if (!userDataJSON) {
             addADS(reklama);
             addAccount();
+            console.log('user found:', userDataJSON);
             return;
         }
         const userData = vip;
         if (!userData || !userData.email) {
             addADS(reklama);
             addAccount();
+            console.log('VIP user found:', userData);
             return;
         }
         const currentDate = new Date();
@@ -158,8 +160,14 @@ function showReload(reloadText){
             const subscribeDate = new Date(`${month}/${day}/${year}`);
             return item.email === userData.email && subscribeDate > currentDate;
         });
-        if (vipUser) addAccount(vipUser)
-        else addADS(reklama);
+        if (vipUser) {
+            console.log('VIP user found:', vipUser);
+            addAccount(vipUser);
+        } else {
+            console.log('Regular user.');
+            addADS(reklama);
+            addAccount();
+        }
     }
 
     /* Создание магазина и его меню */

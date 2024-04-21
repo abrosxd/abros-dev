@@ -52,7 +52,7 @@
 Lampa.SettingsApi.addComponent({
     component: 'abrosstore',
     name: 'Abros Store',
-    icon: as
+    icon: icon_abros
 });
     
 

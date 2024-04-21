@@ -66,9 +66,7 @@
                     name: 'Online'
                 });
                 setTimeout(function() {
-                    $('div[data-component="abros_online"]').remove();
-                    $('div[data-component="abros_control"]').remove();
-                    $('div[data-component="abros_tv"]').remove();
+                    $('div[data-component="interface"]').remove();
                 }, 0);
                 $("#hideInstall").remove();
                 /* Сдвигаем раздел выше */

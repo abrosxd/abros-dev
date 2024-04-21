@@ -360,7 +360,7 @@ function showReload(reloadText){
                 },
                 onRender: function (item) {
                     setTimeout(function() {
-            $('.settings-param-title').insertAfter($('.settings-param').first())
+            $('.settings-param-title').insertBefore($('.settings-param').first())
             },0);
             }
             });

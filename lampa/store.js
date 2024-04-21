@@ -60,52 +60,43 @@
 
         /* Онлайн */
         Lampa.Settings.listener.follow('open', function (e) {
-        if (e.name == 'main') {
-            Lampa.SettingsApi.addComponent({
-                component: 'abros_online',
-                name: 'Online'
-            });
-            setTimeout(function() {
-                $('div[data-component="abros_online"]').remove();
-                $('div[data-component="abros_control"]').remove();
-                $('div[data-component="abros_tv"]').remove();
-            }, 0);
-            $("#hideInstall").remove();
-                    /* Сдвигаем раздел выше */
-            setTimeout(function() {
-                  $('div[data-component=plugins]').before($('div[data-component=add_plugin]'))
+            if (e.name == 'main') {
+                Lampa.SettingsApi.addComponent({
+                    component: 'abros_online',
+                    name: 'Online'
+                });
+                setTimeout(function() {
+                    $('div[data-component="abros_online"]').remove();
+                    $('div[data-component="abros_control"]').remove();
+                    $('div[data-component="abros_tv"]').remove();
+                }, 0);
+                $("#hideInstall").remove();
+                /* Сдвигаем раздел выше */
+                setTimeout(function() {
+                    $('div[data-component=plugins]').before($('div[data-component=abros]'))
                 }, 30)
-        }
-    });
+            }
+        });
 
-    Lampa.SettingsApi.addParam({
-                component: 'abrosstore',
-                param: {
-                    name: 'abros_online',
-                    type: 'static',
-                    default: true
-                     },
-                field: {
-                    name: icon_online
-                    },
-                onRender: function(item) {
+        Lampa.SettingsApi.addParam({
+            component: 'abrosstore',
+            param: {
+                name: 'abros_online',
+                type: 'static',
+                default: true
+            },
+            field: {
+                name: icon_online
+            },
+            onRender: function(item) {
                 item.on('hover:enter', function () {
                     Lampa.Settings.create('abros_online');
                     Lampa.Controller.enabled().controller.back = function(){
                         Lampa.Settings.create('abros');
                     }
-                        });
-                }
-    });  
-
-    Lampa.Settings.listener.follow('open', function (e) {
-                if (e.name == 'main') {
-                    Lampa.SettingsApi.addComponent({
-                        component: 'add_management_plugin',
-                        name: 'Management'
-                    });
-                }
-    });
+                });
+            }
+        });  
 }
     
 

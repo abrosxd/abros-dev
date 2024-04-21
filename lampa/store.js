@@ -52,6 +52,91 @@
             });
     }
 
+    /* Запрос на перезагрузку в модальном окне */
+function showReload(reloadText){
+    Lampa.Modal.open({
+          title: '',
+          align: 'center',
+          zIndex: 300,
+          html: $('<div class="about">' + reloadText + '</div>'),
+          buttons: [{
+            name: 'Нет',
+            onSelect: function onSelect() {
+              Lampa.Modal.close();
+              $('.modal').remove();
+          Lampa.Controller.toggle('settings_component');
+            }
+          }, {
+            name: 'Да',
+            onSelect: function onSelect() {
+              window.location.reload();
+            }
+          }]
+    });
+    }
+    /* Следим за настройками */
+    function settingsWatch() {
+        /* проверяем флаг перезагрузки и ждём выхода из настроек */
+        if (Lampa.Storage.get('needRebootSettingExit')) {
+              var intervalSettings = setInterval(function() {
+                  var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
+                  if (!elementSettings.length > 0){
+                        clearInterval(intervalSettings);
+                    showReload('Для полного удаления плагина перезагрузите приложение!');
+                  }
+            }, 1000)
+        }
+    }
+    
+    function itemON(sourceURL, sourceName, sourceAuthor, itemName) {
+    if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {	
+        // Если перезагрузки не требуется - контроль после удаления плагинов
+       if (!Lampa.Storage.get('needReboot')) {
+        // Получаем список плагинов
+            var pluginsArray = Lampa.Storage.get('plugins');
+        // Добавляем новый элемент к списку
+            pluginsArray.push({
+                "author": sourceAuthor,
+                "url": sourceURL,
+                "name": sourceName,
+                "status": 1
+            });
+        // Внедряем изменённый список в лампу
+            Lampa.Storage.set('plugins', pluginsArray);
+        // Делаем инъекцию скрипта для немедленной работы
+            var script = document.createElement ('script');
+            script.src = sourceURL;
+            document.getElementsByTagName ('head')[0].appendChild (script);
+            setTimeout(function() {
+                Lampa.Settings.update();
+                Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
+            }, 300);
+       }
+    }
+    }	
+    function hideInstall() {
+        $("#hideInstall").remove();
+        $('body').append('<div id="hideInstall"><style>div.settings-param__value{opacity: 0%!important;display: none;}</style><div>')
+    }
+    
+    function deletePlugin(pluginToRemoveUrl) {
+        var plugins = Lampa.Storage.get('plugins');
+        var updatedPlugins = plugins.filter(function(obj) {return obj.url !== pluginToRemoveUrl});
+        Lampa.Storage.set('plugins', updatedPlugins);
+        Lampa.Settings.update();
+        Lampa.Noty.show("Плагин успешно удален");
+        Lampa.Storage.set('needRebootSettingExit', true);
+           settingsWatch();
+    };
+    
+    function checkPlugin(pluginToCheck) {
+        var plugins = Lampa.Storage.get('plugins');
+        var checkResult = plugins.filter(function(obj) {return obj.url == pluginToCheck});
+        console.log('search', 'checkResult: ' + JSON.stringify(checkResult));
+        console.log('search', 'pluginToCheck: ' + pluginToCheck);
+        if (JSON.stringify(checkResult) !== '[]') {return true} else {return false}
+    };
+
     /* Создание магазина и его меню */
     function storeStart(plugins) {
         /* Abros Store */
@@ -205,9 +290,24 @@
                 }
             });
         }
-        
-        // Проходимся по каждому плагину и добавляем его настройки
         plugins.forEach(addPluginSettings);
+
+        /* Реклама */
+        Lampa.SettingsApi.addParam({
+            component: 'add_plugin',
+            param: {
+                name: 'add_ads',
+                type: 'title'
+            },
+            field: {
+                name: ads
+            },
+            onRender: function (item) {
+                setTimeout(function() {
+                    $('.settings-param-title').insertAfter($('.settings-param').first())
+                },0);
+            }
+        });
 }
     
 

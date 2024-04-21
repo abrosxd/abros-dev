@@ -370,38 +370,40 @@ function showReload(reloadText){
 
     /* Реклама */
     function addADS(reklama) {
-        document.querySelectorAll('.menu').forEach(menuCase => {
-            let adsbody = menuCase.querySelector('#adsbody');
-            if (!adsbody) {
+        $('.menu').each(function() {
+            let menuCase = $(this);
+            let adsbody = menuCase.find('#adsbody');
+            if (!adsbody.length) {
                 const ADSHTML = `
-                <div style="height: max-content; margin: 0 0 1em 0.6em;">
-                    <div style="margin-bottom: 5px;">
-                        <div style="font-size: 1.3em;">Реклама</div>
-                    </div>
-                    <div id="adsbody"></div>
-                </div>`;
-                menuCase.insertAdjacentHTML('afterbegin', ADSHTML);
+                    <div style="height: max-content; margin: 0 0 1em 0.6em;">
+                        <div style="margin-bottom: 5px;">
+                            <div style="font-size: 1.3em;">Реклама</div>
+                        </div>
+                        <div id="adsbody"></div>
+                    </div>`;
+                menuCase.prepend(ADSHTML);
+                adsbody = menuCase.find('#adsbody');
             }
     
-            const cardContainer = document.createElement('div');
             reklama.forEach(item => {
                 const cardHTML = `
                     <div>
                         <img style="border-radius: 1em;" src="${item.image}">
                         <div style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%; color:${item.colortext}">${item.text}</div>
                     </div>`;
-                cardContainer.insertAdjacentHTML('beforeend', cardHTML);
+                adsbody.append(cardHTML);
             });
-            adsbody.appendChild(cardContainer);
-        });
     
-        $('.menu').find('#adsbody').slick({
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 10000,
-            arrows: false,
+            if (adsbody.length) {
+                adsbody.slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 10000,
+                    arrows: false,
+                });
+            }
         });
     }
 

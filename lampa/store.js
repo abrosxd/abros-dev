@@ -355,10 +355,10 @@ function showReload(reloadText){
                             </div>
                         </div>
                     </div>`;
-                });
-            menuCase.insertAdjacentHTML('afterbegin', ADSHTML);
+                menuCase.insertAdjacentHTML('afterbegin', ADSHTML);
+            });
         });
-        if (adAbrosStoreBody) $('#abrosbody').slick({
+        $('#abrosbody').slick({
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -366,9 +366,7 @@ function showReload(reloadText){
             autoplaySpeed: 10000,
             arrows: false,
         });
-    };
-    
-
+    }
 
     if (window.appready) {
         loadData();

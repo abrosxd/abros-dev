@@ -139,6 +139,7 @@ function showReload(reloadText){
         if (JSON.stringify(checkResult) !== '[]') {return true} else {return false}
     };
 
+    /* Проверяем VIP */
     function checkVIP(vip, reklama) {
         const userDataJSON = localStorage.getItem('account_user');
         if (!userDataJSON) {

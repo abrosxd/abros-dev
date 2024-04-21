@@ -322,70 +322,73 @@ function showReload(reloadText){
     function addAccount(vipUser) {
         if (vipUser) {
             Lampa.SettingsApi.addParam({
-                component: 'add_plugin',
+                component: 'abros',
                 param: {
-                    name: 'add_ads',
+                    name: 'abrosaccount',
                     type: 'title'
                 },
                 field: {
-                    name: ads
+                    name: `
+                    <div class="ad-server" style="margin: 0em 0em;">
+                        <div class="ad-server__text">Поздравляем! Ваш статус Vip активирован.</div>
+                        <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
+                        <div class="ad-server__label">@modssmy_bot</div>
+                    </div>`
                 },
                 onRender: function (item) {
                     setTimeout(function() {
-       //   $('.settings-param-title').insertBefore($('.settings-param').first())
-            $('.settings-param-title').insertAfter($('.settings-param').last())
+            $('.settings-param-title').insertAfter($('.settings-param').first())
             },0);
             }
-
-     });
-            const AccountHTML = `
-                <div class="ad-server" style="margin: 0em 0em;">
-                    <div class="ad-server__text">Поздравляем! Ваш статус Vip активирован.</div>
-                    <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
-                    <div class="ad-server__label">@modssmy_bot</div>
-                </div>`;
-            $(AccountHTML).insertAfter($('.settings-param').first());
+            });
         } else {
-            const AccountHTML = `
-                <div class="ad-server" style="margin: 0em 0em;">
-                    <div class="ad-server__text">Для активации <b style="color: #ffd402;">Vip</b> статуса перейдите в телеграм бот</div>
-                    <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
-                    <div class="ad-server__label">@modssmy_bot</div>
-                </div>`;
-            $(AccountHTML).insertAfter($('.settings-param').first());
+            Lampa.SettingsApi.addParam({
+                component: 'abros',
+                param: {
+                    name: 'abrosaccount',
+                    type: 'title'
+                },
+                field: {
+                    name: `
+                    <div class="ad-server" style="margin: 0em 0em;">
+                        <div class="ad-server__text">Для активации <b style="color: #ffd402;">Vip</b> статуса перейдите в телеграм бот</div>
+                        <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
+                        <div class="ad-server__label">@modssmy_bot</div>
+                    </div>`
+                },
+                onRender: function (item) {
+                    setTimeout(function() {
+            $('.settings-param-title').insertAfter($('.settings-param').first())
+            },0);
+            }
+            });
+   
         }
     }
 
     /* Реклама */
     function addADS(reklama) {
         document.querySelectorAll('.menu').forEach(menuCase => {
-            const ADSHTML = `
-                <div style="height: max-content; margin: 0 0 1em 0.6em;">
-                    <div style="margin-bottom: 5px;">
-                        <div style="font-size: 1.3em;">Реклама</div>
-                    </div>
-                    <div id="adsbody"></div>
-                </div>`;
-            menuCase.insertAdjacentHTML('afterbegin', ADSHTML);
+            const adsbody = menuCase.querySelector('#adsbody');
+            const cardContainer = document.createElement('div');
             reklama.forEach(item => {
-                const adsbody = menuCase.querySelector('#adsbody');
                 const cardHTML = `
                     <div>
                         <img style="border-radius: 1em;" src="${item.image}">
                         <div style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%; color:${item.colortext}">${item.text}</div>
                     </div>`;
-                adsbody.insertAdjacentHTML('beforeend', cardHTML);
-                if (adsbody) {
-                    $('#adsbody').slick({
-                        infinite: true,
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        autoplay: true,
-                        autoplaySpeed: 10000,
-                        arrows: false,
-                    });
-                }
+                cardContainer.insertAdjacentHTML('beforeend', cardHTML);
             });
+            adsbody.appendChild(cardContainer);
+        });
+    
+        $('.menu').find('#adsbody').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            arrows: false,
         });
     }
 

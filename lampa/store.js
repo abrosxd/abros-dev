@@ -282,11 +282,11 @@ function showReload(reloadText){
                     hideInstall();
                     var myResult = checkPlugin(plugin.field.link);
                     setTimeout(function() {	
-                        $('div[data-name="' + plugin.field.name + '"]').append('<div class="settings-param__status one"></div>');
+                        $('div[data-name="' + plugin.param.name + '"]').append('<div class="settings-param__status one"></div>');
                         if (myResult) {
-                            $('div[data-name="' + plugin.field.name + '"]').find('.settings-param__status').removeClass('active error wait').addClass('active');
+                            $('div[data-name="' + plugin.param.name + '"]').find('.settings-param__status').removeClass('active error wait').addClass('active');
                         } else {
-                            $('div[data-name="' + plugin.field.name + '"]').find('.settings-param__status').removeClass('active error wait').addClass('error');
+                            $('div[data-name="' + plugin.param.name + '"]').find('.settings-param__status').removeClass('active error wait').addClass('error');
                         }
                     }, 100);
                 }

@@ -342,7 +342,7 @@ function showReload(reloadText){
     /* Реклама */
     function addADS(reklama) {
         document.querySelectorAll('.menu').forEach(menuCase => {
-            const adsbody = menuCase.getElementById('adsbody');
+            const adsbody = menuCase.querySelector('#adsbody');
             const ADSHTML = `
                 <div style="height: max-content; margin: 0 0 1em 0.6em;">
                     <div style="margin-bottom: 5px;">
@@ -357,16 +357,18 @@ function showReload(reloadText){
                         <img style="border-radius: 1em;" src="${item.image}">
                         <div style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%; color:${item.colortext}">${item.text}</div>
                     </div>`;
-                    adsbody.insertAdjacentHTML('beforeend', cardHTML);
-                });
-                if (adsbody) $('#adsbody').slick({
+                adsbody.insertAdjacentHTML('beforeend', cardHTML);
+            });
+            if (adsbody) {
+                $('#adsbody').slick({
                     infinite: true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     autoplay: true,
-                autoplaySpeed: 10000,
-                arrows: false,
-            });
+                    autoplaySpeed: 10000,
+                    arrows: false,
+                });
+            }
         });
     }
 

@@ -50,15 +50,16 @@
     }
 
     /* Создание магазина и его меню */
-    /* Abros Store */
-    Lampa.SettingsApi.addComponent({
-        component: 'abros',
-        name: 'Abros Store',
-        icon: icon_abros
-    });
+    function storeStart() {
+        /* Abros Store */
+        Lampa.SettingsApi.addComponent({
+            component: 'abros',
+            name: 'Abros Store',
+            icon: icon_abros
+        });
 
-    /* Онлайн */
-    Lampa.Settings.listener.follow('open', function (e) {
+        /* Онлайн */
+        Lampa.Settings.listener.follow('open', function (e) {
         if (e.name == 'main') {
             Lampa.SettingsApi.addComponent({
                 component: 'abros_online',
@@ -105,15 +106,18 @@
                     });
                 }
     });
+}
     
 
 
     if (window.appready) {
         loadData();
+        storeStart();
     } else {
         Lampa.Listener.follow('app', e => {
             if (e.type === 'ready') {
                 loadData();
+                storeStart();
             }
         });
     }

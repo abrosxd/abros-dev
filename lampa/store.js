@@ -143,11 +143,13 @@ function showReload(reloadText){
         const userDataJSON = localStorage.getItem('account_user');
         if (!userDataJSON) {
             addADS(reklama);
+            addAccount();
             return;
         }
         const userData = vip;
         if (!userData || !userData.email) {
             addADS(reklama);
+            addAccount();
             return;
         }
         const currentDate = new Date();
@@ -316,13 +318,14 @@ function showReload(reloadText){
             });
         }
         plugins.forEach(addPluginSettings);
-
-        addAccount();
     }
 
     /* Аккаунт */
     function addAccount(vipUser) {
         if (vipUser) {
+            const [day, month, year] = vipUser.subscribe.split('.');
+            const subscribeDate = new Date(`${month}/${day}/${year}`);
+            const remainingDays = Math.ceil((subscribeDate - new Date()) / (1000 * 60 * 60 * 24));
             Lampa.SettingsApi.addParam({
                 component: 'abros',
                 param: {
@@ -332,7 +335,7 @@ function showReload(reloadText){
                 field: {
                     name: `
                     <div class="ad-server" style="margin: 0em 0em;">
-                        <div class="ad-server__text">Поздравляем! Ваш статус Vip активирован.</div>
+                        <div class="ad-server__text">Поздравляем! Ваш статус Vip активирован. 💎 VIP ещё ${formatDays(remainingDays)}</div>
                         <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
                         <div class="ad-server__label">@modssmy_bot</div>
                     </div>`
@@ -366,6 +369,16 @@ function showReload(reloadText){
             });
    
         }
+    }
+
+    function formatDays(days) {
+        const num = Math.abs(days);
+        const lastDigit = num % 10;
+        const lastTwoDigits = num % 100;
+        if (lastTwoDigits >= 11 && lastTwoDigits <= 19) return `${num} дней`;
+        else if (lastDigit === 1) return `${num} день`;
+        else if (lastDigit >= 2 && lastDigit <= 4) return `${num} дня`;
+        else return `${num} дней`;
     }
 
     /* Реклама */

@@ -156,11 +156,8 @@ function showReload(reloadText){
             const subscribeDate = new Date(`${month}/${day}/${year}`);
             return vip.email === userData.email && subscribeDate > currentDate;
         });
-        if (vipUser) {
-            addAccount(vipUser);
-        } else {
-            addADS();
-        }
+        if (vipUser) addAccount(vipUser)
+        else addADS();
     }
 
     /* Создание магазина и его меню */
@@ -319,26 +316,26 @@ function showReload(reloadText){
             });
         }
         plugins.forEach(addPluginSettings);
+    }
 
-        /* Аккаунт */
-        function addAccount(vipUser) {
-            if (vipUser) {
-                const AbrosStoreAdHTML = `
-                    <div class="ad-server" style="margin: 0em 0em;">
-                        <div class="ad-server__text">Поздравляем! Ваш статус Vip активирован.</div>
-                        <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
-                        <div class="ad-server__label">@modssmy_bot</div>
-                    </div>`;
-                $('.settings-param-title').insertAfter($('.settings-param').first());
-            } else {
-                const AbrosStoreAdHTML = `
-                    <div class="ad-server" style="margin: 0em 0em;">
-                        <div class="ad-server__text">Для активации <b style="color: #ffd402;">Vip</b> статуса перейдите в телеграм бот</div>
-                        <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
-                        <div class="ad-server__label">@modssmy_bot</div>
-                    </div>`;
-                $('.settings-param-title').insertAfter($('.settings-param').first());
-            }
+    /* Аккаунт */
+    function addAccount(vipUser) {
+        if (vipUser) {
+            const AbrosStoreAdHTML = `
+                <div class="ad-server" style="margin: 0em 0em;">
+                    <div class="ad-server__text">Поздравляем! Ваш статус Vip активирован.</div>
+                    <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
+                    <div class="ad-server__label">@modssmy_bot</div>
+                </div>`;
+            $('.settings-param-title').insertAfter($('.settings-param').first());
+        } else {
+            const AbrosStoreAdHTML = `
+                <div class="ad-server" style="margin: 0em 0em;">
+                    <div class="ad-server__text">Для активации <b style="color: #ffd402;">Vip</b> статуса перейдите в телеграм бот</div>
+                    <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
+                    <div class="ad-server__label">@modssmy_bot</div>
+                </div>`;
+            $('.settings-param-title').insertAfter($('.settings-param').first());
         }
     }
     

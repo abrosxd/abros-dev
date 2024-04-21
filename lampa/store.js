@@ -73,7 +73,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'abrosstore',
+            component: 'abros',
             param: {
                 name: 'abros_online',
                 type: 'static',
@@ -88,15 +88,6 @@
                     Lampa.Controller.enabled().controller.back = function(){
                         Lampa.Settings.create('abros');
                     }
-                });
-            }
-        });
-
-        Lampa.Settings.listener.follow('open', function (e) {
-            if (e.name == 'main') {
-                Lampa.SettingsApi.addComponent({
-                    component: 'abros_online',
-                    name: 'Онлайн'
                 });
             }
         });

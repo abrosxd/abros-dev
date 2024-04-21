@@ -61,10 +61,6 @@
         /* Онлайн */
         Lampa.Settings.listener.follow('open', function (e) {
             if (e.name == 'main') {
-                Lampa.SettingsApi.addComponent({
-                    component: 'abros_online',
-                    name: 'Online'
-                });
                 setTimeout(function() {
                     // $('div[data-component="abros_online"]').remove();
                 }, 0);

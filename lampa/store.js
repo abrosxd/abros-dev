@@ -150,6 +150,8 @@ function showReload(reloadText){
             if (e.name == 'main') {
                 setTimeout(function() {
                     $('div[data-component="abros_online"]').remove();
+                    $('div[data-component="abros_tv"]').remove();
+                    $('div[data-component="abros_control"]').remove();
                 }, 0);
                 $("#hideInstall").remove();
                 /* Сдвигаем раздел выше */

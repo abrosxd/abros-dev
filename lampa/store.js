@@ -358,6 +358,22 @@ function showReload(reloadText){
         }
         plugins.forEach(addPluginSettings);
 
+        /* Названия меню */
+        Lampa.Settings.listener.follow('open', function (e) {
+			if (e.name == 'abros') {
+			  $('.settings__title').text("Abros Store");
+			}
+            if (e.name == 'abros_online') {
+			  $('.settings__title').text("Online");
+			}
+            if (e.name == 'abros_tv') {
+                $('.settings__title').text("ТВ");
+            }
+            if (e.name == 'abros_control') {
+                $('.settings__title').text("Управление");
+            }
+		});
+
         /* Авторство и замена CubPremium */
         Lampa.Settings.main().render().find('[data-component="plugins"]').unbind('hover:enter').on('hover:enter', function () {
             Lampa.Extensions.show();

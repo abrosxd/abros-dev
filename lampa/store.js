@@ -294,7 +294,7 @@ function showReload(reloadText){
                     //default: '1',
                 },
                 field: {
-                    name: plugin.field.name + '<br><span class="extensions__item-premium">' + plugin.field.price + '</span>',
+                    name: plugin.field.name + '<br><span style="background-color: #D8C39A; color: #000; padding: 0 0.4em; -webkit-border-radius: 0.3em; -moz-border-radius: 0.3em; border-radius: 0.3em; font-size: 0.8em; top: 0.7em; position: relative;">' + plugin.field.price + '</span>',
                     description: plugin.field.description,
                 },
                 onChange: function(value) {

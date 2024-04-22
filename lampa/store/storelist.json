@@ -118,7 +118,7 @@
 			}
 		},
 		{
-			"component": "abros_control",
+			"component": "abros_torpars",
 			"param" : {
 				"name": "AddParser"
 			},
@@ -131,7 +131,7 @@
 			}
 		},
 		{
-			"component": "abros_control",
+			"component": "abros_torpars",
 			"param" : {
 				"name": "PublicParser"
 			},
@@ -222,7 +222,7 @@
 			}
 		},
 		{
-			"component": "abros_other",
+			"component": "abros_torpars",
 			"param" : {
 				"name": "PreloadTS"
 			},

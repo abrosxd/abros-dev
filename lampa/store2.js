@@ -421,9 +421,9 @@ $(document).ready(function () {
             });
     
             if (adsbody.length) {
-                // Check if the Slick library is loaded
+                // Проверяем, загружен ли скрипт Slick
                 if (typeof $.fn.slick !== 'undefined') {
-                    // Slick library is loaded, initialize the carousel
+                    // Slick загружен, инициализируем карусель
                     adsbody.slick({
                         infinite: true,
                         slidesToShow: 1,
@@ -433,8 +433,8 @@ $(document).ready(function () {
                         arrows: false,
                     });
                 } else {
-                    // Slick library is not loaded yet, wait for it to load
-                    $(document).on('slickLoaded', function() {
+                    // Slick еще не загружен, ждем его загрузки
+                    $(document).one('slickLoaded', function() {
                         adsbody.slick({
                             infinite: true,
                             slidesToShow: 1,
@@ -448,6 +448,7 @@ $(document).ready(function () {
             }
         });
     }
+    
 
     if (window.appready) {
         loadData();

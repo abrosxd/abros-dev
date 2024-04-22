@@ -146,12 +146,10 @@ function showReload(reloadText){
             addAccount();
             return;
         }
-        const userData = vip;
+        const userData = JSON.parse(userDataJSON);
         if (!userData || !userData.email) {
             addADS(reklama);
             addAccount();
-            console.log('VIP 1', userData.find(email));
-            console.log('VIP 2', vipUser);
             return;
         }
         const currentDate = new Date();
@@ -160,12 +158,9 @@ function showReload(reloadText){
             const subscribeDate = new Date(`${month}/${day}/${year}`);
             return item.email === userData.email && subscribeDate > currentDate;
         });
-        console.log('VIP user found', vipUser);
         if (vipUser) {
-            console.log('VIP user found 1:', vipUser);
             addAccount(vipUser);
         } else {
-            console.log('VIP user found 2:', vipUser);
             addADS(reklama);
             addAccount();
         }

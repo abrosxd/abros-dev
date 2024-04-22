@@ -7,7 +7,7 @@
  * Магазин сторонних плагинов для Lampa
  */
 
-$(document).ready(function () {
+(function () {
     'use strict';
 
     /* Домен-регулятор */
@@ -20,20 +20,18 @@ $(document).ready(function () {
     var icon_control = '<div class="settings-folder" style="padding:0!important"><div class="settings-folder__icon" style="width:1.8em;height:1.3em;padding-right:.5em"><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="800px" height="800px" viewBox="0 0 1024 1024" class="icon"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656zM340 683v77c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-77c-10.1 3.3-20.8 5-32 5s-21.9-1.8-32-5zm64-198V264c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v221c10.1-3.3 20.8-5 32-5s21.9 1.8 32 5zm-64 198c10.1 3.3 20.8 5 32 5s21.9-1.8 32-5c41.8-13.5 72-52.7 72-99s-30.2-85.5-72-99c-10.1-3.3-20.8-5-32-5s-21.9 1.8-32 5c-41.8 13.5-72 52.7-72 99s30.2 85.5 72 99zm.1-115.7c.3-.6.7-1.2 1-1.8v-.1l1.2-1.8c.1-.2.2-.3.3-.5.3-.5.7-.9 1-1.4.1-.1.2-.3.3-.4.5-.6.9-1.1 1.4-1.6l.3-.3 1.2-1.2.4-.4c.5-.5 1-.9 1.6-1.4.6-.5 1.1-.9 1.7-1.3.2-.1.3-.2.5-.3.5-.3.9-.7 1.4-1 .1-.1.3-.2.4-.3.6-.4 1.2-.7 1.9-1.1.1-.1.3-.1.4-.2.5-.3 1-.5 1.6-.8l.6-.3c.7-.3 1.3-.6 2-.8.7-.3 1.4-.5 2.1-.7.2-.1.4-.1.6-.2.6-.2 1.1-.3 1.7-.4.2 0 .3-.1.5-.1.7-.2 1.5-.3 2.2-.4.2 0 .3 0 .5-.1.6-.1 1.2-.1 1.8-.2h.6c.8 0 1.5-.1 2.3-.1s1.5 0 2.3.1h.6c.6 0 1.2.1 1.8.2.2 0 .3 0 .5.1.7.1 1.5.2 2.2.4.2 0 .3.1.5.1.6.1 1.2.3 1.7.4.2.1.4.1.6.2.7.2 1.4.4 2.1.7.7.2 1.3.5 2 .8l.6.3c.5.2 1.1.5 1.6.8.1.1.3.1.4.2.6.3 1.3.7 1.9 1.1.1.1.3.2.4.3.5.3 1 .6 1.4 1 .2.1.3.2.5.3.6.4 1.2.9 1.7 1.3s1.1.9 1.6 1.4l.4.4 1.2 1.2.3.3c.5.5 1 1.1 1.4 1.6.1.1.2.3.3.4.4.4.7.9 1 1.4.1.2.2.3.3.5l1.2 1.8s0 .1.1.1a36.18 36.18 0 0 1 5.1 18.5c0 6-1.5 11.7-4.1 16.7-.3.6-.7 1.2-1 1.8 0 0 0 .1-.1.1l-1.2 1.8c-.1.2-.2.3-.3.5-.3.5-.7.9-1 1.4-.1.1-.2.3-.3.4-.5.6-.9 1.1-1.4 1.6l-.3.3-1.2 1.2-.4.4c-.5.5-1 .9-1.6 1.4-.6.5-1.1.9-1.7 1.3-.2.1-.3.2-.5.3-.5.3-.9.7-1.4 1-.1.1-.3.2-.4.3-.6.4-1.2.7-1.9 1.1-.1.1-.3.1-.4.2-.5.3-1 .5-1.6.8l-.6.3c-.7.3-1.3.6-2 .8-.7.3-1.4.5-2.1.7-.2.1-.4.1-.6.2-.6.2-1.1.3-1.7.4-.2 0-.3.1-.5.1-.7.2-1.5.3-2.2.4-.2 0-.3 0-.5.1-.6.1-1.2.1-1.8.2h-.6c-.8 0-1.5.1-2.3.1s-1.5 0-2.3-.1h-.6c-.6 0-1.2-.1-1.8-.2-.2 0-.3 0-.5-.1-.7-.1-1.5-.2-2.2-.4-.2 0-.3-.1-.5-.1-.6-.1-1.2-.3-1.7-.4-.2-.1-.4-.1-.6-.2-.7-.2-1.4-.4-2.1-.7-.7-.2-1.3-.5-2-.8l-.6-.3c-.5-.2-1.1-.5-1.6-.8-.1-.1-.3-.1-.4-.2-.6-.3-1.3-.7-1.9-1.1-.1-.1-.3-.2-.4-.3-.5-.3-1-.6-1.4-1-.2-.1-.3-.2-.5-.3-.6-.4-1.2-.9-1.7-1.3s-1.1-.9-1.6-1.4l-.4-.4-1.2-1.2-.3-.3c-.5-.5-1-1.1-1.4-1.6-.1-.1-.2-.3-.3-.4-.4-.4-.7-.9-1-1.4-.1-.2-.2-.3-.3-.5l-1.2-1.8v-.1c-.4-.6-.7-1.2-1-1.8-2.6-5-4.1-10.7-4.1-16.7s1.5-11.7 4.1-16.7zM620 539v221c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V539c-10.1 3.3-20.8 5-32 5s-21.9-1.8-32-5zm64-198v-77c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v77c10.1-3.3 20.8-5 32-5s21.9 1.8 32 5zm-64 198c10.1 3.3 20.8 5 32 5s21.9-1.8 32-5c41.8-13.5 72-52.7 72-99s-30.2-85.5-72-99c-10.1-3.3-20.8-5-32-5s-21.9 1.8-32 5c-41.8 13.5-72 52.7-72 99s30.2 85.5 72 99zm.1-115.7c.3-.6.7-1.2 1-1.8v-.1l1.2-1.8c.1-.2.2-.3.3-.5.3-.5.7-.9 1-1.4.1-.1.2-.3.3-.4.5-.6.9-1.1 1.4-1.6l.3-.3 1.2-1.2.4-.4c.5-.5 1-.9 1.6-1.4.6-.5 1.1-.9 1.7-1.3.2-.1.3-.2.5-.3.5-.3.9-.7 1.4-1 .1-.1.3-.2.4-.3.6-.4 1.2-.7 1.9-1.1.1-.1.3-.1.4-.2.5-.3 1-.5 1.6-.8l.6-.3c.7-.3 1.3-.6 2-.8.7-.3 1.4-.5 2.1-.7.2-.1.4-.1.6-.2.6-.2 1.1-.3 1.7-.4.2 0 .3-.1.5-.1.7-.2 1.5-.3 2.2-.4.2 0 .3 0 .5-.1.6-.1 1.2-.1 1.8-.2h.6c.8 0 1.5-.1 2.3-.1s1.5 0 2.3.1h.6c.6 0 1.2.1 1.8.2.2 0 .3 0 .5.1.7.1 1.5.2 2.2.4.2 0 .3.1.5.1.6.1 1.2.3 1.7.4.2.1.4.1.6.2.7.2 1.4.4 2.1.7.7.2 1.3.5 2 .8l.6.3c.5.2 1.1.5 1.6.8.1.1.3.1.4.2.6.3 1.3.7 1.9 1.1.1.1.3.2.4.3.5.3 1 .6 1.4 1 .2.1.3.2.5.3.6.4 1.2.9 1.7 1.3s1.1.9 1.6 1.4l.4.4 1.2 1.2.3.3c.5.5 1 1.1 1.4 1.6.1.1.2.3.3.4.4.4.7.9 1 1.4.1.2.2.3.3.5l1.2 1.8v.1a36.18 36.18 0 0 1 5.1 18.5c0 6-1.5 11.7-4.1 16.7-.3.6-.7 1.2-1 1.8v.1l-1.2 1.8c-.1.2-.2.3-.3.5-.3.5-.7.9-1 1.4-.1.1-.2.3-.3.4-.5.6-.9 1.1-1.4 1.6l-.3.3-1.2 1.2-.4.4c-.5.5-1 .9-1.6 1.4-.6.5-1.1.9-1.7 1.3-.2.1-.3.2-.5.3-.5.3-.9.7-1.4 1-.1.1-.3.2-.4.3-.6.4-1.2.7-1.9 1.1-.1.1-.3.1-.4.2-.5.3-1 .5-1.6.8l-.6.3c-.7.3-1.3.6-2 .8-.7.3-1.4.5-2.1.7-.2.1-.4.1-.6.2-.6.2-1.1.3-1.7.4-.2 0-.3.1-.5.1-.7.2-1.5.3-2.2.4-.2 0-.3 0-.5.1-.6.1-1.2.1-1.8.2h-.6c-.8 0-1.5.1-2.3.1s-1.5 0-2.3-.1h-.6c-.6 0-1.2-.1-1.8-.2-.2 0-.3 0-.5-.1-.7-.1-1.5-.2-2.2-.4-.2 0-.3-.1-.5-.1-.6-.1-1.2-.3-1.7-.4-.2-.1-.4-.1-.6-.2-.7-.2-1.4-.4-2.1-.7-.7-.2-1.3-.5-2-.8l-.6-.3c-.5-.2-1.1-.5-1.6-.8-.1-.1-.3-.1-.4-.2-.6-.3-1.3-.7-1.9-1.1-.1-.1-.3-.2-.4-.3-.5-.3-1-.6-1.4-1-.2-.1-.3-.2-.5-.3-.6-.4-1.2-.9-1.7-1.3s-1.1-.9-1.6-1.4l-.4-.4-1.2-1.2-.3-.3c-.5-.5-1-1.1-1.4-1.6-.1-.1-.2-.3-.3-.4-.4-.4-.7-.9-1-1.4-.1-.2-.2-.3-.3-.5l-1.2-1.8v-.1c-.4-.6-.7-1.2-1-1.8-2.6-5-4.1-10.7-4.1-16.7s1.5-11.7 4.1-16.7z"/></svg></div><div class="settings-folder__name" style="font-size: 1.3em;">Управление</div></div>'
 
     /* Регулярно вызываемые функции */
-    Lampa.Storage.set('needReboot', false);
-    Lampa.Storage.set('needRebootSettingExit', false);
+	Lampa.Storage.set('needReboot', false);
+	Lampa.Storage.set('needRebootSettingExit', false);
 
-    /* Подключение карусели */
+    /* Подключение скриптов и стилей для визуала */
     loadScript(`${domain}/main/js/slick.min.js`);
     loadCSS(`${domain}/main/css/slick.css`);
     loadCSS(`${domain}/main/css/slick-theme.css`);
-    
     function loadScript(src) {
-        $('head').append($('<script>').attr('src', src));
+        document.head.appendChild(Object.assign(document.createElement('script'), { src }));
     }
-
     function loadCSS(href) {
-        $('head').append($('<link>').attr({rel: 'stylesheet', href: href}));
+        document.head.appendChild(Object.assign(document.createElement('link'), { rel: 'stylesheet', href }));
     }
 
     /* Загрузка данных */
@@ -49,6 +47,9 @@ $(document).ready(function () {
                 var { plugins, reklama, vip } = data;
                 storeStart(plugins);
                 checkVIP(vip, reklama);
+                console.log('Plugins:', plugins);
+                console.log('Reklama:', reklama);
+                console.log('VIP:', vip);
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
@@ -56,76 +57,72 @@ $(document).ready(function () {
     }
 
     /* Запрос на перезагрузку в модальном окне */
-    function showReload(reloadText){
-        Lampa.Modal.open({
-            title: '',
-            align: 'center',
-            zIndex: 300,
-            html: $('<div class="about">' + reloadText + '</div>'),
-            buttons: [{
-                name: 'Нет',
-                onSelect: function onSelect() {
-                    Lampa.Modal.close();
-                    $('.modal').remove();
-                    Lampa.Controller.toggle('settings_component');
-                }
-            }, {
-                name: 'Да',
-                onSelect: function onSelect() {
-                    window.location.reload();
-                }
-            }]
-        });
+function showReload(reloadText){
+    Lampa.Modal.open({
+          title: '',
+          align: 'center',
+          zIndex: 300,
+          html: $('<div class="about">' + reloadText + '</div>'),
+          buttons: [{
+            name: 'Нет',
+            onSelect: function onSelect() {
+              Lampa.Modal.close();
+              $('.modal').remove();
+          Lampa.Controller.toggle('settings_component');
+            }
+          }, {
+            name: 'Да',
+            onSelect: function onSelect() {
+              window.location.reload();
+            }
+          }]
+    });
     }
-
     /* Следим за настройками */
     function settingsWatch() {
         /* проверяем флаг перезагрузки и ждём выхода из настроек */
         if (Lampa.Storage.get('needRebootSettingExit')) {
-            var intervalSettings = setInterval(function() {
-                var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
-                if (!elementSettings.length > 0){
-                    clearInterval(intervalSettings);
+              var intervalSettings = setInterval(function() {
+                  var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
+                  if (!elementSettings.length > 0){
+                        clearInterval(intervalSettings);
                     showReload('Для полного удаления плагина перезагрузите приложение!');
-                }
+                  }
             }, 1000)
         }
     }
-
+    
     function itemON(sourceURL, sourceName, sourceAuthor, itemName) {
-        if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {
-            Lampa.Noty.show("Плагин уже установлен!");
-        } else {
-            // Если перезагрузки не требуется - контроль после удаления плагинов
-            if (!Lampa.Storage.get('needReboot')) {
-                // Получаем список плагинов
-                var pluginsArray = Lampa.Storage.get('plugins');
-                // Добавляем новый элемент к списку
-                pluginsArray.push({
-                    "author": sourceAuthor,
-                    "url": sourceURL,
-                    "name": sourceName,
-                    "status": 1
-                });
-                // Внедряем изменённый список в лампу
-                Lampa.Storage.set('plugins', pluginsArray);
-                // Делаем инъекцию скрипта для немедленной работы
-                var script = document.createElement ('script');
-                script.src = sourceURL;
-                document.getElementsByTagName ('head')[0].appendChild (script);
-                setTimeout(function() {
-                    Lampa.Settings.update();
-                    Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
-                }, 300);
-            }
-        }
+    if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {	
+        // Если перезагрузки не требуется - контроль после удаления плагинов
+       if (!Lampa.Storage.get('needReboot')) {
+        // Получаем список плагинов
+            var pluginsArray = Lampa.Storage.get('plugins');
+        // Добавляем новый элемент к списку
+            pluginsArray.push({
+                "author": sourceAuthor,
+                "url": sourceURL,
+                "name": sourceName,
+                "status": 1
+            });
+        // Внедряем изменённый список в лампу
+            Lampa.Storage.set('plugins', pluginsArray);
+        // Делаем инъекцию скрипта для немедленной работы
+            var script = document.createElement ('script');
+            script.src = sourceURL;
+            document.getElementsByTagName ('head')[0].appendChild (script);
+            setTimeout(function() {
+                Lampa.Settings.update();
+                Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
+            }, 300);
+       }
+    }
     }	
-
     function hideInstall() {
         $("#hideInstall").remove();
         $('body').append('<div id="hideInstall"><style>div.settings-param__value{opacity: 0%!important;display: none;}</style><div>')
     }
-
+    
     function deletePlugin(pluginToRemoveUrl) {
         var plugins = Lampa.Storage.get('plugins');
         var updatedPlugins = plugins.filter(function(obj) {return obj.url !== pluginToRemoveUrl});
@@ -133,9 +130,9 @@ $(document).ready(function () {
         Lampa.Settings.update();
         Lampa.Noty.show("Плагин успешно удален");
         Lampa.Storage.set('needRebootSettingExit', true);
-        settingsWatch();
+           settingsWatch();
     };
-
+    
     function checkPlugin(pluginToCheck) {
         var plugins = Lampa.Storage.get('plugins');
         var checkResult = plugins.filter(function(obj) {return obj.url == pluginToCheck});
@@ -356,9 +353,9 @@ $(document).ready(function () {
                 },
                 onRender: function (item) {
                     setTimeout(function() {
-                        $('.settings-param-title').insertAfter($('.settings-param').first())
-                    },0);
-                }
+            $('.settings-param-title').insertAfter($('.settings-param').first())
+            },0);
+            }
             });
         } else {
             Lampa.SettingsApi.addParam({
@@ -377,10 +374,11 @@ $(document).ready(function () {
                 },
                 onRender: function (item) {
                     setTimeout(function() {
-                        $('.settings-param-title').insertBefore($('.settings-param').first())
-                    },0);
-                }
+            $('.settings-param-title').insertBefore($('.settings-param').first())
+            },0);
+            }
             });
+   
         }
     }
 
@@ -421,34 +419,17 @@ $(document).ready(function () {
             });
     
             if (adsbody.length) {
-                // Проверяем, загружен ли скрипт Slick
-                if (typeof $.fn.slick !== 'undefined') {
-                    // Slick загружен, инициализируем карусель
-                    adsbody.slick({
-                        infinite: true,
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        autoplay: true,
-                        autoplaySpeed: 10000,
-                        arrows: false,
-                    });
-                } else {
-                    // Slick еще не загружен, ждем его загрузки
-                    $(document).one('slickLoaded', function() {
-                        adsbody.slick({
-                            infinite: true,
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            autoplay: true,
-                            autoplaySpeed: 10000,
-                            arrows: false,
-                        });
-                    });
-                }
+                adsbody.slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 10000,
+                    arrows: false,
+                });
             }
         });
     }
-    
 
     if (window.appready) {
         loadData();
@@ -459,4 +440,4 @@ $(document).ready(function () {
             }
         });
     }
-});
+})();

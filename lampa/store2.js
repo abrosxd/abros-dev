@@ -150,6 +150,8 @@ function showReload(reloadText){
         if (!userData || !userData.email) {
             addADS(reklama);
             addAccount();
+            console.log('VIP 1', userData);
+            console.log('VIP 2', vipUser);
             return;
         }
         const currentDate = new Date();

@@ -309,7 +309,7 @@ function showReload(reloadText){
                 },
                 onRender: function (item) {
                     $('.settings-param__name', item).css('color','f3d900');
-                    $('.settings-param__value', item).css({'background-color': '#D8C39A', 'color': '#000', 'padding': '0.1em 0.5em', 'border-radius': '0.3em'});
+                    $('.settings-param__value', item).css({'background-color': '#D8C39A', 'color': '#000', 'padding': '0.1em 0.5em', 'border-radius': '0.3em', 'display': 'block', 'opacity': '1 !important', 'width': 'max-content'});
                     hideInstall();
                     var myResult = checkPlugin(plugin.field.link);
                     setTimeout(function() {	

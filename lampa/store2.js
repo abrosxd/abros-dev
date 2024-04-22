@@ -47,9 +47,6 @@
                 var { plugins, reklama, vip } = data;
                 storeStart(plugins);
                 checkVIP(vip, reklama);
-                console.log('Plugins:', plugins);
-                console.log('Reklama:', reklama);
-                console.log('VIP:', vip);
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
@@ -147,7 +144,6 @@ function showReload(reloadText){
         if (!userDataJSON) {
             addADS(reklama);
             addAccount();
-            console.log('user found:', userDataJSON);
             return;
         }
         const userData = vip;

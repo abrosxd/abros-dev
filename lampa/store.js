@@ -394,14 +394,6 @@ function showReload(reloadText){
             },
             onRender: function(item) {
                 item.on('hover:enter', function () {
-                    Lampa.SettingsApi.addParam({
-                        component: 'abros_style',
-                        param: {
-                            name: 'abros_style_info',
-                            type: 'title'
-                        },
-                        field: `Важно!<br>Перед применением темы отключите предыдущую.`,
-                    });
                     Lampa.Settings.create('abros_style');
                     Lampa.Controller.enabled().controller.back = function(){
                         Lampa.Settings.create('abros');
@@ -412,6 +404,14 @@ function showReload(reloadText){
 
         Lampa.Settings.listener.follow('open', function (e) {
             if (e.name == 'main') {
+                Lampa.SettingsApi.addParam({
+                    component: 'abros_style',
+                    param: {
+                        name: 'abros_style_info',
+                        type: 'title'
+                    },
+                    field: `Важно!<br>Перед применением темы отключите предыдущую.`,
+                });
                 Lampa.SettingsApi.addComponent({
                     component: 'abros_style',
                     name: 'Темы'

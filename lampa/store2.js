@@ -158,11 +158,12 @@ function showReload(reloadText){
             const subscribeDate = new Date(`${month}/${day}/${year}`);
             return item.email === userData.email && subscribeDate > currentDate;
         });
+        console.log('VIP user found', vipUser);
         if (vipUser) {
-            console.log('VIP user found 2:', vipUser);
+            console.log('VIP user found 1:', vipUser);
             addAccount(vipUser);
         } else {
-            console.log('Regular user.');
+            console.log('VIP user found 2:', vipUser);
             addADS(reklama);
             addAccount();
         }

@@ -150,7 +150,6 @@ function showReload(reloadText){
         if (!userData || !userData.email) {
             addADS(reklama);
             addAccount();
-            console.log('VIP user found 1:', userData);
             return;
         }
         const currentDate = new Date();

@@ -324,17 +324,19 @@ function showReload(reloadText){
         plugins.forEach(addPluginSettings);
 
         /* Авторство и замена CubPremium */
-    Lampa.Settings.main().render().find('[data-component="plugins"]').unbind('hover:enter').on('hover:enter', function () {
-        Lampa.Extensions.show();
-        setTimeout(function (){
-            $('.extensions__item', Lampa.Extensions.render()).each(function (i, e){
-                var descr = $(e).find('.extensions__item-descr').text();
-                if(descr.includes('https:/abros.me/lampa/store.js')) {
-                    $(e).find('.extensions__item-author').html('💎').append('<span class="extensions__item-premium">VIP buy at @abrosxd</span>');
-                }
-            });
-        }, 500);
-    });
+        Lampa.Settings.main().render().find('[data-component="plugins"]').unbind('hover:enter').on('hover:enter', function () {
+            Lampa.Extensions.show();
+            setTimeout(function (){
+                $('.extensions__item', Lampa.Extensions.render()).each(function (i, e){
+                    var descr = $(e).find('.extensions__item-descr').text();
+                    console.log("Description:", descr);
+                    if(descr.includes('https:/abros.me/lampa/store.js')) {
+                        console.log("Match found! Element:", e);
+                        $(e).find('.extensions__item-author').html('💎').append('<span class="extensions__item-premium">VIP buy at @abrosxd</span>');
+                    }
+                });
+            }, 500);
+        });        
     }
 
     /* Аккаунт */

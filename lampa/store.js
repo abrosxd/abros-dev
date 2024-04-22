@@ -332,9 +332,11 @@ function showReload(reloadText){
                     var regex = /https:\/\/abros\.me\/lampa\/store\.js/;
                     if(regex.test(descr)) {
                         $(e).find('.extensions__item-author').html('💎').append('<span class="extensions__item-premium">VIP buy at @abrosxd</span>');
+                        $(e).find('.extensions__item-name').html('Abros Store');
+                        $(e).find('.extensions__item-descr').html('Альтернативный магазин плагинов. Включает множество платных и бесплатных плагинов для Lampa.');
                     }
                 });
-            }, 100);
+            }, 500);
         });
                
     }

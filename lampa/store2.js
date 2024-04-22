@@ -150,7 +150,7 @@ function showReload(reloadText){
         if (!userData || !userData.email) {
             addADS(reklama);
             addAccount();
-            console.log('VIP user found1:', userData);
+            console.log('VIP user found 1:', userData);
             return;
         }
         const currentDate = new Date();
@@ -160,7 +160,7 @@ function showReload(reloadText){
             return item.email === userData.email && subscribeDate > currentDate;
         });
         if (vipUser) {
-            console.log('VIP user found2:', vipUser);
+            console.log('VIP user found 2:', vipUser);
             addAccount(vipUser);
         } else {
             console.log('Regular user.');

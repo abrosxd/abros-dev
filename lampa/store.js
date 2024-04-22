@@ -346,13 +346,13 @@ function showReload(reloadText){
         const vipStatus = vipUser ? `
             <div class="ad-server" style="margin: 0em 0em; border-radius: 1em;">
                 <div class="ad-server__text" style="font-size: 0.9em;">Поздравляем! Ваш статус Vip активирован.<br><b style="color: #ffd402;">💎 VIP ещё ${formatDays(vipUser)}</b></div>
-                <img src="https://lampa.stream/group.jpg" class="ad-server__qr" style="border-radius: 1em;">
+                <img src="https://abros.me/lampa/store/img/telegram_me.jpg" class="ad-server__qr" style="border-radius: 1em;">
                 <div class="ad-server__label" style="border-radius: 0.3em 1em; font-size: 0.9em;">@abrosxd</div>
             </div>` 
         : `
             <div class="ad-server" style="margin: 0em 0em; border-radius: 1em;">
                 <div class="ad-server__text" style="font-size: 0.9em;">Для активации <b style="color: #ffd402;">Vip</b> статуса напишите мне в телеграм</div>
-                <img src="https://lampa.stream/vip.jpg" class="ad-server__qr" style="border-radius: 1em;">
+                <img src="https://abros.me/lampa/store/img/telegram_me.jpg" class="ad-server__qr" style="border-radius: 1em;">
                 <div class="ad-server__label" style="border-radius: 0.3em 1em; font-size: 0.9em;">@abrosxd</div>
             </div>`;
     

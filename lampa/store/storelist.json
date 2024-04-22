@@ -157,7 +157,7 @@
 			}
 		},
 		{
-			"component": "abros_control",
+			"component": "abros_interface",
 			"param" : {
 				"name": "AddCategory"
 			},
@@ -170,7 +170,7 @@
 			}
 		},
 		{
-			"component": "abros_control",
+			"component": "abros_interface",
 			"param" : {
 				"name": "OldStyle"
 			},
@@ -209,7 +209,7 @@
 			}
 		},
 		{
-			"component": "abros_other",
+			"component": "abros_interface",
 			"param" : {
 				"name": "Comments"
 			},
@@ -235,7 +235,7 @@
 			}
 		},
 		{
-			"component": "abros_other",
+			"component": "abros_interface",
 			"param" : {
 				"name": "Tricks"
 			},
@@ -248,7 +248,7 @@
 			}
 		},
 		{
-			"component": "abros_other",
+			"component": "abros_control",
 			"param" : {
 				"name": "OffWebsocket"
 			},

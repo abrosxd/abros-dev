@@ -23,7 +23,7 @@
 	Lampa.Storage.set('needReboot', false);
 	Lampa.Storage.set('needRebootSettingExit', false);
 
-    /* Подключение карусели */
+    /* Подключение скриптов и стилей для визуала */
     loadScript(`${domain}/main/js/slick.min.js`);
     loadCSS(`${domain}/main/css/slick.css`);
     loadCSS(`${domain}/main/css/slick-theme.css`);
@@ -144,14 +144,12 @@ function showReload(reloadText){
         if (!userDataJSON) {
             addADS(reklama);
             addAccount();
-            console.log('user found:', userDataJSON);
             return;
         }
-        const userData = vip;
+        const userData = JSON.parse(userDataJSON);
         if (!userData || !userData.email) {
             addADS(reklama);
             addAccount();
-            console.log('VIP user found:', userData);
             return;
         }
         const currentDate = new Date();
@@ -161,10 +159,8 @@ function showReload(reloadText){
             return item.email === userData.email && subscribeDate > currentDate;
         });
         if (vipUser) {
-            console.log('VIP user found:', vipUser);
             addAccount(vipUser);
         } else {
-            console.log('Regular user.');
             addADS(reklama);
             addAccount();
         }
@@ -330,64 +326,45 @@ function showReload(reloadText){
 
     /* Аккаунт */
     function addAccount(vipUser) {
-        if (vipUser) {
-            const [day, month, year] = vipUser.subscribe.split('.');
+        const vipStatus = vipUser ? `
+            <div class="ad-server" style="margin: 0em 0em; border-radius: 1em;">
+                <div class="ad-server__text" style="font-size: 0.9em;">Поздравляем! Ваш статус Vip активирован.<br><b style="color: #ffd402;">💎 VIP ещё ${formatDays(vipUser)}</b></div>
+                <img src="https://lampa.stream/group.jpg" class="ad-server__qr" style="border-radius: 1em;">
+                <div class="ad-server__label" style="border-radius: 0.3em 1em; font-size: 0.9em;">@abrosxd</div>
+            </div>` 
+        : `
+            <div class="ad-server" style="margin: 0em 0em; border-radius: 1em;">
+                <div class="ad-server__text" style="font-size: 0.9em;">Для активации <b style="color: #ffd402;">Vip</b> статуса напишите мне в телеграм</div>
+                <img src="https://lampa.stream/vip.jpg" class="ad-server__qr" style="border-radius: 1em;">
+                <div class="ad-server__label" style="border-radius: 0.3em 1em; font-size: 0.9em;">@abrosxd</div>
+            </div>`;
+    
+        Lampa.SettingsApi.addParam({
+            component: 'abros',
+            param: {
+                name: 'abrosaccount',
+                type: 'title'
+            },
+            field: { name: vipStatus },
+            onRender: function (item) {
+                setTimeout(() => $('.settings-param-title').insertBefore($('.settings-param').first()), 0);
+            }
+        });
+    
+        function formatDays(user) {
+            const [day, month, year] = user.subscribe.split('.');
             const subscribeDate = new Date(`${month}/${day}/${year}`);
             const remainingDays = Math.ceil((subscribeDate - new Date()) / (1000 * 60 * 60 * 24));
-            Lampa.SettingsApi.addParam({
-                component: 'abros',
-                param: {
-                    name: 'abrosaccount',
-                    type: 'title'
-                },
-                field: {
-                    name: `
-                    <div class="ad-server" style="margin: 0em 0em;">
-                        <div class="ad-server__text">Поздравляем! Ваш статус Vip активирован. 💎 VIP ещё ${formatDays(remainingDays)}</div>
-                        <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
-                        <div class="ad-server__label">@modssmy_bot</div>
-                    </div>`
-                },
-                onRender: function (item) {
-                    setTimeout(function() {
-            $('.settings-param-title').insertAfter($('.settings-param').first())
-            },0);
-            }
-            });
-        } else {
-            Lampa.SettingsApi.addParam({
-                component: 'abros',
-                param: {
-                    name: 'abrosaccount',
-                    type: 'title'
-                },
-                field: {
-                    name: `
-                    <div class="ad-server" style="margin: 0em 0em;">
-                        <div class="ad-server__text">Для активации <b style="color: #ffd402;">Vip</b> статуса перейдите в телеграм бот</div>
-                        <img src="https://lampa.stream/group.jpg" class="ad-server__qr">
-                        <div class="ad-server__label">@modssmy_bot</div>
-                    </div>`
-                },
-                onRender: function (item) {
-                    setTimeout(function() {
-            $('.settings-param-title').insertBefore($('.settings-param').first())
-            },0);
-            }
-            });
-   
+            const num = Math.abs(remainingDays);
+            const lastDigit = num % 10;
+            const lastTwoDigits = num % 100;
+            if (lastTwoDigits >= 11 && lastTwoDigits <= 19) return `${num} дней`;
+            else if (lastDigit === 1) return `${num} день`;
+            else if (lastDigit >= 2 && lastDigit <= 4) return `${num} дня`;
+            else return `${num} дней`;
         }
     }
-
-    function formatDays(days) {
-        const num = Math.abs(days);
-        const lastDigit = num % 10;
-        const lastTwoDigits = num % 100;
-        if (lastTwoDigits >= 11 && lastTwoDigits <= 19) return `${num} дней`;
-        else if (lastDigit === 1) return `${num} день`;
-        else if (lastDigit >= 2 && lastDigit <= 4) return `${num} дня`;
-        else return `${num} дней`;
-    }
+    
 
     /* Реклама */
     function addADS(reklama) {

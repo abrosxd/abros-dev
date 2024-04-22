@@ -329,14 +329,12 @@ function showReload(reloadText){
             setTimeout(function (){
                 $('.extensions__item', Lampa.Extensions.render()).each(function (i, e){
                     var descr = $(e).find('.extensions__item-descr').text();
-                    console.log("Description:", descr);
                     var regex = /https:\/\/abros\.me\/lampa\/store\.js/;
                     if(regex.test(descr)) {
-                        console.log("Match found! Element:", e);
                         $(e).find('.extensions__item-author').html('💎').append('<span class="extensions__item-premium">VIP buy at @abrosxd</span>');
                     }
                 });
-            }, 500);
+            }, 100);
         });
                
     }

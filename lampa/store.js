@@ -410,7 +410,7 @@ function showReload(reloadText){
                         name: 'abros_style_info',
                         type: 'title'
                     },
-                    field: `Важно!<br>Перед применением темы отключите предыдущую.`,
+                    field: 'Важно!<br>Перед применением темы отключите предыдущую.',
                 });
                 Lampa.SettingsApi.addComponent({
                     component: 'abros_style',

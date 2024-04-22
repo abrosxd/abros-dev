@@ -20,6 +20,7 @@
 			},
 			"field": {
 				"name": "Stream",
+				"price": "Бесплатный",
 				"description": "Фильмы и сериалы в онлайн. Источники: Filmix, Rezka, Zetflix, Collaps, HDVB.",
 				"author": "@arkmv",
 				"link": "http://arkmv.ru/vod"
@@ -32,6 +33,7 @@
 			},
 			"field": {
 				"name": "Онлайн Мод",
+				"price": "Бесплатный",
 				"description": "Фильмы и сериалы в онлайн. Источники: VideoCDN, HDRezka, Kinobase, Collaps, CDNMovies, Filmix, Zetflix, RedHeadSound, CDNVideoHub, AniLibria, Kodik.",
 				"author": "@t_anton",
 				"link": "https://nb557.github.io/plugins/online_mod.js"
@@ -44,6 +46,7 @@
 			},
 			"field": {
 				"name": "MODS's",
+				"price": "Подписка",
 				"description": "Фильмы и сериалы в онлайн. На выбор доступно 17 балансеров и различные дополнения через меню настроек Modss.",
 				"author": "@modss_group",
 				"link": "http://lampa.stream/modss"
@@ -56,6 +59,7 @@
 			},
 			"field": {
 				"name": "BwaJS - Только онлайн",
+				"price": "Бесплатный",
 				"description": "Фильмы и сериалы в онлайн. Источники: Rezka, Zetflix, VideoCDN, Ashdi, Collaps, Filmix, IRemux, RHS, Kinotochka, HDVB. Нужна поддержка WebAssembly и версия Chrome > 80.",
 				"author": "@bwato",
 				"link": "https://bwa.to/o"
@@ -68,6 +72,7 @@
 			},
 			"field": {
 				"name": "BwaJS - Онлайн и Клубничка 18+",
+				"price": "Бесплатный",
 				"description": "Тот же плагин что и предыдущий, но только добавляет контент 18+ Источники: Pornhub, Spankbang, Eporner, Porntrex, Xhamster, Xvideos, Xnxx, Bongacams, Chaturbate.",
 				"author": "@bwato",
 				"link": "https://bwa.to/f"
@@ -80,6 +85,7 @@
 			},
 			"field": {
 				"name": "ТВ by skaz 2.0",
+				"price": "Подписка",
 				"description": "Версия ТВ by skaz плагина на основе IPTV",
 				"author": "@helpiptv",
 				"link": "http://skaz.tv/tv2.js"
@@ -92,6 +98,7 @@
 			},
 			"field": {
 				"name": "ТВ by skaz",
+				"price": "Подписка",
 				"description": "Бесплатные каналы и 1400+ каналов по подписке, IPTV плейлисты @skaztv_bot",
 				"author": "@helpiptv",
 				"link": "http://skaz.tv/tv.js"
@@ -104,6 +111,7 @@
 			},
 			"field": {
 				"name": "Kulik",
+				"price": "Бесплатный",
 				"description": "Просмотр IPTV каналов, отсортированных по различным категориям. Есть возможность поменять стиль плагина, сервер вещания, а также добавить каналы в избранное",
 				"author": "@SawamuraRen",
 				"link": "http://cdn.kulik.uz/cors"
@@ -116,6 +124,7 @@
 			},
 			"field": {
 				"name": "Добавляет пункт \"Парсер\" в меню",
+				"price": "Бесплатный",
 				"description": "Плагин для ТВ, на которых Lampa установлена через официальные магазины LG Store и Tizen App Store. Включает в настройках отображение пунктов Парсер и Torrserver",
 				"author": "@lampa",
 				"link": "http://cub.red/plugin/etor"
@@ -128,6 +137,7 @@
 			},
 			"field": {
 				"name": "Публичные парсеры",
+				"price": "Бесплатный",
 				"description": "Сборник публичных парсеров отображением статуса доступности",
 				"author": "@lme",
 				"link": "https://lampame.github.io/main/pubtorr.js"
@@ -140,6 +150,7 @@
 			},
 			"field": {
 				"name": "Тип управления",
+				"price": "Бесплатный",
 				"description": "Позволяет выбрать тип управления (Пульт без мышки, Пульт с мышью, Тачскрин), а так же сбросить тип управления выбранный ранее",
 				"author": "@nemiroff",
 				"link": "https://nemiroff.github.io/lampa/select_weapon.js"
@@ -152,6 +163,7 @@
 			},
 			"field": {
 				"name": "Дополнительные категории",
+				"price": "Бесплатный",
 				"description": "Добавление категорий Мультфильмы, Netflix, Концерты, и прочее",
 				"author": "@lme",
 				"link": "https://lampame.github.io/main/nc/nc.js"
@@ -164,6 +176,7 @@
 			},
 			"field": {
 				"name": "Старый стиль (Закладки, Нравится, Позже)",
+				"price": "Бесплатный",
 				"description": "Возвращает в главное меню старый стиль отображения пунктов (Закладки, Нравится, Позже)",
 				"author": "@VitalikPVA",
 				"link": "http://github.freebie.tom.ru/want.js"
@@ -176,6 +189,7 @@
 			},
 			"field": {
 				"name": "Сброс настроек субтитров",
+				"price": "Бесплатный",
 				"description": "Сбрасывает настройки субтитров по умолчанию",
 				"author": "@t_anton",
 				"link": "https://nb557.github.io/plugins/reset_subs.js"
@@ -188,6 +202,7 @@
 			},
 			"field": {
 				"name": "Выключение тача",
+				"price": "Бесплатный",
 				"description": "Выключает сенсорное управление, если оно было включено по ошибке",
 				"author": "@t_anton",
 				"link": "https://nb557.github.io/plugins/not_mobile.js"
@@ -200,6 +215,7 @@
 			},
 			"field": {
 				"name": "Отзывы и рецензии",
+				"price": "Бесплатный",
 				"description": "Добавляет кнопку чтения отзывов с КиноПоиск в карточку фильма или сериала",
 				"author": "@elenatv99",
 				"link": "https://skaz.tv/o.js"
@@ -212,6 +228,7 @@
 			},
 			"field": {
 				"name": "Предзагрузка ts",
+				"price": "Бесплатный",
 				"description": "Плагин визуализации предзагрузки торрентов для встроенного клиента TorrServer",
 				"author": "@rootu",
 				"link": "https://plugin.rootu.top/ts-preload.js"
@@ -224,6 +241,7 @@
 			},
 			"field": {
 				"name": "Приятные мелочи",
+				"price": "Бесплатный",
 				"description": "Дополнение некоторых востребованных функций и дизайна, которых вам не хватало. (mod. Без проверки на MSX)",
 				"author": "@AndreyURL54",
 				"link": "https://skaztv.online/js/tricks.js"
@@ -236,6 +254,7 @@
 			},
 			"field": {
 				"name": "Отключение Websocket",
+				"price": "Бесплатный",
 				"description": "Плагин отключает протокол Websocket, помогает при ошибках на некоторых устройствах",
 				"author": "@rootu",
 				"link": "http://plugin.rootu.top/wsoff.js"

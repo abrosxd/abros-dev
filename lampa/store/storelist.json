@@ -259,6 +259,58 @@
 				"author": "@rootu",
 				"link": "http://plugin.rootu.top/wsoff.js"
 			}
+		},
+		{
+			"component": "abros_control",
+			"param" : {
+				"name": "NewVersion"
+			},
+			"field": {
+				"name": "Проверка новой версии",
+				"price": "Бесплатный",
+				"description": "Проверяет наличие новой версии приложения на Android TV",
+				"author": "@nemiroff",
+				"link": "https://nemiroff.github.io/lampa/updater.js"
+			}
+		},
+		{
+			"component": "abros_control",
+			"param" : {
+				"name": "HotKeys"
+			},
+			"field": {
+				"name": "Горячие кнопки",
+				"price": "Бесплатный",
+				"description": "Плагин вызывает меню плеера лампы по кнопкам пульта: 5 - плейлист, 8 - аудиодорожки, 0 - субтитры, channel+/- следующий/предыдущий файл в плейлисте",
+				"author": "@nemiroff",
+				"link": "https://nemiroff.github.io/lampa/updater.js"
+			}
+		},
+		{
+			"component": "abros_control",
+			"param" : {
+				"name": "Redirect"
+			},
+			"field": {
+				"name": "Смена сервера",
+				"price": "Бесплатный",
+				"description": "Плагин позволяет сменить сервер приложения",
+				"author": "@abrosxd",
+				"link": "https://abros.me/lampa/plugins/redirect.js"
+			}
+		},
+		{
+			"component": "abros_style",
+			"param" : {
+				"name": "ThemeAppNetflix"
+			},
+			"field": {
+				"name": "Приложение: Netflix",
+				"price": "Бесплатный",
+				"description": "Тема в стиле онлайн площадки Netflix",
+				"author": "@abrosxd",
+				"link": "https://abros.me/lampa/plugins/theme/netflix.js"
+			}
 		}
 	],
 	"reklama": [

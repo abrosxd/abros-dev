@@ -407,6 +407,7 @@ function showReload(reloadText){
                     Lampa.Settings.create('abros_style');
                     Lampa.Controller.enabled().controller.back = function(){
                         Lampa.Settings.create('abros');
+                        $('div[data-component="abros_style_info"]').remove();
                     }
                 });
             }
@@ -414,7 +415,6 @@ function showReload(reloadText){
 
         Lampa.Settings.listener.follow('open', function (e) {
             if (e.name == 'main') {
-                $('div[data-component="abros_style_info"]').remove();
                 Lampa.SettingsApi.addComponent({
                     component: 'abros_style',
                     name: 'Темы'

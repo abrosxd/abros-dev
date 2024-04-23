@@ -554,7 +554,7 @@
                         <tr>
                             <th>Название</th>
                             <th>Автор</th>
-                            <th>Категория</th>
+                            <th>Стоимость</th>
                             <th>Описание</th>
                         </tr>
                     </thead>
@@ -564,19 +564,21 @@
             </div>
             <script>
                 fetch('lampa/store/storelist.json') // Загружаем файл JSON
-                    .then(response => response.json())
-                    .then(data => {
-                        const tableBody = document.querySelector('#data-table tbody');
-                                    const row = document.createElement('tr');
-                                    row.innerHTML = `
-                                        <td>${field.name}</td>
-                                        <td>${field.author}</td>
-                                        <td>${field.price}</td>
-                                        <td>${field.description}</td>
-                                    `;
-                                    tableBody.appendChild(row);
-                                })
-                    .catch(error => console.error('Error fetching JSON:', error));
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.querySelector('#data-table tbody');
+                data.plugins.forEach(plugin => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${plugin.field.name}</td>
+                        <td>${plugin.field.author}</td>
+                        <td>${plugin.field.price}</td>
+                        <td>${plugin.field.description}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching JSON:', error));
             </script>
         </div>
 

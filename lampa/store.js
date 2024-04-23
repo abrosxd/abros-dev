@@ -1,5 +1,5 @@
 /*!
- * Abros Store v1.0.1a
+ * Abros Store v1.0
  * (c) 2024-2024
  * by Daniel Abros
  * Site → https://abros.me
@@ -49,8 +49,8 @@
                 return response.json();
             })
             .then(data => {
-                var { plugins, reklama, vip } = data;
-                checkVIP(vip, reklama, plugins);
+                var { plugins, reklama, vip, news } = data;
+                checkVIP(vip, reklama, plugins, news);
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
@@ -145,13 +145,13 @@ function showReload(reloadText){
         const userDataJSON = localStorage.getItem('account_user');
         if (!userDataJSON) {
             addADS(reklama);
-            abrosStart(plugins);
+            abrosStart(plugins, news);
             return;
         }
         const userData = JSON.parse(userDataJSON);
         if (!userData || !userData.email) {
             addADS(reklama);
-            abrosStart(plugins);
+            abrosStart(plugins, news);
             return;
         }
         const currentDate = new Date();
@@ -161,15 +161,15 @@ function showReload(reloadText){
             return item.email === userData.email && subscribeDate > currentDate;
         });
         if (vipUser) {
-            abrosStart(plugins, vipUser);
+            abrosStart(plugins, vipUser, news);
         } else {
             addADS(reklama);
-            abrosStart(plugins);
+            abrosStart(plugins, news);
         }
     }
 
     /* Создание Abros и его меню */
-    function abrosStart(plugins, vipUser) {
+    function abrosStart(plugins, vipUser, news) {
         /* Abros Store */
         Lampa.SettingsApi.addComponent({
             component: 'abros',
@@ -229,6 +229,45 @@ function showReload(reloadText){
             else if (lastDigit === 1) return `${num} день`;
             else if (lastDigit >= 2 && lastDigit <= 4) return `${num} дня`;
             else return `${num} дней`;
+        }
+
+        /* Новости */
+        const newsBlock = `
+            <div style="height: max-content; margin: 0 0 1em 0.6em;">
+                <div style="margin-bottom: 5px;">
+                    <div style="font-size: 1.3em;">Новости</div>
+                </div>
+                <div id="newsbody"></div>
+            </div>`;
+    
+        Lampa.SettingsApi.addParam({
+            component: 'abros',
+            param: {
+                name: 'abrosnews',
+                type: 'title'
+            },
+            field: { name: newsBlock },
+        });
+    
+        let newsbody = $('#newsbody');
+        news.forEach(item => {
+            const newsHTML = `
+                <div style="background-color:${item.colorbg}; color:${item.colortext}">
+                    <div style="border-radius: 1em;">${item.title}</div>
+                    <div style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%;">${item.text}</div>
+                </div>`;
+            newsbody.append(newsHTML);
+        });
+
+        if (adsbody.length) {
+            adsbody.slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 10000,
+                arrows: false,
+            });
         }
 
         /* Онлайн */
@@ -469,12 +508,12 @@ function showReload(reloadText){
         Lampa.Settings.listener.follow('open', function (e) {
             if (e.name == 'main') {
                 $('.settings__title').text(Lampa.Lang.translate('title_settings'));
-              }
+            }
 			if (e.name == 'abros') {
-			  $('.settings__title').text("Abros Store");
+			    $('.settings__title').text("Abros Store");
 			}
             if (e.name == 'abros_online') {
-			  $('.settings__title').text("Online");
+			    $('.settings__title').text("Online");
 			}
             if (e.name == 'abros_tv') {
                 $('.settings__title').text("ТВ");

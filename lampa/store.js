@@ -253,18 +253,6 @@ function showReload(reloadText){
                 type: 'title'
             },
             field: { name: newsBlock },
-            onRender: function(item) {
-                item.on('hover:enter', function () {
-                    $('#newsbody').slick({
-                        infinite: true,
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        autoplay: true,
-                        autoplaySpeed: 10000,
-                        arrows: false,
-                    });
-                });
-            }
         });
 
         /* Онлайн */
@@ -501,13 +489,21 @@ function showReload(reloadText){
         }
         plugins.forEach(addPluginSettings);
 
-        /* Названия меню */
+        /* Настройки меню */
         Lampa.Settings.listener.follow('open', function (e) {
             if (e.name == 'main') {
                 $('.settings__title').text(Lampa.Lang.translate('title_settings'));
             }
 			if (e.name == 'abros') {
 			    $('.settings__title').text("Abros Store");
+                $('#newsbody').slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 10000,
+                    arrows: false,
+                });
 			}
             if (e.name == 'abros_online') {
 			    $('.settings__title').text("Online");

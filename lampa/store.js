@@ -575,7 +575,7 @@ function showReload(reloadText){
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     autoplay: true,
-                    autoplaySpeed: 10000,
+                    autoplaySpeed: 15000,
                     arrows: false,
                 });
             }

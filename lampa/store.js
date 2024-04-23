@@ -50,7 +50,7 @@
             })
             .then(data => {
                 var { plugins, reklama, vip, news } = data;
-                checkVIP(vip, reklama, plugins, news);
+                checkVIP(plugins, reklama, vip, news);
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
@@ -141,7 +141,7 @@ function showReload(reloadText){
     };
 
     /* Проверяем VIP */
-    function checkVIP(vip, reklama, plugins, news) {
+    function checkVIP(plugins, reklama, vip, news) {
         const userDataJSON = localStorage.getItem('account_user');
         if (!userDataJSON) {
             addADS(reklama);

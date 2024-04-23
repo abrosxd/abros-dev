@@ -448,7 +448,7 @@ function showReload(reloadText){
                     }
                 },
                 onRender: function (item) {
-                    $('.settings-param__name', item).css('color','f3d900');
+                    // $('.settings-param__name', item).css('color','f3d900');
                     hideInstall();
                     var myResult = checkPlugin(plugin.field.link);
                     setTimeout(function() {	

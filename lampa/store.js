@@ -253,7 +253,7 @@ function showReload(reloadText){
                 type: 'title'
             },
             field: { name: newsBlock },
-            callback: function(item) {
+            onRender: function(item) {
                 item.on('hover:enter', function () {
                     $('#newsbody').slick({
                         infinite: true,

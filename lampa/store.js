@@ -141,7 +141,7 @@ function showReload(reloadText){
     };
 
     /* Проверяем VIP */
-    function checkVIP(vip, reklama, plugins) {
+    function checkVIP(vip, reklama, plugins, news) {
         const userDataJSON = localStorage.getItem('account_user');
         if (!userDataJSON) {
             addADS(reklama);

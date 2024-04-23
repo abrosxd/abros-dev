@@ -254,7 +254,7 @@ function showReload(reloadText){
             },
             field: { name: newsBlock },
             callback: function() {
-                $(document).ready(function() {
+                setTimeout(function() {
                     $('#newsbody').slick({
                         infinite: true,
                         slidesToShow: 1,
@@ -263,7 +263,7 @@ function showReload(reloadText){
                         autoplaySpeed: 10000,
                         arrows: false,
                     });
-                });
+                }, 500);
             }
         });
 

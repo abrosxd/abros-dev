@@ -233,39 +233,54 @@ function showReload(reloadText){
 
         /* Новости */
         const newsBlock = `
-    <div style="height: max-content; margin: 0 0 1em 0.6em;">
-        <div style="margin-bottom: 5px;">
-            <div style="font-size: 1.3em;">Новости</div>
-        </div>
-        <div id="newsbody">
-            ${news.map(item => `
-                <div style="background-color:${item.colorbg}; color:${item.colortext}">
-                    <div style="border-radius: 1em;">${item.title}</div>
-                    <div style="font-size: 0.7em; position: absolute; bottom: 0; margin: 4px; width: 14%;">${item.text}</div>
-                </div>`).join('')}
-        </div>
-    </div>`;
+            <div>
+                <div style="margin-bottom: 5px;">
+                    <div style="font-size: 1.3em;">Новости</div>
+                </div>
+                <div id="newsbody">
+                    ${news.map(item => `
+                        <div style="background-color:${item.colorbg}; color:${item.colortext} border-radius: 1em; padding: 0.8em;">
+                            <div style="font-size: 1.1em; margin-bottom: 1em;">${item.title}</div>
+                            <div style="font-size: 0.9em;">${item.text}</div>
+                        </div>`).join('')}
+                </div>
+            </div>`;
 
-Lampa.SettingsApi.addParam({
-    component: 'abros',
-    param: {
-        name: 'abrosnews',
-        type: 'title'
-    },
-    field: { name: newsBlock },
-});
+            Lampa.SettingsApi.addParam({
+                component: 'abros',
+                param: {
+                    name: 'abrosnews',
+                    type: 'title'
+                },
+                field: { name: newsBlock },
+            });
 
-// Применение плагина slick
-if ($('#newsbody').length) {
-    $('#newsbody').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 10000,
-        arrows: false,
-    });
-}
+            function applySlick() {
+                $('#newsbody').slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 10000,
+                    arrows: false,
+                });
+            }
+            applySlick();
+
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    if (mutation.target.id === 'newsbody') {
+                        applySlick();
+                    }
+                });
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                characterData: true,
+            });
 
 
         /* Онлайн */

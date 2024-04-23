@@ -393,21 +393,24 @@ function showReload(reloadText){
                 name: icon_style
             },
             onRender: function(item) {
+                var styleInfo = false;
                 item.on('hover:enter', function () {
+                    if (!styleInfo) {
+                        Lampa.SettingsApi.addParam({
+                            component: 'abros_style',
+                            param: {
+                                name: 'abros_style_info',
+                                type: 'title'
+                            },
+                            field: {
+                                name: 'Важно!<br>Перед применением темы отключите предыдущую.'
+                            }
+                        });
+                        styleInfo = true;
+                    }
                     Lampa.Settings.create('abros_style');
-                    Lampa.SettingsApi.addParam({
-                        component: 'abros_style',
-                        param: {
-                            name: 'abros_style_info',
-                            type: 'title'
-                        },
-                        field: {
-                            name:'Важно!<br>Перед применением темы отключите предыдущую.'
-                        }
-                    });
                     Lampa.Controller.enabled().controller.back = function(){
                         Lampa.Settings.create('abros');
-                        $('div[data-component="abros_style_info"]').remove();
                     }
                 });
             }

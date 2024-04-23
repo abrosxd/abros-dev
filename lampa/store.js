@@ -468,7 +468,7 @@ function showReload(reloadText){
         /* Названия меню */
         Lampa.Settings.listener.follow('open', function (e) {
             if (e.name == 'main') {
-                $('.settings__title').text(Lang.translate('title_settings'));
+                $('.settings__title').text(Lampa.Lang.translate('title_settings'));
               }
 			if (e.name == 'abros') {
 			  $('.settings__title').text("Abros Store");

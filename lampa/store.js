@@ -446,6 +446,18 @@ function showReload(reloadText){
             }
         });
 
+        /* Подвал */
+        Lampa.SettingsApi.addParam({
+            component: 'abros',
+            param: {
+                name: 'abros_style_info',
+                type: 'static'
+            },
+            field: {
+                name:'💎 На данный момент VIP статус убирает только рекламу<br><br>Данный магазин разрабатывается только из интереса к проекту. Если ты хочешь помочь в разработке пиши мне в телеграм @abrosxd'
+            }
+        });
+
         /* Плагины */
         function addPluginSettings(plugin) {
             Lampa.SettingsApi.addParam({

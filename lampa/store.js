@@ -142,7 +142,6 @@ function showReload(reloadText){
 
     /* Проверяем VIP */
     function checkVIP(vip, reklama, plugins, news) {
-        console.log("VIP Data:", vip);
         const userDataJSON = localStorage.getItem('account_user');
         if (!userDataJSON) {
             addADS(reklama);
@@ -171,6 +170,7 @@ function showReload(reloadText){
 
     /* Создание Abros и его меню */
     function abrosStart(plugins, vipUser, news) {
+        console.log("VIP Data:", vipUser);
         /* Abros Store */
         Lampa.SettingsApi.addComponent({
             component: 'abros',

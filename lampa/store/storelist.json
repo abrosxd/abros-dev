@@ -302,14 +302,14 @@
 		{
 			"component": "abros_style",
 			"param" : {
-				"name": "ThemeAppNetflix"
+				"name": "MenuTVOS"
 			},
 			"field": {
-				"name": "Приложение: Netflix",
+				"name": "Меню AppleTV",
 				"price": "Бесплатный",
-				"description": "Тема в стиле онлайн площадки Netflix",
+				"description": "Плагин заменяет меню в шапке на меню в стиле AppleTV",
 				"author": "@abrosxd",
-				"link": "https://abros.me/lampa/plugins/theme/netflix.js"
+				"link": "https://abros.me/lampa/plugins/menutvos.js"
 			}
 		}
 	],

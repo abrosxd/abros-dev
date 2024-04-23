@@ -239,7 +239,7 @@ function showReload(reloadText){
                 </div>
                 <div id="newsbody">
                     ${news.map(item => `
-                        <div style="background-color:${item.colorbg}; color:${item.colortext}; border-radius: 1em; padding: 0.8em; height: auto;">
+                        <div style="${item.colorbg}; color:${item.colortext}; border-radius: 1em; padding: 0.8em; height: auto;">
                             <div style="font-size: 1.1em; margin-bottom: 1em;">${item.title}</div>
                             <div style="font-size: 0.9em;">${item.text}</div>
                         </div>`).join('')}

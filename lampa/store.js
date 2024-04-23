@@ -501,7 +501,7 @@ function showReload(reloadText){
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     autoplay: true,
-                    autoplaySpeed: 15000,
+                    autoplaySpeed: 12000,
                     arrows: false,
                 });
 			}

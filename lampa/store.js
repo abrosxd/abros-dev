@@ -145,13 +145,13 @@ function showReload(reloadText){
         const userDataJSON = localStorage.getItem('account_user');
         if (!userDataJSON) {
             addADS(reklama);
-            abrosStart(plugins, news);
+            abrosStart(plugins, undefined, news);
             return;
         }
         const userData = JSON.parse(userDataJSON);
         if (!userData || !userData.email) {
             addADS(reklama);
-            abrosStart(plugins, news);
+            abrosStart(plugins, undefined, news);
             return;
         }
         const currentDate = new Date();
@@ -164,13 +164,12 @@ function showReload(reloadText){
             abrosStart(plugins, vipUser, news);
         } else {
             addADS(reklama);
-            abrosStart(plugins, news);
+            abrosStart(plugins, undefined, news);
         }
     }
 
     /* Создание Abros и его меню */
     function abrosStart(plugins, vipUser, news) {
-        console.log("VIP Data:", vipUser);
         /* Abros Store */
         Lampa.SettingsApi.addComponent({
             component: 'abros',

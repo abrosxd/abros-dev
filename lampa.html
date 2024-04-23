@@ -567,21 +567,15 @@
                     .then(response => response.json())
                     .then(data => {
                         const tableBody = document.querySelector('#data-table tbody');
-                        data.results.forEach(section => {
-                            if (section.hpu !== "recomend" && section.hpu !== "best") {
-                                section.results.forEach(item => {
                                     const row = document.createElement('tr');
                                     row.innerHTML = `
-                                        <td>${item.name}</td>
-                                        <td>${item.author}</td>
-                                        <td>${section.title}</td>
-                                        <td>${item.descr}</td>
+                                        <td>${field.name}</td>
+                                        <td>${field.author}</td>
+                                        <td>${field.price}</td>
+                                        <td>${field.description}</td>
                                     `;
                                     tableBody.appendChild(row);
-                                });
-                            }
-                        });
-                    })
+                                })
                     .catch(error => console.error('Error fetching JSON:', error));
             </script>
         </div>

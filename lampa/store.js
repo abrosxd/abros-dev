@@ -393,7 +393,6 @@ function showReload(reloadText){
                 name: icon_style
             },
             onRender: function(item) {
-                var styleInfo = false;
                 item.on('hover:enter', function () {
                     if (!styleInfo) {
                         Lampa.SettingsApi.addParam({

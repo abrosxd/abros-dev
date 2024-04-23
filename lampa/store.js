@@ -263,7 +263,7 @@ function showReload(reloadText){
                         autoplaySpeed: 10000,
                         arrows: false,
                     });
-                }, 500);
+                }, 1500);
             }
         });
 

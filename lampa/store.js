@@ -186,7 +186,6 @@ function showReload(reloadText){
                     $('div[data-component="abros_interface"]').remove();
                     $('div[data-component="abros_control"]').remove();
                     $('div[data-component="abros_style"]').remove();
-                    $('div[data-component="abros_style_info"]').remove();
                 }, 0);
                 $("#hideInstall").remove();
                 /* Сдвигаем раздел выше */

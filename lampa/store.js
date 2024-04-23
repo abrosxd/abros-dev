@@ -254,20 +254,16 @@ function showReload(reloadText){
             },
             field: { name: newsBlock },
             callback: function() {
-                applySlick();
+                $('#newsbody').slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 10000,
+                    arrows: false,
+                });
             }
         });
-
-        function applySlick() {
-            $('#newsbody').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 10000,
-                arrows: false,
-            });
-        }
 
         /* Онлайн */
         Lampa.SettingsApi.addParam({

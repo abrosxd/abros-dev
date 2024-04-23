@@ -142,6 +142,7 @@ function showReload(reloadText){
 
     /* Проверяем VIP */
     function checkVIP(vip, reklama, plugins, news) {
+        console.log("VIP Data:", vip);
         const userDataJSON = localStorage.getItem('account_user');
         if (!userDataJSON) {
             addADS(reklama);
@@ -162,7 +163,6 @@ function showReload(reloadText){
         });
         if (vipUser) {
             abrosStart(plugins, vipUser, news);
-            console.log('Status VIP', vipUser)
         } else {
             addADS(reklama);
             abrosStart(plugins, news);

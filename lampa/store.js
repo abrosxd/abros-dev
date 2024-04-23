@@ -254,24 +254,16 @@ function showReload(reloadText){
             },
             field: { name: newsBlock },
             callback: function() {
-                const newsItems = $('#newsbody').children(); // Получаем все элементы новостей
-                let currentIndex = 0; // Индекс текущей новости
-        
-                // Функция для отображения следующей новости
-                function showNextNews() {
-                    // Скрываем текущую новость
-                    $(newsItems[currentIndex]).fadeOut();
-                    // Увеличиваем индекс, оборачиваем, если достигнут конец
-                    currentIndex = (currentIndex + 1) % newsItems.length;
-                    // Показываем следующую новость
-                    $(newsItems[currentIndex]).fadeIn();
-                }
-        
-                // Показываем первую новость
-                $(newsItems[currentIndex]).fadeIn();
-        
-                // Запускаем автослайдер
-                setInterval(showNextNews, 10000); // Интервал в миллисекундах (здесь 10 секунд)
+                $(document).ready(function() {
+                    $('#newsbody').slick({
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 10000,
+                        arrows: false,
+                    });
+                });
             }
         });
 

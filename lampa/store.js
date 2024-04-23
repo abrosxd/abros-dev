@@ -146,7 +146,6 @@ function showReload(reloadText){
         if (!userDataJSON) {
             addADS(reklama);
             abrosStart(plugins, news);
-            console.log('Status VIP', vipUser)
             return;
         }
         const userData = JSON.parse(userDataJSON);
@@ -163,6 +162,7 @@ function showReload(reloadText){
         });
         if (vipUser) {
             abrosStart(plugins, vipUser, news);
+            console.log('Status VIP', vipUser)
         } else {
             addADS(reklama);
             abrosStart(plugins, news);

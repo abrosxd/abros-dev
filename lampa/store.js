@@ -259,8 +259,8 @@ function showReload(reloadText){
             newsbody.append(newsHTML);
         });
 
-        if (adsbody.length) {
-            adsbody.slick({
+        if (newsbody.length) {
+            newsbody.slick({
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,

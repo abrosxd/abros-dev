@@ -253,6 +253,9 @@ function showReload(reloadText){
                 type: 'title'
             },
             field: { name: newsBlock },
+            callback: function() {
+                applySlick();
+            }
         });
 
         function applySlick() {
@@ -265,23 +268,6 @@ function showReload(reloadText){
                 arrows: false,
             });
         }
-        applySlick();
-
-        const observer = new MutationObserver(mutations => {
-            mutations.forEach(mutation => {
-                if (mutation.target.id === 'newsbody') {
-                    applySlick();
-                }
-            });
-        });
-
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true,
-            attributes: true,
-            characterData: true,
-        });
-
 
         /* Онлайн */
         Lampa.SettingsApi.addParam({

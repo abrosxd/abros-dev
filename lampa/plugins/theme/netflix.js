@@ -40,12 +40,16 @@
             color: #fff;
         }
 
-        .menu__item.focus .menu__ico > img,
-        .menu__item.traverse .menu__ico > img,
-        .menu__item.hover .menu__ico > img,
+        .menu__item.focus .menu__ico,
+        .menu__item.traverse .menu__ico,
+        .menu__item.hover .menu__ico,
         .settings-folder.focus .settings-folder__icon{
             -webkit-filter: invert(0);
                     filter: invert(0);
+        }
+
+        .menu.editable .menu__item.focus:not(.traverse)::after {
+            opacity: 0;
         }
 
         .settings-param-title > span{
@@ -71,17 +75,17 @@
         .extensions__item.focus:after,
         .torrent-item.focus::after,
         .extensions__block-add.focus:after{
-            border-color: rgb(254,244,222);
+            border-color: rgb(212,1,0);
         }
         .online-prestige.focus::after,
         .iptv-channel.focus::before, 
         .iptv-channel.last--focus::before{
-            border-color: rgb(254,244,222) !important;
+            border-color: rgb(212,1,0) !important;
         }
         .time-line > div,
         .player-panel__position,
         .player-panel__position > div:after{
-            background-color: rgb(254,244,222);
+            background-color: rgb(212,1,0);
         }
 
         .extensions{

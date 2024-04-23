@@ -394,20 +394,19 @@ function showReload(reloadText){
             },
             onRender: function(item) {
                 item.on('hover:enter', function () {
-                    Lampa.SettingsApi.addParam({
-                        component: 'abros_style',
-                        param: {
-                            name: 'abros_style_info',
-                            type: 'title'
-                        },
-                        field: {
-                            name:'Важно!<br>Перед применением темы отключите предыдущую.'
-                        }
-                    });
                     Lampa.Settings.create('abros_style');
                     Lampa.Controller.enabled().controller.back = function(){
                         Lampa.Settings.create('abros');
-                        $('div[data-component="abros_style_info"]').remove();
+                        Lampa.SettingsApi.addParam({
+                            component: 'abros_style',
+                            param: {
+                                name: 'abros_style_info',
+                                type: 'title'
+                            },
+                            field: {
+                                name:'Важно!<br>Перед применением темы отключите предыдущую.'
+                            }
+                        });
                     }
                 });
             }

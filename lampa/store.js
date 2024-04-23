@@ -239,48 +239,48 @@ function showReload(reloadText){
                 </div>
                 <div id="newsbody">
                     ${news.map(item => `
-                        <div style="background-color:${item.colorbg}; color:${item.colortext} border-radius: 1em; padding: 0.8em;">
+                        <div style="background-color:${item.colorbg}; color:${item.colortext}; border-radius: 1em; padding: 0.8em;">
                             <div style="font-size: 1.1em; margin-bottom: 1em;">${item.title}</div>
                             <div style="font-size: 0.9em;">${item.text}</div>
                         </div>`).join('')}
                 </div>
             </div>`;
 
-            Lampa.SettingsApi.addParam({
-                component: 'abros',
-                param: {
-                    name: 'abrosnews',
-                    type: 'title'
-                },
-                field: { name: newsBlock },
-            });
+        Lampa.SettingsApi.addParam({
+            component: 'abros',
+            param: {
+                name: 'abrosnews',
+                type: 'title'
+            },
+            field: { name: newsBlock },
+        });
 
-            function applySlick() {
-                $('#newsbody').slick({
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 10000,
-                    arrows: false,
-                });
-            }
-            applySlick();
-
-            const observer = new MutationObserver(mutations => {
-                mutations.forEach(mutation => {
-                    if (mutation.target.id === 'newsbody') {
-                        applySlick();
-                    }
-                });
+        function applySlick() {
+            $('#newsbody').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 10000,
+                arrows: false,
             });
+        }
+        applySlick();
 
-            observer.observe(document.body, {
-                childList: true,
-                subtree: true,
-                attributes: true,
-                characterData: true,
+        const observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+                if (mutation.target.id === 'newsbody') {
+                    applySlick();
+                }
             });
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            characterData: true,
+        });
 
 
         /* Онлайн */

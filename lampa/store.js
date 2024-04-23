@@ -450,7 +450,7 @@ function showReload(reloadText){
         Lampa.SettingsApi.addParam({
             component: 'abros',
             param: {
-                name: 'abros_style_info',
+                name: 'abros_info',
                 type: 'static'
             },
             field: {

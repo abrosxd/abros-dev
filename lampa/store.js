@@ -253,8 +253,8 @@ function showReload(reloadText){
                 type: 'title'
             },
             field: { name: newsBlock },
-            callback: function() {
-                setTimeout(function() {
+            callback: function(item) {
+                item.on('hover:enter', function () {
                     $('#newsbody').slick({
                         infinite: true,
                         slidesToShow: 1,
@@ -263,7 +263,7 @@ function showReload(reloadText){
                         autoplaySpeed: 10000,
                         arrows: false,
                     });
-                }, 1500);
+                });
             }
         });
 

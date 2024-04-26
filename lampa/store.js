@@ -234,7 +234,7 @@ function showReload(reloadText){
         /* Новости */
         const newsBlock = `
             <div>
-                <div style="margin-bottom: 5px; font-size: 1.2em; font-weight: 600;">
+                <div style="margin-bottom: 5px; font-size: 1.2em; font-weight: 600; color: #6f6f6f;">
                     <div>Новости</div>
                 </div>
                 <div id="newsbody">

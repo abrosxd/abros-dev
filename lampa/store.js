@@ -519,7 +519,7 @@ function showReload(reloadText){
                 $('.settings__title').text(Lampa.Lang.translate('title_settings'));
             }
 			if (e.name == 'abros') {
-			    $('.settings__title').text("Abros Store");
+			    $('.settings__title').text("Abros");
                 $('#newsbody').slick({
                     infinite: true,
                     slidesToShow: 1,

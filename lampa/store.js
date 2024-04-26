@@ -234,7 +234,7 @@ function showReload(reloadText){
         /* Новости */
         const newsBlock = `
             <div>
-                <div style="margin-bottom: 5px; font-size: 1.2em; font-weight: 600; color: #6f6f6f;">
+                <div style="margin-bottom: 5px; font-size: 1.2em; font-weight: 600;">
                     <div>Новости</div>
                 </div>
                 <div id="newsbody">
@@ -501,7 +501,7 @@ function showReload(reloadText){
                     hideInstall();
                     var myResult = checkPlugin(plugin.field.link);
                     setTimeout(function() {	
-                        $('div[data-name="' + plugin.param.name + '"]').append('<div class="settings-param__status one"></div>');
+                        $('div[data-name="' + plugin.param.name + '"]').append('<div class="settings-param__status one" style="border: 0.1em solid gray;"></div>');
                         if (myResult) {
                             $('div[data-name="' + plugin.param.name + '"]').find('.settings-param__status').removeClass('active error wait').addClass('active');
                         } else {

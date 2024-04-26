@@ -170,10 +170,10 @@ function showReload(reloadText){
 
     /* Создание Abros и его меню */
     function abrosStart(plugins, vipUser, news) {
-        /* Abros Store */
+        /* Abros */
         Lampa.SettingsApi.addComponent({
             component: 'abros',
-            name: 'Abros Store',
+            name: 'Abros',
             icon: icon_abros
         });
 
@@ -253,6 +253,18 @@ function showReload(reloadText){
                 type: 'static'
             },
             field: { name: newsBlock },
+        });
+
+        /* Магазин */
+        Lampa.SettingsApi.addParam({
+            component: 'abros',
+            param: {
+                name: 'abros_info',
+                type: 'title'
+            },
+            field: {
+                name:'Магазин'
+            }
         });
 
         /* Онлайн */

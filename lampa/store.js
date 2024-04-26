@@ -250,7 +250,7 @@ function showReload(reloadText){
             component: 'abros',
             param: {
                 name: 'abrosnews',
-                type: 'title'
+                type: 'static'
             },
             field: { name: newsBlock },
         });

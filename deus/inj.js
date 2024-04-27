@@ -18,23 +18,22 @@ if (!window.D3US) {
         const domain = 'https://abros.me';
 
         /* Загрузка данных */
-        function loadData() {
-            fetch(`${domain}/deus/sitelist.json`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                var { sitemap } = data;
-                checkDomain(sitemap);
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
-        }
+        fetch(`${domain}/deus/sitelist.json`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            var { sitemap } = data;
+            checkDomain(sitemap);
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+        });
   
+        /* Поиск домена */
         function checkDomain(sitemap) {
             const sites = sitemap;
             const currentDomain = window.location.hostname;
@@ -47,6 +46,7 @@ if (!window.D3US) {
                 );
             });
   
+            /* Подключение скриптов */
             if (!SiteInfo) {
                 console.log("%cDEUS System%c\n\nСайт не найден в списке системы DEUS.\nThe site was not found in the DEUS system list.", "font-weight: bold;", "");
             } else {

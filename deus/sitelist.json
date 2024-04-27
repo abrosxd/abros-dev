@@ -31,6 +31,22 @@
                     "text": "Тестовое уведомление о работе системы"
                 }
             ]
+        },
+        {
+            "name": "Пример",
+            "url": "https://site.com",
+            "blocker": [
+                {
+                    "effect": "BlackScreen, Blur"
+                }
+            ],
+            "noti": [
+                {
+                    "img": "https://abros.me",
+                    "title": "DEUS System",
+                    "text": "Тестовое уведомление о работе системы"
+                }
+            ]
         }
     ]
 }

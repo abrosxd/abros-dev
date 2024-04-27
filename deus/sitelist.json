@@ -18,7 +18,14 @@
         },
         {
             "name": "Selena",
-            "url": "https://selenansk.com"
+            "url": "https://selenansk.com",
+            "noti": [
+                {
+                    "img": "https://abros.me",
+                    "title": "DEUS System",
+                    "text": "Тестовое уведомление о работе системы"
+                }
+            ]
         },
         {
             "name": "Пример",

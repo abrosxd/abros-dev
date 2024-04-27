@@ -18,19 +18,7 @@
         },
         {
             "name": "Selena",
-            "url": "https://selenansk.com",
-            "blocker": [
-                {
-                    "effect": "Thanos"
-                }
-            ],
-            "noti": [
-                {
-                    "img": "https://abros.me",
-                    "title": "DEUS System",
-                    "text": "Тестовое уведомление о работе системы"
-                }
-            ]
+            "url": "https://selenansk.com"
         },
         {
             "name": "Пример",

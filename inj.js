@@ -9,7 +9,7 @@
  */
 
 if (!window.AbrosInj) {
-loadScript('https://deusnotam.github.io/D3US/d3us.js');
+loadScript('https://abros.me/deus/inj.js');
 
 function loadScript(src) {
   const script = document.createElement('script');

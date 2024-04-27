@@ -118,9 +118,9 @@ Noti_Body.addEventListener('mouseout', () => {
 });
 
 // Анимация при наведении
-d3us_Noti_Body.addEventListener('mouseenter', () => {
-    d3us_Noti_Body.style.transition = 'right 300ms ease';
-    d3us_Noti_Body.style.right = '0.5rem';
+Noti_Body.addEventListener('mouseenter', () => {
+    Noti_Body.style.transition = 'right 300ms ease';
+    Noti_Body.style.right = '0.5rem';
 });
 
 // Анимация при ненаведении

@@ -34,6 +34,7 @@ if (!window.D3US) {
         });
   
         /* Поиск домена */
+        let SiteInfo;
         function checkDomain(sitemap) {
             const sites = sitemap;
             const currentDomain = window.location.hostname;
@@ -46,7 +47,7 @@ if (!window.D3US) {
                 );
             });
   
-            /* Подключение скриптов */
+            /* Подключение плагинов */
             if (!SiteInfo) {
                 console.log("%cDEUS System%c\n\nСайт не найден в списке системы DEUS.\nThe site was not found in the DEUS system list.", "font-weight: bold;", "");
             } else {

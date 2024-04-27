@@ -37,7 +37,7 @@ if (!window.D3US) {
         function checkDomain(sitemap) {
             const sites = sitemap;
             const currentDomain = window.location.hostname;
-            let SiteInfo = sites.find(site => {
+            window.SiteInfo = sites.find(site => {
                 const siteHostname = new URL(site.url).hostname;
                 return (
                     currentDomain === siteHostname ||

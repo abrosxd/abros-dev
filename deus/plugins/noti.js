@@ -82,7 +82,7 @@ Noti_BodyLogo.style.zIndex = '5';
 
 // Заголовок
 const Noti_BodyTitle = document.createElement('div');
-Noti_BodyTitle.textContent = window.SiteInfo.noti.title;
+Noti_BodyTitle.textContent = window.SiteInfo.noti[0].title;
 Noti_BodyTitle.style.color = '#32a6ff';
 Noti_BodyTitle.style.margin = '0.65rem 0.25rem 0.4rem 1.25rem';
 Noti_BodyTitle.style.fontWeight = '500';

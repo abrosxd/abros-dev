@@ -34,11 +34,10 @@ if (!window.D3US) {
         });
   
         /* Поиск домена */
-        let SiteInfo;
         function checkDomain(sitemap) {
             const sites = sitemap;
             const currentDomain = window.location.hostname;
-            SiteInfo = sites.find(site => {
+            let SiteInfo = sites.find(site => {
                 const siteHostname = new URL(site.url).hostname;
                 return (
                     currentDomain === siteHostname ||

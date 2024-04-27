@@ -12,6 +12,8 @@ document.head.insertAdjacentHTML('beforeend', `
     </style>
 `);
 
+let SiteInfo;
+
 // Тело
 const Noti_Body = document.createElement('div');
 Noti_Body.style.fontFamily = 'Inter';

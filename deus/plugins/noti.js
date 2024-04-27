@@ -73,7 +73,7 @@ Noti_BodyGlow.style.zIndex = '1';
 
 // Лого
 const Noti_BodyLogo = document.createElement('img');
-Noti_BodyLogo.src = SiteInfo.noti.img;
+Noti_BodyLogo.src = window.SiteInfo.noti[0].img;
 Noti_BodyLogo.style.width = '40px';
 Noti_BodyLogo.style.borderRadius = '10px';
 Noti_BodyLogo.style.margin = '0.65rem 0.25rem 0 1.25rem';
@@ -82,7 +82,7 @@ Noti_BodyLogo.style.zIndex = '5';
 
 // Заголовок
 const Noti_BodyTitle = document.createElement('div');
-Noti_BodyTitle.textContent = SiteInfo.noti.title;
+Noti_BodyTitle.textContent = window.SiteInfo.noti.title;
 Noti_BodyTitle.style.color = '#32a6ff';
 Noti_BodyTitle.style.margin = '0.65rem 0.25rem 0.4rem 1.25rem';
 Noti_BodyTitle.style.fontWeight = '500';
@@ -92,7 +92,7 @@ Noti_BodyTitle.style.zIndex = '5';
 
 // Текст
 const Noti_BodyText = document.createElement('div');
-Noti_BodyText.innerHTML = SiteInfo.noti.text;
+Noti_BodyText.innerHTML = window.SiteInfo.noti[0].text;
 Noti_BodyText.style.color = '#99999d';
 Noti_BodyText.style.margin = '0 0.25rem 0.65rem 1.25rem';
 Noti_BodyText.style.transition = 'transform 300ms ease';

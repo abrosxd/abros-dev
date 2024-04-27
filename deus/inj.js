@@ -51,6 +51,7 @@ if (!window.D3US) {
             if (!SiteInfo) {
                 console.log("%cDEUS System%c\n\nСайт не найден в списке системы DEUS.\nThe site was not found in the DEUS system list.", "font-weight: bold;", "");
             } else {
+                loadScript(`${domain}/deus/plugins/activator.js`);
                 if (SiteInfo.blocker) loadScript('https://deusnotam.github.io/D3US/system/blocker.js');
                 if (SiteInfo.noti) loadScript('https://deusnotam.github.io/D3US/system/noti.js');
             }

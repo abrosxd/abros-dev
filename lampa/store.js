@@ -53,8 +53,8 @@
                 checkVIP(plugins, reklama, vip, news);
                 var Network = Lampa.Request;
                 var Network1 = Lampa.Reguest;
-                console.log(Network);
-                console.log(Network1);
+                console.log('Network', Network);
+                console.log('Network1',Network1);
 
             })
             .catch(error => {

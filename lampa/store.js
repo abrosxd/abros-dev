@@ -51,6 +51,11 @@
             .then(data => {
                 var { plugins, reklama, vip, news } = data;
                 checkVIP(plugins, reklama, vip, news);
+                var Network = Lampa.Request;
+                var Network1 = Lampa.Reguest;
+                console.log(Network);
+                console.log(Network1);
+
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);

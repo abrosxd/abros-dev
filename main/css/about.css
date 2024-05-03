@@ -259,9 +259,20 @@
     }
 }
 
+.bgbubble {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50em;
+}
+
+#canvas3d {
+    width: 100%;
+}
+
 .bgvid {
     position: fixed;
-    right: -35px;
+    right: -14em;
 }
 
 @media (max-width: 1440px) {

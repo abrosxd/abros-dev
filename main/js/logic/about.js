@@ -84,6 +84,8 @@ fetch('main/txt/about.json')
     }
 
     selectCoin('BTC');
+    const copyAddressButton = document.getElementById('copyAddressButton');
+    copyAddressButton.addEventListener('click', copyAddress);
     // Reviews
     const reviewsContainer = document.getElementById("reviewsContainer");
     data.reviewsData.forEach(review => {
@@ -185,6 +187,8 @@ fetch('main/txt/about.json')
     function showAnotherFact() {
         showRandomFact();
     }
+    const showFactButton = document.getElementById('showFactButton');
+    showFactButton.addEventListener('click', showAnotherFact);
     // Soft
     const softContainer = document.getElementById("softContainer");
     data.soft.forEach(soft => {

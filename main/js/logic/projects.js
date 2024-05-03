@@ -14,7 +14,8 @@ function loadImage(url, callback) {
   img.src = url;
 }
         
-function checkLoad() {
+function checkLoad(projects) {
+  loadedImages++;
   if (loadedImages === projects.length * 2) {
     preload.style.opacity = '0';
     preload.style.visibility = 'hidden';
@@ -82,8 +83,8 @@ fetch('main/txt/projects.json')
         
     container.appendChild(card);
     projectCards.push(card);
-    loadImage(project.img, checkLoad);
-    loadImage(project.overlay, checkLoad);
+    loadImage(project.img, () => checkLoad(data.projects));
+    loadImage(project.overlay, () => checkLoad(data.projects));
   });
   
   // Создание Popup
@@ -169,7 +170,7 @@ fetch('main/txt/projects.json')
   window.addEventListener('load', () => {
     const hash = window.location.hash.substr(1);
     if (hash) {
-      const project = projects.find(project => project.hash === hash);
+      const project = data.projects.find(project => project.hash === hash);
       if (project) {
         openPopup(project.id);
       }

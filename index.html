@@ -29,8 +29,6 @@
         <link rel="stylesheet" href="main/css/home.css">
         <script src="main/js/jquery-3.7.1.min.js"></script>
         <script src="main/js/lang.js"></script>
-        <script src="main/js/logic/menu.js"></script>
-        <script src="main/js/logic/projects.js"></script>
 	</head>
 	<body>
         <h1 class="logo">ABROS</h1>
@@ -276,5 +274,23 @@
                 <div id="popup-content"></div>
             </div>
         </div>
+        <script>
+            function closePopup() {
+                const overlay = document.getElementById('overlay-popup');
+                const popup = document.getElementById('popup');
+                const popupMenu = document.getElementById('popup-menu');
+          
+                overlay.style.opacity = 0;
+                overlay.style.visibility = 'hidden';
+                popup.style.opacity = 0;
+                popup.style.visibility = 'hidden';
+                popupMenu.style.opacity = 0;
+                popupMenu.style.visibility = 'hidden';
+
+                history.replaceState(null, document.title, window.location.pathname + window.location.search);
+            }
+        </script>
+        <script src="main/js/logic/menu.js"></script>
+        <script src="main/js/logic/projects.js"></script>
 	</body>
 </html>

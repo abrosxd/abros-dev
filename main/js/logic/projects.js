@@ -143,21 +143,6 @@ fetch('main/txt/projects.json')
 
     window.location.hash = `#${project.hash}`;
   }
-
-  function closePopup() {
-    const overlay = document.getElementById('overlay-popup');
-    const popup = document.getElementById('popup');
-    const popupMenu = document.getElementById('popup-menu');
-          
-    overlay.style.opacity = 0;
-    overlay.style.visibility = 'hidden';
-    popup.style.opacity = 0;
-    popup.style.visibility = 'hidden';
-    popupMenu.style.opacity = 0;
-    popupMenu.style.visibility = 'hidden';
-
-    history.replaceState(null, document.title, window.location.pathname + window.location.search);
-  }
           
   const projectCard = document.querySelectorAll('.project-card');
   projectCard.forEach(card => {

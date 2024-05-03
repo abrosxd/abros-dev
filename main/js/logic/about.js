@@ -57,53 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const paybuttonElement = document.querySelector('.tpaybutton');
                 const paybuttonText = data.pay.button[language];
                 paybuttonElement.textContent = paybuttonText;
-
-                const qrCodeInstance = new QRCode(document.getElementById('coinAddressQR'), {
-                    width: 240,
-                    height: 240,
-                });
-            
-                function selectCoin(coin) {
-                    const buttons = document.querySelectorAll('.tab-menu button');
-                    buttons.forEach(button => button.classList.remove('active'));
-            
-                    const selectedButton = Array.from(buttons).find(button => button.textContent === coin);
-                    selectedButton.classList.add('active');
-            
-                    const Data = data.coinData[coin];
-                    document.getElementById('coinText').innerHTML = `${Data.text[currentLanguage]}`;
-                    document.getElementById('coinAddress').value = Data.address;
-            
-                    document.getElementById('coinAddressQR').classList.add('fade-out');
-            
-                    setTimeout(() => {
-                        qrCodeInstance.clear();
-                        qrCodeInstance.makeCode(Data.address);
-                                            
-                        const qrCodeImg = document.querySelector('#coinAddressQR img');
-                        qrCodeImg.onclick = copyAddress;
-                        qrCodeImg.style.cursor = 'pointer';
-            
-                        document.getElementById('coinAddressQR').classList.remove('fade-out');
-                    }, 500);
-                }
-            
-                function copyAddress(language) {
-                    var addressInput = document.getElementById('coinAddress');
-                    addressInput.select();
-                    document.execCommand('copy');
-             
-                    var copyButton = document.querySelector('.tpaybutton');
-                    copyButton.textContent = data.pay.buttonclick[language];
-                    copyButton.classList.add('copy-success');
-            
-                    setTimeout(() => {
-                        copyButton.textContent = datapay.button[language];
-                        copyButton.classList.remove('copy-success');
-                    }, 2000);
-                }
-            
-                selectCoin('BTC');
                 // Reviews
                 const reviewsElement = document.querySelector('.treviews');
                 const reviewsText = data.reviews[language];
@@ -226,9 +179,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('factText').textContent = randomFact.text[currentLanguage];
                 }
                 showRandomFact();
-                function showAnotherFact() {
-                    showRandomFact();
-                }
                 // Soft
                 const softElement = document.querySelector('.tsoft');
                 const softText = data.tools.soft[language];

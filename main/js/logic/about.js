@@ -69,6 +69,7 @@ fetch('main/txt/about.json')
     }
 
     const copyButton = document.querySelector('.tpaybutton');
+    copyButton.addEventListener('click', copyAddress(currentLanguage));
     function copyAddress(language) {
         var addressInput = document.getElementById('coinAddress');
         addressInput.select();
@@ -82,7 +83,6 @@ fetch('main/txt/about.json')
             copyButton.classList.remove('copy-success');
         }, 2000);
     }
-    copyButton.addEventListener('click', copyAddress(currentLanguage));
 
     selectCoin('BTC');
     // Reviews

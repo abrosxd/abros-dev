@@ -69,19 +69,22 @@ fetch('main/txt/about.json')
     }
 
     function copyAddress(language) {
-        var addressInput = document.getElementById('coinAddress');
-        addressInput.select();
-        document.execCommand('copy');
- 
-        var copyButton = document.querySelector('.tpaybutton');
-        copyButton.textContent = data.pay.buttonclick[language];
-        copyButton.classList.add('copy-success');
-
-        setTimeout(() => {
-            copyButton.textContent = data.pay.button[language];
-            copyButton.classList.remove('copy-success');
-        }, 2000);
+        return function() {
+            var addressInput = document.getElementById('coinAddress');
+            addressInput.select();
+            document.execCommand('copy');
+    
+            var copyButton = document.querySelector('.tpaybutton');
+            copyButton.textContent = data.pay.buttonclick[language];
+            copyButton.classList.add('copy-success');
+    
+            setTimeout(() => {
+                copyButton.textContent = data.pay.button[language];
+                copyButton.classList.remove('copy-success');
+            }, 2000);
+        };
     }
+    
     const copyAddressButton = document.getElementById('copyAddressButton');
     copyAddressButton.addEventListener('click', copyAddress(currentLanguage));
 

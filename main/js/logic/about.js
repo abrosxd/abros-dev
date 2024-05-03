@@ -68,6 +68,14 @@ fetch('main/txt/about.json')
         }, 500);
     }
 
+    const PayButtons = document.querySelectorAll('.tab-menu .button');
+    PayButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const coin = this.getAttribute('data-coin');
+            selectCoin(coin);
+        });
+    });
+
     function copyAddress(language) {
         return function() {
             var addressInput = document.getElementById('coinAddress');

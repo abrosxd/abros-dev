@@ -68,13 +68,12 @@ fetch('main/txt/about.json')
         }, 500);
     }
 
-    const copyButton = document.querySelector('.tpaybutton');
-    copyButton.addEventListener('click', copyAddress(currentLanguage));
     function copyAddress(language) {
         var addressInput = document.getElementById('coinAddress');
         addressInput.select();
         document.execCommand('copy');
  
+        var copyButton = document.querySelector('.tpaybutton');
         copyButton.textContent = data.pay.buttonclick[language];
         copyButton.classList.add('copy-success');
 
@@ -83,6 +82,8 @@ fetch('main/txt/about.json')
             copyButton.classList.remove('copy-success');
         }, 2000);
     }
+    const copyAddressButton = document.getElementById('copyAddressButton');
+    copyAddressButton.addEventListener('click', copyAddress(currentLanguage));
 
     selectCoin('BTC');
     // Reviews

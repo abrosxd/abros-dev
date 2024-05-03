@@ -1,8 +1,82 @@
+
+// Pay
+const qrCodeInstance = new QRCode(document.getElementById('coinAddressQR'), {
+    width: 240,
+    height: 240,
+});
+        
+function selectCoin(coin) {
+    const buttons = document.querySelectorAll('.tab-menu button');
+    buttons.forEach(button => button.classList.remove('active'));
+        
+    const selectedButton = Array.from(buttons).find(button => button.textContent === coin);
+    selectedButton.classList.add('active');
+        
+    const Data = data.coinData[coin];
+    document.getElementById('coinText').innerHTML = `${Data.text[currentLanguage]}`;
+    document.getElementById('coinAddress').value = Data.address;
+    document.getElementById('coinAddressQR').classList.add('fade-out');
+    setTimeout(() => {
+        qrCodeInstance.clear();
+        qrCodeInstance.makeCode(Data.address);
+        const qrCodeImg = document.querySelector('#coinAddressQR img');
+        qrCodeImg.onclick = copyAddress;
+        qrCodeImg.style.cursor = 'pointer';
+        document.getElementById('coinAddressQR').classList.remove('fade-out');
+    }, 500);
+}
+        
+            function copyAddress(language) {
+                var addressInput = document.getElementById('coinAddress');
+                addressInput.select();
+                document.execCommand('copy');
+         
+                var copyButton = document.querySelector('.tpaybutton');
+                copyButton.textContent = data.pay.buttonclick[language];
+                copyButton.classList.add('copy-success');
+        
+                setTimeout(() => {
+                    copyButton.textContent = datapay.button[language];
+                    copyButton.classList.remove('copy-success');
+                }, 2000);
+            }
+        
+            selectCoin('BTC');
+            // Facts
+            let shownFacts = [];
+            function showRandomFact() {
+                if (shownFacts.length === data.facts.length) {
+                    shownFacts = [];
+                }
+                let randomIndex;
+                do {
+                    randomIndex = Math.floor(Math.random() * data.facts.length);
+                } while (shownFacts.includes(randomIndex));
+                shownFacts.push(randomIndex);
+                const randomFact = data.facts[randomIndex];
+                document.getElementById('factImage').src = randomFact.img;
+                document.getElementById('factText').textContent = randomFact.text[currentLanguage];
+            }
+            showRandomFact();
+            function showAnotherFact() {
+                showRandomFact();
+            }
+
 fetch('main/txt/about.json')
 .then(response => response.json())
 .then(data => {
-    // Time
-    function updateDateTime() {
+    // Смена языка About
+    function changeabout(language) {
+                // Hello
+                const helloElement = document.querySelector('.thello');
+                const helloText = data.hello[language];
+                helloElement.textContent = helloText;
+                // Time
+                const timeElement = document.querySelector('.ttime');
+                const timeText = data.time.title[language];
+                timeElement.textContent = timeText;
+
+                function updateDateTime() {
                     var nowInWarsaw = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Warsaw"}));
                     var daysOfWeek = data.time.days[currentLanguage];
                     var currentDay = daysOfWeek[nowInWarsaw.getDay()];
@@ -14,82 +88,6 @@ fetch('main/txt/about.json')
                 }
                 updateDateTime();
                 setInterval(updateDateTime, 1000);
-                // Pay
-                const qrCodeInstance = new QRCode(document.getElementById('coinAddressQR'), {
-                    width: 240,
-                    height: 240,
-                });
-            
-                function selectCoin(coin) {
-                    const buttons = document.querySelectorAll('.tab-menu button');
-                    buttons.forEach(button => button.classList.remove('active'));
-            
-                    const selectedButton = Array.from(buttons).find(button => button.textContent === coin);
-                    selectedButton.classList.add('active');
-            
-                    const Data = data.coinData[coin];
-                    document.getElementById('coinText').innerHTML = `${Data.text[currentLanguage]}`;
-                    document.getElementById('coinAddress').value = Data.address;
-            
-                    document.getElementById('coinAddressQR').classList.add('fade-out');
-            
-                    setTimeout(() => {
-                        qrCodeInstance.clear();
-                        qrCodeInstance.makeCode(Data.address);
-                                            
-                        const qrCodeImg = document.querySelector('#coinAddressQR img');
-                        qrCodeImg.onclick = copyAddress;
-                        qrCodeImg.style.cursor = 'pointer';
-            
-                        document.getElementById('coinAddressQR').classList.remove('fade-out');
-                    }, 500);
-                }
-            
-                function copyAddress(language) {
-                    var addressInput = document.getElementById('coinAddress');
-                    addressInput.select();
-                    document.execCommand('copy');
-             
-                    var copyButton = document.querySelector('.tpaybutton');
-                    copyButton.textContent = data.pay.buttonclick[language];
-                    copyButton.classList.add('copy-success');
-            
-                    setTimeout(() => {
-                        copyButton.textContent = datapay.button[language];
-                        copyButton.classList.remove('copy-success');
-                    }, 2000);
-                }
-            
-                selectCoin('BTC');
-                // Facts
-                let shownFacts = [];
-                function showRandomFact() {
-                    if (shownFacts.length === data.facts.length) {
-                        shownFacts = [];
-                    }
-                    let randomIndex;
-                    do {
-                        randomIndex = Math.floor(Math.random() * data.facts.length);
-                    } while (shownFacts.includes(randomIndex));
-                    shownFacts.push(randomIndex);
-                    const randomFact = data.facts[randomIndex];
-                    document.getElementById('factImage').src = randomFact.img;
-                    document.getElementById('factText').textContent = randomFact.text[currentLanguage];
-                }
-                showRandomFact();
-                function showAnotherFact() {
-                    showRandomFact();
-                }
-    // Смена языка About
-    function changeabout(language) {
-                // Hello
-                const helloElement = document.querySelector('.thello');
-                const helloText = data.hello[language];
-                helloElement.textContent = helloText;
-                // Time
-                const timeElement = document.querySelector('.ttime');
-                const timeText = data.time.title[language];
-                timeElement.textContent = timeText;
                 // Notes
                 const notesContainer = document.getElementById("notesContainer");
                 data.notes.forEach(note => {

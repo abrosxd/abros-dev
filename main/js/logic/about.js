@@ -1,23 +1,6 @@
-   const buttons = document.querySelectorAll('.tab-menu button');
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            const coin = this.getAttribute('data-coin');
-            selectCoin(coin);
-        });
-    });
-    const copyButton = document.getElementById('copyAddressButton');
-    copyButton.addEventListener('click', function() {
-        copyAddress();
-    });
-    const showFactButton = document.querySelector('.tfactsbutton');
-    showFactButton.addEventListener('click', function() {
-        showAnotherFact();
-    });
-
 fetch('main/txt/about.json')
-            .then(response => response.json())
-            .then(data => {
-
+.then(response => response.json())
+.then(data => {
     // Time
     function updateDateTime() {
         var nowInWarsaw = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Warsaw"}));
@@ -229,54 +212,54 @@ fetch('main/txt/about.json')
 
     // Смена языка About
     function changeabout(language) {
-                // Hello
-                const helloElement = document.querySelector('.thello');
-                const helloText = data.hello[language];
-                helloElement.textContent = helloText;
-                // Time
-                const timeElement = document.querySelector('.ttime');
-                const timeText = data.time.title[language];
-                timeElement.textContent = timeText;
-                // Pay
-                const payElement = document.querySelector('.tpay');
-                const payText = data.pay.title[language];
-                payElement.textContent = payText;
+        // Hello
+        const helloElement = document.querySelector('.thello');
+        const helloText = data.hello[language];
+        helloElement.textContent = helloText;
+        // Time
+        const timeElement = document.querySelector('.ttime');
+        const timeText = data.time.title[language];
+        timeElement.textContent = timeText;
+        // Pay
+        const payElement = document.querySelector('.tpay');
+        const payText = data.pay.title[language];
+        payElement.textContent = payText;
                 
-                const paybuttonElement = document.querySelector('.tpaybutton');
-                const paybuttonText = data.pay.button[language];
-                paybuttonElement.textContent = paybuttonText;
-                // Reviews
-                const reviewsElement = document.querySelector('.treviews');
-                const reviewsText = data.reviews[language];
-                reviewsElement.textContent = reviewsText;
-                // F.A.Q.
-                const faqElement = document.querySelector('.tfaq');
-                const faqText = data.faq[language];
-                faqElement.textContent = faqText;
-                // Gallery
-                const galleryElement = document.querySelector('.tgallery');
-                const galleryText = data.gallery[language];
-                galleryElement.textContent = galleryText;
-                // Stack
-                const stackElement = document.querySelector('.tstack');
-                const stackText = data.stack[language];
-                stackElement.textContent = stackText;
-                // Facts
-                const factsElement = document.querySelector('.tfacts');
-                const factsText = data.randomfacts.title[language];
-                factsElement.textContent = factsText;
+        const paybuttonElement = document.querySelector('.tpaybutton');
+        const paybuttonText = data.pay.button[language];
+        paybuttonElement.textContent = paybuttonText;
+        // Reviews
+        const reviewsElement = document.querySelector('.treviews');
+        const reviewsText = data.reviews[language];
+        reviewsElement.textContent = reviewsText;
+        // F.A.Q.
+        const faqElement = document.querySelector('.tfaq');
+        const faqText = data.faq[language];
+        faqElement.textContent = faqText;
+        // Gallery
+        const galleryElement = document.querySelector('.tgallery');
+        const galleryText = data.gallery[language];
+        galleryElement.textContent = galleryText;
+        // Stack
+        const stackElement = document.querySelector('.tstack');
+        const stackText = data.stack[language];
+        stackElement.textContent = stackText;
+        // Facts
+        const factsElement = document.querySelector('.tfacts');
+        const factsText = data.randomfacts.title[language];
+        factsElement.textContent = factsText;
 
-                const factsbuttonElement = document.querySelector('.tfactsbutton');
-                const factsbuttonText = data.randomfacts.button[language];
-                factsbuttonElement.textContent = factsbuttonText;
-                // Soft
-                const softElement = document.querySelector('.tsoft');
-                const softText = data.tools.soft[language];
-                softElement.textContent = softText;
-                // Materials
-                const materialsElement = document.querySelector('.tmaterials');
-                const materialsText = data.tools.materials[language];
-                materialsElement.textContent = materialsText;
+        const factsbuttonElement = document.querySelector('.tfactsbutton');
+        const factsbuttonText = data.randomfacts.button[language];
+        factsbuttonElement.textContent = factsbuttonText;
+        // Soft
+        const softElement = document.querySelector('.tsoft');
+        const softText = data.tools.soft[language];
+        softElement.textContent = softText;
+        // Materials
+        const materialsElement = document.querySelector('.tmaterials');
+        const materialsText = data.tools.materials[language];
+        materialsElement.textContent = materialsText;
     }
     changeabout(currentLanguage);
 })

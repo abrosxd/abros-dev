@@ -27,9 +27,7 @@
 		<link rel="stylesheet" href="main/css/style.css">
         <link rel="stylesheet" href="main/css/about.css">
         <script src="main/js/jquery-3.7.1.min.js"></script>
-        <script src="main/js/content/langdata.js"></script>
         <script src="main/js/lang.js"></script>
-        <script src="main/js/content/aboutdata.js"></script>
 		<script src="main/js/qrcode.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="main/css/slick.css"/>
 		<link rel="stylesheet" type="text/css" href="main/css/slick-theme.css"/>
@@ -37,36 +35,6 @@
 	</head>
 	<body>
         <h1 class="logo">ABROS</h1>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const logo = document.querySelector('.logo');
-
-                function getRandomColor() {
-                    const letters = '0123456789ABCDEF';
-                    let color = '#';
-                    for (let i = 0; i < 6; i++) {
-                        color += letters[Math.floor(Math.random() * 16)];
-                    }
-                    return color;
-                }
-
-                function setRandomColor() {
-                    const newColor = getRandomColor();
-                    logo.style.backgroundColor = `${newColor}80`;
-                }
-
-                function updateColor() {
-                    logo.classList.add('color-transition');
-                    setRandomColor();
-                    setTimeout(() => {
-                        logo.classList.remove('color-transition');
-                    }, 1000);
-                }
-
-                setInterval(updateColor, 5000);
-            });
-
-        </script>
 
         <nav class="navigation">
             <ul class="menu">
@@ -88,25 +56,6 @@
                     <a class="button active tabout" href="/about">Обо мне</a>
                 </li>
             </ul>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                function changeMenuText(language) {
-                    const portfolioElement = document.querySelector('.tportfolio');
-                    const portfolioText = menu[0].portfolio[language];
-                    portfolioElement.textContent = portfolioText;
-
-                    const projectsElement = document.querySelector('.tprojects');
-                    const projectsText = menu[1].projects[language];
-                    projectsElement.textContent = projectsText;
-
-                    const aboutElement = document.querySelector('.tabout');
-                    const aboutText = menu[2].about[language];
-                    aboutElement.textContent = aboutText;
-                }
-
-                changeMenuText(currentLanguage);
-            });
-            </script>
 
             <ul class="lang">
                 <li class="section" id="lang-trigger">
@@ -283,81 +232,6 @@
                     </a>
                 </li>
             </ul>
-
-            <script>
-                function initializeSubMenu(triggerId, submenuId) {
-                    const trigger = document.getElementById(triggerId);
-                    const submenu = document.getElementById(submenuId);
-            
-                    var touchStartX = 0;
-                    var touchEndX = 0;
-            
-                    trigger.addEventListener('click', function (event) {
-                        event.stopPropagation();
-                        toggleSubMenu();
-                    });
-            
-                    document.addEventListener('click', function (event) {
-                        if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-                            hideSubMenu();
-                        }
-                    });
-            
-                    document.addEventListener('touchstart', function (event) {
-                        if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-                            hideSubMenu();
-                        }
-            
-                        touchStartX = event.touches[0].clientX;
-                    });
-            
-                    document.addEventListener('touchmove', function (event) {
-                        touchEndX = event.touches[0].clientX;
-                        var swipeDistance = touchEndX - touchStartX;
-            
-                        if (Math.abs(swipeDistance) > 10) {
-                            hideSubMenu();
-                        }
-                    });
-            
-                    function toggleSubMenu() {
-                        if (submenu.classList.contains('active')) {
-                            hideSubMenu();
-                        } else {
-                            showSubMenu();
-                        }
-                    }
-            
-                    function showSubMenu() {
-                        submenu.style.opacity = '1';
-                        submenu.style.visibility = 'visible';
-                        submenu.classList.add('active');
-                    }
-            
-                    function hideSubMenu() {
-                        submenu.style.opacity = '0';
-                        submenu.style.visibility = 'hidden';
-                        submenu.classList.remove('active');
-                    }
-            
-                    function isDescendant(parent, child) {
-                        var node = child.parentNode;
-                        while (node !== null) {
-                            if (node === parent) {
-                                return true;
-                            }
-                            node = node.parentNode;
-                        }
-                        return false;
-                    }
-                }
-            
-                // Инициализация подменю
-                initializeSubMenu('projects-trigger', 'projects-submenu');
-                initializeSubMenu('links-trigger', 'links-submenu');
-                initializeSubMenu('lang-trigger', 'lang-submenu');
-            </script>
-            
         </nav>
 
         <img class="bg" src="main/img/about-bg.svg">
@@ -374,62 +248,6 @@
                 <source src="main/sounds/bgmusic.mp3" type="audio/mp3">
                 Ваш браузер не поддерживает тег audio.
             </audio>
-            <script>
-                const audio = document.getElementById('backgroundMusic');
-                const toggleButton = document.getElementById('toggleMusic');
-                let userInteracted = false;
-    
-                function fadeIn(element, duration) {
-                    element.volume = 0;
-                    element.play().then(() => {
-                        if (userInteracted) {
-                            element.volume = 1;
-                        }
-                    });
-    
-                    let currentTime = 0;
-                    const interval = 50;
-                    const targetVolume = 1;
-                    const volumeChange = targetVolume / (duration / interval);
-    
-                    const fadeInterval = setInterval(() => {
-                        currentTime += interval;
-                        element.volume = Math.min(targetVolume, element.volume + volumeChange);
-    
-                        if (currentTime >= duration) {
-                            clearInterval(fadeInterval);
-                            element.volume = Math.min(targetVolume, 1);
-                        }
-                    }, interval);
-                }
-    
-                function fadeOut(element, duration) {
-                    let currentTime = 0;
-                    const interval = 50;
-                    const currentVolume = element.volume;
-                    const volumeChange = currentVolume / (duration / interval);
-    
-                    const fadeInterval = setInterval(() => {
-                        currentTime += interval;
-                        element.volume = Math.max(0, element.volume - volumeChange);
-    
-                        if (currentTime >= duration) {
-                            clearInterval(fadeInterval);
-                            element.pause();
-                            element.volume = Math.max(0, element.volume);
-                        }
-                    }, interval);
-                }
-    
-                toggleButton.addEventListener('click', function () {
-                    if (audio.paused) {
-                        fadeIn(audio, 1000);
-                    } else {
-                        fadeOut(audio, 1000);
-                    }
-                    toggleButton.classList.toggle('playing');
-                });
-            </script>
         </div>
 
         <div class="dot-grid"></div>
@@ -477,17 +295,6 @@
                         <img src="main/img/me.jpg">
                         <p class="thello">👋 Хай — Я Данил , Веб-разработчик / Веб-дизайнер. Здесь ты сможешь найти всё обо мне и даже больше.</p>
                     </div>
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                        function changeHelloText(language) {
-                            const helloElement = document.querySelector('.thello');
-                            const helloText = aboutinfome[language];
-                            helloElement.textContent = helloText;
-                        }
-        
-                        changeHelloText(currentLanguage);
-                    });
-                    </script>
 
                     <div class="aboutcard time" id="timeCard">
                         <div style="align-self: center; display: flex;">
@@ -503,67 +310,10 @@
                                 <span id="currentTime">15:01:36</span>
                             </div>
                         </div>
-                        <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            function changeTimeText(language) {
-                                const timeElement = document.querySelector('.ttime');
-                                const timeText = aboutinfotime[0].title[language];
-                                timeElement.textContent = timeText;
-                            }
-
-                            changeTimeText(currentLanguage);
-
-                            function updateDateTime() {
-                                var nowInWarsaw = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Warsaw"}));
-                            
-                                var daysOfWeek = aboutinfotime[1].days[currentLanguage];
-                                var currentDay = daysOfWeek[nowInWarsaw.getDay()];
-                            
-                                var currentDate = nowInWarsaw.getDate().toString().padStart(2, '0') + '/' + (nowInWarsaw.getMonth() + 1).toString().padStart(2, '0');
-                            
-                                var currentTime = nowInWarsaw.toLocaleTimeString('en-US', { hour12: false });
-                            
-                                document.getElementById('currentDay').innerText = currentDay;
-                                document.getElementById('currentDate').innerText = currentDate;
-                                document.getElementById('currentTime').innerText = currentTime;
-                            }
-                                                     
-                                updateDateTime();
-                                setInterval(updateDateTime, 1000);
-                        });
-                        </script>
                     </div>
 
                     <div class="aboutcard notes" style="padding: 0;">
                         <div class="notescontainer" id="notesContainer"></div>
-                        <script>
-                            const notesContainer = document.getElementById("notesContainer");
-
-                            notes.forEach(note => {
-                                const noteElement = document.createElement("div");
-                                noteElement.className = "note";
-
-                                noteElement.innerHTML = `
-                                <a href="${note.link}">
-                                    <span class="notetitle">${note.title[currentLanguage]}</span>
-                                    <span class="notetext">${note.text[currentLanguage]}</span>
-                                    <div class="noteshape" style="background-color: ${note.color};"></div>
-                                    <img src="${note.img}">
-                                    </a>
-                                    `;
-
-                                    notesContainer.appendChild(noteElement);
-                                });
-
-                                $('#notesContainer').slick({
-                                    infinite: true,
-                                    slidesToShow: 1,
-                                    slidesToScroll: 1,
-                                    autoplay: true,
-                                    autoplaySpeed: 5000,
-                                    arrows: false,
-                                });
-                        </script>
                     </div>
 
                     <div class="aboutcard pay">
@@ -635,164 +385,16 @@
                                 <button class="button tpaybutton" onclick="copyAddress(currentLanguage)" style="font-size: 13px;">Скопировать</button>
                             </div>
                         </div>
-                        <script>                       
-                            const qrCodeInstance = new QRCode(document.getElementById('coinAddressQR'), {
-                                width: 240,
-                                height: 240,
-                            });
-    
-                            function selectCoin(coin) {
-                                const buttons = document.querySelectorAll('.tab-menu button');
-                                buttons.forEach(button => button.classList.remove('active'));
-    
-                                const selectedButton = Array.from(buttons).find(button => button.textContent === coin);
-                                selectedButton.classList.add('active');
-    
-                                const data = coinData[coin];
-                                document.getElementById('coinText').innerHTML = `${data.text[currentLanguage]}`;
-                                document.getElementById('coinAddress').value = data.address;
-    
-                                document.getElementById('coinAddressQR').classList.add('fade-out');
-    
-                                setTimeout(() => {
-                                    qrCodeInstance.clear();
-                                    qrCodeInstance.makeCode(data.address);
-                                    
-                                    const qrCodeImg = document.querySelector('#coinAddressQR img');
-                                    qrCodeImg.onclick = copyAddress;
-                                    qrCodeImg.style.cursor = 'pointer';
-    
-                                    document.getElementById('coinAddressQR').classList.remove('fade-out');
-                                }, 500);
-                            }
-    
-                            function copyAddress(language) {
-                                var addressInput = document.getElementById('coinAddress');
-                                addressInput.select();
-                                document.execCommand('copy');
-     
-                                var copyButton = document.querySelector('.tpaybutton');
-                                copyButton.textContent = aboutinfopay[2].buttonclick[language];
-                                copyButton.classList.add('copy-success');
-    
-                                setTimeout(() => {
-                                    copyButton.textContent = aboutinfopay[1].button[language];
-                                    copyButton.classList.remove('copy-success');
-                                }, 2000);
-                            }
-    
-                            selectCoin('BTC');
-
-
-                            document.addEventListener('DOMContentLoaded', function() {
-                                function changePayText(language) {
-                                    const payElement = document.querySelector('.tpay');
-                                    const payText = aboutinfopay[0].title[language];
-                                    payElement.textContent = payText;
-
-                                    const paybuttonElement = document.querySelector('.tpaybutton');
-                                    const paybuttonText = aboutinfopay[1].button[language];
-                                    paybuttonElement.textContent = paybuttonText;
-                                }
-        
-                                changePayText(currentLanguage);
-                            });
-                        </script>
                     </div>
 
                     <div class="aboutcard reviews">
                         <span class="treviews">Отзывы</span>
                         <div class="reviewscontainer" id="reviewsContainer"></div>
-                        <script>
-                            const reviewsContainer = document.getElementById("reviewsContainer");
-
-                            reviews.forEach(review => {
-                                const reviewElement = document.createElement("div");
-                                reviewElement.className = "review";
-
-                                reviewElement.innerHTML = `
-                                    <div class="reviewcontainer">
-                                        <img class="reviewimg" src="${review.img}">
-                                        <span class="reviewname">${review.name[currentLanguage]}</span>
-                                        <span class="reviewtext">«${review.text[currentLanguage]}»</span>
-                                    </div>
-                                    `;
-
-                                    reviewsContainer.appendChild(reviewElement);
-                                });
-
-                                $('#reviewsContainer').slick({
-                                    infinite: true,
-                                    slidesToShow: 1,
-                                    slidesToScroll: 1,
-                                    autoplay: true,
-                                    autoplaySpeed: 5000,
-                                    arrows: false,
-                                });
-
-                                document.addEventListener('DOMContentLoaded', function() {
-                                    function changeReviewsText(language) {
-                                        const reviewsElement = document.querySelector('.treviews');
-                                        const reviewsText = aboutinforeviews[language];
-                                        reviewsElement.textContent = reviewsText;
-                                    }
-        
-                                    changeReviewsText(currentLanguage);
-                                });
-                        </script>
                     </div>
 
                     <div class="aboutcard faq">
                         <span class="tfaq">Ответы на вопросы</span>
                         <div class="faqcontainer" id="faqContainer"></div>
-
-                        <script>
-                            const faqContainer = document.getElementById("faqContainer");
-
-                            faq.forEach(faq => {
-                                const faqElement = document.createElement("div");
-                                faqElement.innerHTML = `
-                                <div class="faq-header button">${faq.title[currentLanguage]}</div>
-                                <div class="faq-content">
-                                    <p>${faq.text[currentLanguage]}</p>
-                                </div>
-                                `;
-                                faqContainer.appendChild(faqElement);
-                            });
-
-                            document.addEventListener("DOMContentLoaded", function() {
-                                const cardHeaders = document.querySelectorAll(".aboutcard .faq-header");
-  
-                                cardHeaders.forEach(function(header) {
-                                    header.addEventListener("click", function() {
-                                        const content = this.nextElementSibling;
-
-                                        const isActive = this.classList.contains("active");
-      
-                                        document.querySelectorAll(".aboutcard .faq-header").forEach(function(item) {
-                                            item.classList.remove("active");
-                                        });
-                                        document.querySelectorAll(".aboutcard .faq-content").forEach(function(item) {
-                                            item.classList.remove("active");
-                                        });
-      
-                                        if (!isActive) {
-                                            this.classList.add("active");
-                                            content.classList.add("active");
-                                        }
-                                    });
-                                });
-
-                                function changeFAQText(language) {
-                                    const faqElement = document.querySelector('.tfaq');
-                                    const faqText = aboutinfofaq[language];
-                                    faqElement.textContent = faqText;
-                                }
-        
-                                changeFAQText(currentLanguage);
-                            });
-
-                        </script>
                     </div>
                 </div>
 
@@ -801,66 +403,11 @@
                     <div class="aboutcard gallery">
                         <span class="tgallery">Фотоальбом</span>
                         <div id="imageGallery" class="slick-carousel"></div>
-                        <script>
-                            const galleryContainer = document.getElementById("imageGallery");
-
-                            gallery.forEach(gallery => {
-                                const gallaryElement = document.createElement("div");
-                                gallaryElement.innerHTML = `<img src="${gallery.img}">`;
-                                galleryContainer.appendChild(gallaryElement);
-                            });
-
-                            $(document).ready(function(){
-                                $('#imageGallery').slick({
-                                    infinite: true,
-                                    slidesToShow: 2,
-                                    slidesToScroll: 1,
-                                    autoplay: true,
-                                    autoplaySpeed: 3000,
-                                    arrows: false,
-                                });
-                            });
-
-                            document.addEventListener('DOMContentLoaded', function() {
-                                function changeGalleryText(language) {
-                                    const galleryElement = document.querySelector('.tgallery');
-                                    const galleryText = aboutinfogallery[language];
-                                    galleryElement.textContent = galleryText;
-                                }
-        
-                                changeGalleryText(currentLanguage);
-                            });
-                        </script>
                     </div>
 
                     <div class="aboutcard stack">
                         <span class="tstack">Стек</span>
                         <div id="stackGallery" style="line-height: 1.7; display: flex; flex-wrap: wrap; justify-content: center;"></div>
-                        <script>
-                            const stackContainer = document.getElementById("stackGallery");
-
-                            stack.forEach(stack => {
-                                const stackElement = document.createElement("div");
-                                stackElement.style.marginRight = '5px';
-                                stackElement.innerHTML = `
-                                <div class="tag" style="background-color: ${stack.bgcolor}; color: ${stack.color};">
-                                    <img class="tagimg" src="${stack.img}">
-                                    <span>${stack.title}</span>
-                                </div>
-                                `;
-                                stackContainer.appendChild(stackElement);
-                            });
-
-                            document.addEventListener('DOMContentLoaded', function() {
-                                function changeStackText(language) {
-                                    const stackElement = document.querySelector('.tstack');
-                                    const stackText = aboutinfostack[language];
-                                    stackElement.textContent = stackText;
-                                }
-        
-                                changeStackText(currentLanguage);
-                            });
-                        </script>
                     </div>
 
                     <div class="aboutcard randomfacts">
@@ -878,46 +425,6 @@
                                 <p class="tfactsbutton" style="margin: 0; padding-left: 10px;">Другой факт</p>
                             </span>
                         </div>
-                        <script>
-                            let shownFacts = [];
-                            function showRandomFact() {
-                                if (shownFacts.length === facts.length) {
-                                    shownFacts = [];
-                                }
-
-                                let randomIndex;
-                                do {
-                                    randomIndex = Math.floor(Math.random() * facts.length);
-                                } while (shownFacts.includes(randomIndex));
-
-                                shownFacts.push(randomIndex);
-
-                                const randomFact = facts[randomIndex];
-
-                                document.getElementById('factImage').src = randomFact.img;
-                                document.getElementById('factText').textContent = randomFact.text[currentLanguage];
-                            }
-
-                            showRandomFact();
-
-                            function showAnotherFact() {
-                                showRandomFact();
-                            }
-
-                            document.addEventListener('DOMContentLoaded', function() {
-                                function changeFactsText(language) {
-                                    const factsElement = document.querySelector('.tfacts');
-                                    const factsText = aboutinforandomfacts[0].title[language];
-                                    factsElement.textContent = factsText;
-
-                                    const factsbuttonElement = document.querySelector('.tfactsbutton');
-                                    const factsbuttonText = aboutinforandomfacts[1].button[language];
-                                    factsbuttonElement.textContent = factsbuttonText;
-                                }
-        
-                                changeFactsText(currentLanguage);
-                            });
-                        </script>
                     </div>
 
                     <div class="aboutcard tools">
@@ -926,57 +433,17 @@
                             <div class="aboutflex aboutflex-col aboutgap-4" id="softContainer">
                                 <p class="tsoft" style="margin: 0;">Софт</p>
                             </div>
-                            <script>
-                                const softContainer = document.getElementById("softContainer");
-    
-                                soft.forEach(soft => {
-                                    const softElement = document.createElement("a");
-                                    softElement.href = `${soft.href}`;
-                                    softElement.target = '_blank';
-                                    softElement.innerHTML = `
-                                        <img src="${soft.img}">
-                                        <p class="text">${soft.text[currentLanguage]}</p>
-                                    `;
-                                    softContainer.appendChild(softElement);
-                                });
-                            </script>
 
                             <div class="aboutflex aboutflex-col aboutgap-4" id="lessonsContainer">
                                 <p class="tmaterials" style="margin: 0;">Материал</p>
                             </div>
-                            <script>
-                                const lessonsContainer = document.getElementById("lessonsContainer");
-    
-                                lessons.forEach(lessons => {
-                                    const lessonsElement = document.createElement("a");
-                                    lessonsElement.href = `${lessons.href}`;
-                                    lessonsElement.target = '_blank';
-                                    lessonsElement.innerHTML = `
-                                        <img src="${lessons.img}">
-                                        <p class="text">${lessons.text[currentLanguage]}</p>
-                                    `;
-                                    lessonsContainer.appendChild(lessonsElement);
-                                });
-
-                                document.addEventListener('DOMContentLoaded', function() {
-                                function changeToolsText(language) {
-                                    const softElement = document.querySelector('.tsoft');
-                                    const softText = aboutinfotools[0].soft[language];
-                                    softElement.textContent = softText;
-
-                                    const materialsElement = document.querySelector('.tmaterials');
-                                    const materialsText = aboutinfotools[1].materials[language];
-                                    materialsElement.textContent = materialsText;
-                                }
-        
-                                changeToolsText(currentLanguage);
-                            });
-                            </script>
                         </div>
                     </div>
 
                 </div>
             </div>
         </div>
+        <script src="main/js/logic/menu.js"></script>
+        <script src="main/js/logic/about.js"></script>
 	</body>
 </html>

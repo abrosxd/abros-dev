@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('.tab-menu button');
+   const buttons = document.querySelectorAll('.tab-menu button');
     buttons.forEach(button => {
         button.addEventListener('click', function() {
             const coin = this.getAttribute('data-coin');
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     showFactButton.addEventListener('click', function() {
         showAnotherFact();
     });
-});
 
 fetch('main/txt/about.json')
             .then(response => response.json())

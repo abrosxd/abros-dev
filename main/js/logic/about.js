@@ -50,24 +50,9 @@ fetch('main/txt/about.json')
 
     selectCoin('BTC');
     // Facts
-    let shownFacts = [];
-                function showRandomFact() {
-                    if (shownFacts.length === data.facts.length) {
-                        shownFacts = [];
-                    }
-                    let randomIndex;
-                    do {
-                        randomIndex = Math.floor(Math.random() * data.facts.length);
-                    } while (shownFacts.includes(randomIndex));
-                    shownFacts.push(randomIndex);
-                    const randomFact = data.facts[randomIndex];
-                    document.getElementById('factImage').src = randomFact.img;
-                    document.getElementById('factText').textContent = randomFact.text[currentLanguage];
-                }
-                showRandomFact();
-                function showAnotherFact() {
-                    showRandomFact();
-                }
+    function showAnotherFact() {
+        showRandomFact();
+    }
     // Смена языка About
     function changeabout(language) {
                 // Hello
@@ -228,6 +213,22 @@ fetch('main/txt/about.json')
                 const factsbuttonElement = document.querySelector('.tfactsbutton');
                 const factsbuttonText = data.randomfacts.button[language];
                 factsbuttonElement.textContent = factsbuttonText;
+
+                let shownFacts = [];
+                function showRandomFact() {
+                    if (shownFacts.length === data.facts.length) {
+                        shownFacts = [];
+                    }
+                    let randomIndex;
+                    do {
+                        randomIndex = Math.floor(Math.random() * data.facts.length);
+                    } while (shownFacts.includes(randomIndex));
+                    shownFacts.push(randomIndex);
+                    const randomFact = data.facts[randomIndex];
+                    document.getElementById('factImage').src = randomFact.img;
+                    document.getElementById('factText').textContent = randomFact.text[currentLanguage];
+                }
+                showRandomFact();
                 // Soft
                 const softElement = document.querySelector('.tsoft');
                 const softText = data.tools.soft[language];

@@ -1,0 +1,80 @@
+{
+    "aboutinfome": {
+        "RU": "👋 Хай — Я Данил, веб-дизайнер и веб-разработчик. Здесь ты найдешь всю нужную информацию обо мне и даже больше. Добро пожаловать!",
+        "EN": "👋 Hi - I'm Daniel, a web designer and web developer. Here you'll find all the necessary information about me and even more. Welcome!",
+        "PL": "👋 Cześć - jestem Daniel, web designer i web developer. Tutaj znajdziesz wszystkie potrzebne informacje o mnie i nawet więcej. Witaj!"
+    },
+    "aboutinfotime": {
+        "title": {
+            "RU": "Мое время",
+            "EN": "My time",
+            "PL": "Mój czas"
+        },
+        "days": {
+            "RU": ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"],
+            "EN": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            "PL": ["Nd", "Pn", "Wt", "Śr", "Czw", "Pt", "Sob"]
+        }
+    },
+    "aboutinfopay": {
+        "title": {
+            "RU": "Донаты и реквизиты",
+            "EN": "Donations and details",
+            "PL": "Darowizny i szczegóły"
+        },
+        "button": {
+            "RU": "Скопировать",
+            "EN": "Copy",
+            "PL": "Kopiuj"
+        },
+        "buttonclick": {
+            "RU": "Скопировано",
+            "EN": "Copied",
+            "PL": "Skopiowano"
+        }
+    },
+    "aboutinforeviews": {
+        "RU": "Отзывы",
+        "EN": "Reviews",
+        "PL": "Opinie"
+    },
+    "aboutinfofaq": {
+        "RU": "Ответы на вопросы",
+        "EN": "Answers on questions",
+        "PL": "Odpowiedzi na pytania"
+    },
+    "aboutinfogallery": {
+        "RU": "Фотоальбом",
+        "EN": "Photo album",
+        "PL": "Album zdjęć"
+    },
+    "aboutinfostack": {
+        "RU": "Стек",
+        "EN": "Stack",
+        "PL": "Stos"
+    },
+    "aboutinforandomfacts": {
+        "title": {
+            "RU": "Случайный факт",
+            "EN": "Random fact",
+            "PL": "Losowy fakt"
+        },
+        "button": {
+            "RU": "Другой факт",
+            "EN": "Another fact",
+            "PL": "Kolejny fakt"
+        }
+    },
+    "aboutinfotools": {
+        "soft": {
+            "RU": "Софт",
+            "EN": "Soft",
+            "PL": "Soft"
+        },
+        "materials": {
+            "RU": "Материалы",
+            "EN": "Materials",
+            "PL": "Materiały"
+        }
+    }
+}

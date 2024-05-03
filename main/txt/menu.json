@@ -1,0 +1,19 @@
+{
+    "menu": {
+        "portfolio": {
+            "RU": "Портфолио",
+            "EN": "Portfolio",
+            "PL": "Portfolio"
+        },
+        "projects": {
+            "RU": "Проекты",
+            "EN": "Projects",
+            "PL": "Projekty"
+        },
+        "about": {
+            "RU": "Обо мне",
+            "EN": "About me",
+            "PL": "O mnie"
+        }
+    }
+}

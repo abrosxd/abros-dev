@@ -85,7 +85,7 @@ fetch('main/txt/about.json')
 
     selectCoin('BTC');
     const copyAddressButton = document.getElementById('copyAddressButton');
-    copyAddressButton.addEventListener('click', copyAddress);
+    copyAddressButton.addEventListener('click', copyAddress(currentLanguage));
     // Reviews
     const reviewsContainer = document.getElementById("reviewsContainer");
     data.reviewsData.forEach(review => {

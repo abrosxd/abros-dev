@@ -1,20 +1,8 @@
-
-
-    // Смена языка About
-    function changeabout(language) {
-        fetch('main/txt/about.json')
-            .then(response => response.json())
-            .then(data => {
-                // Hello
-                const helloElement = document.querySelector('.thello');
-                const helloText = data.hello[language];
-                helloElement.textContent = helloText;
-                // Time
-                const timeElement = document.querySelector('.ttime');
-                const timeText = data.time.title[language];
-                timeElement.textContent = timeText;
-
-                function updateDateTime() {
+fetch('main/txt/about.json')
+.then(response => response.json())
+.then(data => {
+    // Time
+    function updateDateTime() {
                     var nowInWarsaw = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Warsaw"}));
                     var daysOfWeek = data.time.days[currentLanguage];
                     var currentDay = daysOfWeek[nowInWarsaw.getDay()];
@@ -26,38 +14,7 @@
                 }
                 updateDateTime();
                 setInterval(updateDateTime, 1000);
-                // Notes
-                const notesContainer = document.getElementById("notesContainer");
-                data.notes.forEach(note => {
-                    const noteElement = document.createElement("div");
-                    noteElement.className = "note";
-                    noteElement.innerHTML = `
-                        <a href="${note.link}">
-                            <span class="notetitle">${note.title[currentLanguage]}</span>
-                            <span class="notetext">${note.text[currentLanguage]}</span>
-                            <div class="noteshape" style="background-color: ${note.color};"></div>
-                            <img src="${note.img}">
-                        </a>
-                    `;
-                    notesContainer.appendChild(noteElement);
-                });
-                $('#notesContainer').slick({
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 5000,
-                    arrows: false,
-                });
                 // Pay
-                const payElement = document.querySelector('.tpay');
-                const payText = data.pay.title[language];
-                payElement.textContent = payText;
-                
-                const paybuttonElement = document.querySelector('.tpaybutton');
-                const paybuttonText = data.pay.button[language];
-                paybuttonElement.textContent = paybuttonText;
-
                 const qrCodeInstance = new QRCode(document.getElementById('coinAddressQR'), {
                     width: 240,
                     height: 240,
@@ -104,6 +61,66 @@
                 }
             
                 selectCoin('BTC');
+                // Facts
+                let shownFacts = [];
+                function showRandomFact() {
+                    if (shownFacts.length === data.facts.length) {
+                        shownFacts = [];
+                    }
+                    let randomIndex;
+                    do {
+                        randomIndex = Math.floor(Math.random() * data.facts.length);
+                    } while (shownFacts.includes(randomIndex));
+                    shownFacts.push(randomIndex);
+                    const randomFact = data.facts[randomIndex];
+                    document.getElementById('factImage').src = randomFact.img;
+                    document.getElementById('factText').textContent = randomFact.text[currentLanguage];
+                }
+                showRandomFact();
+                function showAnotherFact() {
+                    showRandomFact();
+                }
+    // Смена языка About
+    function changeabout(language) {
+                // Hello
+                const helloElement = document.querySelector('.thello');
+                const helloText = data.hello[language];
+                helloElement.textContent = helloText;
+                // Time
+                const timeElement = document.querySelector('.ttime');
+                const timeText = data.time.title[language];
+                timeElement.textContent = timeText;
+                // Notes
+                const notesContainer = document.getElementById("notesContainer");
+                data.notes.forEach(note => {
+                    const noteElement = document.createElement("div");
+                    noteElement.className = "note";
+                    noteElement.innerHTML = `
+                        <a href="${note.link}">
+                            <span class="notetitle">${note.title[currentLanguage]}</span>
+                            <span class="notetext">${note.text[currentLanguage]}</span>
+                            <div class="noteshape" style="background-color: ${note.color};"></div>
+                            <img src="${note.img}">
+                        </a>
+                    `;
+                    notesContainer.appendChild(noteElement);
+                });
+                $('#notesContainer').slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    arrows: false,
+                });
+                // Pay
+                const payElement = document.querySelector('.tpay');
+                const payText = data.pay.title[language];
+                payElement.textContent = payText;
+                
+                const paybuttonElement = document.querySelector('.tpaybutton');
+                const paybuttonText = data.pay.button[language];
+                paybuttonElement.textContent = paybuttonText;
                 // Reviews
                 const reviewsElement = document.querySelector('.treviews');
                 const reviewsText = data.reviews[language];
@@ -210,25 +227,6 @@
                 const factsbuttonElement = document.querySelector('.tfactsbutton');
                 const factsbuttonText = data.randomfacts.button[language];
                 factsbuttonElement.textContent = factsbuttonText;
-
-                let shownFacts = [];
-                function showRandomFact() {
-                    if (shownFacts.length === data.facts.length) {
-                        shownFacts = [];
-                    }
-                    let randomIndex;
-                    do {
-                        randomIndex = Math.floor(Math.random() * data.facts.length);
-                    } while (shownFacts.includes(randomIndex));
-                    shownFacts.push(randomIndex);
-                    const randomFact = data.facts[randomIndex];
-                    document.getElementById('factImage').src = randomFact.img;
-                    document.getElementById('factText').textContent = randomFact.text[currentLanguage];
-                }
-                showRandomFact();
-                function showAnotherFact() {
-                    showRandomFact();
-                }
                 // Soft
                 const softElement = document.querySelector('.tsoft');
                 const softText = data.tools.soft[language];
@@ -261,7 +259,7 @@
                     `;
                     materialContainer.appendChild(materialElement);
                 });
-            })
-            .catch(error => console.error('Ошибка загрузки файла about.json', error));
     }
     changeabout(currentLanguage);
+})
+.catch(error => console.error('Ошибка загрузки файла about.json', error));

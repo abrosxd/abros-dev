@@ -78,7 +78,7 @@ fetch('main/txt/about.json')
         copyButton.classList.add('copy-success');
 
         setTimeout(() => {
-            copyButton.textContent = datapay.button[language];
+            copyButton.textContent = data.pay.button[language];
             copyButton.classList.remove('copy-success');
         }, 2000);
     }

@@ -1,290 +1,179 @@
-const projects = [
+// Поведение карточек
+const main = document.getElementById('main');
+const container = document.querySelector('.container');
+const preload = document.querySelector('.preloadbg');
+const projectCards = [];
+let loadedImages = 0;
+        
+function loadImage(url, callback) {
+  const img = new Image();
+  img.onload = function () {
+    loadedImages++;
+    callback();
+  };
+  img.src = url;
+}
+        
+function checkLoad() {
+  if (loadedImages === projects.length * 2) {
+    preload.style.opacity = '0';
+    preload.style.visibility = 'hidden';
+    projectCards.forEach(card => card.style.display = 'block');
+    
+    if (window.innerWidth > 768) {
+      main.addEventListener('mousemove', handleMouseMove);
+    } else {
+      projectCards.forEach(card => {
+        card.addEventListener('touchstart', handleTouchStart);
+        card.addEventListener('touchend', handleTouchEnd);
+      });
+    }
+  }
+}
+        
+function handleMouseMove(e) {
+  requestAnimationFrame(() => {
+    const rect = main.getBoundingClientRect();
+    const centerX = e.clientX - rect.left;
+    const centerY = e.clientY - rect.top;
+        
+    projectCards.forEach(card => {
+      const cardRect = card.getBoundingClientRect();
+      const cardX = cardRect.left + cardRect.width / 2;
+      const cardY = cardRect.top + cardRect.height / 2;
+        
+      const deltaX = centerX - cardX;
+      const deltaY = centerY - cardY;
+        
+      const tiltX = deltaX / 20;
+      const tiltY = deltaY / 20;
+        
+      card.style.transform = `rotateX(${-tiltY}deg) rotateY(${tiltX}deg)`;
+    });
+  });
+}
+        
+function handleTouchStart() {
+  this.classList.add('mobcenter');
+}
+        
+function handleTouchEnd() {
+  const card = this;
+  setTimeout(() => {
+    card.classList.remove('mobcenter');
+  }, 500);
+}
+       
+// Создание карточек
+fetch('main/txt/projects.json')
+.then(response => response.json())
+.then(data => {
+  data.projects.forEach(project => {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.style.backgroundImage = `url(${project.img})`;
+    card.style.boxShadow = `0 0 10px ${project.outline}`;
+    card.id = project.id;
+        
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    overlay.style.backgroundImage = `url(${project.overlay})`;
+    card.appendChild(overlay);
+        
+    container.appendChild(card);
+    projectCards.push(card);
+    loadImage(project.img, checkLoad);
+    loadImage(project.overlay, checkLoad);
+  });
+  
+  // Создание Popup
+  function openPopup(id) {
+    const project = data.projects.find(project => project.id === id);
+    const popupContent = document.getElementById('popup-content');
+    popupContent.innerHTML = '';
+    const content = project.content[currentLanguage];
+    
+    content.forEach(item => {
+      const type = item.type;
+      const value = item.value;
 
-  {
-    id: 4,
-    title: "Grushka Endoterapia",
-    img: "main/projects/GrushkaEndo/avatar.png",
-    overlay: "main/projects/GrushkaEndo/overlay.png",
-    outline: "#e29e70",
-    content:
-    {
-      RU: [
-        { type: 'h4-super', value: "Вёрстка лендинга для салона красоты Grushka" },
-        { type: 'img-super', value: "main/projects/GrushkaEndo/logo_mini.png" },
-        { type: 'p-title', value: "Задача состояла в том, чтобы перенести уже имеющийся сайт на платформе Tilda на отдельный хостинг." },
-        { type: 'p-title', value: "Сложность заключалась в том, что Tilda наложила ограничения на аккаунт из-за чего сайт был заблокирован, а экспорт не доступен. Поэтому они обратились ко мне." },
-        { type: 'p-title', value: "И вот конечный результат!" },
-        { type: 'img-super', value: "main/projects/GrushkaEndo/site.png" },
-        { type: 'p-title', value: "Посмотреть сайт можно кликнув по кнопке ниже." },
-      ],
-      EN: [
-        { type: 'h4-super', value: "Designing a landing page for Grushka beauty salon" },
-        { type: 'img-super', value: "main/projects/GrushkaEndo/logo_mini.png" },
-        { type: 'p-title', value: "The task was to transfer the existing website from the Tilda platform to a separate hosting." },
-        { type: 'p-title', value: "The difficulty was that Tilda imposed restrictions on the account, resulting in the website being blocked, and export was not available. That's why they reached out to me." },
-        { type: 'p-title', value: "And here is the final result!" },
-        { type: 'img-super', value: "main/projects/GrushkaEndo/site.png" },
-        { type: 'p-title', value: "To view the website, click the button below." },
-      ],
-      PL: [
-        { type: 'h4-super', value: "Projektowanie strony internetowej (landing page) dla salonu urody Grushka" },
-        { type: 'img-super', value: "main/projects/GrushkaEndo/logo_mini.png" },
-        { type: 'p-title', value: "Zadaniem było przeniesienie istniejącej już strony internetowej na platformie Tilda na osobny hosting." },
-        { type: 'p-title', value: "Trudność polegała na tym, że Tilda nałożyła ograniczenia na konto, co spowodowało zablokowanie strony, a eksport nie był możliwy. Dlatego zwrócili się do mnie." },
-        { type: 'p-title', value: "I oto ostateczny rezultat!" },
-        { type: 'img-super', value: "main/projects/GrushkaEndo/site.png" },
-        { type: 'p-title', value: "Aby zobaczyć stronę, kliknij przycisk poniżej." },
-      ],
-    },
-    hash: "GrushkaEndo",
-    buttonText: {
-      RU: "Перейти на сайт",
-      EN: "Go to website",
-      PL: "Przejdź do strony",
-    },
-    url: "https://cosmetologia.site"
-  },
+      if (type === 'h4-super') {
+        const header = document.createElement('h4');
+        header.textContent = value;
+        header.className = 'popuph4';
+        popupContent.appendChild(header);
+      } else if (type === 'img-super') {
+        const image = document.createElement('img');
+        image.src = value;
+        image.className = 'popupimg';
+        popupContent.appendChild(image);
+      } else if (type === 'p-title') {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = value;
+        paragraph.className = 'popuptitle';
+        popupContent.appendChild(paragraph);
+      }
+    });
 
-  {
-    id: 3,
-    title: "Lampa Abros Store",
-    img: "main/projects/LampaAbrosStore/avatar.png",
-    overlay: "main/projects/LampaAbrosStore/overlay.png",
-    outline: "#ffffff",
-    content:
-    {
-      RU: [
-        { type: 'h4-super', value: "Abros Store - магазин плагинов для Lampa" },
-        { type: 'img-super', value: "main/projects/LampaAbrosStore/logo_mini.png" },
-        { type: 'p-title', value: "Данный проект представляет из себя плагин для онлайн кинотеатра Lampa. С его помощью можно в один клик устанавливать все возможные доступные плагины для данного кинотеатра." },
-        { type: 'p-title', value: "Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros Store." },
-        { type: 'img-super', value: "main/projects/LampaAbrosStore/storemenu.png" },
-        { type: 'p-title', value: "На данный момент добавлены лишь основные известные плагины, со временем магазин будет расширяться." },
-        { type: 'p-title', value: "Однако уже сейчас интегрирована проверка статуса плагина. Если какой-то плагин перестал работать - вы это увидите!" },
-        { type: 'img-super', value: "main/projects/LampaAbrosStore/checkstatus.png" },
-        { type: 'p-title', value: "Ознакомится с проектом подробнее можно кликнув по кнопке ниже." },
-      ],
-      EN: [
-        { type: 'h4-super', value: "Abros Store - a plugin store for Lampa" },
-        { type: 'img-super', value: "main/projects/LampaAbrosStore/logo_mini.png" },
-        { type: 'p-title', value: "This project is a plugin for the online cinema Lampa. With it, you can install all available plugins for this cinema with just one click." },
-        { type: 'p-title', value: "This store simplifies interaction with the Lampa service. Now, there's no need to search for plugins on the internet and add them manually; everything is already available in Abros Store." },
-        { type: 'img-super', value: "main/projects/LampaAbrosStore/storemenu.png" },
-        { type: 'p-title', value: "Currently, only the basic, well-known plugins have been added, but over time, the store will expand." },
-        { type: 'p-title', value: "However, the plugin status check has already been integrated. If any plugin stops working, you'll see it!" },
-        { type: 'img-super', value: "main/projects/LampaAbrosStore/checkstatus.png" },
-        { type: 'p-title', value: "To learn more about the project, click the button below." },
-      ],
-      PL: [
-        { type: 'h4-super', value: "Sklep Abros - sklep z wtyczkami do Lampy" },
-        { type: 'img-super', value: "main/projects/LampaAbrosStore/logo_mini.png" },
-        { type: 'p-title', value: "Ten projekt to wtyczka do internetowego kina Lampa. Za jej pomocą można jednym kliknięciem instalować wszystkie dostępne wtyczki dla tego kina." },
-        { type: 'p-title', value: "Ten sklep ułatwia korzystanie z usługi Lampa. Teraz nie trzeba już szukać wtyczek w internecie i dodawać ich ręcznie - wszystko jest już dostępne w Abros Store." },
-        { type: 'img-super', value: "main/projects/LampaAbrosStore/storemenu.png" },
-        { type: 'p-title', value: "Obecnie dodano tylko podstawowe, znane wtyczki, ale w przyszłości sklep będzie się rozwijał." },
-        { type: 'p-title', value: "Jednak już teraz zaimplementowano sprawdzanie stanu wtyczki. Jeśli któraś wtyczka przestanie działać, zauważysz to!" },
-        { type: 'img-super', value: "main/projects/LampaAbrosStore/checkstatus.png" },
-        { type: 'p-title', value: "Aby uzyskać więcej informacji na temat projektu, kliknij przycisk poniżej." },
-      ],
-    },
-    hash: "LampaAbrosStore",
-    buttonText: {
-      RU: "Перейти к проекту",
-      EN: "Go to project",
-      PL: "Przejdź do projektu",
-    },
-    url: "https://abros.me/lampa"
-  },
+    const popupMenu = document.getElementById('popup-menu');
+    popupMenu.innerHTML = `
+      <a class="button" href="${project.url}" target="_blank">${project.buttonText[currentLanguage]}</a>
+        <span class="button close-btn" id="close-btn" onclick="closePopup()">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0,0,256,256">
+            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+              <g transform="scale(8.53333,8.53333)">
+                <path d="M7,4c-0.25587,0 -0.51203,0.09747 -0.70703,0.29297l-2,2c-0.391,0.391 -0.391,1.02406 0,1.41406l7.29297,7.29297l-7.29297,7.29297c-0.391,0.391 -0.391,1.02406 0,1.41406l2,2c0.391,0.391 1.02406,0.391 1.41406,0l7.29297,-7.29297l7.29297,7.29297c0.39,0.391 1.02406,0.391 1.41406,0l2,-2c0.391,-0.391 0.391,-1.02406 0,-1.41406l-7.29297,-7.29297l7.29297,-7.29297c0.391,-0.39 0.391,-1.02406 0,-1.41406l-2,-2c-0.391,-0.391 -1.02406,-0.391 -1.41406,0l-7.29297,7.29297l-7.29297,-7.29297c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297z"></path>
+              </g>
+            </g>
+           </svg>
+        </span>
+    `;
+    const overlay = document.getElementById('overlay-popup');
+    const popup = document.getElementById('popup');
+          
+    overlay.style.opacity = 1;
+    overlay.style.visibility = 'visible';
+    popup.style.opacity = 1;
+    popup.style.visibility = 'visible';
+    popupMenu.style.opacity = 1;
+    popupMenu.style.visibility = 'visible';
 
-  {
-    id: 2,
-    title: "DEUS",
-    img: "main/projects/DEUS/avatar.png",
-    overlay: "main/projects/DEUS/overlay.png",
-    outline: "#00ff00",
-    content:
-    {
-      RU: [
-        { type: 'h4-super', value: "DEUS - защита контента" },
-        { type: 'img-super', value: "main/projects/DEUS/logo_mini.jpeg" },
-        { type: 'p-title', value: "Прежде чем рассказать о истории проекта и его создании, давайте посмотрим что это." },
-        { type: 'p-title', value: "DEUS - система-библиотека для удалённого контроля принадлежащих ей модулей." },
-        { type: 'p-title', value: "Простыми словами это система, которая подключается к сайту и следует определенным правилам, которые ей передают сами пользователи." },
-        { type: 'p-title', value: "Модуль BD - это системный модуль, он отвечает за проверку правил для сайта и подключение остальных модулей. На момент разработки являлся главным модулем системы и визуальную часть не имел." },
-        { type: 'img-super', value: "main/projects/DEUS/module_bd.jpeg" },
-        { type: 'p-title', value: "Модуль ADS - это рекламный модуль. Он время от времени появляется на сайте в подвале. Таким образом реализовано бесплатное пользование системой взамен на показ рекламы от партнёров." },
-        { type: 'img-super', value: "main/projects/DEUS/module_ads.jpeg" },
-        { type: 'p-title', value: "Модуль Noti - это модуль уведомлений. Основная цель создания модуля это информационный контакт с пользователем. Текст для уведомления можно редактировать и таким образом можно информировать пользователей о временных технических работах, блокировке сайта и т.п." },
-        { type: 'img-super', value: "main/projects/DEUS/module_noti.gif" },
-        { type: 'p-title', value: "Модуль Blocker - это модуль отвечающий за наказания. Данный модуль применяется в случаях когда заказчик не оплатил работу и сменил все доступы так, что вы остались без денег и ваш труд отдан за бесплатно. В этом случае в работу вступает этот модуль применяя выбранный вами эффект к проекту." },
-        { type: 'img-super', value: "main/projects/DEUS/module_blocker.gif" },
-        { type: 'p-title', value: "Данный проект разрабатывался для личных целей, но со временем другие видя его в действии начали просить подключить и им тоже. Как итог теперь вы видите это творение." },
-        { type: 'p-title', value: "Альфа версия (когда проект был только для меня) находилась непосредственно в проекте, что немного затрудняло работу с ним напрямую. Но так как это было только для личного использования - меня устраивало." },
-        { type: 'img-super', value: "main/projects/DEUS/alpha_1.jpeg" },
-        { type: 'p-title', value: "Как только этот проект пошёл по знакомым было решено переписать структуру, логику и принцип работы полностью. Ведь большинство тех, кто этим пользовался никогда не работал с кодом." },
-        { type: 'p-title', value: "Первым лучшим решением было - раделение системы на модули. Из базы данных проверяется какие модули подключены к сайту и подгружает их. Сделано это для удобства управления и конечно же для того, чтобы значительно снизить нагрузку на сайт." },
-        { type: 'p-title', value: "Вторым решением было упростить жизнь пользователям, вместо того чтобы поражаться тому какой огромный код им надо куда-то копировать, вся система была реализована как подключаемая библиотека." },
-        { type: 'img-super', value: "main/projects/DEUS/alpha_2.jpeg" },
-        { type: 'p-title', value: "И последним, но не менее важным решением было сделать открытый исходный код. Да, всю систему можно с лёгкостью найти на GitHub. И каждый может изменить её под свои нужды." },
+    popup.scrollTop = 0;
 
-      ],
-      EN: [
-        { type: 'h4-super', value: "DEUS - Content Protection" },
-        { type: 'img-super', value: "main/projects/DEUS/logo_mini.jpeg" },
-        { type: 'p-title', value: "Before telling the project's story and its creation, let's see what it is." },
-        { type: 'p-title', value: "DEUS is a system-library for remote control of its modules." },
-        { type: 'p-title', value: "In simple terms, it is a system that connects to a website and follows certain rules that users transmit to it." },
-        { type: 'p-title', value: "Module BD is a system module responsible for checking rules for the site and connecting other modules. At the development stage, it was the main system module and did not have a visual part." },
-        { type: 'img-super', value: "main/projects/DEUS/module_bd.jpeg" },
-        { type: 'p-title', value: "Module ADS is an advertising module. It appears on the site's footer from time to time. In this way, free use of the system is implemented in exchange for showing ads from partners." },
-        { type: 'img-super', value: "main/projects/DEUS/module_ads.jpeg" },
-        { type: 'p-title', value: "Module Noti is a notification module. The main goal of creating the module is informational contact with the user. The text for notification can be edited, and in this way, users can be informed about temporary technical work, site blocking, etc." },
-        { type: 'img-super', value: "main/projects/DEUS/module_noti.gif" },
-        { type: 'p-title', value: "Module Blocker is a module responsible for penalties. This module is used in cases where the customer did not pay for the work and changed all accesses so that you were left without money and your work was given away for free. In this case, this module comes into play, applying the effect you choose to the project." },
-        { type: 'img-super', value: "main/projects/DEUS/module_blocker.gif" },
-        { type: 'p-title', value: "This project was developed for personal purposes, but over time, other types of it began to ask to connect them too. As a result, you now see this creation." },
-        { type: 'p-title', value: "The alpha version (when the project was only for me) was directly in the project, which made it a bit difficult to work with it directly. But since it was only for personal use, it suited me." },
-        { type: 'img-super', value: "main/projects/DEUS/alpha_1.jpeg" },
-        { type: 'p-title', value: "As soon as this project gained traction, it was decided to completely rewrite the structure, logic, and operation principles. After all, the majority of those who used it had never worked with code." },
-        { type: 'p-title', value: "The first and best solution was to divide the system into modules. The database checks which modules are connected to the site and loads them. This was done for ease of management and, of course, to significantly reduce the load on the site." },
-        { type: 'p-title', value: "The second solution was to simplify the lives of users. Instead of being amazed at how much code they had to copy somewhere, the entire system was implemented as a plug-in library." },
-        { type: 'img-super', value: "main/projects/DEUS/alpha_2.jpeg" },
-        { type: 'p-title', value: "And last but not least, the decision was made to make the source code open. Yes, the entire system can easily be found on GitHub. And anyone can modify it to suit their needs." },
+    window.location.hash = `#${project.hash}`;
+  }
 
-      ],
-      PL: [
-        { type: 'h4-super', value: "DEUS - ochrona treści" },
-        { type: 'img-super', value: "main/projects/DEUS/logo_mini.jpeg" },
-        { type: 'p-title', value: "Zanim opowiemy historię projektu i jego tworzenia, zobaczmy, co to jest." },
-        { type: 'p-title', value: "DEUS - to system-biblioteka do zdalnej kontroli jej modułów." },
-        { type: 'p-title', value: "Prosto mówiąc, to system, który łączy się ze stroną i przestrzega określonych zasad, które użytkownicy przekazują mu sami." },
-        { type: 'p-title', value: "Moduł BD - to moduł systemowy, odpowiedzialny za sprawdzanie reguł dla strony i podłączanie pozostałych modułów. Na etapie rozwoju był głównym modułem systemu i nie miał części wizualnej." },
-        { type: 'img-super', value: "main/projects/DEUS/module_bd.jpeg" },
-        { type: 'p-title', value: "Moduł ADS - to moduł reklamowy. Pojawia się na stronie od czasu do czasu w stopce. W ten sposób realizowane jest bezpłatne korzystanie z systemu w zamian za wyświetlanie reklam od partnerów." },
-        { type: 'img-super', value: "main/projects/DEUS/module_ads.jpeg" },
-        { type: 'p-title', value: "Moduł Noti - to moduł powiadomień. Głównym celem tworzenia modułu jest kontakt informacyjny z użytkownikiem. Tekst powiadomienia można edytować, co umożliwia informowanie użytkowników o czasowych pracach technicznych, blokadach strony itp." },
-        { type: 'img-super', value: "main/projects/DEUS/module_noti.gif" },
-        { type: 'p-title', value: "Moduł Blocker - to moduł odpowiedzialny za kary. Ten moduł jest stosowany w przypadkach, gdy klient nie opłacił pracy i zmienił wszystkie dostępy w ten sposób, że pozostajesz bez pieniędzy, a twoja praca została oddana za darmo. W takim przypadku ten moduł wchodzi w akcję, stosując wybrany przez ciebie efekt do projektu." },
-        { type: 'img-super', value: "main/projects/DEUS/module_blocker.gif" },
-        { type: 'p-title', value: "Ten projekt był początkowo rozwijany dla osobistych celów, ale z czasem inni zaczęli prosić o podłączenie go i korzystanie z niego również. Teraz widzisz to dzieło." },
-        { type: 'p-title', value: "Wersja alfa (kiedy projekt był tylko dla mnie) była bezpośrednio w projekcie, co trochę utrudniło pracę z nim bezpośrednio. Ale ponieważ był to tylko dla osobistego użytku - mnie to zadowalało." },
-        { type: 'img-super', value: "main/projects/DEUS/alpha_1.jpeg" },
-        { type: 'p-title', value: "Kiedy ten projekt zaczął być używany przez znajomych, postanowiono całkowicie przepisać jego strukturę, logikę i sposób działania. Większość użytkowników nie miała doświadczenia w pracy z kodem, dlatego to było konieczne." },
-        { type: 'p-title', value: "Pierwszym najlepszym rozwiązaniem było podzielenie systemu na moduły. Baza danych sprawdza, które moduły są podłączone do strony i wczytuje je. Zrobiono to dla wygody zarządzania i oczywiście, aby znacząco zmniejszyć obciążenie strony." },
-        { type: 'p-title', value: "Drugim rozwiązaniem było uproszczenie życia użytkowników. Zamiast zastanawiać się, jaki ogromny kod trzeba gdzieś skopiować, cały system został zaimplementowany jako biblioteka do podłączania." },
-        { type: 'img-super', value: "main/projects/DEUS/alpha_2.jpeg" },
-        { type: 'p-title', value: "I ostatnim, ale nie mniej ważnym rozwiązaniem, było udostępnienie kodu źródłowego. Tak, cały system łatwo można znaleźć na GitHubie. I każdy może go dostosować do swoich potrzeb." },
+  function closePopup() {
+    const overlay = document.getElementById('overlay-popup');
+    const popup = document.getElementById('popup');
+    const popupMenu = document.getElementById('popup-menu');
+          
+    overlay.style.opacity = 0;
+    overlay.style.visibility = 'hidden';
+    popup.style.opacity = 0;
+    popup.style.visibility = 'hidden';
+    popupMenu.style.opacity = 0;
+    popupMenu.style.visibility = 'hidden';
 
-      ],
-    },
-    hash: "DEUS",
-    buttonText: {
-      RU: "Перейти на сайт проекта",
-      EN: "Go to project website",
-      PL: "Przejdź na stronę projektu",
-    },
-    url: "https://deusnotam.github.io"
-  },
+    history.replaceState(null, document.title, window.location.pathname + window.location.search);
+  }
+          
+  const projectCard = document.querySelectorAll('.project-card');
+  projectCard.forEach(card => {
+    card.addEventListener('click', () => {
+      const projectId = parseInt(card.id) ;
+      openPopup(projectId);
+    });
+  });
 
-  {
-    id: 1,
-    title: "VADI",
-    img: "main/projects/VADI/avatar.png",
-    overlay: "main/projects/VADI/overlay.png",
-    outline: "#006CFF",
-    content: {
-      RU: [
-        { type: 'h4-super', value: "Дизайн для стримера VADI" },
-        { type: 'p-title', value: "Дизайн игрового оверлея выполнен в неоновом стиле по запросу заказчика. Также была добавлена шапка, которая не слишком привлекает внимание, но содержит нужную информацию о стриме." },
-        { type: 'img-super', value: "main/projects/VADI/gameoverlay.png" },
-        { type: 'p-title', value: "Дизайн браузерного оверлея был дополнительным желанием, так как иногда стрим проходит не в игровом формате, а в познавательно-развлекательном." },
-        { type: 'img-super', value: "main/projects/VADI/browseroverlay.png" },
-        { type: 'p-title', value: "Создание стикер-пака оказалось более сложным, так как заказчик сам не знал, что именно ему нужно. Пришлось потратить немало времени на отслеживание часто используемых фраз и приколов среди зрителей." },
-        { type: 'img-super', value: "main/projects/VADI/emoji.png" },
-      ],
-      EN: [
-        { type: 'h4-super', value: "Design for streamer VADI" },
-        { type: 'p-title', value: "The design of the gaming overlay was done in neon style as per the customer's request. Also, a header was added that does not attract too much attention but contains the necessary information about the stream." },
-        { type: 'img-super', value: "main/projects/VADI/gameoverlay.png" },
-        { type: 'p-title', value: "Designing a browser overlay was an additional wish, as sometimes the stream is not in gaming format, but in an informative-entertaining format." },
-        { type: 'img-super', value: "main/projects/VADI/browseroverlay.png" },
-        { type: 'p-title', value: "Creating a sticker pack was more difficult because the client himself did not know exactly what he needed. It took a lot of time to track frequently used phrases and jokes among viewers." },
-        { type: 'img-super', value: "main/projects/VADI/emoji.png" },
-      ],
-      PL: [
-        { type: 'h4-super', value: "Projekt dla streamera VADI" },
-        { type: 'p-title', value: "Projekt nakładki gry wykonano w stylu neonowym na życzenie klienta. Dodano również nagłówek, który nie przyciąga zbyt wiele uwagi, ale zawiera potrzebne informacje o transmisji." },
-        { type: 'img-super', value: "main/projects/VADI/gameoverlay.png" },
-        { type: 'p-title', value: "Projekt nakładki na przeglądarkę był dodatkowym życzeniem, ponieważ czasami transmisja odbywa się nie w formacie gry, ale w formie poznawczo-rozrywkowej." },
-        { type: 'img-super', value: "main/projects/VADI/browseroverlay.png" },
-        { type: 'p-title', value: "Tworzenie pakietu naklejek było bardziej skomplikowane, ponieważ klient sam nie wiedział dokładnie, czego potrzebuje. Zajęło to dużo czasu na śledzenie często używanych fraz i dowcipów wśród widzów." },
-        { type: 'img-super', value: "main/projects/VADI/emoji.png" },
-      ],
-    },
-    hash: "VADI",
-    buttonText: {
-      RU: "YouTube канал стримера",
-      EN: "Streamer's YouTube channel",
-      PL: "Kanał YouTube streamera",
-    },
-    url: "https://www.youtube.com/@VadiHS"
-  },
-
-  {
-    id: 0,
-    title: "RedcrossHIF",
-    img: "main/projects/RedcrossHIF/avatar.png",
-    overlay: "main/projects/RedcrossHIF/overlay.png",
-    outline: "#de443a",
-    content:
-    {
-      RU: [
-        { type: 'h4-super', value: "Красный крест - есть смысл жить" },
-        { type: 'p-title', value: "Для данного проекта было разработанно интерактивное колесо ответов" },
-        { type: 'p-title', value: "Сложность заключалась в том, что нужно было реализовать модификацию так, чтобы с ней можно было в дальнейшем работать дизайнеру на Tilda." },
-        { type: 'p-title', value: "Обсудив детали с дизайнером было решено сделать максимально гибкую модификацию." },
-        { type: 'p-title', value: "В итоге получилось реализовать код, который помещается в элемент HTML в Zero-блок." },
-        { type: 'img-super', value: "main/projects/RedcrossHIF/codeblock.jpeg" },
-        { type: 'p-title', value: "В десктопной версии колесо статично и показывает нужный popup при выборе определенных секторов." },
-        { type: 'img-super', value: "main/projects/RedcrossHIF/desktop.gif" },
-        { type: 'p-title', value: "В мобильной версии всё точно так же, но был реализован запрос на вращение, так как заказчику нравится этот вариант." },
-        { type: 'img-super', value: "main/projects/RedcrossHIF/mobile.gif" },
-        { type: 'p-title', value: "Взглянуть на рабочий проект можно по кнопке ниже." },
-      ],
-      EN: [
-        { type: 'h4-super', value: "Red Cross - there is a meaning to live" },
-        { type: 'p-title', value: "For this project, an interactive wheel of answers was developed" },
-        { type: 'p-title', value: "The complexity was in the fact that it was necessary to implement the modification in such a way that the designer could work with it in the future on Tilda." },
-        { type: 'p-title', value: "After discussing the details with the designer, it was decided to make the modification as flexible as possible." },
-        { type: 'p-title', value: "As a result, it was possible to implement code that fits into an HTML element in a Zero block." },
-        { type: 'img-super', value: "main/projects/RedcrossHIF/codeblock.jpeg" },
-        { type: 'p-title', value: "In the desktop version, the wheel is static and shows the necessary popup when selecting certain sectors." },
-        { type: 'img-super', value: "main/projects/RedcrossHIF/desktop.gif" },
-        { type: 'p-title', value: "In the mobile version, everything is the same, but a rotation request was implemented, as the customer likes this option." },
-        { type: 'img-super', value: "main/projects/RedcrossHIF/mobile.gif" },
-        { type: 'p-title', value: "You can view the working project by clicking the button below." },
-      ],
-      PL: [
-        { type: 'h4-super', value: "Czerwony Krzyż - ma sens życia" },
-        { type: 'p-title', value: "Dla tego projektu zostało opracowane interaktywne koło odpowiedzi" },
-        { type: 'p-title', value: "Trudność polegała na tym, że trzeba było zrealizować modyfikację tak, aby można było z nią dalej pracować projektantowi na Tilda." },
-        { type: 'p-title', value: "Po omówieniu szczegółów z projektantem zdecydowano się na maksymalnie elastyczną modyfikację." },
-        { type: 'p-title', value: "W rezultacie udało się zrealizować kod, który można umieścić w elemencie HTML w bloku Zero." },
-        { type: 'img-super', value: "main/projects/RedcrossHIF/codeblock.jpeg" },
-        { type: 'p-title', value: "W wersji desktopowej koło jest statyczne i wyświetla odpowiedni popup po wybraniu określonych sektorów." },
-        { type: 'img-super', value: "main/projects/RedcrossHIF/desktop.gif" },
-        { type: 'p-title', value: "W wersji mobilnej wszystko jest takie samo, ale został zrealizowany żądanie obrotu, ponieważ klientowi podoba się ten wariant." },
-        { type: 'img-super', value: "main/projects/RedcrossHIF/mobile.gif" },
-        { type: 'p-title', value: "Możesz zobaczyć projekt roboczy klikając poniższy przycisk." },
-      ],
-    },
-    hash: "RedcrossHIF",
-    buttonText: {
-      RU: "Перейти на сайт проекта",
-      EN: "Go to project website",
-      PL: "Przejdź na stronę projektu",
-    },
-    url: "https://hiv.redcross.ru"
-  },
-                              
-];
+  window.addEventListener('load', () => {
+    const hash = window.location.hash.substr(1);
+    if (hash) {
+      const project = projects.find(project => project.hash === hash);
+      if (project) {
+        openPopup(project.id);
+      }
+    }
+  });
+})
+.catch(error => console.error('Ошибка загрузки файла projects.json', error));

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+
 
     // Смена языка About
     function changeabout(language) {
@@ -265,5 +265,3 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Ошибка загрузки файла about.json', error));
     }
     changeabout(currentLanguage);
-  
-  });

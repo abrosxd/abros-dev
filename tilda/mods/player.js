@@ -126,15 +126,15 @@ const autoplay = () => {
 
 const trackLink = (product) => {
     // return product.characteristics.find(song => song.title === 'music').value;
-    if (product && product.characteristics) {
+    if (product && product.characteristics && Array.isArray(product.characteristics)) {
         const musicCharacteristic = product.characteristics.find(char => char.title === 'music');
-        if (musicCharacteristic) {
+        if (musicCharacteristic && musicCharacteristic.value) {
             return musicCharacteristic.value;
         } else {
-            console.error('Характеристика "music" отсутствует для продукта:', product.title);
+            console.error('Характеристика "music" не найдена для продукта или отсутствует значение');
         }
     } else {
-        console.error('Свойство characteristics отсутствует для продукта:', product.title);
+        console.error('Некорректная структура объекта продукта или отсутствуют характеристики');
     }
     return null;
 }

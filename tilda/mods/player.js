@@ -124,8 +124,8 @@ const autoplay = () => {
     audio.addEventListener('ended', playNext, false);
 }
 
-const trackLink = (product) => {
-    return product.characteristics.find(song => song.title === 'music').value;
+const trackLink = (products) => {
+    return products.characteristics.find(song => song.title === 'music').value;
 }
 
 const playPauseBtnOnProduct = (e, product) => {

@@ -155,7 +155,8 @@ const playPauseBtnOnProduct = (e, product) => {
 
 const enter = (e) => {
     e.preventDefault();
-    product = e.target.closest('.js-product');
+    const productLid = e.target.closest('.js-product').dataset.productLid;
+    const product = playlist.find(item => item.uid === parseInt(productLid));
     playPauseBtnOnProduct(e, product);
 }
 
@@ -167,8 +168,7 @@ const leave = (e) => {
 const playPause = (e) => {
     if (e.target.classList.contains('btn-music')) {
         e.preventDefault();
-        const productLid = e.target.closest('.js-product').dataset.productLid;
-        const product = playlist.find(item => item.uid === parseInt(productLid));
+        product = e.target.closest('.js-product');
         let pagination = catalog.querySelector('.t-store__pagination');
         let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
         let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;

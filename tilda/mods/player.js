@@ -124,14 +124,11 @@ const autoplay = () => {
     audio.addEventListener('ended', playNext, false);
 }
 
-// const trackLink = (product) => {
-//     return product.characteristics.find(song => song.title === 'music').value;
-// }
+const trackLink = (product) => {
+    return product.characteristics.find(song => song.title === 'music').value;
+}
 
 const playPauseBtnOnProduct = (e, product) => {
-    const trackLink = (product) => {
-        return product.characteristics.find(song => song.title === 'music').value;
-    }
     console.log("Product:", product);
     console.log("Playlist:", playlist);
     let pagination = catalog.querySelector('.t-store__pagination');
@@ -155,8 +152,7 @@ const playPauseBtnOnProduct = (e, product) => {
 
 const enter = (e) => {
     e.preventDefault();
-    product = e.target.closest('.js-product');
-    // productId = product.dataset.productLid;
+    const product = e.target.closest('.js-product').dataset.productLid;
     playPauseBtnOnProduct(e, product);
 }
 

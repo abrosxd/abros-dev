@@ -167,11 +167,14 @@ const playPause = (e) => {
     if (e.target.classList.contains('btn-music')) {
         e.preventDefault();
         product = e.target.closest('.js-product');
+        if (!product) return;
         let pagination = catalog.querySelector('.t-store__pagination');
         let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
         let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
-        trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
-        let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : trackLink(playlist[0]);
+        // trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
+        if (trackNum < 0 || trackNum >= playlist.length) return;
+        // let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : trackLink(playlist[0]);
+        let track = trackLink(playlist[trackNum]);
         if (audio.src !== track) {
             for (let pauseBtn of storeGrid.querySelectorAll('.btn-music.pause')) {
                 pauseBtn.classList.remove('pause');

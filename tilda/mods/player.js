@@ -142,9 +142,7 @@ const playPauseBtnOnProduct = (e, product) => {
     playWrapper.classList.add('play-wrapper');
     let playPauseBtn = document.createElement('div');
     playPauseBtn.classList.add('btn-music');
-    // isPlaying() && audio.src === track ? playPauseBtn.classList.add('pause') : playPauseBtn.classList.add('play');
-    playPauseBtn.classList.toggle('pause', isPlaying());
-    playPauseBtn.classList.toggle('play', !isPlaying());
+    isPlaying() && audio.src === track ? playPauseBtn.classList.add('pause') : playPauseBtn.classList.add('play');
     playWrapper.appendChild(playPauseBtn);
     // let multipoint = document.createElement('div');
     // multipoint.classList.add('multipoint');
@@ -179,6 +177,7 @@ const playPause = (e) => {
         let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
         console.log("TrackNum:", trackNum);
         console.log("Track:", track);
+        console.log("Playlist:", playlist);
         if (audio.src !== track) {
             for (let pauseBtn of storeGrid.querySelectorAll('.btn-music.pause')) {
                 pauseBtn.classList.remove('pause');

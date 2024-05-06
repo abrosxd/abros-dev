@@ -125,7 +125,6 @@ const autoplay = () => {
 }
 
 const trackLink = (product) => {
-    // return product.characteristics.find(song => song.title === 'music').value;
     if (!product || !product.characteristics) {
         console.error("Product or its characteristics not found:", product);
         return null;
@@ -175,16 +174,6 @@ const playPause = (e) => {
         let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
         let trackNum = productsArr.indexOf(product);
         trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
-        // let track = trackNum !== 0 ? trackLink(playlist[trackNum]) : trackLink(playlist[0]);
-        
-        console.log("trackNum:", trackNum);
-        console.log("activePage:", activePage);
-        console.log("productsArr.indexOf(product):", productsArr.indexOf(product));
-        console.log("(activePage - 1) * tracksOnPage:", (activePage - 1) * tracksOnPage);
-        console.log("productsArr:", productsArr);
-        console.log("product:", product);
-        console.log("Index of product in productsArr:", productsArr.indexOf(product));
-
         let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
         if (audio.src !== track) {
             for (let pauseBtn of storeGrid.querySelectorAll('.btn-music.pause')) {
@@ -286,7 +275,6 @@ const getProduct = (id) => {
         d.onload = function() {
             if (d.readyState === d.DONE && 200 === d.status) {
                 let response = JSON.parse(d.responseText);
-                // console.log(response)
                 if (response.product.characteristics.length > 0) {
                     let chars = response.product.characteristics;
                     let link = chars.find(song => song.title === 'music').value;

@@ -135,8 +135,10 @@ const trackLink = (product) => {
 const playPauseBtnOnProduct = (e, product) => {
     let pagination = catalog.querySelector('.t-store__pagination');
     let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
+    console.log('Active Page:', activePage);
     let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
     trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
+    console.log('Tracks on Page:', tracksOnPage);
     let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
     console.log('TrackNum:', trackNum);
     console.log('Track:', track);
@@ -145,12 +147,7 @@ const playPauseBtnOnProduct = (e, product) => {
     playWrapper.classList.add('play-wrapper');
     let playPauseBtn = document.createElement('div');
     playPauseBtn.classList.add('btn-music');
-    // isPlaying() && audio.src === track ? playPauseBtn.classList.add('pause') : playPauseBtn.classList.add('play');
-    if (isPlaying() && audio.src === track) {
-        playPauseBtn.classList.add('pause');
-    } else {
-        playPauseBtn.classList.add('play');
-    }
+    isPlaying() && audio.src === track ? playPauseBtn.classList.add('pause') : playPauseBtn.classList.add('play');
     playWrapper.appendChild(playPauseBtn);
     // let multipoint = document.createElement('div');
     // multipoint.classList.add('multipoint');

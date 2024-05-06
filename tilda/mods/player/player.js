@@ -417,7 +417,7 @@ stylePlayer.textContent = `
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, .4);
-        border-radius: var(--br-xl);
+        /* border-radius: var(--br-xl); */
     }
     /* Кнопки play/pause */
     .btn-music {
@@ -437,7 +437,8 @@ stylePlayer.textContent = `
         transform: translate(-50%, -50%) scale(110%);
     }
     .play {
-        background-image: url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg);
+        background-image: url(https://abros.me/tilda/mods/player/icons/cover_play.svg);
+        fill: orange;
     }
     .pause {
         background-image: url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg);

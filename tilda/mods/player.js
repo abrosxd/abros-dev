@@ -130,9 +130,6 @@ const trackLink = (product) => {
 }
 
 const playPauseBtnOnProduct = (e, product) => {
-    console.log("Product:", product);
-    console.log("Playlist:", playlist);
-    console.log(product.characteristics);
     let pagination = catalog.querySelector('.t-store__pagination');
     let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
     let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
@@ -175,7 +172,8 @@ const playPause = (e) => {
         let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
         trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
         // let track = trackNum !== 0 ? trackLink(playlist[trackNum]) : trackLink(playlist[0]);
-        let track = playlist[trackNum] ? trackLink(playlist[trackNum]) : null;
+        console.log("trackNum:", trackNum);
+        let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
         if (audio.src !== track) {
             for (let pauseBtn of storeGrid.querySelectorAll('.btn-music.pause')) {
                 pauseBtn.classList.remove('pause');
@@ -340,7 +338,6 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
     });
     getProducts(idArr).then(res => {
         if (res) {
-            console.log("RES:", res);
             playlist = res;
             playlist = playlist.sort((a, b) => idArr.indexOf(a.uid) - idArr.indexOf(b.uid));
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

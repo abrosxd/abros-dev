@@ -116,7 +116,6 @@ const isPlaying = () => {
 }
 
 const nowPlaying = () => {
-    // product.characteristics.find(song => song.title === 'music').value
     return playlist[Number(audio.dataset.trackNumber)];
 }
 
@@ -155,6 +154,7 @@ const playPauseBtnOnProduct = (e, product) => {
 
 const enter = (e) => {
     e.preventDefault();
+    // product = e.target.closest('.js-product');
     const productLid = e.target.closest('.js-product').dataset.productLid;
     const product = playlist.find(item => item.uid === parseInt(productLid));
     playPauseBtnOnProduct(e, product);
@@ -168,14 +168,13 @@ const leave = (e) => {
 const playPause = (e) => {
     if (e.target.classList.contains('btn-music')) {
         e.preventDefault();
-        const productLid = e.target.closest('.js-product').dataset.productLid;
-        const product = playlist.find(item => item.uid === parseInt(productLid));
+        product = e.target.closest('.js-product');
         if (!product) return;
         let pagination = catalog.querySelector('.t-store__pagination');
         let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
-        let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
+        let trackNum = productsArr.indexOf(product);
         trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
-        let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : trackLink(playlist[0]);
+        let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
         if (audio.src !== track) {
             for (let pauseBtn of storeGrid.querySelectorAll('.btn-music.pause')) {
                 pauseBtn.classList.remove('pause');
@@ -265,7 +264,7 @@ const progressListen = (e) => {
 
 const getProduct = (id) => {
     return new Promise((resolve, reject) => {
-        let storepart = 204361755101;
+        let storepart = window.AbrosTildaPlayer.storepart;
         let n = {
                 storepartuid: storepart,
                 recid: parseInt(catalog.id.substr(3)),
@@ -276,7 +275,6 @@ const getProduct = (id) => {
         d.onload = function() {
             if (d.readyState === d.DONE && 200 === d.status) {
                 let response = JSON.parse(d.responseText);
-                console.log(response)
                 if (response.product.characteristics.length > 0) {
                     let chars = response.product.characteristics;
                     let link = chars.find(song => song.title === 'music').value;
@@ -327,7 +325,6 @@ const getProducts = (idArr) => {
 }
 
 storeGrid.addEventListener('tStoreRendered', function(e) {
-    console.log(productsArr)
     let popup = catalog.querySelector('.t-popup');
     popup ? popup.remove() : false;
     products = storeGrid.querySelectorAll('.js-product');
@@ -354,17 +351,16 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
                     cover.addEventListener('mouseenter', enter);
                     cover.addEventListener('mouseleave', leave);
                 }
-                let areaBottom = document.querySelector('#area-bottom');
-                areaBottom.removeEventListener('mouseenter', areaEnter);
-                areaBottom.removeEventListener('mouseleave', areaLeave);
-                areaBottom.addEventListener('mouseenter', areaEnter);
-                areaBottom.addEventListener('mouseleave', areaLeave);
+                area.removeEventListener('mouseenter', areaEnter);
+                area.removeEventListener('mouseleave', areaLeave);
+                area.addEventListener('mouseenter', areaEnter);
+                area.addEventListener('mouseleave', areaLeave);
             }
             player.removeEventListener('mouseover', () => { onElement = true });
             player.removeEventListener('mouseleave', () => { onElement = false });
             player.addEventListener('mouseover', () => { onElement = true });
             player.addEventListener('mouseleave', () => { onElement = false });
-            // playerInfo();
+            playerInfo();
         } else {
             console.error('Ошибка');
         }

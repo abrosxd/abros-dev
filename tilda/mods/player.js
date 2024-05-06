@@ -268,7 +268,7 @@ const getProduct = (id) => {
         d.onload = function() {
             if (d.readyState === d.DONE && 200 === d.status) {
                 let response = JSON.parse(d.responseText);
-                console.log(response)
+                // console.log(response)
                 if (response.product.characteristics.length > 0) {
                     let chars = response.product.characteristics;
                     let link = chars.find(song => song.title === 'music').value;
@@ -319,7 +319,6 @@ const getProducts = (idArr) => {
 }
 
 storeGrid.addEventListener('tStoreRendered', function(e) {
-    console.log("ArrPr", productsArr)
     let popup = catalog.querySelector('.t-popup');
     popup ? popup.remove() : false;
     products = storeGrid.querySelectorAll('.js-product');

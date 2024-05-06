@@ -143,10 +143,9 @@ const playPauseBtnOnProduct = (e, product) => {
     let pagination = catalog.querySelector('.t-store__pagination');
     let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
     console.log('Active Page:', activePage);
-    let productIndex = productsArr.indexOf(product);
-    // let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
-    let trackNum = productIndex !== -1 ? productIndex + (activePage - 1) * tracksOnPage : 0;
-    trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
+    let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
+    // trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
+    trackNum = trackNum < playlist.length ? trackNum : productsArr.indexOf(product);
     console.log('Tracks on Page:', tracksOnPage);
     let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
     console.log('TrackNum:', trackNum);

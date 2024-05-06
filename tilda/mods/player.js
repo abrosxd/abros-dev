@@ -173,7 +173,8 @@ const playPause = (e) => {
         if (!product) return;
         let pagination = catalog.querySelector('.t-store__pagination');
         let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
-        let trackNum = productsArr.indexOf(product);
+        // let trackNum = productsArr.indexOf(product);
+        let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
         trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
         let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
         if (audio.src !== track) {

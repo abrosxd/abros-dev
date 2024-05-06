@@ -116,7 +116,6 @@ const isPlaying = () => {
 }
 
 const nowPlaying = () => {
-    // product.characteristics.find(song => song.title === 'music').value
     return playlist[Number(audio.dataset.trackNumber)];
 }
 
@@ -126,26 +125,38 @@ const autoplay = () => {
 }
 
 const trackLink = (product) => {
+    // if (product && product.characteristics && Array.isArray(product.characteristics)) {
+    //     const musicCharacteristic = product.characteristics.find(char => char.title === 'music');
+    //     if (musicCharacteristic && musicCharacteristic.value) {
+    //         return musicCharacteristic.value;
+    //     } else {
+    //         console.error('Характеристика "music" не найдена для продукта или отсутствует значение');
+    //     }
+    // } else {
+    //     console.error('Некорректная структура объекта продукта или отсутствуют характеристики');
+    // }
+    // return null;
     return product.characteristics.find(song => song.title === 'music').value;
 }
 
 const playPauseBtnOnProduct = (e, product) => {
     let pagination = catalog.querySelector('.t-store__pagination');
     let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
+    console.log('Active Page:', activePage);
     let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
     trackNum = trackNum < playlist.length ? trackNum : productsArr.indexOf(product);
+    console.log('Tracks on Page:', tracksOnPage);
     let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
+    console.log('TrackNum:', trackNum);
+    console.log('Track:', track);
+    console.log('Audio source:', audio.src);
     let playWrapper = document.createElement('div');
     playWrapper.classList.add('play-wrapper');
     let playPauseBtn = document.createElement('div');
     playPauseBtn.classList.add('btn-music');
     isPlaying() && audio.src === track ? playPauseBtn.classList.add('pause') : playPauseBtn.classList.add('play');
     playWrapper.appendChild(playPauseBtn);
-    // let multipoint = document.createElement('div');
-    // multipoint.classList.add('multipoint');
-    // multipoint.innerHTML = '...';
     e !== null ? e.target.appendChild(playWrapper) : product.querySelector('.js-product-img').appendChild(playWrapper);
-    // e !== null ? e.target.appendChild(multipoint) : product.querySelector('.js-product-img').appendChild(multipoint);
     playPauseBtn.addEventListener('click', playPause);
 }
 
@@ -164,11 +175,12 @@ const playPause = (e) => {
     if (e.target.classList.contains('btn-music')) {
         e.preventDefault();
         product = e.target.closest('.js-product');
+        if (!product) return;
         let pagination = catalog.querySelector('.t-store__pagination');
         let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
-        let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
+        let trackNum = productsArr.indexOf(product);
         trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
-        let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : trackLink(playlist[0]);
+        let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
         if (audio.src !== track) {
             for (let pauseBtn of storeGrid.querySelectorAll('.btn-music.pause')) {
                 pauseBtn.classList.remove('pause');
@@ -221,8 +233,6 @@ const playPrev = () => {
 }
 
 const volumeOnOff = () => {
-    // audio.removeEventListener('volumechange', volumeControl);
-    // audio.addEventListener('volumechange', volumeControl);
     audio.volume = audio.volume === 0 ? audio.volume = 1 : audio.volume = 0;
     let volume = document.querySelector('.player-volume img');
     if (audio.volume === 0) {
@@ -238,7 +248,6 @@ const volumeOnOff = () => {
 
 const volumeControl = (e) => {
     let per = e.target.value + '%';
-    // volumeInput.style.removeProperty('--gradient');
     e.target.style.setProperty('--gradient', `linear-gradient(90deg, rgba(126,112,255,1) 0%, rgba(126,112,255,1) ${per}, rgba(255,255,255,1) ${per}, rgba(255,255,255,1) 100%)`);
     audio.volume = Number(e.target.value) / 100;
 }
@@ -258,7 +267,7 @@ const progressListen = (e) => {
 
 const getProduct = (id) => {
     return new Promise((resolve, reject) => {
-        let storepart = 204361755101;
+        let storepart = window.AbrosTildaPlayer.storepart;
         let n = {
                 storepartuid: storepart,
                 recid: parseInt(catalog.id.substr(3)),
@@ -269,7 +278,6 @@ const getProduct = (id) => {
         d.onload = function() {
             if (d.readyState === d.DONE && 200 === d.status) {
                 let response = JSON.parse(d.responseText);
-                console.log(response)
                 if (response.product.characteristics.length > 0) {
                     let chars = response.product.characteristics;
                     let link = chars.find(song => song.title === 'music').value;
@@ -320,7 +328,6 @@ const getProducts = (idArr) => {
 }
 
 storeGrid.addEventListener('tStoreRendered', function(e) {
-    console.log(productsArr)
     let popup = catalog.querySelector('.t-popup');
     popup ? popup.remove() : false;
     products = storeGrid.querySelectorAll('.js-product');
@@ -347,17 +354,16 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
                     cover.addEventListener('mouseenter', enter);
                     cover.addEventListener('mouseleave', leave);
                 }
-                let areaBottom = document.querySelector('#area-bottom');
-                areaBottom.removeEventListener('mouseenter', areaEnter);
-                areaBottom.removeEventListener('mouseleave', areaLeave);
-                areaBottom.addEventListener('mouseenter', areaEnter);
-                areaBottom.addEventListener('mouseleave', areaLeave);
+                area.removeEventListener('mouseenter', areaEnter);
+                area.removeEventListener('mouseleave', areaLeave);
+                area.addEventListener('mouseenter', areaEnter);
+                area.addEventListener('mouseleave', areaLeave);
             }
             player.removeEventListener('mouseover', () => { onElement = true });
             player.removeEventListener('mouseleave', () => { onElement = false });
             player.addEventListener('mouseover', () => { onElement = true });
             player.addEventListener('mouseleave', () => { onElement = false });
-            // playerInfo();
+            playerInfo();
         } else {
             console.error('Ошибка');
         }

@@ -151,7 +151,9 @@ const playPauseBtnOnProduct = (e, product) => {
 
 const enter = (e) => {
     e.preventDefault();
-    product = e.target.closest('.js-product');
+    // product = e.target.closest('.js-product');
+    const productLid = e.target.closest('.js-product').dataset.productLid;
+    const product = playlist.find(item => item.uid === parseInt(productLid));
     playPauseBtnOnProduct(e, product);
 }
 

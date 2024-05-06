@@ -129,8 +129,6 @@ const trackLink = (product) => {
         console.error("Product or its characteristics not found:", product);
         return null;
     }
-    console.log("Product:", product);
-    console.log("Characteristics:", product.characteristics);
     return product.characteristics.find(song => song.title === 'music').value;
 }
 

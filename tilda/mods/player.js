@@ -336,6 +336,12 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
     let popup = catalog.querySelector('.t-popup');
     popup ? popup.remove() : false;
     products = storeGrid.querySelectorAll('.js-product');
+
+    if (products.length === 0) {
+        console.error("No products found.");
+        return; // выходим из обработчика, так как нет продуктов
+    }
+
     productsArr = new Array();
     idArr = new Array();
     productsArr = Array.from(products);
@@ -344,6 +350,10 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
         let productID = product.dataset.productGenUid;
         idArr.push(productID);
     });
+
+    console.log("Products:", products); // Добавлено отладочное сообщение
+    console.log("ID Array:", idArr);
+    
     getProducts(idArr).then(res => {
         if (res) {
             playlist = res;

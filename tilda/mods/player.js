@@ -172,10 +172,15 @@ const playPause = (e) => {
         let trackNum = productsArr.indexOf(product);
         trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
         // let track = trackNum !== 0 ? trackLink(playlist[trackNum]) : trackLink(playlist[0]);
+        
         console.log("trackNum:", trackNum);
         console.log("activePage:", activePage);
         console.log("productsArr.indexOf(product):", productsArr.indexOf(product));
         console.log("(activePage - 1) * tracksOnPage:", (activePage - 1) * tracksOnPage);
+        console.log("productsArr:", productsArr);
+        console.log("product:", product);
+        console.log("Index of product in productsArr:", productsArr.indexOf(product));
+
         let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
         if (audio.src !== track) {
             for (let pauseBtn of storeGrid.querySelectorAll('.btn-music.pause')) {
@@ -339,11 +344,6 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
         let productID = product.dataset.productGenUid;
         idArr.push(productID);
     });
-
-    console.log("productsArr:", productsArr);
-    console.log("product:", product);
-    console.log("Index of product in productsArr:", productsArr.indexOf(product));
-
     getProducts(idArr).then(res => {
         if (res) {
             playlist = res;

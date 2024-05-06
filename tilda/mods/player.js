@@ -155,9 +155,9 @@ const playPauseBtnOnProduct = (e, product) => {
 
 const enter = (e) => {
     e.preventDefault();
-    // product = e.target.closest('.js-product');
-    const productLid = e.target.closest('.js-product').dataset.productLid;
-    const product = playlist.find(item => item.uid === parseInt(productLid));
+    product = e.target.closest('.js-product');
+    // const productLid = e.target.closest('.js-product').dataset.productLid;
+    // const product = playlist.find(item => item.uid === parseInt(productLid));
     playPauseBtnOnProduct(e, product);
 }
 
@@ -173,8 +173,7 @@ const playPause = (e) => {
         if (!product) return;
         let pagination = catalog.querySelector('.t-store__pagination');
         let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
-        // let trackNum = productsArr.indexOf(product);
-        let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
+        let trackNum = productsArr.indexOf(product);
         trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
         let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
         if (audio.src !== track) {

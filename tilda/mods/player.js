@@ -216,7 +216,7 @@ const playPrev = () => {
     audio.dataset.trackNumber = numNew;
     // isPlaying() ? audio.play() : audio.pause();
     audio.play();
-    playerInfo();
+    // playerInfo();
 }
 
 const volumeOnOff = () => {
@@ -257,7 +257,7 @@ const progressListen = (e) => {
 
 const getProduct = (id) => {
     return new Promise((resolve, reject) => {
-        let storepart = 204361755101;
+        let storepart = window.AbrosTildaPlayer.storepart;
         let n = {
                 storepartuid: storepart,
                 recid: parseInt(catalog.id.substr(3)),

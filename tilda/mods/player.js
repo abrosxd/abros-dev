@@ -168,7 +168,8 @@ const leave = (e) => {
 const playPause = (e) => {
     if (e.target.classList.contains('btn-music')) {
         e.preventDefault();
-        product = e.target.closest('.js-product');
+        const productLid = e.target.closest('.js-product').dataset.productLid;
+        const product = playlist.find(item => item.uid === parseInt(productLid));
         let pagination = catalog.querySelector('.t-store__pagination');
         let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
         let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;

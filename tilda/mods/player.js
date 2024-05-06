@@ -217,7 +217,7 @@ const playPrev = () => {
     audio.dataset.trackNumber = numNew;
     // isPlaying() ? audio.play() : audio.pause();
     audio.play();
-    // playerInfo();
+    playerInfo();
 }
 
 const volumeOnOff = () => {

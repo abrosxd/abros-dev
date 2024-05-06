@@ -125,12 +125,14 @@ const autoplay = () => {
 }
 
 const trackLink = (product) => {
+    console.log(product.characteristics);
     return product.characteristics.find(song => song.title === 'music').value;
 }
 
 const playPauseBtnOnProduct = (e, product) => {
     console.log("Product:", product);
     console.log("Playlist:", playlist);
+    console.log(product.characteristics);
     let pagination = catalog.querySelector('.t-store__pagination');
     let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
     let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;

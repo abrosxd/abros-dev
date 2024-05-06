@@ -125,31 +125,15 @@ const autoplay = () => {
 }
 
 const trackLink = (product) => {
-    // if (product && product.characteristics && Array.isArray(product.characteristics)) {
-    //     const musicCharacteristic = product.characteristics.find(char => char.title === 'music');
-    //     if (musicCharacteristic && musicCharacteristic.value) {
-    //         return musicCharacteristic.value;
-    //     } else {
-    //         console.error('Характеристика "music" не найдена для продукта или отсутствует значение');
-    //     }
-    // } else {
-    //     console.error('Некорректная структура объекта продукта или отсутствуют характеристики');
-    // }
-    // return null;
     return product.characteristics.find(song => song.title === 'music').value;
 }
 
 const playPauseBtnOnProduct = (e, product) => {
     let pagination = catalog.querySelector('.t-store__pagination');
     let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
-    console.log('Active Page:', activePage);
     let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
     trackNum = trackNum < playlist.length ? trackNum : productsArr.indexOf(product);
-    console.log('Tracks on Page:', tracksOnPage);
     let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
-    console.log('TrackNum:', trackNum);
-    console.log('Track:', track);
-    console.log('Audio source:', audio.src);
     let playWrapper = document.createElement('div');
     playWrapper.classList.add('play-wrapper');
     let playPauseBtn = document.createElement('div');
@@ -175,7 +159,7 @@ const playPause = (e) => {
     if (e.target.classList.contains('btn-music')) {
         e.preventDefault();
         product = e.target.closest('.js-product');
-        if (!product) return;
+        // if (!product) return;
         let pagination = catalog.querySelector('.t-store__pagination');
         let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
         let trackNum = productsArr.indexOf(product);

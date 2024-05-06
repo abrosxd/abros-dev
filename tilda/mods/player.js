@@ -197,8 +197,10 @@ const playPause = (e) => {
         audio.dataset.trackNumber = num;
         audio.src = trackLink(playlist[num]);
     } else {
-        let num = playlist.map(obj => trackLink(obj) === audio.src).indexOf(true);
-        audio.dataset.trackNumber = num;
+        // let num = playlist.map(obj => trackLink(obj) === audio.src).indexOf(true);
+        // audio.dataset.trackNumber = num;
+        let num = playlist.findIndex(obj => trackLink(obj) === audio.src);
+        audio.dataset.trackNumber = num !== -1 ? num : 0;
     }
     isPlaying() ? audio.pause() : audio.play();
     let btnPlayImg = player.querySelector('.player-play .tn-atom img');

@@ -25,6 +25,7 @@ const volumeInput = player.querySelector('input[name="volume"]');
 const progressInput = player.querySelector('input[name="progress"]');
 
 // Переменные мода
+const tracksOnPage = window.AbrosTildaPlayer.cards;
 let idArr = new Array();
 let playlist = new Array();
 let products;
@@ -347,10 +348,10 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
                 areaBottom.addEventListener('mouseenter', areaEnter);
                 areaBottom.addEventListener('mouseleave', areaLeave);
             }
-            playerBlock.removeEventListener('mouseover', () => { onElement = true });
-            playerBlock.removeEventListener('mouseleave', () => { onElement = false });
-            playerBlock.addEventListener('mouseover', () => { onElement = true });
-            playerBlock.addEventListener('mouseleave', () => { onElement = false });
+            player.removeEventListener('mouseover', () => { onElement = true });
+            player.removeEventListener('mouseleave', () => { onElement = false });
+            player.addEventListener('mouseover', () => { onElement = true });
+            player.addEventListener('mouseleave', () => { onElement = false });
             playerInfo();
         } else {
             console.error('Ошибка');

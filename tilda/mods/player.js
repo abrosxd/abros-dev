@@ -25,7 +25,7 @@ const volumeInput = player.querySelector('input[name="volume"]');
 const progressInput = player.querySelector('input[name="progress"]');
 
 // Переменные тригера
-const areaID = window.AbrosTildaPlayer.playerID;
+const areaID = window.AbrosTildaPlayer.areaID;
 const area = document.querySelector(areaID);
 
 // Переменные мода

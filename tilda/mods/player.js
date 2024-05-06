@@ -161,10 +161,8 @@ const playPause = (e) => {
         product = e.target.closest('.js-product');
         let pagination = catalog.querySelector('.t-store__pagination');
         let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
-        // let trackNum = productsArr.indexOf(product);
         let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
         trackNum = trackNum < playlist.length ? trackNum : productsArr.indexOf(product);
-        // let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
         let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : trackLink(playlist[0]);
         if (audio.src !== track) {
             for (let pauseBtn of storeGrid.querySelectorAll('.btn-music.pause')) {
@@ -348,7 +346,7 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
             player.removeEventListener('mouseleave', () => { onElement = false });
             player.addEventListener('mouseover', () => { onElement = true });
             player.addEventListener('mouseleave', () => { onElement = false });
-            playerInfo();
+            // playerInfo();
         } else {
             console.error('Ошибка');
         }

@@ -129,7 +129,6 @@ const trackLink = (product) => {
 }
 
 const playPauseBtnOnProduct = (e, product) => {
-    console.log("Product:", product);
     console.log("Playlist:", playlist);
     let pagination = catalog.querySelector('.t-store__pagination');
     let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
@@ -334,6 +333,7 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
     });
     getProducts(idArr).then(res => {
         if (res) {
+            console.log("RES:", res);
             playlist = res;
             // playlist = playlist.sort((a, b) => idArr.indexOf(a.uid) - idArr.indexOf(b.uid));
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

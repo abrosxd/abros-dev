@@ -124,15 +124,15 @@ const autoplay = () => {
     audio.addEventListener('ended', playNext, false);
 }
 
-const trackLink = (products) => {
-    return products.characteristics.find(song => song.title === 'music').value;
+const trackLink = (product) => {
+    return product.characteristics.find(song => song.title === 'music').value;
 }
 
-const playPauseBtnOnProduct = (e, product) => {
+const playPauseBtnOnProduct = (e, productId) => {
     let pagination = catalog.querySelector('.t-store__pagination');
     let activePage = pagination ? Number(pagination.dataset.activePage) : 1;
-    let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
-    trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
+    let trackNum = productsArr.indexOf(productId) + (activePage - 1) * tracksOnPage;
+    trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(productId);
     let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
     let playWrapper = document.createElement('div');
     playWrapper.classList.add('play-wrapper');
@@ -150,8 +150,9 @@ const playPauseBtnOnProduct = (e, product) => {
 
 const enter = (e) => {
     e.preventDefault();
-    product = e.target.closest('.js-product');
-    playPauseBtnOnProduct(e, product);
+    let product = e.target.closest('.js-product');
+    productId = product.dataset.productLid;
+    playPauseBtnOnProduct(e, productId);
 }
 
 const leave = (e) => {

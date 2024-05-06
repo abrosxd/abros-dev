@@ -24,6 +24,10 @@ const player = document.querySelector(playerID);
 const volumeInput = player.querySelector('input[name="volume"]');
 const progressInput = player.querySelector('input[name="progress"]');
 
+// Переменные тригера
+const areaID = window.AbrosTildaPlayer.playerID;
+const area = document.querySelector(areaID);
+
 // Переменные мода
 const tracksOnPage = window.AbrosTildaPlayer.cards;
 let idArr = new Array();
@@ -342,11 +346,10 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
                     cover.addEventListener('mouseenter', enter);
                     cover.addEventListener('mouseleave', leave);
                 }
-                let areaBottom = document.querySelector('#area-bottom');
-                areaBottom.removeEventListener('mouseenter', areaEnter);
-                areaBottom.removeEventListener('mouseleave', areaLeave);
-                areaBottom.addEventListener('mouseenter', areaEnter);
-                areaBottom.addEventListener('mouseleave', areaLeave);
+                area.removeEventListener('mouseenter', areaEnter);
+                area.removeEventListener('mouseleave', areaLeave);
+                area.addEventListener('mouseenter', areaEnter);
+                area.addEventListener('mouseleave', areaLeave);
             }
             player.removeEventListener('mouseover', () => { onElement = true });
             player.removeEventListener('mouseleave', () => { onElement = false });
@@ -365,7 +368,7 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
 var stylePlayer = document.createElement('style');
 stylePlayer.textContent = `
     /* Область для плеера */
-    #area-bottom {
+    ${areaID} {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -374,7 +377,7 @@ stylePlayer.textContent = `
         z-index: 90;
     }
     /* Сам плеер */
-    .uc-player {
+    ${playerID} {
         position: fixed;
         bottom: -70px;
         left: 0;
@@ -382,34 +385,34 @@ stylePlayer.textContent = `
         z-index: 100;
         transition: bottom .2s ease-in-out;
     }
-    .uc-player.show {
+    ${playerID}.show {
         bottom: 0;
     }
     /* Элементы плеера */
-    .player-cover,
-    .player-prev,
-    .player-play,
-    .player-next,
-    .player-volume,
-    .player-volume-picker,
-    .player-volume-full,
-    .player-progress-picker,
-    .player-progress-full,
-    .player-text,
-    .player-title {
+    ${playerID} .player-cover,
+    ${playerID} .player-prev,
+    ${playerID} .player-play,
+    ${playerID} .player-next,
+    ${playerID} .player-volume,
+    ${playerID} .player-volume-picker,
+    ${playerID} .player-volume-full,
+    ${playerID} .player-progress-picker,
+    ${playerID} .player-progress-full,
+    ${playerID} .player-text,
+    ${playerID} .player-title {
         cursor: pointer;
     }
-    .player-cover .tn-atom {
+    ${playerID} .player-cover .tn-atom {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
     }
-    .player-prev.disabled .tn-atom,
-    .player-next.disabled .tn-atom {
+    ${playerID} .player-prev.disabled .tn-atom,
+    ${playerID} .player-next.disabled .tn-atom {
         opacity: .5;
         pointer-events: none;
     }
-    .player-title {
+    ${playerID} .player-title {
         top: 50% !important;
         transform: translateY(-50%);
     }

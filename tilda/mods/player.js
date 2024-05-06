@@ -177,6 +177,8 @@ const playPause = (e) => {
         let trackNum = productsArr.indexOf(product);
         trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
         let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
+        console.log("TrackNum:", trackNum);
+        console.log("Track:", track);
         if (audio.src !== track) {
             for (let pauseBtn of storeGrid.querySelectorAll('.btn-music.pause')) {
                 pauseBtn.classList.remove('pause');
@@ -206,8 +208,6 @@ const playPause = (e) => {
     let btnPlayImg = player.querySelector('.player-play .tn-atom img');
     btnPlayImg.src = isPlaying() ? 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg' : 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg';
     playerInfo();
-    console.log("TrackNum:", trackNum);
-    console.log("Track:", track);
 }
 
 const playNext = () => {

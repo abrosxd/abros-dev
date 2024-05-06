@@ -360,3 +360,223 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
         console.error(error);
     });
 });
+
+// Стили для плеера
+var styleElement = document.createElement('style');
+styleElement.textContent = `
+    /* Область для плеера */
+    #area-bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+                z-index: 90;
+            }
+        /* Сам плеер */
+            .uc-player {
+                position: fixed;
+                bottom: -70px;
+                left: 0;
+                width: 100%;
+                z-index: 100;
+                transition: bottom .2s ease-in-out;
+            }
+            .uc-player.show {
+                bottom: 0;
+            }
+        /* Элементы плеера */
+            .player-cover,
+            .player-prev,
+            .player-play,
+            .player-next,
+            .player-volume,
+            .player-volume-picker,
+            .player-volume-full,
+            .player-progress-picker,
+            .player-progress-full,
+            .player-text,
+            .player-title {
+                cursor: pointer;
+            }
+            .player-cover .tn-atom {
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .player-prev.disabled .tn-atom,
+            .player-next.disabled .tn-atom {
+                opacity: .5;
+                pointer-events: none;
+            }
+            .player-title {
+                top: 50% !important;
+                transform: translateY(-50%);
+            }
+    
+    /* Кнопки play/pause и многоточие на карточках товаров */
+        /* Wrapper для элементов */
+            .play-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .4);
+                border-radius: var(--br-xl);
+            }
+        /* Кнопки play/pause */
+            .btn-music {
+                width: 60px;
+                height: 60px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 2;
+                transform: translate(-50%, -50%) scale(100%);
+                transition: all .2s ease-in-out;
+            }
+            .btn-music:hover {
+                transform: translate(-50%, -50%) scale(110%);
+            }
+            .play {
+                background-image: url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg);
+            }
+            .pause {
+                background-image: url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg);
+            }
+        /* Многоточие */
+            .multipoint {
+                opacity: 1;
+                color: #fff;
+                font-weight: 700;
+                font-size: 24px;
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                z-index: 10;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                width: 40px;
+                height: 40px;
+                border-radius: var(--br-xl);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url(https://static.tildacdn.com/tild3734-3864-4533-b633-353635613339/icons8-dots_loading.svg);
+            }
+            .multipoint:hover {
+                background-color: rgba(255,255,255,.5);
+                border-radius: var(--br-xl);
+            }
+    
+    /* Input громкости и прогресса песни */
+        .music-range.volume,
+        .music-range.progress {
+            --gradient: linear-gradient(90deg, rgba(126,112,255,1) 0%, rgba(126,112,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%)
+            height:8px;
+            border-radius: 0px;
+            -webkit-appearance: none;
+            margin: 10px 0;
+            width: 100%;
+        }
+        .music-range:focus {
+            outline: none;
+        }
+        .music-range::-webkit-slider-runnable-track {
+            width: 100%;
+            height:8px;
+            cursor: pointer;
+            animate: 0.2s;
+            background: var(--gradient);
+            border-radius: 0px;
+        }
+        .music-range::-webkit-slider-runnable-track:after {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            animate: 0.2s;
+            background: var(--gradient);
+            border-radius: 0px;
+            border: none;
+            box-shadow: none;
+        }
+        .music-range::-webkit-slider-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -6px;
+            border: none;
+            box-shadow: none;
+        }
+        .music-range:focus::-webkit-slider-runnable-track {
+            background: var(--gradient);
+        }
+        .music-range::-moz-range-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            animate: 0.2s;
+            background: var(--gradient);
+            border-radius: 0px;
+            border: none;
+            box-shadow: none;
+        }
+        .music-range::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+        }
+        .music-range::-ms-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            animate: 0.2s;
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+        }
+        .music-range::-ms-fill-lower {
+            background: #7E70FF;
+            border-radius: 4px;
+            border: none;
+            box-shadow: none;
+        }
+        .music-range::-ms-fill-upper {
+            background: #fff;
+            border-radius: 4px;
+            border: none;
+            box-shadow: none;
+        }
+        .music-range::-ms-thumb {
+            margin-top: 1px;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+        }
+        .music-range:focus::-ms-fill-lower {
+            background: #7E70FF;
+        }
+        .music-range:focus::-ms-fill-upper {
+            background: #fff;
+        }
+`;
+
+// Вставка элемента style в head
+document.head.appendChild(styleElement);

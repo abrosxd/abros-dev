@@ -175,7 +175,7 @@ const playPause = (e) => {
         let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
         trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
         // let track = trackNum !== 0 ? trackLink(playlist[trackNum]) : trackLink(playlist[0]);
-        let track = trackNum >= 0 ? trackLink(playlist[trackNum]) : trackLink(playlist[0]);
+        let track = playlist[trackNum] ? trackLink(playlist[trackNum]) : null;
         if (audio.src !== track) {
             for (let pauseBtn of storeGrid.querySelectorAll('.btn-music.pause')) {
                 pauseBtn.classList.remove('pause');

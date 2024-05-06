@@ -38,24 +38,24 @@ let onElement = false;
 
 
 const areaEnter = () => {
-    playerBlock.classList.add('show');
+    player.classList.add('show');
 }
 
 const areaLeave = () => {
     setTimeout(() => {
-        isPlaying() ? false : onElement ? false : playerBlock.classList.remove('show');
+        isPlaying() ? false : onElement ? false : player.classList.remove('show');
     }, 1000);
 }
 
 const playerInfo = () => {
-    const cover = playerBlock.querySelector('.player-cover .tn-atom');
-    const title = playerBlock.querySelector('.player-title .tn-atom');
-    const btnPrev = playerBlock.querySelector('.player-prev .tn-atom');
-    const btnPlay = playerBlock.querySelector('.player-play .tn-atom');
-    const btnNext = playerBlock.querySelector('.player-next .tn-atom');
-    const btnBuy = playerBlock.querySelector('.player-btn-buy .tn-atom');
-    const btnText = playerBlock.querySelector('.player-text .tn-atom');
-    const btnVolume = playerBlock.querySelector('.player-volume .tn-atom');
+    const cover = player.querySelector('.player-cover .tn-atom');
+    const title = player.querySelector('.player-title .tn-atom');
+    const btnPrev = player.querySelector('.player-prev .tn-atom');
+    const btnPlay = player.querySelector('.player-play .tn-atom');
+    const btnNext = player.querySelector('.player-next .tn-atom');
+    const btnBuy = player.querySelector('.player-btn-buy .tn-atom');
+    const btnText = player.querySelector('.player-text .tn-atom');
+    const btnVolume = player.querySelector('.player-volume .tn-atom');
     btnPlay.removeEventListener('click', playPause);
     btnNext.removeEventListener('click', playNext);
     btnPrev.removeEventListener('click', playPrev);
@@ -73,7 +73,7 @@ const playerInfo = () => {
     volumeInput.dispatchEvent(new Event('input', { 'bubbles': true }));
     progressInput.addEventListener('input', progressListen);
     progressInput.dispatchEvent(new Event('input', { 'bubbles': true }));
-    playerBlock.classList.add('show');
+    player.classList.add('show');
     progressListen();
     autoplay();
 }
@@ -195,7 +195,7 @@ const playPause = (e) => {
         audio.dataset.trackNumber = num;
     }
     isPlaying() ? audio.pause() : audio.play();
-    let btnPlayImg = playerBlock.querySelector('.player-play .tn-atom img');
+    let btnPlayImg = player.querySelector('.player-play .tn-atom img');
     btnPlayImg.src = isPlaying() ? 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg' : 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg';
     playerInfo();
 }
@@ -353,10 +353,10 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
                 areaBottom.addEventListener('mouseenter', areaEnter);
                 areaBottom.addEventListener('mouseleave', areaLeave);
             }
-            playerBlock.removeEventListener('mouseover', () => { onElement = true });
-            playerBlock.removeEventListener('mouseleave', () => { onElement = false });
-            playerBlock.addEventListener('mouseover', () => { onElement = true });
-            playerBlock.addEventListener('mouseleave', () => { onElement = false });
+            player.removeEventListener('mouseover', () => { onElement = true });
+            player.removeEventListener('mouseleave', () => { onElement = false });
+            player.addEventListener('mouseover', () => { onElement = true });
+            player.addEventListener('mouseleave', () => { onElement = false });
             // playerInfo();
         } else {
             console.error('Ошибка');

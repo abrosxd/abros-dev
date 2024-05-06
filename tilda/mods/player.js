@@ -297,7 +297,8 @@ const getProducts = (idArr) => {
             };
         dataObj.projectid = document.getElementById('allrecords').dataset.tildaProjectId;
         window.t_store_endpoint || (window.t_store_endpoint = 'store.tildacdn.com');
-        let apiUrl = 'https://' + window.t_store_endpoint + '/api/getproductsbyuid/';
+        // let apiUrl = 'https://' + window.t_store_endpoint + '/api/getproductsbyuid/';
+        let apiUrl = 'https://' + window.t_store_endpoint + '/api/getproductlist/';
         dataObj = JSON.stringify(dataObj);
         let xhr = new XMLHttpRequest;
         xhr.onload = function() {

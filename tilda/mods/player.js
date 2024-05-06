@@ -206,6 +206,8 @@ const playPause = (e) => {
     let btnPlayImg = player.querySelector('.player-play .tn-atom img');
     btnPlayImg.src = isPlaying() ? 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg' : 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg';
     playerInfo();
+    console.log("TrackNum:", trackNum);
+    console.log("Track:", track);
 }
 
 const playNext = () => {

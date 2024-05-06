@@ -319,8 +319,6 @@ const getProducts = (idArr) => {
     });
 }
 
-const catalog = document.querySelector(catalogID);
-const storeGrid = catalog.querySelector('.js-store-grid-cont');
 storeGrid.addEventListener('tStoreRendered', function(e) {
     console.log(productsArr)
     let popup = catalog.querySelector('.t-popup');

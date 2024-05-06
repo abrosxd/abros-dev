@@ -6,6 +6,7 @@
  * Telegram → https://t.me/abrosxd
  * Инжектор для подключения сторонних скриптов одной строкой
  * Используется для быстрой разработки
+ * <script src = 'https://abros.me/dev/inj.js'></script>
  */
 
 if (!window.AbrosInj) {

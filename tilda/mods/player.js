@@ -257,7 +257,8 @@ const progressListen = (e) => {
 
 const getProduct = (id) => {
     return new Promise((resolve, reject) => {
-        let storepart = window.AbrosTildaPlayer.storepart;
+        // let storepart = window.AbrosTildaPlayer.storepart;
+        let storepart = 204361755101;
         let n = {
                 storepartuid: storepart,
                 recid: parseInt(catalog.id.substr(3)),

@@ -125,8 +125,7 @@ const autoplay = () => {
 }
 
 const trackLink = (product) => {
-    let productId = product.dataset.productLid;
-    return productId.characteristics.find(song => song.title === 'music').value;
+    return product.characteristics.find(song => song.title === 'music').value;
 }
 
 const playPauseBtnOnProduct = (e, product) => {

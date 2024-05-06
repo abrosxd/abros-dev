@@ -138,6 +138,9 @@ const playPauseBtnOnProduct = (e, product) => {
     let trackNum = productsArr.indexOf(product) + (activePage - 1) * tracksOnPage;
     trackNum = trackNum <= playlist.length ? trackNum : productsArr.indexOf(product);
     let track = trackNum !== -1 ? trackLink(playlist[trackNum]) : 0;
+    console.log('TrackNum:', trackNum);
+    console.log('Track:', track);
+    console.log('Audio source:', audio.src);
     let playWrapper = document.createElement('div');
     playWrapper.classList.add('play-wrapper');
     let playPauseBtn = document.createElement('div');

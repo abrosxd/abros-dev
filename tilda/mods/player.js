@@ -337,7 +337,7 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
         if (res) {
             console.log("RES:", res);
             playlist = res;
-            // playlist = playlist.sort((a, b) => idArr.indexOf(a.uid) - idArr.indexOf(b.uid));
+            playlist = playlist.sort((a, b) => idArr.indexOf(a.uid) - idArr.indexOf(b.uid));
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 products.forEach(product => playPauseBtnOnProduct(null, product))
                 areaEnter();

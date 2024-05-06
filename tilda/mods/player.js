@@ -125,7 +125,18 @@ const autoplay = () => {
 }
 
 const trackLink = (product) => {
-    return product.characteristics.find(song => song.title === 'music').value;
+    // return product.characteristics.find(song => song.title === 'music').value;
+    if (product && product.characteristics) {
+        const musicCharacteristic = product.characteristics.find(char => char.title === 'music');
+        if (musicCharacteristic) {
+            return musicCharacteristic.value;
+        } else {
+            console.error('Характеристика "music" отсутствует для продукта:', product.title);
+        }
+    } else {
+        console.error('Свойство characteristics отсутствует для продукта:', product.title);
+    }
+    return null;
 }
 
 const playPauseBtnOnProduct = (e, product) => {
@@ -145,19 +156,13 @@ const playPauseBtnOnProduct = (e, product) => {
     playPauseBtn.classList.add('btn-music');
     isPlaying() && audio.src === track ? playPauseBtn.classList.add('pause') : playPauseBtn.classList.add('play');
     playWrapper.appendChild(playPauseBtn);
-    // let multipoint = document.createElement('div');
-    // multipoint.classList.add('multipoint');
-    // multipoint.innerHTML = '...';
     e !== null ? e.target.appendChild(playWrapper) : product.querySelector('.js-product-img').appendChild(playWrapper);
-    // e !== null ? e.target.appendChild(multipoint) : product.querySelector('.js-product-img').appendChild(multipoint);
     playPauseBtn.addEventListener('click', playPause);
 }
 
 const enter = (e) => {
     e.preventDefault();
     product = e.target.closest('.js-product');
-    // const productLid = e.target.closest('.js-product').dataset.productLid;
-    // const product = playlist.find(item => item.uid === parseInt(productLid));
     playPauseBtnOnProduct(e, product);
 }
 
@@ -228,8 +233,6 @@ const playPrev = () => {
 }
 
 const volumeOnOff = () => {
-    // audio.removeEventListener('volumechange', volumeControl);
-    // audio.addEventListener('volumechange', volumeControl);
     audio.volume = audio.volume === 0 ? audio.volume = 1 : audio.volume = 0;
     let volume = document.querySelector('.player-volume img');
     if (audio.volume === 0) {
@@ -245,7 +248,6 @@ const volumeOnOff = () => {
 
 const volumeControl = (e) => {
     let per = e.target.value + '%';
-    // volumeInput.style.removeProperty('--gradient');
     e.target.style.setProperty('--gradient', `linear-gradient(90deg, rgba(126,112,255,1) 0%, rgba(126,112,255,1) ${per}, rgba(255,255,255,1) ${per}, rgba(255,255,255,1) 100%)`);
     audio.volume = Number(e.target.value) / 100;
 }

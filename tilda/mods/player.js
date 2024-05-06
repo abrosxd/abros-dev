@@ -142,7 +142,9 @@ const playPauseBtnOnProduct = (e, product) => {
     playWrapper.classList.add('play-wrapper');
     let playPauseBtn = document.createElement('div');
     playPauseBtn.classList.add('btn-music');
-    isPlaying() && audio.src === track ? playPauseBtn.classList.add('pause') : playPauseBtn.classList.add('play');
+    // isPlaying() && audio.src === track ? playPauseBtn.classList.add('pause') : playPauseBtn.classList.add('play');
+    playPauseBtn.classList.toggle('pause', isPlaying());
+    playPauseBtn.classList.toggle('play', !isPlaying());
     playWrapper.appendChild(playPauseBtn);
     // let multipoint = document.createElement('div');
     // multipoint.classList.add('multipoint');

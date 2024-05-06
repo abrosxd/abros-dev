@@ -339,6 +339,11 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
         let productID = product.dataset.productGenUid;
         idArr.push(productID);
     });
+
+    console.log("productsArr:", productsArr);
+    console.log("product:", product);
+    console.log("Index of product in productsArr:", productsArr.indexOf(product));
+
     getProducts(idArr).then(res => {
         if (res) {
             playlist = res;

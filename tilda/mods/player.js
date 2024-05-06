@@ -6,7 +6,6 @@
  * Telegram → https://t.me/abrosxd
  * Мод позволяющий создать из каталога плеер
  * <script src = 'https://abros.me/tilda/mods/player.js'></script>
- * О
  */
 
 // Пееременные каталога
@@ -370,14 +369,14 @@ stylePlayer.textContent = `
     /* Сам плеер */
     ${playerID} {
         position: fixed;
-        bottom: -90px;
+        bottom: -75px;
         left: 0;
         width: 100%;
         z-index: 100;
         transition: bottom .2s ease-in-out;
     }
     ${playerID}.show {
-        bottom: -10px;
+        bottom: 0px;
     }
     /* Элементы плеера */
     ${playerID} .player-cover,

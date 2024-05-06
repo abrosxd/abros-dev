@@ -126,6 +126,10 @@ const autoplay = () => {
 }
 
 const trackLink = (product) => {
+    if (!product || !product.characteristics) {
+        console.error("Product or its characteristics not found:", product);
+        return null;
+    }
     return product.characteristics.find(song => song.title === 'music').value;
 }
 

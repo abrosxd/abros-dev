@@ -416,8 +416,8 @@ stylePlayer.textContent = `
         z-index: 1;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, .4);
-        /* border-radius: var(--br-xl); */
+        background-color: var(--AbrosPlayerWrapperBackgroundColor);
+        border-radius: var(--AbrosPlayerWrapperBorderRadius); */
     }
     /* Кнопки play/pause */
     .btn-music {
@@ -437,11 +437,10 @@ stylePlayer.textContent = `
         transform: translate(-50%, -50%) scale(110%);
     }
     .play {
-        background-image: url(https://abros.me/tilda/mods/player/icons/cover_play.svg);
-        fill: orange;
+        background-image: var(--AbrosPlayerWrapperPlay);
     }
     .pause {
-        background-image: url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg);
+        background-image: var(--AbrosPlayerWrapperPause);
     }
     /* Многоточие */
     .multipoint {
@@ -472,7 +471,6 @@ stylePlayer.textContent = `
     /* Input громкости и прогресса песни */
     ${playerID} .music-range.volume,
     ${playerID} .music-range.progress {
-        --gradient: linear-gradient(90deg, rgba(126,112,255,1) 0%, rgba(126,112,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%)
         height:8px;
         border-radius: 0px;
         -webkit-appearance: none;
@@ -487,7 +485,7 @@ stylePlayer.textContent = `
         height:8px;
         cursor: pointer;
         animate: 0.2s;
-        background: var(--gradient);
+        background: var(--AbrosPlayerGradient);
         border-radius: 0px;
     }
     ${playerID} .music-range::-webkit-slider-runnable-track:after {
@@ -495,7 +493,7 @@ stylePlayer.textContent = `
         height: 4px;
         cursor: pointer;
         animate: 0.2s;
-        background: var(--gradient);
+        background: var(--AbrosPlayerGradient);
         border-radius: 0px;
         border: none;
         box-shadow: none;
@@ -512,14 +510,14 @@ stylePlayer.textContent = `
         box-shadow: none;
     }
     ${playerID} .music-range:focus::-webkit-slider-runnable-track {
-        background: var(--gradient);
+        background: var(--AbrosPlayerGradient);
     }
     ${playerID} .music-range::-moz-range-track {
         width: 100%;
         height: 4px;
         cursor: pointer;
         animate: 0.2s;
-        background: var(--gradient);
+        background: var(--AbrosPlayerGradient);
         border-radius: 0px;
         border: none;
         box-shadow: none;

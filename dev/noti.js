@@ -9,16 +9,16 @@
  */
 
 // Компонент ассистента
-document.body.insertAdjacentHTML('beforeend', `<div class="abrosassistant"></div>`);
+document.body.insertAdjacentHTML('beforeend', `<div class="abrosnoti"></div>`);
 
 // Стили ассистента
 var styleAssistant = document.createElement('style');
 styleAssistant.textContent = `
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-  .abrosassistant {
+  .abrosnoti {
     --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
-    --color: #32a6ff
+    --color: #32a6ff;
     font-family: "Inter";
     font-size: 16px;
     width: 18rem;
@@ -29,19 +29,20 @@ styleAssistant.textContent = `
     position: fixed;
     bottom: 0;
     right: 0;
+    z-index: 99999999999;
   }
-  .abrosassistant .noti {
+  .abrosnoti .noti {
     position: relative;
     height: 0;
     transition: height 300ms ease;
     flex-shrink: 0;
     opacity: 1;
   }
-  .abrosassistant .noti.out {animation: notiOut 500ms ease forwards}
+  .abrosnoti .noti.out {animation: notiOut 500ms ease forwards}
   @keyframes notiOut {
     to {height: 0;}
   }
-  .abrosassistant .noticard {
+  .abrosnoti .noticard {
     position: absolute;
     bottom: 0;
     display: flex;
@@ -60,14 +61,14 @@ styleAssistant.textContent = `
       opacity: 0;
     }
   }
-  .abrosassistant .noti.out .noticard {animation: notiCardOut 500ms ease forwards}
+  .abrosnoti .noti.out .noticard {animation: notiCardOut 500ms ease forwards}
   @keyframes notiCardOut {
     to {
       opacity: 0;
       transform: scale(0.5)
     }
   }
-  .abrosassistant .noticard:before {
+  .abrosnoti .noticard:before {
     position: absolute;
     content: "";
     inset: 0.0625rem;
@@ -75,7 +76,7 @@ styleAssistant.textContent = `
     background: #18181b;
     z-index: 2
   }
-  .abrosassistant .noticard:after {
+  .abrosnoti .noticard:after {
     position: absolute;
     content: "";
     width: 0.25rem;
@@ -85,10 +86,10 @@ styleAssistant.textContent = `
     transition: transform 300ms ease;
     z-index: 4;
   }
-  .abrosassistant .noticard:hover:after {
+  .abrosnoti .noticard:hover:after {
     transform: translateX(0.15rem)
   }
-  .abrosassistant .notititle {
+  .abrosnoti .notititle {
     color: var(--color);
     padding: 0.65rem 0.5rem 0.4rem 1.25rem;
     font-weight: 500;
@@ -96,19 +97,19 @@ styleAssistant.textContent = `
     transition: transform 300ms ease;
     z-index: 5;
   }
-  .abrosassistant .noti:hover .notititle {
+  .abrosnoti .noti:hover .notititle {
     transform: translateX(0.15rem)
   }
-  .abrosassistant .notidesc {
+  .abrosnoti .notidesc {
     color: #99999d;
     padding: 0 0.5rem 0.85rem 1.25rem;
     transition: transform 300ms ease;
     z-index: 5;
   }
-  .abrosassistant .noti:hover .notidesc {
+  .abrosnoti .noti:hover .notidesc {
     transform: translateX(0.25rem)
   }
-  .abrosassistant .notiglow, .abrosassistant .notiborderglow {
+  .abrosnoti .notiglow, .abrosassistant .notiborderglow {
     position: absolute;
     width: 20rem;
     height: 20rem;
@@ -117,17 +118,17 @@ styleAssistant.textContent = `
     opacity: 0;
     transition: opacity 300ms ease;
   }
-  .abrosassistant .notiglow { z-index: 3; }
-  .abrosassistant .notiborderglow { z-index: 1; }
-  .abrosassistant .noti:hover .notiglow {opacity: 0.1}
-  .abrosassistant .noti:hover .notiborderglow {opacity: 0.1}
+  .abrosnoti .notiglow { z-index: 3; }
+  .abrosnoti .notiborderglow { z-index: 1; }
+  .abrosnoti .noti:hover .notiglow {opacity: 0.1}
+  .abrosnoti .noti:hover .notiborderglow {opacity: 0.1}
 `;
 document.head.appendChild(styleAssistant);
 
 // Создание сообщений
 if (location.pathname.match(/fullcpgrid/i) ? true : false) {
   // document.documentElement.style.fontSize = "32px"
-  document.querySelector(".abrosassistant").style.transform = "translate(0.5rem, calc(-50% + 3rem))"
+  document.querySelector(".abrosnoti").style.transform = "translate(0.5rem, calc(-50% + 3rem))"
 }
 
 class Notifications {
@@ -213,7 +214,7 @@ class Notifications {
 }
 
 // demo
-notis = new Notifications(document.querySelector(".abrosassistant"))
+notis = new Notifications(document.querySelector(".abrosnoti"))
 
 const demonotis = [
   () => {notis.create("Neon notifications", "wow, these notifications really do look beautiful", 5)},

@@ -497,5 +497,16 @@ stylePlayer.textContent = `
         border: none;
         box-shadow: none;
     }
+    ${playerID} .music-range::-webkit-slider-thumb {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: var(--AbrosPlayerThumbColor);
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -6px;
+        border: none;
+        box-shadow: none;
+    }
 `;
 document.head.appendChild(stylePlayer);

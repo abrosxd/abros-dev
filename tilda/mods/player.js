@@ -479,5 +479,13 @@ stylePlayer.textContent = `
     ${playerID} .music-range:focus {
         outline: none;
     }
+    ${playerID} .music-range::-webkit-slider-runnable-track {
+        width: 100%;
+        height:8px;
+        cursor: pointer;
+        animate: 0.2s;
+        background: var(--AbrosPlayerTrackLowerColor);
+        border-radius: 0px;
+    }
 `;
 document.head.appendChild(stylePlayer);

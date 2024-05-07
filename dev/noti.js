@@ -1,11 +1,11 @@
 /*!
- * Assistant.js v1.0
+ * Noti.js v1.0
  * (c) 2024-2024
  * by Daniel Abros
  * Site → https://abros.me
  * Telegram → https://t.me/abrosxd
- * Ассистент помогающий с установкой модов
- * <script src = 'https://abros.me/tilda/mods/assistant.js'></script>
+ * Уведомления.
+ * <script src = 'https://abros.me/dev/noti.js'></script>
  */
 
 // Компонент ассистента
@@ -26,6 +26,9 @@ styleAssistant.textContent = `
     flex-direction: column;
     justify-content: end;
     margin: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
   }
   .abrosassistant .noti {
     position: relative;
@@ -210,7 +213,7 @@ class Notifications {
 }
 
 // demo
-notis = new Notifications(document.querySelector(".notifications"))
+notis = new Notifications(document.querySelector(".abrosassistant"))
 
 const demonotis = [
   () => {notis.create("Neon notifications", "wow, these notifications really do look beautiful", 5)},

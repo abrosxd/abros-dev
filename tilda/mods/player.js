@@ -17,7 +17,9 @@ const sWPause = window.AbrosTildaPlayer.WrapperPause; // Иконка кнопк
 // Input громкости и прогресса песни
 const sTSClrS = window.AbrosTildaPlayer.TrackSlideColorStart; // Цвет полосок
 const sTSClrE = window.AbrosTildaPlayer.TrackSlideColorEnd; // Цвет заполнения полосок
+const sTSBrdRd = window.AbrosTildaPlayer.TrackSlideBorderRadius; // Скругление полосок
 const sTTClr = window.AbrosTildaPlayer.TrackThumbColor; // Цвет тумблера
+const sTTBrdRd = window.AbrosTildaPlayer.TrackThumbBorderRadius; // Скругление тумблера
 
 // Пееременные каталога
 const catalogID = window.AbrosTildaPlayer.catalogID;
@@ -483,7 +485,7 @@ stylePlayer.textContent = `
     ${playerID} .music-range.progress {
         --gradient: linear-gradient(90deg, ${sTSClrE} 0%, ${sTSClrE} 100%, ${sTSClrS} 100%, ${sTSClrS} 100%)
         height:8px;
-        border-radius: 0px;
+        border-radius: ${sTSBrdRd};
         -webkit-appearance: none;
         margin: 10px 0;
         width: 100%;
@@ -497,7 +499,7 @@ stylePlayer.textContent = `
         cursor: pointer;
         animate: 0.2s;
         background: var(--gradient);
-        border-radius: 0px;
+        border-radius: ${sTSBrdRd};
     }
     ${playerID} .music-range::-webkit-slider-runnable-track:after {
         width: 100%;
@@ -505,14 +507,14 @@ stylePlayer.textContent = `
         cursor: pointer;
         animate: 0.2s;
         background: var(--gradient);
-        border-radius: 0px;
+        border-radius: ${sTSBrdRd};
         border: none;
         box-shadow: none;
     }
     ${playerID} .music-range::-webkit-slider-thumb {
         height: 20px;
         width: 20px;
-        border-radius: 50%;
+        border-radius: ${sTTBrdRd};
         background: ${sTTClr};
         cursor: pointer;
         -webkit-appearance: none;
@@ -529,14 +531,14 @@ stylePlayer.textContent = `
         cursor: pointer;
         animate: 0.2s;
         background: var(--gradient);
-        border-radius: 0px;
+        border-radius: ${sTSBrdRd};
         border: none;
         box-shadow: none;
     }
     ${playerID} .music-range::-moz-range-thumb {
         height: 20px;
         width: 20px;
-        border-radius: 50%;
+        border-radius: ${sTTBrdRd};
         background: ${sTTClr};
         cursor: pointer;
         border: none;
@@ -567,7 +569,7 @@ stylePlayer.textContent = `
         margin-top: 1px;
         height: 20px;
         width: 20px;
-        border-radius: 50%;
+        border-radius: ${sTTBrdRd};
         background: ${sTTClr};
         cursor: pointer;
         border: none;

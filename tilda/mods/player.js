@@ -20,6 +20,11 @@ const sTSClrE = window.AbrosTildaPlayer.TrackSlideColorEnd; // Цвет запо
 const sTSBrdRd = window.AbrosTildaPlayer.TrackSlideBorderRadius; // Скругление полосок
 const sTTClr = window.AbrosTildaPlayer.TrackThumbColor; // Цвет тумблера
 const sTTBrdRd = window.AbrosTildaPlayer.TrackThumbBorderRadius; // Скругление тумблера
+// Плеер
+const sPPlay = window.AbrosTildaPlayer.PlayerPlay; // Иконка кнопки Play
+const sPPause = window.AbrosTildaPlayer.PlayerPause; // Иконка кнопки Pause
+const sPVlmOn = window.AbrosTildaPlayer.PlayerVolumeOn; // Иконка кнопки Вкл.Звук
+const sPVlmOff = window.AbrosTildaPlayer.PlayerVolumeOff; // Иконка кнопки Выкл.Звук
 
 // Пееременные каталога
 const catalogID = window.AbrosTildaPlayer.catalogID;
@@ -203,7 +208,7 @@ const playPause = (e) => {
     }
     isPlaying() ? audio.pause() : audio.play();
     let btnPlayImg = player.querySelector('.player-play .tn-atom img');
-    btnPlayImg.src = isPlaying() ? 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg' : 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg';
+    btnPlayImg.src = isPlaying() ? `${sPPause}` : `${sPPlay}`;
     playerInfo();
 }
 
@@ -231,11 +236,11 @@ const volumeOnOff = () => {
     audio.volume = audio.volume === 0 ? audio.volume = 1 : audio.volume = 0;
     let volume = document.querySelector('.player-volume img');
     if (audio.volume === 0) {
-        volume.src = 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg';
+        volume.src = `${sPVlmOff}`;
         volumeInput.value = '0';
         volumeInput.style.setProperty('--gradient', `linear-gradient(90deg, ${sTSClrS} 0%, ${sTSClrS} 100%)`);
     } else {
-        volume.src = 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg';
+        volume.src = `${sPVlmOn}`;
         volumeInput.value = '100';
         volumeInput.style.setProperty('--gradient', `linear-gradient(90deg, ${sTSClrE} 0%, ${sTSClrE} 100%)`);
     }

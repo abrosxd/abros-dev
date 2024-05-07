@@ -476,5 +476,8 @@ stylePlayer.textContent = `
         margin: 10px 0;
         width: 100%;
     }
+    ${playerID} .music-range:focus {
+        outline: none;
+    }
 `;
 document.head.appendChild(stylePlayer);

@@ -4,19 +4,17 @@
 <div id="area-player"></div>
 <script>
 window.AbrosTildaPlayer = {
-    // Помощник
-    assistant: 'true', // Запуск помощника (После удалите строку или замените значение на false)
     // Настройки
-    catalogID: '#rec548547546', // ID блока каталога
+    catalogID: '#recXXXXXXXXX', // ID блока каталога
     playerID: '.uc-player', // Класс плеера
     audioID: '#audio', // ID блока проигрователя
     areaID: '#area-player', // ID блока тригера
     cards: '12', // Кол-во карточек на странице
-    storepart: '204361755101', // ID Storepart
+    storepart: 'XXXXXXXXXXXX', // ID Storepart
     // Стили
     // Обложка для карточек
     WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Цвет обложки для карточек
-    WrapperBorderRadius: 'var(--br-xl)', // Скругление обложки для карточек
+    WrapperBorderRadius: '50px', // Скругление обложки для карточек
     WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Иконка кнопки Play
     WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Иконка кнопки Pause
     // Input громкости и прогресса песни

@@ -8,6 +8,17 @@
  * <script src = 'https://abros.me/tilda/mods/player.js'></script>
  */
 
+// Переменные стилей
+// Обложка для карточек
+const sWBgClr = window.AbrosTildaPlayer.WrapperBackgroundColor; // Цвет обложки для карточек
+const sWBrdRd = window.AbrosTildaPlayer.WrapperBorderRadius; // Скругление обложки для карточек
+const sWPlay = window.AbrosTildaPlayer.WrapperPlay; // Иконка кнопки Play
+const sWPause = window.AbrosTildaPlayer.WrapperPause; // Иконка кнопки Pause
+// Input громкости и прогресса песни
+const sTSClrS = window.AbrosTildaPlayer.TrackSlideColorStart; // Цвет полосок
+const sTSClrE = window.AbrosTildaPlayer.TrackSlideColorEnd; // Цвет заполнения полосок
+const sTTClr = window.AbrosTildaPlayer.TrackThumbColor; // Цвет тумблера
+
 // Пееременные каталога
 const catalogID = window.AbrosTildaPlayer.catalogID;
 const catalog = document.querySelector(catalogID);
@@ -220,17 +231,17 @@ const volumeOnOff = () => {
     if (audio.volume === 0) {
         volume.src = 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg';
         volumeInput.value = '0';
-        volumeInput.style.setProperty('--gradient', `linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%)`);
+        volumeInput.style.setProperty('--gradient', `linear-gradient(90deg, ${sTSClrS} 0%, ${sTSClrS} 100%)`);
     } else {
         volume.src = 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg';
         volumeInput.value = '100';
-        volumeInput.style.setProperty('--gradient', `linear-gradient(90deg, rgba(126,112,255,1) 0%, rgba(126,112,255,1) 100%)`);
+        volumeInput.style.setProperty('--gradient', `linear-gradient(90deg, ${sTSClrE} 0%, ${sTSClrE} 100%)`);
     }
 }
 
 const volumeControl = (e) => {
     let per = e.target.value + '%';
-    e.target.style.setProperty('--gradient', `linear-gradient(90deg, rgba(126,112,255,1) 0%, rgba(126,112,255,1) ${per}, rgba(255,255,255,1) ${per}, rgba(255,255,255,1) 100%)`);
+    e.target.style.setProperty('--gradient', `linear-gradient(90deg, ${sTSClrE} 0%, ${sTSClrE} ${per}, ${sTSClrS} ${per}, ${sTSClrS} 100%)`);
     audio.volume = Number(e.target.value) / 100;
 }
 
@@ -238,7 +249,7 @@ const progressControl = () => {
     let per = Math.ceil(audio.currentTime * 100 / audio.duration) || 0;
     progressInput.value = String(per);
     per += '%';
-    progressInput.style.setProperty('--gradient', `linear-gradient(90deg, rgba(126,112,255,1) 0%, rgba(126,112,255,1) ${per}, rgba(255,255,255,1) ${per}, rgba(255,255,255,1) 100%)`);
+    progressInput.style.setProperty('--gradient', `linear-gradient(90deg, ${sTSClrE} 0%, ${sTSClrE} ${per}, ${sTSClrS} ${per}, ${sTSClrS} 100%)`);
 }
 
 const progressListen = (e) => {
@@ -416,8 +427,8 @@ stylePlayer.textContent = `
         z-index: 1;
         width: 100%;
         height: 100%;
-        background-color: var(--AbrosPlayerWrapperBackgroundColor);
-        border-radius: var(--AbrosPlayerWrapperBorderRadius); */
+        background-color: ${sWBgClr};
+        border-radius: ${sWBrdRd};
     }
     /* Кнопки play/pause */
     .btn-music {
@@ -437,10 +448,10 @@ stylePlayer.textContent = `
         transform: translate(-50%, -50%) scale(110%);
     }
     .play {
-        background-image: var(--AbrosPlayerWrapperPlay);
+        background-image: ${sWPlay};
     }
     .pause {
-        background-image: var(--AbrosPlayerWrapperPause);
+        background-image: ${sWPause};
     }
     /* Многоточие */
     .multipoint {
@@ -470,6 +481,7 @@ stylePlayer.textContent = `
     /* Input громкости и прогресса песни */
     ${playerID} .music-range.volume,
     ${playerID} .music-range.progress {
+        --gradient: linear-gradient(90deg, ${sTSClrE} 0%, ${sTSClrE} 100%, ${sTSClrS} 100%, ${sTSClrS} 100%)
         height:8px;
         border-radius: 0px;
         -webkit-appearance: none;
@@ -484,7 +496,7 @@ stylePlayer.textContent = `
         height:8px;
         cursor: pointer;
         animate: 0.2s;
-        background: var(--AbrosPlayerTrackGradient);
+        background: var(--gradient);
         border-radius: 0px;
     }
     ${playerID} .music-range::-webkit-slider-runnable-track:after {
@@ -492,7 +504,7 @@ stylePlayer.textContent = `
         height: 4px;
         cursor: pointer;
         animate: 0.2s;
-        background: var(--AbrosPlayerTrackGradient);
+        background: var(--gradient);
         border-radius: 0px;
         border: none;
         box-shadow: none;
@@ -501,7 +513,7 @@ stylePlayer.textContent = `
         height: 20px;
         width: 20px;
         border-radius: 50%;
-        background: var(--AbrosPlayerTrackGradient);
+        background: ${sTTClr};
         cursor: pointer;
         -webkit-appearance: none;
         margin-top: -6px;
@@ -509,14 +521,14 @@ stylePlayer.textContent = `
         box-shadow: none;
     }
     ${playerID} .music-range:focus::-webkit-slider-runnable-track {
-        background: var(--AbrosPlayerGradient);
+        background: var(--gradient);
     }
     ${playerID} .music-range::-moz-range-track {
         width: 100%;
         height: 4px;
         cursor: pointer;
         animate: 0.2s;
-        background: var(--AbrosPlayerTrackGradient);
+        background: var(--gradient);
         border-radius: 0px;
         border: none;
         box-shadow: none;
@@ -525,7 +537,7 @@ stylePlayer.textContent = `
         height: 20px;
         width: 20px;
         border-radius: 50%;
-        background: var(--AbrosPlayerThumbColor);
+        background: ${sTTClr};
         cursor: pointer;
         border: none;
         box-shadow: none;
@@ -538,6 +550,34 @@ stylePlayer.textContent = `
         background: transparent;
         border-color: transparent;
         color: transparent;
+    }
+    ${playerID} .music-range::-ms-fill-lower {
+        background: ${sTSClrE};
+        border-radius: 4px;
+        border: none;
+        box-shadow: none;
+    }
+    ${playerID} .music-range::-ms-fill-upper {
+        background: ${sTSClrS};
+        border-radius: 4px;
+        border: none;
+        box-shadow: none;
+    }
+    ${playerID} .music-range::-ms-thumb {
+        margin-top: 1px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: ${sTTClr};
+        cursor: pointer;
+        border: none;
+        box-shadow: none;
+    }
+    ${playerID} .music-range:focus::-ms-fill-lower {
+        background: ${sTSClrE};
+    }
+    ${playerID} .music-range:focus::-ms-fill-upper {
+        background: ${sTSClrS};
     }
 `;
 document.head.appendChild(stylePlayer);

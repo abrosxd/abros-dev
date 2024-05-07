@@ -526,7 +526,7 @@ stylePlayer.textContent = `
         height: 20px;
         width: 20px;
         border-radius: 50%;
-        background: #fff;
+        background: var(--AbrosPlayerThumbColor);
         cursor: pointer;
         border: none;
         box-shadow: none;
@@ -541,13 +541,13 @@ stylePlayer.textContent = `
         color: transparent;
     }
     ${playerID} .music-range::-ms-fill-lower {
-        background: #7E70FF;
+        background: var(--AbrosPlayerTrackLowerColor);
         border-radius: 4px;
         border: none;
         box-shadow: none;
     }
     ${playerID} .music-range::-ms-fill-upper {
-        background: #fff;
+        background: var(--AbrosPlayerTrackUpperColor);
         border-radius: 4px;
         border: none;
         box-shadow: none;
@@ -557,16 +557,16 @@ stylePlayer.textContent = `
         height: 20px;
         width: 20px;
         border-radius: 50%;
-        background: #fff;
+        background: var(--AbrosPlayerThumbColor);
         cursor: pointer;
         border: none;
         box-shadow: none;
     }
     ${playerID} .music-range:focus::-ms-fill-lower {
-        background: #7E70FF;
+        background: var(--AbrosPlayerTrackLowerColor);
     }
     ${playerID} .music-range:focus::-ms-fill-upper {
-        background: #fff;
+        background: var(--AbrosPlayerTrackUpperColor);
     }
 `;
 document.head.appendChild(stylePlayer);

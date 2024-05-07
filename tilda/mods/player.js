@@ -380,7 +380,7 @@ stylePlayer.textContent = `
     /* Сам плеер */
     ${playerID} {
         position: fixed;
-        bottom: -75px;
+        bottom: -85px;
         left: 0;
         width: 100%;
         z-index: 100;

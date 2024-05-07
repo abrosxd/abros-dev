@@ -46,6 +46,7 @@ const areaID = window.AbrosTildaPlayer.areaID;
 const area = document.querySelector(areaID);
 
 // Переменные мода
+const assistant = window.AbrosTildaPlayer.assistant;
 const tracksOnPage = window.AbrosTildaPlayer.cards;
 let idArr = new Array();
 let playlist = new Array();
@@ -371,6 +372,26 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
         console.error(error);
     });
 });
+
+if (assistant) {
+    document.addEventListener('DOMContentLoaded', function() {
+        var scripts = document.querySelectorAll('script');
+        scripts.forEach(function(script) {
+            var scriptText = script.textContent || script.innerText;
+            if (scriptText.includes("var options = {")) {
+                var lines = scriptText.split('\n');
+                var storepartLine = lines.find(function(line) {
+                    return line.trim().startsWith('storepart:');
+                });
+                if (storepartLine) {
+                    var storepartValue = storepartLine.split(':')[1].trim().replace(/[,;]/g, '');
+                    alert("Storepart этого сайта: " + storepartValue + "\n\n" + "Замените этим значением настройку:\n" + "storepart: 'XXXXXXXXXXXX',");
+                }
+                return;
+            }
+        });
+    });
+}
 
 // Стили для плеера
 var stylePlayer = document.createElement('style');

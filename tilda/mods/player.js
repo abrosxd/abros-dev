@@ -483,7 +483,7 @@ stylePlayer.textContent = `
         width: 100%;
         height:8px;
         cursor: pointer;
-        animate: 0.1s;
+        animate: 0.2s;
         background: var(--AbrosPlayerTrackLowerColor);
         border-radius: 0px;
     }
@@ -491,7 +491,7 @@ stylePlayer.textContent = `
         width: 100%;
         height: 4px;
         cursor: pointer;
-        animate: 0.1s;
+        animate: 0.2s;
         background: var(--AbrosPlayerTrackLowerColor);
         border-radius: 0px;
         border: none;

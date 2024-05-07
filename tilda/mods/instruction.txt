@@ -4,7 +4,7 @@
 <div id="area-player"></div>
 <script>
 window.AbrosTildaPlayer = {
-    // Помошник
+    // Помощник
     assistant: 'true', // Запуск помощника (После удалите строку или замените значение на false)
     // Настройки
     catalogID: '#rec548547546', // ID блока каталога

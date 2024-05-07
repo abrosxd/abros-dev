@@ -373,7 +373,7 @@ storeGrid.addEventListener('tStoreRendered', function(e) {
     });
 });
 
-if (assistant) {
+if (assistant === true) {
     document.addEventListener('DOMContentLoaded', function() {
         var scripts = document.querySelectorAll('script');
         scripts.forEach(function(script) {

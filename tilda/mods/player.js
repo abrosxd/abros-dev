@@ -467,6 +467,14 @@ stylePlayer.textContent = `
         background-color: rgba(255,255,255,.5);
         border-radius: var(--br-xl);
     }
-    
+    /* Input громкости и прогресса песни */
+    ${playerID} .music-range.volume,
+    ${playerID} .music-range.progress {
+        height:8px;
+        border-radius: 0px;
+        -webkit-appearance: none;
+        margin: 10px 0;
+        width: 100%;
+    }
 `;
 document.head.appendChild(stylePlayer);

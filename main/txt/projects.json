@@ -10,7 +10,7 @@
         "RU": [
           { "type": "h4", "value": "Плеер для ТВОЙ ХИТ" },
           { "type": "text", "value": "Веб-разработка для конструктора Tilda." },
-          { "type": "img", "value": "main/projects/TvoyHit/logo_mini.png" },
+          { "type": "img", "value": "main/projects/TvoyHit/logo_mini.svg" },
           { "type": "text", "value": "Сайт известного композитора. Обратились ко мне с задачей создать для сайта плеер." },
           { "type": "text", "value": "Обстоятельства сложились так, что сайт был сделан на конструкторе Tilda. Из-за чего в дальнейшем выяснилось, что нужные компоненты там отсутствуют." },
           { "type": "text", "value": "Однако сайт был уже сделан, поэтому пришлось прибегнуть к дополнительной разработке." },
@@ -28,7 +28,7 @@
         "EN": [
           { "type": "h4", "value": "Player for TVOY HIT" },
           { "type": "text", "value": "Web development for the Tilda builder." },
-          { "type": "img", "value": "main/projects/TvoyHit/logo_mini.png" },
+          { "type": "img", "value": "main/projects/TvoyHit/logo_mini.svg" },
           { "type": "text", "value": "Website of a famous composer. I was tasked with creating a player for the website." },
           { "type": "text", "value": "Circumstances led to the website being made on the Tilda builder. As a result, it turned out that the necessary components were not available there." },
           { "type": "text", "value": "However, since the website was already made, it was necessary to resort to additional development." },
@@ -46,7 +46,7 @@
         "PL": [
           { "type": "h4", "value": "Odtwarzacz dla TVOY HIT" },
           { "type": "text", "value": "Tworzenie stron internetowych dla kreatora Tilda." },
-          { "type": "img", "value": "main/projects/TvoyHit/logo_mini.png" },
+          { "type": "img", "value": "main/projects/TvoyHit/logo_mini.svg" },
           { "type": "text", "value": "Strona znanego kompozytora. Zostałem poproszony o stworzenie odtwarzacza dla tej strony." },
           { "type": "text", "value": "Okoliczności doprowadziły do tego, że strona została wykonana w kreatorze Tilda. W rezultacie okazało się, że potrzebne komponenty tam nie są dostępne." },
           { "type": "text", "value": "Jednakże strona już została wykonana, więc konieczne było skorzystanie z dodatkowego opracowania." },

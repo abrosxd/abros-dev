@@ -555,7 +555,7 @@ function showReload(reloadText){
             setTimeout(function (){
                 $('.extensions__item', Lampa.Extensions.render()).each(function (i, e){
                     var descr = $(e).find('.extensions__item-descr').text();
-                    var regex = /https:\/\/abros\.me\/lampa\/store\.js/;
+                    var regex = /https:\/\/abros\.dev\/lampa\/store\.js/;
                     if(regex.test(descr)) {
                         $(e).find('.extensions__item-author').html('💎').append('<span class="extensions__item-premium">VIP buy at @abrosxd</span>');
                         $(e).find('.extensions__item-name').html('Abros Store');

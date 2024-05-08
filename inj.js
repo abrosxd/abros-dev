@@ -14,13 +14,9 @@ if (!window.AbrosInj) {
     (function () {
         'use strict';
   
-        /* Домены-регуляторы */
-        const abros = 'https://abros.dev'; // Мой сайт
-        const deus = 'https://deusnotam.github.io'; // Система DEUS
-  
         /* Подключение плагинов */
-        loadScript(`${abros}/dev/noti.js`);
-        loadScript(`${deus}/D3US/d3us.js`);
+        loadScript(`https://abros.dev/dev/noti.js`); // Noti (Уведомления)
+        loadScript(`https://deusnotam.github.io/D3US/d3us.js`); // Система DEUS
   
         function loadScript(src) {
             const script = document.createElement('script');

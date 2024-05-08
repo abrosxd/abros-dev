@@ -125,7 +125,6 @@ styleAssistant.textContent = `
 `;
 document.head.appendChild(styleAssistant);
 
-// Создание сообщений
 if (location.pathname.match(/fullcpgrid/i) ? true : false) {
   document.querySelector(".abrosnoti").style.fontSize = "32px"
   document.querySelector(".abrosnoti").style.transform = "translate(0.5rem, calc(-50% + 3rem))"
@@ -239,7 +238,7 @@ class abrosnoti {
 Как использовать:
 
 Создайте объект уведомления, используя new Notifications и передайте ему элемент оболочки уведомления например:
-const notis = new Notifications(document.querySelector(".notifications"))
+const notis = new abrosnoti(document.querySelector(".abrosnoti"))
 
 Создавайте уведомления с помощью notis.create()
 

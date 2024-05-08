@@ -177,7 +177,7 @@ class abrosnoti {
     
     this.el.appendChild(notiEl)
     
-    console.log("height", notiCardEl.scrollHeight)
+    // console.log("height", notiCardEl.scrollHeight)
     requestAnimationFrame(function() {
       notiEl.style.height = "calc(0.25rem + " + notiCardEl.getBoundingClientRect().height + "px)";
     });
@@ -187,7 +187,7 @@ class abrosnoti {
       const localX = (event.clientX - rect.left) / rect.width
       const localY = (event.clientY - rect.top) / rect.height
 
-      console.log(localX, localY)
+      // console.log(localX, localY)
       glowEl.style.left = localX * 100 + "%"
       glowEl.style.top = localY * 100 + "%"
 

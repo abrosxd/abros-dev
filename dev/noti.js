@@ -8,9 +8,6 @@
  * <script src = 'https://abros.dev/dev/noti.js'></script>
  */
 
-/* Домен-регулятор */
-const domain = 'https://abros.dev';
-
 // Компонент ассистента
 document.body.insertAdjacentHTML('beforeend', `<div class="abrosnoti"></div>`);
 
@@ -130,7 +127,7 @@ document.head.appendChild(styleAssistant);
 
 // Создание сообщений
 if (location.pathname.match(/fullcpgrid/i) ? true : false) {
-  // document.documentElement.style.fontSize = "32px"
+  document.querySelector(".abrosnoti").style.fontSize = "32px"
   document.querySelector(".abrosnoti").style.transform = "translate(0.5rem, calc(-50% + 3rem))"
 }
 

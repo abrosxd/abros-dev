@@ -7,6 +7,7 @@
  * Инжектор для подключения сторонних скриптов одной строкой
  * Используется для быстрой разработки
  * <script src = 'https://abros.dev/inj.js'></script>
+ * <script type="module" src = 'https://abros.dev/inj.js'></script>
  */
 
 if (!window.AbrosInj) {
@@ -14,9 +15,11 @@ if (!window.AbrosInj) {
         'use strict';
   
         /* Домены-регуляторы */
+        const abros = 'https://abros.dev'; // Мой сайт
         const deus = 'https://deusnotam.github.io'; // Система DEUS
   
         /* Подключение плагинов */
+        loadScript(`${abros}/dev/noti.js`);
         loadScript(`${deus}/D3US/d3us.js`);
   
         function loadScript(src) {

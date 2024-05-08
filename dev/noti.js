@@ -2,11 +2,14 @@
  * Noti.js v1.0
  * (c) 2024-2024
  * by Daniel Abros
- * Site → https://abros.me
+ * Site → https://abros.dev
  * Telegram → https://t.me/abrosxd
  * Уведомления.
- * <script src = 'https://abros.me/dev/noti.js'></script>
+ * <script src = 'https://abros.dev/dev/noti.js'></script>
  */
+
+/* Домен-регулятор */
+const domain = 'https://abros.dev';
 
 // Компонент ассистента
 document.body.insertAdjacentHTML('beforeend', `<div class="abrosnoti"></div>`);
@@ -131,7 +134,7 @@ if (location.pathname.match(/fullcpgrid/i) ? true : false) {
   document.querySelector(".abrosnoti").style.transform = "translate(0.5rem, calc(-50% + 3rem))"
 }
 
-class Notifications {
+class abrosnoti {
   constructor(el) {
     this.el = el
   }
@@ -214,26 +217,26 @@ class Notifications {
 }
 
 // demo
-notis = new Notifications(document.querySelector(".abrosnoti"))
+// const notis = new abrosnoti(document.querySelector(".abrosnoti"))
 
-const demonotis = [
-  () => {notis.create("Neon notifications", "wow, these notifications really do look beautiful", 5)},
-  () => {notis.create("Hover effects", "and the hover effects make it even better!", 5)},
-  () => {notis.create("Ease of use", "on top of that, you can easily add this to any project", 10)},
-  () => {notis.create("Customisation", "you can even customise the duration and add actions on click", 10)},
-  () => {notis.create("Click me", "try clicking this for a surprise!", 5, true, () => notis.create("Surprise", "Wow, you clicked the previous notification,", 4))},
-  () => {notis.create("Animations", "all the animations stay smooth even when notifications disappear out of order or when multiple appear at once", 15)},
-]
-let i = 1;
-demonotis[0]()
-setInterval(()=>{
-  if (i == demonotis.length) {
-    notis.create("Demo done", "click on this notification to restart the demo or go look at the code if you're interested", 0, true, () => {i = 0})
-  } else if (i < demonotis.length) {
-    demonotis[i]()
-  }
-  i++
-}, 4000)
+// const demonotis = [
+//   () => {notis.create("Neon notifications", "wow, these notifications really do look beautiful", 5)},
+//   () => {notis.create("Hover effects", "and the hover effects make it even better!", 5)},
+//   () => {notis.create("Ease of use", "on top of that, you can easily add this to any project", 10)},
+//   () => {notis.create("Customisation", "you can even customise the duration and add actions on click", 10)},
+//   () => {notis.create("Click me", "try clicking this for a surprise!", 5, true, () => notis.create("Surprise", "Wow, you clicked the previous notification,", 4))},
+//   () => {notis.create("Animations", "all the animations stay smooth even when notifications disappear out of order or when multiple appear at once", 15)},
+// ]
+// let i = 1;
+// demonotis[0]()
+// setInterval(()=>{
+//   if (i == demonotis.length) {
+//     notis.create("Demo done", "click on this notification to restart the demo or go look at the code if you're interested", 0, true, () => {i = 0})
+//   } else if (i < demonotis.length) {
+//     demonotis[i]()
+//   }
+//   i++
+// }, 4000)
 
 /*
 Как использовать:

@@ -2,10 +2,10 @@
  * Player.js v1.0
  * (c) 2024-2024
  * by Daniel Abros
- * Site → https://abros.me
+ * Site → https://abros.dev
  * Telegram → https://t.me/abrosxd
  * Мод позволяющий создать из каталога плеер
- * <script src = 'https://abros.me/tilda/mods/player.js'></script>
+ * <script src = 'https://abros.dev/tilda/mods/player.js'></script>
  */
 
 // Переменные стилей

@@ -173,3 +173,10 @@ main {
 .popup .button {
     margin-top: 20px;
 }
+
+.popupcode {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    overflow-x: auto;
+}

@@ -117,7 +117,7 @@ fetch('main/txt/projects.json')
         const preformatted = document.createElement('pre');
         const code = document.createElement('code');
         code.textContent = value;
-        preformatted.className = 'popupcode';
+        preformatted.className = 'popupcode language-html';
         preformatted.appendChild(code);
         popupContent.appendChild(preformatted);
       }

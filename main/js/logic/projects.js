@@ -165,7 +165,6 @@ fetch('main/txt/projects.json')
 
     window.location.hash = `#${project.hash}`;
     hljs.highlightAll();
-
   }
           
   const projectCard = document.querySelectorAll('.project-card');

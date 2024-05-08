@@ -164,6 +164,8 @@ fetch('main/txt/projects.json')
     popup.scrollTop = 0;
 
     window.location.hash = `#${project.hash}`;
+    hljs.highlightAll();
+
   }
           
   const projectCard = document.querySelectorAll('.project-card');

@@ -146,6 +146,19 @@
     },
     "reviewsData": [
         {
+            "img": "main/img/no-image.jpeg",
+            "name": {
+                "RU": "Адель (Сонграйтинг О. Шаумаров)",
+                "EN": "Adele (Songwriting by O. Shaumarov)",
+                "PL": "Adele (Pisanie piosenek: O. Shaumarov)"
+            },
+            "text": {
+                "RU": "Даниель, добрый день! Лично благодарю вас за быструю и качественную работу!!! Спасибо вам большое!!! Обязательно сохраню ваш контакт и буду рекомендовать!",
+                "EN": "Daniel, good day! I personally thank you for your fast and high-quality work!!! Thank you very much!!! I will definitely keep your contact and recommend you!",
+                "PL": "Danielu, dzień dobry! Serdecznie dziękuję Ci za szybką i wysokiej jakości pracę!!! Bardzo Ci dziękuję!!! Z pewnością zachowam Twój kontakt i będę polecać!"
+            }
+        },
+        {
             "img": "main/img/reviews/AnnaMoiseenko.jpeg",
             "name": {
                 "RU": "Анна Моисеенко",

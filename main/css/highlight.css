@@ -12,3 +12,15 @@
 .hljs-emphasis {
     font-style: italic;
 }
+
+.hljs-attr {
+    color: #df3079;
+}
+
+.hljs-string {
+    color: #00a67d;
+}
+
+.hljs-comment {
+    color: #868686;
+}

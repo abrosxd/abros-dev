@@ -188,8 +188,10 @@ fetch('main/txt/projects.json')
   // Смена языка фильтра
   function changefilters(language) {
     // All
+    const FilterElement = document.querySelector('.filter .text');
     const FilterAllElement = document.querySelector('.tFilterAll');
     const FilterAllText = data.filters.All[language];
+    FilterElement.textContent = FilterAllText;
     FilterAllElement.textContent = FilterAllText;
     // MyProject
     const FilterMyProjectElement = document.querySelector('.tFilterMyProject');
@@ -222,9 +224,6 @@ const filterSections = document.querySelectorAll('.filter .filter-section');
 const filterSubMenu = document.querySelector('.filter-wrap.submenu');
 const filterText = document.querySelector('.filter .text');
 const filterArrow = document.querySelector('.filter .arrow');
-const defaultText = document.querySelector('.tFilterAll').textContent;
-
-document.querySelector('.filter .text').textContent = defaultText;
 
 function filterProjects(category) {
   const cards = document.querySelectorAll('.project-card');

@@ -222,25 +222,27 @@ const filterSections = document.querySelectorAll('.filter .filter-section');
 const filterSubMenu = document.querySelector('.filter-wrap.submenu');
 const filterText = document.querySelector('.filter .text');
 const filterArrow = document.querySelector('.filter .arrow');
+const defaultText = document.querySelector('.tFilterAll').textContent;
+
+filterText.textContent = defaultText;
 
 function filterProjects(category) {
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => {
-        const categories = card.dataset.category.split(' ');
-        if (category === 'All' || categories.includes(category)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-    filterText.textContent = category;
+  const cards = document.querySelectorAll('.project-card');
+  cards.forEach(card => {
+      const categories = card.dataset.category.split(' ');
+      if (category === 'All' || categories.includes(category)) {
+          card.style.display = 'block';
+      } else {
+          card.style.display = 'none';
+      }
+  });
 }
-filterProjects('All');
 
 filterSections.forEach(section => {
     section.addEventListener('click', () => {
         const category = section.dataset.category;
         filterProjects(category);
+        filterText.textContent = section.textContent;
     });
 });
 

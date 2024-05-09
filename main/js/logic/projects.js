@@ -224,9 +224,7 @@ const filterText = document.querySelector('.filter .text');
 const filterArrow = document.querySelector('.filter .arrow');
 const defaultText = document.querySelector('.tFilterAll').textContent;
 
-window.addEventListener('DOMContentLoaded', () => {
-  filterText.textContent = defaultText;
-});
+document.querySelector('.filter .text').textContent = defaultText;
 
 function filterProjects(category) {
   const cards = document.querySelectorAll('.project-card');

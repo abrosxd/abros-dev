@@ -253,4 +253,5 @@ const handleActiveChange = () => {
 
 const observer = new MutationObserver(handleActiveChange);
 observer.observe(filterSubMenu, { attributes: true });
+handleActiveChange();
 

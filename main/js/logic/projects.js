@@ -202,40 +202,31 @@ fetch('main/txt/projects.json')
 
 // Работа фильтра
 const filter = document.querySelector('.filter');
-const filterSections = filter.querySelectorAll('.filter-section');
 const filterSubMenu = filter.querySelector('.filter-wrap.submenu');
 const filterText = filter.querySelector('.text');
 const filterArrow = filter.querySelector('.arrow');
 
 function filterProjects(category) {
-  const cards = document.querySelectorAll('.project-card');
-  cards.forEach(card => {
-      const categories = card.dataset.category.split(' ');
-      if (category === 'All' || categories.includes(category)) {
-          card.style.display = 'block';
-      } else {
-          card.style.display = 'none';
-      }
+  document.querySelectorAll('.project-card').forEach(card => {
+    const categories = card.dataset.category.split(' ');
+    card.style.display = (category === 'All' || categories.includes(category)) ? 'block' : 'none';
   });
 }
 
-filterSections.forEach(section => {
-    section.addEventListener('click', () => {
-        const category = section.dataset.category;
-        filterProjects(category);
-        filterText.textContent = section.textContent;
-    });
+document.querySelectorAll('.filter-section').forEach(section => {
+  section.addEventListener('click', () => {
+    const category = section.dataset.category;
+    filterProjects(category);
+    filterText.textContent = section.textContent;
+  });
 });
 
 const handleActiveChange = () => {
-    if (filterSubMenu.classList.contains('active')) {
-        filterArrow.style.transform = 'rotate(180deg)';
-    } else {
-        filterArrow.style.transform = 'rotate(0deg)';
-    }
+  filterArrow.style.transform = `rotate(${filterSubMenu.classList.contains('active') ? '180' : '0'}deg)`;
 };
 
 const observer = new MutationObserver(handleActiveChange);
 observer.observe(filterSubMenu, { attributes: true });
 handleActiveChange();
+
 

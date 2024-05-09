@@ -222,12 +222,13 @@ const filterSections = document.querySelectorAll('.filter-section');
 function filterProjects(category) {
   const Cards = document.querySelectorAll('.project-card');
   Cards.forEach(card => {
-        if (category === 'All' || card.dataset.category === category) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
+      const categories = card.dataset.category.split(' ');
+      if (category === 'All' || categories.includes(category)) {
+          card.style.display = 'block';
+      } else {
+          card.style.display = 'none';
+      }
+  });
 }
 
 filterSections.forEach(section => {

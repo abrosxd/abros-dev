@@ -407,5 +407,37 @@
       },
       "url": "https://hiv.redcross.ru"
     }
-  ]
+  ],
+  "filters": {
+    "All": {
+      "RU": "Все",
+      "EN": "All",
+      "PL": "Wszystko"
+    },
+    "Library": {
+      "RU": "Библиотеки",
+      "EN": "Libraries",
+      "PL": "Biblioteki"
+    },
+    "Tilda": {
+      "RU": "Tilda",
+      "EN": "Tilda",
+      "PL": "Tilda"
+    },
+    "Layout": {
+      "RU": "Верстка сайтов",
+      "EN": "Website layout",
+      "PL": "Układ strony internetowej"
+    },
+    "MyProject": {
+      "RU": "Мои проекты",
+      "EN": "My projects",
+      "PL": "Moje projekty"
+    },
+    "Design": {
+      "RU": "Дизайн",
+      "EN": "Design",
+      "PL": "Design"
+    }
+  }
 }

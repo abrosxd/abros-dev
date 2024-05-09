@@ -185,5 +185,33 @@ fetch('main/txt/projects.json')
       }
     }
   });
+  // Смена языка фильтра
+  function changefilters(language) {
+    // All
+    const helloElement = document.querySelector('.thello');
+    const helloText = data.hello[language];
+    helloElement.textContent = helloText;
+    // Library
+    const timeElement = document.querySelector('.ttime');
+    const timeText = data.time.title[language];
+    timeElement.textContent = timeText;
+    // Tilda
+    const reviewsElement = document.querySelector('.treviews');
+    const reviewsText = data.reviews[language];
+    reviewsElement.textContent = reviewsText;
+    // Layout
+    const faqElement = document.querySelector('.tfaq');
+    const faqText = data.faq[language];
+    faqElement.textContent = faqText;
+    // MyProject
+    const galleryElement = document.querySelector('.tgallery');
+    const galleryText = data.gallery[language];
+    galleryElement.textContent = galleryText;
+    // Design
+    const stackElement = document.querySelector('.tstack');
+    const stackText = data.stack[language];
+    stackElement.textContent = stackText;
+  }
+  changefilters(currentLanguage);
 })
 .catch(error => console.error('Ошибка загрузки файла projects.json', error));

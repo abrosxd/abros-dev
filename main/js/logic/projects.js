@@ -217,9 +217,11 @@ fetch('main/txt/projects.json')
 .catch(error => console.error('Ошибка загрузки файла projects.json', error));
 
 // Работа фильтра
-const filterSections = document.querySelectorAll('.filter-section');
-const filterText = document.querySelector('.filter .text');
-const filterArrow = document.querySelector('.filter .arrow');
+const filter = document.querySelectorAll('.filter');
+const filterSections = filter.querySelectorAll('.filter-section');
+const filterSubMenu = filter.querySelector('.filter-wrap.submenu');
+const filterText = filter.querySelector('.text');
+const filterArrow = filter.querySelector('.arrow');
 
 function filterProjects(category) {
   const cards = document.querySelectorAll('.project-card');
@@ -241,15 +243,13 @@ filterSections.forEach(section => {
     });
 });
 
-const filterSubMenu = document.querySelector('.filter-wrap.submenu');
-if (filterSubMenu) {
-    filterSubMenu.addEventListener('click', () => {
-        filterSubMenu.classList.toggle('active');
-        if (filterSubMenu.classList.contains('active')) {
-            filterArrow.style.transform = 'rotate(180deg)';
-        } else {
-            filterArrow.style.transform = 'rotate(0deg)';
-        }
-    });
-}
+const handleActiveChange = () => {
+    if (filterSubMenu.classList.contains('active')) {
+        filterArrow.style.transform = 'rotate(180deg)';
+    } else {
+        filterArrow.style.transform = 'rotate(0deg)';
+    }
+};
+const observer = new MutationObserver(handleActiveChange);
+observer.observe(filterSubMenu, { attributes: true });
 

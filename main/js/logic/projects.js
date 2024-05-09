@@ -75,7 +75,7 @@ fetch('main/txt/projects.json')
     card.style.backgroundImage = `url(${project.img})`;
     card.style.boxShadow = `0 0 10px ${project.outline}`;
     card.id = project.id;
-    card.category = project.category;
+    card.dataset.category = project.category;
         
     const overlay = document.createElement('div');
     overlay.className = 'overlay';

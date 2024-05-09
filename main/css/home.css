@@ -224,6 +224,7 @@ main {
     border-radius: 2px;
     outline: none;
     overflow-y: auto;
+    font-family: var(--font-basic);
 }
 
 .filter-section {
@@ -232,6 +233,9 @@ main {
     text-transform: capitalize;
     transition: .2s;
     transition-property: background-color;
+}
+.filter-section:hover {
+    background: hsla(0, 0%, 100%, .15);
 }
 @media (max-width: 760px) {
     .filter-section {

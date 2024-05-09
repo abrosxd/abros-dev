@@ -6,6 +6,7 @@
       "img": "main/projects/GrushkaEndo/avatar.png",
       "overlay": "main/projects/GrushkaEndo/overlay.png",
       "outline": "#e29e70",
+      "category": "Tilda",
       "content": {
         "RU": [
           { "type": "h4", "value": "Плеер для ТВОЙ ХИТ" },
@@ -77,6 +78,7 @@
       "img": "main/projects/GrushkaEndo/avatar.png",
       "overlay": "main/projects/GrushkaEndo/overlay.png",
       "outline": "#e29e70",
+      "category": "MyProject Library Tilda",
       "content": {
         "RU": [
           { "type": "h4", "value": "Уведомления для твоего сайта" },
@@ -127,6 +129,7 @@
       "img": "main/projects/GrushkaEndo/avatar.png",
       "overlay": "main/projects/GrushkaEndo/overlay.png",
       "outline": "#e29e70",
+      "category": "Layout",
       "content": {
         "RU": [
           { "type": "h4", "value": "Вёрстка лендинга для салона красоты Grushka" },
@@ -171,6 +174,7 @@
       "img": "main/projects/LampaAbrosStore/avatar.png",
       "overlay": "main/projects/LampaAbrosStore/overlay.png",
       "outline": "#ffffff",
+      "category": "MyProject",
       "content": {
         "RU": [
           { "type": "h4", "value": "Abros Store - магазин плагинов для Lampa" },
@@ -221,6 +225,7 @@
       "img": "main/projects/DEUS/avatar.png",
       "overlay": "main/projects/DEUS/overlay.png",
       "outline": "#00ff00",
+      "category": "MyProject Library Tilda",
       "content": {
         "RU": [
           { "type": "h4", "value": "DEUS - защита контента" },
@@ -307,6 +312,7 @@
       "img": "main/projects/VADI/avatar.png",
       "overlay": "main/projects/VADI/overlay.png",
       "outline": "#006CFF",
+      "category": "Design",
       "content": {
         "RU": [
           { "type": "h4", "value": "Дизайн для стримера VADI" },
@@ -351,6 +357,7 @@
       "img": "main/projects/RedcrossHIF/avatar.png",
       "overlay": "main/projects/RedcrossHIF/overlay.png",
       "outline": "#de443a",
+      "category": "Design Tilda",
       "content": {
         "RU": [
           { "type": "h4", "value": "Красный крест - есть смысл жить" },

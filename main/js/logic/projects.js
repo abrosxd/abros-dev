@@ -201,11 +201,11 @@ fetch('main/txt/projects.json')
 .catch(error => console.error('Ошибка загрузки файла projects.json', error));
 
 // Работа фильтра
-const filter = document.querySelectorAll('.filter');
-const filterSections = document.querySelectorAll('.filter .filter-section');
-const filterSubMenu = document.querySelector('.filter-wrap.submenu');
-const filterText = document.querySelector('.filter .text');
-const filterArrow = document.querySelector('.filter .arrow');
+const filter = document.querySelector('.filter');
+const filterSections = filter.querySelectorAll('.filter-section');
+const filterSubMenu = filter.querySelector('.filter-wrap.submenu');
+const filterText = filter.querySelector('.text');
+const filterArrow = filter.querySelector('.arrow');
 
 function filterProjects(category) {
   const cards = document.querySelectorAll('.project-card');

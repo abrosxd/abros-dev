@@ -187,7 +187,7 @@ fetch('main/txt/projects.json')
   });
   // Смена языка фильтра
   function changefilters(language) {
-    const filterElements = document.querySelectorAll('.filter .text');
+    const filterElements = document.querySelector('.filter .text');
     const filterNames = ['All', 'MyProject', 'Layout', 'Library', 'Design', 'Tilda'];
     filterElements.textContent = data.filters.All[language];
     filterNames.forEach(name => {

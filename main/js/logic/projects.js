@@ -92,11 +92,11 @@ fetch('main/txt/projects.json')
 
     project.content[currentLanguage].forEach(item => {
       const { type, value } = item;
-      const element = document.createElement(type === 'code' ? 'pre' : type);
+      const element = document.createElement(type === 'code' ? 'code' : type);
       if (type === 'img') element.src = value;
       else element.textContent = value;
       element.className = type === 'code' ? 'popupcode' : `popup${type}`;
-      if (type === 'code') element.innerHTML = `<code class="html">${value}</code>`;
+      if (type === 'code') element.innerHTML = value;
       popupContent.appendChild(element);
     });
 

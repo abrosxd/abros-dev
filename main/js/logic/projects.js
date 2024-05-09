@@ -218,10 +218,12 @@ fetch('main/txt/projects.json')
 
 // Работа фильтра
 const filterSections = document.querySelectorAll('.filter-section');
+const filterText = document.querySelector('.filter-trigger .text');
+const filterArrow = document.querySelector('.filter-trigger .arrow');
 
 function filterProjects(category) {
-  const Cards = document.querySelectorAll('.project-card');
-  Cards.forEach(card => {
+  const cards = document.querySelectorAll('.project-card');
+  cards.forEach(card => {
       const categories = card.dataset.category.split(' ');
       if (category === 'All' || categories.includes(category)) {
           card.style.display = 'block';
@@ -235,7 +237,19 @@ filterSections.forEach(section => {
     section.addEventListener('click', () => {
         const category = section.dataset.category;
         filterProjects(category);
+        filterText.textContent = section.textContent;
     });
 });
-// filterProjects('All');
+
+const filterSubMenu = document.querySelector('.filter-wrap.submenu');
+if (filterSubMenu) {
+    filterSubMenu.addEventListener('click', () => {
+        filterSubMenu.classList.toggle('active');
+        if (filterSubMenu.classList.contains('active')) {
+            filterArrow.style.transform = 'rotate(180deg)';
+        } else {
+            filterArrow.style.transform = 'rotate(0deg)';
+        }
+    });
+}
 

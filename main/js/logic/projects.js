@@ -201,29 +201,41 @@ fetch('main/txt/projects.json')
 .catch(error => console.error('Ошибка загрузки файла projects.json', error));
 
 // Работа фильтра
+const filter = document.querySelectorAll('.filter');
+const filterSections = document.querySelectorAll('.filter .filter-section');
 const filterSubMenu = document.querySelector('.filter-wrap.submenu');
 const filterText = document.querySelector('.filter .text');
 const filterArrow = document.querySelector('.filter .arrow');
 
 function filterProjects(category) {
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => {
-        const categories = card.dataset.category.split(' ');
-        card.style.display = (category === 'All' || categories.includes(category)) ? 'block' : 'none';
+  const cards = document.querySelectorAll('.project-card');
+  cards.forEach(card => {
+      const categories = card.dataset.category.split(' ');
+      if (category === 'All' || categories.includes(category)) {
+          card.style.display = 'block';
+      } else {
+          card.style.display = 'none';
+      }
+  });
+}
+
+filterSections.forEach(section => {
+    section.addEventListener('click', () => {
+        const category = section.dataset.category;
+        filterProjects(category);
+        filterText.textContent = section.textContent;
     });
-}
-
-function handleSectionClick(event) {
-    const category = event.target.dataset.category;
-    filterProjects(category);
-    filterText.textContent = event.target.textContent;
-}
-
-document.querySelector('.filter .filter-section').addEventListener('click', handleSectionClick);
-
-const observer = new MutationObserver(() => {
-    filterArrow.style.transform = filterSubMenu.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
 });
-observer.observe(filterSubMenu, { attributes: true });
 
+const handleActiveChange = () => {
+    if (filterSubMenu.classList.contains('active')) {
+        filterArrow.style.transform = 'rotate(180deg)';
+    } else {
+        filterArrow.style.transform = 'rotate(0deg)';
+    }
+};
+
+const observer = new MutationObserver(handleActiveChange);
+observer.observe(filterSubMenu, { attributes: true });
+handleActiveChange();
 

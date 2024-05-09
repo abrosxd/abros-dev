@@ -70,7 +70,6 @@ function initializeSubMenu(triggerId, submenuId) {
 // Инициализация подменю
 initializeSubMenu('links-trigger', 'links-submenu');
 initializeSubMenu('lang-trigger', 'lang-submenu');
-initializeSubMenu('filter-trigger', 'filter-submenu');
 
 // Контроль музыки
 const audio = document.getElementById('backgroundMusic');

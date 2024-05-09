@@ -71,6 +71,13 @@ function initializeSubMenu(triggerId, submenuId) {
 initializeSubMenu('links-trigger', 'links-submenu');
 initializeSubMenu('lang-trigger', 'lang-submenu');
 
+function isFilterPage() {
+  return window.location.pathname === "/";
+}
+if (isFilterPage()) {
+  initializeSubMenu('filter-trigger', 'filter-submenu');
+}
+
 // Контроль музыки
 const audio = document.getElementById('backgroundMusic');
 const toggleButton = document.getElementById('toggleMusic');

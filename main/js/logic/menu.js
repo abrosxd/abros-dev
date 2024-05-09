@@ -138,10 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
               const portfolioText = menu.portfolio[language];
               portfolioElement.textContent = portfolioText;
 
-              // const projectsElement = document.querySelector('.tprojects');
-              // const projectsText = menu.projects[language];
-              // projectsElement.textContent = projectsText;
-
               const aboutElement = document.querySelector('.tabout');
               const aboutText = menu.about[language];
               aboutElement.textContent = aboutText;

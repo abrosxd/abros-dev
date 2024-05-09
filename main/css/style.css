@@ -48,6 +48,7 @@ ul {
     padding: 0 12px;
     border-radius: 2px;
     transition: background-color 1s, color 2s;
+    pointer-events: none;
 }
 
 @media (max-width: 767px) {

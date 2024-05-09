@@ -218,10 +218,10 @@ fetch('main/txt/projects.json')
 
 // Работа фильтра
 const filter = document.querySelectorAll('.filter');
-const filterSections = document.querySelectorAll('.filter-section');
+const filterSections = filter.querySelectorAll('.filter-section');
 const filterSubMenu = document.querySelector('.filter-wrap.submenu');
-const filterText = filter.querySelector('.text');
-const filterArrow = filter.querySelector('.arrow');
+const filterText = document.querySelector('.filter .text');
+const filterArrow = document.querySelector('.filter .arrow');
 
 function filterProjects(category) {
   const cards = document.querySelectorAll('.project-card');
@@ -250,6 +250,7 @@ const handleActiveChange = () => {
         filterArrow.style.transform = 'rotate(0deg)';
     }
 };
+
 const observer = new MutationObserver(handleActiveChange);
 observer.observe(filterSubMenu, { attributes: true });
 

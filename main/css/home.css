@@ -230,7 +230,6 @@ main {
 .filter-section {
     padding: 3px 8px;
     cursor: pointer;
-    text-transform: capitalize;
     transition: .2s;
     transition-property: background-color;
 }

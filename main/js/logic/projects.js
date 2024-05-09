@@ -188,30 +188,53 @@ fetch('main/txt/projects.json')
   // Смена языка фильтра
   function changefilters(language) {
     // All
-    const helloElement = document.querySelector('.thello');
-    const helloText = data.hello[language];
-    helloElement.textContent = helloText;
-    // Library
-    const timeElement = document.querySelector('.ttime');
-    const timeText = data.time.title[language];
-    timeElement.textContent = timeText;
-    // Tilda
-    const reviewsElement = document.querySelector('.treviews');
-    const reviewsText = data.reviews[language];
-    reviewsElement.textContent = reviewsText;
-    // Layout
-    const faqElement = document.querySelector('.tfaq');
-    const faqText = data.faq[language];
-    faqElement.textContent = faqText;
+    const FilterAllElement = document.querySelector('.tFilterAll');
+    const FilterAllText = data.filters.All[language];
+    FilterAllElement.textContent = FilterAllText;
     // MyProject
-    const galleryElement = document.querySelector('.tgallery');
-    const galleryText = data.gallery[language];
-    galleryElement.textContent = galleryText;
+    const FilterMyProjectElement = document.querySelector('.tFilterMyProject');
+    const FilterMyProjectText = data.filters.MyProject[language];
+    FilterMyProjectElement.textContent = FilterMyProjectText;
+    // Layout
+    const FilterLayoutElement = document.querySelector('.tFilterLayout');
+    const FilterLayoutText = data.filters.Layout[language];
+    FilterLayoutElement.textContent = FilterLayoutText;
+    // Library
+    const FilterLibraryElement = document.querySelector('.tFilterLibrary');
+    const FilterLibraryText = data.filters.Library[language];
+    FilterLibraryElement.textContent = FilterLibraryText;
     // Design
-    const stackElement = document.querySelector('.tstack');
-    const stackText = data.stack[language];
-    stackElement.textContent = stackText;
+    const FilterDesignElement = document.querySelector('.tFilterDesign');
+    const FilterDesignText = data.filters.Design[language];
+    FilterDesignElement.textContent = FilterDesignText;
+    // Tilda
+    const FilterTildaElement = document.querySelector('.tFilterTilda');
+    const FilterTildaText = data.filters.Tilda[language];
+    FilterTildaElement.textContent = FilterTildaText;
   }
   changefilters(currentLanguage);
 })
 .catch(error => console.error('Ошибка загрузки файла projects.json', error));
+
+// Работа фильтра
+const filterSections = document.querySelectorAll('.filter-section');
+
+function filterProjects(category) {
+  const Cards = document.querySelectorAll('.project-card');
+  Cards.forEach(card => {
+        if (category === 'All' || card.dataset.category === category) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+filterSections.forEach(section => {
+    section.addEventListener('click', () => {
+        const category = section.dataset.category;
+        filterProjects(category);
+    });
+});
+// filterProjects('All');
+

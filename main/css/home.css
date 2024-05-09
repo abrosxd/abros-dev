@@ -178,3 +178,65 @@ main {
     border: 1px solid;
     border-radius: 5px;
 }
+
+.filter {
+    position: fixed;
+    bottom: 24px;
+    z-index: 2;
+    width: 20em;
+}
+
+.filter .text {
+    bottom: 2px;
+    left: 12px;
+    display: flex;
+    width: calc(100% - 40px);
+    align-items: center;
+    -webkit-mask-image: linear-gradient(90deg, #000, #000 calc(100% - 40px), transparent);
+    mask-image: linear-gradient(90deg, #000, #000 calc(100% - 40px), transparent);
+}
+
+.filter .arrow {
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: url(/main/img/arrow.svg) no-repeat 50%;
+}
+
+.filter-wrap {
+    overflow: hidden;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: rgba(53, 53, 53, .4);
+    margin: 0;
+    list-style: none;
+    font-feature-settings: "ss02" on;
+    font-size: 14px;
+    line-height: 18px;
+    scrollbar-color: hsla(0, 0%, 100%, .15) transparent;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    width: 100%;
+    max-height: 70vh;
+    flex-direction: column;
+    padding: 4px 0;
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    border-radius: 2px;
+    outline: none;
+    overflow-y: auto;
+}
+
+.filter-section {
+    padding: 3px 8px;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: .2s;
+    transition-property: background-color;
+}
+@media (max-width: 760px) {
+    .filter-section {
+        display: flex;
+        min-height: 32px;
+        align-items: center;
+    }
+}

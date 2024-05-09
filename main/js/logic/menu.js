@@ -39,6 +39,7 @@ function initializeSubMenu(triggerId, submenuId) {
           hideSubMenu();
       } else {
           showSubMenu();
+          trigger.classList.add('active');
       }
   }
 

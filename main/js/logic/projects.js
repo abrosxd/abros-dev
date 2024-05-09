@@ -234,6 +234,7 @@ function filterProjects(category) {
       }
   });
 }
+filterProjects('All');
 
 filterSections.forEach(section => {
     section.addEventListener('click', () => {

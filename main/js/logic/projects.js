@@ -218,7 +218,7 @@ fetch('main/txt/projects.json')
 
 // Работа фильтра
 const filter = document.querySelectorAll('.filter');
-const filterSections = filter.querySelectorAll('.filter-section');
+const filterSections = document.querySelectorAll('.filter .filter-section');
 const filterSubMenu = document.querySelector('.filter-wrap.submenu');
 const filterText = document.querySelector('.filter .text');
 const filterArrow = document.querySelector('.filter .arrow');

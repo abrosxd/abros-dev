@@ -218,8 +218,8 @@ fetch('main/txt/projects.json')
 
 // Работа фильтра
 const filterSections = document.querySelectorAll('.filter-section');
-const filterText = document.querySelector('.filter-trigger .text');
-const filterArrow = document.querySelector('.filter-trigger .arrow');
+const filterText = document.querySelector('.filter .text');
+const filterArrow = document.querySelector('.filter .arrow');
 
 function filterProjects(category) {
   const cards = document.querySelectorAll('.project-card');

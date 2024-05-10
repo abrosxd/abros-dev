@@ -89,6 +89,7 @@
           { "type": "img", "value": "main/projects/AbrosNoti/noti.gif" },
           { "type": "text", "value": "Выглядит круто, а самое главное, что очень просто с этим работать! Пример данных сообщений:" },
           { "type": "code", "value": "<script>\n  const demonotis = [\n    () => {abrosnoti.create(\"Привет!\", \"Давай посмотрим на эти чудесные уведомления\", 5)},\n    () => {abrosnoti.create(\"Крутые эффекты\", \"Посмотри как они переливаются и двигаются\", 5)},\n    () => {abrosnoti.create(\"Простота использования\", \"Они создаются сами, просто напиши текст!\", 10)},\n    () => {abrosnoti.create(\"Гибкость\", \"Показывай их так долго как только хочешь\", 10)},\n    () => {abrosnoti.create(\"Функции\", \"Научи их делать что-то по клику на них!\", 10, true, () => abrosnoti.create(\"Клик!\", \"Вау! это же другая карточка.\", 4))},\n    () => {abrosnoti.create(\"Анимация\", \"Их может быть так много, как только ты захочешь, они не будут мешать друг другу\", 15)},\n  ]\n  let i = 1;\n  demonotis[0]()\n  setInterval(()=>{\n    if (i == demonotis.length) {\n      abrosnoti.create(\"Abros Noti\", \"Уведомления для вашего сайта\", 0, true, () => {i = 0})\n    } else if (i < demonotis.length) {\n      demonotis[i]()\n    }\n    i++\n  }, 4000)\n<\/script>" },
+          { "type": "text", "value": "Вы можете проверить как это работает, просто смените язык на моем сайте :)" },
           { "type": "text", "value": "Данную библиотеку уже можно приобрести!" }
         ],
         "EN": [
@@ -100,6 +101,7 @@
           { "type": "img", "value": "main/projects/AbrosNoti/noti.gif" },
           { "type": "text", "value": "It looks great, and most importantly, it's very easy to work with! Example of message data:" },
           { "type": "code", "value": "<script>\n  const demonotis = [\n    () => {abrosnoti.create(\"Привет!\", \"Давай посмотрим на эти чудесные уведомления\", 5)},\n    () => {abrosnoti.create(\"Крутые эффекты\", \"Посмотри как они переливаются и двигаются\", 5)},\n    () => {abrosnoti.create(\"Простота использования\", \"Они создаются сами, просто напиши текст!\", 10)},\n    () => {abrosnoti.create(\"Гибкость\", \"Показывай их так долго как только хочешь\", 10)},\n    () => {abrosnoti.create(\"Функции\", \"Научи их делать что-то по клику на них!\", 10, true, () => abrosnoti.create(\"Клик!\", \"Вау! это же другая карточка.\", 4))},\n    () => {abrosnoti.create(\"Анимация\", \"Их может быть так много, как только ты захочешь, они не будут мешать друг другу\", 15)},\n  ]\n  let i = 1;\n  demonotis[0]()\n  setInterval(()=>{\n    if (i == demonotis.length) {\n      abrosnoti.create(\"Abros Noti\", \"Уведомления для вашего сайта\", 0, true, () => {i = 0})\n    } else if (i < demonotis.length) {\n      demonotis[i]()\n    }\n    i++\n  }, 4000)\n<\/script>" },
+          { "type": "text", "value": "Can you check how it works, just change the language on my website :)" },
           { "type": "text", "value": "This library is already available for purchase!" }
         ],
         "PL": [
@@ -111,6 +113,7 @@
           { "type": "img", "value": "main/projects/AbrosNoti/noti.gif" },
           { "type": "text", "value": "Wygląda świetnie, a co najważniejsze, jest bardzo łatwe w użyciu! Przykład wiadomości:" },
           { "type": "code", "value": "<script>\n  const demonotis = [\n    () => {abrosnoti.create(\"Привет!\", \"Давай посмотрим на эти чудесные уведомления\", 5)},\n    () => {abrosnoti.create(\"Крутые эффекты\", \"Посмотри как они переливаются и двигаются\", 5)},\n    () => {abrosnoti.create(\"Простота использования\", \"Они создаются сами, просто напиши текст!\", 10)},\n    () => {abrosnoti.create(\"Гибкость\", \"Показывай их так долго как только хочешь\", 10)},\n    () => {abrosnoti.create(\"Функции\", \"Научи их делать что-то по клику на них!\", 10, true, () => abrosnoti.create(\"Клик!\", \"Вау! это же другая карточка.\", 4))},\n    () => {abrosnoti.create(\"Анимация\", \"Их может быть так много, как только ты захочешь, они не будут мешать друг другу\", 15)},\n  ]\n  let i = 1;\n  demonotis[0]()\n  setInterval(()=>{\n    if (i == demonotis.length) {\n      abrosnoti.create(\"Abros Noti\", \"Уведомления для вашего сайта\", 0, true, () => {i = 0})\n    } else if (i < demonotis.length) {\n      demonotis[i]()\n    }\n    i++\n  }, 4000)\n<\/script>" },
+          { "type": "text", "value": "Czy możesz sprawdzić, jak to działa, po prostu zmień język na mojej stronie internetowej :)" },
           { "type": "text", "value": "Ta biblioteka jest już dostępna do zakupu!" }
         ]
       },

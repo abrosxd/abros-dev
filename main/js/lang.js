@@ -11,8 +11,27 @@ function eraseLanguageFromLocalStorage() {
 }
 
 function reloadPage() {
+    var previousLanguage = getLanguageFromLocalStorage();
     window.location.reload();
+    var currentLanguage = getLanguageFromLocalStorage();
+    if (previousLanguage !== currentLanguage) {
+        var languageName;
+        switch (currentLanguage) {
+            case "EN":
+                languageName = "English";
+                break;
+            case "RU":
+                languageName = "Русский";
+                break;
+            // Add cases for other languages as needed
+            default:
+                languageName = currentLanguage;
+                break;
+        }
+        abrosnoti.create("lang", languageName, "Язык был изменен. Приятного просмотра", 2);
+    }
 }
+
 
 var savedLanguage = getLanguageFromLocalStorage();
 

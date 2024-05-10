@@ -176,6 +176,7 @@ class abrosnoti {
     notiEl.appendChild(notiCardEl)
     notiCardEl.appendChild(glowEl)
     notiCardEl.appendChild(borderEl)
+    notiCardEl.appendChild(iconEl)
     notiCardEl.appendChild(titleEl)
     notiCardEl.appendChild(descriptionEl)
     

@@ -12,13 +12,13 @@
 document.body.insertAdjacentHTML('beforeend', `<div class="abrosnoti"></div>`);
 
 // Стили ассистента
-var styleAssistant = document.createElement('style');
-styleAssistant.textContent = `
+var styleNoti = document.createElement('style');
+styleNoti.textContent = `
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
   .abrosnoti {
     --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
-    --color: #32a6ff;
+    --color: #fff;
     font-family: "Inter";
     font-size: 16px;
     width: 18rem;
@@ -50,10 +50,11 @@ styleAssistant.textContent = `
     isolation: isolate;
     width: 18rem;
     d-height: 8rem;
-    background: #29292c;
+    background: rgba(53, 53, 53, .4);
     border-radius: 1rem;
     overflow: hidden;
     animation: notiCardIn 500ms ease;
+    backdrop-filter: blur(5px);
   }
   @keyframes notiCardIn {
     from {
@@ -73,7 +74,7 @@ styleAssistant.textContent = `
     content: "";
     inset: 0.0625rem;
     border-radius: 0.9375rem;
-    background: #18181b;
+    background: rgba(53, 53, 53, .4);
     z-index: 2
   }
   .abrosnoti .noticard:after {
@@ -123,7 +124,7 @@ styleAssistant.textContent = `
   .abrosnoti .noti:hover .notiglow {opacity: 0.1}
   .abrosnoti .noti:hover .notiborderglow {opacity: 0.1}
 `;
-document.head.appendChild(styleAssistant);
+document.head.appendChild(styleNoti);
 
 if (location.pathname.match(/fullcpgrid/i) ? true : false) {
   document.querySelector(".abrosnoti").style.fontSize = "32px"
@@ -143,6 +144,7 @@ class abrosnoti {
     el.appendChild(document.createTextNode(text))
   }
   create(
+    icon = "",
     title = "Untitled notification",
     description = "",
     duration = 2,
@@ -161,6 +163,9 @@ class abrosnoti {
     const notiCardEl = this.createDiv("noticard")
     const glowEl = this.createDiv("notiglow")
     const borderEl = this.createDiv("notiborderglow")
+
+    const iconEl = this.createDiv("notiicon")
+    this.addText(iconEl, icon)
     
     const titleEl = this.createDiv("notititle")
     this.addText(titleEl, title)

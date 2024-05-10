@@ -25,7 +25,7 @@ styleNoti.textContent = `
     display: flex;
     flex-direction: column;
     justify-content: end;
-    margin: 0.5rem 0;
+    margin: 0.5rem;
     position: fixed;
     top: 0;
     right: 0;
@@ -33,6 +33,7 @@ styleNoti.textContent = `
   }
   @media (max-width: 767px) {
     .abrosnoti {
+      margin: 0.5rem 0;
       right: 50%;
       transform: translateX(50%);
     }

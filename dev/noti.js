@@ -27,7 +27,7 @@ styleNoti.textContent = `
     justify-content: end;
     margin: 0.5rem;
     position: fixed;
-    bottom: 0;
+    top: 0;
     right: 0;
     z-index: 99999999999;
   }
@@ -58,7 +58,7 @@ styleNoti.textContent = `
   }
   @keyframes notiCardIn {
     from {
-      transform: translateX(50%);
+      /* transform: translateX(50%); */
       opacity: 0;
     }
   }
@@ -158,7 +158,7 @@ class abrosnoti {
     destroyOnClick = false,
     clickFunction = undefined
   ) {
-    if (icon === "" || icon === undefined) {
+    if (icon === "" || icon === " " || icon === undefined) {
       icon = "abros";
     }
     function destroy(animate) {

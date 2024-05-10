@@ -31,6 +31,12 @@ styleNoti.textContent = `
     right: 0;
     z-index: 99999999999;
   }
+  @media (max-width: 767px) {
+    .abrosnoti {
+      right: 50%;
+      transform: translateX(50%);
+    }
+}
   .abrosnoti .noti {
     position: relative;
     height: 0;

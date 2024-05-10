@@ -234,7 +234,7 @@ class abrosnoti {
     return notiEl
   }
 }
-window.abrosnoti = new abrosnoti(document.querySelector(".abrosnoti"))
+var abrosnoti = new abrosnoti(document.querySelector(".abrosnoti"))
 
 // demo
 

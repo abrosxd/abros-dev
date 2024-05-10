@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             setPreviousLanguageFromLocalStorage(currentLanguage)
         }
-    }, 500);
+    }, 1000);
 });
 
 

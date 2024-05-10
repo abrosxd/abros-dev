@@ -25,7 +25,7 @@ styleNoti.textContent = `
     display: flex;
     flex-direction: column;
     justify-content: end;
-    margin: 0.5rem;
+    margin: 0.5rem 0;
     position: fixed;
     top: 0;
     right: 0;

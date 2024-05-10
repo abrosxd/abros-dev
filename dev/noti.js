@@ -158,6 +158,9 @@ class abrosnoti {
     destroyOnClick = false,
     clickFunction = undefined
   ) {
+    if (icon === " ") {
+      icon = "abros";
+    }
     function destroy(animate) {
       if (animate) {
         notiEl.classList.add("out")

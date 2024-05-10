@@ -79,7 +79,7 @@ styleNoti.textContent = `
   }
   .abrosnoti .notiicon {
     position: absolute;
-    width: 2.25rem;
+    width: 1.5rem;
     inset: 0.65rem auto 0.65rem 0.5rem;
     transition: transform 300ms ease;
     z-index: 5;
@@ -89,7 +89,7 @@ styleNoti.textContent = `
   }
   .abrosnoti .notititle {
     color: var(--color);
-    padding: 0.65rem 0.5rem 0.4rem 1.25rem;
+    padding: 0.65rem 0.5rem 0.4rem 2.5rem;
     font-weight: 500;
     font-size: 1.1rem;
     transition: transform 300ms ease;
@@ -100,7 +100,7 @@ styleNoti.textContent = `
   }
   .abrosnoti .notidesc {
     color: #99999d;
-    padding: 0 0.5rem 0.85rem 1.25rem;
+    padding: 0 0.5rem 0.85rem 0.5rem;
     transition: transform 300ms ease;
     z-index: 5;
   }

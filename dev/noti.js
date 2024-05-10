@@ -158,7 +158,7 @@ class abrosnoti {
     destroyOnClick = false,
     clickFunction = undefined
   ) {
-    if (icon === " " || icon === undefined) {
+    if (icon === "" || icon === undefined) {
       icon = "abros";
     }
     function destroy(animate) {

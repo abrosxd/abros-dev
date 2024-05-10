@@ -136,7 +136,7 @@ if (location.pathname.match(/fullcpgrid/i) ? true : false) {
 }
 const domain = "https://abros.dev"
 
-class abrosnoti {
+class noti {
   constructor(el) {
     this.el = el
   }
@@ -234,7 +234,7 @@ class abrosnoti {
     return notiEl
   }
 }
-var abrosnoti = new abrosnoti(document.querySelector(".abrosnoti"))
+abrosnoti = new noti(document.querySelector(".abrosnoti"))
 
 // demo
 

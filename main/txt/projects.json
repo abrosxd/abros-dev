@@ -3,8 +3,8 @@
     {
       "id": 6,
       "title": "Tvoy Hit",
-      "img": "main/projects/GrushkaEndo/avatar.png",
-      "overlay": "main/projects/GrushkaEndo/overlay.png",
+      "img": "main/projects/TvoyHit/avatar.png",
+      "overlay": "main/projects/TvoyHit/overlay.png",
       "outline": "#e29e70",
       "category": "Tilda",
       "content": {
@@ -75,8 +75,8 @@
     {
       "id": 5,
       "title": "Abros Noti",
-      "img": "main/projects/GrushkaEndo/avatar.png",
-      "overlay": "main/projects/GrushkaEndo/overlay.png",
+      "img": "main/projects/AbrosNoti/avatar.png",
+      "overlay": "main/projects/AbrosNoti/overlay.png",
       "outline": "#e29e70",
       "category": "MyProject Library Tilda",
       "content": {

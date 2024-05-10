@@ -21,7 +21,7 @@ function checkLoad(projects) {
     preload.style.visibility = 'hidden';
     projectCards.forEach(card => card.style.display = 'block');
     
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 450) {
       main.addEventListener('mousemove', handleMouseMove);
     } else {
       projectCards.forEach(card => {

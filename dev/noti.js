@@ -77,17 +77,14 @@ styleNoti.textContent = `
     background: rgba(53, 53, 53, .4);
     z-index: 2
   }
-  .abrosnoti .noticard:after {
+  .abrosnoti .notiicon {
     position: absolute;
-    content: "";
-    width: 0.25rem;
+    width: 2.25rem;
     inset: 0.65rem auto 0.65rem 0.5rem;
-    border-radius: 0.125rem;
-    background: var(--gradient);
     transition: transform 300ms ease;
-    z-index: 4;
+    z-index: 5;
   }
-  .abrosnoti .noticard:hover:after {
+  .abrosnoti .noti:hover .notiicon {
     transform: translateX(0.15rem)
   }
   .abrosnoti .notititle {

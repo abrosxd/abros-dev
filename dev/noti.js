@@ -130,7 +130,7 @@ styleNoti.textContent = `
 `;
 document.head.appendChild(styleNoti);
 
-const noti = new abrosnoti(document.querySelector(".abrosnoti"))
+window.abrosnoti = new abrosnoti(document.querySelector(".abrosnoti"))
 
 if (location.pathname.match(/fullcpgrid/i) ? true : false) {
   document.querySelector(".abrosnoti").style.fontSize = "32px"

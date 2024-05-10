@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 button.classList.remove('active');
             });
             this.classList.add('active');
-            reloadPage();
+            // reloadPage();
         });
     });
 });

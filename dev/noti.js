@@ -61,6 +61,7 @@ styleNoti.textContent = `
     overflow: hidden;
     animation: notiCardIn 500ms ease;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
   @keyframes notiCardIn {
     from {

@@ -130,8 +130,6 @@ styleNoti.textContent = `
 `;
 document.head.appendChild(styleNoti);
 
-window.abrosnoti = new abrosnoti(document.querySelector(".abrosnoti"))
-
 if (location.pathname.match(/fullcpgrid/i) ? true : false) {
   document.querySelector(".abrosnoti").style.fontSize = "32px"
   document.querySelector(".abrosnoti").style.transform = "translate(0.5rem, calc(-50% + 3rem))"
@@ -236,17 +234,17 @@ class abrosnoti {
     return notiEl
   }
 }
+window.abrosnoti = new abrosnoti(document.querySelector(".abrosnoti"))
 
 // demo
-// const notis = new abrosnoti(document.querySelector(".abrosnoti"))
 
 // const demonotis = [
-//   () => {notis.create("Neon notifications", "wow, these notifications really do look beautiful", 5)},
-//   () => {notis.create("Hover effects", "and the hover effects make it even better!", 5)},
-//   () => {notis.create("Ease of use", "on top of that, you can easily add this to any project", 10)},
-//   () => {notis.create("Customisation", "you can even customise the duration and add actions on click", 10)},
-//   () => {notis.create("Click me", "try clicking this for a surprise!", 5, true, () => notis.create("Surprise", "Wow, you clicked the previous notification,", 4))},
-//   () => {notis.create("Animations", "all the animations stay smooth even when notifications disappear out of order or when multiple appear at once", 15)},
+//   () => {abrosnoti.create("Neon notifications", "wow, these notifications really do look beautiful", 5)},
+//   () => {abrosnoti.create("Hover effects", "and the hover effects make it even better!", 5)},
+//   () => {abrosnoti.create("Ease of use", "on top of that, you can easily add this to any project", 10)},
+//   () => {abrosnoti.create("Customisation", "you can even customise the duration and add actions on click", 10)},
+//   () => {abrosnoti.create("Click me", "try clicking this for a surprise!", 5, true, () => notis.create("Surprise", "Wow, you clicked the previous notification,", 4))},
+//   () => {abrosnoti.create("Animations", "all the animations stay smooth even when notifications disappear out of order or when multiple appear at once", 15)},
 // ]
 // let i = 1;
 // demonotis[0]()

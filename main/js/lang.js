@@ -11,27 +11,8 @@ function eraseLanguageFromLocalStorage() {
 }
 
 function reloadPage() {
-    var previousLanguage = getLanguageFromLocalStorage();
     window.location.reload();
-    var currentLanguage = getLanguageFromLocalStorage();
-    if (previousLanguage !== currentLanguage) {
-        var languageName;
-        switch (currentLanguage) {
-            case "EN":
-                languageName = "English";
-                break;
-            case "RU":
-                languageName = "Русский";
-                break;
-            // Add cases for other languages as needed
-            default:
-                languageName = currentLanguage;
-                break;
-        }
-        abrosnoti.create("lang", languageName, "Язык был изменен. Приятного просмотра", 2);
-    }
 }
-
 
 var savedLanguage = getLanguageFromLocalStorage();
 
@@ -58,5 +39,22 @@ document.addEventListener('DOMContentLoaded', function() {
             reloadPage();
         });
     });
+
+    var previousLanguage = getLanguageFromLocalStorage();
+    if (previousLanguage && previousLanguage !== currentLanguage) {
+        switch (previousLanguage) {
+            case 'EN':
+                abrosnoti.create("lang", "English", "Language has been changed. Enjoy browsing!", 2);
+                break;
+            case 'RU':
+                abrosnoti.create("lang", "Русский", "Язык был изменен. Приятного просмотра!", 2);
+                break;
+            case 'PL':
+                abrosnoti.create("lang", "Polski", "Język został zmieniony. Miłego przeglądania!", 2);
+                break;
+            default:
+                break;
+        }
+    }
 });
 

@@ -130,6 +130,7 @@ if (location.pathname.match(/fullcpgrid/i) ? true : false) {
   document.querySelector(".abrosnoti").style.fontSize = "32px"
   document.querySelector(".abrosnoti").style.transform = "translate(0.5rem, calc(-50% + 3rem))"
 }
+const domain = "https://abros.dev"
 
 class abrosnoti {
   constructor(el) {
@@ -140,11 +141,20 @@ class abrosnoti {
     el.classList.add(className)
     return el
   }
+  createImg(className = "") {
+    const el = document.createElement("img")
+    el.classList.add(className)
+    return el
+  }
+  addIcon(el, icon) {
+    const url = `${domain}/dev/noti/${icon}.svg`
+    el.src = url;
+  }
   addText(el, text) {
     el.appendChild(document.createTextNode(text))
   }
   create(
-    icon = "",
+    icon = "abros",
     title = "Untitled notification",
     description = "",
     duration = 2,
@@ -164,8 +174,8 @@ class abrosnoti {
     const glowEl = this.createDiv("notiglow")
     const borderEl = this.createDiv("notiborderglow")
 
-    const iconEl = this.createDiv("notiicon")
-    this.addText(iconEl, icon)
+    const iconEl = this.createImg("notiicon")
+    this.addIcon(iconEl, icon)
     
     const titleEl = this.createDiv("notititle")
     this.addText(titleEl, title)

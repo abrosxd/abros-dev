@@ -75,6 +75,19 @@ fetch('main/txt/about.json')
         var copyButton = document.querySelector('.tpaybutton');
         copyButton.textContent = data.pay.buttonclick[currentLanguage];
         copyButton.classList.add('copy-success');
+        switch (currentLanguage) {
+            case 'EN':
+                abrosnoti.create("abros", "Address copied", `The address has been copied to the clipboard: ${addressInput}`, 5);
+                break;
+            case 'RU':
+                abrosnoti.create("abros", "Адрес скопирован", `В буфер обмена был скопирован адрес: ${addressInput}`, 5);
+                break;
+            case 'PL':
+                abrosnoti.create("abros", "Adres został skopiowany", `Adres został skopiowany do schowka: ${addressInput}`, 5);
+                break;
+            default:
+                break;
+        }
         setTimeout(() => {
             copyButton.textContent = data.pay.button[currentLanguage];
             copyButton.classList.remove('copy-success');

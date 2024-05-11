@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     abrosnoti.create("lang", "English", "Language has been changed. Enjoy browsing!", 3);
                     break;
                 case 'RU':
-                    abrosnoti.create("lang", "Русский", "Язык был изменен. Приятного просмотра", 3);
+                    abrosnoti.create("lang", "Русский", "Язык был изменен. Приятного просмотра!", 3);
                     break;
                 case 'PL':
                     abrosnoti.create("lang", "Polski", "Język został zmieniony. Miłego przeglądania!", 3);

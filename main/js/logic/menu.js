@@ -10,7 +10,6 @@ function initializeSubMenu(triggerId, submenuId) {
   if (isTouchDevice) {
     trigger.addEventListener('touchstart', function (event) {
         event.stopPropagation();
-        event.preventDefault();
         toggleSubMenu();
     });
   } else {

@@ -728,3 +728,8 @@ nav {
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease; /* Добавляем свойство transition для opacity и visibility */
 }
+
+.submenu.active {
+    opacity: 1;
+    visibility: visible;
+}

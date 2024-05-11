@@ -44,14 +44,12 @@ function initializeSubMenu(triggerId, submenuId) {
   }
 
   function showSubMenu() {
-      submenu.style.opacity = '1';
-      submenu.style.visibility = 'visible';
+      submenu.classList.add('active');
       SubMenuOpen = !SubMenuOpen;
   }
 
   function hideSubMenu() {
-      submenu.style.opacity = '0';
-      submenu.style.visibility = 'hidden';
+      submenu.classList.remove('active');
       SubMenuOpen = !SubMenuOpen;
   }
 

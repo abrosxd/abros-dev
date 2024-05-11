@@ -9,22 +9,26 @@ function initializeSubMenu(triggerId, submenuId) {
   var touchEndX = 0;
 
   
-  trigger.addEventListener(isTouchDevice ? 'touchstart' : 'click', function (event) {
+  trigger.addEventListener('click', function (event) {
     event.stopPropagation();
-    if (!isTouchDevice || (isTouchDevice && !submenuActive)) {
-        toggleSubMenu();
-    }
-});
+    toggleSubMenu();
+  });
 
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
+        if (submenu.classList.contains('active')) {
+          submenuActive = false;
           hideSubMenu();
+      }
       }
   });
 
   document.addEventListener('touchstart', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
+        if (submenu.classList.contains('active')) {
+          submenuActive = false;
           hideSubMenu();
+      }
       }
 
       touchStartX = event.touches[0].clientX;

@@ -6,25 +6,28 @@ function initializeSubMenu(triggerId, submenuId) {
 
   var touchStartX = 0;
   var touchEndX = 0;
+  var isMenuOpen = false; // Флаг для отслеживания состояния меню
 
-  // Добавляем обработчик клика или касания на триггер
   trigger.addEventListener(isTouchDevice ? 'touchstart' : 'click', function (event) {
     event.stopPropagation();
-    toggleSubMenu();
-  });
-
-  // Общий обработчик клика для закрытия подменю
-  document.addEventListener('click', function (event) {
-    if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-      hideSubMenu();
+    if (!isMenuOpen) { // Проверяем, открыто ли меню перед его открытием
+      toggleSubMenu();
+      isMenuOpen = true; // Устанавливаем флаг в true, чтобы указать, что меню открыто
     }
   });
 
-  // Обработчики событий касания для закрытия подменю при свайпе
+  document.addEventListener('click', function (event) {
+    if (!isDescendant(submenu, event.target) && event.target.id !== triggerId && isMenuOpen) {
+      hideSubMenu();
+      isMenuOpen = false; // Устанавливаем флаг в false, когда меню закрывается
+    }
+  });
+
   if (isTouchDevice) {
     document.addEventListener('touchstart', function (event) {
-      if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
+      if (!isDescendant(submenu, event.target) && event.target.id !== triggerId && isMenuOpen) {
         hideSubMenu();
+        isMenuOpen = false;
       }
 
       touchStartX = event.touches[0].clientX;
@@ -34,26 +37,21 @@ function initializeSubMenu(triggerId, submenuId) {
       touchEndX = event.touches[0].clientX;
       var swipeDistance = touchEndX - touchStartX;
 
-      if (Math.abs(swipeDistance) > 10) {
+      if (Math.abs(swipeDistance) > 10 && isMenuOpen) {
         hideSubMenu();
+        isMenuOpen = false;
       }
     });
   }
 
-  // Функции переключения и управления видимостью подменю
   function toggleSubMenu() {
     submenu.classList.toggle('active');
-  }
-
-  function showSubMenu() {
-    submenu.classList.add('active');
   }
 
   function hideSubMenu() {
     submenu.classList.remove('active');
   }
 
-  // Проверка, является ли элемент потомком родительского элемента
   function isDescendant(parent, child) {
     var node = child.parentNode;
     while (node !== null) {
@@ -65,7 +63,6 @@ function initializeSubMenu(triggerId, submenuId) {
     return false;
   }
 }
-
 
 // Инициализация подменю
 initializeSubMenu('links-trigger', 'links-submenu');

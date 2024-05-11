@@ -77,13 +77,13 @@ fetch('main/txt/about.json')
         copyButton.classList.add('copy-success');
         switch (currentLanguage) {
             case 'EN':
-                abrosnoti.create("abros", "Address copied", `The address has been copied to the clipboard: ${addressInput}`, 5);
+                abrosnoti.create("abros", "Address copied", `The address has been copied to the clipboard: ${addressInput.value}`, 5);
                 break;
             case 'RU':
-                abrosnoti.create("abros", "Адрес скопирован", `В буфер обмена был скопирован адрес: ${addressInput}`, 5);
+                abrosnoti.create("abros", "Адрес скопирован", `В буфер обмена был скопирован адрес: ${addressInput.value}`, 5);
                 break;
             case 'PL':
-                abrosnoti.create("abros", "Adres został skopiowany", `Adres został skopiowany do schowka: ${addressInput}`, 5);
+                abrosnoti.create("abros", "Adres został skopiowany", `Adres został skopiowany do schowka: ${addressInput.value}`, 5);
                 break;
             default:
                 break;

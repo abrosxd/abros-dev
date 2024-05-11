@@ -31,7 +31,7 @@ function initializeSubMenu(triggerId, submenuId) {
       var swipeDistance = touchEndX - touchStartX;
 
       if (Math.abs(swipeDistance) > 10) {
-          hideSubMenu();
+        toggleSubMenu()
       }
   });
 

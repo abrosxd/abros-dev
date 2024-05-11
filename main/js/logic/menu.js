@@ -34,15 +34,23 @@ function initializeSubMenu(triggerId, submenuId) {
       }
   });
 
-  var isSubMenuOpen = false;
+  var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
 
   function toggleSubMenu() {
-    if (isSubMenuOpen) {
-        hideSubMenu();
-    } else {
-        showSubMenu();
+    var isOpen = submenu.classList.contains('active');
+
+    if (isTouchDevice) {
+      if (isOpen && Date.now() - lastTapTime < 300) {
+        return;
+      }
+      lastTapTime = Date.now();
     }
-    isSubMenuOpen = !isSubMenuOpen;
+    if (isOpen) {
+      hideSubMenu();
+    } 
+    else {
+      showSubMenu();
+    }
   }
 
   function showSubMenu() {

@@ -1,6 +1,6 @@
 main {
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -20,10 +20,16 @@ main {
     justify-content: center;
     width: 100vw;
     transition: transform 0.3s ease-in-out;
-    height: 100%;
-    overflow: auto;
     top: 0;
     position: absolute;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+@media (max-width: 767px) {
+    .container {
+        padding-top: 60px;
+        padding-bottom: 90px;
+    }
 }
 
 .project-card {
@@ -192,7 +198,7 @@ main {
     z-index: 2;
     width: 16em;
 }
-@media (max-width: 760px) {
+@media (max-width: 767px) {
     .filter {
         bottom: 55px;
     }

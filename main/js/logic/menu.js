@@ -36,12 +36,16 @@ function initializeSubMenu(triggerId, submenuId) {
   });
 
   function toggleSubMenu() {
-      if (submenu.classList.contains('active')) {
-          hideSubMenu();
-      } else {
-          showSubMenu();
-      }
-  }
+    if (submenu.classList.contains('active')) {
+        hideSubMenu();
+    } else {
+        setTimeout(function() {
+            if (!submenu.classList.contains('active')) {
+                showSubMenu();
+            }
+        }, 200);
+    }
+}
 
   function showSubMenu() {
       submenu.classList.add('active');

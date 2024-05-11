@@ -44,12 +44,11 @@ function initializeSubMenu(triggerId, submenuId) {
 
   function toggleSubMenu() {
     if (submenuActive) {
-        submenuActive = false;
         hideSubMenu();
     } else {
-        submenuActive = true;
         showSubMenu();
     }
+    submenuActive = !submenuActive;
 }
 
   function showSubMenu() {

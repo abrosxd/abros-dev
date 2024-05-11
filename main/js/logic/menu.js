@@ -2,7 +2,6 @@
 function initializeSubMenu(triggerId, submenuId) {
   const trigger = document.getElementById(triggerId);
   const submenu = document.getElementById(submenuId);
-  var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 
   var touchStartX = 0;
   var touchEndX = 0;

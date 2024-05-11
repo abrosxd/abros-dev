@@ -6,10 +6,15 @@ function initializeSubMenu(triggerId, submenuId) {
   var touchStartX = 0;
   var touchEndX = 0;
 
-  trigger.addEventListener('click', function (event) {
-      event.stopPropagation();
-      toggleSubMenu();
-  });
+  trigger.addEventListener('touchstart', function (event) {
+    event.stopPropagation();
+    toggleSubMenu();
+});
+
+trigger.addEventListener('click', function (event) {
+    event.stopPropagation();
+    event.preventDefault();
+});
 
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
@@ -39,19 +44,14 @@ function initializeSubMenu(triggerId, submenuId) {
           hideSubMenu();
       } else {
           showSubMenu();
-          trigger.classList.add('active');
       }
   }
 
   function showSubMenu() {
-      submenu.style.opacity = '1';
-      submenu.style.visibility = 'visible';
       submenu.classList.add('active');
   }
 
   function hideSubMenu() {
-      submenu.style.opacity = '0';
-      submenu.style.visibility = 'hidden';
       submenu.classList.remove('active');
   }
 

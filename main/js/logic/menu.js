@@ -14,6 +14,7 @@ function initializeSubMenu(triggerId, submenuId) {
 trigger.addEventListener('click', function (event) {
     event.stopPropagation();
     event.preventDefault();
+    toggleSubMenu();
 });
 
   document.addEventListener('click', function (event) {

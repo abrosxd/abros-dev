@@ -8,6 +8,7 @@ function initializeSubMenu(triggerId, submenuId) {
 
   trigger.addEventListener('touchstart', function (event) {
     event.preventDefault();
+    event.stopPropagation();
     toggleSubMenu();
   });
 

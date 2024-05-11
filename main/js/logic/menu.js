@@ -3,6 +3,7 @@ function initializeSubMenu(triggerId, submenuId) {
   const trigger = document.getElementById(triggerId);
   const submenu = document.getElementById(submenuId);
   var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+  var submenuActive = false;
 
   var touchStartX = 0;
   var touchEndX = 0;
@@ -10,8 +11,10 @@ function initializeSubMenu(triggerId, submenuId) {
   
   trigger.addEventListener(isTouchDevice ? 'touchstart' : 'click', function (event) {
     event.stopPropagation();
-    toggleSubMenu();
-  });
+    if (!isTouchDevice || (isTouchDevice && !submenuActive)) {
+        toggleSubMenu();
+    }
+});
 
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
@@ -37,12 +40,14 @@ function initializeSubMenu(triggerId, submenuId) {
   });
 
   function toggleSubMenu() {
-      if (submenu.classList.contains('active')) {
-          hideSubMenu();
-      } else {
-          showSubMenu();
-      }
-  }
+    if (submenu.classList.contains('active')) {
+        submenuActive = false;
+        hideSubMenu();
+    } else {
+        submenuActive = true;
+        showSubMenu();
+    }
+}
 
   function showSubMenu() {
       submenu.classList.add('active');

@@ -2,25 +2,27 @@
 function initializeSubMenu(triggerId, submenuId) {
   const trigger = document.getElementById(triggerId);
   const submenu = document.getElementById(submenuId);
-  var SubMenuOpen = false;
 
   var touchStartX = 0;
   var touchEndX = 0;
 
   trigger.addEventListener('click', function (event) {
       event.stopPropagation();
-      toggleSubMenu();
+      // Проверяем тип устройства
+      if (!isTouchDevice()) {
+          toggleSubMenu();
+      }
   });
 
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-        toggleSubMenu();
+          hideSubMenu();
       }
   });
 
   document.addEventListener('touchstart', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-        toggleSubMenu();
+          hideSubMenu();
       }
 
       touchStartX = event.touches[0].clientX;
@@ -31,17 +33,16 @@ function initializeSubMenu(triggerId, submenuId) {
       var swipeDistance = touchEndX - touchStartX;
 
       if (Math.abs(swipeDistance) > 10) {
-        toggleSubMenu()
+          hideSubMenu();
       }
   });
 
   function toggleSubMenu() {
-    if (SubMenuOpen) {
-        hideSubMenu();
-    } else {
-        showSubMenu();
-    }
-    SubMenuOpen = !SubMenuOpen;
+      if (submenu.classList.contains('active')) {
+          hideSubMenu();
+      } else {
+          showSubMenu();
+      }
   }
 
   function showSubMenu() {
@@ -62,7 +63,12 @@ function initializeSubMenu(triggerId, submenuId) {
       }
       return false;
   }
+
+  function isTouchDevice() {
+      return 'ontouchstart' in window || navigator.maxTouchPoints;
+  }
 }
+
 
 // Инициализация подменю
 initializeSubMenu('links-trigger', 'links-submenu');

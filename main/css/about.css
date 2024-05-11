@@ -270,7 +270,7 @@
 }
 @media (max-width: 767px) {
     .bgvid {
-        gap: 7rem;
+        gap: 8rem;
     }
 }
 
@@ -306,6 +306,7 @@
         width: 12px;
         position: absolute;
         top: 18px;
+        left: 25px;
     }
 }
 .whiskey:after {
@@ -318,7 +319,7 @@
 @media (max-width: 767px) {
     .whiskey:after {
         top: 22px;
-        left: 19px;
+        left: 9px;
     }
 }
   

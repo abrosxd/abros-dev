@@ -77,13 +77,13 @@ fetch('main/txt/about.json')
         copyButton.classList.add('copy-success');
         switch (currentLanguage) {
             case 'EN':
-                abrosnoti.create("abros", "ABROS", "Address copied", 5);
+                abrosnoti.create("abros", "ABROS", "Address copied", 3);
                 break;
             case 'RU':
-                abrosnoti.create("abros", "ABROS", "Адрес скопирован", 5);
+                abrosnoti.create("abros", "ABROS", "Адрес скопирован", 3);
                 break;
             case 'PL':
-                abrosnoti.create("abros", "ABROS", "Adres został skopiowany", 5);
+                abrosnoti.create("abros", "ABROS", "Adres został skopiowany", 3);
                 break;
             default:
                 break;

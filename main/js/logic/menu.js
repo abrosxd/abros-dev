@@ -6,15 +6,17 @@ function initializeSubMenu(triggerId, submenuId) {
   var touchStartX = 0;
   var touchEndX = 0;
 
-  trigger.addEventListener('click', function (event) {
+  if (!isTouchDevice()) {
+    trigger.addEventListener('click', function (event) {
       event.stopPropagation();
       toggleSubMenu();
-  });
-
-  trigger.addEventListener('touchend', function (event) {
-    event.stopPropagation();
-        toggleSubMenu();
-});
+    });
+  } else {
+    trigger.addEventListener('touchend', function (event) {
+      event.stopPropagation();
+      toggleSubMenu();
+    });
+  }
 
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
@@ -64,6 +66,10 @@ function initializeSubMenu(triggerId, submenuId) {
           node = node.parentNode;
       }
       return false;
+  }
+
+  function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints;
   }
 }
 

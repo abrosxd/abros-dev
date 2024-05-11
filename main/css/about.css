@@ -260,20 +260,30 @@
 }
 
 .bgvid {
-    position: fixed;
-    right: -14em;
+    position: absolute;
+    transform: translatex(50%);
+    top: 10px;
+    right: 50%;
+    opacity: 0.5;
+    display: flex;
+    gap: 12rem;
 }
-
-@media (max-width: 1440px) {
+@media (max-width: 767px) {
     .bgvid {
-        transform: translatex(50%);
-        right: 50%;
-        opacity: 0.5;
+        gap: 7rem;
     }
 }
 
 .whiskey {
     position: relative;
+}
+.whiskey svg {
+    height: 65px;
+}
+@media (max-width: 767px) {
+    .whiskey svg {
+        height: 45px;
+    }
 }
 .whiskey:before, 
 .whiskey:after {
@@ -289,12 +299,27 @@
     will-change: transform;
     z-index: -1;
 }
+@media (max-width: 767px) {
+    .whiskey:before, 
+    .whiskey:after {
+        height: 12px;
+        width: 12px;
+        position: absolute;
+        top: 18px;
+    }
+}
 .whiskey:after {
     animation-name: cube-float--alt;
     animation-duration: 3s;
     top: 34px;
     left: 16px;
     transform: rotate(30deg);
+}
+@media (max-width: 767px) {
+    .whiskey:after {
+        top: 22px;
+        left: 19px;
+    }
 }
   
 @keyframes cube-float {

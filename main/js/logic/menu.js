@@ -9,23 +9,20 @@ function initializeSubMenu(triggerId, submenuId) {
       submenu.classList.toggle('active');
   }
 
-  // Обработчик события клика по триггеру
   trigger.addEventListener('click', function (event) {
-      event.stopPropagation(); // Предотвращаем всплытие события, чтобы оно не достигло body
+      event.stopPropagation();
       toggleActive();
   });
 
-  // Обработчик события клика за пределами подменю и на сенсорных экранах также при скролле
   document.addEventListener('click', function (event) {
       var isOutsideClick = !submenu.contains(event.target);
-      var isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints; // Проверяем, является ли устройство сенсорным
+      var isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 
       if ((isOutsideClick || (isTouchDevice && event.type === 'touchstart')) && submenu.classList.contains('active')) {
           submenu.classList.remove('active');
       }
   });
 
-  // Обработчик события скролла на сенсорных экранах
   if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
       document.addEventListener('touchmove', function (event) {
         touchEndX = event.touches[0].clientX;

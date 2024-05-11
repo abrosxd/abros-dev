@@ -9,10 +9,10 @@ function initializeSubMenu(triggerId, submenuId) {
   var touchEndX = 0;
 
   
-  trigger.addEventListener('click', function (event) {
+  trigger.addEventListener(isTouchDevice ? 'touchstart' : 'click', function (event) {
     event.stopPropagation();
     toggleSubMenu();
-  });
+});
 
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {

@@ -35,21 +35,13 @@ function initializeSubMenu(triggerId, submenuId) {
   });
 
   function toggleSubMenu() {
-    var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints;
-
-    if (submenu.classList.contains('active')) {
-        if (isMobile) {
-            hideSubMenu();
-        }
-        else {
-            hideSubMenu();
-            return;
-        }
-    } else {
-        showSubMenu();
-        trigger.classList.add('active');
-    }
-}
+      if (submenu.classList.contains('active')) {
+          hideSubMenu();
+      } else {
+          showSubMenu();
+          trigger.classList.add('active');
+      }
+  }
 
   function showSubMenu() {
       submenu.style.opacity = '1';

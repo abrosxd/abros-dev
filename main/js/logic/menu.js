@@ -2,8 +2,9 @@
 function initializeSubMenu(triggerId, submenuId) {
   var trigger = document.getElementById(triggerId);
   var submenu = document.getElementById(submenuId);
+  var touchStartX = 0;
+  var touchEndX = 0;
 
-  // Функция для добавления класса active или его удаления
   function toggleActive() {
       submenu.classList.toggle('active');
   }
@@ -26,11 +27,13 @@ function initializeSubMenu(triggerId, submenuId) {
 
   // Обработчик события скролла на сенсорных экранах
   if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
-      document.addEventListener('scroll', function (event) {
-          var isOutsideScroll = !submenu.contains(event.target);
-          if (isOutsideScroll && submenu.classList.contains('active')) {
-              submenu.classList.remove('active');
-          }
+      document.addEventListener('touchmove', function (event) {
+        touchEndX = event.touches[0].clientX;
+        var swipeDistance = touchEndX - touchStartX;
+  
+        if (Math.abs(swipeDistance) > 10) {
+          submenu.classList.remove('active');
+        }
       });
   }
 }

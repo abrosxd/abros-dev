@@ -7,15 +7,13 @@ function initializeSubMenu(triggerId, submenuId) {
   var touchStartX = 0;
   var touchEndX = 0;
 
-  trigger.addEventListener(isTouchDevice ? 'touchstart' : 'click', function (event) {
-    event.stopPropagation();
-    toggleSubMenu();
+  trigger.addEventListener('touchstart', function (event) {
+    event.preventDefault();
   });
 
   trigger.addEventListener('click', function (event) {
-    if (isTouchDevice) {
-      event.preventDefault();
-    }
+    event.stopPropagation();
+    toggleSubMenu();
   });
 
   document.addEventListener('click', function (event) {
@@ -24,24 +22,22 @@ function initializeSubMenu(triggerId, submenuId) {
     }
   });
 
-  if (isTouchDevice) {
-    document.addEventListener('touchstart', function (event) {
-      if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-        hideSubMenu();
-      }
+  document.addEventListener('touchstart', function (event) {
+    if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
+      hideSubMenu();
+    }
 
-      touchStartX = event.touches[0].clientX;
-    });
+    touchStartX = event.touches[0].clientX;
+  });
 
-    document.addEventListener('touchmove', function (event) {
-      touchEndX = event.touches[0].clientX;
-      var swipeDistance = touchEndX - touchStartX;
+  document.addEventListener('touchmove', function (event) {
+    touchEndX = event.touches[0].clientX;
+    var swipeDistance = touchEndX - touchStartX;
 
-      if (Math.abs(swipeDistance) > 10) {
-        hideSubMenu();
-      }
-    });
-  }
+    if (Math.abs(swipeDistance) > 10) {
+      hideSubMenu();
+    }
+  });
 
   function toggleSubMenu() {
     submenu.classList.toggle('active');

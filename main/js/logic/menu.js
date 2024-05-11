@@ -2,32 +2,24 @@
 function initializeSubMenu(triggerId, submenuId) {
   const trigger = document.getElementById(triggerId);
   const submenu = document.getElementById(submenuId);
-  var submenuActive = false;
 
   var touchStartX = 0;
   var touchEndX = 0;
 
-  
   trigger.addEventListener('click', function (event) {
-    event.stopPropagation();
-    toggleSubMenu();
+      event.stopPropagation();
+      toggleSubMenu();
   });
 
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-        if (submenuActive) {
-          submenuActive = false;
           hideSubMenu();
-      }
       }
   });
 
   document.addEventListener('touchstart', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-        if (submenuActive) {
-          submenuActive = false;
           hideSubMenu();
-      }
       }
 
       touchStartX = event.touches[0].clientX;
@@ -43,19 +35,23 @@ function initializeSubMenu(triggerId, submenuId) {
   });
 
   function toggleSubMenu() {
-    if (submenuActive) {
-        hideSubMenu();
-    } else {
-        showSubMenu();
-    }
-    submenuActive = !submenuActive;
-}
+      if (submenu.classList.contains('active')) {
+          hideSubMenu();
+      } else {
+          showSubMenu();
+          trigger.classList.add('active');
+      }
+  }
 
   function showSubMenu() {
+      submenu.style.opacity = '1';
+      submenu.style.visibility = 'visible';
       submenu.classList.add('active');
   }
 
   function hideSubMenu() {
+      submenu.style.opacity = '0';
+      submenu.style.visibility = 'hidden';
       submenu.classList.remove('active');
   }
 

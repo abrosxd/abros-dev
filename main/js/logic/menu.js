@@ -11,7 +11,7 @@ function initializeSubMenu(triggerId, submenuId) {
       event.stopPropagation();
       toggleSubMenu();
   });
-  
+
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
           hideSubMenu();
@@ -61,10 +61,6 @@ function initializeSubMenu(triggerId, submenuId) {
       }
       return false;
   }
-
-  function isTouchDevice() {
-    return 'ontouchstart' in window || navigator.maxTouchPoints;
-}
 }
 
 // Инициализация подменю

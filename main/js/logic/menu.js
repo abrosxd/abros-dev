@@ -6,28 +6,28 @@ function initializeSubMenu(triggerId, submenuId) {
 
   var touchStartX = 0;
   var touchEndX = 0;
-  var isMenuOpen = false; // Флаг для отслеживания состояния меню
 
   trigger.addEventListener(isTouchDevice ? 'touchstart' : 'click', function (event) {
     event.stopPropagation();
-    if (!isMenuOpen) { // Проверяем, открыто ли меню перед его открытием
-      toggleSubMenu();
-      isMenuOpen = true; // Устанавливаем флаг в true, чтобы указать, что меню открыто
+    toggleSubMenu();
+  });
+
+  trigger.addEventListener('click', function (event) {
+    if (isTouchDevice) {
+      event.preventDefault();
     }
   });
 
   document.addEventListener('click', function (event) {
-    if (!isDescendant(submenu, event.target) && event.target.id !== triggerId && isMenuOpen) {
+    if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
       hideSubMenu();
-      isMenuOpen = false; // Устанавливаем флаг в false, когда меню закрывается
     }
   });
 
   if (isTouchDevice) {
     document.addEventListener('touchstart', function (event) {
-      if (!isDescendant(submenu, event.target) && event.target.id !== triggerId && isMenuOpen) {
+      if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
         hideSubMenu();
-        isMenuOpen = false;
       }
 
       touchStartX = event.touches[0].clientX;
@@ -37,9 +37,8 @@ function initializeSubMenu(triggerId, submenuId) {
       touchEndX = event.touches[0].clientX;
       var swipeDistance = touchEndX - touchStartX;
 
-      if (Math.abs(swipeDistance) > 10 && isMenuOpen) {
+      if (Math.abs(swipeDistance) > 10) {
         hideSubMenu();
-        isMenuOpen = false;
       }
     });
   }
@@ -63,6 +62,7 @@ function initializeSubMenu(triggerId, submenuId) {
     return false;
   }
 }
+
 
 // Инициализация подменю
 initializeSubMenu('links-trigger', 'links-submenu');

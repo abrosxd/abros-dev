@@ -41,16 +41,15 @@ function initializeSubMenu(triggerId, submenuId) {
     } else {
         showSubMenu();
     }
+    SubMenuOpen = !SubMenuOpen;
   }
 
   function showSubMenu() {
       submenu.classList.add('active');
-      SubMenuOpen = !SubMenuOpen;
   }
 
   function hideSubMenu() {
       submenu.classList.remove('active');
-      SubMenuOpen = !SubMenuOpen;
   }
 
   function isDescendant(parent, child) {

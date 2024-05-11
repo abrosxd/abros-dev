@@ -35,16 +35,22 @@ function initializeSubMenu(triggerId, submenuId) {
   });
 
   function toggleSubMenu() {
+    var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints;
+    
     if (submenu.classList.contains('active')) {
-        hideSubMenu();
-    } else {
-        if (document.querySelector('.submenu.active')) {
+        if (isMobile) {
             hideSubMenu();
         }
-        showSubMenu();
-        trigger.classList.add('active');
-    }
-}
+        else {
+            hideSubMenu();
+            return;
+        }
+    } 
+    
+    // Если меню закрыто, то показываем его
+    showSubMenu();
+    trigger.classList.add('active');
+  }
 
   function showSubMenu() {
       submenu.style.opacity = '1';

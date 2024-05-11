@@ -599,31 +599,6 @@ nav {
     margin-right: 10px;
 }
 
-.imgprojectssubmenu {
-    height: 20px;
-    border-radius: 10px;
-    padding: 7px;
-}
-
-@media (max-width: 767px) {
-    .imgprojectssubmenu {
-        height: 14px;
-    }
-}
-
-#projects-submenu {
-    flex-wrap: wrap;
-    justify-content: center;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-@media (max-width: 767px) {
-    #projects-submenu {
-        top: -40px;
-    }
-}
-
 .lang {
     position: fixed;
     top: 24px;
@@ -752,9 +727,4 @@ nav {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease; /* Добавляем свойство transition для opacity и visibility */
-}
-
-.submenu.active {
-    opacity: 1;
-    visibility: visible;
 }

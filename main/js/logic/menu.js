@@ -2,6 +2,7 @@
 function initializeSubMenu(triggerId, submenuId) {
   const trigger = document.getElementById(triggerId);
   const submenu = document.getElementById(submenuId);
+  const SubMenuOpen = false;
 
   var touchStartX = 0;
   var touchEndX = 0;
@@ -34,10 +35,8 @@ function initializeSubMenu(triggerId, submenuId) {
       }
   });
 
-  var isSubMenuOpen = false;
-
   function toggleSubMenu() {
-    if (isSubMenuOpen) {
+    if (SubMenuOpen) {
         hideSubMenu();
     } else {
         showSubMenu();
@@ -47,15 +46,13 @@ function initializeSubMenu(triggerId, submenuId) {
   function showSubMenu() {
       submenu.style.opacity = '1';
       submenu.style.visibility = 'visible';
-      submenu.classList.add('active');
-      isSubMenuOpen = !isSubMenuOpen;
+      SubMenuOpen = !SubMenuOpen;
   }
 
   function hideSubMenu() {
       submenu.style.opacity = '0';
       submenu.style.visibility = 'hidden';
-      submenu.classList.remove('active');
-      isSubMenuOpen = !isSubMenuOpen;
+      SubMenuOpen = !SubMenuOpen;
   }
 
   function isDescendant(parent, child) {

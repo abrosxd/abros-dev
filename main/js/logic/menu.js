@@ -7,68 +7,65 @@ function initializeSubMenu(triggerId, submenuId) {
   var touchStartX = 0;
   var touchEndX = 0;
 
-  if (isTouchDevice) {
-    trigger.addEventListener('touchstart', function (event) {
-        event.stopPropagation();
-        toggleSubMenu();
-    });
-  } else {
-    trigger.addEventListener('click', function (event) {
-        event.stopPropagation();
-        toggleSubMenu();
-    });
-  }
-
-  document.addEventListener('click', function (event) {
-      if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-          hideSubMenu();
-      }
+  // Добавляем обработчик клика или касания на триггер
+  trigger.addEventListener(isTouchDevice ? 'touchstart' : 'click', function (event) {
+    event.stopPropagation();
+    toggleSubMenu();
   });
 
-  document.addEventListener('touchstart', function (event) {
+  // Общий обработчик клика для закрытия подменю
+  document.addEventListener('click', function (event) {
+    if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
+      hideSubMenu();
+    }
+  });
+
+  // Обработчики событий касания для закрытия подменю при свайпе
+  if (isTouchDevice) {
+    document.addEventListener('touchstart', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-          hideSubMenu();
+        hideSubMenu();
       }
 
       touchStartX = event.touches[0].clientX;
-  });
+    });
 
-  document.addEventListener('touchmove', function (event) {
+    document.addEventListener('touchmove', function (event) {
       touchEndX = event.touches[0].clientX;
       var swipeDistance = touchEndX - touchStartX;
 
       if (Math.abs(swipeDistance) > 10) {
-          hideSubMenu();
+        hideSubMenu();
       }
-  });
+    });
+  }
 
+  // Функции переключения и управления видимостью подменю
   function toggleSubMenu() {
-      if (submenu.classList.contains('active')) {
-          hideSubMenu();
-      } else {
-          showSubMenu();
-      }
+    submenu.classList.toggle('active');
   }
 
   function showSubMenu() {
-      submenu.classList.add('active');
+    submenu.classList.add('active');
   }
 
   function hideSubMenu() {
-      submenu.classList.remove('active');
+    submenu.classList.remove('active');
   }
 
+  // Проверка, является ли элемент потомком родительского элемента
   function isDescendant(parent, child) {
-      var node = child.parentNode;
-      while (node !== null) {
-          if (node === parent) {
-              return true;
-          }
-          node = node.parentNode;
+    var node = child.parentNode;
+    while (node !== null) {
+      if (node === parent) {
+        return true;
       }
-      return false;
+      node = node.parentNode;
+    }
+    return false;
   }
 }
+
 
 // Инициализация подменю
 initializeSubMenu('links-trigger', 'links-submenu');

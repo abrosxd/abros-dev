@@ -1,4 +1,5 @@
 // Поведение карточек
+const main = document.getElementById('main');
 const container = document.querySelector('.container');
 const preload = document.querySelector('.preloadbg');
 const projectCards = [];
@@ -21,8 +22,8 @@ function checkLoad(projects) {
     projectCards.forEach(card => card.style.display = 'block');
     
     // if (window.innerWidth > 1024) {
-    if (!('ontouchstart' in window)) {
-      container.addEventListener('mousemove', handleMouseMove);
+      if (!('ontouchstart' in window)) {
+      main.addEventListener('mousemove', handleMouseMove);
     } else {
       projectCards.forEach(card => {
         card.addEventListener('touchstart', handleTouchStart);
@@ -34,7 +35,7 @@ function checkLoad(projects) {
         
 function handleMouseMove(e) {
   requestAnimationFrame(() => {
-    const rect = container.getBoundingClientRect();
+    const rect = main.getBoundingClientRect();
     const centerX = e.clientX - rect.left;
     const centerY = e.clientY - rect.top;
         

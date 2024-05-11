@@ -2,19 +2,23 @@
 function initializeSubMenu(triggerId, submenuId) {
   const trigger = document.getElementById(triggerId);
   const submenu = document.getElementById(submenuId);
+  var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 
   var touchStartX = 0;
   var touchEndX = 0;
 
-  trigger.addEventListener('touchstart', function (event) {
-    event.stopPropagation();
-    event.preventDefault();
-});
-
-trigger.addEventListener('click', function (event) {
-    event.stopPropagation();
-    toggleSubMenu();
-});
+  if (isTouchDevice) {
+    trigger.addEventListener('touchstart', function (event) {
+        event.stopPropagation();
+        event.preventDefault();
+        toggleSubMenu();
+    });
+  } else {
+    trigger.addEventListener('click', function (event) {
+        event.stopPropagation();
+        toggleSubMenu();
+    });
+  }
 
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {

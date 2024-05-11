@@ -34,22 +34,13 @@ function initializeSubMenu(triggerId, submenuId) {
       }
   });
 
-  var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+  var isSubMenuOpen = false;
 
   function toggleSubMenu() {
-    var isOpen = submenu.classList.contains('active');
-
-    if (isTouchDevice) {
-      if (isOpen && Date.now() - lastTapTime < 300) {
-        return;
-      }
-      lastTapTime = Date.now();
-    }
-    if (isOpen) {
-      hideSubMenu();
-    } 
-    else {
-      showSubMenu();
+    if (isSubMenuOpen) {
+        hideSubMenu();
+    } else {
+        showSubMenu();
     }
   }
 
@@ -57,12 +48,14 @@ function initializeSubMenu(triggerId, submenuId) {
       submenu.style.opacity = '1';
       submenu.style.visibility = 'visible';
       submenu.classList.add('active');
+      isSubMenuOpen = !isSubMenuOpen;
   }
 
   function hideSubMenu() {
       submenu.style.opacity = '0';
       submenu.style.visibility = 'hidden';
       submenu.classList.remove('active');
+      isSubMenuOpen = !isSubMenuOpen;
   }
 
   function isDescendant(parent, child) {

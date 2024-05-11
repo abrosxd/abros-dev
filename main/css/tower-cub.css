@@ -1,0 +1,588 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    perspective: 800px;
+    overflow: hidden;
+  }
+  .bgvid  * {
+    transform-style: preserve-3d;
+  }
+  
+  .bgvid .scene {
+    position: relative;
+    transform: rotateX(-30deg) rotateY(-60deg);
+    font-size: 60px;
+    animation: sceneRotate 60s infinite linear;
+  }
+  @keyframes sceneRotate {
+    from {
+      transform: rotateX(-30deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateX(-30deg) rotateY(360deg);
+    }
+  }
+  
+  .bgvid .column {
+    position: absolute;
+    transform: rotateY(var(--ry)) translateX(2.8em);
+  }
+  .bgvid .column:nth-child(1) {
+    --ry: 0deg;
+  }
+  .bgvid .column:nth-child(1) .box {
+    animation: boxRotate0 12s var(--delay) infinite ease-in-out, boxTop0 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate0 {
+    0%, 32% {
+      rotate: 0.25turn;
+    }
+    36.56%, 39.48%, 41.78%, 44.96%, 47.76% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    36.56%, 39.48%, 41.78%, 44.96%, 47.76% {
+      rotate: 0turn;
+    }
+    54.16%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop0 {
+    0%, 32% {
+      top: 0;
+    }
+    36.56% {
+      top: -1em;
+    }
+    39.48% {
+      top: -2em;
+    }
+    41.78% {
+      top: -3em;
+    }
+    44.96% {
+      top: -4em;
+    }
+    47.76% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(2) {
+    --ry: 30deg;
+  }
+  .bgvid .column:nth-child(2) .box {
+    animation: boxRotate1 12s var(--delay) infinite ease-in-out, boxTop1 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate1 {
+    0%, 12% {
+      rotate: 0.25turn;
+    }
+    17.28%, 20.74%, 23.68%, 26.44%, 29.66% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    17.28%, 20.74%, 23.68%, 26.44%, 29.66% {
+      rotate: 0turn;
+    }
+    37.22%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop1 {
+    0%, 12% {
+      top: 0;
+    }
+    17.28% {
+      top: -1em;
+    }
+    20.74% {
+      top: -2em;
+    }
+    23.68% {
+      top: -3em;
+    }
+    26.44% {
+      top: -4em;
+    }
+    29.66% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(3) {
+    --ry: 60deg;
+  }
+  .bgvid .column:nth-child(3) .box {
+    animation: boxRotate2 12s var(--delay) infinite ease-in-out, boxTop2 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate2 {
+    0%, 19.6% {
+      rotate: 0.25turn;
+    }
+    25.16%, 28.86%, 32.86%, 36.08%, 38.62% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    25.16%, 28.86%, 32.86%, 36.08%, 38.62% {
+      rotate: 0turn;
+    }
+    46.26%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop2 {
+    0%, 19.6% {
+      top: 0;
+    }
+    25.16% {
+      top: -1em;
+    }
+    28.86% {
+      top: -2em;
+    }
+    32.86% {
+      top: -3em;
+    }
+    36.08% {
+      top: -4em;
+    }
+    38.62% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(4) {
+    --ry: 90deg;
+  }
+  .bgvid .column:nth-child(4) .box {
+    animation: boxRotate3 12s var(--delay) infinite ease-in-out, boxTop3 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate3 {
+    0%, 2.4% {
+      rotate: 0.25turn;
+    }
+    6.8%, 10.38%, 12.64%, 16.1%, 18.5% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    6.8%, 10.38%, 12.64%, 16.1%, 18.5% {
+      rotate: 0turn;
+    }
+    25.3%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop3 {
+    0%, 2.4% {
+      top: 0;
+    }
+    6.8% {
+      top: -1em;
+    }
+    10.38% {
+      top: -2em;
+    }
+    12.64% {
+      top: -3em;
+    }
+    16.1% {
+      top: -4em;
+    }
+    18.5% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(5) {
+    --ry: 120deg;
+  }
+  .bgvid .column:nth-child(5) .box {
+    animation: boxRotate4 12s var(--delay) infinite ease-in-out, boxTop4 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate4 {
+    0%, 27.2% {
+      rotate: 0.25turn;
+    }
+    33.2%, 36.3%, 38.36%, 41.7%, 45.46% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    33.2%, 36.3%, 38.36%, 41.7%, 45.46% {
+      rotate: 0turn;
+    }
+    49.82%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop4 {
+    0%, 27.2% {
+      top: 0;
+    }
+    33.2% {
+      top: -1em;
+    }
+    36.3% {
+      top: -2em;
+    }
+    38.36% {
+      top: -3em;
+    }
+    41.7% {
+      top: -4em;
+    }
+    45.46% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(6) {
+    --ry: 150deg;
+  }
+  .bgvid .column:nth-child(6) .box {
+    animation: boxRotate5 12s var(--delay) infinite ease-in-out, boxTop5 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate5 {
+    0%, 26.4% {
+      rotate: 0.25turn;
+    }
+    32.48%, 35.82%, 38.26%, 40.56%, 43.24% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    32.48%, 35.82%, 38.26%, 40.56%, 43.24% {
+      rotate: 0turn;
+    }
+    50.28%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop5 {
+    0%, 26.4% {
+      top: 0;
+    }
+    32.48% {
+      top: -1em;
+    }
+    35.82% {
+      top: -2em;
+    }
+    38.26% {
+      top: -3em;
+    }
+    40.56% {
+      top: -4em;
+    }
+    43.24% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(7) {
+    --ry: 180deg;
+  }
+  .bgvid .column:nth-child(7) .box {
+    animation: boxRotate6 12s var(--delay) infinite ease-in-out, boxTop6 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate6 {
+    0%, 16.8% {
+      rotate: 0.25turn;
+    }
+    23.24%, 26.58%, 29.1%, 32.4%, 35% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    23.24%, 26.58%, 29.1%, 32.4%, 35% {
+      rotate: 0turn;
+    }
+    40.24%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop6 {
+    0%, 16.8% {
+      top: 0;
+    }
+    23.24% {
+      top: -1em;
+    }
+    26.58% {
+      top: -2em;
+    }
+    29.1% {
+      top: -3em;
+    }
+    32.4% {
+      top: -4em;
+    }
+    35% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(8) {
+    --ry: 210deg;
+  }
+  .bgvid .column:nth-child(8) .box {
+    animation: boxRotate7 12s var(--delay) infinite ease-in-out, boxTop7 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate7 {
+    0%, 30% {
+      rotate: 0.25turn;
+    }
+    36.2%, 38.64%, 41.58%, 43.66%, 47.1% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    36.2%, 38.64%, 41.58%, 43.66%, 47.1% {
+      rotate: 0turn;
+    }
+    54.22%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop7 {
+    0%, 30% {
+      top: 0;
+    }
+    36.2% {
+      top: -1em;
+    }
+    38.64% {
+      top: -2em;
+    }
+    41.58% {
+      top: -3em;
+    }
+    43.66% {
+      top: -4em;
+    }
+    47.1% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(9) {
+    --ry: 240deg;
+  }
+  .bgvid .column:nth-child(9) .box {
+    animation: boxRotate8 12s var(--delay) infinite ease-in-out, boxTop8 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate8 {
+    0%, 14.8% {
+      rotate: 0.25turn;
+    }
+    22.12%, 24.66%, 27.04%, 29.36%, 31.48% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    22.12%, 24.66%, 27.04%, 29.36%, 31.48% {
+      rotate: 0turn;
+    }
+    37.68%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop8 {
+    0%, 14.8% {
+      top: 0;
+    }
+    22.12% {
+      top: -1em;
+    }
+    24.66% {
+      top: -2em;
+    }
+    27.04% {
+      top: -3em;
+    }
+    29.36% {
+      top: -4em;
+    }
+    31.48% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(10) {
+    --ry: 270deg;
+  }
+  .bgvid .column:nth-child(10) .box {
+    animation: boxRotate9 12s var(--delay) infinite ease-in-out, boxTop9 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate9 {
+    0%, 27.6% {
+      rotate: 0.25turn;
+    }
+    35.52%, 38.9%, 41.66%, 45.54%, 47.56% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    35.52%, 38.9%, 41.66%, 45.54%, 47.56% {
+      rotate: 0turn;
+    }
+    54.76%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop9 {
+    0%, 27.6% {
+      top: 0;
+    }
+    35.52% {
+      top: -1em;
+    }
+    38.9% {
+      top: -2em;
+    }
+    41.66% {
+      top: -3em;
+    }
+    45.54% {
+      top: -4em;
+    }
+    47.56% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(11) {
+    --ry: 300deg;
+  }
+  .bgvid .column:nth-child(11) .box {
+    animation: boxRotate10 12s var(--delay) infinite ease-in-out, boxTop10 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate10 {
+    0%, 7.2% {
+      rotate: 0.25turn;
+    }
+    12.48%, 14.64%, 18.08%, 21.48%, 23.82% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    12.48%, 14.64%, 18.08%, 21.48%, 23.82% {
+      rotate: 0turn;
+    }
+    31.3%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop10 {
+    0%, 7.2% {
+      top: 0;
+    }
+    12.48% {
+      top: -1em;
+    }
+    14.64% {
+      top: -2em;
+    }
+    18.08% {
+      top: -3em;
+    }
+    21.48% {
+      top: -4em;
+    }
+    23.82% {
+      top: -5em;
+    }
+  }
+  .bgvid .column:nth-child(12) {
+    --ry: 330deg;
+  }
+  .bgvid .column:nth-child(12) .box {
+    animation: boxRotate11 12s var(--delay) infinite ease-in-out, boxTop11 12s var(--delay) infinite step-end, boxTranslate 12s var(--delay) infinite linear;
+  }
+  @keyframes boxRotate11 {
+    0%, 33.2% {
+      rotate: 0.25turn;
+    }
+    40.96%, 43.86%, 46.84%, 50.8%, 53.66% {
+      rotate: -0.25turn;
+      animation-timing-function: step-end;
+    }
+    40.96%, 43.86%, 46.84%, 50.8%, 53.66% {
+      rotate: 0turn;
+    }
+    58.98%, 100% {
+      rotate: -0.5turn;
+    }
+  }
+  @keyframes boxTop11 {
+    0%, 33.2% {
+      top: 0;
+    }
+    40.96% {
+      top: -1em;
+    }
+    43.86% {
+      top: -2em;
+    }
+    46.84% {
+      top: -3em;
+    }
+    50.8% {
+      top: -4em;
+    }
+    53.66% {
+      top: -5em;
+    }
+  }
+  
+  .bgvid .box {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    transform-origin: top left;
+  }
+  .bgvid .box:nth-child(1) {
+    --delay: 0s;
+  }
+  .bgvid .box:nth-child(2) {
+    --delay: -2s;
+  }
+  .bgvid .box:nth-child(3) {
+    --delay: -4s;
+  }
+  .bgvid .box:nth-child(4) {
+    --delay: -6s;
+  }
+  .bgvid .box:nth-child(5) {
+    --delay: -8s;
+  }
+  .bgvid .box:nth-child(6) {
+    --delay: -10s;
+  }
+  @keyframes boxTranslate {
+    from {
+      translate: 0 1em;
+    }
+    to {
+      translate: 0 7em;
+    }
+  }
+  .bgvid .box i {
+    --gap: 0.05em;
+    position: absolute;
+    inset: var(--gap);
+    background-color: rgba(0, 0, 0, 0.8666666667);
+    border: 2px dodgerblue solid;
+    box-shadow: 0 0 0.5em dodgerblue inset;
+  }
+  .bgvid .box i:nth-child(1) {
+    transform: translateZ(calc(0.5em - var(--gap)));
+  }
+  .bgvid .box i:nth-child(2) {
+    transform: rotateY(90deg) translateZ(calc(0.5em - var(--gap)));
+  }
+  .bgvid .box i:nth-child(3) {
+    transform: rotateY(180deg) translateZ(calc(0.5em - var(--gap)));
+  }
+  .bgvid .box i:nth-child(4) {
+    transform: rotateY(270deg) translateZ(calc(0.5em - var(--gap)));
+  }
+  .bgvid .box i:nth-child(5) {
+    transform: rotateX(270deg) translateZ(calc(0.5em - var(--gap)));
+  }
+  .bgvid .box i:nth-child(6) {
+    transform: rotateX(90deg) translateZ(calc(0.5em - var(--gap)));
+  }

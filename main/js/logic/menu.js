@@ -6,18 +6,12 @@ function initializeSubMenu(triggerId, submenuId) {
   var touchStartX = 0;
   var touchEndX = 0;
 
-  if (!isTouchDevice()) {
-    trigger.addEventListener('click', function (event) {
+  
+  trigger.addEventListener('click', function (event) {
       event.stopPropagation();
       toggleSubMenu();
-    });
-  } else {
-    trigger.addEventListener('touchend', function (event) {
-      event.stopPropagation();
-      toggleSubMenu();
-    });
-  }
-
+  });
+  
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
           hideSubMenu();
@@ -70,7 +64,7 @@ function initializeSubMenu(triggerId, submenuId) {
 
   function isTouchDevice() {
     return 'ontouchstart' in window || navigator.maxTouchPoints;
-  }
+}
 }
 
 // Инициализация подменю

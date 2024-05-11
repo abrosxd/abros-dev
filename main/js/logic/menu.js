@@ -14,13 +14,13 @@ function initializeSubMenu(triggerId, submenuId) {
 
   document.addEventListener('click', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-          hideSubMenu();
+        toggleSubMenu();
       }
   });
 
   document.addEventListener('touchstart', function (event) {
       if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-          hideSubMenu();
+        toggleSubMenu();
       }
 
       touchStartX = event.touches[0].clientX;

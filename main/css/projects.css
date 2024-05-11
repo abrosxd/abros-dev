@@ -48,6 +48,13 @@ main {
     }
 }
 
+@media (max-width: 390px) {
+    .project-card {
+        width: 170px;
+        height: 227px;
+    }
+}
+
 .overlay {
     position: absolute;
     top: 0;

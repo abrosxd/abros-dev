@@ -5,7 +5,7 @@
       "title": "Tvoy Hit",
       "img": "main/projects/TvoyHit/avatar.png",
       "overlay": "main/projects/TvoyHit/overlay.png",
-      "outline": "#e29e70",
+      "outline": "#7e70ff",
       "category": "Tilda",
       "content": {
         "RU": [
@@ -77,7 +77,7 @@
       "title": "Abros Noti",
       "img": "main/projects/AbrosNoti/avatar.png",
       "overlay": "main/projects/AbrosNoti/overlay.png",
-      "outline": "#e29e70",
+      "outline": "#00aee1",
       "category": "MyProject Library Tilda",
       "content": {
         "RU": [
@@ -131,7 +131,7 @@
       "title": "Grushka Endoterapia",
       "img": "main/projects/GrushkaEndo/avatar.png",
       "overlay": "main/projects/GrushkaEndo/overlay.png",
-      "outline": "#e29e70",
+      "outline": "#73afe1",
       "category": "Layout",
       "content": {
         "RU": [

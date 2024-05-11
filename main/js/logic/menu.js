@@ -34,12 +34,15 @@ function initializeSubMenu(triggerId, submenuId) {
       }
   });
 
+  var isSubMenuOpen = false;
+
   function toggleSubMenu() {
-      if (submenu.classList.contains('active')) {
-          hideSubMenu();
-      } else {
-          showSubMenu();
-      }
+    if (isSubMenuOpen) {
+        hideSubMenu();
+    } else {
+        showSubMenu();
+    }
+    isSubMenuOpen = !isSubMenuOpen;
   }
 
   function showSubMenu() {

@@ -2,7 +2,7 @@
 function initializeSubMenu(triggerId, submenuId) {
   const trigger = document.getElementById(triggerId);
   const submenu = document.getElementById(submenuId);
-  const SubMenuOpen = false;
+  var SubMenuOpen = false;
 
   var touchStartX = 0;
   var touchEndX = 0;

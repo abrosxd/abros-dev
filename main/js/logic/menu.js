@@ -36,7 +36,7 @@ function initializeSubMenu(triggerId, submenuId) {
 
   function toggleSubMenu() {
     var isMobile = 'ontouchstart' in window || navigator.maxTouchPoints;
-    
+
     if (submenu.classList.contains('active')) {
         if (isMobile) {
             hideSubMenu();
@@ -45,12 +45,11 @@ function initializeSubMenu(triggerId, submenuId) {
             hideSubMenu();
             return;
         }
-    } 
-    
-    // Если меню закрыто, то показываем его
-    showSubMenu();
-    trigger.classList.add('active');
-  }
+    } else {
+        showSubMenu();
+        trigger.classList.add('active');
+    }
+}
 
   function showSubMenu() {
       submenu.style.opacity = '1';

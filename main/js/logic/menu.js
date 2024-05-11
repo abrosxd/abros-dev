@@ -1,76 +1,52 @@
 // Создание подменю
 function initializeSubMenu(triggerId, submenuId) {
-  const trigger = document.getElementById(triggerId);
-  const submenu = document.getElementById(submenuId);
+  var trigger = document.getElementById(triggerId);
+  var submenu = document.getElementById(submenuId);
 
-  var touchStartX = 0;
-  var touchEndX = 0;
+  // Функция для добавления класса active или его удаления
+  function toggleActive() {
+      submenu.classList.toggle('active');
+  }
 
-  trigger.addEventListener('touchstart', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    toggleSubMenu();
-  });
-
+  // Обработчик события клика по триггеру
   trigger.addEventListener('click', function (event) {
-    event.stopPropagation();
-    toggleSubMenu();
+      event.stopPropagation(); // Предотвращаем всплытие события, чтобы оно не достигло body
+      toggleActive();
   });
 
+  // Обработчик события клика за пределами подменю и на сенсорных экранах также при скролле
   document.addEventListener('click', function (event) {
-    if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-      hideSubMenu();
-    }
-  });
+      var isOutsideClick = !submenu.contains(event.target);
+      var isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints; // Проверяем, является ли устройство сенсорным
 
-  document.addEventListener('touchstart', function (event) {
-    if (!isDescendant(submenu, event.target) && event.target.id !== triggerId) {
-      hideSubMenu();
-    }
-
-    touchStartX = event.touches[0].clientX;
-  });
-
-  document.addEventListener('touchmove', function (event) {
-    touchEndX = event.touches[0].clientX;
-    var swipeDistance = touchEndX - touchStartX;
-
-    if (Math.abs(swipeDistance) > 10) {
-      hideSubMenu();
-    }
-  });
-
-  function toggleSubMenu() {
-    submenu.classList.toggle('active');
-  }
-
-  function hideSubMenu() {
-    submenu.classList.remove('active');
-  }
-
-  function isDescendant(parent, child) {
-    var node = child.parentNode;
-    while (node !== null) {
-      if (node === parent) {
-        return true;
+      if ((isOutsideClick || (isTouchDevice && event.type === 'touchstart')) && submenu.classList.contains('active')) {
+          submenu.classList.remove('active');
       }
-      node = node.parentNode;
-    }
-    return false;
+  });
+
+  // Обработчик события скролла на сенсорных экранах
+  if ('ontouchstart' in window || navigator.msMaxTouchPoints) {
+      document.addEventListener('scroll', function (event) {
+          var isOutsideScroll = !submenu.contains(event.target);
+          if (isOutsideScroll && submenu.classList.contains('active')) {
+              submenu.classList.remove('active');
+          }
+      });
   }
 }
 
-
-// Инициализация подменю
+// Инициализация для каждой пары триггер-подменю
 initializeSubMenu('links-trigger', 'links-submenu');
 initializeSubMenu('lang-trigger', 'lang-submenu');
 
+// Проверка страницы и инициализация для фильтра, если находимся на нужной странице
 function isFilterPage() {
   return window.location.pathname === "/";
 }
 if (isFilterPage()) {
   initializeSubMenu('filter-trigger', 'filter-submenu');
 }
+
 
 // Контроль музыки
 const audio = document.getElementById('backgroundMusic');

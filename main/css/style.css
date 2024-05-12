@@ -67,7 +67,7 @@ ul {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    z-index: 10;
+    z-index: 999;
 }
 
 .preload-bg {

@@ -19,7 +19,6 @@ function checkLoad(projects) {
   if (loadedImages === projects.length * 2) {
     setTimeout(function() {
       var preloadDiv = document.querySelector('.preload');
-      var preloadBGDiv = document.querySelector('.preload-bg');
       var preloadIconDiv = document.querySelector('.preload-icon');
       if (preloadIconDiv) {
           preloadIconDiv.style.opacity = '0';
@@ -86,7 +85,7 @@ function handleTouchEnd() {
 }
        
 // Создание карточек
-fetch('main/txt/projects.json')
+fetch('main/json/portfolio.json')
 .then(response => response.json())
 .then(data => {
   data.projects.forEach(project => {
@@ -218,7 +217,7 @@ fetch('main/txt/projects.json')
   
   changefilters(currentLanguage);
 })
-.catch(error => console.error('Ошибка загрузки файла projects.json', error));
+.catch(error => console.error('Ошибка загрузки файла portfolio.json', error));
 
 // Работа фильтра
 const filter = document.querySelector('.filter');

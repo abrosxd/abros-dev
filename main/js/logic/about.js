@@ -1,4 +1,4 @@
-fetch('main/txt/about.json')
+fetch('main/json/about.json')
 .then(response => response.json())
 .then(data => {
     const updateDateTime = () => {

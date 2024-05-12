@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Смена языка 404
   function changeinfo404(language) {
-      fetch('main/txt/404.json')
+      fetch('main/json/404.json')
           .then(response => response.json())
           .then(data => {
             const info404Element = document.querySelector('.info404');

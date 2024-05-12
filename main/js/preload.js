@@ -1,7 +1,6 @@
 window.addEventListener('load', function() {
     setTimeout(function() {
         var preloadDiv = document.querySelector('.preload');
-        var preloadBGDiv = document.querySelector('.preload-bg');
         var preloadIconDiv = document.querySelector('.preload-icon');
         if (preloadIconDiv) {
             preloadIconDiv.style.opacity = '0';

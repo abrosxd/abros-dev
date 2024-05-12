@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Смена языка меню
   function changeMenuText(language) {
-      fetch('main/txt/menu.json')
+      fetch('main/json/menu.json')
           .then(response => response.json())
           .then(data => {
               const menu = data.menu;

@@ -244,7 +244,7 @@
           { "type": "text", "value": "Как только этот проект пошёл по знакомым было решено переписать структуру, логику и принцип работы полностью. Ведь большинство тех, кто этим пользовался никогда не работал с кодом." },
           { "type": "text", "value": "Первым лучшим решением было - раделение системы на модули. Из базы данных проверяется какие модули подключены к сайту и подгружает их. Сделано это для удобства управления и конечно же для того, чтобы значительно снизить нагрузку на сайт." },
           { "type": "text", "value": "Вторым решением было упростить жизнь пользователям, вместо того чтобы поражаться тому какой огромный код им надо куда-то копировать, вся система была реализована как подключаемая библиотека." },
-          { "type": "code", "value": "<script src='https:\/\/deusnotam.github.io\/bd.js><\/script>" },
+          { "type": "code", "value": "<script src='https:\/\/deusnotam.github.io\/bd.js'><\/script>" },
           { "type": "text", "value": "И последним, но не менее важным решением было сделать открытый исходный код. Да, всю систему можно с лёгкостью найти на GitHub. И каждый может изменить её под свои нужды." }
         ],
         "EN": [
@@ -267,7 +267,7 @@
           { "type": "text", "value": "As soon as this project gained traction, it was decided to completely rewrite the structure, logic, and operation principles. After all, the majority of those who used it had never worked with code." },
           { "type": "text", "value": "The first and best solution was to divide the system into modules. The database checks which modules are connected to the site and loads them. This was done for ease of management and, of course, to significantly reduce the load on the site." },
           { "type": "text", "value": "The second solution was to simplify the lives of users. Instead of being amazed at how much code they had to copy somewhere, the entire system was implemented as a plug-in library." },
-          { "type": "code", "value": "<script src='https:\/\/deusnotam.github.io\/bd.js><\/script>" },
+          { "type": "code", "value": "<script src='https:\/\/deusnotam.github.io\/bd.js'><\/script>" },
           { "type": "text", "value": "And last but not least, the decision was made to make the source code open. Yes, the entire system can easily be found on GitHub. And anyone can modify it to suit their needs." }
         ],
         "PL": [
@@ -290,7 +290,7 @@
           { "type": "text", "value": "Kiedy ten projekt zaczął być używany przez znajomych, postanowiono całkowicie przepisać jego strukturę, logikę i sposób działania. Większość użytkowników nie miała doświadczenia w pracy z kodem, dlatego to było konieczne." },
           { "type": "text", "value": "Pierwszym najlepszym rozwiązaniem było podzielenie systemu na moduły. Baza danych sprawdza, które moduły są podłączone do strony i wczytuje je. Zrobiono to dla wygody zarządzania i oczywiście, aby znacząco zmniejszyć obciążenie strony." },
           { "type": "text", "value": "Drugim rozwiązaniem było uproszczenie życia użytkowników. Zamiast zastanawiać się, jaki ogromny kod trzeba gdzieś skopiować, cały system został zaimplementowany jako biblioteka do podłączania." },
-          { "type": "code", "value": "<script src='https:\/\/deusnotam.github.io\/bd.js><\/script>" },
+          { "type": "code", "value": "<script src='https:\/\/deusnotam.github.io\/bd.js'><\/script>" },
           { "type": "text", "value": "I ostatnim, ale nie mniej ważnym rozwiązaniem, było udostępnienie kodu źródłowego. Tak, cały system łatwo można znaleźć na GitHubie. I każdy może go dostosować do swoich potrzeb." }
         ]
       },

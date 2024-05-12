@@ -296,7 +296,7 @@
 				"price": "Бесплатный",
 				"description": "Плагин позволяет сменить сервер приложения",
 				"author": "@abrosxd",
-				"link": "https://abros.me/lampa/plugins/redirect.js"
+				"link": "https://abros.dev/lampa/plugins/redirect.js"
 			}
 		},
 		{
@@ -309,7 +309,7 @@
 				"price": "Бесплатный",
 				"description": "Плагин заменяет меню в шапке на меню в стиле AppleTV",
 				"author": "@abrosxd",
-				"link": "https://abros.me/lampa/plugins/menutvos.js"
+				"link": "https://abros.dev/lampa/plugins/menutvos.js"
 			}
 		}
 	],

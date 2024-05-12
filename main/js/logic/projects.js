@@ -44,7 +44,6 @@ function checkLoad(projects) {
     if (!('ontouchstart' in window)) {
       main.addEventListener('mousemove', handleMouseMove);
     } else {
-      main.style.display = 'none';
       projectCards.forEach(card => {
         card.addEventListener('touchstart', handleTouchStart);
         card.addEventListener('touchend', handleTouchEnd);

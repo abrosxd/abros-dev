@@ -64,53 +64,6 @@ body {
     transform: translateX(-50%);
 }
 
-.lampa-start-text {
-    z-index: 1;
-    position: sticky;
-    flex: 0 0 100%;
-}
-
-.lampa-start-text .text {
-    text-align: center;
-    font-size: xxx-large;
-    font-family: var(--font-basic);
-}
-@media (max-width: 767px) {
-    .lampa-start-text .text {
-        font-size: xx-large;
-    }
-}
-
-.lampa-connect {
-    position: sticky;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #00ffb5;
-    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.3);
-    transition: background-color 0.3s ease;
-    border-radius: 1rem;
-    justify-content: center;
-    width: min-content;
-    padding: 10px 50px;
-    margin: 10px;
-}
-
-.lampa-connect:hover {
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-.lampa-connect .url {
-    text-align: center;
-    font-size: x-large;
-    font-family: var(--font-basic);
-}
-@media (max-width: 767px) {
-    .lampa-connect .url {
-        font-size: medium;
-    }
-}
-
 .lampa-plugins {
     position: sticky;
     display: flex;
@@ -163,52 +116,4 @@ td, th {
 .lampa-plugins .table-container {
     overflow-x: auto;
     max-width: 100%;
-}
-
-.lampa-instruction {
-    position: sticky;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #ffffff;
-    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.3);
-    transition: background-color 0.3s ease;
-    border-radius: 1rem;
-    justify-content: center;
-    padding: 10px 50px;
-    margin: 10px;
-    width: 80%;
-}
-@media (max-width: 767px) {
-    .lampa-instruction {
-        padding: 5px 10px;
-        width: 100%;
-    }
-}
-
-.lampa-instruction .image {
-    width: 100%;
-    border-radius: 15px;
-}
-
-.lampa-instruction .text {
-    text-align: center;
-    font-size: x-large;
-    font-family: var(--font-basic);
-}
-@media (max-width: 767px) {
-    .lampa-instruction .text {
-        font-size: large;
-    }
-}
-
-.lampa-instruction .step {
-    text-align: center;
-    font-size: x-large;
-    font-family: var(--font-basic);
-}
-@media (max-width: 767px) {
-    .lampa-instruction .step {
-        font-size: large;
-    }
 }

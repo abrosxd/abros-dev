@@ -41,9 +41,10 @@ function checkLoad(projects) {
     projectCards.forEach(card => card.style.display = 'block');
     
     // if (window.innerWidth > 1024) {
-      if (!('ontouchstart' in window)) {
+    if (!('ontouchstart' in window)) {
       main.addEventListener('mousemove', handleMouseMove);
     } else {
+      main.style.display = 'none';
       projectCards.forEach(card => {
         card.addEventListener('touchstart', handleTouchStart);
         card.addEventListener('touchend', handleTouchEnd);

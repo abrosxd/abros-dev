@@ -10,7 +10,6 @@
       "content": {
         "RU": [
           { "type": "h4", "value": "Плеер для ТВОЙ ХИТ" },
-          { "type": "text", "value": "Веб-разработка для конструктора Tilda." },
           { "type": "img", "value": "main/projects/TvoyHit/logo_mini.svg" },
           { "type": "text", "value": "Сайт известного композитора. Обратились ко мне с задачей создать для сайта плеер." },
           { "type": "text", "value": "Обстоятельства сложились так, что сайт был сделан на конструкторе Tilda. Из-за чего в дальнейшем выяснилось, что нужные компоненты там отсутствуют." },
@@ -28,7 +27,6 @@
         ],
         "EN": [
           { "type": "h4", "value": "Player for TVOY HIT" },
-          { "type": "text", "value": "Web development for the Tilda builder." },
           { "type": "img", "value": "main/projects/TvoyHit/logo_mini.svg" },
           { "type": "text", "value": "Website of a famous composer. I was tasked with creating a player for the website." },
           { "type": "text", "value": "Circumstances led to the website being made on the Tilda builder. As a result, it turned out that the necessary components were not available there." },
@@ -46,7 +44,6 @@
         ],
         "PL": [
           { "type": "h4", "value": "Odtwarzacz dla TVOY HIT" },
-          { "type": "text", "value": "Tworzenie stron internetowych dla kreatora Tilda." },
           { "type": "img", "value": "main/projects/TvoyHit/logo_mini.svg" },
           { "type": "text", "value": "Strona znanego kompozytora. Zostałem poproszony o stworzenie odtwarzacza dla tej strony." },
           { "type": "text", "value": "Okoliczności doprowadziły do tego, że strona została wykonana w kreatorze Tilda. W rezultacie okazało się, że potrzebne komponenty tam nie są dostępne." },
@@ -82,7 +79,6 @@
       "content": {
         "RU": [
           { "type": "h4", "value": "Уведомления для твоего сайта" },
-          { "type": "text", "value": "Веб-разработка для любых сайтов и конструкторов." },
           { "type": "text", "value": "Данная модификация была разработанна для моего сайта, но так как она получилась модульной. То вы тоже сможете её использовать." },
           { "type": "text", "value": "Уведомления очень полезный инструмент. Не отвлекает пользователя от потребления контента, а так же занимает мало места на сайте." },
           { "type": "text", "value": "С этой целью я разработал библиотеку, которая дает возможность выводить ваши уведомления на сайте." },
@@ -94,7 +90,6 @@
         ],
         "EN": [
           { "type": "h4", "value": "Notifications for your website" },
-          { "type": "text", "value": "Web development for any websites and builders." },
           { "type": "text", "value": "This modification was developed for my website, but since it's modular, you can also use it." },
           { "type": "text", "value": "Notifications are a very useful tool. They don't distract users from consuming content and also take up little space on the website." },
           { "type": "text", "value": "For this purpose, I have developed a library that allows you to display notifications on your website." },
@@ -106,7 +101,6 @@
         ],
         "PL": [
           { "type": "h4", "value": "Powiadomienia dla Twojej strony internetowej" },
-          { "type": "text", "value": "Tworzenie stron internetowych dla różnych stron i kreatorów." },
           { "type": "text", "value": "Ta modyfikacja została opracowana dla mojej strony internetowej, ale ponieważ jest modułowa, również możesz z niej skorzystać." },
           { "type": "text", "value": "Powiadomienia są bardzo przydatnym narzędziem. Nie rozpraszają użytkownika od konsumowania treści, a także zajmują niewiele miejsca na stronie." },
           { "type": "text", "value": "W tym celu opracowałem bibliotekę, która umożliwia wyświetlanie powiadomień na Twojej stronie." },

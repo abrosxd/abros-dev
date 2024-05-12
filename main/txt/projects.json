@@ -175,10 +175,10 @@
       "content": {
         "RU": [
           { "type": "h4", "value": "Abros - магазин плагинов для Lampa" },
-          { "type": "img", "value": "main/projects/LampaAbrosStore/logo_mini.png" },
+          { "type": "img", "value": "main/projects/LampaAbros/logo_mini.png" },
           { "type": "text", "value": "Данный проект представляет из себя плагин для онлайн кинотеатра Lampa. С его помощью можно в один клик устанавливать все возможные доступные плагины для данного кинотеатра." },
           { "type": "text", "value": "Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros Store." },
-          { "type": "img", "value": "main/projects/LampaAbrosStore/storemenu.png" },
+          { "type": "img", "value": "main/projects/LampaAbros/storemenu.png" },
           { "type": "text", "value": "На данный момент добавлены лишь основные известные плагины, со временем магазин будет расширяться." },
           { "type": "text", "value": "Подключить плагин можно добавив ссылку ниже в Lampa." },
           { "type": "code", "value": "https:\/\/abros.dev\/lampa\/mod.js" },
@@ -186,10 +186,10 @@
         ],
         "EN": [
           { "type": "h4", "value": "Abros - a plugin store for Lampa" },
-          { "type": "img", "value": "main/projects/LampaAbrosStore/logo_mini.png" },
+          { "type": "img", "value": "main/projects/LampaAbros/logo_mini.png" },
           { "type": "text", "value": "This project is a plugin for the online cinema Lampa. With it, you can install all available plugins for this cinema with just one click." },
           { "type": "text", "value": "This store simplifies interaction with the Lampa service. Now, there's no need to search for plugins on the internet and add them manually; everything is already available in Abros Store." },
-          { "type": "img", "value": "main/projects/LampaAbrosStore/storemenu.png" },
+          { "type": "img", "value": "main/projects/LampaAbros/storemenu.png" },
           { "type": "text", "value": "Currently, only the basic, well-known plugins have been added, but over time, the store will expand." },
           { "type": "text", "value": "To connect the plugin, you can add the link below in Lampa." },
           { "type": "code", "value": "https:\/\/abros.dev\/lampa\/mod.js" },
@@ -197,10 +197,10 @@
         ],
         "PL": [
           { "type": "h4", "value": "Sklep - sklep z wtyczkami do Lampy" },
-          { "type": "img", "value": "main/projects/LampaAbrosStore/logo_mini.png" },
+          { "type": "img", "value": "main/projects/LampaAbros/logo_mini.png" },
           { "type": "text", "value": "Ten projekt to wtyczka do internetowego kina Lampa. Za jej pomocą można jednym kliknięciem instalować wszystkie dostępne wtyczki dla tego kina." },
           { "type": "text", "value": "Ten sklep ułatwia korzystanie z usługi Lampa. Teraz nie trzeba już szukać wtyczek w internecie i dodawać ich ręcznie - wszystko jest już dostępne w Abros Store." },
-          { "type": "img", "value": "main/projects/LampaAbrosStore/storemenu.png" },
+          { "type": "img", "value": "main/projects/LampaAbros/storemenu.png" },
           { "type": "text", "value": "Obecnie dodano tylko podstawowe, znane wtyczki, ale w przyszłości sklep będzie się rozwijał." },
           { "type": "text", "value": "Aby podłączyć wtyczkę, możesz dodać poniższy link do Lampa." },
           { "type": "code", "value": "https:\/\/abros.dev\/lampa\/mod.js" },

@@ -5,10 +5,10 @@
             "EN": "Portfolio",
             "PL": "Portfolio"
         },
-        "projects": {
-            "RU": "Проекты",
-            "EN": "Projects",
-            "PL": "Projekty"
+        "library": {
+            "RU": "Библиотека",
+            "EN": "Library",
+            "PL": "Biblioteka"
         },
         "about": {
             "RU": "Обо мне",

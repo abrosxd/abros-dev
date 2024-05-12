@@ -109,14 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
       fetch('main/json/menu.json')
           .then(response => response.json())
           .then(data => {
-              const menu = data.menu;
-              const portfolioElement = document.querySelector('.tportfolio');
-              const portfolioText = menu.portfolio[language];
-              portfolioElement.textContent = portfolioText;
-
-              const aboutElement = document.querySelector('.tabout');
-              const aboutText = menu.about[language];
-              aboutElement.textContent = aboutText;
+            document.querySelector('.tportfolio').textContent = data.menu.portfolio[language];
+            // document.querySelector('.tlibrary').textContent = data.menu.library[language];
+            document.querySelector('.tabout').textContent = data.menu.about[language];
           })
           .catch(error => console.error('Ошибка загрузки файла menu.json', error));
   }

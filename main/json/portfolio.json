@@ -2,25 +2,27 @@
   "projects": [
     {
       "id": 6,
-      "title": "Tvoy Hit",
-      "img": "main/projects/TvoyHit/avatar.png",
-      "overlay": "main/projects/TvoyHit/overlay.png",
+      "title": "Tvoy Hit Player",
+      "img": "main/projects/TvoyHitPlayer/avatar.png",
+      "overlay": "main/projects/TvoyHitPlayer/overlay.png",
       "outline": "#7e70ff",
       "category": "Layout Tilda",
       "content": {
         "RU": [
-          { "type": "h4", "value": "Плеер для ТВОЙ ХИТ" },
-          { "type": "img", "value": "main/projects/TvoyHit/logo_mini.svg" },
+          { "type": "h4", "value": "Плеер с плейлистом для сайта" },
+          { "type": "img", "value": "main/projects/TvoyHitPlayer/logo_mini.svg" },
           { "type": "text", "value": "Сайт известного композитора. Обратились ко мне с задачей создать для сайта плеер." },
-          { "type": "text", "value": "Обстоятельства сложились так, что сайт был сделан на конструкторе Tilda. Из-за чего в дальнейшем выяснилось, что нужные компоненты там отсутствуют." },
-          { "type": "text", "value": "Однако сайт был уже сделан, поэтому пришлось прибегнуть к дополнительной разработке." },
-          { "type": "img", "value": "main/projects/TvoyHit/site1.png" },
-          { "type": "text", "value": "В самом начале пути имеем обычный, стильный каталог товаров." },
-          { "type": "text", "value": "Задача состоит в том, что к этому каталогу нужно создать плеер. А дизайн плеера уже тоже имеется готовый в Zero-блок." },
-          { "type": "text", "value": "Помучавшись с логикой тильды, было решено реализовать работу через подключаемую JS библиотеку. В дальнейшем это решение будет удачным, так как код можно будет использовать и в других проектах, а библиотеку востанавливать в случае изменений со стороны Tilda." },
-          { "type": "text", "value": "Весь стиль плеера настраивается в самой Tilda, а то что нельзя настроить - настраивается в коде." },
-          { "type": "img", "value": "main/projects/TvoyHit/site2.gif" },
-          { "type": "text", "value": "Как видно, желаемый результат достигнут и заказчик доволен." }
+          { "type": "text", "value": "Плеер был реализован библиотекой, поэтому данную модификацию можно использовать в других проектах." },
+          { "type": "img", "value": "main/projects/TvoyHitPlayer/site.gif" },
+          { "type": "text", "value": "Инструкция" },
+          { "type": "text", "value": "Создание плейлиста\n1. В товарах создать товар в котором:\n Заголовок: Название трека\n Изображение: Обложка трека\n Разделы каталога: можно поместить в раздел, если у вас есть еще и другие товары или разные плейлисты\n В характеристиках добавить новую характеристику (Название: music, Значение: прямая ссылка на трек)\n В ссылку на страницу с товаром добавить ссылку для перехода по кнопке (Ниже поймете для каких)\n2. Добавить все треки по инструкции 1.\n\nСоздание плеера\n1. Добавить каталог ST310N и настроить его стиль, обязательно должно быть:\n Карточки -> Показывать второе изображение при наведении - отключено\n Карточки -> Показывать пагинацию (вместо кнопки «Загрузить еще») - включено\n Карточки -> Два товара в ряд на мобильных устройствах - включено\n Карточки -> Количество видимых товаров до кнопки «Загрузить ещё» - любое, оптимально 12\n Секция «Смотрите также» -> Блок 'Смотрите также' - не выводить\n Стиль галереи -> Соотношение сторон - 1:1 квадрат\n Фильтры & Разделы -> Спрятать фильтры - включено\n Фильтры & Разделы -> Спрятать список разделов каталога - включено\n Фильтры & Разделы -> Сортировка товаров по умолчанию - порядок по умолчанию\n2. Подключить раздел товаров с вашей музыкой\n3. Под блоком каталога создать зероблок, в настройках задать ему класс какой захотите (Например uc-player)\n4. В этом зероблоке создаёте плеер, обязательно должно быть:\n Высота контейнера 70px на всех экранах\n HTML блок на всю длинну страницы это прогресс бар трека\n Туда вставить код:" },
+          { "type": "code", "value": "<input type=\"range\" name=\"progress\" class=\"music-range progress\" min=\"0\" max=\"100\" value=\"0\">" }, 
+          { "type": "text", "value": " HTML блок это прогресс бар звука\n Туда вставить код:" },
+          { "type": "code", "value": "<input type=\"range\" name=\"volume\" class=\"music-range volume\" min=\"0\" max=\"100\" value=\"100\">" },
+          { "type": "text", "value": " Две кнопки/картинки с классами player-btn-buy и player-text они будут перенаправлять на страницу играющего трека, если такой функционал не требуется, то просто их спрячте за пределами видимости\n Картинка с классом player-play это будет кнопка Play|Pause\n Картинка с классом player-next это будет кнопка следующей песни\n Картинка с классом player-prev это будет кнопка предыдущей песни\n Текст с текстом \"Ничего не исполняется\" с классом player-title это будет название играющей песни\n Шейп с классом player-cover это будет картинка играющей песни\n5. Все остальное можно настраивать по своему вкусу\n6. Под блоком плеера добавить T123\n7. Код ниже вставить в T123 и настроить все переменные для плеера" },
+          { "type": "code", "value": "<!--Плеер из каталога товаров by ABROS-->\n\n<audio id=\"audio\" data-track-number=\"0\"></audio>\n<div id=\"area-player\"></div>\n<script>\n window.AbrosTildaPlayer = {\n   // Настройки\n   catalogID: '#recXXXXXXXXX', // ID блока каталога\n   playerID: '.uc-player', // Класс плеера\n   audioID: '#audio', // ID блока проигрователя\n   areaID: '#area-player', // ID блока тригера\n   cards: '12', // Кол-во карточек на странице\n   storepart: 'XXXXXXXXXXXX', // ID Storepart\n   // Стили\n   // Обложка для карточек\n   WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Цвет обложки для карточек (Важно в rgba, чтобы задать прозрачность)\n   WrapperBorderRadius: '50px', // Скругление обложки для карточек\n   WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Иконка кнопки Play\n   WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Иконка кнопки Pause\n   // Input громкости и прогресса песни\n   TrackSlideColorStart: 'rgba(255,255,255,1)', // Цвет полосок\n   TrackSlideColorEnd: 'rgba(126,112,255,1)', // Цвет заполнения полосок\n   TrackSlideBorderRadius: '10px', // Скругление полосок\n   TrackThumbColor: '#fff', // Цвет тумблера на полоске прогресса\n   TrackThumbBorderRadius: '50%', // Скругление тумблера\n   // Стили плеера\n   PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Иконка кнопки Play\n   PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Иконка кнопки Pause\n   PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Иконка кнопки Вкл.Звук\n   PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Иконка кнопки Выкл.Звук\n };\n</script>\n<script src = 'https://abros.me/tilda/mods/player.js'></script>"},
+          { "type": "text", "value": "Если вы не знаете где найти ID Storepart, то под каталогом создайте T123, вставте код ниже, опубликуйте и зайдите на сайт, вы увидите свой ID Storepart. После чего код можно удалить" },
+          { "type": "code", "value": "<script>\n document.addEventListener(\"DOMContentLoaded\", function() {\n  var scripts = document.querySelectorAll('script');\n  scripts.forEach(function(script) {\n   var scriptText = script.textContent || script.innerText;\n   if (scriptText.includes('storepart')) {\n   var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);\n   if (match && match[1]) {\n    var storepartValue = match[1];\n    alert('Ваш storepart: \"' + storepartValue + '\"');\n    break;\"\n   }\n  }\n });\n});\n</script>"}
         ],
         "EN": [
           { "type": "h4", "value": "Player for TVOY HIT" },
@@ -61,7 +63,7 @@
     },
 
     {
-      "id": 5,
+      "id": 4,
       "title": "Abros Noti",
       "img": "main/projects/AbrosNoti/avatar.png",
       "overlay": "main/projects/AbrosNoti/overlay.png",
@@ -70,36 +72,42 @@
       "content": {
         "RU": [
           { "type": "h4", "value": "Уведомления для твоего сайта" },
-          { "type": "text", "value": "Данная модификация была разработанна для моего сайта, но так как она получилась модульной. То вы тоже сможете её использовать." },
+          { "type": "text", "value": "Данная библиотека была разработанна для моего сайта, но так как она получилась модульной. То вы тоже сможете её использовать." },
           { "type": "text", "value": "Уведомления очень полезный инструмент. Не отвлекает пользователя от потребления контента, а так же занимает мало места на сайте." },
           { "type": "text", "value": "С этой целью я разработал библиотеку, которая дает возможность выводить ваши уведомления на сайте." },
           { "type": "img", "value": "main/projects/AbrosNoti/noti.gif" },
-          { "type": "text", "value": "Выглядит круто, а самое главное, что очень просто с этим работать! Пример данных сообщений:" },
-          { "type": "code", "value": "<script>\n  const demonotis = [\n    () => {abrosnoti.create(\"Привет!\", \"Давай посмотрим на эти чудесные уведомления\", 5)},\n    () => {abrosnoti.create(\"Крутые эффекты\", \"Посмотри как они переливаются и двигаются\", 5)},\n    () => {abrosnoti.create(\"Простота использования\", \"Они создаются сами, просто напиши текст!\", 10)},\n    () => {abrosnoti.create(\"Гибкость\", \"Показывай их так долго как только хочешь\", 10)},\n    () => {abrosnoti.create(\"Функции\", \"Научи их делать что-то по клику на них!\", 10, true, () => abrosnoti.create(\"Клик!\", \"Вау! это же другая карточка.\", 4))},\n    () => {abrosnoti.create(\"Анимация\", \"Их может быть так много, как только ты захочешь, они не будут мешать друг другу\", 15)},\n  ]\n  let i = 1;\n  demonotis[0]()\n  setInterval(()=>{\n    if (i == demonotis.length) {\n      abrosnoti.create(\"Abros Noti\", \"Уведомления для вашего сайта\", 0, true, () => {i = 0})\n    } else if (i < demonotis.length) {\n      demonotis[i]()\n    }\n    i++\n  }, 4000)\n<\/script>" },
-          { "type": "text", "value": "Вы можете проверить как это работает, просто смените язык на моем сайте :)" },
-          { "type": "text", "value": "Данную библиотеку уже можно приобрести!" }
+          { "type": "text", "value": "Выглядит круто, а самое главное, что очень просто с этим работать!" },
+          { "type": "text", "value": "Всё что нужно сделать, это подключить библиотеку к сайту используя код:" },
+          { "type": "code", "value": "<script src='https:\/\/abros.dev\/dev\/noti.js'><\/script>" },
+          { "type": "text", "value": "После чего можно вызывать функцию уведомлений следующим образом:" },
+          { "type": "code", "value": "Создавайте уведомления с помощью abrosnoti.create()\n\nПараметры abrosnoti.create():\n Иконка: string,\n Заголовок: string,\n Описание: string,\n Продолжительность: секунды (по умолчанию: 2 секунды, 0 означает бесконечное время),\n Уничтожить при клике: boolean (определяет, должно ли уведомление исчезнуть при нажатии, по умолчанию: false)\n Функция клика: function (вызывается при нажатии на уведомление, если не определено, по умолчанию: undefined)" },
+          { "type": "text", "value": "Вы можете проверить как это работает, просто смените язык на моем сайте :)" }
         ],
         "EN": [
           { "type": "h4", "value": "Notifications for your website" },
-          { "type": "text", "value": "This modification was developed for my website, but since it's modular, you can also use it." },
-          { "type": "text", "value": "Notifications are a very useful tool. They don't distract users from consuming content and also take up little space on the website." },
-          { "type": "text", "value": "For this purpose, I have developed a library that allows you to display notifications on your website." },
+          { "type": "text", "value": "This library was developed for my website, but since it turned out to be modular, you can also use it." },
+          { "type": "text", "value": "Notifications are a very useful tool. They do not distract the user from consuming content and take up little space on the website." },
+          { "type": "text", "value": "With this in mind, I developed a library that allows you to display notifications on your website." },
           { "type": "img", "value": "main/projects/AbrosNoti/noti.gif" },
-          { "type": "text", "value": "It looks great, and most importantly, it's very easy to work with! Example of message data:" },
-          { "type": "code", "value": "<script>\n  const demonotis = [\n    () => {abrosnoti.create(\"Привет!\", \"Давай посмотрим на эти чудесные уведомления\", 5)},\n    () => {abrosnoti.create(\"Крутые эффекты\", \"Посмотри как они переливаются и двигаются\", 5)},\n    () => {abrosnoti.create(\"Простота использования\", \"Они создаются сами, просто напиши текст!\", 10)},\n    () => {abrosnoti.create(\"Гибкость\", \"Показывай их так долго как только хочешь\", 10)},\n    () => {abrosnoti.create(\"Функции\", \"Научи их делать что-то по клику на них!\", 10, true, () => abrosnoti.create(\"Клик!\", \"Вау! это же другая карточка.\", 4))},\n    () => {abrosnoti.create(\"Анимация\", \"Их может быть так много, как только ты захочешь, они не будут мешать друг другу\", 15)},\n  ]\n  let i = 1;\n  demonotis[0]()\n  setInterval(()=>{\n    if (i == demonotis.length) {\n      abrosnoti.create(\"Abros Noti\", \"Уведомления для вашего сайта\", 0, true, () => {i = 0})\n    } else if (i < demonotis.length) {\n      demonotis[i]()\n    }\n    i++\n  }, 4000)\n<\/script>" },
-          { "type": "text", "value": "Can you check how it works, just change the language on my website :)" },
-          { "type": "text", "value": "This library is already available for purchase!" }
+          { "type": "text", "value": "It looks cool, and most importantly, it's very easy to work with!" },
+          { "type": "text", "value": "All you need to do is connect the library to your site using the code:" },
+          { "type": "code", "value": "<script src='https:\/\/abros.dev\/dev\/noti.js'><\/script>" },
+          { "type": "text", "value": "After that, you can call the notification function as follows:" },
+          { "type": "code", "value": "Create notifications using abrosnoti.create()\n\nParameters for abrosnoti.create():\n Icon: string,\n Title: string,\n Description: string,\n Duration: seconds (default: 2 seconds, 0 means infinite time),\n Destroy on click: boolean (determines whether the notification should disappear when clicked, default: false)\n Click function: function (called when the notification is clicked, if not defined, default: undefined)" },
+          { "type": "text", "value": "You can see how it works by simply changing the language on my website :)" }
         ],
         "PL": [
           { "type": "h4", "value": "Powiadomienia dla Twojej strony internetowej" },
-          { "type": "text", "value": "Ta modyfikacja została opracowana dla mojej strony internetowej, ale ponieważ jest modułowa, również możesz z niej skorzystać." },
-          { "type": "text", "value": "Powiadomienia są bardzo przydatnym narzędziem. Nie rozpraszają użytkownika od konsumowania treści, a także zajmują niewiele miejsca na stronie." },
-          { "type": "text", "value": "W tym celu opracowałem bibliotekę, która umożliwia wyświetlanie powiadomień na Twojej stronie." },
+          { "type": "text", "value": "Ta biblioteka została opracowana dla mojej witryny, ale ponieważ okazała się modułowa, możesz jej również używać." },
+          { "type": "text", "value": "Powiadomienia są bardzo przydatnym narzędziem. Nie rozpraszają użytkownika od przeglądania treści i zajmują niewiele miejsca na stronie internetowej." },
+          { "type": "text", "value": "Z myślą o tym opracowałem bibliotekę, która pozwala wyświetlać powiadomienia na Twojej stronie internetowej." },
           { "type": "img", "value": "main/projects/AbrosNoti/noti.gif" },
-          { "type": "text", "value": "Wygląda świetnie, a co najważniejsze, jest bardzo łatwe w użyciu! Przykład wiadomości:" },
-          { "type": "code", "value": "<script>\n  const demonotis = [\n    () => {abrosnoti.create(\"Привет!\", \"Давай посмотрим на эти чудесные уведомления\", 5)},\n    () => {abrosnoti.create(\"Крутые эффекты\", \"Посмотри как они переливаются и двигаются\", 5)},\n    () => {abrosnoti.create(\"Простота использования\", \"Они создаются сами, просто напиши текст!\", 10)},\n    () => {abrosnoti.create(\"Гибкость\", \"Показывай их так долго как только хочешь\", 10)},\n    () => {abrosnoti.create(\"Функции\", \"Научи их делать что-то по клику на них!\", 10, true, () => abrosnoti.create(\"Клик!\", \"Вау! это же другая карточка.\", 4))},\n    () => {abrosnoti.create(\"Анимация\", \"Их может быть так много, как только ты захочешь, они не будут мешать друг другу\", 15)},\n  ]\n  let i = 1;\n  demonotis[0]()\n  setInterval(()=>{\n    if (i == demonotis.length) {\n      abrosnoti.create(\"Abros Noti\", \"Уведомления для вашего сайта\", 0, true, () => {i = 0})\n    } else if (i < demonotis.length) {\n      demonotis[i]()\n    }\n    i++\n  }, 4000)\n<\/script>" },
-          { "type": "text", "value": "Czy możesz sprawdzić, jak to działa, po prostu zmień język na mojej stronie internetowej :)" },
-          { "type": "text", "value": "Ta biblioteka jest już dostępna do zakupu!" }
+          { "type": "text", "value": "Wygląda to świetnie, a co najważniejsze, jest bardzo łatwe w obsłudze!" },
+          { "type": "text", "value": "Wszystko, co musisz zrobić, to podłączyć bibliotekę do swojej strony za pomocą tego kodu:" },
+          { "type": "code", "value": "<script src='https:\/\/abros.dev\/dev\/noti.js'><\/script>" },
+          { "type": "text", "value": "Następnie możesz wywołać funkcję powiadomień w następujący sposób:" },
+          { "type": "code", "value": "Twórz powiadomienia za pomocą abrosnoti.create()\n\nParametry dla abrosnoti.create():\n Ikona: string,\n Tytuł: string,\n Opis: string,\n Czas trwania: sekundy (domyślnie: 2 sekundy, 0 oznacza czas nieskończony),\n Zniszcz po kliknięciu: boolean (określa, czy powiadomienie powinno zniknąć po kliknięciu, domyślnie: false)\n Funkcja kliknięcia: function (wywoływana po kliknięciu na powiadomienie, jeśli nie zdefiniowano, domyślnie: undefined)" },
+          { "type": "text", "value": "Możesz zobaczyć, jak to działa, po prostu zmieniając język na mojej stronie :)" }
         ]
       },
       "hash": "AbrosNoti",
@@ -112,7 +120,7 @@
     },
     
     {
-      "id": 4,
+      "id": 3,
       "title": "Grushka Endoterapia",
       "img": "main/projects/GrushkaEndo/avatar.png",
       "overlay": "main/projects/GrushkaEndo/overlay.png",
@@ -157,7 +165,7 @@
     },
 
     {
-      "id": 3,
+      "id": 2,
       "title": "Lampa Abros",
       "img": "main/projects/LampaAbros/avatar.png",
       "overlay": "main/projects/LampaAbros/overlay.png",
@@ -208,7 +216,7 @@
     },
 
     {
-      "id": 2,
+      "id": 1,
       "title": "DEUS",
       "img": "main/projects/DEUS/avatar.png",
       "overlay": "main/projects/DEUS/overlay.png",
@@ -218,14 +226,12 @@
         "RU": [
           { "type": "h4", "value": "DEUS - защита контента" },
           { "type": "img", "value": "main/projects/DEUS/logo_mini.jpeg" },
-          { "type": "text", "value": "Прежде чем рассказать о истории проекта и его создании, давайте посмотрим что это." },
           { "type": "text", "value": "DEUS - система-библиотека для удалённого контроля принадлежащих ей модулей." },
           { "type": "text", "value": "Простыми словами это система, которая подключается к сайту и следует определенным правилам, которые ей передают сами пользователи." },
           { "type": "text", "value": "Модуль BD - это системный модуль, он отвечает за проверку правил для сайта и подключение остальных модулей. На момент разработки являлся главным модулем системы и визуальную часть не имел." },
           { "type": "img", "value": "main/projects/DEUS/module_bd.jpeg" },
           { "type": "text", "value": "Модуль Blocker - это модуль отвечающий за наказания. Данный модуль применяется в случаях когда заказчик не оплатил работу и сменил все доступы так, что вы остались без денег и ваш труд отдан за бесплатно. В этом случае в работу вступает этот модуль применяя выбранный вами эффект к проекту." },
           { "type": "img", "value": "main/projects/DEUS/module_blocker.gif" },
-          { "type": "text", "value": "Данный проект разрабатывался для личных целей, но со временем другие видя его в действии начали просить подключить и им тоже. Как итог теперь вы видите это творение." },
           { "type": "text", "value": "Альфа версия (когда проект был только для меня) находилась непосредственно в проекте, что немного затрудняло работу с ним напрямую. Но так как это было только для личного использования - меня устраивало." },
           { "type": "img", "value": "main/projects/DEUS/alpha_1.jpeg" },
           { "type": "text", "value": "Как только этот проект пошёл по знакомым было решено переписать структуру, логику и принцип работы полностью. Ведь большинство тех, кто этим пользовался никогда не работал с кодом." },
@@ -237,14 +243,12 @@
         "EN": [
           { "type": "h4", "value": "DEUS - Content Protection" },
           { "type": "img", "value": "main/projects/DEUS/logo_mini.jpeg" },
-          { "type": "text", "value": "Before telling the project's story and its creation, let's see what it is." },
           { "type": "text", "value": "DEUS is a system-library for remote control of its modules." },
           { "type": "text", "value": "In simple terms, it is a system that connects to a website and follows certain rules that users transmit to it." },
           { "type": "text", "value": "Module BD is a system module responsible for checking rules for the site and connecting other modules. At the development stage, it was the main system module and did not have a visual part." },
           { "type": "img", "value": "main/projects/DEUS/module_bd.jpeg" },
           { "type": "text", "value": "Module Blocker is a module responsible for penalties. This module is used in cases where the customer did not pay for the work and changed all accesses so that you were left without money and your work was given away for free. In this case, this module comes into play, applying the effect you choose to the project." },
           { "type": "img", "value": "main/projects/DEUS/module_blocker.gif" },
-          { "type": "text", "value": "This project was developed for personal purposes, but over time, other types of it began to ask to connect them too. As a result, you now see this creation." },
           { "type": "text", "value": "The alpha version (when the project was only for me) was directly in the project, which made it a bit difficult to work with it directly. But since it was only for personal use, it suited me." },
           { "type": "img", "value": "main/projects/DEUS/alpha_1.jpeg" },
           { "type": "text", "value": "As soon as this project gained traction, it was decided to completely rewrite the structure, logic, and operation principles. After all, the majority of those who used it had never worked with code." },
@@ -256,14 +260,12 @@
         "PL": [
           { "type": "h4", "value": "DEUS - ochrona treści" },
           { "type": "img", "value": "main/projects/DEUS/logo_mini.jpeg" },
-          { "type": "text", "value": "Zanim opowiemy historię projektu i jego tworzenia, zobaczmy, co to jest." },
           { "type": "text", "value": "DEUS - to system-biblioteka do zdalnej kontroli jej modułów." },
           { "type": "text", "value": "Prosto mówiąc, to system, który łączy się ze stroną i przestrzega określonych zasad, które użytkownicy przekazują mu sami." },
           { "type": "text", "value": "Moduł BD - to moduł systemowy, odpowiedzialny za sprawdzanie reguł dla strony i podłączanie pozostałych modułów. Na etapie rozwoju był głównym modułem systemu i nie miał części wizualnej." },
           { "type": "img", "value": "main/projects/DEUS/module_bd.jpeg" },
           { "type": "text", "value": "Moduł Blocker - to moduł odpowiedzialny za kary. Ten moduł jest stosowany w przypadkach, gdy klient nie opłacił pracy i zmienił wszystkie dostępy w ten sposób, że pozostajesz bez pieniędzy, a twoja praca została oddana za darmo. W takim przypadku ten moduł wchodzi w akcję, stosując wybrany przez ciebie efekt do projektu." },
           { "type": "img", "value": "main/projects/DEUS/module_blocker.gif" },
-          { "type": "text", "value": "Ten projekt był początkowo rozwijany dla osobistych celów, ale z czasem inni zaczęli prosić o podłączenie go i korzystanie z niego również. Teraz widzisz to dzieło." },
           { "type": "text", "value": "Wersja alfa (kiedy projekt był tylko dla mnie) była bezpośrednio w projekcie, co trochę utrudniło pracę z nim bezpośrednio. Ale ponieważ był to tylko dla osobistego użytku - mnie to zadowalało." },
           { "type": "img", "value": "main/projects/DEUS/alpha_1.jpeg" },
           { "type": "text", "value": "Kiedy ten projekt zaczął być używany przez znajomych, postanowiono całkowicie przepisać jego strukturę, logikę i sposób działania. Większość użytkowników nie miała doświadczenia w pracy z kodem, dlatego to było konieczne." },

@@ -130,7 +130,7 @@ fetch('main/json/portfolio.json')
         popupContent.appendChild(image);
       } else if (type === 'text') {
         const paragraph = document.createElement('p');
-        paragraph.innerHTML = value;
+        paragraph.innerText = value;
         paragraph.className = 'popuptitle';
         popupContent.appendChild(paragraph);
       } else if (type === 'code') {

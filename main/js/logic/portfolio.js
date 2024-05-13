@@ -137,7 +137,7 @@ fetch('main/json/portfolio.json')
         const preformatted = document.createElement('pre');
         const code = document.createElement('code');
         code.textContent = value;
-        code.className = 'language-auto';
+        code.className = 'auto';
         preformatted.className = 'popupcode';
         preformatted.appendChild(code);
         popupContent.appendChild(preformatted);

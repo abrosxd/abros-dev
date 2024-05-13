@@ -16,7 +16,7 @@
           { "type": "text", "value": "Однако сайт был уже сделан, поэтому пришлось прибегнуть к дополнительной разработке." },
           { "type": "img", "value": "main/projects/TvoyHit/site1.png" },
           { "type": "text", "value": "В самом начале пути имеем обычный, стильный каталог товаров." },
-          { "type": "text", "value": "Задача состоит в том, что к этому каталогу нужно создать плеер. А дизайн плеера уже тоже умеется готовый в Zero-блок." },
+          { "type": "text", "value": "Задача состоит в том, что к этому каталогу нужно создать плеер. А дизайн плеера уже тоже имеется готовый в Zero-блок." },
           { "type": "text", "value": "Помучавшись с логикой тильды, было решено реализовать работу через подключаемую JS библиотеку. В дальнейшем это решение будет удачным, так как код можно будет использовать и в других проектах, а библиотеку востанавливать в случае изменений со стороны Tilda." },
           { "type": "code", "value": "<!--Плеер из каталога товаров-->\n\n<audio id=\"audio\" data-track-number=\"0\"></audio>\n<div id=\"area-player\"></div>\n<script>\nwindow.AbrosTildaPlayer = {\n    // Настройки\n    catalogID: '#recXXXXXXXXX', // ID блока каталога\n    playerID: '.uc-player', // Класс плеера\n    audioID: '#audio', // ID блока проигрователя\n    areaID: '#area-player', // ID блока тригера\n    cards: '12', // Кол-во карточек на странице\n    storepart: 'XXXXXXXXXXXX', // ID Storepart\n    // Стили\n    // Обложка для карточек\n    WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Цвет обложки для карточек\n    WrapperBorderRadius: '50px', // Скругление обложки для карточек\n    WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Иконка кнопки Play\n    WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Иконка кнопки Pause\n    // Input громкости и прогресса песни\n    TrackSlideColorStart: 'rgba(255,255,255,1)', // Цвет полосок\n    TrackSlideColorEnd: 'rgba(126,112,255,1)', // Цвет заполнения полосок\n    TrackSlideBorderRadius: '10px', // Скругление полосок\n    TrackThumbColor: '#fff', // Цвет тумблера\n    TrackThumbBorderRadius: '50%', // Скругление тумблера\n    // Стили плеера\n    PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Иконка кнопки Play\n    PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Иконка кнопки Pause\n    PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Иконка кнопки Вкл.Звук\n    PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Иконка кнопки Выкл.Звук\n};\n<\/script>" },
           { "type": "text", "value": "В итоге мы имеем такой код. Он передаёт заданые вами значения в код библиотеки и реализует следующий функционал." },
@@ -75,7 +75,7 @@
       "img": "main/projects/AbrosNoti/avatar.png",
       "overlay": "main/projects/AbrosNoti/overlay.png",
       "outline": "#00aee1",
-      "category": "MyProject Library Tilda",
+      "category": "MyProject Library",
       "content": {
         "RU": [
           { "type": "h4", "value": "Уведомления для твоего сайта" },
@@ -177,7 +177,7 @@
           { "type": "h4", "value": "Abros - магазин плагинов для Lampa" },
           { "type": "img", "value": "main/projects/LampaAbros/logo_mini.png" },
           { "type": "text", "value": "Данный проект представляет из себя плагин для онлайн кинотеатра Lampa. С его помощью можно в один клик устанавливать все возможные доступные плагины для данного кинотеатра." },
-          { "type": "text", "value": "Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros Store." },
+          { "type": "text", "value": "Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros." },
           { "type": "img", "value": "main/projects/LampaAbros/storemenu.png" },
           { "type": "text", "value": "На данный момент добавлены лишь основные известные плагины, со временем магазин будет расширяться." },
           { "type": "text", "value": "Подключить плагин можно добавив ссылку ниже в Lampa." },
@@ -188,7 +188,7 @@
           { "type": "h4", "value": "Abros - a plugin store for Lampa" },
           { "type": "img", "value": "main/projects/LampaAbros/logo_mini.png" },
           { "type": "text", "value": "This project is a plugin for the online cinema Lampa. With it, you can install all available plugins for this cinema with just one click." },
-          { "type": "text", "value": "This store simplifies interaction with the Lampa service. Now, there's no need to search for plugins on the internet and add them manually; everything is already available in Abros Store." },
+          { "type": "text", "value": "This store simplifies interaction with the Lampa service. Now, there's no need to search for plugins on the internet and add them manually; everything is already available in Abros." },
           { "type": "img", "value": "main/projects/LampaAbros/storemenu.png" },
           { "type": "text", "value": "Currently, only the basic, well-known plugins have been added, but over time, the store will expand." },
           { "type": "text", "value": "To connect the plugin, you can add the link below in Lampa." },
@@ -199,7 +199,7 @@
           { "type": "h4", "value": "Sklep - sklep z wtyczkami do Lampy" },
           { "type": "img", "value": "main/projects/LampaAbros/logo_mini.png" },
           { "type": "text", "value": "Ten projekt to wtyczka do internetowego kina Lampa. Za jej pomocą można jednym kliknięciem instalować wszystkie dostępne wtyczki dla tego kina." },
-          { "type": "text", "value": "Ten sklep ułatwia korzystanie z usługi Lampa. Teraz nie trzeba już szukać wtyczek w internecie i dodawać ich ręcznie - wszystko jest już dostępne w Abros Store." },
+          { "type": "text", "value": "Ten sklep ułatwia korzystanie z usługi Lampa. Teraz nie trzeba już szukać wtyczek w internecie i dodawać ich ręcznie - wszystko jest już dostępne w Abros." },
           { "type": "img", "value": "main/projects/LampaAbros/storemenu.png" },
           { "type": "text", "value": "Obecnie dodano tylko podstawowe, znane wtyczki, ale w przyszłości sklep będzie się rozwijał." },
           { "type": "text", "value": "Aby podłączyć wtyczkę, możesz dodać poniższy link do Lampa." },
@@ -222,7 +222,7 @@
       "img": "main/projects/DEUS/avatar.png",
       "overlay": "main/projects/DEUS/overlay.png",
       "outline": "#00ff00",
-      "category": "MyProject Library Tilda",
+      "category": "MyProject Library",
       "content": {
         "RU": [
           { "type": "h4", "value": "DEUS - защита контента" },
@@ -232,10 +232,6 @@
           { "type": "text", "value": "Простыми словами это система, которая подключается к сайту и следует определенным правилам, которые ей передают сами пользователи." },
           { "type": "text", "value": "Модуль BD - это системный модуль, он отвечает за проверку правил для сайта и подключение остальных модулей. На момент разработки являлся главным модулем системы и визуальную часть не имел." },
           { "type": "img", "value": "main/projects/DEUS/module_bd.jpeg" },
-          { "type": "text", "value": "Модуль ADS - это рекламный модуль. Он время от времени появляется на сайте в подвале. Таким образом реализовано бесплатное пользование системой взамен на показ рекламы от партнёров." },
-          { "type": "img", "value": "main/projects/DEUS/module_ads.jpeg" },
-          { "type": "text", "value": "Модуль Noti - это модуль уведомлений. Основная цель создания модуля это информационный контакт с пользователем. Текст для уведомления можно редактировать и таким образом можно информировать пользователей о временных технических работах, блокировке сайта и т.п." },
-          { "type": "img", "value": "main/projects/DEUS/module_noti.gif" },
           { "type": "text", "value": "Модуль Blocker - это модуль отвечающий за наказания. Данный модуль применяется в случаях когда заказчик не оплатил работу и сменил все доступы так, что вы остались без денег и ваш труд отдан за бесплатно. В этом случае в работу вступает этот модуль применяя выбранный вами эффект к проекту." },
           { "type": "img", "value": "main/projects/DEUS/module_blocker.gif" },
           { "type": "text", "value": "Данный проект разрабатывался для личных целей, но со временем другие видя его в действии начали просить подключить и им тоже. Как итог теперь вы видите это творение." },
@@ -255,10 +251,6 @@
           { "type": "text", "value": "In simple terms, it is a system that connects to a website and follows certain rules that users transmit to it." },
           { "type": "text", "value": "Module BD is a system module responsible for checking rules for the site and connecting other modules. At the development stage, it was the main system module and did not have a visual part." },
           { "type": "img", "value": "main/projects/DEUS/module_bd.jpeg" },
-          { "type": "text", "value": "Module ADS is an advertising module. It appears on the site's footer from time to time. In this way, free use of the system is implemented in exchange for showing ads from partners." },
-          { "type": "img", "value": "main/projects/DEUS/module_ads.jpeg" },
-          { "type": "text", "value": "Module Noti is a notification module. The main goal of creating the module is informational contact with the user. The text for notification can be edited, and in this way, users can be informed about temporary technical work, site blocking, etc." },
-          { "type": "img", "value": "main/projects/DEUS/module_noti.gif" },
           { "type": "text", "value": "Module Blocker is a module responsible for penalties. This module is used in cases where the customer did not pay for the work and changed all accesses so that you were left without money and your work was given away for free. In this case, this module comes into play, applying the effect you choose to the project." },
           { "type": "img", "value": "main/projects/DEUS/module_blocker.gif" },
           { "type": "text", "value": "This project was developed for personal purposes, but over time, other types of it began to ask to connect them too. As a result, you now see this creation." },
@@ -278,10 +270,6 @@
           { "type": "text", "value": "Prosto mówiąc, to system, który łączy się ze stroną i przestrzega określonych zasad, które użytkownicy przekazują mu sami." },
           { "type": "text", "value": "Moduł BD - to moduł systemowy, odpowiedzialny za sprawdzanie reguł dla strony i podłączanie pozostałych modułów. Na etapie rozwoju był głównym modułem systemu i nie miał części wizualnej." },
           { "type": "img", "value": "main/projects/DEUS/module_bd.jpeg" },
-          { "type": "text", "value": "Moduł ADS - to moduł reklamowy. Pojawia się na stronie od czasu do czasu w stopce. W ten sposób realizowane jest bezpłatne korzystanie z systemu w zamian za wyświetlanie reklam od partnerów." },
-          { "type": "img", "value": "main/projects/DEUS/module_ads.jpeg" },
-          { "type": "text", "value": "Moduł Noti - to moduł powiadomień. Głównym celem tworzenia modułu jest kontakt informacyjny z użytkownikiem. Tekst powiadomienia można edytować, co umożliwia informowanie użytkowników o czasowych pracach technicznych, blokadach strony itp." },
-          { "type": "img", "value": "main/projects/DEUS/module_noti.gif" },
           { "type": "text", "value": "Moduł Blocker - to moduł odpowiedzialny za kary. Ten moduł jest stosowany w przypadkach, gdy klient nie opłacił pracy i zmienił wszystkie dostępy w ten sposób, że pozostajesz bez pieniędzy, a twoja praca została oddana za darmo. W takim przypadku ten moduł wchodzi w akcję, stosując wybrany przez ciebie efekt do projektu." },
           { "type": "img", "value": "main/projects/DEUS/module_blocker.gif" },
           { "type": "text", "value": "Ten projekt był początkowo rozwijany dla osobistych celów, ale z czasem inni zaczęli prosić o podłączenie go i korzystanie z niego również. Teraz widzisz to dzieło." },
@@ -304,7 +292,7 @@
     },
 
     {
-      "id": 1,
+      "id": 0,
       "title": "VADI",
       "img": "main/projects/VADI/avatar.png",
       "overlay": "main/projects/VADI/overlay.png",
@@ -346,63 +334,6 @@
         "PL": "Kanał YouTube streamera"
       },
       "url": "https://www.youtube.com/@VadiHS"
-    },
-
-    {
-      "id": 0,
-      "title": "RedcrossHIF",
-      "img": "main/projects/RedcrossHIF/avatar.png",
-      "overlay": "main/projects/RedcrossHIF/overlay.png",
-      "outline": "#de443a",
-      "category": "Design Tilda",
-      "content": {
-        "RU": [
-          { "type": "h4", "value": "Красный крест - есть смысл жить" },
-          { "type": "text", "value": "Для данного проекта было разработанно интерактивное колесо ответов" },
-          { "type": "text", "value": "Сложность заключалась в том, что нужно было реализовать модификацию так, чтобы с ней можно было в дальнейшем работать дизайнеру на Tilda." },
-          { "type": "text", "value": "Обсудив детали с дизайнером было решено сделать максимально гибкую модификацию." },
-          { "type": "text", "value": "В итоге получилось реализовать код, который помещается в элемент HTML в Zero-блок." },
-          { "type": "img", "value": "main/projects/RedcrossHIF/codeblock.jpeg" },
-          { "type": "text", "value": "В десктопной версии колесо статично и показывает нужный popup при выборе определенных секторов." },
-          { "type": "img", "value": "main/projects/RedcrossHIF/desktop.gif" },
-          { "type": "text", "value": "В мобильной версии всё точно так же, но был реализован запрос на вращение, так как заказчику нравится этот вариант." },
-          { "type": "img", "value": "main/projects/RedcrossHIF/mobile.gif" },
-          { "type": "text", "value": "Взглянуть на рабочий проект можно по кнопке ниже." }
-        ],
-        "EN": [
-          { "type": "h4", "value": "Red Cross - there is a meaning to live" },
-          { "type": "text", "value": "For this project, an interactive wheel of answers was developed" },
-          { "type": "text", "value": "The complexity was in the fact that it was necessary to implement the modification in such a way that the designer could work with it in the future on Tilda." },
-          { "type": "text", "value": "After discussing the details with the designer, it was decided to make the modification as flexible as possible." },
-          { "type": "text", "value": "As a result, it was possible to implement code that fits into an HTML element in a Zero block." },
-          { "type": "img", "value": "main/projects/RedcrossHIF/codeblock.jpeg" },
-          { "type": "text", "value": "In the desktop version, the wheel is static and shows the necessary popup when selecting certain sectors." },
-          { "type": "img", "value": "main/projects/RedcrossHIF/desktop.gif" },
-          { "type": "text", "value": "In the mobile version, everything is the same, but a rotation request was implemented, as the customer likes this option." },
-          { "type": "img", "value": "main/projects/RedcrossHIF/mobile.gif" },
-          { "type": "text", "value": "You can view the working project by clicking the button below." }
-        ],
-        "PL": [
-          { "type": "h4", "value": "Czerwony Krzyż - ma sens życia" },
-          { "type": "text", "value": "Dla tego projektu zostało opracowane interaktywne koło odpowiedzi" },
-          { "type": "text", "value": "Trudność polegała na tym, że trzeba było zrealizować modyfikację tak, aby można było z nią dalej pracować projektantowi na Tilda." },
-          { "type": "text", "value": "Po omówieniu szczegółów z projektantem zdecydowano się na maksymalnie elastyczną modyfikację." },
-          { "type": "text", "value": "W rezultacie udało się zrealizować kod, który można umieścić w elemencie HTML w bloku Zero." },
-          { "type": "img", "value": "main/projects/RedcrossHIF/codeblock.jpeg" },
-          { "type": "text", "value": "W wersji desktopowej koło jest statyczne i wyświetla odpowiedni popup po wybraniu określonych sektorów." },
-          { "type": "img", "value": "main/projects/RedcrossHIF/desktop.gif" },
-          { "type": "text", "value": "W wersji mobilnej wszystko jest takie samo, ale został zrealizowany żądanie obrotu, ponieważ klientowi podoba się ten wariant." },
-          { "type": "img", "value": "main/projects/RedcrossHIF/mobile.gif" },
-          { "type": "text", "value": "Możesz zobaczyć projekt roboczy klikając poniższy przycisk." }
-        ]
-      },
-      "hash": "RedcrossHIF",
-      "buttonText": {
-        "RU": "Перейти на сайт проекта",
-        "EN": "Go to project website",
-        "PL": "Przejdź na stronę projektu"
-      },
-      "url": "https://hiv.redcross.ru"
     }
   ],
   "filters": {

@@ -129,10 +129,15 @@ fetch('main/json/portfolio.json')
         image.className = 'popupimg';
         popupContent.appendChild(image);
       } else if (type === 'text') {
-        const paragraph = document.createElement('pre');
+        const paragraph = document.createElement('p');
         paragraph.innerText = value;
         paragraph.className = 'popuptitle';
         popupContent.appendChild(paragraph);
+      } else if (type === 'insrtuction') {
+        const insrtuction = document.createElement('pre');
+        insrtuction.innerText = value;
+        insrtuction.className = 'popupinstruction';
+        popupContent.appendChild(insrtuction);
       } else if (type === 'code') {
         const preformatted = document.createElement('pre');
         const code = document.createElement('code');

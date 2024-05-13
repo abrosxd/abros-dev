@@ -134,13 +134,13 @@ fetch('main/json/portfolio.json')
         paragraph.className = 'popuptitle';
         popupContent.appendChild(paragraph);
       } else if (type === 'code') {
-        const preformatted = document.createElement('pre');
+        // const preformatted = document.createElement('pre');
         const code = document.createElement('code');
         code.textContent = value;
-        code.className = 'language-none';
+        code.className = 'language-html';
         preformatted.className = 'popupcode';
-        preformatted.appendChild(code);
-        popupContent.appendChild(preformatted);
+        // preformatted.appendChild(code);
+        popupContent.appendChild(code);
       }
     });
 

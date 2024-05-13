@@ -184,7 +184,6 @@ fetch('main/json/portfolio.json')
     popup.scrollTop = 0;
 
     window.location.hash = `#${project.hash}`;
-    // hljs.highlightAll();
     Prism.highlightAll();
   }
           

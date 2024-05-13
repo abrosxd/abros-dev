@@ -125,7 +125,7 @@ main {
     left: 50%;
     padding: 24px;
     border: 1px solid #fff;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     overflow-x: hidden;
     overflow-y: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

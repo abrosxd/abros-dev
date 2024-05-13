@@ -187,8 +187,9 @@ main {
     margin-top: 20px;
 }
 
-.popupcode {
-    border: 1px solid;
+.popupinstruction {
+    white-space: pre-wrap;
+    font-size: larger;
 }
 
 .filter {

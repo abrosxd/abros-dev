@@ -137,7 +137,7 @@ fetch('main/json/portfolio.json')
         const preformatted = document.createElement('pre');
         const code = document.createElement('code');
         code.textContent = value;
-        code.className = 'auto';
+        code.className = 'language-html';
         preformatted.className = 'popupcode';
         preformatted.appendChild(code);
         popupContent.appendChild(preformatted);
@@ -184,7 +184,8 @@ fetch('main/json/portfolio.json')
     popup.scrollTop = 0;
 
     window.location.hash = `#${project.hash}`;
-    hljs.highlightAll();
+    // hljs.highlightAll();
+    Prism.highlightAll();
   }
           
   const projectCard = document.querySelectorAll('.project-card');

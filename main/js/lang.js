@@ -1,26 +1,34 @@
-function setLanguageInLocalStorage(language) {
-    localStorage.setItem("AbrosLanguage", language);
+function checkLanguage() {
+    var browserLanguage = navigator.language.substring(0, 2);
+    if (browserLanguage === "EN" || browserLanguage === "RU" || browserLanguage === "PL") {
+        return browserLanguage;
+    }
+    return "EN";
 }
 
-function getLanguageFromLocalStorage() {
-    return localStorage.getItem("AbrosLanguage");
+function setLanguage(language) {
+    localStorage.setItem("Language", language);
 }
 
-function eraseLanguageFromLocalStorage() {
-    localStorage.removeItem("AbrosLanguage");
+function getLanguage() {
+    return localStorage.getItem("Language");
+}
+
+function eraseLanguage() {
+    localStorage.removeItem("Language");
 }
 
 function reloadPage() {
     window.location.reload();
 }
 
-var savedLanguage = getLanguageFromLocalStorage();
+var savedLanguage = getLanguage();
 
 if (!savedLanguage) {
-    setLanguageInLocalStorage("EN");
+    setLanguage(checkLanguage());
 }
 
-var currentLanguage = savedLanguage || "EN";
+var currentLanguage = savedLanguage;
 
 document.addEventListener('DOMContentLoaded', function() {
     var buttons = document.querySelectorAll('.lang-sub .button');
@@ -31,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         item.addEventListener('click', function() {
             var newLanguage = this.getAttribute('lang');
-            setLanguageInLocalStorage(newLanguage);
+            setLanguage(newLanguage);
             buttons.forEach(function(button) {
                 button.classList.remove('active');
             });
@@ -41,13 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     setTimeout(function() {
-        function getPreviousLanguageFromLocalStorage() {
-            return localStorage.getItem("AbrosLanguagePrevious");
+        function getPreviousLanguage() {
+            return localStorage.getItem("LanguagePrevious");
         }
-        function setPreviousLanguageFromLocalStorage(language) {
-            localStorage.setItem("AbrosLanguagePrevious", language);
+        function setPreviousLanguage(language) {
+            localStorage.setItem("LanguagePrevious", language);
         }
-        var previousLanguage = getPreviousLanguageFromLocalStorage();
+        var previousLanguage = getPreviousLanguage();
         if (previousLanguage !== currentLanguage) {
             switch (currentLanguage) {
                 case 'EN':
@@ -57,14 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     abrosnoti.create("lang", "Русский", "Язык был изменен. Приятного просмотра!", 3);
                     break;
                 case 'PL':
-                    abrosnoti.create("lang", "Polski", "Język został zmieniony. Miłego przeglądania!", 3);
+                    abrosnoti.create("lang", "Polski", "Język został zmieniony. Miłego просмотра!", 3);
                     break;
                 default:
                     break;
             }
-            setPreviousLanguageFromLocalStorage(currentLanguage)
+            setPreviousLanguage(currentLanguage)
         }
     }, 1000);
 });
-
-

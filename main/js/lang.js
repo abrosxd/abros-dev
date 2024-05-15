@@ -1,6 +1,6 @@
 // Функция для проверки языка браузера
 const checkLanguage = () => {
-    const browserLanguage = navigator.language.substring(0, 2);
+    const browserLanguage = navigator.language.substring(5, 3);
     const supportedLanguages = ["EN", "RU", "PL"];
     return supportedLanguages.includes(browserLanguage) ? browserLanguage : "EN";
 };
@@ -23,7 +23,8 @@ const reloadPage = () => {
 var savedLanguage = getLanguage();
 
 if (!savedLanguage) {
-    setLanguage(checkLanguage());
+    savedLanguage = checkLanguage();
+    setLanguage(savedLanguage);
 }
 
 var currentLanguage = savedLanguage;

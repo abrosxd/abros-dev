@@ -45,8 +45,8 @@ const showLanguageChangeNotification = currentLanguage => {
 // Основной код
 document.addEventListener('DOMContentLoaded', () => {
     // Проверяем язык и устанавливаем его, если он не установлен
-    const savedLanguage = getLanguage() || checkLanguage();
-    setLanguage(savedLanguage);
+    var currentLanguage = getLanguage() || checkLanguage();
+    setLanguage(currentLanguage);
 
     // Обработчик событий для кнопок выбора языка
     document.querySelectorAll('.lang-sub .button').forEach(button => {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newLanguage = button.getAttribute('lang');
             handleLanguageSelection(newLanguage);
         });
-        if (button.getAttribute('lang') === savedLanguage) {
+        if (button.getAttribute('lang') === currentLanguage) {
             button.classList.add('active');
         }
     });
@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Показываем уведомление о смене языка
     setTimeout(() => {
         const previousLanguage = localStorage.getItem("LanguagePrevious");
-        if (previousLanguage !== savedLanguage) {
-            showLanguageChangeNotification(savedLanguage);
-            localStorage.setItem("LanguagePrevious", savedLanguage);
+        if (previousLanguage !== currentLanguage) {
+            showLanguageChangeNotification(currentLanguage);
+            localStorage.setItem("LanguagePrevious", currentLanguage);
         }
     }, 1000);
 });

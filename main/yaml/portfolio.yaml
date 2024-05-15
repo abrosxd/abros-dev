@@ -576,101 +576,65 @@ projects:
     category: "MyProject Library"
     content:
       ru:
-        - type: h4
-          value: "DEUS - защита контента"
-        - type: img
-          value: "main/projects/DEUS/logo_mini.jpeg"
-        - type: text
-          value: "DEUS - система-библиотека для удалённого контроля принадлежащих ей модулей."
-        - type: text
-          value: "Простыми словами это система, которая подключается к сайту и следует определенным правилам, которые ей передают сами пользователи."
-        - type: text
-          value: "Модуль BD - это системный модуль, он отвечает за проверку правил для сайта и подключение остальных модулей. На момент разработки являлся главным модулем системы и визуальную часть не имел."
-        - type: img
-          value: "main/projects/DEUS/module_bd.jpeg"
-        - type: text
-          value: "Модуль Blocker - это модуль отвечающий за наказания. Данный модуль применяется в случаях когда заказчик не оплатил работу и сменил все доступы так, что вы остались без денег и ваш труд отдан за бесплатно. В этом случае в работу вступает этот модуль применяя выбранный вами эффект к проекту."
-        - type: img
-          value: "main/projects/DEUS/module_blocker.gif"
-        - type: text
-          value: "Альфа версия (когда проект был только для меня) находилась непосредственно в проекте, что немного затрудняло работу с ним напрямую. Но так как это было только для личного использования - меня устраивало."
-        - type: img
-          value: "main/projects/DEUS/alpha_1.jpeg"
-        - type: text
-          value: "Как только этот проект пошёл по знакомым было решено переписать структуру, логику и принцип работы полностью. Ведь большинство тех, кто этим пользовался никогда не работал с кодом."
-        - type: text
-          value: "Первым лучшим решением было - раделение системы на модули. Из базы данных проверяется какие модули подключены к сайту и подгружает их. Сделано это для удобства управления и конечно же для того, чтобы значительно снизить нагрузку на сайт."
-        - type: text
-          value: "Вторым решением было упростить жизнь пользователям, вместо того чтобы поражаться тому какой огромный код им надо куда-то копировать, вся система была реализована как подключаемая библиотека."
-        - type: code
-          value: |
+        <h2>DEUS - защита контента</h2>
+        <img src="main/projects/DEUS/logo_mini.jpeg">
+        <h3>DEUS - система-библиотека для удалённого контроля принадлежащих ей модулей.</h3>
+        <h3>Простыми словами это система, которая подключается к сайту и следует определенным правилам, которые ей передают сами пользователи.</h3>
+        <h3>Модуль BD - это системный модуль, он отвечает за проверку правил для сайта и подключение остальных модулей. На момент разработки являлся главным модулем системы и визуальную часть не имел.</h3>
+        <img src="main/projects/DEUS/module_bd.jpeg">
+        <h3>Модуль Blocker - это модуль отвечающий за наказания. Данный модуль применяется в случаях когда заказчик не оплатил работу и сменил все доступы так, что вы остались без денег и ваш труд отдан за бесплатно. В этом случае в работу вступает этот модуль применяя выбранный вами эффект к проекту.</h3>
+        <img src="main/projects/DEUS/module_blocker.gif">
+        <h3>Альфа версия (когда проект был только для меня) находилась непосредственно в проекте, что немного затрудняло работу с ним напрямую. Но так как это было только для личного использования - меня устраивало.</h3>
+        <img src="main/projects/DEUS/alpha_1.jpeg">
+        <h3>Как только этот проект пошёл по знакомым было решено переписать структуру, логику и принцип работы полностью. Ведь большинство тех, кто этим пользовался никогда не работал с кодом.</h3>
+        <h3>Первым лучшим решением было - раделение системы на модули. Из базы данных проверяется какие модули подключены к сайту и подгружает их. Сделано это для удобства управления и конечно же для того, чтобы значительно снизить нагрузку на сайт.</h3>
+        <h3>Вторым решением было упростить жизнь пользователям, вместо того чтобы поражаться тому какой огромный код им надо куда-то копировать, вся система была реализована как подключаемая библиотека.</h3>
+        <pre>
+          <code>
             <script src='https://deusnotam.github.io/bd.js'></script>
-        - type: text
-          value: "И последним, но не менее важным решением было сделать открытый исходный код. Да, всю систему можно с лёгкостью найти на GitHub. И каждый может изменить её под свои нужды."
-      en:
-        - type: h4
-          value: "DEUS - Content Protection"
-        - type: img
-          value: "main/projects/DEUS/logo_mini.jpeg"
-        - type: text
-          value: "DEUS is a system-library for remote control of its modules."
-        - type: text
-          value: "In simple terms, it is a system that connects to a website and follows certain rules that users transmit to it."
-        - type: text
-          value: "Module BD is a system module responsible for checking rules for the site and connecting other modules. At the development stage, it was the main system module and did not have a visual part."
-        - type: img
-          value: "main/projects/DEUS/module_bd.jpeg"
-        - type: text
-          value: "Module Blocker is a module responsible for penalties. This module is used in cases where the customer did not pay for the work and changed all accesses so that you were left without money and your work was given away for free. In this case, this module comes into play, applying the effect you choose to the project."
-        - type: img
-          value: "main/projects/DEUS/module_blocker.gif"
-        - type: text
-          value: "The alpha version (when the project was only for me) was directly in the project, which made it a bit difficult to work with it directly. But since it was only for personal use, it suited me."
-        - type: img
-          value: "main/projects/DEUS/alpha_1.jpeg"
-        - type: text
-          value: "As soon as this project gained traction, it was decided to completely rewrite the structure, logic, and operation principles. After all, the majority of those who used it had never worked with code."
-        - type: text
-          value: "The first and best solution was to divide the system into modules. The database checks which modules are connected to the site and loads them. This was done for ease of management and, of course, to significantly reduce the load on the site."
-        - type: text
-          value: "The second solution was to simplify the lives of users. Instead of being amazed at how much code they had to copy somewhere, the entire system was implemented as a plug-in library."
-        - type: code
-          value: |
+          </code>
+        </pre>
+        <h3>И последним, но не менее важным решением было сделать открытый исходный код. Да, всю систему можно с лёгкостью найти на GitHub. И каждый может изменить её под свои нужды.</h3>
+      en: |
+        <h2>DEUS - content protection</h2>
+        <img src="main/projects/DEUS/logo_mini.jpeg">
+        <h3>DEUS - a library system for remote control of its modules.</h3>
+        <h3>In simple terms, it is a system that connects to a website and follows certain rules that users pass to it.</h3>
+        <h3>The BD module is a system module, it is responsible for checking rules for the website and connecting other modules. At the time of development, it was the main module of the system and did not have a visual part.</h3>
+        <img src="main/projects/DEUS/module_bd.jpeg">
+        <h3>The Blocker module is responsible for punishments. This module is applied in cases where the client did not pay for the work and changed all accesses so that you were left without money and your work was given away for free. In this case, this module comes into operation applying the effect you selected to the project.</h3>
+        <img src="main/projects/DEUS/module_blocker.gif">
+        <h3>The alpha version (when the project was only for me) was directly in the project, which made it a bit difficult to work with it directly. But since it was only for personal use - it suited me.</h3>
+        <img src="main/projects/DEUS/alpha_1.jpeg">
+        <h3>As soon as this project started to gain popularity, it was decided to completely rewrite the structure, logic, and principle of operation. After all, most of those who used it had never worked with code.</h3>
+        <h3>The first best solution was - dividing the system into modules. From the database, it checks which modules are connected to the website and loads them. This was done for ease of management and, of course, to significantly reduce the load on the website.</h3>
+        <h3>The second solution was to simplify the lives of users, instead of being amazed at how much code they need to copy somewhere, the whole system was implemented as a plug-in library.</h3>
+        <pre>
+          <code>
             <script src='https://deusnotam.github.io/bd.js'></script>
-        - type: text
-          value: "And last but not least, the decision was made to make the source code open. Yes, the entire system can easily be found on GitHub. And anyone can modify it to suit their needs."
-      pl:
-        - type: h4
-          value: "DEUS - ochrona treści"
-        - type: img
-          value: "main/projects/DEUS/logo_mini.jpeg"
-        - type: text
-          value: "DEUS - to system-biblioteka do zdalnej kontroli jej modułów."
-        - type: text
-          value: "Prosto mówiąc, to system, który łączy się ze stroną i przestrzega określonych zasad, które użytkownicy przekazują mu sami."
-        - type: text
-          value: "Moduł BD - to moduł systemowy, odpowiedzialny za sprawdzanie reguł dla strony i podłączanie pozostałych modułów. Na etapie rozwoju był głównym modułem systemu i nie miał części wizualnej."
-        - type: img
-          value: "main/projects/DEUS/module_bd.jpeg"
-        - type: text
-          value: "Moduł Blocker - to moduł odpowiedzialny za kary. Ten moduł jest stosowany w przypadkach, gdy klient nie opłacił pracy i zmienił wszystkie dostępy w ten sposób, że pozostajesz bez pieniędzy, a twoja praca została oddana za darmo. W takim przypadku ten moduł wchodzi w akcję, stosując wybrany przez ciebie efekt do projektu."
-        - type: img
-          value: "main/projects/DEUS/module_blocker.gif"
-        - type: text
-          value: "Wersja alfa (kiedy projekt był tylko dla mnie) była bezpośrednio w projekcie, co trochę utrudniło pracę z nim bezpośrednio. Ale ponieważ był to tylko dla osobistego użytku - mnie to zadowalało."
-        - type: img 
-          value: "main/projects/DEUS/alpha_1.jpeg"
-        - type: text
-          value: "Kiedy ten projekt zaczął być używany przez znajomych, postanowiono całkowicie przepisać jego strukturę, logikę i sposób działania. Większość użytkowników nie miała doświadczenia w pracy z kodem, dlatego to było konieczne."
-        - type: text
-          value: "Pierwszym najlepszym rozwiązaniem było podzielenie systemu na moduły. Baza danych sprawdza, które moduły są podłączone do strony i wczytuje je. Zrobiono to dla wygody zarządzania i oczywiście, aby znacząco zmniejszyć obciążenie strony."
-        - type: text
-          value: "Drugim rozwiązaniem było uproszczenie życia użytkowników. Zamiast zastanawiać się, jaki ogromny kod trzeba gdzieś skopiować, cały system został zaimplementowany jako biblioteka do podłączania."
-        - type: code
-          value: |
+          </code>
+        </pre>
+        <h3>And the last, but not least, decision was to make the source code open. Yes, the entire system can be easily found on GitHub. And everyone can customize it to their needs.</h3>
+      pl: |
+        <h2>DEUS - ochrona treści</h2>
+        <img src="main/projects/DEUS/logo_mini.jpeg">
+        <h3>DEUS - system bibliotek do zdalnej kontroli jej modułów.</h3>
+        <h3>W prostych słowach, jest to system, który łączy się z witryną i stosuje określone zasady przekazywane mu przez użytkowników.</h3>
+        <h3>Moduł BD to moduł systemowy, który odpowiada za sprawdzanie zasad dla witryny i podłączanie innych modułów. W momencie tworzenia był to główny moduł systemu i nie miał części wizualnej.</h3>
+        <img src="main/projects/DEUS/module_bd.jpeg">
+        <h3>Moduł Blocker odpowiada za kary. Ten moduł jest stosowany w przypadkach, gdy klient nie zapłacił za pracę i zmienił wszystkie dostępy, abyś został bez pieniędzy, a twoja praca została udostępniona za darmo. W takim przypadku ten moduł wchodzi do działania, stosując wybrany przez ciebie efekt do projektu.</h3>
+        <img src="main/projects/DEUS/module_blocker.gif">
+        <h3>Wersja alfa (kiedy projekt był tylko dla mnie) była bezpośrednio w projekcie, co trochę utrudniało pracę z nim bezpośrednio. Ale ponieważ było to tylko do użytku osobistego - mnie to zadowalało.</h3>
+        <img src="main/projects/DEUS/alpha_1.jpeg">
+        <h3>Jak tylko ten projekt zaczął zyskiwać popularność, postanowiono całkowicie przepisać strukturę, logikę i zasadę działania. Ponieważ większość osób, które z niego korzystały, nigdy nie pracowała z kodem.</h3>
+        <h3>Pierwsze najlepsze rozwiązanie polegało na podziale systemu na moduły. Z bazy danych sprawdza, które moduły są podłączone do witryny i ładuje je. Zrobiono to dla ułatwienia zarządzania i oczywiście znacznego zmniejszenia obciążenia witryny.</h3>
+        <h3>Drugim rozwiązaniem było uproszczenie życia użytkowników, zamiast być zdziwionym, ile kodu muszą gdzieś skopiować, cały system został zaimplementowany jako biblioteka wtyczek.</h3>
+        <pre>
+          <code>
             <script src='https://deusnotam.github.io/bd.js'></script>
-        - type: text
-          value: "I ostatnim, ale nie mniej ważnym rozwiązaniem, było udostępnienie kodu źródłowego. Tak, cały system łatwo można znaleźć na GitHubie. I każdy może go dostosować do swoich potrzeb."
+          </code>
+        </pre>
+        <h3>I ostatnie, ale nie mniej ważne, było podjęcie decyzji o udostępnieniu kodu źródłowego. Tak, cały system można łatwo znaleźć na GitHubie. I każdy może dostosować go do swoich potrzeb.</h3>
     hash: "DEUS"
     buttonText:
       ru: "Перейти на сайт проекта"
@@ -685,51 +649,30 @@ projects:
     outline: "#006CFF"
     category: "Design"
     content:
-      ru:
-        - type: h4
-          value: "Дизайн для стримера VADI"
-        - type: text
-          value: "Дизайн игрового оверлея выполнен в неоновом стиле по запросу заказчика. Также была добавлена шапка, которая не слишком привлекает внимание, но содержит нужную информацию о стриме."
-        - type: img
-          value: "main/projects/VADI/gameoverlay.png"
-        - type: text
-          value: "Дизайн браузерного оверлея был дополнительным желанием, так как иногда стрим проходит не в игровом формате, а в познавательно-развлекательном."
-        - type: img
-          value: "main/projects/VADI/browseroverlay.png"
-        - type: text
-          value: "Создание стикер-пака оказалось более сложным, так как заказчик сам не знал, что именно ему нужно. Пришлось потратить немало времени на отслеживание часто используемых фраз и приколов среди зрителей."
-        - type: img
-          value: "main/projects/VADI/emoji.png"
-      en:
-        - type: h4
-          value: "Design for streamer VADI"
-        - type: text
-          value: "The design of the gaming overlay was done in neon style as per the customer's request. Also, a header was added that does not attract too much attention but contains the necessary information about the stream."
-        - type: img
-          value: "main/projects/VADI/gameoverlay.png"
-        - type: text
-          value: "Designing a browser overlay was an additional wish, as sometimes the stream is not in gaming format, but in an informative-entertaining format."
-        - type: img
-          value: "main/projects/VADI/browseroverlay.png"
-        - type: text
-          value: "Creating a sticker pack was more difficult because the client himself did not know exactly what he needed. It took a lot of time to track frequently used phrases and jokes among viewers."
-        - type: img
-          value: "main/projects/VADI/emoji.png"
-      pl:
-        - type: h4
-          value: "Projekt dla streamera VADI"
-        - type: text
-          value: "Projekt nakładki gry wykonano w stylu neonowym na życzenie klienta. Dodano również nagłówek, który nie przyciąga zbyt wiele uwagi, ale zawiera potrzebne informacje o transmisji."
-        - type: img
-          value: "main/projects/VADI/gameoverlay.png"
-        - type: text
-          value: "Projekt nakładki na przeglądarkę był dodatkowym życzeniem, ponieważ czasami transmisja odbywa się nie w formacie gry, ale w formie poznawczo-rozrywkowej."
-        - type: img
-          value: "main/projects/VADI/browseroverlay.png"
-        - type: text
-          value: "Tworzenie pakietu naklejek było bardziej skomplikowane, ponieważ klient sam nie wiedział dokładnie, czego potrzebuje. Zajęło to dużo czasu na śledzenie często używanych fraz i dowcipów wśród widzów."
-        - type: img
-          value: "main/projects/VADI/emoji.png"
+      ru: |
+        <h2>Дизайн для стримера VADI</h2>
+        <h3>Дизайн игрового оверлея выполнен в неоновом стиле по запросу заказчика. Также была добавлена шапка, которая не слишком привлекает внимание, но содержит нужную информацию о стриме.</h3>
+        <img src="main/projects/VADI/gameoverlay.png">
+        <h3>Дизайн браузерного оверлея был дополнительным желанием, так как иногда стрим проходит не в игровом формате, а в познавательно-развлекательном.</h3>
+        <img src="main/projects/VADI/browseroverlay.png">
+        <h3>Создание стикер-пака оказалось более сложным, так как заказчик сам не знал, что именно ему нужно. Пришлось потратить немало времени на отслеживание часто используемых фраз и приколов среди зрителей.</h3>
+        <img src="main/projects/VADI/emoji.png">
+      en: |
+        <h2>Design for streamer VADI</h2>
+        <h3>The design of the gaming overlay was done in a neon style as requested by the client. Additionally, a header was added that does not draw too much attention but contains the necessary information about the stream.</h3>
+        <img src="main/projects/VADI/gameoverlay.png">
+        <h3>The design of the browser overlay was an additional request, as sometimes the stream is not in a gaming format but rather educational and entertaining.</h3>
+        <img src="main/projects/VADI/browseroverlay.png">
+        <h3>Creating the sticker pack turned out to be more challenging, as the client himself didn't know exactly what he needed. It took a lot of time to track frequently used phrases and jokes among the viewers.</h3>
+        <img src="main/projects/VADI/emoji.png">
+      pl: |
+        <h2>Projekt dla streamera VADI</h2>
+        <h3>Projekt nakładki gry został wykonany w stylu neonowym zgodnie z życzeniem klienta. Dodatkowo dodano nagłówek, który nie przyciąga zbyt dużo uwagi, ale zawiera potrzebne informacje o streamie.</h3>
+        <img src="main/projects/VADI/gameoverlay.png">
+        <h3>Projekt nakładki przeglądarkowej był dodatkowym życzeniem, ponieważ czasami stream nie odbywa się w formacie gry, ale jest bardziej edukacyjny i rozrywkowy.</h3>
+        <img src="main/projects/VADI/browseroverlay.png">
+        <h3>Tworzenie pakietu naklejek okazało się bardziej wymagające, ponieważ sam klient nie wiedział dokładnie, czego potrzebuje. Sporo czasu zajęło śledzenie często używanych fraz i żartów wśród widzów.</h3>
+        <img src="main/projects/VADI/emoji.png">
     hash: "VADI"
     buttonText:
       ru: "YouTube канал стримера"

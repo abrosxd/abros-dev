@@ -131,7 +131,7 @@ fetch('main/yaml/portfolio.yaml')
         popupContent.appendChild(image);
       } else if (type === 'text') {
         const paragraph = document.createElement('p');
-        paragraph.innerText = value;
+        paragraph.innerHTML = value;
         paragraph.className = 'popuptitle';
         popupContent.appendChild(paragraph);
       } else if (type === 'insrtuction') {

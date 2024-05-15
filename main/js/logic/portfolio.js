@@ -110,10 +110,11 @@ fetch('main/yaml/portfolio.yaml')
   
   // Создание Popup
   function escapeHTML(html) {
-    return html.replace(/<code>(.*?)<\/code>/gs, function(match, codeContent) {
+    return html.replace(/<code[^>]*>(.*?)<\/code>/gs, function(match, codeContent) {
       return '<code>' + escapeHTML(codeContent) + '</code>';
     });
   }
+
   function openPopup(id) {
     const project = data.projects.find(project => project.id === id);
     const popupContent = document.getElementById('popup-content');

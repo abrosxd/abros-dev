@@ -575,7 +575,7 @@ projects:
     outline: "#00ff00"
     category: "MyProject Library"
     content:
-      ru:
+      ru: |
         <h2>DEUS - защита контента</h2>
         <img src="main/projects/DEUS/logo_mini.jpeg">
         <h3>DEUS - система-библиотека для удалённого контроля принадлежащих ей модулей.</h3>

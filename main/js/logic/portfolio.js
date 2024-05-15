@@ -143,7 +143,7 @@ fetch('main/yaml/portfolio.yaml')
         const preformatted = document.createElement('pre');
         const code = document.createElement('code');
         code.textContent = value;
-        code.className = 'language-html';
+        code.className = 'language-html match-braces';
         preformatted.className = 'popupcode';
         preformatted.appendChild(code);
         popupContent.appendChild(preformatted);

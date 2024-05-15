@@ -134,7 +134,7 @@ fetch('main/yaml/portfolio.yaml')
         paragraph.innerHTML = value;
         paragraph.className = 'popuptitle';
         popupContent.appendChild(paragraph);
-      } else if (type === 'insrtuction') {
+      } else if (type === 'instruction') {
         const insrtuction = document.createElement('pre');
         insrtuction.innerText = value;
         insrtuction.className = 'popupinstruction';

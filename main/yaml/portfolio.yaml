@@ -146,7 +146,7 @@ projects:
           value: "main/projects/Tilda/Player/site.gif"
         - type: text
           value: "Instructions"
-        - type: insrtuction
+        - type: instruction
           value: |
             Playlist Creation
               
@@ -183,14 +183,14 @@ projects:
         - type: code
           value: |
             <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">"
-        - type: insrtuction
+        - type: instruction
           value: |
             HTML block is the sound progress bar
             Insert the code there:
         - type: code
           value: |
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
-        - type: insrtuction
+        - type: instruction
           value: |
             Two buttons/images with classes player-btn-buy and player-text will redirect to the page of the playing track, if this functionality is not needed, simply hide them out of view
             Image with class player-play will serve as the Play|Pause button
@@ -239,7 +239,7 @@ projects:
             };
             </script>
             <script src = 'https://abros.dev/tilda/mods/player.js'></script>
-        - type: insrtuction
+        - type: instruction
           value: |
             If you don't know where to find the Storepart ID, create T123 under the product catalog, paste the code below, publish it, and visit the site, you will see your Storepart ID. After that, the code can be removed
         - type: code
@@ -273,7 +273,7 @@ projects:
           value: "main/projects/Tilda/Player/site.gif"
         - type: text
           value: "Instrukcja"
-        - type: insrtuction
+        - type: instruction
           value: |
             Tworzenie listy odtwarzania
               
@@ -310,14 +310,14 @@ projects:
         - type: code
           value: |
             <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">"
-        - type: insrtuction
+        - type: instruction
           value: |
             Blok HTML to pasek postępu dźwięku
             Wstaw tam kod:
         - type: code
           value: |
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">"
-        - type: insrtuction
+        - type: instruction
           value: |
             Dwa przyciski/obrazki z klasami player-btn-buy i player-text będą przekierowywać na stronę odtwarzanego utworu, jeśli ta funkcja nie jest potrzebna, po prostu ukryj je poza widokiem
             Obrazek z klasą player-play będzie służył jako przycisk Play|Pause
@@ -366,7 +366,7 @@ projects:
             };
             </script>
             <script src='https://abros.dev/tilda/mods/player.js'></script>
-        - type: insrtuction
+        - type: instruction
           value: |
             Jeśli nie wiesz, gdzie znaleźć ID Storepart, utwórz T123 pod katalogiem produktów, wklej poniższy kod, opublikuj go i odwiedź stronę, zobaczysz swoje ID Storepart. Następnie kod można usunąć
         - type: code
@@ -421,7 +421,7 @@ projects:
             <script src='https://abros.dev/dev/noti.js'></script>
         - type: text
           value: "После чего можно вызывать функцию уведомлений следующим образом:"
-        - type: insrtuction
+        - type: instruction
           value: |
             Создавайте уведомления с помощью abrosnoti.create()
             
@@ -457,7 +457,7 @@ projects:
             <script src='https://abros.dev/dev/noti.js'></script>
         - type: text
           value: "After that, you can call the notification function as follows:"
-        - type: insrtuction
+        - type: instruction
           value: |
             Create notifications using abrosnoti.create()
             
@@ -493,7 +493,7 @@ projects:
             <script src='https://abros.dev/dev/noti.js'></script>
         - type: text
           value: "Następnie możesz wywołać funkcję powiadomień w następujący sposób:"
-        - type: insrtuction
+        - type: instruction
           value: |
             Twórz powiadomienia za pomocą abrosnoti.create()
             

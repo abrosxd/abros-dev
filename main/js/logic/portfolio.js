@@ -111,7 +111,7 @@ fetch('main/yaml/portfolio.yaml')
   // Создание Popup
   function escapeHTMLInsideCode(html) {
     return html.replace(/<code[^>]*>(.*?)<\/code>/gs, function(match, codeContent) {
-      return '<code>' + escapeHTML(codeContent) + '</code>';
+      return '<code class="language-html match-braces">' + escapeHTML(codeContent) + '</code>';
     });
   }
   

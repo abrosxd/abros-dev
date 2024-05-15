@@ -1,366 +1,846 @@
 projects:
-  - id: 6
+  - id: 5
     title: "Tilda Player"
     img: "main/projects/Tilda/Player/avatar.png"
     overlay: "main/projects/Tilda/Player/overlay.png"
     outline: "#7e70ff"
     category: "Layout Tilda"
     content:
-        "RU": [
-          { "type": "h4", "value": "Плеер с плейлистом для сайта" },
-          { "type": "img", "value": "main/projects/Tilda/Player/logo_mini.svg" },
-          { "type": "text", "value": "Сайт известного композитора. Обратились ко мне с задачей создать для сайта плеер." },
-          { "type": "text", "value": "Плеер был реализован библиотекой, поэтому данную модификацию можно использовать в других проектах." },
-          { "type": "img", "value": "main/projects/Tilda/Player/site.gif" },
-          { "type": "text", "value": "Инструкция" },
-          { "type": "insrtuction", "value": "Создание плейлиста\n\n1. В товарах создать товар в котором:\n   Заголовок: Название трека\n   Изображение: Обложка трека\n   Разделы каталога: можно поместить в раздел, если у вас есть еще и другие товары или разные плейлисты\n   В характеристиках добавить новую характеристику (Название: music, Значение: прямая ссылка на трек)\n   В ссылку на страницу с товаром добавить ссылку для перехода по кнопке (Ниже поймете для каких)\n\n2. Добавить все треки по инструкции 1.\n\nСоздание плеера\n\n1. Добавить каталог ST310N и настроить его стиль, обязательно должно быть:\n   Карточки -> Показывать второе изображение при наведении - отключено\n   Карточки -> Показывать пагинацию (вместо кнопки «Загрузить еще») - включено\n   Карточки -> Два товара в ряд на мобильных устройствах - включено\n   Карточки -> Количество видимых товаров до кнопки «Загрузить ещё» - любое, оптимально 12\n   Секция «Смотрите также» -> Блок 'Смотрите также' - не выводить\n   Стиль галереи -> Соотношение сторон - 1:1 квадрат\n   Фильтры & Разделы -> Спрятать фильтры - включено\n   Фильтры & Разделы -> Спрятать список разделов каталога - включено\n   Фильтры & Разделы -> Сортировка товаров по умолчанию - порядок по умолчанию\n\n2. Подключить раздел товаров с вашей музыкой\n\n3. Под блоком каталога создать зероблок, в настройках задать ему класс какой захотите (Например uc-player)\n\n4. В этом зероблоке создаёте плеер, обязательно должно быть:\n   Высота контейнера 70px на всех экранах\n   HTML блок на всю длинну страницы это прогресс бар трека\n   Туда вставить код:" },
-          { "type": "code", "value": "<input type=\"range\" name=\"progress\" class=\"music-range progress\" min=\"0\" max=\"100\" value=\"0\">" }, 
-          { "type": "insrtuction", "value": "   HTML блок это прогресс бар звука\n   Туда вставить код:" },
-          { "type": "code", "value": "<input type=\"range\" name=\"volume\" class=\"music-range volume\" min=\"0\" max=\"100\" value=\"100\">" },
-          { "type": "insrtuction", "value": "   Две кнопки/картинки с классами player-btn-buy и player-text они будут перенаправлять на страницу играющего трека, если такой функционал не требуется, то просто их спрячте за пределами видимости\n   Картинка с классом player-play это будет кнопка Play|Pause\n   Картинка с классом player-next это будет кнопка следующей песни\n   Картинка с классом player-prev это будет кнопка предыдущей песни\n   Текст с текстом \"Ничего не исполняется\" с классом player-title это будет название играющей песни\n   Шейп с классом player-cover это будет картинка играющей песни\n\n5. Все остальное можно настраивать по своему вкусу\n\n6. Под блоком плеера добавить T123\n\n7. Код ниже вставить в T123 и настроить все переменные для плеера" },
-          { "type": "code", "value": "<!--Плеер из каталога товаров by ABROS-->\n\n<audio id=\"audio\" data-track-number=\"0\"></audio>\n<div id=\"area-player\"></div>\n<script>\n window.AbrosTildaPlayer = {\n   // Настройки\n   catalogID: '#recXXXXXXXXX', // ID блока каталога\n   playerID: '.uc-player', // Класс плеера\n   audioID: '#audio', // ID блока проигрователя\n   areaID: '#area-player', // ID блока тригера\n   cards: '12', // Кол-во карточек на странице\n   storepart: 'XXXXXXXXXXXX', // ID Storepart\n   // Стили\n   // Обложка для карточек\n   WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Цвет обложки для карточек (Важно в rgba, чтобы задать прозрачность)\n   WrapperBorderRadius: '50px', // Скругление обложки для карточек\n   WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Иконка кнопки Play\n   WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Иконка кнопки Pause\n   // Input громкости и прогресса песни\n   TrackSlideColorStart: 'rgba(255,255,255,1)', // Цвет полосок\n   TrackSlideColorEnd: 'rgba(126,112,255,1)', // Цвет заполнения полосок\n   TrackSlideBorderRadius: '10px', // Скругление полосок\n   TrackThumbColor: '#fff', // Цвет тумблера на полоске прогресса\n   TrackThumbBorderRadius: '50%', // Скругление тумблера\n   // Стили плеера\n   PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Иконка кнопки Play\n   PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Иконка кнопки Pause\n   PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Иконка кнопки Вкл.Звук\n   PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Иконка кнопки Выкл.Звук\n };\n</script>\n<script src = 'https://abros.dev/tilda/mods/player.js'></script>"},
-          { "type": "insrtuction", "value": "Если вы не знаете где найти ID Storepart, то под каталогом создайте T123, вставте код ниже, опубликуйте и зайдите на сайт, вы увидите свой ID Storepart. После чего код можно удалить" },
-          { "type": "code", "value": "<script>\n document.addEventListener(\"DOMContentLoaded\", function() {\n   var scripts = document.querySelectorAll('script');\n   scripts.forEach(function(script) {\n      var scriptText = script.textContent || script.innerText;\n      if (scriptText.includes('storepart')) {\n         var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);\n         if (match && match[1]) {\n            var storepartValue = match[1];\n            alert('Ваш storepart: \"' + storepartValue + '\"');\n            break;\"\n         }\n      }\n   });\n });\n</script>"}
-        ],
-        "EN": [
-          { "type": "h4", "value": "Player with Playlist for Your Website" },
-          { "type": "img", "value": "main/projects/Tilda/Player/logo_mini.svg" },
-          { "type": "text", "value": "Website of a famous composer. I was approached to create a player for the website." },
-          { "type": "text", "value": "The player was implemented with a library, so this modification can also be used in other projects." },
-          { "type": "img", "value": "main/projects/Tilda/Player/site.gif" },
-          { "type": "text", "value": "Instructions" },
-          { "type": "insrtuction", "value": "Playlist Creation\n\n1. In products, create a product in which:\n   Title: Track Title\n   Image: Track Cover\n   Catalog Sections: can be placed in a section if you have other products or different playlists\n   In characteristics add a new characteristic (Name: music, Value: direct link to the track)\n   In the product page link, add a link for navigation button (See below for which)\n\n2. Add all tracks as per instruction 1.\n\nPlayer Creation\n\n1. Add the ST310N catalog and customize its style, it must have:\n   Cards -> Show second image on hover - disabled\n   Cards -> Show pagination (instead of 'Load more' button) - enabled\n   Cards -> Two products in a row on mobile devices - enabled\n   Cards -> Number of visible products before 'Load more' button - any, optimally 12\n   'See Also' Section -> Block 'See Also' - do not display\n   Gallery Style -> Aspect Ratio - 1:1 square\n   Filters & Sections -> Hide filters - enabled\n   Filters & Sections -> Hide catalog category list - enabled\n   Filters & Sections -> Default product sorting - default order\n\n2. Connect the product section with your music\n\n3. Below the catalog block, create a zero block, in settings give it any class you want (For example, uc-player)\n\n4. In this zero block, create a player, it must have:\n   Container height 70px on all screens\n   HTML block across the length of the page is the track progress bar\n   Insert the code there:" },
-          { "type": "code", "value": "<input type=\"range\" name=\"progress\" class=\"music-range progress\" min=\"0\" max=\"100\" value=\"0\">" },
-          { "type": "insrtuction", "value": "   HTML block is the sound progress bar\n   Insert the code there:" },
-          { "type": "code", "value": "<input type=\"range\" name=\"volume\" class=\"music-range volume\" min=\"0\" max=\"100\" value=\"100\">" },
-          { "type": "insrtuction", "value": "   Two buttons/images with classes player-btn-buy and player-text will redirect to the page of the playing track, if this functionality is not needed, simply hide them out of view\n   Image with class player-play will serve as the Play|Pause button\n   Image with class player-next will serve as the next song button\n   Image with class player-prev will serve as the previous song button\n   Text with the phrase \"Nothing is playing\" with class player-title will display the title of the playing song\n   Shape with class player-cover will display the image of the playing song\n\n5. Everything else can be customized to your taste\n\n6. Below the player block, add T123\n\n7. Insert the code below into T123 and adjust all variables for the player" },
-          { "type": "code", "value": "<!--Player from product catalog by ABROS-->\n\n<audio id=\"audio\" data-track-number=\"0\"></audio>\n<div id=\"area-player\"></div>\n<script>\n window.AbrosTildaPlayer = {\n   // Settings\n   catalogID: '#recXXXXXXXXX', // Catalog block ID\n   playerID: '.uc-player', // Player class\n   audioID: '#audio', // Player block ID\n   areaID: '#area-player', // Trigger block ID\n   cards: '12', // Number of cards per page\n   storepart: 'XXXXXXXXXXXX', // Storepart ID\n   // Styles\n   // Cover for cards\n   WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Cover color for cards (Important in rgba to set transparency)\n   WrapperBorderRadius: '50px', // Cover rounding for cards\n   WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Play button icon\n   WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Pause button icon\n   // Volume and track progress input\n   TrackSlideColorStart: 'rgba(255,255,255,1)', // Bar colors\n   TrackSlideColorEnd: 'rgba(126,112,255,1)', // Bar fill colors\n   TrackSlideBorderRadius: '10px', // Bar rounding\n   TrackThumbColor: '#fff', // Thumb color on progress bar\n   TrackThumbBorderRadius: '50%', // Thumb rounding\n   // Player styles\n   PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Play button icon\n   PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Pause button icon\n   PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Volume On button icon\n   PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Volume Off button icon\n };\n</script>\n<script src = 'https://abros.dev/tilda/mods/player.js'></script>" },
-          { "type": "insrtuction", "value": "If you don't know where to find the Storepart ID, create T123 under the product catalog, paste the code below, publish it, and visit the site, you will see your Storepart ID. After that, the code can be removed" },
-          { "type": "code", "value": "<script>\n document.addEventListener(\"DOMContentLoaded\", function() {\n   var scripts = document.querySelectorAll('script');\n   scripts.forEach(function(script) {\n      var scriptText = script.textContent || script.innerText;\n      if (scriptText.includes('storepart')) {\n         var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);\n         if (match && match[1]) {\n            var storepartValue = match[1];\n            alert('Your storepart: \"' + storepartValue + '\"');\n            break;\"\n         }\n      }\n   });\n });\n</script>"}
-        ],
-        "PL": [
-          { "type": "h4", "value": "Odtwarzacz z playlistą dla Twojej strony internetowej" },
-          { "type": "img", "value": "main/projects/Tilda/Player/logo_mini.svg" },
-          { "type": "text", "value": "Strona znanego kompozytora. Zostałem poproszony o stworzenie odtwarzacza dla strony internetowej." },
-          { "type": "text", "value": "Odtwarzacz został zaimplementowany za pomocą biblioteki, więc tę modyfikację można również wykorzystać w innych projektach." },
-          { "type": "img", "value": "main/projects/Tilda/Player/site.gif" },
-          { "type": "text", "value": "Instrukcja" },
-          { "type": "insrtuction", "value": "Tworzenie listy odtwarzania\n\n1. W produktach utwórz produkt, w którym:\n   Tytuł: Tytuł utworu\n   Obraz: Okładka utworu\n   Kategorie katalogowe: można umieścić w kategorii, jeśli masz inne produkty lub różne listy odtwarzania\n   W cechach dodaj nową cechę (Nazwa: muzyka, Wartość: bezpośredni link do utworu)\n   W link do strony produktu dodaj link do przycisku nawigacyjnego (zobacz poniżej, dla jakich)\n\n2. Dodaj wszystkie utwory z instrukcji 1.\n\nTworzenie odtwarzacza\n\n1. Dodaj katalog ST310N i dostosuj jego styl, koniecznie musi być:\n   Karty -> Pokazuj drugi obraz po najechaniu myszką - wyłączone\n   Karty -> Pokazuj paginację (zamiast przycisku „Załaduj więcej”) - włączone\n   Karty -> Dwa produkty w rzędzie na urządzeniach mobilnych - włączone\n   Karty -> Liczba widocznych produktów przed przyciskiem „Załaduj więcej” - dowolna, optymalnie 12\n   Sekcja „Zobacz także” -> Blok 'Zobacz także' - nie wyświetlaj\n   Styl galerii -> Proporcja boków - 1:1 kwadrat\n   Filtry i Kategorie -> Ukryj filtry - włączone\n   Filtry i Kategorie -> Ukryj listę kategorii katalogowych - włączone\n   Filtry i Kategorie -> Domyślne sortowanie produktów - domyślna kolejność\n\n2. Podłącz sekcję produktów z twoją muzyką\n\n3. Pod blokiem katalogu utwórz blok zerowy, w ustawieniach nadaj mu dowolną klasę (Na przykład uc-player)\n\n4. W tym bloku zerowym utwórz odtwarzacz, koniecznie musi być:\n   Wysokość kontenera 70px na wszystkich ekranach\n   Blok HTML na całej długości strony to pasek postępu utworu\n   Wstaw tam kod:" },
-          { "type": "code", "value": "<input type=\"range\" name=\"progress\" class=\"music-range progress\" min=\"0\" max=\"100\" value=\"0\">" },
-          { "type": "insrtuction", "value": "   Blok HTML to pasek postępu dźwięku\n   Wstaw tam kod:" },
-          { "type": "code", "value": "<input type=\"range\" name=\"volume\" class=\"music-range volume\" min=\"0\" max=\"100\" value=\"100\">" },
-          { "type": "insrtuction", "value": "   Dwa przyciski/obrazki z klasami player-btn-buy i player-text będą przekierowywać na stronę odtwarzanego utworu, jeśli ta funkcja nie jest potrzebna, po prostu ukryj je poza widokiem\n   Obrazek z klasą player-play będzie służył jako przycisk Play|Pause\n   Obrazek z klasą player-next będzie służył jako przycisk następnego utworu\n   Obrazek z klasą player-prev będzie służył jako przycisk poprzedniego utworu\n   Tekst z napisem \"Nic nie jest odtwarzane\" z klasą player-title będzie wyświetlał tytuł odtwarzanego utworu\n   Kształt z klasą player-cover będzie wyświetlał obraz odtwarzanego utworu\n\n5. Pozostałe ustawienia można dostosować według własnych preferencji\n\n6. Pod blokiem odtwarzacza dodaj T123\n\n7. Poniższy kod wstaw do T123 i dostosuj wszystkie zmienne dla odtwarzacza" },
-          { "type": "code", "value": "<!--Odtwarzacz z katalogu produktów by ABROS-->\n\n<audio id=\"audio\" data-track-number=\"0\"></audio>\n<div id=\"area-player\"></div>\n<script>\n window.AbrosTildaPlayer = {\n   // Ustawienia\n   catalogID: '#recXXXXXXXXX', // ID bloku katalogu\n   playerID: '.uc-player', // Klasa odtwarzacza\n   audioID: '#audio', // ID bloku odtwarzacza\n   areaID: '#area-player', // ID bloku wyzwalacza\n   cards: '12', // Ilość kart na stronie\n   storepart: 'XXXXXXXXXXXX', // ID Storepart\n   // Style\n   // Okładka dla kart\n   WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Kolor okładki dla kart (Ważne w rgba, aby ustawić przezroczystość)\n   WrapperBorderRadius: '50px', // Zaokrąglenie okładki dla kart\n   WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Ikona przycisku Odtwarzaj\n   WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Ikona przycisku Wstrzymaj\n   // Input głośności i postępu utworu\n   TrackSlideColorStart: 'rgba(255,255,255,1)', // Kolor pasków\n   TrackSlideColorEnd: 'rgba(126,112,255,1)', // Kolor wypełnienia pasków\n   TrackSlideBorderRadius: '10px', // Zaokrąglenie pasków\n   TrackThumbColor: '#fff', // Kolor kciuka na pasku postępu\n   TrackThumbBorderRadius: '50%', // Zaokrąglenie kciuka\n   // Style odtwarzacza\n   PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Ikona przycisku Odtwarzaj\n   PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Ikona przycisku Wstrzymaj\n   PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Ikona przycisku Włącz dźwięk\n   PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Ikona przycisku Wyłącz dźwięk\n };\n</script>\n<script src = 'https://abros.dev/tilda/mods/player.js'></script>" },
-          { "type": "insrtuction", "value": "Jeśli nie wiesz, gdzie znaleźć ID Storepart, utwórz T123 pod katalogiem produktów, wklej poniższy kod, opublikuj go i odwiedź stronę, zobaczysz swoje ID Storepart. Następnie kod można usunąć" },
-          { "type": "code", "value": "<script>\n document.addEventListener(\"DOMContentLoaded\", function() {\n   var scripts = document.querySelectorAll('script');\n   scripts.forEach(function(script) {\n      var scriptText = script.textContent || script.innerText;\n      if (scriptText.includes('storepart')) {\n         var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);\n         if (match && match[1]) {\n            var storepartValue = match[1];\n            alert('Twój storepart: \"' + storepartValue + '\"');\n            break;\"\n         }\n      }\n   });\n });\n</script>"}
-        ]
-      },
-      "hash": "TildaPlayer",
-      "buttonText": {
-        "RU": "Посмотреть на сайте",
-        "EN": "View on website",
-        "PL": "Zobacz na stronie"
-      },
-      "url": "https://tvoy-hit.ru"
-    },
+      RU:
+        - type: h4
+          value: "Плеер с плейлистом для сайта"
+        - type: img
+          value: "main/projects/Tilda/Player/logo_mini.svg"
+        - type: text
+          value: "Сайт известного композитора. Обратились ко мне с задачей создать для сайта плеер."
+        - type: text
+          value: "Плеер был реализован библиотекой, поэтому данную модификацию можно использовать в других проектах."
+        - type: img
+          value: "main/projects/Tilda/Player/site.gif"
+        - type: text
+          value: "Инструкция"
+        - type: instruction
+          value: |
+            Создание плейлиста
+              
+            1. В товарах создать товар в котором:
+              Заголовок: Название трека
+              Изображение: Обложка трека
+              Разделы каталога: можно поместить в раздел, если у вас есть еще и другие товары или разные плейлисты
+              В характеристиках добавить новую характеристику (Название: music, Значение: прямая ссылка на трек)
+              В ссылку на страницу с товаром добавить ссылку для перехода по кнопке (Ниже поймете для каких)
+              
+            2. Добавить все треки по инструкции 1.
+              
+            Создание плеера
+              
+            1. Добавить каталог ST310N и настроить его стиль, обязательно должно быть:
+              Карточки -> Показывать второе изображение при наведении - отключено
+              Карточки -> Показывать пагинацию (вместо кнопки «Загрузить еще») - включено
+              Карточки -> Два товара в ряд на мобильных устройствах - включено
+              Карточки -> Количество видимых товаров до кнопки «Загрузить ещё» - любое, оптимально 12
+              Секция «Смотрите также» -> Блок 'Смотрите также' - не выводить
+              Стиль галереи -> Соотношение сторон - 1:1 квадрат
+              Фильтры & Разделы -> Спрятать фильтры - включено
+              Фильтры & Разделы -> Спрятать список разделов каталога - включено
+              Фильтры & Разделы -> Сортировка товаров по умолчанию - порядок по умолчанию
+              
+            2. Подключить раздел товаров с вашей музыкой
+              
+            3. Под блоком каталога создать зероблок, в настройках задать ему класс какой захотите (Например uc-player)
+              
+            4. В этом зероблоке создаёте плеер, обязательно должно быть:
+              Высота контейнера 70px на всех экранах
+              HTML блок на всю длинну страницы это прогресс бар трека
+              Туда вставить код:
+        - type: code
+          value: |
+            <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">
+        - type: instruction
+          value: |
+              HTML блок это прогресс бар звука
+              Туда вставить код:
+        - type: code
+          value: |
+            <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
+        - type: instruction
+          value: |
+              Две кнопки/картинки с классами player-btn-buy и player-text они будут перенаправлять на страницу играющего трека, если такой функционал не требуется, то просто их спрячте за пределами видимости
+              Картинка с классом player-play это будет кнопка Play|Pause
+              Картинка с классом player-next это будет кнопка следующей песни
+              Картинка с классом player-prev это будет кнопка предыдущей песни
+              Текст с текстом "Ничего не исполняется" с классом player-title это будет название играющей песни
+              Шейп с классом player-cover это будет картинка играющей песни
+              
+            5. Все остальное можно настраивать по своему вкусу
+              
+            6. Под блоком плеера добавить T123
+              
+            7. Код ниже вставить в T123 и настроить все переменные для плеера
+        - type: code
+          value: |
+            <!--Плеер из каталога товаров by ABROS-->
+              
+            <audio id="audio" data-track-number="0"></audio>
+            <div id="area-player"></div>
+            <script>
+            window.AbrosTildaPlayer = {
+              // Настройки
+              catalogID: '#recXXXXXXXXX', // ID блока каталога
+              playerID: '.uc-player', // Класс плеера
+              audioID: '#audio', // ID блока проигрователя
+              areaID: '#area-player', // ID блока тригера
+              cards: '12', // Кол-во карточек на странице
+              storepart: 'XXXXXXXXXXXX', // ID Storepart
+              // Стили
+              // Обложка для карточек
+              WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Цвет обложки для карточек (Важно в rgba, чтобы задать прозрачность)
+              WrapperBorderRadius: '50px', // Скругление обложки для карточек
+              WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Иконка кнопки Play
+              WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Иконка кнопки Pause
+              // Input громкости и прогресса песни
+              TrackSlideColorStart: 'rgba(255,255,255,1)', // Цвет полосок
+              TrackSlideColorEnd: 'rgba(126,112,255,1)', // Цвет заполнения полосок
+              TrackSlideBorderRadius: '10px', // Скругление полосок
+              TrackThumbColor: '#fff', // Цвет тумблера на полоске прогресса
+              TrackThumbBorderRadius: '50%', // Скругление тумблера
+              // Стили плеера
+              PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Иконка кнопки Play
+              PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Иконка кнопки Pause
+              PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Иконка кнопки Вкл.Звук
+              PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Иконка кнопки Выкл.Звук
+            };
+            </script>
+            <script src = 'https://abros.dev/tilda/mods/player.js'></script>
+        - type: instruction
+          value: |
+            Если вы не знаете где найти ID Storepart, то под каталогом создайте T123, вставте код ниже, опубликуйте и зайдите на сайт, вы увидите свой ID Storepart. После чего код можно удалить
+        - type: code
+          value: |
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              var scripts = document.querySelectorAll('script');
+              scripts.forEach(function(script) {
+                var scriptText = script.textContent || script.innerText;
+                if (scriptText.includes('storepart')) {
+                  var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);
+                  if (match && match[1]) {
+                    var storepartValue = match[1];
+                    alert('Ваш storepart: \"' + storepartValue + '\"');
+                    break;
+                  }
+                }
+              });
+            });
+            </script>
+      EN:
+        - type: h4
+          value: "Player with Playlist for Your Website"
+        - type: img
+          value: "main/projects/Tilda/Player/logo_mini.svg"
+        - type: text
+          value: "Website of a famous composer. I was approached to create a player for the website."
+        - type: text
+          value: "The player was implemented with a library, so this modification can also be used in other projects."
+        - type: img
+          value: "main/projects/Tilda/Player/site.gif"
+        - type: text
+          value: "Instructions"
+        - type: insrtuction
+          value: |
+            Playlist Creation
+              
+            1. In products, create a product in which:
+              Title: Track Title
+              Image: Track Cover
+              Catalog Sections: can be placed in a section if you have other products or different playlists
+              In characteristics add a new characteristic (Name: music, Value: direct link to the track)
+              In the product page link, add a link for navigation button (See below for which)
+              
+            2. Add all tracks as per instruction 1.
+              
+            Player Creation
+              
+            1. Add the ST310N catalog and customize its style, it must have:
+              Cards -> Show second image on hover - disabled
+              Cards -> Show pagination (instead of 'Load more' button) - enabled
+              Cards -> Two products in a row on mobile devices - enabled
+              Cards -> Number of visible products before 'Load more' button - any, optimally 12
+              'See Also' Section -> Block 'See Also' - do not display
+              Gallery Style -> Aspect Ratio - 1:1 square
+              Filters & Sections -> Hide filters - enabled
+              Filters & Sections -> Hide catalog category list - enabled
+              Filters & Sections -> Default product sorting - default order
+              
+            2. Connect the product section with your music
+              
+            3. Below the catalog block, create a zero block, in settings give it any class you want (For example, uc-player)
+              
+            4. In this zero block, create a player, it must have:
+              Container height 70px on all screens
+              HTML block across the length of the page is the track progress bar
+              Insert the code there:
+        - type: code
+          value: |
+            <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">"
+        - type: insrtuction
+          value: |
+              HTML block is the sound progress bar
+              Insert the code there:
+        - type: code
+          value: |
+            <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
+        - type: insrtuction
+          value: |
+              Two buttons/images with classes player-btn-buy and player-text will redirect to the page of the playing track, if this functionality is not needed, simply hide them out of view
+              Image with class player-play will serve as the Play|Pause button
+              Image with class player-next will serve as the next song button
+              Image with class player-prev will serve as the previous song button
+              Text with the phrase "Nothing is playing" with class player-title will display the title of the playing song
+              Shape with class player-cover will display the image of the playing song
+              
+            5. Everything else can be customized to your taste
+              
+            6. Below the player block, add T123
+              
+            7. Insert the code below into T123 and adjust all variables for the player
+        - type: code
+          value: |
+            <!--Player from product catalog by ABROS-->
+              
+            <audio id="audio" data-track-number="0"></audio>
+            <div id="area-player"></div>
+            <script>
+            window.AbrosTildaPlayer = {
+              // Settings
+              catalogID: '#recXXXXXXXXX', // Catalog block ID
+              playerID: '.uc-player', // Player class
+              audioID: '#audio', // Player block ID
+              areaID: '#area-player', // Trigger block ID
+              cards: '12', // Number of cards per page
+              storepart: 'XXXXXXXXXXXX', // Storepart ID
+              // Styles
+              // Cover for cards
+              WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Cover color for cards (Important in rgba to set transparency)
+              WrapperBorderRadius: '50px', // Cover rounding for cards
+              WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Play button icon
+              WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Pause button icon
+              // Volume and track progress input
+              TrackSlideColorStart: 'rgba(255,255,255,1)', // Bar colors
+              TrackSlideColorEnd: 'rgba(126,112,255,1)', // Bar fill colors
+              TrackSlideBorderRadius: '10px', // Bar rounding
+              TrackThumbColor: '#fff', // Thumb color on progress bar
+              TrackThumbBorderRadius: '50%', // Thumb rounding
+              // Player styles
+              PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Play button icon
+              PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Pause button icon
+              PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Volume On button icon
+              PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Volume Off button icon
+            };
+            </script>
+            <script src = 'https://abros.dev/tilda/mods/player.js'></script>
+        - type: insrtuction
+          value: |
+            If you don't know where to find the Storepart ID, create T123 under the product catalog, paste the code below, publish it, and visit the site, you will see your Storepart ID. After that, the code can be removed
+        - type: code
+          value: |
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              var scripts = document.querySelectorAll('script');
+              scripts.forEach(function(script) {
+                var scriptText = script.textContent || script.innerText;
+                if (scriptText.includes('storepart')) {
+                  var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);
+                  if (match && match[1]) {
+                    var storepartValue = match[1];
+                    alert('Your storepart: \"' + storepartValue + '\"');
+                    break;
+                  }
+                }
+              });
+            });
+            </script>
+      PL:
+        - type: h4
+          value: "Odtwarzacz z playlistą dla Twojej strony internetowej"
+        - type: img
+          value: "main/projects/Tilda/Player/logo_mini.svg"
+        - type: text
+          value: "Strona znanego kompozytora. Zostałem poproszony o stworzenie odtwarzacza dla strony internetowej."
+        - type: text
+          value: "Odtwarzacz został zaimplementowany za pomocą biblioteki, więc tę modyfikację można również wykorzystać w innych projektach."
+        - type: img
+          value: "main/projects/Tilda/Player/site.gif"
+        - type: text
+          value: "Instrukcja"
+        - type: insrtuction
+          value: |
+            Tworzenie listy odtwarzania
+              
+            1. W produktach utwórz produkt, w którym:
+              Tytuł: Tytuł utworu
+              Obraz: Okładka utworu
+              Kategorie katalogowe: można umieścić w kategorii, jeśli masz inne produkty lub różne listy odtwarzania
+              W cechach dodaj nową cechę (Nazwa: muzyka, Wartość: bezpośredni link do utworu)
+              W link do strony produktu dodaj link do przycisku nawigacyjnego (zobacz poniżej, dla jakich)
+              
+            2. Dodaj wszystkie utwory z instrukcji 1.
+              
+            Tworzenie odtwarzacza
+              
+            1. Dodaj katalog ST310N i dostosuj jego styl, koniecznie musi być:
+              Karty -> Pokazuj drugi obraz po najechaniu myszką - wyłączone
+              Karty -> Pokazuj paginację (zamiast przycisku „Załaduj więcej”) - włączone
+              Karty -> Dwa produkty w rzędzie na urządzeniach mobilnych - włączone
+              Karty -> Liczba widocznych produktów przed przyciskiem „Załaduj więcej” - dowolna, optymalnie 12
+              Sekcja „Zobacz także” -> Blok 'Zobacz także' - nie wyświetlaj
+              Styl galerii -> Proporcja boków - 1:1 kwadrat
+              Filtry i Kategorie -> Ukryj filtry - włączone
+              Filtry i Kategorie -> Ukryj listę kategorii katalogowych - włączone
+              Filtry i Kategorie -> Domyślne sortowanie produktów - domyślna kolejność
+              
+            2. Podłącz sekcję produktów z twoją muzyką
+              
+            3. Pod blokiem katalogu utwórz blok zerowy, w ustawieniach nadaj mu dowolną klasę (Na przykład uc-player)
+              
+            4. W tym bloku zerowym utwórz odtwarzacz, koniecznie musi być:
+              Wysokość kontenera 70px na wszystkich ekranach
+              Blok HTML na całej długości strony to pasek postępu utworu
+              Wstaw tam kod:
+        - type: code
+          value: |
+            <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">"
+        - type: insrtuction
+          value: |
+              Blok HTML to pasek postępu dźwięku
+              Wstaw tam kod:
+        - type: code
+          value: |
+            <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">"
+        - type: insrtuction
+          value: |
+              Dwa przyciski/obrazki z klasami player-btn-buy i player-text będą przekierowywać na stronę odtwarzanego utworu, jeśli ta funkcja nie jest potrzebna, po prostu ukryj je poza widokiem
+              Obrazek z klasą player-play będzie służył jako przycisk Play|Pause
+              Obrazek z klasą player-next będzie służył jako przycisk następnego utworu
+              Obrazek z klasą player-prev będzie służył jako przycisk poprzedniego utworu
+              Tekst z napisem "Nic nie jest odtwarzane" z klasą player-title będzie wyświetlał tytuł odtwarzanego utworu
+              Kształt z klasą player-cover będzie wyświetlał obraz odtwarzanego utworu
+              
+            5. Pozostałe ustawienia można dostosować według własnych preferencji
+              
+            6. Pod blokiem odtwarzacza dodaj T123
+              
+            7. Poniższy kod wstaw do T123 i dostosuj wszystkie zmienne dla odtwarzacza
+        - type: code
+          value: |
+            <!--Odtwarzacz z katalogu produktów by ABROS-->
+              
+            <audio id="audio" data-track-number="0"></audio>
+            <div id="area-player"></div>
+            <script>
+            window.AbrosTildaPlayer = {
+              // Ustawienia
+              catalogID: '#recXXXXXXXXX', // ID bloku katalogu
+              playerID: '.uc-player', // Klasa odtwarzacza
+              audioID: '#audio', // ID bloku odtwarzacza
+              areaID: '#area-player', // ID bloku wyzwalacza
+              cards: '12', // Ilość kart na stronie
+              storepart: 'XXXXXXXXXXXX', // ID Storepart
+              // Style
+              // Okładka dla kart
+              WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Kolor okładki dla kart (Ważne w rgba, aby ustawić przezroczystość)
+              WrapperBorderRadius: '50px', // Zaokrąglenie okładki dla kart
+              WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Ikona przycisku Odtwarzaj
+              WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Ikona przycisku Wstrzymaj
+              // Input głośności i postępu utworu
+              TrackSlideColorStart: 'rgba(255,255,255,1)', // Kolor pasków
+              TrackSlideColorEnd: 'rgba(126,112,255,1)', // Kolor wypełnienia pasków
+              TrackSlideBorderRadius: '10px', // Zaokrąglenie pasków
+              TrackThumbColor: '#fff', // Kolor kciuka na pasku postępu
+              TrackThumbBorderRadius: '50%', // Zaokrąglenie kciuka
+              // Style odtwarzacza
+              PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Ikona przycisku Odtwarzaj
+              PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Ikona przycisku Wstrzymaj
+              PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Ikona przycisku Włącz dźwięk
+              PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Ikona przycisku Wyłącz dźwięk
+            };
+            </script>
+            <script src='https://abros.dev/tilda/mods/player.js'></script>
+        - type: insrtuction
+          value: |
+            Jeśli nie wiesz, gdzie znaleźć ID Storepart, utwórz T123 pod katalogiem produktów, wklej poniższy kod, opublikuj go i odwiedź stronę, zobaczysz swoje ID Storepart. Następnie kod można usunąć
+        - type: code
+          value: |
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              var scripts = document.querySelectorAll('script');
+              scripts.forEach(function(script) {
+                var scriptText = script.textContent || script.innerText;
+                if (scriptText.includes('storepart')) {
+                  var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);
+                   if (match && match[1]) {
+                    var storepartValue = match[1];
+                    alert('Twój storepart: \"' + storepartValue + '\"');
+                    break;
+                  }
+                }
+              });
+            });
+            </script>
+    hash: "TildaPlayer"
+    buttonText:
+      RU: "Посмотреть на сайте"
+      EN: "View on website"
+      PL: "Zobacz na stronie"
+    url: "https://tvoy-hit.ru"
 
-    {
-      "id": 4,
-      "title": "Abros Noti",
-      "img": "main/projects/AbrosNoti/avatar.png",
-      "overlay": "main/projects/AbrosNoti/overlay.png",
-      "outline": "#00aee1",
-      "category": "MyProject Library",
-      "content": {
-        "RU": [
-          { "type": "h4", "value": "Уведомления для твоего сайта" },
-          { "type": "text", "value": "Данная библиотека была разработанна для моего сайта, но так как она получилась модульной. То вы тоже сможете её использовать." },
-          { "type": "text", "value": "Уведомления очень полезный инструмент. Не отвлекает пользователя от потребления контента, а так же занимает мало места на сайте." },
-          { "type": "text", "value": "С этой целью я разработал библиотеку, которая дает возможность выводить ваши уведомления на сайте." },
-          { "type": "img", "value": "main/projects/AbrosNoti/noti.gif" },
-          { "type": "text", "value": "Выглядит круто, а самое главное, что очень просто с этим работать!" },
-          { "type": "text", "value": "Всё что нужно сделать, это подключить библиотеку к сайту используя код:" },
-          { "type": "code", "value": "<script src='https:\/\/abros.dev\/dev\/noti.js'><\/script>" },
-          { "type": "text", "value": "После чего можно вызывать функцию уведомлений следующим образом:" },
-          { "type": "insrtuction", "value": "Создавайте уведомления с помощью abrosnoti.create()\n\nПараметры abrosnoti.create():\n Иконка: string,\n Заголовок: string,\n Описание: string,\n Продолжительность: секунды (по умолчанию: 2 секунды, 0 означает бесконечное время),\n Уничтожить при клике: boolean (определяет, должно ли уведомление исчезнуть при нажатии, по умолчанию: false)\n Функция клика: function (вызывается при нажатии на уведомление, если не определено, по умолчанию: undefined)" },
-          { "type": "text", "value": "Вы можете проверить как это работает, просто смените язык на моем сайте :)" }
-        ],
-        "EN": [
-          { "type": "h4", "value": "Notifications for your website" },
-          { "type": "text", "value": "This library was developed for my website, but since it turned out to be modular, you can also use it." },
-          { "type": "text", "value": "Notifications are a very useful tool. They do not distract the user from consuming content and take up little space on the website." },
-          { "type": "text", "value": "With this in mind, I developed a library that allows you to display notifications on your website." },
-          { "type": "img", "value": "main/projects/AbrosNoti/noti.gif" },
-          { "type": "text", "value": "It looks cool, and most importantly, it's very easy to work with!" },
-          { "type": "text", "value": "All you need to do is connect the library to your site using the code:" },
-          { "type": "code", "value": "<script src='https:\/\/abros.dev\/dev\/noti.js'><\/script>" },
-          { "type": "text", "value": "After that, you can call the notification function as follows:" },
-          { "type": "insrtuction", "value": "Create notifications using abrosnoti.create()\n\nParameters for abrosnoti.create():\n Icon: string,\n Title: string,\n Description: string,\n Duration: seconds (default: 2 seconds, 0 means infinite time),\n Destroy on click: boolean (determines whether the notification should disappear when clicked, default: false)\n Click function: function (called when the notification is clicked, if not defined, default: undefined)" },
-          { "type": "text", "value": "You can see how it works by simply changing the language on my website :)" }
-        ],
-        "PL": [
-          { "type": "h4", "value": "Powiadomienia dla Twojej strony internetowej" },
-          { "type": "text", "value": "Ta biblioteka została opracowana dla mojej witryny, ale ponieważ okazała się modułowa, możesz jej również używać." },
-          { "type": "text", "value": "Powiadomienia są bardzo przydatnym narzędziem. Nie rozpraszają użytkownika od przeglądania treści i zajmują niewiele miejsca na stronie internetowej." },
-          { "type": "text", "value": "Z myślą o tym opracowałem bibliotekę, która pozwala wyświetlać powiadomienia na Twojej stronie internetowej." },
-          { "type": "img", "value": "main/projects/AbrosNoti/noti.gif" },
-          { "type": "text", "value": "Wygląda to świetnie, a co najważniejsze, jest bardzo łatwe w obsłudze!" },
-          { "type": "text", "value": "Wszystko, co musisz zrobić, to podłączyć bibliotekę do swojej strony za pomocą tego kodu:" },
-          { "type": "code", "value": "<script src='https:\/\/abros.dev\/dev\/noti.js'><\/script>" },
-          { "type": "text", "value": "Następnie możesz wywołać funkcję powiadomień w następujący sposób:" },
-          { "type": "insrtuction", "value": "Twórz powiadomienia za pomocą abrosnoti.create()\n\nParametry dla abrosnoti.create():\n Ikona: string,\n Tytuł: string,\n Opis: string,\n Czas trwania: sekundy (domyślnie: 2 sekundy, 0 oznacza czas nieskończony),\n Zniszcz po kliknięciu: boolean (określa, czy powiadomienie powinno zniknąć po kliknięciu, domyślnie: false)\n Funkcja kliknięcia: function (wywoływana po kliknięciu na powiadomienie, jeśli nie zdefiniowano, domyślnie: undefined)" },
-          { "type": "text", "value": "Możesz zobaczyć, jak to działa, po prostu zmieniając język na mojej stronie :)" }
-        ]
-      },
-      "hash": "AbrosNoti",
-      "buttonText": {
-        "RU": " ",
-        "EN": " ",
-        "PL": " "
-      },
-      "url": " "
-    },
+  - id: 4
+    title: "Abros Noti"
+    img: "main/projects/AbrosNoti/avatar.png"
+    overlay: "main/projects/AbrosNoti/overlay.png"
+    outline: "#00aee1"
+    category: "MyProject Library"
+    content:
+      RU:
+        - type: h4
+          value: "Уведомления для твоего сайта"
+        - type: text
+          value: "Данная библиотека была разработанна для моего сайта, но так как она получилась модульной. То вы тоже сможете её использовать."
+        - type: text
+          value: "Уведомления очень полезный инструмент. Не отвлекает пользователя от потребления контента, а так же занимает мало места на сайте."
+        - type: text
+          value: "С этой целью я разработал библиотеку, которая дает возможность выводить ваши уведомления на сайте."
+        - type: img
+          value: "main/projects/AbrosNoti/noti.gif"
+        - type: text
+          value: "Выглядит круто, а самое главное, что очень просто с этим работать!"
+        - type: text
+          value: "Всё что нужно сделать, это подключить библиотеку к сайту используя код:"
+        - type: code
+          value: |
+            <script src='https://abros.dev/dev/noti.js'></script>
+        - type: text
+          value: "После чего можно вызывать функцию уведомлений следующим образом:"
+        - type: insrtuction"
+          value: |
+            Создавайте уведомления с помощью abrosnoti.create()
+            
+            Параметры abrosnoti.create():
+              Иконка: string,
+              Заголовок: string,
+              Описание: string,
+              Продолжительность: секунды,
+                (по умолчанию: 2 секунды, 0 означает бесконечное время)
+              Уничтожить при клике: boolean,
+                (определяет, должно ли уведомление исчезнуть при нажатии, по умолчанию: false)
+              Функция клика: function,
+                (вызывается при нажатии на уведомление, если не определено, по умолчанию: undefined)
+        - type: text
+          value: "Вы можете проверить как это работает, просто смените язык на моем сайте :)"
+      EN:
+        - type: h4
+          value: "Notifications for your website"
+        - type: text
+          value: "This library was developed for my website, but since it turned out to be modular, you can also use it."
+        - type: text
+          value: "Notifications are a very useful tool. They do not distract the user from consuming content and take up little space on the website."
+        - type: text
+          value: "With this in mind, I developed a library that allows you to display notifications on your website."
+        - type: img
+          value: "main/projects/AbrosNoti/noti.gif"
+        - type: text
+          value: "It looks cool, and most importantly, it's very easy to work with!"
+        - type: text
+          value: "All you need to do is connect the library to your site using the code:"
+        - type: code
+          value: |
+            <script src='https://abros.dev/dev/noti.js'></script>
+        - type: text
+          value: "After that, you can call the notification function as follows:"
+        - type: insrtuction
+          value: |
+            Create notifications using abrosnoti.create()
+            
+            Parameters for abrosnoti.create():
+              Icon: string,
+              Title: string,
+              Description: string,
+              Duration: seconds,
+                (default: 2 seconds, 0 means infinite time)
+              Destroy on click: boolean,
+                (determines whether the notification should disappear when clicked, default: false)
+              Click function: function,
+                (called when the notification is clicked, if not defined, default: undefined)
+        - type: text
+          value: "You can see how it works by simply changing the language on my website :)"
+      PL:
+        - type: h4
+          value: "Powiadomienia dla Twojej strony internetowej"
+        - type: text
+          value: "Ta biblioteka została opracowana dla mojej witryny, ale ponieważ okazała się modułowa, możesz jej również używać."
+        - type: text
+          value: "Powiadomienia są bardzo przydatnym narzędziem. Nie rozpraszają użytkownika od przeglądania treści i zajmują niewiele miejsca na stronie internetowej."
+        - type: text
+          value: "Z myślą o tym opracowałem bibliotekę, która pozwala wyświetlać powiadomienia na Twojej stronie internetowej."
+        - type: img
+          value: "main/projects/AbrosNoti/noti.gif"
+        - type: text
+          value: "Wygląda to świetnie, a co najważniejsze, jest bardzo łatwe w obsłudze!"
+        - type: text
+          value: "Wszystko, co musisz zrobić, to podłączyć bibliotekę do swojej strony za pomocą tego kodu:"
+        - type: code
+          value: |
+            <script src='https://abros.dev/dev/noti.js'></script>
+        - type: text
+          value: "Następnie możesz wywołać funkcję powiadomień w następujący sposób:"
+        - type: insrtuction
+          value: |
+            Twórz powiadomienia za pomocą abrosnoti.create()
+            
+            Parametry dla abrosnoti.create():
+              Ikona: string,
+              Tytuł: string,
+              Opis: string,
+              Czas trwania: sekundy,
+                (domyślnie: 2 sekundy, 0 oznacza czas nieskończony)
+              Zniszcz po kliknięciu: boolean,
+                (określa, czy powiadomienie powinno zniknąć po kliknięciu, domyślnie: false)
+              Funkcja kliknięcia: function,
+                (wywoływana po kliknięciu na powiadomienie, jeśli nie zdefiniowano, domyślnie: undefined)
+        - type: text
+          value: "Możesz zobaczyć, jak to działa, po prostu zmieniając język na mojej stronie :)"
+    hash: "AbrosNoti"
+    buttonText:
+      RU: " "
+      EN: " "
+      PL: " "
+    url: " "
     
-    {
-      "id": 3,
-      "title": "Grushka Endoterapia",
-      "img": "main/projects/GrushkaEndo/avatar.png",
-      "overlay": "main/projects/GrushkaEndo/overlay.png",
-      "outline": "#73afe1",
-      "category": "Layout",
-      "content": {
-        "RU": [
-          { "type": "h4", "value": "Вёрстка лендинга для салона красоты Grushka" },
-          { "type": "img", "value": "main/projects/GrushkaEndo/logo_mini.png" },
-          { "type": "text", "value": "Задача состояла в том, чтобы перенести уже имеющийся сайт на платформе Tilda на отдельный хостинг." },
-          { "type": "text", "value": "Сложность заключалась в том, что Tilda наложила ограничения на аккаунт из-за чего сайт был заблокирован, а экспорт не доступен. Поэтому они обратились ко мне." },
-          { "type": "text", "value": "И вот конечный результат!" },
-          { "type": "img", "value": "main/projects/GrushkaEndo/site.png" },
-          { "type": "text", "value": "Посмотреть сайт можно кликнув по кнопке ниже." }
-        ],
-        "EN": [
-          { "type": "h4", "value": "Designing a landing page for Grushka beauty salon" },
-          { "type": "img", "value": "main/projects/GrushkaEndo/logo_mini.png" },
-          { "type": "text", "value": "The task was to transfer the existing website from the Tilda platform to a separate hosting." },
-          { "type": "text", "value": "The difficulty was that Tilda imposed restrictions on the account, resulting in the website being blocked, and export was not available. That's why they reached out to me." },
-          { "type": "text", "value": "And here is the final result!" },
-          { "type": "img", "value": "main/projects/GrushkaEndo/site.png" },
-          { "type": "text", "value": "To view the website, click the button below." }
-        ],
-        "PL": [
-          { "type": "h4", "value": "Projektowanie strony internetowej (landing page) dla salonu urody Grushka" },
-          { "type": "img", "value": "main/projects/GrushkaEndo/logo_mini.png" },
-          { "type": "text", "value": "Zadaniem było przeniesienie istniejącej już strony internetowej na platformie Tilda na osobny hosting." },
-          { "type": "text", "value": "Trudność polegała na tym, że Tilda nałożyła ograniczenia na konto, co spowodowało zablokowanie strony, a eksport nie był możliwy. Dlatego zwrócili się do mnie." },
-          { "type": "text", "value": "I oto ostateczny rezultat!" },
-          { "type": "img", "value": "main/projects/GrushkaEndo/site.png" },
-          { "type": "text", "value": "Aby zobaczyć stronę, kliknij przycisk poniżej." }
-        ]
-      },
-      "hash": "GrushkaEndo",
-      "buttonText": {
-        "RU": "Перейти на сайт",
-        "EN": "Go to website",
-        "PL": "Przejdź do strony"
-      },
-      "url": "https://cosmetologia.site"
-    },
+  - id: 3
+    title: "Grushka Endoterapia"
+    img: "main/projects/GrushkaEndo/avatar.png"
+    overlay: "main/projects/GrushkaEndo/overlay.png"
+    outline: "#73afe1"
+    category: "Layout"
+    content:
+      RU:
+        - type: h4
+          value: "Вёрстка лендинга для салона красоты Grushka"
+        - type: img
+          value: "main/projects/GrushkaEndo/logo_mini.png"
+        - type: text
+          value: "Задача состояла в том, чтобы перенести уже имеющийся сайт на платформе Tilda на отдельный хостинг."
+        - type: text
+          value: "Сложность заключалась в том, что Tilda наложила ограничения на аккаунт из-за чего сайт был заблокирован, а экспорт не доступен. Поэтому они обратились ко мне."
+        - type: text
+          value: "И вот конечный результат!"
+        - type: img
+          value: "main/projects/GrushkaEndo/site.png"
+        - type: text
+          value: "Посмотреть сайт можно кликнув по кнопке ниже."
+      EN:
+        - type: h4
+          value: "Designing a landing page for Grushka beauty salon"
+        - type: img
+          value: "main/projects/GrushkaEndo/logo_mini.png"
+        - type: text
+          value: "The task was to transfer the existing website from the Tilda platform to a separate hosting."
+        - type: text
+          value: "The difficulty was that Tilda imposed restrictions on the account, resulting in the website being blocked, and export was not available. That's why they reached out to me."
+        - type: text
+          value: "And here is the final result!"
+        - type: img
+          value: "main/projects/GrushkaEndo/site.png"
+        - type: text
+          value: "To view the website, click the button below."
+      PL:
+        - type: h4
+          value: "Projektowanie strony internetowej (landing page) dla salonu urody Grushka"
+        - type: img
+          value: "main/projects/GrushkaEndo/logo_mini.png"
+        - type: text
+          value: "Zadaniem było przeniesienie istniejącej już strony internetowej na platformie Tilda na osobny hosting."
+        - type: text
+          value: "Trudność polegała na tym, że Tilda nałożyła ograniczenia na konto, co spowodowało zablokowanie strony, a eksport nie był możliwy. Dlatego zwrócili się do mnie."
+        - type: text
+          value: "I oto ostateczny rezultat!"
+        - type: img
+          value: "main/projects/GrushkaEndo/site.png"
+        - type: text
+          value: "Aby zobaczyć stronę, kliknij przycisk poniżej."
+    hash: "GrushkaEndo"
+    buttonText:
+      RU: "Перейти на сайт"
+      EN: "Go to website"
+      PL: "Przejdź do strony"
+    url: "https://cosmetologia.site"
 
-    {
-      "id": 2,
-      "title": "Lampa Abros",
-      "img": "main/projects/LampaAbros/avatar.png",
-      "overlay": "main/projects/LampaAbros/overlay.png",
-      "outline": "#ffffff",
-      "category": "MyProject",
-      "content": {
-        "RU": [
-          { "type": "h4", "value": "Abros - магазин плагинов для Lampa" },
-          { "type": "img", "value": "main/projects/LampaAbros/logo_mini.png" },
-          { "type": "text", "value": "Данный проект представляет из себя плагин для онлайн кинотеатра Lampa. С его помощью можно в один клик устанавливать все возможные доступные плагины для данного кинотеатра." },
-          { "type": "text", "value": "Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros." },
-          { "type": "img", "value": "main/projects/LampaAbros/storemenu.png" },
-          { "type": "text", "value": "На данный момент добавлены лишь основные известные плагины, со временем магазин будет расширяться." },
-          { "type": "text", "value": "Подключить плагин можно добавив ссылку ниже в Lampa." },
-          { "type": "code", "value": "https:\/\/abros.dev\/lampa\/mod.js" },
-          { "type": "text", "value": "Переходи по кнопке ниже в Lampa и проверяй!" }
-        ],
-        "EN": [
-          { "type": "h4", "value": "Abros - a plugin store for Lampa" },
-          { "type": "img", "value": "main/projects/LampaAbros/logo_mini.png" },
-          { "type": "text", "value": "This project is a plugin for the online cinema Lampa. With it, you can install all available plugins for this cinema with just one click." },
-          { "type": "text", "value": "This store simplifies interaction with the Lampa service. Now, there's no need to search for plugins on the internet and add them manually; everything is already available in Abros." },
-          { "type": "img", "value": "main/projects/LampaAbros/storemenu.png" },
-          { "type": "text", "value": "Currently, only the basic, well-known plugins have been added, but over time, the store will expand." },
-          { "type": "text", "value": "To connect the plugin, you can add the link below in Lampa." },
-          { "type": "code", "value": "https:\/\/abros.dev\/lampa\/mod.js" },
-          { "type": "text", "value": "Click the button below to go to Lampa and check!" }
-        ],
-        "PL": [
-          { "type": "h4", "value": "Sklep - sklep z wtyczkami do Lampy" },
-          { "type": "img", "value": "main/projects/LampaAbros/logo_mini.png" },
-          { "type": "text", "value": "Ten projekt to wtyczka do internetowego kina Lampa. Za jej pomocą można jednym kliknięciem instalować wszystkie dostępne wtyczki dla tego kina." },
-          { "type": "text", "value": "Ten sklep ułatwia korzystanie z usługi Lampa. Teraz nie trzeba już szukać wtyczek w internecie i dodawać ich ręcznie - wszystko jest już dostępne w Abros." },
-          { "type": "img", "value": "main/projects/LampaAbros/storemenu.png" },
-          { "type": "text", "value": "Obecnie dodano tylko podstawowe, znane wtyczki, ale w przyszłości sklep będzie się rozwijał." },
-          { "type": "text", "value": "Aby podłączyć wtyczkę, możesz dodać poniższy link do Lampa." },
-          { "type": "code", "value": "https:\/\/abros.dev\/lampa\/mod.js" },
-          { "type": "text", "value": "Kliknij przycisk poniżej, aby przejść do Lampa i sprawdzić!" }
-        ]
-      },
-      "hash": "LampaAbros",
-      "buttonText": {
-        "RU": "Перейти к Lampa",
-        "EN": "Go to Lampa",
-        "PL": "Przejdź do Lampa"
-      },
-      "url": "http://lampa.mx"
-    },
+  - id: 2
+    title: "Lampa Abros"
+    img: "main/projects/LampaAbros/avatar.png"
+    overlay: "main/projects/LampaAbros/overlay.png"
+    outline: "#ffffff"
+    category: "MyProject"
+    content:
+      RU:
+        - type: h4
+          value: "Abros - магазин плагинов для Lampa"
+        - type: img
+          value: "main/projects/LampaAbros/logo_mini.png"
+        - type: text
+          value: "Данный проект представляет из себя плагин для онлайн кинотеатра Lampa. С его помощью можно в один клик устанавливать все возможные доступные плагины для данного кинотеатра."
+        - type: text
+          value: "Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros."
+        - type: img
+          value: "main/projects/LampaAbros/storemenu.png"
+        - type: text
+          value: "На данный момент добавлены лишь основные известные плагины, со временем магазин будет расширяться."
+        - type: text
+          value: "Подключить плагин можно добавив ссылку ниже в Lampa."
+        - type: code
+          value: |
+            https://abros.dev/lampa/mod.js
+        - type: text
+          value: "Переходи по кнопке ниже в Lampa и проверяй!"
+      EN:
+        - type: h4
+          value: "Abros - a plugin store for Lampa"
+        - type: img
+          value: "main/projects/LampaAbros/logo_mini.png"
+        - type: text
+          value: "This project is a plugin for the online cinema Lampa. With it, you can install all available plugins for this cinema with just one click."
+        - type: text
+          value: "This store simplifies interaction with the Lampa service. Now, there's no need to search for plugins on the internet and add them manually; everything is already available in Abros."
+        - type: img
+          value": "main/projects/LampaAbros/storemenu.png"
+        - type: text
+          value: "Currently, only the basic, well-known plugins have been added, but over time, the store will expand."
+        - type: text
+          value: "To connect the plugin, you can add the link below in Lampa."
+        - type: code
+          value: |
+            https://abros.dev/lampa/mod.js
+        - type: text
+          value: "Click the button below to go to Lampa and check!"
+      PL:
+        - type: h4
+          value: "Sklep - sklep z wtyczkami do Lampy"
+        - type: img
+          value": "main/projects/LampaAbros/logo_mini.png"
+        - type: text
+          value: "Ten projekt to wtyczka do internetowego kina Lampa. Za jej pomocą można jednym kliknięciem instalować wszystkie dostępne wtyczki dla tego kina."
+        - type: text
+          value: "Ten sklep ułatwia korzystanie z usługi Lampa. Teraz nie trzeba już szukać wtyczek w internecie i dodawać ich ręcznie - wszystko jest już dostępne w Abros."
+        - type: img
+          value: "main/projects/LampaAbros/storemenu.png"
+        - type: text
+          value: "Obecnie dodano tylko podstawowe, znane wtyczki, ale w przyszłości sklep będzie się rozwijał."
+        - type: text
+          value: "Aby podłączyć wtyczkę, możesz dodać poniższy link do Lampa."
+        - type: code
+          value: |
+            https://abros.dev/lampa/mod.js
+        - type: text
+          value: "Kliknij przycisk poniżej, aby przejść do Lampa i sprawdzić!"
+    hash: "LampaAbros"
+    buttonText:
+      RU: "Перейти к Lampa"
+      EN: "Go to Lampa"
+      PL: "Przejdź do Lampa"
+    url: "http://lampa.mx"
 
-    {
-      "id": 1,
-      "title": "DEUS",
-      "img": "main/projects/DEUS/avatar.png",
-      "overlay": "main/projects/DEUS/overlay.png",
-      "outline": "#00ff00",
-      "category": "MyProject Library",
-      "content": {
-        "RU": [
-          { "type": "h4", "value": "DEUS - защита контента" },
-          { "type": "img", "value": "main/projects/DEUS/logo_mini.jpeg" },
-          { "type": "text", "value": "DEUS - система-библиотека для удалённого контроля принадлежащих ей модулей." },
-          { "type": "text", "value": "Простыми словами это система, которая подключается к сайту и следует определенным правилам, которые ей передают сами пользователи." },
-          { "type": "text", "value": "Модуль BD - это системный модуль, он отвечает за проверку правил для сайта и подключение остальных модулей. На момент разработки являлся главным модулем системы и визуальную часть не имел." },
-          { "type": "img", "value": "main/projects/DEUS/module_bd.jpeg" },
-          { "type": "text", "value": "Модуль Blocker - это модуль отвечающий за наказания. Данный модуль применяется в случаях когда заказчик не оплатил работу и сменил все доступы так, что вы остались без денег и ваш труд отдан за бесплатно. В этом случае в работу вступает этот модуль применяя выбранный вами эффект к проекту." },
-          { "type": "img", "value": "main/projects/DEUS/module_blocker.gif" },
-          { "type": "text", "value": "Альфа версия (когда проект был только для меня) находилась непосредственно в проекте, что немного затрудняло работу с ним напрямую. Но так как это было только для личного использования - меня устраивало." },
-          { "type": "img", "value": "main/projects/DEUS/alpha_1.jpeg" },
-          { "type": "text", "value": "Как только этот проект пошёл по знакомым было решено переписать структуру, логику и принцип работы полностью. Ведь большинство тех, кто этим пользовался никогда не работал с кодом." },
-          { "type": "text", "value": "Первым лучшим решением было - раделение системы на модули. Из базы данных проверяется какие модули подключены к сайту и подгружает их. Сделано это для удобства управления и конечно же для того, чтобы значительно снизить нагрузку на сайт." },
-          { "type": "text", "value": "Вторым решением было упростить жизнь пользователям, вместо того чтобы поражаться тому какой огромный код им надо куда-то копировать, вся система была реализована как подключаемая библиотека." },
-          { "type": "code", "value": "<script src='https:\/\/deusnotam.github.io\/bd.js'><\/script>" },
-          { "type": "text", "value": "И последним, но не менее важным решением было сделать открытый исходный код. Да, всю систему можно с лёгкостью найти на GitHub. И каждый может изменить её под свои нужды." }
-        ],
-        "EN": [
-          { "type": "h4", "value": "DEUS - Content Protection" },
-          { "type": "img", "value": "main/projects/DEUS/logo_mini.jpeg" },
-          { "type": "text", "value": "DEUS is a system-library for remote control of its modules." },
-          { "type": "text", "value": "In simple terms, it is a system that connects to a website and follows certain rules that users transmit to it." },
-          { "type": "text", "value": "Module BD is a system module responsible for checking rules for the site and connecting other modules. At the development stage, it was the main system module and did not have a visual part." },
-          { "type": "img", "value": "main/projects/DEUS/module_bd.jpeg" },
-          { "type": "text", "value": "Module Blocker is a module responsible for penalties. This module is used in cases where the customer did not pay for the work and changed all accesses so that you were left without money and your work was given away for free. In this case, this module comes into play, applying the effect you choose to the project." },
-          { "type": "img", "value": "main/projects/DEUS/module_blocker.gif" },
-          { "type": "text", "value": "The alpha version (when the project was only for me) was directly in the project, which made it a bit difficult to work with it directly. But since it was only for personal use, it suited me." },
-          { "type": "img", "value": "main/projects/DEUS/alpha_1.jpeg" },
-          { "type": "text", "value": "As soon as this project gained traction, it was decided to completely rewrite the structure, logic, and operation principles. After all, the majority of those who used it had never worked with code." },
-          { "type": "text", "value": "The first and best solution was to divide the system into modules. The database checks which modules are connected to the site and loads them. This was done for ease of management and, of course, to significantly reduce the load on the site." },
-          { "type": "text", "value": "The second solution was to simplify the lives of users. Instead of being amazed at how much code they had to copy somewhere, the entire system was implemented as a plug-in library." },
-          { "type": "code", "value": "<script src='https:\/\/deusnotam.github.io\/bd.js'><\/script>" },
-          { "type": "text", "value": "And last but not least, the decision was made to make the source code open. Yes, the entire system can easily be found on GitHub. And anyone can modify it to suit their needs." }
-        ],
-        "PL": [
-          { "type": "h4", "value": "DEUS - ochrona treści" },
-          { "type": "img", "value": "main/projects/DEUS/logo_mini.jpeg" },
-          { "type": "text", "value": "DEUS - to system-biblioteka do zdalnej kontroli jej modułów." },
-          { "type": "text", "value": "Prosto mówiąc, to system, który łączy się ze stroną i przestrzega określonych zasad, które użytkownicy przekazują mu sami." },
-          { "type": "text", "value": "Moduł BD - to moduł systemowy, odpowiedzialny za sprawdzanie reguł dla strony i podłączanie pozostałych modułów. Na etapie rozwoju był głównym modułem systemu i nie miał części wizualnej." },
-          { "type": "img", "value": "main/projects/DEUS/module_bd.jpeg" },
-          { "type": "text", "value": "Moduł Blocker - to moduł odpowiedzialny za kary. Ten moduł jest stosowany w przypadkach, gdy klient nie opłacił pracy i zmienił wszystkie dostępy w ten sposób, że pozostajesz bez pieniędzy, a twoja praca została oddana za darmo. W takim przypadku ten moduł wchodzi w akcję, stosując wybrany przez ciebie efekt do projektu." },
-          { "type": "img", "value": "main/projects/DEUS/module_blocker.gif" },
-          { "type": "text", "value": "Wersja alfa (kiedy projekt był tylko dla mnie) była bezpośrednio w projekcie, co trochę utrudniło pracę z nim bezpośrednio. Ale ponieważ był to tylko dla osobistego użytku - mnie to zadowalało." },
-          { "type": "img", "value": "main/projects/DEUS/alpha_1.jpeg" },
-          { "type": "text", "value": "Kiedy ten projekt zaczął być używany przez znajomych, postanowiono całkowicie przepisać jego strukturę, logikę i sposób działania. Większość użytkowników nie miała doświadczenia w pracy z kodem, dlatego to było konieczne." },
-          { "type": "text", "value": "Pierwszym najlepszym rozwiązaniem było podzielenie systemu na moduły. Baza danych sprawdza, które moduły są podłączone do strony i wczytuje je. Zrobiono to dla wygody zarządzania i oczywiście, aby znacząco zmniejszyć obciążenie strony." },
-          { "type": "text", "value": "Drugim rozwiązaniem było uproszczenie życia użytkowników. Zamiast zastanawiać się, jaki ogromny kod trzeba gdzieś skopiować, cały system został zaimplementowany jako biblioteka do podłączania." },
-          { "type": "code", "value": "<script src='https:\/\/deusnotam.github.io\/bd.js'><\/script>" },
-          { "type": "text", "value": "I ostatnim, ale nie mniej ważnym rozwiązaniem, było udostępnienie kodu źródłowego. Tak, cały system łatwo można znaleźć na GitHubie. I każdy może go dostosować do swoich potrzeb." }
-        ]
-      },
-      "hash": "DEUS",
-      "buttonText": {
-        "RU": "Перейти на сайт проекта",
-        "EN": "Go to project website",
-        "PL": "Przejdź na stronę projektu"
-      },
-      "url": "https://deusnotam.github.io"
-    },
+  - id: 1
+    title: "DEUS"
+    img: "main/projects/DEUS/avatar.png"
+    overlay: "main/projects/DEUS/overlay.png"
+    outline: "#00ff00"
+    category: "MyProject Library"
+    content:
+      RU:
+        - type: h4
+          value: "DEUS - защита контента"
+        - type: img
+          value: "main/projects/DEUS/logo_mini.jpeg"
+        - type: text
+          value: "DEUS - система-библиотека для удалённого контроля принадлежащих ей модулей."
+        - type: text
+          value: "Простыми словами это система, которая подключается к сайту и следует определенным правилам, которые ей передают сами пользователи."
+        - type: text
+          value: "Модуль BD - это системный модуль, он отвечает за проверку правил для сайта и подключение остальных модулей. На момент разработки являлся главным модулем системы и визуальную часть не имел."
+        - type: img
+          value: "main/projects/DEUS/module_bd.jpeg"
+        - type: text
+          value: "Модуль Blocker - это модуль отвечающий за наказания. Данный модуль применяется в случаях когда заказчик не оплатил работу и сменил все доступы так, что вы остались без денег и ваш труд отдан за бесплатно. В этом случае в работу вступает этот модуль применяя выбранный вами эффект к проекту."
+        - type: img
+          value: "main/projects/DEUS/module_blocker.gif"
+        - type: text
+          value: "Альфа версия (когда проект был только для меня) находилась непосредственно в проекте, что немного затрудняло работу с ним напрямую. Но так как это было только для личного использования - меня устраивало."
+        - type: img
+          value: "main/projects/DEUS/alpha_1.jpeg"
+        - type: text
+          value: "Как только этот проект пошёл по знакомым было решено переписать структуру, логику и принцип работы полностью. Ведь большинство тех, кто этим пользовался никогда не работал с кодом."
+        - type: text
+          value: "Первым лучшим решением было - раделение системы на модули. Из базы данных проверяется какие модули подключены к сайту и подгружает их. Сделано это для удобства управления и конечно же для того, чтобы значительно снизить нагрузку на сайт."
+        - type: text
+          value: "Вторым решением было упростить жизнь пользователям, вместо того чтобы поражаться тому какой огромный код им надо куда-то копировать, вся система была реализована как подключаемая библиотека."
+        - type: code
+          value: |
+            <script src='https://deusnotam.github.io/bd.js'></script>
+        - type: text
+          value: "И последним, но не менее важным решением было сделать открытый исходный код. Да, всю систему можно с лёгкостью найти на GitHub. И каждый может изменить её под свои нужды."
+      EN:
+        - type: h4
+          value: "DEUS - Content Protection"
+        - type: img
+          value: "main/projects/DEUS/logo_mini.jpeg"
+        - type: text
+          value: "DEUS is a system-library for remote control of its modules."
+        - type: text
+          value: "In simple terms, it is a system that connects to a website and follows certain rules that users transmit to it."
+        - type: text
+          value: "Module BD is a system module responsible for checking rules for the site and connecting other modules. At the development stage, it was the main system module and did not have a visual part."
+        - type: img
+          value: "main/projects/DEUS/module_bd.jpeg"
+        - type: text
+          value: "Module Blocker is a module responsible for penalties. This module is used in cases where the customer did not pay for the work and changed all accesses so that you were left without money and your work was given away for free. In this case, this module comes into play, applying the effect you choose to the project."
+        - type: img
+          value: "main/projects/DEUS/module_blocker.gif"
+        - type: text
+          value: "The alpha version (when the project was only for me) was directly in the project, which made it a bit difficult to work with it directly. But since it was only for personal use, it suited me."
+        - type: img
+          value: "main/projects/DEUS/alpha_1.jpeg"
+        - type: text
+          value: "As soon as this project gained traction, it was decided to completely rewrite the structure, logic, and operation principles. After all, the majority of those who used it had never worked with code."
+        - type: text
+          value: "The first and best solution was to divide the system into modules. The database checks which modules are connected to the site and loads them. This was done for ease of management and, of course, to significantly reduce the load on the site."
+        - type: text
+          value: "The second solution was to simplify the lives of users. Instead of being amazed at how much code they had to copy somewhere, the entire system was implemented as a plug-in library."
+        - type: code
+          value: |
+            <script src='https://deusnotam.github.io/bd.js'></script>
+        - type: text
+          value: "And last but not least, the decision was made to make the source code open. Yes, the entire system can easily be found on GitHub. And anyone can modify it to suit their needs."
+      PL:
+        - type: h4
+          value: "DEUS - ochrona treści"
+        - type: img
+          value: "main/projects/DEUS/logo_mini.jpeg"
+        - type: text
+          value: "DEUS - to system-biblioteka do zdalnej kontroli jej modułów."
+        - type: text
+          value: "Prosto mówiąc, to system, który łączy się ze stroną i przestrzega określonych zasad, które użytkownicy przekazują mu sami."
+        - type: text
+          value: "Moduł BD - to moduł systemowy, odpowiedzialny za sprawdzanie reguł dla strony i podłączanie pozostałych modułów. Na etapie rozwoju był głównym modułem systemu i nie miał części wizualnej."
+        - type: img
+          value: "main/projects/DEUS/module_bd.jpeg"
+        - type: text
+          value: "Moduł Blocker - to moduł odpowiedzialny za kary. Ten moduł jest stosowany w przypadkach, gdy klient nie opłacił pracy i zmienił wszystkie dostępy w ten sposób, że pozostajesz bez pieniędzy, a twoja praca została oddana za darmo. W takim przypadku ten moduł wchodzi w akcję, stosując wybrany przez ciebie efekt do projektu."
+        - type: img
+          value: "main/projects/DEUS/module_blocker.gif"
+        - type: text
+          value: "Wersja alfa (kiedy projekt był tylko dla mnie) była bezpośrednio w projekcie, co trochę utrudniło pracę z nim bezpośrednio. Ale ponieważ był to tylko dla osobistego użytku - mnie to zadowalało."
+        - type: img 
+          value: "main/projects/DEUS/alpha_1.jpeg"
+        - type: text
+          value: "Kiedy ten projekt zaczął być używany przez znajomych, postanowiono całkowicie przepisać jego strukturę, logikę i sposób działania. Większość użytkowników nie miała doświadczenia w pracy z kodem, dlatego to było konieczne."
+        - type: text
+          value: "Pierwszym najlepszym rozwiązaniem było podzielenie systemu na moduły. Baza danych sprawdza, które moduły są podłączone do strony i wczytuje je. Zrobiono to dla wygody zarządzania i oczywiście, aby znacząco zmniejszyć obciążenie strony."
+        - type: text
+          value: "Drugim rozwiązaniem było uproszczenie życia użytkowników. Zamiast zastanawiać się, jaki ogromny kod trzeba gdzieś skopiować, cały system został zaimplementowany jako biblioteka do podłączania."
+        - type: code
+          value: |
+            <script src='https://deusnotam.github.io/bd.js'></script>
+        - type: text
+          value: "I ostatnim, ale nie mniej ważnym rozwiązaniem, było udostępnienie kodu źródłowego. Tak, cały system łatwo można znaleźć na GitHubie. I każdy może go dostosować do swoich potrzeb."
+    hash: "DEUS"
+    buttonText:
+      RU: "Перейти на сайт проекта"
+      EN: "Go to project website"
+      PL: "Przejdź na stronę projektu"
+    url: "https://deusnotam.github.io"
 
-    {
-      "id": 0,
-      "title": "VADI",
-      "img": "main/projects/VADI/avatar.png",
-      "overlay": "main/projects/VADI/overlay.png",
-      "outline": "#006CFF",
-      "category": "Design",
-      "content": {
-        "RU": [
-          { "type": "h4", "value": "Дизайн для стримера VADI" },
-          { "type": "text", "value": "Дизайн игрового оверлея выполнен в неоновом стиле по запросу заказчика. Также была добавлена шапка, которая не слишком привлекает внимание, но содержит нужную информацию о стриме." },
-          { "type": "img", "value": "main/projects/VADI/gameoverlay.png" },
-          { "type": "text", "value": "Дизайн браузерного оверлея был дополнительным желанием, так как иногда стрим проходит не в игровом формате, а в познавательно-развлекательном." },
-          { "type": "img", "value": "main/projects/VADI/browseroverlay.png" },
-          { "type": "text", "value": "Создание стикер-пака оказалось более сложным, так как заказчик сам не знал, что именно ему нужно. Пришлось потратить немало времени на отслеживание часто используемых фраз и приколов среди зрителей." },
-          { "type": "img", "value": "main/projects/VADI/emoji.png" }
-        ],
-        "EN": [
-          { "type": "h4", "value": "Design for streamer VADI" },
-          { "type": "text", "value": "The design of the gaming overlay was done in neon style as per the customer's request. Also, a header was added that does not attract too much attention but contains the necessary information about the stream." },
-          { "type": "img", "value": "main/projects/VADI/gameoverlay.png" },
-          { "type": "text", "value": "Designing a browser overlay was an additional wish, as sometimes the stream is not in gaming format, but in an informative-entertaining format." },
-          { "type": "img", "value": "main/projects/VADI/browseroverlay.png" },
-          { "type": "text", "value": "Creating a sticker pack was more difficult because the client himself did not know exactly what he needed. It took a lot of time to track frequently used phrases and jokes among viewers." },
-          { "type": "img", "value": "main/projects/VADI/emoji.png" }
-        ],
-        "PL": [
-          { "type": "h4", "value": "Projekt dla streamera VADI" },
-          { "type": "text", "value": "Projekt nakładki gry wykonano w stylu neonowym na życzenie klienta. Dodano również nagłówek, który nie przyciąga zbyt wiele uwagi, ale zawiera potrzebne informacje o transmisji." },
-          { "type": "img", "value": "main/projects/VADI/gameoverlay.png" },
-          { "type": "text", "value": "Projekt nakładki na przeglądarkę był dodatkowym życzeniem, ponieważ czasami transmisja odbywa się nie w formacie gry, ale w formie poznawczo-rozrywkowej." },
-          { "type": "img", "value": "main/projects/VADI/browseroverlay.png" },
-          { "type": "text", "value": "Tworzenie pakietu naklejek było bardziej skomplikowane, ponieważ klient sam nie wiedział dokładnie, czego potrzebuje. Zajęło to dużo czasu na śledzenie często używanych fraz i dowcipów wśród widzów." },
-          { "type": "img", "value": "main/projects/VADI/emoji.png" }
-        ]
-      },
-      "hash": "VADI",
-      "buttonText": {
-        "RU": "YouTube канал стримера",
-        "EN": "Streamer's YouTube channel",
-        "PL": "Kanał YouTube streamera"
-      },
-      "url": "https://www.youtube.com/@VadiHS"
-    }
-  ],
-  "filters": {
-    "All": {
-      "RU": "Все",
-      "EN": "All",
-      "PL": "Wszystko"
-    },
-    "Library": {
-      "RU": "Библиотеки",
-      "EN": "Libraries",
-      "PL": "Biblioteki"
-    },
-    "Tilda": {
-      "RU": "Tilda",
-      "EN": "Tilda",
-      "PL": "Tilda"
-    },
-    "Layout": {
-      "RU": "Верстка сайтов",
-      "EN": "Website layout",
-      "PL": "Układ strony internetowej"
-    },
-    "MyProject": {
-      "RU": "Мои проекты",
-      "EN": "My projects",
-      "PL": "Moje projekty"
-    },
-    "Design": {
-      "RU": "Дизайн",
-      "EN": "Design",
-      "PL": "Design"
-    }
-  }
-}
+  - id: 0
+    title: "VADI"
+    img: "main/projects/VADI/avatar.png"
+    overlay: "main/projects/VADI/overlay.png"
+    outline: "#006CFF"
+    category: "Design"
+    content:
+      RU:
+        - type: h4
+          value: "Дизайн для стримера VADI"
+        - type: text
+          value: "Дизайн игрового оверлея выполнен в неоновом стиле по запросу заказчика. Также была добавлена шапка, которая не слишком привлекает внимание, но содержит нужную информацию о стриме."
+        - type: img
+          value: "main/projects/VADI/gameoverlay.png"
+        - type: text
+          value: "Дизайн браузерного оверлея был дополнительным желанием, так как иногда стрим проходит не в игровом формате, а в познавательно-развлекательном."
+        - type: img
+          value: "main/projects/VADI/browseroverlay.png"
+        - type: text
+          value: "Создание стикер-пака оказалось более сложным, так как заказчик сам не знал, что именно ему нужно. Пришлось потратить немало времени на отслеживание часто используемых фраз и приколов среди зрителей."
+        - type: img
+          value: "main/projects/VADI/emoji.png"
+      EN:
+        - type: h4
+          value: "Design for streamer VADI"
+        - type: text
+          value: "The design of the gaming overlay was done in neon style as per the customer's request. Also, a header was added that does not attract too much attention but contains the necessary information about the stream."
+        - type: img
+          value: "main/projects/VADI/gameoverlay.png"
+        - type: text
+          value: "Designing a browser overlay was an additional wish, as sometimes the stream is not in gaming format, but in an informative-entertaining format."
+        - type: img
+          value: "main/projects/VADI/browseroverlay.png"
+        - type: text
+          value: "Creating a sticker pack was more difficult because the client himself did not know exactly what he needed. It took a lot of time to track frequently used phrases and jokes among viewers."
+        - type: img
+          value: "main/projects/VADI/emoji.png"
+      PL:
+        - type: h4
+          value: "Projekt dla streamera VADI"
+        - type: text
+          value: "Projekt nakładki gry wykonano w stylu neonowym na życzenie klienta. Dodano również nagłówek, który nie przyciąga zbyt wiele uwagi, ale zawiera potrzebne informacje o transmisji."
+        - type: img
+          value: "main/projects/VADI/gameoverlay.png"
+        - type: text
+          value: "Projekt nakładki na przeglądarkę był dodatkowym życzeniem, ponieważ czasami transmisja odbywa się nie w formacie gry, ale w formie poznawczo-rozrywkowej."
+        - type: img
+          value: "main/projects/VADI/browseroverlay.png"
+        - type: text
+          value: "Tworzenie pakietu naklejek było bardziej skomplikowane, ponieważ klient sam nie wiedział dokładnie, czego potrzebuje. Zajęło to dużo czasu na śledzenie często używanych fraz i dowcipów wśród widzów."
+        - type: img
+          value: "main/projects/VADI/emoji.png"
+    hash: "VADI"
+    buttonText:
+      RU: "YouTube канал стримера"
+      EN: "Streamer's YouTube channel"
+      PL: "Kanał YouTube streamera"
+    url: "https://www.youtube.com/@VadiHS"
+
+
+filters:
+  All:
+    RU: "Все"
+    EN: "All"
+    PL: "Wszystko"
+  Library:
+    RU: "Библиотеки"
+    EN: "Libraries"
+    PL: "Biblioteki"
+  Tilda:
+    RU: "Tilda"
+    EN: "Tilda"
+    PL: "Tilda"
+  Layout:
+    RU: "Верстка сайтов"
+    EN: "Website layout"
+    PL: "Układ strony internetowej"
+  MyProject:
+    RU: "Мои проекты"
+    EN: "My projects"
+    PL: "Moje projekty"
+  Design:
+    RU: "Дизайн"
+    EN: "Design"
+    PL: "Design"

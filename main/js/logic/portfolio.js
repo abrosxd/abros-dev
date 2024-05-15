@@ -85,9 +85,10 @@ function handleTouchEnd() {
 }
        
 // Создание карточек
-fetch('main/json/portfolio.json')
-.then(response => response.json())
-.then(data => {
+fetch('main/yaml/portfolio.yaml')
+.then(response => response.text())
+.then(yamlData => {
+  const data = jsyaml.load(yamlData);
   data.projects.forEach(project => {
     const card = document.createElement('div');
     card.className = 'project-card';
@@ -222,7 +223,7 @@ fetch('main/json/portfolio.json')
   
   changefilters(currentLanguage);
 })
-.catch(error => console.error('Ошибка загрузки файла portfolio.json', error));
+.catch(error => console.error('Ошибка загрузки файла portfolio.yaml', error));
 
 // Работа фильтра
 const filter = document.querySelector('.filter');

@@ -185,13 +185,14 @@ main {
 }
 
 #popup-content h4 {
-    font-size: larger;
+    font-size: x-large;
     color: #8a8a8a;
 }
 
 #popup-content p {
     font-size: large;
     color: #8a8a8a;
+    font-weight: 600;
 }
 
 #popup-content ul {

@@ -1,12 +1,11 @@
 projects:
-    {
-      "id": 6,
-      "title": "Tilda Player",
-      "img": "main/projects/Tilda/Player/avatar.png",
-      "overlay": "main/projects/Tilda/Player/overlay.png",
-      "outline": "#7e70ff",
-      "category": "Layout Tilda",
-      "content": {
+  - id: 6
+    title: "Tilda Player"
+    img: "main/projects/Tilda/Player/avatar.png"
+    overlay: "main/projects/Tilda/Player/overlay.png"
+    outline: "#7e70ff"
+    category: "Layout Tilda"
+    content:
         "RU": [
           { "type": "h4", "value": "Плеер с плейлистом для сайта" },
           { "type": "img", "value": "main/projects/Tilda/Player/logo_mini.svg" },

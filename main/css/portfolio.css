@@ -191,6 +191,23 @@ main {
     white-space: pre-wrap;
     font-size: larger;
     color: #8a8a8a;
+    font-family: var(--font-basic);
+}
+
+.popupinstruction h2 {
+    margin: 0;
+    font-size: larger;
+}
+
+.popupinstruction h3 {
+    margin: 0;
+    font-size: large;
+}
+
+.popupinstruction ul {
+    flex-wrap: wrap;
+    list-style: inside;
+    font-size: 1em;
 }
 
 .filter {

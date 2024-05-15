@@ -1,6 +1,7 @@
-fetch('main/json/about.json')
-.then(response => response.json())
-.then(data => {
+fetch('main/yaml/about.yaml')
+.then(response => response.text())
+.then(yamlData => {
+    const data = jsyaml.load(yamlData);
     const updateDateTime = () => {
         const nowInWarsaw = new Date(new Date().toLocaleString("en-US", {timeZone: "Europe/Warsaw"}));
         const daysOfWeek = data.time.days[currentLanguage];

@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Смена языка меню
   function changeMenuText(language) {
-      fetch('main/json/menu.yaml')
+      fetch('main/yaml/menu.yaml')
           .then(response => response.text())
           .then(yamlData => {
             const data = jsyaml.load(yamlData);

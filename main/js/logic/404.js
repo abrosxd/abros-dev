@@ -2,14 +2,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Смена языка 404
   function changeinfo404(language) {
-      fetch('main/json/404.json')
-          .then(response => response.json())
-          .then(data => {
+      fetch('main/yaml/404.yaml')
+          .then(response => response.text())
+          .then(yamlData => {
+            const data = jsyaml.load(yamlData);
             const info404Element = document.querySelector('.info404');
             const info404Text = data.info404[language];
             info404Element.textContent = info404Text;
           })
-          .catch(error => console.error('Ошибка загрузки файла 404.json', error));
+          .catch(error => console.error('Ошибка загрузки файла 404.yaml', error));
   }
   changeinfo404(currentLanguage);
 

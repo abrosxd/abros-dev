@@ -106,15 +106,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Смена языка меню
   function changeMenuText(language) {
-      fetch('main/json/menu.yaml')
-          .then(response => response.text())
-          .then(yamlData => {
-            const data = jsyaml.load(yamlData);
+      fetch('main/json/menu.json')
+          .then(response => response.json())
+          .then(data => {
             document.querySelector('.tportfolio').textContent = data.menu.portfolio[language];
             // document.querySelector('.tlibrary').textContent = data.menu.library[language];
             document.querySelector('.tabout').textContent = data.menu.about[language];
           })
-          .catch(error => console.error('Ошибка загрузки файла menu.yaml', error));
+          .catch(error => console.error('Ошибка загрузки файла menu.json', error));
   }
   changeMenuText(currentLanguage);
 

@@ -483,14 +483,12 @@ projects:
     content:
       ru: |
         <h2>Вёрстка лендинга для салона красоты Grushka</h2>
-        <img src="main/projects/GrushkaEndo/logo_mini.png"
+        <img src="main/projects/GrushkaEndo/logo_mini.png">
         <h3>Задача состояла в том, чтобы перенести уже имеющийся сайт на платформе Tilda на отдельный хостинг.</h3>
         <h3>Сложность заключалась в том, что Tilda наложила ограничения на аккаунт из-за чего сайт был заблокирован, а экспорт не доступен. Поэтому они обратились ко мне.</h3>
         <h3>И вот конечный результат!</h3>
-        - type: img
-          value: "main/projects/GrushkaEndo/site.png"
-        - type: text
-          value: "Посмотреть сайт можно кликнув по кнопке ниже."
+        <img src="main/projects/GrushkaEndo/site.png">
+        <h3>Посмотреть сайт можно кликнув по кнопке ниже."</h3>
       en:
         - type: h4
           value: "Designing a landing page for Grushka beauty salon"

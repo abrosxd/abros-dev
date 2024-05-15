@@ -109,17 +109,25 @@ fetch('main/yaml/portfolio.yaml')
   });
   
   // Создание Popup
-  function escapeHTML(html) {
+  function escapeHTMLInsideCode(html) {
     return html.replace(/<code[^>]*>(.*?)<\/code>/gs, function(match, codeContent) {
       return '<code>' + escapeHTML(codeContent) + '</code>';
     });
   }
-
+  
+  function escapeHTML(html) {
+    return html.replace(/&/g, "&amp;")
+               .replace(/</g, "&lt;")
+               .replace(/>/g, "&gt;")
+               .replace(/"/g, "&quot;")
+               .replace(/'/g, "&#039;");
+  }
+  
   function openPopup(id) {
     const project = data.projects.find(project => project.id === id);
     const popupContent = document.getElementById('popup-content');
     const content = project.content[currentLanguage];
-    const escapedContent = escapeHTML(content);
+    const escapedContent = escapeHTMLInsideCode(content);
     popupContent.innerHTML = escapedContent;
 
     const popupMenu = document.getElementById('popup-menu');

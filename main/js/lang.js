@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     abrosnoti.create("lang", "Русский", "Язык был изменен. Приятного просмотра!", 3);
                     break;
                 case 'PL':
-                    abrosnoti.create("lang", "Polski", "Język został zmieniony. Miłego просмотра!", 3);
+                    abrosnoti.create("lang", "Polski", "Język został zmieniony. Miłego przeglądania!", 3);
                     break;
                 default:
                     break;
@@ -74,3 +74,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, 1000);
 });
+
+

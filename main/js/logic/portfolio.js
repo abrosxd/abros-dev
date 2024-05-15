@@ -136,7 +136,7 @@ fetch('main/yaml/portfolio.yaml')
         popupContent.appendChild(paragraph);
       } else if (type === 'instruction') {
         const insrtuction = document.createElement('pre');
-        insrtuction.innerText = value;
+        insrtuction.innerHTML = value;
         insrtuction.className = 'popupinstruction';
         popupContent.appendChild(insrtuction);
       } else if (type === 'code') {

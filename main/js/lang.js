@@ -20,51 +20,55 @@ const reloadPage = () => {
     window.location.reload();
 };
 
-// Функция для обработки выбора языка
-const handleLanguageSelection = newLanguage => {
-    setLanguage(newLanguage);
-    document.querySelectorAll('.lang-sub .button').forEach(button => {
-        button.classList.remove('active');
-        if (button.getAttribute('lang') === newLanguage) {
-            button.classList.add('active');
+var savedLanguage = getLanguage();
+
+if (!savedLanguage) {
+    setLanguage(checkLanguage());
+}
+
+var currentLanguage = savedLanguage;
+
+document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('.lang-sub .button');
+    
+    buttons.forEach(function(item) {
+        if (item.getAttribute('lang') === currentLanguage) {
+            item.classList.add('active');
         }
-    });
-    reloadPage();
-};
-
-// Функция для отображения уведомления о смене языка
-const showLanguageChangeNotification = currentLanguage => {
-    const notifications = {
-        'EN': "Language has been changed. Enjoy browsing!",
-        'RU': "Язык был изменен. Приятного просмотра!",
-        'PL': "Język został zmieniony. Miłego przeglądania!"
-    };
-    abrosnoti.create("lang", currentLanguage, notifications[currentLanguage], 3);
-};
-
-// Основной код
-document.addEventListener('DOMContentLoaded', () => {
-    // Проверяем язык и устанавливаем его, если он не установлен
-    var currentLanguage = getLanguage() || checkLanguage();
-    setLanguage(currentLanguage);
-
-    // Обработчик событий для кнопок выбора языка
-    document.querySelectorAll('.lang-sub .button').forEach(button => {
-        button.addEventListener('click', () => {
-            const newLanguage = button.getAttribute('lang');
-            handleLanguageSelection(newLanguage);
+        item.addEventListener('click', function() {
+            var newLanguage = this.getAttribute('lang');
+            setLanguage(newLanguage);
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+            this.classList.add('active');
+            reloadPage();
         });
-        if (button.getAttribute('lang') === currentLanguage) {
-            button.classList.add('active');
-        }
     });
 
-    // Показываем уведомление о смене языка
-    setTimeout(() => {
-        const previousLanguage = localStorage.getItem("LanguagePrevious");
+    setTimeout(function() {
+        function getPreviousLanguage() {
+            return localStorage.getItem("LanguagePrevious");
+        }
+        function setPreviousLanguage(language) {
+            localStorage.setItem("LanguagePrevious", language);
+        }
+        var previousLanguage = getPreviousLanguage();
         if (previousLanguage !== currentLanguage) {
-            showLanguageChangeNotification(currentLanguage);
-            localStorage.setItem("LanguagePrevious", currentLanguage);
+            switch (currentLanguage) {
+                case 'EN':
+                    abrosnoti.create("lang", "English", "Language has been changed. Enjoy browsing!", 3);
+                    break;
+                case 'RU':
+                    abrosnoti.create("lang", "Русский", "Язык был изменен. Приятного просмотра!", 3);
+                    break;
+                case 'PL':
+                    abrosnoti.create("lang", "Polski", "Język został zmieniony. Miłego просмотра!", 3);
+                    break;
+                default:
+                    break;
+            }
+            setPreviousLanguage(currentLanguage)
         }
     }, 1000);
 });

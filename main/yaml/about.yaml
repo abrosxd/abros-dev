@@ -26,7 +26,7 @@ notes:
     color: "rgb(72, 154, 255)"
     img: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTM0cHlobXc1aDVkN2ptaWhlODM0eXV0cW1tdXBmbXdza3VlMjV2NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kfqjGTVX3YE6Y/giphy.gif"
 
-    - link": "#"
+    - link: "#"
     title": 
         RU: "Курсы"
         EN: "Courses"
@@ -114,7 +114,7 @@ reviews:
     PL: "Opinie"
 
 reviewsData:
-    - img": "main/img/no-image.jpeg"
+    - img: "main/img/no-image.jpeg"
     name:
         RU: "Адель (Сонграйтинг О. Шаумаров)"
         EN: "Adele (Songwriting by O. Shaumarov)"
@@ -124,7 +124,7 @@ reviewsData:
         EN: "Daniel, good day! I personally thank you for your fast and high-quality work!!! Thank you very much!!! I will definitely keep your contact and recommend you!"
         PL: "Danielu, dzień dobry! Serdecznie dziękuję Ci za szybką i wysokiej jakości pracę!!! Bardzo Ci dziękuję!!! Z pewnością zachowam Twój kontakt i będę polecać!"
 
-    - img": "main/img/reviews/AnnaMoiseenko.jpeg"
+    - img: "main/img/reviews/AnnaMoiseenko.jpeg"
     name:
         RU: "Анна Моисеенко"
         EN: "Anna Moiseenko"

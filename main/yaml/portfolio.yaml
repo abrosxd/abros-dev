@@ -58,19 +58,19 @@ projects:
             <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">
         - type: instruction
           value: |
-              HTML блок это прогресс бар звука
-              Туда вставить код:
+            HTML блок это прогресс бар звука
+            Туда вставить код:
         - type: code
           value: |
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
         - type: instruction
           value: |
-              Две кнопки/картинки с классами player-btn-buy и player-text они будут перенаправлять на страницу играющего трека, если такой функционал не требуется, то просто их спрячте за пределами видимости
-              Картинка с классом player-play это будет кнопка Play|Pause
-              Картинка с классом player-next это будет кнопка следующей песни
-              Картинка с классом player-prev это будет кнопка предыдущей песни
-              Текст с текстом "Ничего не исполняется" с классом player-title это будет название играющей песни
-              Шейп с классом player-cover это будет картинка играющей песни
+            Две кнопки/картинки с классами player-btn-buy и player-text они будут перенаправлять на страницу играющего трека, если такой функционал не требуется, то просто их спрячте за пределами видимости
+            Картинка с классом player-play это будет кнопка Play|Pause
+            Картинка с классом player-next это будет кнопка следующей песни
+            Картинка с классом player-prev это будет кнопка предыдущей песни
+            Текст с текстом "Ничего не исполняется" с классом player-title это будет название играющей песни
+            Шейп с классом player-cover это будет картинка играющей песни
               
             5. Все остальное можно настраивать по своему вкусу
               
@@ -185,19 +185,19 @@ projects:
             <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">"
         - type: insrtuction
           value: |
-              HTML block is the sound progress bar
-              Insert the code there:
+            HTML block is the sound progress bar
+            Insert the code there:
         - type: code
           value: |
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
         - type: insrtuction
           value: |
-              Two buttons/images with classes player-btn-buy and player-text will redirect to the page of the playing track, if this functionality is not needed, simply hide them out of view
-              Image with class player-play will serve as the Play|Pause button
-              Image with class player-next will serve as the next song button
-              Image with class player-prev will serve as the previous song button
-              Text with the phrase "Nothing is playing" with class player-title will display the title of the playing song
-              Shape with class player-cover will display the image of the playing song
+            Two buttons/images with classes player-btn-buy and player-text will redirect to the page of the playing track, if this functionality is not needed, simply hide them out of view
+            Image with class player-play will serve as the Play|Pause button
+            Image with class player-next will serve as the next song button
+            Image with class player-prev will serve as the previous song button
+            Text with the phrase "Nothing is playing" with class player-title will display the title of the playing song
+            Shape with class player-cover will display the image of the playing song
               
             5. Everything else can be customized to your taste
               
@@ -312,19 +312,19 @@ projects:
             <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">"
         - type: insrtuction
           value: |
-              Blok HTML to pasek postępu dźwięku
-              Wstaw tam kod:
+            Blok HTML to pasek postępu dźwięku
+            Wstaw tam kod:
         - type: code
           value: |
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">"
         - type: insrtuction
           value: |
-              Dwa przyciski/obrazki z klasami player-btn-buy i player-text będą przekierowywać na stronę odtwarzanego utworu, jeśli ta funkcja nie jest potrzebna, po prostu ukryj je poza widokiem
-              Obrazek z klasą player-play będzie służył jako przycisk Play|Pause
-              Obrazek z klasą player-next będzie służył jako przycisk następnego utworu
-              Obrazek z klasą player-prev będzie służył jako przycisk poprzedniego utworu
-              Tekst z napisem "Nic nie jest odtwarzane" z klasą player-title będzie wyświetlał tytuł odtwarzanego utworu
-              Kształt z klasą player-cover będzie wyświetlał obraz odtwarzanego utworu
+            Dwa przyciski/obrazki z klasami player-btn-buy i player-text będą przekierowywać na stronę odtwarzanego utworu, jeśli ta funkcja nie jest potrzebna, po prostu ukryj je poza widokiem
+            Obrazek z klasą player-play będzie służył jako przycisk Play|Pause
+            Obrazek z klasą player-next będzie służył jako przycisk następnego utworu
+            Obrazek z klasą player-prev będzie służył jako przycisk poprzedniego utworu
+            Tekst z napisem "Nic nie jest odtwarzane" z klasą player-title będzie wyświetlał tytuł odtwarzanego utworu
+            Kształt z klasą player-cover będzie wyświetlał obraz odtwarzanego utworu
               
             5. Pozostałe ustawienia można dostosować według własnych preferencji
               

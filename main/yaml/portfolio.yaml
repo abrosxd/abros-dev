@@ -6,79 +6,71 @@ projects:
     outline: "#7e70ff"
     category: "Tilda"
     content:
-      ru:
-        - type: h4
-          value: "Плеер с плейлистом для сайта"
-        - type: img
-          value: "main/projects/Tilda/Player/logo_mini.svg"
-        - type: text
-          value: "Сайт известного композитора. Обратились ко мне с задачей создать для сайта плеер."
-        - type: text
-          value: "Плеер был реализован библиотекой, поэтому данную модификацию можно использовать в других проектах."
-        - type: img
-          value: "main/projects/Tilda/Player/site.gif"
-        - type: text
-          value: "Инструкция"
-        - type: instruction
-          value: |
-            <h2>Создание плейлиста</h2>  
-            <h3>1. В товарах создать товар в котором:</h3>
-            <ul>
-            <li>Заголовок: Название трека</li>
-            <li>Изображение: Обложка трека</li>
-            <li>Разделы каталога: можно поместить в раздел, если у вас есть еще и другие товары или разные плейлисты</li>
-            <li>В характеристиках добавить новую характеристику (Название: music, Значение: прямая ссылка на трек)</li>
-            <li>В ссылку на страницу с товаром добавить ссылку для перехода по кнопке (Ниже поймете для каких)</li>
-            </ul>
-            <h3>2. Добавить все треки по инструкции 1.</h3>
-            <h2>Создание плеера</h2>
-            <h3>1. Добавить каталог ST310N и настроить его стиль, обязательно должно быть:</h3>
-            <ul>
-            <li>Карточки -> Показывать второе изображение при наведении - отключено</li>
-            <li>Карточки -> Показывать пагинацию (вместо кнопки «Загрузить еще») - включено</li>
-            <li>Карточки -> Два товара в ряд на мобильных устройствах - включено</li>
-            <li>Карточки -> Количество видимых товаров до кнопки «Загрузить ещё» - любое, оптимально 12</li>
-            <li>Секция «Смотрите также» -> Блок 'Смотрите также' - не выводить</li>
-            <li>Стиль галереи -> Соотношение сторон - 1:1 квадрат</li>
-            <li>Фильтры & Разделы -> Спрятать фильтры - включено</li>
-            <li>Фильтры & Разделы -> Спрятать список разделов каталога - включено</li>
-            <li>Фильтры & Разделы -> Сортировка товаров по умолчанию - порядок по умолчанию</li>
-            </ul>
-            <h3>2. Подключить раздел товаров с вашей музыкой</h3> 
-            <h3>3. Под блоком каталога создать зероблок, в настройках задать ему класс какой захотите (Например uc-player)</h3>
-            <h3>4. В этом зероблоке создаёте плеер, обязательно должно быть:</h3>
-            <ul>
-            <li>Высота контейнера 70px на всех экранах</li>
-            <li>HTML блок на всю длинну страницы это прогресс бар трека
-            Туда вставить код:</li>
-            </ul>
-        - type: code
-          value: |
+      ru: |
+        <h2>Плеер с плейлистом для сайта</h2>
+        <img src="main/projects/Tilda/Player/logo_mini.svg">
+        <h3>Сайт известного композитора. Обратились ко мне с задачей создать для сайта плеер.</h3>
+        <h3>Плеер был реализован библиотекой, поэтому данную модификацию можно использовать в других проектах.</h3>
+        <img src="main/projects/Tilda/Player/site.gif"
+        <h3>Инструкция</h3>
+        <h4>Создание плейлиста</h4>  
+        <p>1. В товарах создать товар в котором:</p>
+        <ul>
+          <li>Заголовок: Название трека</li>
+          <li>Изображение: Обложка трека</li>
+          <li>Разделы каталога: можно поместить в раздел, если у вас есть еще и другие товары или разные плейлисты</li>
+          <li>В характеристиках добавить новую характеристику (Название: music, Значение: прямая ссылка на трек)</li>
+          <li>В ссылку на страницу с товаром добавить ссылку для перехода по кнопке (Ниже поймете для каких)</li>
+        </ul>
+        <p>2. Добавить все треки по инструкции 1.</p>
+        <h4>Создание плеера</h4>
+        <p>1. Добавить каталог ST310N и настроить его стиль, обязательно должно быть:</p>
+        <ul>
+          <li>Карточки -> Показывать второе изображение при наведении - отключено</li>
+          <li>Карточки -> Показывать пагинацию (вместо кнопки «Загрузить еще») - включено</li>
+          <li>Карточки -> Два товара в ряд на мобильных устройствах - включено</li>
+          <li>Карточки -> Количество видимых товаров до кнопки «Загрузить ещё» - любое, оптимально 12</li>
+          <li>Секция «Смотрите также» -> Блок 'Смотрите также' - не выводить</li>
+          <li>Стиль галереи -> Соотношение сторон - 1:1 квадрат</li>
+          <li>Фильтры & Разделы -> Спрятать фильтры - включено</li>
+          <li>Фильтры & Разделы -> Спрятать список разделов каталога - включено</li>
+          <li>Фильтры & Разделы -> Сортировка товаров по умолчанию - порядок по умолчанию</li>
+        </ul>
+        <p>2. Подключить раздел товаров с вашей музыкой</p> 
+        <p>3. Под блоком каталога создать зероблок, в настройках задать ему класс какой захотите (Например uc-player)</p>
+        <p>4. В этом зероблоке создаёте плеер, обязательно должно быть:</p>
+        <ul>
+          <li>Высота контейнера 70px на всех экранах</li>
+          <li>HTML блок на всю длинну страницы это прогресс бар трека
+          Туда вставить код:</li>
+        </ul>
+        <pre>
+          <code class="language-html match-braces">
             <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">
-        - type: instruction
-          value: |
-            <ul>
-            <li>HTML блок это прогресс бар звука
-            Туда вставить код:</li>
-            </ul>
-        - type: code
-          value: |
+          </code>
+        </pre>
+        <ul>
+          <li>HTML блок это прогресс бар звука
+          Туда вставить код:</li>
+        </ul>
+        <pre>
+          <code class="language-html match-braces">
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
-        - type: instruction
-          value: |
-            <ul>
-            <li>Две кнопки/картинки с классами player-btn-buy и player-text они будут перенаправлять на страницу играющего трека, если такой функционал не требуется, то просто их спрячте за пределами видимости</li>
-            <li>Картинка с классом player-play это будет кнопка Play|Pause</li>
-            <li>Картинка с классом player-next это будет кнопка следующей песни</li>
-            <li>Картинка с классом player-prev это будет кнопка предыдущей песни</li>
-            <li>Текст с текстом "Ничего не исполняется" с классом player-title это будет название играющей песни</li>
-            <li>Шейп с классом player-cover это будет картинка играющей песни</li>
-            </ul>
-            <h3>5. Все остальное можно настраивать по своему вкусу</h3> 
-            <h3>6. Под блоком плеера добавить T123</h3> 
-            <h3>7. Код ниже вставить в T123 и настроить все переменные для плеера</h3>
-        - type: code
-          value: |
+          </code>
+        </pre>
+        <ul>
+          <li>Две кнопки/картинки с классами player-btn-buy и player-text они будут перенаправлять на страницу играющего трека, если такой функционал не требуется, то просто их спрячте за пределами видимости</li>
+          <li>Картинка с классом player-play это будет кнопка Play|Pause</li>
+          <li>Картинка с классом player-next это будет кнопка следующей песни</li>
+          <li>Картинка с классом player-prev это будет кнопка предыдущей песни</li>
+          <li>Текст с текстом "Ничего не исполняется" с классом player-title это будет название играющей песни</li>
+          <li>Шейп с классом player-cover это будет картинка играющей песни</li>
+        </ul>
+        <p>5. Все остальное можно настраивать по своему вкусу</p> 
+        <p>6. Под блоком плеера добавить T123</p> 
+        <p>7. Код ниже вставить в T123 и настроить все переменные для плеера</p>
+        <pre>
+          <code class="language-html match-braces">
             <!--Плеер из каталога товаров by ABROS-->
               
             <audio id="audio" data-track-number="0"></audio>
@@ -112,11 +104,11 @@ projects:
             };
             </script>
             <script src = 'https://abros.dev/tilda/mods/player.js'></script>
-        - type: instruction
-          value: |
-            Если вы не знаете где найти ID Storepart, то под каталогом создайте T123, вставте код ниже, опубликуйте и зайдите на сайт, вы увидите свой ID Storepart. После чего код можно удалить
-        - type: code
-          value: |
+          </code>
+        </pre>
+        <p>Если вы не знаете где найти ID Storepart, то под каталогом создайте T123, вставте код ниже, опубликуйте и зайдите на сайт, вы увидите свой ID Storepart. После чего код можно удалить</p>
+        <pre>
+          <code class="language-html match-braces">
             <script>
             document.addEventListener("DOMContentLoaded", function() {
               var scripts = document.querySelectorAll('script');
@@ -133,81 +125,75 @@ projects:
               });
             });
             </script>
-      en:
-        - type: h4
-          value: "Player with Playlist for Your Website"
-        - type: img
-          value: "main/projects/Tilda/Player/logo_mini.svg"
-        - type: text
-          value: "Website of a famous composer. I was approached to create a player for the website."
-        - type: text
-          value: "The player was implemented with a library, so this modification can also be used in other projects."
-        - type: img
-          value: "main/projects/Tilda/Player/site.gif"
-        - type: text
-          value: "Instructions"
-        - type: instruction
-          value: |
-            <h2>Playlist Creation</h2>             
-            <h3>1. In products, create a product in which:</h3>
-            <ul>
-            <li>Title: Track Title</li>
-            <li>Image: Track Cover</li>
-            <li>Catalog Sections: can be placed in a section if you have other products or different playlists</li>
-            <li>In characteristics add a new characteristic (Name: music, Value: direct link to the track)</li>
-            <li>In the product page link, add a link for navigation button (See below for which)</li>
-            </ul>            
-            <h3>2. Add all tracks as per instruction 1.</h3>              
-            <h2>Player Creation</h2>             
-            <h3>1. Add the ST310N catalog and customize its style, it must have:</h3>
-            <ul>
-            <li>Cards -> Show second image on hover - disabled</li>
-            <li>Cards -> Show pagination (instead of 'Load more' button) - enabled</li>
-            <li>Cards -> Two products in a row on mobile devices - enabled</li>
-            <li>Cards -> Number of visible products before 'Load more' button - any, optimally 12</li>
-            <li>'See Also' Section -> Block 'See Also' - do not display</li>
-            <li>Gallery Style -> Aspect Ratio - 1:1 square</li>
-            <li>Filters & Sections -> Hide filters - enabled</li>
-            <li>Filters & Sections -> Hide catalog category list - enabled</li>
-            <li>Filters & Sections -> Default product sorting - default order</li>
-            </ul>              
-            <h3>2. Connect the product section with your music</h3>             
-            <h3>3. Below the catalog block, create a zero block, in settings give it any class you want (For example, uc-player)</h3>             
-            <h3>4. In this zero block, create a player, it must have:</h3>
-            <ul>
-            <li>Container height 70px on all screens</li>
-            <li>HTML block across the length of the page is the track progress bar
-            Insert the code there:</li>
-            </ul>
-        - type: code
-          value: |
-            <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">"
-        - type: instruction
-          value: |
-            <ul>
-            <li>HTML block is the sound progress bar
-            Insert the code there:</li>
-            </ul>
-        - type: code
-          value: |
+          </code>
+        </pre>
+      en: |
+        <h2>Player with Playlist for Website</h2>
+        <img src="main/projects/Tilda/Player/logo_mini.svg">
+        <h3>Website of a Well-Known Composer. They approached me with the task of creating a player for the website.</h3>
+        <h3>The player was implemented using a library, so this modification can be used in other projects as well.</h3>
+        <img src="main/projects/Tilda/Player/site.gif">
+        <h3>Instructions</h3>
+        <h4>Playlist Creation</h4>  
+        <p>1. In the products section, create a product where:</p>
+        <ul>
+          <li>Title: Track Name</li>
+          <li>Image: Track Cover</li>
+          <li>Catalog Sections: You can place it in a section if you have other products or different playlists</li>
+          <li>In characteristics, add a new characteristic (Name: music, Value: direct link to the track)</li>
+          <li>In the link to the product page, add a link for navigation through a button (You'll understand for what below)</li>
+        </ul>
+        <p>2. Add all tracks following instruction 1.</p>
+        <h4>Player Creation</h4>
+        <p>1. Add the ST310N catalog and configure its style, it must include:</p>
+        <ul>
+          <li>Cards -> Show second image on hover - disabled</li>
+          <li>Cards -> Show pagination (instead of "Load more" button) - enabled</li>
+          <li>Cards -> Two items per row on mobile devices - enabled</li>
+          <li>Cards -> Number of visible items before "Load more" button - any, ideally 12</li>
+          <li>Section "See also" -> Block 'See also' - do not display</li>
+          <li>Gallery style -> Aspect ratio - 1:1 square</li>
+          <li>Filters & Sections -> Hide filters - enabled</li>
+          <li>Filters & Sections -> Hide catalog section list - enabled</li>
+          <li>Filters & Sections -> Default product sorting - default order</li>
+        </ul>
+        <p>2. Connect the product section with your music</p> 
+        <p>3. Below the catalog block, create a zero block, set its class in the settings to whatever you like (For example, uc-player)</p>
+        <p>4. In this zero block, create the player, it must include:</p>
+        <ul>
+          <li>Container height 70px on all screens</li>
+          <li>An HTML block spanning the entire length of the page, this is the track progress bar
+          Insert the code there:</li>
+        </ul>
+        <pre>
+          <code class="language-html match-braces">
+            <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">
+          </code>
+        </pre>
+        <ul>
+          <li>An HTML block, this is the sound progress bar
+          Insert the code there:</li>
+        </ul>
+        <pre>
+          <code class="language-html match-braces">
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
-        - type: instruction
-          value: |
-            <ul>
-            <li>Two buttons/images with classes player-btn-buy and player-text will redirect to the page of the playing track, if this functionality is not needed, simply hide them out of view</li>
-            <li>Image with class player-play will serve as the Play|Pause button</li>
-            <li>Image with class player-next will serve as the next song button</li>
-            <li>Image with class player-prev will serve as the previous song button</li>
-            <li>Text with the phrase "Nothing is playing" with class player-title will display the title of the playing song</li>
-            <li>Shape with class player-cover will display the image of the playing song</li>
-            </ul>       
-            <h3>5. Everything else can be customized to your taste</h3>             
-            <h3>6. Below the player block, add T123</h3>              
-            <h3>7. Insert the code below into T123 and adjust all variables for the player</h3>
-        - type: code
-          value: |
+          </code>
+        </pre>
+        <ul>
+          <li>Two buttons/images with classes player-btn-buy and player-text, they will redirect to the page of the playing track, if this functionality is not needed, simply hide them outside of visibility</li>
+          <li>Image with class player-play, this will be the Play|Pause button</li>
+          <li>Image with class player-next, this will be the next song button</li>
+          <li>Image with class player-prev, this will be the previous song button</li>
+          <li>Text with the text "Nothing is playing" with class player-title, this will be the title of the playing song</li>
+          <li>Shape with class player-cover, this will be the image of the playing song</li>
+        </ul>
+        <p>5. Everything else can be customized to your taste</p> 
+        <p>6. Below the player block, add T123</p> 
+        <p>7. Insert the code below into T123 and configure all variables for the player</p>
+        <pre>
+          <code class="language-html match-braces">
             <!--Player from product catalog by ABROS-->
-              
+
             <audio id="audio" data-track-number="0"></audio>
             <div id="area-player"></div>
             <script>
@@ -221,13 +207,13 @@ projects:
               storepart: 'XXXXXXXXXXXX', // Storepart ID
               // Styles
               // Cover for cards
-              WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Cover color for cards (Important in rgba to set transparency)
-              WrapperBorderRadius: '50px', // Cover rounding for cards
+              WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Card cover color (Important to use rgba to set transparency)
+              WrapperBorderRadius: '50px', // Card cover rounding
               WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Play button icon
               WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Pause button icon
-              // Volume and track progress input
-              TrackSlideColorStart: 'rgba(255,255,255,1)', // Bar colors
-              TrackSlideColorEnd: 'rgba(126,112,255,1)', // Bar fill colors
+              // Volume and progress bars input
+              TrackSlideColorStart: 'rgba(255,255,255,1)', // Bar color
+              TrackSlideColorEnd: 'rgba(126,112,255,1)', // Bar fill color
               TrackSlideBorderRadius: '10px', // Bar rounding
               TrackThumbColor: '#fff', // Thumb color on progress bar
               TrackThumbBorderRadius: '50%', // Thumb rounding
@@ -238,12 +224,12 @@ projects:
               PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Volume Off button icon
             };
             </script>
-            <script src = 'https://abros.dev/tilda/mods/player.js'></script>
-        - type: instruction
-          value: |
-            If you don't know where to find the Storepart ID, create T123 under the product catalog, paste the code below, publish it, and visit the site, you will see your Storepart ID. After that, the code can be removed
-        - type: code
-          value: |
+            <script src='https://abros.dev/tilda/mods/player.js'></script>
+          </code>
+        </pre>
+        <p>If you don't know where to find the Storepart ID, then below the catalog, create T123, insert the code below, publish it, and visit the site, you will see your Storepart ID. After that, you can delete the code</p>
+        <pre>
+          <code class="language-html match-braces">
             <script>
             document.addEventListener("DOMContentLoaded", function() {
               var scripts = document.querySelectorAll('script');
@@ -260,81 +246,75 @@ projects:
               });
             });
             </script>
-      pl:
-        - type: h4
-          value: "Odtwarzacz z playlistą dla Twojej strony internetowej"
-        - type: img
-          value: "main/projects/Tilda/Player/logo_mini.svg"
-        - type: text
-          value: "Strona znanego kompozytora. Zostałem poproszony o stworzenie odtwarzacza dla strony internetowej."
-        - type: text
-          value: "Odtwarzacz został zaimplementowany za pomocą biblioteki, więc tę modyfikację można również wykorzystać w innych projektach."
-        - type: img
-          value: "main/projects/Tilda/Player/site.gif"
-        - type: text
-          value: "Instrukcja"
-        - type: instruction
-          value: |
-            <h2>Tworzenie listy odtwarzania</h2>             
-            <h3>1. W produktach utwórz produkt, w którym:</h3>
-            <ul>
-            <li>Tytuł: Tytuł utworu</li>
-            <li>Obraz: Okładka utworu</li>
-            <li>Kategorie katalogowe: można umieścić w kategorii, jeśli masz inne produkty lub różne listy odtwarzania</li>
-            <li>W cechach dodaj nową cechę (Nazwa: muzyka, Wartość: bezpośredni link do utworu)</li>
-            <li>W link do strony produktu dodaj link do przycisku nawigacyjnego (zobacz poniżej, dla jakich)</li>
-            </ul>            
-            <h3>2. Dodaj wszystkie utwory z instrukcji 1.</h3>             
-            <h2>Tworzenie odtwarzacza</h2>             
-            <h3>1. Dodaj katalog ST310N i dostosuj jego styl, koniecznie musi być:</h3>
-            <ul>
-            <li>Karty -> Pokazuj drugi obraz po najechaniu myszką - wyłączone</li>
-            <li>Karty -> Pokazuj paginację (zamiast przycisku „Załaduj więcej”) - włączone</li>
-            <li>Karty -> Dwa produkty w rzędzie na urządzeniach mobilnych - włączone</li>
-            <li>Karty -> Liczba widocznych produktów przed przyciskiem „Załaduj więcej” - dowolna, optymalnie 12</li>
-            <li>Sekcja „Zobacz także” -> Blok 'Zobacz także' - nie wyświetlaj</li>
-            <li>Styl galerii -> Proporcja boków - 1:1 kwadrat</li>
-            <li>Filtry i Kategorie -> Ukryj filtry - włączone</li>
-            <li>Filtry i Kategorie -> Ukryj listę kategorii katalogowych - włączone</li>
-            <li>Filtry i Kategorie -> Domyślne sortowanie produktów - domyślna kolejność</li>
-            </ul>              
-            <h3>2. Podłącz sekcję produktów z twoją muzyką</h3>             
-            <h3>3. Pod blokiem katalogu utwórz blok zerowy, w ustawieniach nadaj mu dowolną klasę (Na przykład uc-player)</h3>             
-            <h3>4. W tym bloku zerowym utwórz odtwarzacz, koniecznie musi być:</h3>
-            <ul>
-            <li>Wysokość kontenera 70px na wszystkich ekranach</li>
-            <li>Blok HTML na całej długości strony to pasek postępu utworu
-            Wstaw tam kod:</li>
-            </ul>
-        - type: code
-          value: |
-            <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">"
-        - type: instruction
-          value: |
-            <ul>
-            <li>Blok HTML to pasek postępu dźwięku
-            Wstaw tam kod:</li>
-            </ul>
-        - type: code
-          value: |
-            <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">"
-        - type: instruction
-          value: |
-            <ul>
-            <li>Dwa przyciski/obrazki z klasami player-btn-buy i player-text będą przekierowywać na stronę odtwarzanego utworu, jeśli ta funkcja nie jest potrzebna, po prostu ukryj je poza widokiem</li>
-            <li>Obrazek z klasą player-play będzie służył jako przycisk Play|Pause</li>
-            <li>Obrazek z klasą player-next będzie służył jako przycisk następnego utworu</li>
-            <li>Obrazek z klasą player-prev będzie służył jako przycisk poprzedniego utworu</li>
-            <li>Tekst z napisem "Nic nie jest odtwarzane" z klasą player-title będzie wyświetlał tytuł odtwarzanego utworu</li>
-            <li>Kształt z klasą player-cover będzie wyświetlał obraz odtwarzanego utworu</li>
-            </ul>
-            <h3>5. Pozostałe ustawienia można dostosować według własnych preferencji</h3>            
-            <h3>6. Pod blokiem odtwarzacza dodaj T123</h3>             
-            <h3>7. Poniższy kod wstaw do T123 i dostosuj wszystkie zmienne dla odtwarzacza</h3>
-        - type: code
-          value: |
-            <!--Odtwarzacz z katalogu produktów by ABROS-->
-              
+          </code>
+        </pre>
+      pl: |
+        <h2>Odtwarzacz z listą odtwarzania dla witryny</h2>
+        <img src="main/projects/Tilda/Player/logo_mini.svg">
+        <h3>Strona znanego kompozytora. Zwrócili się do mnie z zadaniem stworzenia odtwarzacza dla witryny.</h3>
+        <h3>Odtwarzacz został zaimplementowany przy użyciu biblioteki, więc ta modyfikacja może być używana także w innych projektach.</h3>
+        <img src="main/projects/Tilda/Player/site.gif">
+        <h3>Instrukcje</h3>
+        <h4>Tworzenie listy odtwarzania</h4>  
+        <p>1. W sekcji produktów utwórz produkt, gdzie:</p>
+        <ul>
+          <li>Tytuł: Nazwa utworu</li>
+          <li>Obraz: Okładka utworu</li>
+          <li>Sekcje katalogowe: Możesz umieścić to w sekcji, jeśli masz inne produkty lub różne listy odtwarzania</li>
+          <li>W charakterystykach dodaj nową cechę (Nazwa: muzyka, Wartość: bezpośredni link do utworu)</li>
+          <li>W linku do strony produktu dodaj link do nawigacji za pomocą przycisku (Zrozumiesz po co poniżej)</li>
+        </ul>
+        <p>2. Dodaj wszystkie utwory zgodnie z instrukcją 1.</p>
+        <h4>Tworzenie odtwarzacza</h4>
+        <p>1. Dodaj katalog ST310N i dostosuj jego styl, musi zawierać:</p>
+        <ul>
+          <li>Karty -> Pokaż drugi obraz po najechaniu - wyłączone</li>
+          <li>Karty -> Pokaż paginację (zamiast przycisku "Wczytaj więcej") - włączone</li>
+          <li>Karty -> Dwa elementy na wiersz na urządzeniach mobilnych - włączone</li>
+          <li>Karty -> Liczba widocznych elementów przed przyciskiem "Wczytaj więcej" - dowolna, idealnie 12</li>
+          <li>Sekcja "Zobacz także" -> Blok 'Zobacz także' - nie wyświetlaj</li>
+          <li>Styl galerii -> Proporcje - 1:1 kwadrat</li>
+          <li>Filtry i sekcje -> Ukryj filtry - włączone</li>
+          <li>Filtry i sekcje -> Ukryj listę sekcji katalogu - włączone</li>
+          <li>Filtry i sekcje -> Domyślne sortowanie produktów - domyślna kolejność</li>
+        </ul>
+        <p>2. Połącz sekcję produktów ze swoją muzyką</p> 
+        <p>3. Poniżej bloku katalogu utwórz blok zerowy, ustaw jego klasę w ustawieniach na dowolną (Na przykład uc-player)</p>
+        <p>4. W tym bloku zerowym stwórz odtwarzacz, który musi zawierać:</p>
+        <ul>
+          <li>Wysokość kontenera 70px na wszystkich ekranach</li>
+          <li>Blok HTML zajmujący całą długość strony, to jest pasek postępu utworu
+          Wstaw tam kod:</li>
+        </ul>
+        <pre>
+          <code class="language-html match-braces">
+            <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">
+          </code>
+        </pre>
+        <ul>
+          <li>Blok HTML, to jest pasek postępu dźwięku
+          Wstaw tam kod:</li>
+        </ul>
+        <pre>
+          <code class="language-html match-braces">
+            <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
+          </code>
+        </pre>
+        <ul>
+          <li>Dwie przyciski/obrazy z klasami player-btn-buy i player-text, które przekierują na stronę odtwarzanego utworu, jeśli ta funkcjonalność nie jest potrzebna, po prostu ukryj je poza widocznością</li>
+          <li>Obraz z klasą player-play, to będzie przycisk Odtwórz|Pauza</li>
+          <li>Obraz z klasą player-next, to będzie przycisk następnego utworu</li>
+          <li>Obraz z klasą player-prev, to będzie przycisk poprzedniego utworu</li>
+          <li>Tekst z tekstem "Nic nie jest odtwarzane" z klasą player-title, to będzie tytuł odtwarzanego utworu</li>
+          <li>Kształt z klasą player-cover, to będzie obraz odtwarzanego utworu</li>
+        </ul>
+        <p>5. Wszystko inne można dostosować według własnych preferencji</p> 
+        <p>6. Pod blokiem odtwarzacza dodaj T123</p> 
+        <p>7. Wstaw poniższy kod do T123 i skonfiguruj wszystkie zmienne dla odtwarzacza</p>
+        <pre>
+          <code class="language-html match-braces">
+            <!--Odtwarzacz z katalogu produktów od ABROS-->
+
             <audio id="audio" data-track-number="0"></audio>
             <div id="area-player"></div>
             <script>
@@ -344,33 +324,33 @@ projects:
               playerID: '.uc-player', // Klasa odtwarzacza
               audioID: '#audio', // ID bloku odtwarzacza
               areaID: '#area-player', // ID bloku wyzwalacza
-              cards: '12', // Ilość kart na stronie
+              cards: '12', // Liczba kart na stronie
               storepart: 'XXXXXXXXXXXX', // ID Storepart
               // Style
               // Okładka dla kart
-              WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Kolor okładki dla kart (Ważne w rgba, aby ustawić przezroczystość)
-              WrapperBorderRadius: '50px', // Zaokrąglenie okładki dla kart
-              WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Ikona przycisku Odtwarzaj
-              WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Ikona przycisku Wstrzymaj
-              // Input głośności i postępu utworu
+              WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Kolor okładki karty (Ważne jest użycie rgba, aby ustawić przezroczystość)
+              WrapperBorderRadius: '50px', // Zaokrąglenie okładki karty
+              WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Ikona przycisku Odtwórz
+              WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Ikona przycisku Pauza
+              // Wejście paska głośności i postępu
               TrackSlideColorStart: 'rgba(255,255,255,1)', // Kolor pasków
               TrackSlideColorEnd: 'rgba(126,112,255,1)', // Kolor wypełnienia pasków
               TrackSlideBorderRadius: '10px', // Zaokrąglenie pasków
               TrackThumbColor: '#fff', // Kolor kciuka na pasku postępu
               TrackThumbBorderRadius: '50%', // Zaokrąglenie kciuka
               // Style odtwarzacza
-              PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Ikona przycisku Odtwarzaj
-              PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Ikona przycisku Wstrzymaj
+              PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Ikona przycisku Odtwórz
+              PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Ikona przycisku Pauza
               PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Ikona przycisku Włącz dźwięk
               PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Ikona przycisku Wyłącz dźwięk
             };
             </script>
             <script src='https://abros.dev/tilda/mods/player.js'></script>
-        - type: instruction
-          value: |
-            Jeśli nie wiesz, gdzie znaleźć ID Storepart, utwórz T123 pod katalogiem produktów, wklej poniższy kod, opublikuj go i odwiedź stronę, zobaczysz swoje ID Storepart. Następnie kod można usunąć
-        - type: code
-          value: |
+          </code>
+        </pre>
+        <p>Jeśli nie wiesz, gdzie znaleźć ID Storepart, to poniżej katalogu utwórz T123, wstaw poniższy kod, opublikuj i odwiedź witrynę, zobaczysz swoje ID Storepart. Następnie możesz usunąć kod</p>
+        <pre>
+          <code class="language-html match-braces">
             <script>
             document.addEventListener("DOMContentLoaded", function() {
               var scripts = document.querySelectorAll('script');
@@ -378,7 +358,7 @@ projects:
                 var scriptText = script.textContent || script.innerText;
                 if (scriptText.includes('storepart')) {
                   var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);
-                   if (match && match[1]) {
+                  if (match && match[1]) {
                     var storepartValue = match[1];
                     alert('Twój storepart: \"' + storepartValue + '\"');
                     break;
@@ -387,6 +367,8 @@ projects:
               });
             });
             </script>
+          </code>
+        </pre>
     hash: "TildaPlayer"
     buttonText:
       ru: "Посмотреть на сайте"

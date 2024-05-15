@@ -239,3 +239,4 @@ fetch('main/yaml/about.yaml')
     };
     changeabout(currentLanguage);
 })
+.catch(error => console.error('Ошибка загрузки файла about.yaml', error));

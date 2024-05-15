@@ -1,78 +1,70 @@
-function checkLanguage() {
-    var browserLanguage = navigator.language.substring(0, 2);
-    if (browserLanguage === "EN" || browserLanguage === "RU" || browserLanguage === "PL") {
-        return browserLanguage;
-    }
-    return "EN";
-}
+// Функция для проверки языка браузера
+const checkLanguage = () => {
+    const browserLanguage = navigator.language.substring(0, 2);
+    const supportedLanguages = ["EN", "RU", "PL"];
+    return supportedLanguages.includes(browserLanguage) ? browserLanguage : "EN";
+};
 
-function setLanguage(language) {
+// Функция для установки языка в localStorage
+const setLanguage = language => {
     localStorage.setItem("Language", language);
-}
+};
 
-function getLanguage() {
+// Функция для получения языка из localStorage
+const getLanguage = () => {
     return localStorage.getItem("Language");
-}
+};
 
-function eraseLanguage() {
-    localStorage.removeItem("Language");
-}
-
-function reloadPage() {
+// Функция для перезагрузки страницы
+const reloadPage = () => {
     window.location.reload();
-}
+};
 
-var savedLanguage = getLanguage();
-
-if (!savedLanguage) {
-    setLanguage(checkLanguage());
-}
-
-var currentLanguage = savedLanguage;
-
-document.addEventListener('DOMContentLoaded', function() {
-    var buttons = document.querySelectorAll('.lang-sub .button');
-    
-    buttons.forEach(function(item) {
-        if (item.getAttribute('lang') === currentLanguage) {
-            item.classList.add('active');
+// Функция для обработки выбора языка
+const handleLanguageSelection = newLanguage => {
+    setLanguage(newLanguage);
+    document.querySelectorAll('.lang-sub .button').forEach(button => {
+        button.classList.remove('active');
+        if (button.getAttribute('lang') === newLanguage) {
+            button.classList.add('active');
         }
-        item.addEventListener('click', function() {
-            var newLanguage = this.getAttribute('lang');
-            setLanguage(newLanguage);
-            buttons.forEach(function(button) {
-                button.classList.remove('active');
-            });
-            this.classList.add('active');
-            reloadPage();
+    });
+    reloadPage();
+};
+
+// Функция для отображения уведомления о смене языка
+const showLanguageChangeNotification = currentLanguage => {
+    const notifications = {
+        'EN': "Language has been changed. Enjoy browsing!",
+        'RU': "Язык был изменен. Приятного просмотра!",
+        'PL': "Język został zmieniony. Miłego przeglądania!"
+    };
+    abrosnoti.create("lang", currentLanguage, notifications[currentLanguage], 3);
+};
+
+// Основной код
+document.addEventListener('DOMContentLoaded', () => {
+    // Проверяем язык и устанавливаем его, если он не установлен
+    const savedLanguage = getLanguage() || checkLanguage();
+    setLanguage(savedLanguage);
+
+    // Обработчик событий для кнопок выбора языка
+    document.querySelectorAll('.lang-sub .button').forEach(button => {
+        button.addEventListener('click', () => {
+            const newLanguage = button.getAttribute('lang');
+            handleLanguageSelection(newLanguage);
         });
+        if (button.getAttribute('lang') === savedLanguage) {
+            button.classList.add('active');
+        }
     });
 
-    setTimeout(function() {
-        function getPreviousLanguage() {
-            return localStorage.getItem("LanguagePrevious");
-        }
-        function setPreviousLanguage(language) {
-            localStorage.setItem("LanguagePrevious", language);
-        }
-        var previousLanguage = getPreviousLanguage();
-        if (previousLanguage !== currentLanguage) {
-            switch (currentLanguage) {
-                case 'EN':
-                    abrosnoti.create("lang", "English", "Language has been changed. Enjoy browsing!", 3);
-                    break;
-                case 'RU':
-                    abrosnoti.create("lang", "Русский", "Язык был изменен. Приятного просмотра!", 3);
-                    break;
-                case 'PL':
-                    abrosnoti.create("lang", "Polski", "Język został zmieniony. Miłego przeglądania!", 3);
-                    break;
-                default:
-                    break;
-            }
-            setPreviousLanguage(currentLanguage)
+    // Показываем уведомление о смене языка
+    setTimeout(() => {
+        const previousLanguage = localStorage.getItem("LanguagePrevious");
+        if (previousLanguage !== savedLanguage) {
+            showLanguageChangeNotification(savedLanguage);
+            localStorage.setItem("LanguagePrevious", savedLanguage);
         }
     }, 1000);
 });
-
-

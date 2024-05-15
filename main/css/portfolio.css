@@ -183,27 +183,22 @@ main {
     border-radius: 10px;
 }
 
-.popupinstruction {
-    white-space: pre-wrap;
+#popup-content h4 {
     font-size: larger;
     color: #8a8a8a;
-    font-family: var(--font-basic);
-}
-
-#popup-content h4 {
-    margin: 0;
-    font-size: larger;
 }
 
 #popup-content p {
-    margin: 0;
     font-size: large;
+    color: #8a8a8a;
 }
 
 #popup-content ul {
     flex-wrap: wrap;
     list-style: inside;
     font-size: 1em;
+    margin: 1em;
+    color: #8a8a8a;
 }
 
 .filter {

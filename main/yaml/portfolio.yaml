@@ -519,26 +519,20 @@ projects:
     outline: "#ffffff"
     category: "MyProject"
     content:
-      ru:
-        - type: h4
-          value: "Abros - магазин плагинов для Lampa"
-        - type: img
-          value: "main/projects/LampaAbros/logo_mini.png"
-        - type: text
-          value: "Данный проект представляет из себя плагин для онлайн кинотеатра Lampa. С его помощью можно в один клик устанавливать все возможные доступные плагины для данного кинотеатра."
-        - type: text
-          value: "Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros."
-        - type: img
-          value: "main/projects/LampaAbros/storemenu.png"
-        - type: text
-          value: "На данный момент добавлены лишь основные известные плагины, со временем магазин будет расширяться."
-        - type: text
-          value: "Подключить плагин можно добавив ссылку ниже в Lampa."
-        - type: code
-          value: |
+      ru: |
+        <h2>Abros - магазин плагинов для Lampa</h2>
+        <img src="main/projects/LampaAbros/logo_mini.png">
+        <h3>Данный проект представляет из себя плагин для онлайн кинотеатра Lampa. С его помощью можно в один клик устанавливать все возможные доступные плагины для данного кинотеатра.</h3>
+        <h3>Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros.</h3>
+        <img src="main/projects/LampaAbros/storemenu.png">
+        <h3>На данный момент добавлены лишь основные известные плагины, со временем магазин будет расширяться.</h3>
+        <h3>Подключить плагин можно добавив ссылку ниже в Lampa.</h3>
+        <pre>
+          <code>
             https://abros.dev/lampa/mod.js
-        - type: text
-          value: "Переходи по кнопке ниже в Lampa и проверяй!"
+          </code>
+        </pre>
+        <h3>Переходи по кнопке ниже в Lampa и проверяй!</h3>
       en:
         - type: h4
           value: "Abros - a plugin store for Lampa"

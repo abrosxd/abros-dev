@@ -109,47 +109,17 @@ fetch('main/yaml/portfolio.yaml')
   });
   
   // Создание Popup
+  function escapeHTML(html) {
+    return html.replace(/<code>(.*?)<\/code>/gs, function(match, codeContent) {
+      return '<code>' + escapeHTML(codeContent) + '</code>';
+    });
+  }
   function openPopup(id) {
     const project = data.projects.find(project => project.id === id);
     const popupContent = document.getElementById('popup-content');
-    // popupContent.innerHTML = '';
     const content = project.content[currentLanguage];
-    popupContent.innerText = content;
-
-    // content.forEach(item => {
-    //   const type = item.type;
-    //   const value = item.value;
-
-    //   if (type === 'h4') {
-    //     const header = document.createElement('h4');
-    //     header.textContent = value;
-    //     header.className = 'popuph4';
-    //     popupContent.appendChild(header);
-    //   } else if (type === 'img') {
-    //     const image = document.createElement('img');
-    //     image.src = value;
-    //     image.className = 'popupimg';
-    //     popupContent.appendChild(image);
-    //   } else if (type === 'text') {
-    //     const paragraph = document.createElement('p');
-    //     paragraph.innerHTML = value;
-    //     paragraph.className = 'popuptitle';
-    //     popupContent.appendChild(paragraph);
-    //   } else if (type === 'instruction') {
-    //     const insrtuction = document.createElement('pre');
-    //     insrtuction.innerHTML = value;
-    //     insrtuction.className = 'popupinstruction';
-    //     popupContent.appendChild(insrtuction);
-    //   } else if (type === 'code') {
-    //     const preformatted = document.createElement('pre');
-    //     const code = document.createElement('code');
-    //     code.textContent = value;
-    //     code.className = 'language-html match-braces';
-    //     preformatted.className = 'popupcode';
-    //     preformatted.appendChild(code);
-    //     popupContent.appendChild(preformatted);
-    //   }
-    // });
+    const escapedContent = escapeHTML(content);
+    popupContent.innerHTML = escapedContent;
 
     const popupMenu = document.getElementById('popup-menu');
     if (project.url && project.url.trim() !== '') {

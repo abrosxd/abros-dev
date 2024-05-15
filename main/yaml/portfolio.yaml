@@ -441,32 +441,32 @@ projects:
         <h3>You can see how it works by simply changing the language on my website :)</h3>
       pl: |
         <h2>Powiadomienia dla Twojej witryny</h2>
-<h3>Ta biblioteka została opracowana dla mojej witryny, ale ponieważ okazała się modułowa, możesz również z niej korzystać.</h3>
-<h3>Powiadomienia są bardzo przydatnym narzędziem. Nie rozpraszają użytkowników od konsumowania treści i zajmują niewiele miejsca na stronie.</h3>
-<h3>W tym celu opracowałem bibliotekę, która pozwala wyświetlać powiadomienia na Twojej witrynie.</h3>
-<img src="main/projects/AbrosNoti/noti.gif">
-<h3>Wygląda świetnie, a co najważniejsze, jest bardzo łatwa w użyciu!</h3>
-<h3>Wszystko, co musisz zrobić, to podłączyć bibliotekę do swojej witryny za pomocą poniższego kodu:</h3>
-<pre>
-  <code class="language-html match-braces">
-    <script src='https://abros.dev/dev/noti.js'></script>
-  </code>
-</pre>
-<h3>Po tym możesz wywołać funkcję powiadomień w następujący sposób:</h3>
-<p>Twórz powiadomienia za pomocą abrosnoti.create()</p>           
-<p>Parametry dla abrosnoti.create():</p>
-<ul>
-  <li>Ikona: string,</li>
-  <li>Tytuł: string,</li>
-  <li>Opis: string,</li>
-  <li>Czas trwania: sekundy,
-    (domyślnie: 2 sekundy, 0 oznacza czas nieskończony)</li>
-  <li>Usunąć po kliknięciu: boolean,
-    (określa, czy powiadomienie powinno zniknąć po kliknięciu, domyślnie: false)</li>
-  <li>Funkcja kliknięcia: function,
-    (wywoływana po kliknięciu powiadomienia, jeśli nie zdefiniowano, domyślnie: undefined)</li>
-</ul>
-<h3>Możesz zobaczyć, jak to działa, po prostu zmieniając język na mojej witrynie :)</h3>
+        <h3>Ta biblioteka została opracowana dla mojej witryny, ale ponieważ okazała się modułowa, możesz również z niej korzystać.</h3>
+        <h3>Powiadomienia są bardzo przydatnym narzędziem. Nie rozpraszają użytkowników od konsumowania treści i zajmują niewiele miejsca na stronie.</h3>
+        <h3>W tym celu opracowałem bibliotekę, która pozwala wyświetlać powiadomienia na Twojej witrynie.</h3>
+        <img src="main/projects/AbrosNoti/noti.gif">
+        <h3>Wygląda świetnie, a co najważniejsze, jest bardzo łatwa w użyciu!</h3>
+        <h3>Wszystko, co musisz zrobić, to podłączyć bibliotekę do swojej witryny za pomocą poniższego kodu:</h3>
+        <pre>
+          <code class="language-html match-braces">
+            <script src='https://abros.dev/dev/noti.js'></script>
+          </code>
+        </pre>
+        <h3>Po tym możesz wywołać funkcję powiadomień w następujący sposób:</h3>
+        <p>Twórz powiadomienia za pomocą abrosnoti.create()</p>           
+        <p>Parametry dla abrosnoti.create():</p>
+        <ul>
+          <li>Ikona: string,</li>
+          <li>Tytuł: string,</li>
+          <li>Opis: string,</li>
+          <li>Czas trwania: sekundy,
+            (domyślnie: 2 sekundy, 0 oznacza czas nieskończony)</li>
+          <li>Usunąć po kliknięciu: boolean,
+            (określa, czy powiadomienie powinno zniknąć po kliknięciu, domyślnie: false)</li>
+          <li>Funkcja kliknięcia: function,
+            (wywoływana po kliknięciu powiadomienia, jeśli nie zdefiniowano, domyślnie: undefined)</li>
+        </ul>
+        <h3>Możesz zobaczyć, jak to działa, po prostu zmieniając język na mojej witrynie :)</h3>
     hash: "AbrosNoti"
     buttonText:
       ru: " "
@@ -481,17 +481,12 @@ projects:
     outline: "#73afe1"
     category: "Layout"
     content:
-      ru:
-        - type: h4
-          value: "Вёрстка лендинга для салона красоты Grushka"
-        - type: img
-          value: "main/projects/GrushkaEndo/logo_mini.png"
-        - type: text
-          value: "Задача состояла в том, чтобы перенести уже имеющийся сайт на платформе Tilda на отдельный хостинг."
-        - type: text
-          value: "Сложность заключалась в том, что Tilda наложила ограничения на аккаунт из-за чего сайт был заблокирован, а экспорт не доступен. Поэтому они обратились ко мне."
-        - type: text
-          value: "И вот конечный результат!"
+      ru: |
+        <h2>Вёрстка лендинга для салона красоты Grushka</h2>
+        <img src="main/projects/GrushkaEndo/logo_mini.png"
+        <h3>Задача состояла в том, чтобы перенести уже имеющийся сайт на платформе Tilda на отдельный хостинг.</h3>
+        <h3>Сложность заключалась в том, что Tilda наложила ограничения на аккаунт из-за чего сайт был заблокирован, а экспорт не доступен. Поэтому они обратились ко мне.</h3>
+        <h3>И вот конечный результат!</h3>
         - type: img
           value: "main/projects/GrushkaEndo/site.png"
         - type: text

@@ -421,7 +421,7 @@ projects:
             <script src='https://abros.dev/dev/noti.js'></script>
         - type: text
           value: "После чего можно вызывать функцию уведомлений следующим образом:"
-        - type: insrtuction"
+        - type: insrtuction
           value: |
             Создавайте уведомления с помощью abrosnoti.create()
             

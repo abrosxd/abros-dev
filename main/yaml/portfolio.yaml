@@ -6,7 +6,7 @@ projects:
     outline: "#7e70ff"
     category: "Tilda"
     content:
-      RU:
+      ru:
         - type: h4
           value: "Плеер с плейлистом для сайта"
         - type: img
@@ -133,7 +133,7 @@ projects:
               });
             });
             </script>
-      EN:
+      en:
         - type: h4
           value: "Player with Playlist for Your Website"
         - type: img
@@ -260,7 +260,7 @@ projects:
               });
             });
             </script>
-      PL:
+      pl:
         - type: h4
           value: "Odtwarzacz z playlistą dla Twojej strony internetowej"
         - type: img
@@ -389,9 +389,9 @@ projects:
             </script>
     hash: "TildaPlayer"
     buttonText:
-      RU: "Посмотреть на сайте"
-      EN: "View on website"
-      PL: "Zobacz na stronie"
+      ru: "Посмотреть на сайте"
+      en: "View on website"
+      pl: "Zobacz na stronie"
     url: "https://tvoy-hit.ru"
 
   - id: 4
@@ -401,7 +401,7 @@ projects:
     outline: "#00aee1"
     category: "MyProject Library"
     content:
-      RU:
+      ru:
         - type: h4
           value: "Уведомления для твоего сайта"
         - type: text
@@ -438,7 +438,7 @@ projects:
               </ul>
         - type: text
           value: "Вы можете проверить как это работает, просто смените язык на моем сайте :)"
-      EN:
+      en:
         - type: h4
           value: "Notifications for your website"
         - type: text
@@ -475,7 +475,7 @@ projects:
               </ul>
         - type: text
           value: "You can see how it works by simply changing the language on my website :)"
-      PL:
+      pl:
         - type: h4
           value: "Powiadomienia dla Twojej strony internetowej"
         - type: text
@@ -514,9 +514,9 @@ projects:
           value: "Możesz zobaczyć, jak to działa, po prostu zmieniając język na mojej stronie :)"
     hash: "AbrosNoti"
     buttonText:
-      RU: " "
-      EN: " "
-      PL: " "
+      ru: " "
+      en: " "
+      pl: " "
     url: " "
     
   - id: 3
@@ -526,7 +526,7 @@ projects:
     outline: "#73afe1"
     category: "Layout"
     content:
-      RU:
+      ru:
         - type: h4
           value: "Вёрстка лендинга для салона красоты Grushka"
         - type: img
@@ -541,7 +541,7 @@ projects:
           value: "main/projects/GrushkaEndo/site.png"
         - type: text
           value: "Посмотреть сайт можно кликнув по кнопке ниже."
-      EN:
+      en:
         - type: h4
           value: "Designing a landing page for Grushka beauty salon"
         - type: img
@@ -556,7 +556,7 @@ projects:
           value: "main/projects/GrushkaEndo/site.png"
         - type: text
           value: "To view the website, click the button below."
-      PL:
+      pl:
         - type: h4
           value: "Projektowanie strony internetowej (landing page) dla salonu urody Grushka"
         - type: img
@@ -573,9 +573,9 @@ projects:
           value: "Aby zobaczyć stronę, kliknij przycisk poniżej."
     hash: "GrushkaEndo"
     buttonText:
-      RU: "Перейти на сайт"
-      EN: "Go to website"
-      PL: "Przejdź do strony"
+      ru: "Перейти на сайт"
+      en: "Go to website"
+      pl: "Przejdź do strony"
     url: "https://cosmetologia.site"
 
   - id: 2
@@ -585,7 +585,7 @@ projects:
     outline: "#ffffff"
     category: "MyProject"
     content:
-      RU:
+      ru:
         - type: h4
           value: "Abros - магазин плагинов для Lampa"
         - type: img
@@ -605,7 +605,7 @@ projects:
             https://abros.dev/lampa/mod.js
         - type: text
           value: "Переходи по кнопке ниже в Lampa и проверяй!"
-      EN:
+      en:
         - type: h4
           value: "Abros - a plugin store for Lampa"
         - type: img
@@ -625,7 +625,7 @@ projects:
             https://abros.dev/lampa/mod.js
         - type: text
           value: "Click the button below to go to Lampa and check!"
-      PL:
+      pl:
         - type: h4
           value: "Sklep - sklep z wtyczkami do Lampy"
         - type: img
@@ -647,9 +647,9 @@ projects:
           value: "Kliknij przycisk poniżej, aby przejść do Lampa i sprawdzić!"
     hash: "LampaAbros"
     buttonText:
-      RU: "Перейти к Lampa"
-      EN: "Go to Lampa"
-      PL: "Przejdź do Lampa"
+      ru: "Перейти к Lampa"
+      en: "Go to Lampa"
+      pl: "Przejdź do Lampa"
     url: "http://lampa.mx"
 
   - id: 1
@@ -659,7 +659,7 @@ projects:
     outline: "#00ff00"
     category: "MyProject Library"
     content:
-      RU:
+      ru:
         - type: h4
           value: "DEUS - защита контента"
         - type: img
@@ -691,7 +691,7 @@ projects:
             <script src='https://deusnotam.github.io/bd.js'></script>
         - type: text
           value: "И последним, но не менее важным решением было сделать открытый исходный код. Да, всю систему можно с лёгкостью найти на GitHub. И каждый может изменить её под свои нужды."
-      EN:
+      en:
         - type: h4
           value: "DEUS - Content Protection"
         - type: img
@@ -723,7 +723,7 @@ projects:
             <script src='https://deusnotam.github.io/bd.js'></script>
         - type: text
           value: "And last but not least, the decision was made to make the source code open. Yes, the entire system can easily be found on GitHub. And anyone can modify it to suit their needs."
-      PL:
+      pl:
         - type: h4
           value: "DEUS - ochrona treści"
         - type: img
@@ -757,9 +757,9 @@ projects:
           value: "I ostatnim, ale nie mniej ważnym rozwiązaniem, było udostępnienie kodu źródłowego. Tak, cały system łatwo można znaleźć na GitHubie. I każdy może go dostosować do swoich potrzeb."
     hash: "DEUS"
     buttonText:
-      RU: "Перейти на сайт проекта"
-      EN: "Go to project website"
-      PL: "Przejdź na stronę projektu"
+      ru: "Перейти на сайт проекта"
+      en: "Go to project website"
+      pl: "Przejdź na stronę projektu"
     url: "https://deusnotam.github.io"
 
   - id: 0
@@ -769,7 +769,7 @@ projects:
     outline: "#006CFF"
     category: "Design"
     content:
-      RU:
+      ru:
         - type: h4
           value: "Дизайн для стримера VADI"
         - type: text
@@ -784,7 +784,7 @@ projects:
           value: "Создание стикер-пака оказалось более сложным, так как заказчик сам не знал, что именно ему нужно. Пришлось потратить немало времени на отслеживание часто используемых фраз и приколов среди зрителей."
         - type: img
           value: "main/projects/VADI/emoji.png"
-      EN:
+      en:
         - type: h4
           value: "Design for streamer VADI"
         - type: text
@@ -799,7 +799,7 @@ projects:
           value: "Creating a sticker pack was more difficult because the client himself did not know exactly what he needed. It took a lot of time to track frequently used phrases and jokes among viewers."
         - type: img
           value: "main/projects/VADI/emoji.png"
-      PL:
+      pl:
         - type: h4
           value: "Projekt dla streamera VADI"
         - type: text
@@ -816,34 +816,34 @@ projects:
           value: "main/projects/VADI/emoji.png"
     hash: "VADI"
     buttonText:
-      RU: "YouTube канал стримера"
-      EN: "Streamer's YouTube channel"
-      PL: "Kanał YouTube streamera"
+      ru: "YouTube канал стримера"
+      en: "Streamer's YouTube channel"
+      pl: "Kanał YouTube streamera"
     url: "https://www.youtube.com/@VadiHS"
 
 
 filters:
   All:
-    RU: "Все"
-    EN: "All"
-    PL: "Wszystko"
+    ru: "Все"
+    en: "All"
+    pl: "Wszystko"
   Library:
-    RU: "Библиотеки"
-    EN: "Libraries"
-    PL: "Biblioteki"
+    ru: "Библиотеки"
+    en: "Libraries"
+    pl: "Biblioteki"
   Tilda:
-    RU: "Tilda"
-    EN: "Tilda"
-    PL: "Tilda"
+    ru: "Tilda"
+    en: "Tilda"
+    pl: "Tilda"
   Layout:
-    RU: "Верстка сайтов"
-    EN: "Website layout"
-    PL: "Układ strony internetowej"
+    ru: "Верстка сайтов"
+    en: "Website layout"
+    pl: "Układ strony internetowej"
   MyProject:
-    RU: "Мои проекты"
-    EN: "My projects"
-    PL: "Moje projekty"
+    ru: "Мои проекты"
+    en: "My projects"
+    pl: "Moje projekty"
   Design:
-    RU: "Дизайн"
-    EN: "Design"
-    PL: "Design"
+    ru: "Дизайн"
+    en: "Design"
+    pl: "Design"

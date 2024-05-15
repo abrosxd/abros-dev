@@ -1,8 +1,8 @@
 // Функция для проверки языка браузера
 const checkLanguage = () => {
-    const browserLanguage = navigator.language.substring(5, 3);
-    const supportedLanguages = ["EN", "RU", "PL"];
-    return supportedLanguages.includes(browserLanguage) ? browserLanguage : "EN";
+    const browserLanguage = navigator.language.substring(0, 2);
+    const supportedLanguages = ["en", "ru", "pl"];
+    return supportedLanguages.includes(browserLanguage) ? browserLanguage : "en";
 };
 
 // Функция для установки языка в localStorage
@@ -57,13 +57,13 @@ document.addEventListener('DOMContentLoaded', function() {
         var previousLanguage = getPreviousLanguage();
         if (previousLanguage !== currentLanguage) {
             switch (currentLanguage) {
-                case 'EN':
+                case 'en':
                     abrosnoti.create("lang", "English", "Language has been changed. Enjoy browsing!", 3);
                     break;
-                case 'RU':
+                case 'ru':
                     abrosnoti.create("lang", "Русский", "Язык был изменен. Приятного просмотра!", 3);
                     break;
-                case 'PL':
+                case 'pl':
                     abrosnoti.create("lang", "Polski", "Język został zmieniony. Miłego просмотра!", 3);
                     break;
                 default:
@@ -71,5 +71,5 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             setPreviousLanguage(currentLanguage)
         }
-    }, 1000);
+    }, 1500);
 });

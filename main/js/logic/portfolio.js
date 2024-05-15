@@ -114,7 +114,7 @@ fetch('main/yaml/portfolio.yaml')
     const popupContent = document.getElementById('popup-content');
     // popupContent.innerHTML = '';
     const content = project.content[currentLanguage];
-    popupContent.textContent = content;
+    popupContent.innerText = content;
 
     // content.forEach(item => {
     //   const type = item.type;

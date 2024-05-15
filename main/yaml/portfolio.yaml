@@ -4,7 +4,7 @@ projects:
     img: "main/projects/Tilda/Player/avatar.png"
     overlay: "main/projects/Tilda/Player/overlay.png"
     outline: "#7e70ff"
-    category: "Layout Tilda"
+    category: "Tilda"
     content:
       RU:
         - type: h4
@@ -148,62 +148,62 @@ projects:
           value: "Instructions"
         - type: instruction
           value: |
-            Playlist Creation
-              
-            1. In products, create a product in which:
-              Title: Track Title
-              Image: Track Cover
-              Catalog Sections: can be placed in a section if you have other products or different playlists
-              In characteristics add a new characteristic (Name: music, Value: direct link to the track)
-              In the product page link, add a link for navigation button (See below for which)
-              
-            2. Add all tracks as per instruction 1.
-              
-            Player Creation
-              
-            1. Add the ST310N catalog and customize its style, it must have:
-              Cards -> Show second image on hover - disabled
-              Cards -> Show pagination (instead of 'Load more' button) - enabled
-              Cards -> Two products in a row on mobile devices - enabled
-              Cards -> Number of visible products before 'Load more' button - any, optimally 12
-              'See Also' Section -> Block 'See Also' - do not display
-              Gallery Style -> Aspect Ratio - 1:1 square
-              Filters & Sections -> Hide filters - enabled
-              Filters & Sections -> Hide catalog category list - enabled
-              Filters & Sections -> Default product sorting - default order
-              
-            2. Connect the product section with your music
-              
-            3. Below the catalog block, create a zero block, in settings give it any class you want (For example, uc-player)
-              
-            4. In this zero block, create a player, it must have:
-              Container height 70px on all screens
-              HTML block across the length of the page is the track progress bar
-              Insert the code there:
+            <h2>Playlist Creation</h2>             
+            <h3>1. In products, create a product in which:</h3>
+            <ul>
+            <li>Title: Track Title</li>
+            <li>Image: Track Cover</li>
+            <li>Catalog Sections: can be placed in a section if you have other products or different playlists</li>
+            <li>In characteristics add a new characteristic (Name: music, Value: direct link to the track)</li>
+            <li>In the product page link, add a link for navigation button (See below for which)</li>
+            </ul>            
+            <h3>2. Add all tracks as per instruction 1.</h3>              
+            <h2>Player Creation</h2>             
+            <h3>1. Add the ST310N catalog and customize its style, it must have:</h3>
+            <ul>
+            <li>Cards -> Show second image on hover - disabled</li>
+            <li>Cards -> Show pagination (instead of 'Load more' button) - enabled</li>
+            <li>Cards -> Two products in a row on mobile devices - enabled</li>
+            <li>Cards -> Number of visible products before 'Load more' button - any, optimally 12</li>
+            <li>'See Also' Section -> Block 'See Also' - do not display</li>
+            <li>Gallery Style -> Aspect Ratio - 1:1 square</li>
+            <li>Filters & Sections -> Hide filters - enabled</li>
+            <li>Filters & Sections -> Hide catalog category list - enabled</li>
+            <li>Filters & Sections -> Default product sorting - default order</li>
+            </ul>              
+            <h3>2. Connect the product section with your music</h3>             
+            <h3>3. Below the catalog block, create a zero block, in settings give it any class you want (For example, uc-player)</h3>             
+            <h3>4. In this zero block, create a player, it must have:</h3>
+            <ul>
+            <li>Container height 70px on all screens</li>
+            <li>HTML block across the length of the page is the track progress bar
+            Insert the code there:</li>
+            </ul>
         - type: code
           value: |
             <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">"
         - type: instruction
           value: |
-            HTML block is the sound progress bar
-            Insert the code there:
+            <ul>
+            <li>HTML block is the sound progress bar
+            Insert the code there:</li>
+            </ul>
         - type: code
           value: |
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
         - type: instruction
           value: |
-            Two buttons/images with classes player-btn-buy and player-text will redirect to the page of the playing track, if this functionality is not needed, simply hide them out of view
-            Image with class player-play will serve as the Play|Pause button
-            Image with class player-next will serve as the next song button
-            Image with class player-prev will serve as the previous song button
-            Text with the phrase "Nothing is playing" with class player-title will display the title of the playing song
-            Shape with class player-cover will display the image of the playing song
-              
-            5. Everything else can be customized to your taste
-              
-            6. Below the player block, add T123
-              
-            7. Insert the code below into T123 and adjust all variables for the player
+            <ul>
+            <li>Two buttons/images with classes player-btn-buy and player-text will redirect to the page of the playing track, if this functionality is not needed, simply hide them out of view</li>
+            <li>Image with class player-play will serve as the Play|Pause button</li>
+            <li>Image with class player-next will serve as the next song button</li>
+            <li>Image with class player-prev will serve as the previous song button</li>
+            <li>Text with the phrase "Nothing is playing" with class player-title will display the title of the playing song</li>
+            <li>Shape with class player-cover will display the image of the playing song</li>
+            </ul>       
+            <h3>5. Everything else can be customized to your taste</h3>             
+            <h3>6. Below the player block, add T123</h3>              
+            <h3>7. Insert the code below into T123 and adjust all variables for the player</h3>
         - type: code
           value: |
             <!--Player from product catalog by ABROS-->
@@ -275,62 +275,62 @@ projects:
           value: "Instrukcja"
         - type: instruction
           value: |
-            Tworzenie listy odtwarzania
-              
-            1. W produktach utwórz produkt, w którym:
-              Tytuł: Tytuł utworu
-              Obraz: Okładka utworu
-              Kategorie katalogowe: można umieścić w kategorii, jeśli masz inne produkty lub różne listy odtwarzania
-              W cechach dodaj nową cechę (Nazwa: muzyka, Wartość: bezpośredni link do utworu)
-              W link do strony produktu dodaj link do przycisku nawigacyjnego (zobacz poniżej, dla jakich)
-              
-            2. Dodaj wszystkie utwory z instrukcji 1.
-              
-            Tworzenie odtwarzacza
-              
-            1. Dodaj katalog ST310N i dostosuj jego styl, koniecznie musi być:
-              Karty -> Pokazuj drugi obraz po najechaniu myszką - wyłączone
-              Karty -> Pokazuj paginację (zamiast przycisku „Załaduj więcej”) - włączone
-              Karty -> Dwa produkty w rzędzie na urządzeniach mobilnych - włączone
-              Karty -> Liczba widocznych produktów przed przyciskiem „Załaduj więcej” - dowolna, optymalnie 12
-              Sekcja „Zobacz także” -> Blok 'Zobacz także' - nie wyświetlaj
-              Styl galerii -> Proporcja boków - 1:1 kwadrat
-              Filtry i Kategorie -> Ukryj filtry - włączone
-              Filtry i Kategorie -> Ukryj listę kategorii katalogowych - włączone
-              Filtry i Kategorie -> Domyślne sortowanie produktów - domyślna kolejność
-              
-            2. Podłącz sekcję produktów z twoją muzyką
-              
-            3. Pod blokiem katalogu utwórz blok zerowy, w ustawieniach nadaj mu dowolną klasę (Na przykład uc-player)
-              
-            4. W tym bloku zerowym utwórz odtwarzacz, koniecznie musi być:
-              Wysokość kontenera 70px na wszystkich ekranach
-              Blok HTML na całej długości strony to pasek postępu utworu
-              Wstaw tam kod:
+            <h2>Tworzenie listy odtwarzania</h2>             
+            <h3>1. W produktach utwórz produkt, w którym:</h3>
+            <ul>
+            <li>Tytuł: Tytuł utworu</li>
+            <li>Obraz: Okładka utworu</li>
+            <li>Kategorie katalogowe: można umieścić w kategorii, jeśli masz inne produkty lub różne listy odtwarzania</li>
+            <li>W cechach dodaj nową cechę (Nazwa: muzyka, Wartość: bezpośredni link do utworu)</li>
+            <li>W link do strony produktu dodaj link do przycisku nawigacyjnego (zobacz poniżej, dla jakich)</li>
+            </ul>            
+            <h3>2. Dodaj wszystkie utwory z instrukcji 1.</h3>             
+            <h2>Tworzenie odtwarzacza</h2>             
+            <h3>1. Dodaj katalog ST310N i dostosuj jego styl, koniecznie musi być:</h3>
+            <ul>
+            <li>Karty -> Pokazuj drugi obraz po najechaniu myszką - wyłączone</li>
+            <li>Karty -> Pokazuj paginację (zamiast przycisku „Załaduj więcej”) - włączone</li>
+            <li>Karty -> Dwa produkty w rzędzie na urządzeniach mobilnych - włączone</li>
+            <li>Karty -> Liczba widocznych produktów przed przyciskiem „Załaduj więcej” - dowolna, optymalnie 12</li>
+            <li>Sekcja „Zobacz także” -> Blok 'Zobacz także' - nie wyświetlaj</li>
+            <li>Styl galerii -> Proporcja boków - 1:1 kwadrat</li>
+            <li>Filtry i Kategorie -> Ukryj filtry - włączone</li>
+            <li>Filtry i Kategorie -> Ukryj listę kategorii katalogowych - włączone</li>
+            <li>Filtry i Kategorie -> Domyślne sortowanie produktów - domyślna kolejność</li>
+            </ul>              
+            <h3>2. Podłącz sekcję produktów z twoją muzyką</h3>             
+            <h3>3. Pod blokiem katalogu utwórz blok zerowy, w ustawieniach nadaj mu dowolną klasę (Na przykład uc-player)</h3>             
+            <h3>4. W tym bloku zerowym utwórz odtwarzacz, koniecznie musi być:</h3>
+            <ul>
+            <li>Wysokość kontenera 70px na wszystkich ekranach</li>
+            <li>Blok HTML na całej długości strony to pasek postępu utworu
+            Wstaw tam kod:</li>
+            </ul>
         - type: code
           value: |
             <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">"
         - type: instruction
           value: |
-            Blok HTML to pasek postępu dźwięku
-            Wstaw tam kod:
+            <ul>
+            <li>Blok HTML to pasek postępu dźwięku
+            Wstaw tam kod:</li>
+            </ul>
         - type: code
           value: |
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">"
         - type: instruction
           value: |
-            Dwa przyciski/obrazki z klasami player-btn-buy i player-text będą przekierowywać na stronę odtwarzanego utworu, jeśli ta funkcja nie jest potrzebna, po prostu ukryj je poza widokiem
-            Obrazek z klasą player-play będzie służył jako przycisk Play|Pause
-            Obrazek z klasą player-next będzie służył jako przycisk następnego utworu
-            Obrazek z klasą player-prev będzie służył jako przycisk poprzedniego utworu
-            Tekst z napisem "Nic nie jest odtwarzane" z klasą player-title będzie wyświetlał tytuł odtwarzanego utworu
-            Kształt z klasą player-cover będzie wyświetlał obraz odtwarzanego utworu
-              
-            5. Pozostałe ustawienia można dostosować według własnych preferencji
-              
-            6. Pod blokiem odtwarzacza dodaj T123
-              
-            7. Poniższy kod wstaw do T123 i dostosuj wszystkie zmienne dla odtwarzacza
+            <ul>
+            <li>Dwa przyciski/obrazki z klasami player-btn-buy i player-text będą przekierowywać na stronę odtwarzanego utworu, jeśli ta funkcja nie jest potrzebna, po prostu ukryj je poza widokiem</li>
+            <li>Obrazek z klasą player-play będzie służył jako przycisk Play|Pause</li>
+            <li>Obrazek z klasą player-next będzie służył jako przycisk następnego utworu</li>
+            <li>Obrazek z klasą player-prev będzie służył jako przycisk poprzedniego utworu</li>
+            <li>Tekst z napisem "Nic nie jest odtwarzane" z klasą player-title będzie wyświetlał tytuł odtwarzanego utworu</li>
+            <li>Kształt z klasą player-cover będzie wyświetlał obraz odtwarzanego utworu</li>
+            </ul>
+            <h3>5. Pozostałe ustawienia można dostosować według własnych preferencji</h3>            
+            <h3>6. Pod blokiem odtwarzacza dodaj T123</h3>             
+            <h3>7. Poniższy kod wstaw do T123 i dostosuj wszystkie zmienne dla odtwarzacza</h3>
         - type: code
           value: |
             <!--Odtwarzacz z katalogu produktów by ABROS-->
@@ -423,18 +423,19 @@ projects:
           value: "После чего можно вызывать функцию уведомлений следующим образом:"
         - type: instruction
           value: |
-            Создавайте уведомления с помощью abrosnoti.create()
-            
-            Параметры abrosnoti.create():
-              Иконка: string,
-              Заголовок: string,
-              Описание: string,
-              Продолжительность: секунды,
-                (по умолчанию: 2 секунды, 0 означает бесконечное время)
-              Уничтожить при клике: boolean,
-                (определяет, должно ли уведомление исчезнуть при нажатии, по умолчанию: false)
-              Функция клика: function,
-                (вызывается при нажатии на уведомление, если не определено, по умолчанию: undefined)
+            <h3>Создавайте уведомления с помощью abrosnoti.create()</h3>           
+            <h3>Параметры abrosnoti.create():</h3>
+              <ul>
+              <li>Иконка: string,</li>
+              <li>Заголовок: string,</li>
+              <li>Описание: string,</li>
+              <li>Продолжительность: секунды,
+                (по умолчанию: 2 секунды, 0 означает бесконечное время)</li>
+              <li>Уничтожить при клике: boolean,
+                (определяет, должно ли уведомление исчезнуть при нажатии, по умолчанию: false)</li>
+              <li>Функция клика: function,
+                (вызывается при нажатии на уведомление, если не определено, по умолчанию: undefined)</li>
+              </ul>
         - type: text
           value: "Вы можете проверить как это работает, просто смените язык на моем сайте :)"
       EN:
@@ -459,18 +460,19 @@ projects:
           value: "After that, you can call the notification function as follows:"
         - type: instruction
           value: |
-            Create notifications using abrosnoti.create()
-            
-            Parameters for abrosnoti.create():
-              Icon: string,
-              Title: string,
-              Description: string,
-              Duration: seconds,
-                (default: 2 seconds, 0 means infinite time)
-              Destroy on click: boolean,
-                (determines whether the notification should disappear when clicked, default: false)
-              Click function: function,
-                (called when the notification is clicked, if not defined, default: undefined)
+            <h3>Create notifications using abrosnoti.create()</h3>            
+            <h3>Parameters for abrosnoti.create():</h3>
+              <ul>
+              <li>Icon: string,</li>
+              <li>Title: string,</li>
+              <li>Description: string,</li>
+              <li>Duration: seconds,
+                (default: 2 seconds, 0 means infinite time)</li>
+              <li>Destroy on click: boolean,
+                (determines whether the notification should disappear when clicked, default: false)</li>
+              <li>Click function: function,
+                (called when the notification is clicked, if not defined, default: undefined)</li>
+              </ul>
         - type: text
           value: "You can see how it works by simply changing the language on my website :)"
       PL:
@@ -495,18 +497,19 @@ projects:
           value: "Następnie możesz wywołać funkcję powiadomień w następujący sposób:"
         - type: instruction
           value: |
-            Twórz powiadomienia za pomocą abrosnoti.create()
-            
-            Parametry dla abrosnoti.create():
-              Ikona: string,
-              Tytuł: string,
-              Opis: string,
-              Czas trwania: sekundy,
-                (domyślnie: 2 sekundy, 0 oznacza czas nieskończony)
-              Zniszcz po kliknięciu: boolean,
-                (określa, czy powiadomienie powinno zniknąć po kliknięciu, domyślnie: false)
-              Funkcja kliknięcia: function,
-                (wywoływana po kliknięciu na powiadomienie, jeśli nie zdefiniowano, domyślnie: undefined)
+            <h3>Twórz powiadomienia za pomocą abrosnoti.create()</h3>          
+            <h3>Parametry dla abrosnoti.create():</h3>
+              <ul>
+              <li>Ikona: string,</li>
+              <li>Tytuł: string,</li>
+              <li>Opis: string,</li>
+              <li>Czas trwania: sekundy,
+                (domyślnie: 2 sekundy, 0 oznacza czas nieskończony)</li>
+              <li>Zniszcz po kliknięciu: boolean,
+                (określa, czy powiadomienie powinno zniknąć po kliknięciu, domyślnie: false)</li>
+              <li>Funkcja kliknięcia: function,
+                (wywoływana po kliknięciu na powiadomienie, jeśli nie zdefiniowano, domyślnie: undefined)</li>
+              </ul>
         - type: text
           value: "Możesz zobaczyć, jak to działa, po prostu zmieniając język na mojej stronie :)"
     hash: "AbrosNoti"

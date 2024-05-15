@@ -166,7 +166,7 @@ projects:
           Insert the code there:</li>
         </ul>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">
           </code>
         </pre>
@@ -175,7 +175,7 @@ projects:
           Insert the code there:</li>
         </ul>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
           </code>
         </pre>
@@ -191,7 +191,7 @@ projects:
         <p>6. Below the player block, add T123</p> 
         <p>7. Insert the code below into T123 and configure all variables for the player</p>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <!--Player from product catalog by ABROS-->
 
             <audio id="audio" data-track-number="0"></audio>
@@ -229,7 +229,7 @@ projects:
         </pre>
         <p>If you don't know where to find the Storepart ID, then below the catalog, create T123, insert the code below, publish it, and visit the site, you will see your Storepart ID. After that, you can delete the code</p>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <script>
             document.addEventListener("DOMContentLoaded", function() {
               var scripts = document.querySelectorAll('script');
@@ -287,7 +287,7 @@ projects:
           Wstaw tam kod:</li>
         </ul>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">
           </code>
         </pre>
@@ -296,7 +296,7 @@ projects:
           Wstaw tam kod:</li>
         </ul>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
           </code>
         </pre>
@@ -312,7 +312,7 @@ projects:
         <p>6. Pod blokiem odtwarzacza dodaj T123</p> 
         <p>7. Wstaw poniższy kod do T123 i skonfiguruj wszystkie zmienne dla odtwarzacza</p>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <!--Odtwarzacz z katalogu produktów od ABROS-->
 
             <audio id="audio" data-track-number="0"></audio>
@@ -350,7 +350,7 @@ projects:
         </pre>
         <p>Jeśli nie wiesz, gdzie znaleźć ID Storepart, to poniżej katalogu utwórz T123, wstaw poniższy kod, opublikuj i odwiedź witrynę, zobaczysz swoje ID Storepart. Następnie możesz usunąć kod</p>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <script>
             document.addEventListener("DOMContentLoaded", function() {
               var scripts = document.querySelectorAll('script');
@@ -392,7 +392,7 @@ projects:
         <h3>Выглядит круто, а самое главное, что очень просто с этим работать!</h3>
         <h3>Всё что нужно сделать, это подключить библиотеку к сайту используя код:</h3>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <script src='https://abros.dev/dev/noti.js'></script>
           </code>
         </pre>
@@ -420,7 +420,7 @@ projects:
         <h3>It looks cool, and most importantly, it's very easy to work with!</h3>
         <h3>All you need to do is to connect the library to your website using the code:</h3>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <script src='https://abros.dev/dev/noti.js'></script>
           </code>
         </pre>
@@ -448,7 +448,7 @@ projects:
         <h3>Wygląda świetnie, a co najważniejsze, jest bardzo łatwa w użyciu!</h3>
         <h3>Wszystko, co musisz zrobić, to podłączyć bibliotekę do swojej witryny za pomocą poniższego kodu:</h3>
         <pre>
-          <code class="language-html match-braces">
+          <code>
             <script src='https://abros.dev/dev/noti.js'></script>
           </code>
         </pre>
@@ -533,46 +533,34 @@ projects:
           </code>
         </pre>
         <h3>Переходи по кнопке ниже в Lampa и проверяй!</h3>
-      en:
-        - type: h4
-          value: "Abros - a plugin store for Lampa"
-        - type: img
-          value: "main/projects/LampaAbros/logo_mini.png"
-        - type: text
-          value: "This project is a plugin for the online cinema Lampa. With it, you can install all available plugins for this cinema with just one click."
-        - type: text
-          value: "This store simplifies interaction with the Lampa service. Now, there's no need to search for plugins on the internet and add them manually; everything is already available in Abros."
-        - type: img
-          value": "main/projects/LampaAbros/storemenu.png"
-        - type: text
-          value: "Currently, only the basic, well-known plugins have been added, but over time, the store will expand."
-        - type: text
-          value: "To connect the plugin, you can add the link below in Lampa."
-        - type: code
-          value: |
+      en: |
+        <h2>Abros - plugin store for Lampa</h2>
+        <img src="main/projects/LampaAbros/logo_mini.png">
+        <h3>This project is a plugin for the online cinema Lampa. With it, you can install all available plugins for this cinema in one click.</h3>
+        <h3>This store simplifies interaction with the Lampa service. Now you don't need to search for plugins on the internet and add them manually, everything is already in Abros.</h3>
+        <img src="main/projects/LampaAbros/storemenu.png">
+        <h3>Currently, only the basic, well-known plugins have been added. Over time, the store will expand.</h3>
+        <h3>To connect the plugin, add the link below to Lampa.</h3>
+        <pre>
+          <code>
             https://abros.dev/lampa/mod.js
-        - type: text
-          value: "Click the button below to go to Lampa and check!"
-      pl:
-        - type: h4
-          value: "Sklep - sklep z wtyczkami do Lampy"
-        - type: img
-          value": "main/projects/LampaAbros/logo_mini.png"
-        - type: text
-          value: "Ten projekt to wtyczka do internetowego kina Lampa. Za jej pomocą można jednym kliknięciem instalować wszystkie dostępne wtyczki dla tego kina."
-        - type: text
-          value: "Ten sklep ułatwia korzystanie z usługi Lampa. Teraz nie trzeba już szukać wtyczek w internecie i dodawać ich ręcznie - wszystko jest już dostępne w Abros."
-        - type: img
-          value: "main/projects/LampaAbros/storemenu.png"
-        - type: text
-          value: "Obecnie dodano tylko podstawowe, znane wtyczki, ale w przyszłości sklep będzie się rozwijał."
-        - type: text
-          value: "Aby podłączyć wtyczkę, możesz dodać poniższy link do Lampa."
-        - type: code
-          value: |
+          </code>
+        </pre>
+        <h3>Click the button below in Lampa and check it out!</h3>
+      pl: |
+        <h2>Abros - sklep z pluginami dla Lampa</h2>
+        <img src="main/projects/LampaAbros/logo_mini.png">
+        <h3>Ten projekt to plugin dla internetowego kina Lampa. Dzięki niemu można w jednym kliknięciu zainstalować wszystkie dostępne pluginy dla tego kina.</h3>
+        <h3>Ten sklep ułatwia interakcję z serwisem Lampa. Teraz nie trzeba szukać pluginów w internecie i dodawać ich ręcznie, wszystko jest już w Abros.</h3>
+        <img src="main/projects/LampaAbros/storemenu.png">
+        <h3>Na razie dodane są tylko podstawowe, znane pluginy. Z czasem sklep będzie się rozszerzać.</h3>
+        <h3>Aby podłączyć plugin, dodaj poniższy link do Lampa.</h3>
+        <pre>
+          <code>
             https://abros.dev/lampa/mod.js
-        - type: text
-          value: "Kliknij przycisk poniżej, aby przejść do Lampa i sprawdzić!"
+          </code>
+        </pre>
+        <h3>Kliknij przycisk poniżej w Lampa i sprawdź!</h3>
     hash: "LampaAbros"
     buttonText:
       ru: "Перейти к Lampa"

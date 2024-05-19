@@ -40,7 +40,7 @@ function checkLoad(projects) {
     
     // if (window.innerWidth > 1024) {
     if (!('ontouchstart' in window)) {
-      document.addEventListener('mousemove', handleMouseMove);
+      main.addEventListener('mousemove', handleMouseMove);
     } else {
       projectCards.forEach(card => {
         card.addEventListener('touchstart', handleTouchStart);
@@ -50,21 +50,24 @@ function checkLoad(projects) {
   }
 }
         
-function handleMouseMove(event) {
+function handleMouseMove() {
   requestAnimationFrame(() => {
-    const { clientX, clientY } = event;
-      const { innerWidth, innerHeight } = window;
-      const centerX = innerWidth / 2;
-      const centerY = innerHeight / 2;
-
-      const percentX = (clientX - centerX) / centerX;
-      const percentY = (clientY - centerY) / centerY;
-
-      projectCards.forEach(card => {
-          const tiltX = percentY * 30;
-          const tiltY = percentX * 30;
-
-          card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    const { innerWidth, innerHeight } = window;
+    const centerX = innerWidth / 2;
+    const centerY = innerHeight / 2;
+        
+    projectCards.forEach(card => {
+      const cardRect = card.getBoundingClientRect();
+      const cardX = cardRect.left + cardRect.width / 2;
+      const cardY = cardRect.top + cardRect.height / 2;
+        
+      const deltaX = centerX - cardX;
+      const deltaY = centerY - cardY;
+        
+      const tiltX = deltaX / 20;
+      const tiltY = deltaY / 20;
+        
+      card.style.transform = `rotateX(${-tiltY}deg) rotateY(${tiltX}deg)`;
     });
   });
 }
@@ -79,7 +82,7 @@ function handleTouchEnd() {
     card.classList.remove('mobcenter');
   }, 500);
 }
-  
+       
 // Создание карточек
 fetch('main/yaml/portfolio.yaml')
 .then(response => response.text())

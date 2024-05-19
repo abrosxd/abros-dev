@@ -192,14 +192,14 @@ fetch('main/yaml/portfolio.yaml')
 
     window.location.hash = `#${project.hash}`;
     Prism.highlightAll();
-  }
 
-  const elements = popupContent.children;
+    const elements = popupContent.children;
     Array.from(elements).forEach((element, index) => {
         setTimeout(() => {
             element.classList.add('fade-in');
         }, index * 300);
-  });
+    });
+  }
           
   const projectCard = document.querySelectorAll('.project-card');
   projectCard.forEach(card => {

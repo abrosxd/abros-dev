@@ -61,8 +61,8 @@ function handleMouseMove(event) {
       const percentY = (clientY - centerY) / centerY;
 
       projectCards.forEach(card => {
-          const tiltX = percentY * 10;
-          const tiltY = percentX * 10;
+          const tiltX = percentY * 30;
+          const tiltY = percentX * 30;
 
           card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
     });

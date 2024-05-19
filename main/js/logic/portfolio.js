@@ -37,14 +37,22 @@ function checkLoad(projects) {
       }, 1500);
     }, 500);
     projectCards.forEach(card => card.style.display = 'block');
+    
+    // if (window.innerWidth > 1024) {
+    if (!('ontouchstart' in window)) {
+      document.addEventListener('mousemove', handleMouseMove);
+    } else {
+      projectCards.forEach(card => {
+        card.addEventListener('touchstart', handleTouchStart);
+        card.addEventListener('touchend', handleTouchEnd);
+      });
+    }
   }
 }
         
-document.addEventListener('DOMContentLoaded', () => {
-  const projectCards = document.querySelectorAll('.project-card');
-
-  document.addEventListener('mousemove', (event) => {
-      const { clientX, clientY } = event;
+function handleMouseMove(event) {
+  requestAnimationFrame(() => {
+    const { clientX, clientY } = event;
       const { innerWidth, innerHeight } = window;
       const centerX = innerWidth / 2;
       const centerY = innerHeight / 2;
@@ -57,16 +65,21 @@ document.addEventListener('DOMContentLoaded', () => {
           const tiltY = percentX * 10;
 
           card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-      });
+    });
   });
-
-  document.addEventListener('mouseleave', () => {
-      projectCards.forEach(card => {
-          card.style.transform = `rotateX(0deg) rotateY(0deg)`;
-      });
-  });
-});
-
+}
+        
+function handleTouchStart() {
+  this.classList.add('mobcenter');
+}
+        
+function handleTouchEnd() {
+  const card = this;
+  setTimeout(() => {
+    card.classList.remove('mobcenter');
+  }, 500);
+}
+  
 // Создание карточек
 fetch('main/yaml/portfolio.yaml')
 .then(response => response.text())

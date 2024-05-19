@@ -50,19 +50,17 @@ function checkLoad(projects) {
   }
 }
         
-function handleMouseMove() {
+function handleMouseMove(event) {
   requestAnimationFrame(() => {
-    const { innerWidth, innerHeight } = window;
-    const centerX = innerWidth / 2;
-    const centerY = innerHeight / 2;
-        
+    const { clientX, clientY } = event;
+
     projectCards.forEach(card => {
       const cardRect = card.getBoundingClientRect();
       const cardX = cardRect.left + cardRect.width / 2;
       const cardY = cardRect.top + cardRect.height / 2;
         
-      const deltaX = centerX - cardX;
-      const deltaY = centerY - cardY;
+      const deltaX = clientX - cardX;
+      const deltaY = clientY - cardY;
         
       const tiltX = deltaX / 20;
       const tiltY = deltaY / 20;

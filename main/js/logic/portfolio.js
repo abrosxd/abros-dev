@@ -39,14 +39,6 @@ function checkLoad(projects) {
     projectCards.forEach(card => card.style.display = 'block');
   }
 }
-        
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('mousemove', handleMouseMove);
-  card.addEventListener('mouseleave', handleMouseLeave);
-  card.addEventListener('touchstart', handleTouchStart);
-  card.addEventListener('touchmove', handleTouchMove);
-  card.addEventListener('touchend', handleTouchEnd);
-});
 
 let currentCard = null;
 
@@ -136,6 +128,14 @@ fetch('main/yaml/portfolio.yaml')
     projectCards.push(card);
     loadImage(project.img, () => checkLoad(data.projects));
     loadImage(project.overlay, () => checkLoad(data.projects));
+  });
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mousemove', handleMouseMove);
+    card.addEventListener('mouseleave', handleMouseLeave);
+    card.addEventListener('touchstart', handleTouchStart);
+    card.addEventListener('touchmove', handleTouchMove);
+    card.addEventListener('touchend', handleTouchEnd);
   });
   
   // Создание Popup

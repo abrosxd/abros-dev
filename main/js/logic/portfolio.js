@@ -1,5 +1,5 @@
 // Поведение карточек
-const main = document.getElementById('main');
+// const main = document.getElementById('main');
 const container = document.querySelector('.container');
 const preload = document.querySelector('.preloadbg');
 const projectCards = [];
@@ -40,48 +40,73 @@ function checkLoad(projects) {
     projectCards.forEach(card => card.style.display = 'block');
     
     // if (window.innerWidth > 1024) {
-    if (!('ontouchstart' in window)) {
-      main.addEventListener('mousemove', handleMouseMove);
-    } else {
-      projectCards.forEach(card => {
-        card.addEventListener('touchstart', handleTouchStart);
-        card.addEventListener('touchend', handleTouchEnd);
-      });
-    }
+    // if (!('ontouchstart' in window)) {
+    //   main.addEventListener('mousemove', handleMouseMove);
+    // } else {
+    //   projectCards.forEach(card => {
+    //     card.addEventListener('touchstart', handleTouchStart);
+    //     card.addEventListener('touchend', handleTouchEnd);
+    //   });
+    // }
   }
 }
         
-function handleMouseMove(e) {
-  requestAnimationFrame(() => {
-    const rect = main.getBoundingClientRect();
-    const centerX = e.clientX - rect.left;
-    const centerY = e.clientY - rect.top;
-        
-    projectCards.forEach(card => {
-      const cardRect = card.getBoundingClientRect();
-      const cardX = cardRect.left + cardRect.width / 2;
-      const cardY = cardRect.top + cardRect.height / 2;
-        
-      const deltaX = centerX - cardX;
-      const deltaY = centerY - cardY;
-        
-      const tiltX = deltaX / 20;
-      const tiltY = deltaY / 20;
-        
-      card.style.transform = `rotateX(${-tiltY}deg) rotateY(${tiltX}deg)`;
-    });
-  });
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('mousemove', handleMouseMove);
+  card.addEventListener('mouseleave', handleMouseLeave);
+  card.addEventListener('touchstart', handleTouchStart);
+  card.addEventListener('touchmove', handleTouchMove);
+  card.addEventListener('touchend', handleTouchEnd);
+});
+
+let currentCard = null;
+
+function handleMouseMove(event) {
+  if (!currentCard) {
+      currentCard = event.currentTarget;
+  }
+  updateCardTilt(event.clientX, event.clientY, currentCard);
 }
-        
-function handleTouchStart() {
-  this.classList.add('mobcenter');
+
+function handleMouseLeave(event) {
+  resetCardTilt(event.currentTarget);
+  currentCard = null;
 }
-        
-function handleTouchEnd() {
-  const card = this;
-  setTimeout(() => {
-    card.classList.remove('mobcenter');
-  }, 500);
+
+function handleTouchStart(event) {
+  currentCard = event.currentTarget;
+}
+
+function handleTouchMove(event) {
+  if (event.touches.length === 1) {
+      const touch = event.touches[0];
+      updateCardTilt(touch.clientX, touch.clientY, currentCard);
+  }
+}
+
+function handleTouchEnd(event) {
+  resetCardTilt(event.currentTarget);
+  currentCard = null;
+}
+
+function updateCardTilt(x, y, card) {
+  const rect = card.getBoundingClientRect();
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+  const deltaX = x - (rect.left + centerX);
+  const deltaY = y - (rect.top + centerY);
+  const percentX = deltaX / centerX;
+  const percentY = deltaY / centerY;
+  const rotateX = percentY * 10;
+  const rotateY = -percentX * 10;
+
+  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  card.style.boxShadow = `${-percentX * 10}px ${percentY * 10}px 20px rgba(0, 0, 0, 0.2)`;
+}
+
+function resetCardTilt(card) {
+  card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+  card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
 }
        
 // Создание карточек

@@ -197,7 +197,7 @@ fetch('main/yaml/portfolio.yaml')
     Array.from(elements).forEach((element, index) => {
         setTimeout(() => {
             element.classList.add('fade-in');
-        }, index * 100);
+        }, index * 200);
     });
   }
           

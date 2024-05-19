@@ -39,6 +39,36 @@ function checkLoad(projects) {
     projectCards.forEach(card => card.style.display = 'block');
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.container');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  container.addEventListener('mousemove', (event) => {
+      const { clientX, clientY } = event;
+      const { innerWidth, innerHeight } = window;
+      const centerX = innerWidth / 2;
+      const centerY = innerHeight / 2;
+
+      const percentX = (clientX - centerX) / centerX;
+      const percentY = (clientY - centerY) / centerY;
+
+      projectCards.forEach(card => {
+          const tiltX = percentY * 10;
+          const tiltY = percentX * 10;
+
+          card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+          card.style.boxShadow = `${-percentX * 10}px ${percentY * 10}px 20px rgba(0, 0, 0, 0.2)`;
+      });
+  });
+
+  container.addEventListener('mouseleave', () => {
+      projectCards.forEach(card => {
+          card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+          card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
+      });
+  });
+});
        
 // Создание карточек
 fetch('main/yaml/portfolio.yaml')
@@ -62,36 +92,6 @@ fetch('main/yaml/portfolio.yaml')
     projectCards.push(card);
     loadImage(project.img, () => checkLoad(data.projects));
     loadImage(project.overlay, () => checkLoad(data.projects));
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.container');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    container.addEventListener('mousemove', (event) => {
-        const { clientX, clientY } = event;
-        const { innerWidth, innerHeight } = window;
-        const centerX = innerWidth / 2;
-        const centerY = innerHeight / 2;
-
-        const percentX = (clientX - centerX) / centerX;
-        const percentY = (clientY - centerY) / centerY;
-
-        projectCards.forEach(card => {
-            const tiltX = percentY * 10;
-            const tiltY = percentX * 10;
-
-            card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-            card.style.boxShadow = `${-percentX * 10}px ${percentY * 10}px 20px rgba(0, 0, 0, 0.2)`;
-        });
-    });
-
-    container.addEventListener('mouseleave', () => {
-        projectCards.forEach(card => {
-            card.style.transform = `rotateX(0deg) rotateY(0deg)`;
-            card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
-        });
-    });
   });
   
   // Создание Popup

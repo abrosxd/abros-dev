@@ -145,7 +145,8 @@
 #popup-content h3,
 #popup-content img,
 #popup-content p,
-#popup-content ul {
+#popup-content ul,
+#popup-content .code-toolbar {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;

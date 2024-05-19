@@ -38,9 +38,9 @@ function checkLoad(projects) {
     }, 500);
     projectCards.forEach(card => card.style.display = 'block');
     
-    // if (window.innerWidth > 1024) {
     if (!('ontouchstart' in window)) {
       document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseleave', handleMouseLeave);
     } else {
       projectCards.forEach(card => {
         card.addEventListener('touchstart', handleTouchStart);
@@ -62,6 +62,28 @@ function handleMouseMove(event) {
       const deltaX = clientX - cardX;
       const deltaY = clientY - cardY;
         
+      const tiltX = deltaX / 20;
+      const tiltY = deltaY / 20;
+        
+      card.style.transform = `rotateX(${-tiltY}deg) rotateY(${tiltX}deg)`;
+    });
+  });
+}
+
+function handleMouseLeave() {
+  requestAnimationFrame(() => {
+    const { innerWidth, innerHeight } = window;
+    const centerX = innerWidth / 2;
+    const centerY = innerHeight / 2;
+
+    projectCards.forEach(card => {
+      const cardRect = card.getBoundingClientRect();
+      const cardX = cardRect.left + cardRect.width / 2;
+      const cardY = cardRect.top + cardRect.height / 2;
+
+      const deltaX = centerX - cardX;
+      const deltaY = centerY - cardY;
+
       const tiltX = deltaX / 20;
       const tiltY = deltaY / 20;
         

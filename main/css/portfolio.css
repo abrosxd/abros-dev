@@ -185,7 +185,7 @@
 }
 
 #popup-content ul {
-    flex-wrap: wrap;
+    flex-direction: column;
     list-style: inside;
     font-size: 1em;
     margin: 1em;

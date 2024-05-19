@@ -39,72 +39,6 @@ function checkLoad(projects) {
     projectCards.forEach(card => card.style.display = 'block');
   }
 }
-
-let currentCard = null;
-
-function handleMouseMove(event) {
-  const card = event.currentTarget;
-  const rect = card.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const y = event.clientY - rect.top;
-  const centerX = rect.width / 2;
-  const centerY = rect.height / 2;
-  const deltaX = x - centerX;
-  const deltaY = y - centerY;
-  const percentX = deltaX / centerX;
-  const percentY = deltaY / centerY;
-  const rotateX = percentY * 15;
-  const rotateY = -percentX * 15;
-
-  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-  card.style.boxShadow = `${-percentX * 10}px ${percentY * 10}px 20px rgba(0, 0, 0, 0.2)`;
-}
-
-function handleMouseLeave(event) {
-  const card = event.currentTarget;
-  card.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
-  card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
-  card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
-
-  setTimeout(() => {
-    card.style.transition = 'transform 0.2s, box-shadow 0.2s';
-  }, 500);
-}
-
-function handleTouchStart(event) {
-  currentCard = event.currentTarget;
-}
-
-function handleTouchMove(event) {
-  if (event.touches.length === 1) {
-    const touch = event.touches[0];
-    updateCardTilt(touch.clientX, touch.clientY, currentCard);
-  }
-}
-
-function handleTouchEnd(event) {
-  const card = currentCard;
-  setTimeout(() => {
-    card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
-    card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
-  }, 500);
-  currentCard = null;
-}
-
-function updateCardTilt(x, y, card) {
-  const rect = card.getBoundingClientRect();
-  const centerX = rect.width / 2;
-  const centerY = rect.height / 2;
-  const deltaX = x - (rect.left + centerX);
-  const deltaY = y - (rect.top + centerY);
-  const percentX = deltaX / centerX;
-  const percentY = deltaY / centerY;
-  const rotateX = percentY * 15;
-  const rotateY = -percentX * 15;
-
-  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-  card.style.boxShadow = `${-percentX * 10}px ${percentY * 10}px 20px rgba(0, 0, 0, 0.2)`;
-}
        
 // Создание карточек
 fetch('main/yaml/portfolio.yaml')
@@ -130,13 +64,12 @@ fetch('main/yaml/portfolio.yaml')
     loadImage(project.overlay, () => checkLoad(data.projects));
   });
 
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mousemove', handleMouseMove);
-    card.addEventListener('mouseleave', handleMouseLeave);
-    card.addEventListener('touchstart', handleTouchStart);
-    card.addEventListener('touchmove', handleTouchMove);
-    card.addEventListener('touchend', handleTouchEnd);
-  });
+  VanillaTilt.init(document.querySelectorAll(".project-card"), {
+    max: 15,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.5,
+});
   
   // Создание Popup
   function escapeHTMLInsideCode(html) {

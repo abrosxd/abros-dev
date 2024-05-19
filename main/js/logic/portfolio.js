@@ -61,8 +61,8 @@ function handleMouseMove(event) {
   const deltaY = y - centerY;
   const percentX = deltaX / centerX;
   const percentY = deltaY / centerY;
-  const rotateX = percentY * 15; // Adjust for more/less tilt
-  const rotateY = -percentX * 15; // Adjust for more/less tilt
+  const rotateX = percentY * 15;
+  const rotateY = -percentX * 15;
 
   card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
   card.style.boxShadow = `${-percentX * 10}px ${percentY * 10}px 20px rgba(0, 0, 0, 0.2)`;
@@ -75,7 +75,7 @@ function handleMouseLeave(event) {
   card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
 
   setTimeout(() => {
-      card.style.transition = 'transform 0.2s, box-shadow 0.2s';
+    card.style.transition = 'transform 0.2s, box-shadow 0.2s';
   }, 500);
 }
 
@@ -85,16 +85,16 @@ function handleTouchStart(event) {
 
 function handleTouchMove(event) {
   if (event.touches.length === 1) {
-      const touch = event.touches[0];
-      updateCardTilt(touch.clientX, touch.clientY, currentCard);
+    const touch = event.touches[0];
+    updateCardTilt(touch.clientX, touch.clientY, currentCard);
   }
 }
 
 function handleTouchEnd(event) {
   const card = currentCard;
   setTimeout(() => {
-      card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
-      card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
+    card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+    card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
   }, 500);
   currentCard = null;
 }

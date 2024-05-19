@@ -39,12 +39,11 @@ function checkLoad(projects) {
     projectCards.forEach(card => card.style.display = 'block');
   }
 }
-
+        
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.container');
   const projectCards = document.querySelectorAll('.project-card');
 
-  container.addEventListener('mousemove', (event) => {
+  document.addEventListener('mousemove', (event) => {
       const { clientX, clientY } = event;
       const { innerWidth, innerHeight } = window;
       const centerX = innerWidth / 2;
@@ -62,14 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
-  container.addEventListener('mouseleave', () => {
+  document.addEventListener('mouseleave', () => {
       projectCards.forEach(card => {
           card.style.transform = `rotateX(0deg) rotateY(0deg)`;
           card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
       });
   });
 });
-       
+
 // Создание карточек
 fetch('main/yaml/portfolio.yaml')
 .then(response => response.text())

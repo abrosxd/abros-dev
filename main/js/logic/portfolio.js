@@ -194,9 +194,12 @@ fetch('main/yaml/portfolio.yaml')
     Prism.highlightAll();
   }
 
-  setTimeout(() => {
-    popup.classList.add('popup-visible');
-  }, 10);
+  const elements = popupContent.children;
+    Array.from(elements).forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.add('fade-in');
+        }, index * 300); // Задержка 300мс между каждым элементом
+    });
           
   const projectCard = document.querySelectorAll('.project-card');
   projectCard.forEach(card => {

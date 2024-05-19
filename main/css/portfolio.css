@@ -141,13 +141,17 @@
     }
 }
 
-.popup-content {
+#popup-content h2,
+#popup-content h3,
+#popup-content img,
+#popup-content p,
+#popup-content ul {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(20px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.popup-visible .popup-content {
+#popup-content .fade-in {
     opacity: 1;
     transform: translateY(0);
 }

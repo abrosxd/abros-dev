@@ -494,6 +494,8 @@
                 popupMenu.style.opacity = 0;
                 popupMenu.style.visibility = 'hidden';
 
+                document.body.classList.remove('no-scroll');
+
                 history.replaceState(null, document.title, window.location.pathname + window.location.search);
             }
         </script>

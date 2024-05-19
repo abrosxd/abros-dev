@@ -186,6 +186,8 @@ fetch('main/yaml/portfolio.yaml')
     popupMenu.style.opacity = 1;
     popupMenu.style.visibility = 'visible';
 
+    document.body.classList.add('no-scroll');
+
     popup.scrollTop = 0;
 
     window.location.hash = `#${project.hash}`;

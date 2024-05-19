@@ -1,5 +1,4 @@
 // Поведение карточек
-// const main = document.getElementById('main');
 const container = document.querySelector('.container');
 const preload = document.querySelector('.preloadbg');
 const projectCards = [];
@@ -38,16 +37,6 @@ function checkLoad(projects) {
       }, 1500);
     }, 500);
     projectCards.forEach(card => card.style.display = 'block');
-    
-    // if (window.innerWidth > 1024) {
-    // if (!('ontouchstart' in window)) {
-    //   main.addEventListener('mousemove', handleMouseMove);
-    // } else {
-    //   projectCards.forEach(card => {
-    //     card.addEventListener('touchstart', handleTouchStart);
-    //     card.addEventListener('touchend', handleTouchEnd);
-    //   });
-    // }
   }
 }
         
@@ -62,15 +51,32 @@ document.querySelectorAll('.project-card').forEach(card => {
 let currentCard = null;
 
 function handleMouseMove(event) {
-  if (!currentCard) {
-      currentCard = event.currentTarget;
-  }
-  updateCardTilt(event.clientX, event.clientY, currentCard);
+  const card = event.currentTarget;
+  const rect = card.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+  const deltaX = x - centerX;
+  const deltaY = y - centerY;
+  const percentX = deltaX / centerX;
+  const percentY = deltaY / centerY;
+  const rotateX = percentY * 15; // Adjust for more/less tilt
+  const rotateY = -percentX * 15; // Adjust for more/less tilt
+
+  card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  card.style.boxShadow = `${-percentX * 10}px ${percentY * 10}px 20px rgba(0, 0, 0, 0.2)`;
 }
 
 function handleMouseLeave(event) {
-  resetCardTilt(event.currentTarget);
-  currentCard = null;
+  const card = event.currentTarget;
+  card.style.transition = 'transform 0.5s ease, box-shadow 0.5s ease';
+  card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+  card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
+
+  setTimeout(() => {
+      card.style.transition = 'transform 0.2s, box-shadow 0.2s';
+  }, 500);
 }
 
 function handleTouchStart(event) {
@@ -85,7 +91,11 @@ function handleTouchMove(event) {
 }
 
 function handleTouchEnd(event) {
-  resetCardTilt(event.currentTarget);
+  const card = currentCard;
+  setTimeout(() => {
+      card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+      card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
+  }, 500);
   currentCard = null;
 }
 
@@ -97,16 +107,11 @@ function updateCardTilt(x, y, card) {
   const deltaY = y - (rect.top + centerY);
   const percentX = deltaX / centerX;
   const percentY = deltaY / centerY;
-  const rotateX = percentY * 10;
-  const rotateY = -percentX * 10;
+  const rotateX = percentY * 15;
+  const rotateY = -percentX * 15;
 
   card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
   card.style.boxShadow = `${-percentX * 10}px ${percentY * 10}px 20px rgba(0, 0, 0, 0.2)`;
-}
-
-function resetCardTilt(card) {
-  card.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
-  card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
 }
        
 // Создание карточек

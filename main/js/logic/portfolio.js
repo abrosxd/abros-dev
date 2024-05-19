@@ -193,6 +193,10 @@ fetch('main/yaml/portfolio.yaml')
     window.location.hash = `#${project.hash}`;
     Prism.highlightAll();
   }
+
+  setTimeout(() => {
+    popup.classList.add('popup-visible');
+  }, 10);
           
   const projectCard = document.querySelectorAll('.project-card');
   projectCard.forEach(card => {

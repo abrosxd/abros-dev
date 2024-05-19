@@ -141,6 +141,17 @@
     }
 }
 
+.popup-content {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.popup-visible .popup-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 #popup-content h2 {
     font-size: 5rem;
     margin: 0;

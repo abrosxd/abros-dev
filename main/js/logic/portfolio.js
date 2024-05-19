@@ -40,7 +40,7 @@ function checkLoad(projects) {
     
     // if (window.innerWidth > 1024) {
     if (!('ontouchstart' in window)) {
-      main.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mousemove', handleMouseMove);
     } else {
       projectCards.forEach(card => {
         card.addEventListener('touchstart', handleTouchStart);

@@ -57,14 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
           const tiltY = percentX * 10;
 
           card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-          card.style.boxShadow = `${-percentX * 10}px ${percentY * 10}px 20px rgba(0, 0, 0, 0.2)`;
       });
   });
 
   document.addEventListener('mouseleave', () => {
       projectCards.forEach(card => {
           card.style.transform = `rotateX(0deg) rotateY(0deg)`;
-          card.style.boxShadow = `0 4px 8px rgba(0, 0, 0, 0.1)`;
       });
   });
 });

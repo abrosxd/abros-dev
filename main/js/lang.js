@@ -30,6 +30,7 @@ if (!savedLanguage) {
 var currentLanguage = savedLanguage;
 
 document.addEventListener('DOMContentLoaded', function() {
+    document.documentElement.setAttribute('lang', currentLanguage);
     var buttons = document.querySelectorAll('.lang-sub .button');
     
     buttons.forEach(function(item) {

@@ -16,7 +16,7 @@ if (!window.AbrosInj) {
   
         /* Подключение плагинов */
         loadScript(`https://abros.dev/dev/noti.js`); // Noti (Уведомления)
-        loadScript(`https://deusnotam.github.io/D3US/d3us.js`); // Система DEUS
+        loadScript(`https://deusnotam.github.io/D3US/d3us.js`); // Настройщик тильды
   
         function loadScript(src) {
             const script = document.createElement('script');

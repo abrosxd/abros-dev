@@ -121,7 +121,7 @@
   font-family: var(--font-basic);
 }
 
-@media (max-width: 767px) {
+@media (min-width: 767px) {
   .popup {
     width: calc(var(--width) * 1.5);
   }

@@ -106,7 +106,7 @@ projects:
               PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Иконка кнопки Выкл.Звук
             };
             </script>
-            <script src = 'https://abros.dev/tilda/mods/audioplayer.js'></script>
+            <script src = 'https://cdn.abros.dev/tilda/audioplayer.js'></script>
           </code>
         </pre>
         <p>Если вы не знаете где найти ID Storepart, то под каталогом создайте T123, вставте код ниже, опубликуйте и зайдите на сайт, вы увидите свой ID Storepart. После чего код можно удалить</p>
@@ -230,7 +230,7 @@ projects:
               PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Unmute button icon
             };
             </script>
-            <script src = 'https://abros.dev/tilda/mods/audioplayer.js'></script>
+            <script src = 'https://cdn.abros.dev/tilda/audioplayer.js'></script>
           </code>
         </pre>
         <p>If you don't know where to find the Storepart ID, create T123 under the catalog, insert the code below, publish it, and visit the site to see your Storepart ID. You can then delete the code.</p>
@@ -354,7 +354,7 @@ projects:
               PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Ikona przycisku Wyłącz dźwięk
             };
             </script>
-            <script src = 'https://abros.dev/tilda/mods/audioplayer.js'></script>
+            <script src = 'https://cdn.abros.dev/tilda/audioplayer.js'></script>
           </code>
         </pre>
         <p>Jeśli nie wiesz, gdzie znaleźć ID Storepart, utwórz T123 pod katalogiem, wstaw poniższy kod, opublikuj go i wejdź na stronę, aby zobaczyć swój ID Storepart. Następnie możesz usunąć ten kod.</p>
@@ -404,7 +404,7 @@ projects:
         <h3>Всё что нужно сделать, это подключить библиотеку к сайту используя код:</h3>
         <pre>
           <code>
-            <script src='https://abros.dev/dev/noti.js'></script>
+            <script src='https://cdn.abros.dev/noti/noti.js'></script>
           </code>
         </pre>
         <h3>После чего можно вызывать функцию уведомлений следующим образом:</h3>
@@ -432,7 +432,7 @@ projects:
         <h3>All you need to do is to connect the library to your website using the code:</h3>
         <pre>
           <code>
-            <script src='https://abros.dev/dev/noti.js'></script>
+            <script src='https://cdn.abros.dev/noti/noti.js'></script>
           </code>
         </pre>
         <h3>After that, you can call the notification function as follows:</h3>
@@ -460,7 +460,7 @@ projects:
         <h3>Wszystko, co musisz zrobić, to podłączyć bibliotekę do swojej witryny za pomocą poniższego kodu:</h3>
         <pre>
           <code>
-            <script src='https://abros.dev/dev/noti.js'></script>
+            <script src='https://cdn.abros.dev/noti/noti.js'></script>
           </code>
         </pre>
         <h3>Po tym możesz wywołać funkcję powiadomień w następujący sposób:</h3>
@@ -484,7 +484,7 @@ projects:
       en: " "
       pl: " "
     url: " "
-    
+
   - id: 3
     title: "Grushka Endoterapia"
     img: "main/projects/GrushkaEndo/avatar.png"
@@ -540,7 +540,7 @@ projects:
         <h3>Подключить плагин можно добавив ссылку ниже в Lampa.</h3>
         <pre>
           <code>
-            https://abros.dev/lampa/mod.js
+            https://cdn.abros.dev/lampa/mod.js
           </code>
         </pre>
         <h3>Переходи по кнопке ниже в Lampa и проверяй!</h3>
@@ -554,7 +554,7 @@ projects:
         <h3>To connect the plugin, add the link below to Lampa.</h3>
         <pre>
           <code>
-            https://abros.dev/lampa/mod.js
+            https://cdn.abros.dev/lampa/mod.js
           </code>
         </pre>
         <h3>Click the button below in Lampa and check it out!</h3>
@@ -568,7 +568,7 @@ projects:
         <h3>Aby podłączyć plugin, dodaj poniższy link do Lampa.</h3>
         <pre>
           <code>
-            https://abros.dev/lampa/mod.js
+            https://cdn.abros.dev/lampa/mod.js
           </code>
         </pre>
         <h3>Kliknij przycisk poniżej w Lampa i sprawdź!</h3>
@@ -690,7 +690,6 @@ projects:
       en: "Streamer's YouTube channel"
       pl: "Kanał YouTube streamera"
     url: "https://www.youtube.com/@VadiHS"
-
 
 filters:
   All:

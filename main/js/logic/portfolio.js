@@ -228,6 +228,7 @@ fetch("main/yaml/portfolio.yaml")
     });
     // Смена языка фильтра
     function changefilters(language) {
+      const filterElements = document.querySelector(".filter .text");
       const filterNames = [
         "All",
         "MyProject",
@@ -236,6 +237,7 @@ fetch("main/yaml/portfolio.yaml")
         "Design",
         "TildaMod",
       ];
+      filterElements.textContent = data.filters.All[language];
       filterNames.forEach((name) => {
         const element = document.querySelector(`.tFilter${name}`);
         element.textContent = data.filters[name][language];

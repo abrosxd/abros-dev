@@ -4,7 +4,7 @@ projects:
     img: "main/projects/Tilda/Player/avatar.png"
     overlay: "main/projects/Tilda/Player/overlay.png"
     outline: "#7e70ff"
-    category: "Tilda"
+    category: "TildaMod"
     content:
       ru: |
         <h2>Плеер с плейлистом для сайта</h2>
@@ -584,7 +584,7 @@ projects:
     img: "main/projects/DEUS/avatar.png"
     overlay: "main/projects/DEUS/overlay.png"
     outline: "#00ff00"
-    category: "MyProject Library"
+    category: "Library"
     content:
       ru: |
         <h2>DEUS - защита контента</h2>
@@ -700,10 +700,10 @@ filters:
     ru: "Библиотеки"
     en: "Libraries"
     pl: "Biblioteki"
-  Tilda:
-    ru: "Tilda"
-    en: "Tilda"
-    pl: "Tilda"
+  TildaMod:
+    ru: "Модификации Tilda"
+    en: "Modifications of Tilda"
+    pl: "Modyfikacje Tilda"
   Layout:
     ru: "Верстка сайтов"
     en: "Website layout"

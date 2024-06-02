@@ -54,42 +54,54 @@ pay:
 
 coinData:
   BTC:
-    text:
-      ru: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(255, 147, 0, 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.'
-      en: 'Send only assets <span style="color: #fff; background-color: rgb(255, 147, 0, 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span> to this address. Sending other assets will result in permanent loss.'
-      pl: 'Wyślij tylko aktywa <span style="color: #fff; background-color: rgb(255, 147, 0, 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.'
     coin:
-      ru: 'Отправляйте только монеты: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span>'
-      en: 'Send coins only: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span>'
-      pl: 'Wysyłajcie tylko monety: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span>'
+      ru: 'Отправляйте только монеты: <span style="color: #f80; padding: 0 6px; font-weight: 600;">BTC</span>'
+      en: 'Send coins only: <span style="color: #f80; padding: 0 6px; font-weight: 600;">BTC</span>'
+      pl: 'Wysyłajcie tylko monety: <span style="color: #f80; padding: 0 6px; font-weight: 600;">BTC</span>'
     net:
-      ru: 'Сеть: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
-      en: 'Network: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
-      pl: 'Sieć: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
+      ru: 'Сеть: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
+      en: 'Network: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
+      pl: 'Sieć: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
     address: "bc1qlxj5cklq893a9aqusw382esk92rrxkn52v6cuv"
   ETH:
-    text:
-      ru: 'Отправляйте только <span style="color: #fff; background-color: rgb(141, 176, 255, 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Ethereum(ETH) или активы в сети Ethereum(ERC20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.'
-      en: 'Send only <span style="color: #fff; background-color: rgb(141, 176, 255, 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Ethereum(ETH) or assets on the Ethereum(ERC20) network</span> to this address. Sending other assets will result in permanent loss.'
-      pl: 'Wyślij tylko <span style="color: #fff; background-color: rgb(141, 176, 255, 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Ethereum(ETH) lub aktywa na sieci Ethereum(ERC20)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.'
+    coin:
+      ru: 'Отправляйте только монеты: <span style="color: #f80; padding: 0 6px; font-weight: 600;">ETH</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+      en: 'Send coins only: <span style="color: #f80; padding: 0 6px; font-weight: 600;">ETH</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+      pl: 'Wysyłajcie tylko monety: <span style="color: #f80; padding: 0 6px; font-weight: 600;">ETH</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+    net:
+      ru: 'Сеть: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Ethereum(ERC20)</span>'
+      en: 'Network: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Ethereum(ERC20)</span>'
+      pl: 'Sieć: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Ethereum(ERC20)</span>'
     address: "0x849a1f60cCBA76CcD124263cF0F6A4B5f5640423"
   TRX:
-    text:
-      ru: 'Отправляйте только <span style="color: #fff; background-color: rgba(255, 0, 0, 0.6); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron(TRX) или активы в сети Tron(TRС20)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.'
-      en: 'Send only <span style="color: #fff; background-color: rgba(255, 0, 0, 0.6); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron(TRX) or assets on the Tron(TRС20) network</span> to this address. Sending other assets will result in permanent loss.'
-      pl: 'Wyślij tylko <span style="color: #fff; background-color: rgba(255, 0, 0, 0.6); border-radius: 10px; padding: 0 6px; font-weight: 600;">Tron (TRX) lub aktywa na sieci Tron (TRC20)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.'
+    coin:
+      ru: 'Отправляйте только монеты: <span style="color: #f80; padding: 0 6px; font-weight: 600;">TRX</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+      en: 'Send coins only: <span style="color: #f80; padding: 0 6px; font-weight: 600;">TRX</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+      pl: 'Wysyłajcie tylko monety: <span style="color: #f80; padding: 0 6px; font-weight: 600;">TRX</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+    net:
+      ru: 'Сеть: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Tron(TRС20)</span>'
+      en: 'Network: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Tron(TRС20)</span>'
+      pl: 'Sieć: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Tron(TRС20)</span>'
     address: "TFoJe2GRYhVm5qFJj5pnrHn28P9WUpMJ7d"
   TON:
-    text:
-      ru: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(0, 78, 255, 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">TON(TON)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.'
-      en: 'Send only assets <span style="color: #fff; background-color: rgb(0, 78, 255, 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">TON(TON)</span> to this address. Sending other assets will result in permanent loss.'
-      pl: 'Wyślij tylko aktywa <span style="color: #fff; background-color: rgb(0, 78, 255, 50%); border-radius: 10px; padding: 0 6px; font-weight: 600;">TON(TON)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.'
-    address: "EQDPONbZLjrOaa0uzPNyqtC9alGAsHyA7gdgcVg4oqKJ0PFP"
+    coin:
+      ru: 'Отправляйте только монеты: <span style="color: #f80; padding: 0 6px; font-weight: 600;">TON</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+      en: 'Send coins only: <span style="color: #f80; padding: 0 6px; font-weight: 600;">TON</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+      pl: 'Wysyłajcie tylko monety: <span style="color: #f80; padding: 0 6px; font-weight: 600;">TON</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+    net:
+      ru: 'Сеть: <span style="color: #f80; padding: 0 6px; font-weight: 600;">The Open Network (TON)</span>'
+      en: 'Network: <span style="color: #f80; padding: 0 6px; font-weight: 600;">The Open Network (TON)</span>'
+      pl: 'Sieć: <span style="color: #f80; padding: 0 6px; font-weight: 600;">The Open Network (TON)</span>'
+    address: "UQD8pfLYMRAMf7ix8qicKKXG2-4CwjH8Epmk0I6XsoReY4n4"
   SOL:
-    text:
-      ru: 'Отправляйте только <span style="color: #acffec; background-color: rgba(171, 0, 255, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana(SOL) или активы в сети Solana(SPL)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.'
-      en: 'Send only <span style="color: #acffec; background-color: rgba(171, 0, 255, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana(SOL) or assets on the Solana(SPL) network</span> to this address. Sending other assets will result in permanent loss.'
-      pl: 'Wyślij tylko <span style="color: #acffec; background-color: rgba(171, 0, 255, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana (SOL) lub aktywa na sieci Solana (SPL)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.'
+    coin:
+      ru: 'Отправляйте только монеты: <span style="color: #f80; padding: 0 6px; font-weight: 600;">SOL</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+      en: 'Send coins only: <span style="color: #f80; padding: 0 6px; font-weight: 600;">SOL</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+      pl: 'Wysyłajcie tylko monety: <span style="color: #f80; padding: 0 6px; font-weight: 600;">SOL</span> <span style="color: #f80; padding: 0 6px; font-weight: 600;">USDT</span>'
+    net:
+      ru: 'Сеть: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Solana(SPL)</span>'
+      en: 'Network: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Solana(SPL)</span>'
+      pl: 'Sieć: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Solana(SPL)</span>'
     address: "DWSHfe1ZLkeB5M1Reu4AAeD4P6iCDtRzLv5pLL6YHUQV"
 
 reviews:

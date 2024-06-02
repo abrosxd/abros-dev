@@ -58,6 +58,14 @@ coinData:
       ru: 'Отправляйте только активы <span style="color: #fff; background-color: rgb(255, 147, 0, 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.'
       en: 'Send only assets <span style="color: #fff; background-color: rgb(255, 147, 0, 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span> to this address. Sending other assets will result in permanent loss.'
       pl: 'Wyślij tylko aktywa <span style="color: #fff; background-color: rgb(255, 147, 0, 60%); border-radius: 10px; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.'
+    coin:
+      ru: 'Отправляйте только монеты: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span>'
+      en: 'Send coins only: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span>'
+      pl: 'Wysyłajcie tylko monety: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin(BTC)</span>'
+    net:
+      ru: 'Сеть: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
+      en: 'Network: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
+      pl: 'Sieć: <span style="color: #fff; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
     address: "bc1qlxj5cklq893a9aqusw382esk92rrxkn52v6cuv"
   ETH:
     text:
@@ -83,12 +91,6 @@ coinData:
       en: 'Send only <span style="color: #acffec; background-color: rgba(171, 0, 255, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana(SOL) or assets on the Solana(SPL) network</span> to this address. Sending other assets will result in permanent loss.'
       pl: 'Wyślij tylko <span style="color: #acffec; background-color: rgba(171, 0, 255, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Solana (SOL) lub aktywa na sieci Solana (SPL)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.'
     address: "DWSHfe1ZLkeB5M1Reu4AAeD4P6iCDtRzLv5pLL6YHUQV"
-  BNB:
-    text:
-      ru: 'Отправляйте только активы <span style="color: #fff; background-color: rgba(0, 47, 178, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin(LTC)</span> на этот адрес. Остальные активы будут безвозвратно утеряны.'
-      en: 'Send only assets <span style="color: #fff; background-color: rgba(0, 47, 178, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin(LTC)</span> to this address. Sending other assets will result in permanent loss.'
-      pl: 'Wyślij tylko aktywa <span style="color: #fff; background-color: rgba(0, 47, 178, 0.5); border-radius: 10px; padding: 0 6px; font-weight: 600;">Litecoin (LTC)</span> na ten adres. Wysłanie innych aktywów spowoduje trwałą utratę.'
-    address: "0x849a1f60cCBA76CcD124263cF0F6A4B5f5640423"
 
 reviews:
   ru: "Отзывы"

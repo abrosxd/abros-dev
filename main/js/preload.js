@@ -1,5 +1,5 @@
-import { initAboutPage } from "./main/js/logic/about.js";
-import { initPortfolioPage } from "./main/js/logic/portfolio.js";
+import { initAboutPage } from "./logic/about.js";
+import { initPortfolioPage } from "./logic/portfolio.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   barba.init({

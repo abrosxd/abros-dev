@@ -922,9 +922,21 @@
         </div>
       </div>
       <script src="main/js/logic/menu.js"></script>
-      <script src="main/js/logic/about.js"></script>
-      <script src="main/js/preload.js"></script>
       <script src="https://cdn.abros.dev/noti/noti.js"></script>
+      <script type="module">
+        import { initAboutPage } from "./main/js/logic/about.js";
+        import { initPortfolioPage } from "./main/js/logic/portfolio.js";
+        import "./main/js/preload.js";
+
+        if (document.querySelector("main").dataset.barbaNamespace === "about") {
+          initAboutPage();
+        }
+        if (
+          document.querySelector("main").dataset.barbaNamespace === "portfolio"
+        ) {
+          initPortfolioPage();
+        }
+      </script>
     </main>
   </body>
 </html>

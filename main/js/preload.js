@@ -1,12 +1,12 @@
-console.log("Barba.js инициализируется");
+import { initAboutPage } from "./initAbout.js";
+import { initPortfolioPage } from "./initPortfolio.js";
+
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOMContentLoaded событие");
   barba.init({
     transitions: [
       {
         name: "fade",
         leave(data) {
-          console.log("leave transition начат");
           return new Promise((resolve) => {
             const preloadDiv = document.querySelector(".preload");
             const preloadIconDiv = document.querySelector(".preload-icon");
@@ -22,13 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
             preloadDiv.style.display = "block";
 
             setTimeout(() => {
-              console.log("leave transition завершен");
               resolve();
             }, 500);
           });
         },
         enter(data) {
-          console.log("enter transition начат");
           return new Promise((resolve) => {
             setTimeout(() => {
               const preloadDiv = document.querySelector(".preload");
@@ -49,8 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
               setTimeout(() => {
                 preloadDiv.style.display = "none";
-                console.log("enter transition завершен");
                 resolve();
+
+                // Инициализация страниц после завершения перехода
+                if (data.next.namespace === "about") {
+                  initAboutPage();
+                }
+                if (data.next.namespace === "portfolio") {
+                  initPortfolioPage();
+                }
               }, 1500);
             }, 500);
           });
@@ -58,4 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     ],
   });
+
+  // Инициализация страниц на начальной загрузке
+  if (document.querySelector("main").dataset.barbaNamespace === "about") {
+    initAboutPage();
+  }
+  if (document.querySelector("main").dataset.barbaNamespace === "portfolio") {
+    initPortfolioPage();
+  }
 });

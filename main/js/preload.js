@@ -1,4 +1,4 @@
-import { initMenu } from "./logic/menu.js";
+// import { initMenu } from "./logic/menu.js";
 import { initAboutPage } from "./logic/about.js";
 import { initPortfolioPage } from "./logic/portfolio.js";
 
@@ -62,9 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Инициализация страниц на начальной загрузке, если они активны
-if (document.body.dataset.namespace === "about") {
+if (document.querySelector("main").dataset.barbaNamespace === "about") {
   initAboutPage();
 }
-if (document.body.dataset.namespace === "portfolio") {
+if (document.querySelector("main").dataset.barbaNamespace === "portfolio") {
   initPortfolioPage();
 }

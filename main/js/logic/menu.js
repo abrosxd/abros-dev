@@ -50,6 +50,60 @@ if (isFilterPage()) {
   initializeSubMenu("filter-trigger", "filter-submenu");
 }
 
+// Контроль музыки
+const audio = document.getElementById("backgroundMusic");
+const toggleButton = document.getElementById("toggleMusic");
+let userInteracted = false;
+
+function fadeIn(element, duration) {
+  element.volume = 0;
+  element.play().then(() => {
+    if (userInteracted) {
+      element.volume = 1;
+    }
+  });
+
+  let currentTime = 0;
+  const interval = 50;
+  const targetVolume = 1;
+  const volumeChange = targetVolume / (duration / interval);
+
+  const fadeInterval = setInterval(() => {
+    currentTime += interval;
+    element.volume = Math.min(targetVolume, element.volume + volumeChange);
+    if (currentTime >= duration) {
+      clearInterval(fadeInterval);
+      element.volume = Math.min(targetVolume, 1);
+    }
+  }, interval);
+}
+
+function fadeOut(element, duration) {
+  let currentTime = 0;
+  const interval = 50;
+  const currentVolume = element.volume;
+  const volumeChange = currentVolume / (duration / interval);
+
+  const fadeInterval = setInterval(() => {
+    currentTime += interval;
+    element.volume = Math.max(0, element.volume - volumeChange);
+    if (currentTime >= duration) {
+      clearInterval(fadeInterval);
+      element.pause();
+      element.volume = Math.max(0, element.volume);
+    }
+  }, interval);
+}
+
+toggleButton.addEventListener("click", function () {
+  if (audio.paused) {
+    fadeIn(audio, 1000);
+  } else {
+    fadeOut(audio, 1000);
+  }
+  toggleButton.classList.toggle("playing");
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   // Смена языка меню
   function changeMenuText(language) {

@@ -662,6 +662,94 @@ nav {
   }
 }
 
+.music {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}
+
+@media (max-width: 767px) {
+  .music {
+    top: 24px;
+    bottom: auto;
+    right: 80px;
+  }
+}
+
+.music .center {
+  display: flex;
+  transform: rotate(180deg);
+}
+
+.music .button .center .bar {
+  --tw-bg-opacity: 1;
+  background-color: #f63b3b;
+  background-color: rgb(246 59 59 / var(--tw-bg-opacity));
+  animation: animBars 1.3s infinite;
+  height: 0;
+  margin: 0 0.1rem;
+  width: 0.125rem;
+}
+
+.music .button.playing .center .bar {
+  background-color: #3b82f6;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+  transition: background-color 0.3s ease;
+}
+
+.music .button .center .bar:first-of-type {
+  animation-delay: 0.1s;
+}
+
+.music .button .center .bar:nth-of-type(2) {
+  animation-delay: 0.3s;
+}
+
+.music .button .center .bar:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+
+.music .button .center .bar:nth-of-type(4) {
+  animation-delay: 0.6s;
+}
+
+.music .button .center .bar:nth-of-type(5) {
+  animation-delay: 0.7s;
+}
+
+.music .button .center .bar:nth-of-type(6) {
+  animation-delay: 0.9s;
+}
+
+.music .button .center .bar:nth-of-type(7) {
+  animation-delay: 1s;
+}
+
+@keyframes animBars {
+  0% {
+    height: 0.3rem;
+    opacity: 0.5;
+  }
+
+  25% {
+    opacity: 0.75;
+  }
+
+  50% {
+    height: 0.8rem;
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  to {
+    height: 0.3rem;
+    opacity: 0.5;
+  }
+}
+
 .submenu {
   position: absolute;
   z-index: 2;

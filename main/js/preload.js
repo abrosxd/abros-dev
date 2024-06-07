@@ -1,22 +1,73 @@
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        var preloadDiv = document.querySelector('.preload');
-        var preloadIconDiv = document.querySelector('.preload-icon');
-        if (preloadIconDiv) {
-            preloadIconDiv.style.opacity = '0';
-            preloadIconDiv.style.visibility = 'hidden';
-        }
-        var preloadSquares = document.querySelectorAll('.preload-bg li');
-        preloadSquares.forEach(function(square) {
+document.addEventListener("DOMContentLoaded", () => {
+  barba.init({
+    transitions: [
+      {
+        name: "preloader-transition",
+        async leave(data) {
+          var preloadDiv = document.querySelector(".preload");
+          var preloadIconDiv = document.querySelector(".preload-icon");
+          if (preloadIconDiv) {
+            preloadIconDiv.style.opacity = "1";
+            preloadIconDiv.style.visibility = "visible";
+          }
+          var preloadSquares = document.querySelectorAll(".preload-bg li");
+          preloadSquares.forEach(function (square) {
             var randomDelay = Math.random() * 1000;
-            setTimeout(function() {
-                square.style.opacity = '0';
-                square.style.visibility = 'hidden';
+            setTimeout(function () {
+              square.style.opacity = "1";
+              square.style.visibility = "visible";
             }, randomDelay);
-        });
+          });
 
-        setTimeout(function() {
-            preloadDiv.style.display = 'none';
-        }, 1500);
-    }, 500);
+          preloadDiv.style.display = "block";
+          await gsap.to(data.current.container, { opacity: 0, duration: 0.5 });
+        },
+        async enter(data) {
+          var preloadDiv = document.querySelector(".preload");
+          var preloadIconDiv = document.querySelector(".preload-icon");
+          if (preloadIconDiv) {
+            preloadIconDiv.style.opacity = "0";
+            preloadIconDiv.style.visibility = "hidden";
+          }
+          var preloadSquares = document.querySelectorAll(".preload-bg li");
+          preloadSquares.forEach(function (square) {
+            var randomDelay = Math.random() * 1000;
+            setTimeout(function () {
+              square.style.opacity = "0";
+              square.style.visibility = "hidden";
+            }, randomDelay);
+          });
+
+          setTimeout(function () {
+            preloadDiv.style.display = "none";
+          }, 1500);
+
+          gsap.from(data.next.container, { opacity: 0, duration: 0.5 });
+        },
+      },
+    ],
+  });
+});
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    var preloadDiv = document.querySelector(".preload");
+    var preloadIconDiv = document.querySelector(".preload-icon");
+    if (preloadIconDiv) {
+      preloadIconDiv.style.opacity = "0";
+      preloadIconDiv.style.visibility = "hidden";
+    }
+    var preloadSquares = document.querySelectorAll(".preload-bg li");
+    preloadSquares.forEach(function (square) {
+      var randomDelay = Math.random() * 1000;
+      setTimeout(function () {
+        square.style.opacity = "0";
+        square.style.visibility = "hidden";
+      }, randomDelay);
+    });
+
+    setTimeout(function () {
+      preloadDiv.style.display = "none";
+    }, 1500);
+  }, 500);
 });

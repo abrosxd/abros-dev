@@ -799,9 +799,9 @@
       <script src="https://cdn.abros.dev/noti/noti.js"></script>
       <script src="main/js/prism.js"></script>
       <script type="module">
-        import { initAboutPage } from "/main/js/logic/about.js";
-        import { initPortfolioPage } from "/main/js/logic/portfolio.js";
-        import "/main/js/preload.js";
+        import { initAboutPage } from "./main/js/logic/about.js";
+        import { initPortfolioPage } from "./main/js/logic/portfolio.js";
+        import "./main/js/preload.js";
 
         if (document.querySelector("main").dataset.barbaNamespace === "about") {
           initAboutPage();

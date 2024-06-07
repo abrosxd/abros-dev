@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             setTimeout(() => {
               resolve();
-            }, 500); // Настройте эту задержку при необходимости
+            }, 500);
           });
         },
         enter(data) {

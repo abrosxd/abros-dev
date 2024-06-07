@@ -1,9 +1,12 @@
+console.log("Barba.js инициализируется");
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOMContentLoaded событие");
   barba.init({
     transitions: [
       {
         name: "fade",
         leave(data) {
+          console.log("leave transition начат");
           return new Promise((resolve) => {
             const preloadDiv = document.querySelector(".preload");
             const preloadIconDiv = document.querySelector(".preload-icon");
@@ -19,11 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
             preloadDiv.style.display = "block";
 
             setTimeout(() => {
+              console.log("leave transition завершен");
               resolve();
             }, 500);
           });
         },
         enter(data) {
+          console.log("enter transition начат");
           return new Promise((resolve) => {
             setTimeout(() => {
               const preloadDiv = document.querySelector(".preload");
@@ -44,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
               setTimeout(() => {
                 preloadDiv.style.display = "none";
+                console.log("enter transition завершен");
                 resolve();
               }, 1500);
             }, 500);

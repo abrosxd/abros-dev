@@ -36,10 +36,10 @@ projects:
     content: "/public/projects/GrushkaEndo/component.yaml"
     hash: "GrushkaEndo"
     buttonText:
-      ru: "Перейти на сайт"
-      en: "Go to website"
-      pl: "Przejdź do strony"
-    url: "https://cosmetologia.site"
+      ru: " "
+      en: " "
+      pl: " "
+    url: " "
 
   - id: 2
     title: "Lampa Abros"

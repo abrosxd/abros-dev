@@ -1,0 +1,16 @@
+menu:
+    portfolio:
+        ru: "Портфолио"
+        en: "Portfolio"
+        pl: "Portfolio"
+   
+    library: 
+        ru: "Библиотека"
+        en: "Library"
+        pl: "Biblioteka"
+    
+    about: 
+        ru: "Обо мне"
+        en: "About me"
+        pl: "O mnie"
+    

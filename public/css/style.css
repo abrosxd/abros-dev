@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --height: min(calc(100vh - 200px), 118vw);
+  --width: calc(var(--height) / 1.3333);
+  --font-basic: "Montserrat Alternates", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  background-color: #000;
+  color: #fff;
+}
+
+::selection {
+  background-color: #fff;
+  color: #000;
+}
+
+body {
+  background-color: black;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+.logo {
+  position: fixed;
+  z-index: 3;
+  top: 24px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-basic);
+  font-size: xx-large;
+  padding: 0 12px;
+  border-radius: 2px;
+  transition: background-color 1s, color 2s;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .logo {
+    top: 16px;
+    font-size: x-large;
+  }
+}
+
+.color-transition {
+  background-color: blue;
+  color: white;
+}
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+}
+
+.loader-bg {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.loader-bg li {
+  position: relative;
+  background-color: rgb(30, 30, 30);
+  width: 10vw;
+  height: 5vh;
+  transition: opacity 0.1s linear, visibility 0.1s linear;
+}
+@media (min-width: 767px) {
+  .loader-bg li {
+    height: 10vh;
+    width: 5vw;
+  }
+}
+
+.dot-grid {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle at 10px 10px,
+    #fff 0.7px,
+    transparent 1px
+  );
+  background-size: 10px 10px;
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity 0.3s linear;
+}
+
+nav {
+  position: relative;
+  z-index: 3;
+}
+
+.section {
+  white-space: nowrap;
+}
+
+.button {
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border-radius: 2px;
+  font-family: var(--font-basic);
+  font-size: 16px;
+  gap: 4px;
+  transition: 0.4s;
+  transition-property: background-color, color, border-color;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: rgba(53, 53, 53, 0.4);
+  color: #fff;
+  pointer-events: auto;
+}
+
+@media (max-width: 767px) {
+  .button {
+    height: 32px;
+  }
+}
+
+.button:hover {
+  background-color: hsla(0, 0%, 45%, 0.4);
+}
+
+.button.active {
+  background-color: #fff;
+  color: #000;
+}
+
+.copy-success {
+  color: #4caf50;
+}
+
+.menu {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+}
+
+@media (max-width: 767px) {
+  .menu {
+    padding: 0 16px 16px;
+    bottom: 0;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.menu .section {
+  margin-right: 10px;
+}
+
+.lang {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+}
+
+#lang-submenu {
+  flex-wrap: wrap;
+}
+
+.links {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+}
+
+@media (max-width: 767px) {
+  .links {
+    top: 24px;
+    bottom: auto;
+  }
+}
+
+#links-submenu {
+  top: -160px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  #links-submenu {
+    top: 32px;
+  }
+}
+
+.submenu {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.submenu.active {
+  opacity: 1;
+  visibility: visible;
+}

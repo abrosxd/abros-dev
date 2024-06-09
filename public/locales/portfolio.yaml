@@ -1,0 +1,718 @@
+projects:
+  - id: 5
+    title: "Tilda Player"
+    img: "main/projects/Tilda/Player/avatar.png"
+    overlay: "main/projects/Tilda/Player/overlay.png"
+    outline: "#7e70ff"
+    category: "TildaMod"
+    content:
+      ru: |
+        <h2>Плеер с плейлистом для сайта</h2>
+        <img src="main/projects/Tilda/Player/logo_mini.svg">
+        <h3>Сайт известного композитора. Обратились ко мне с задачей создать для сайта плеер.</h3>
+        <h3>Плеер был реализован библиотекой, поэтому данную модификацию можно использовать в других проектах.</h3>
+        <img src="main/projects/Tilda/Player/site.gif">
+        <h3>Инструкция</h3>
+        <h4>Создание плейлиста</h4>  
+        <p>1. В товарах создать товар в котором:</p>
+        <ul>
+          <li>Заголовок: Название трека</li>
+          <li>Изображение: Обложка трека</li>
+          <li>Разделы каталога: можно поместить в раздел, если у вас есть еще и другие товары или разные плейлисты</li>
+          <li>В характеристиках добавить новую характеристику (Название: music, Значение: прямая ссылка на трек)</li>
+          <li>В ссылку на страницу с товаром добавить ссылку для перехода по кнопке (Ниже поймете для каких)</li>
+        </ul>
+        <p>2. Добавить все треки по инструкции 1.</p>
+        <h4>Создание плеера</h4>
+        <p>1. Добавить каталог ST310N</p>
+        <p>2. Подключить раздел товаров с вашей музыкой</p> 
+        <p>3. Настроить стиль каталога, обязательно должно быть:</p>
+        <ul>
+          <li>Карточки -> Показывать второе изображение при наведении - отключено</li>
+          <li>Карточки -> Показывать пагинацию (вместо кнопки «Загрузить еще») - включено</li>
+          <li>Карточки -> Два товара в ряд на мобильных устройствах - включено</li>
+          <li>Карточки -> Количество видимых товаров до кнопки «Загрузить ещё» - любое, оптимально 12</li>
+          <li>Секция «Смотрите также» -> Блок 'Смотрите также' - не выводить</li>
+          <li>Стиль галереи -> Соотношение сторон - 1:1 квадрат</li>
+          <li>Фильтры & Разделы -> Спрятать фильтры - включено</li>
+          <li>Фильтры & Разделы -> Спрятать список разделов каталога - включено</li>
+          <li>Фильтры & Разделы -> Сортировка товаров по умолчанию - порядок по умолчанию</li>
+        </ul>
+
+        <p>4. Под блоком каталога создать зероблок, в настройках задать ему класс какой захотите (Например uc-player)</p>
+        <p>5. В этом зероблоке создаёте плеер, обязательно должно быть:</p>
+        <ul>
+          <li>Высота контейнера 70px на всех экранах</li>
+          <li>HTML блок на всю длинну страницы это прогресс бар трека
+          Туда вставить код:</li>
+        </ul>
+        <pre>
+          <code>
+            <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">
+          </code>
+        </pre>
+        <ul>
+          <li>HTML блок это прогресс бар звука
+          Туда вставить код:</li>
+        </ul>
+        <pre>
+          <code>
+            <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
+          </code>
+        </pre>
+        <ul>
+          <li>Две кнопки/картинки с классами player-btn-buy и player-text они будут перенаправлять на страницу играющего трека, если такой функционал не требуется, то просто их спрячте за пределами видимости</li>
+          <li>Картинка с классом player-play это будет кнопка Play|Pause</li>
+          <li>Картинка с классом player-next это будет кнопка следующей песни</li>
+          <li>Картинка с классом player-prev это будет кнопка предыдущей песни</li>
+          <li>Картинка с классом player-volume это будет кнопка включения/выключения звука</li>
+          <li>Текст с текстом "Ничего не исполняется" с классом player-title это будет название играющей песни</li>
+          <li>Шейп с классом player-cover это будет картинка играющей песни</li>
+        </ul>
+        <p>6. Все остальное можно настраивать по своему вкусу</p> 
+        <p>7. Под блоком плеера добавить T123</p> 
+        <p>8. Код ниже вставить в T123 и настроить все переменные для плеера</p>
+        <pre>
+          <code>
+            <!--Плеер из каталога товаров by ABROS-->
+              
+            <audio id="audio" data-track-number="0"></audio>
+            <div id="area-player"></div>
+            <script>
+            window.AbrosTildaPlayer = {
+              // Настройки
+              catalogID: '#recXXXXXXXXX', // ID блока каталога
+              playerID: '.uc-player', // Класс плеера
+              audioID: '#audio', // ID блока проигрователя
+              areaID: '#area-player', // ID блока тригера
+              cards: '12', // Кол-во карточек на странице
+              storepart: 'XXXXXXXXXXXX', // ID Storepart
+              // Стили
+              // Обложка для карточек
+              WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Цвет обложки для карточек (Важно в rgba, чтобы задать прозрачность)
+              WrapperBorderRadius: '50px', // Скругление обложки для карточек
+              WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Иконка кнопки Play
+              WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Иконка кнопки Pause
+              // Input громкости и прогресса песни
+              TrackSlideColorStart: 'rgba(255,255,255,1)', // Цвет полосок
+              TrackSlideColorEnd: 'rgba(126,112,255,1)', // Цвет заполнения полосок
+              TrackSlideBorderRadius: '10px', // Скругление полосок
+              TrackThumbColor: '#fff', // Цвет тумблера на полоске прогресса
+              TrackThumbBorderRadius: '50%', // Скругление тумблера
+              // Стили плеера
+              PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Иконка кнопки Play
+              PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Иконка кнопки Pause
+              PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Иконка кнопки Вкл.Звук
+              PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Иконка кнопки Выкл.Звук
+            };
+            </script>
+            <script src = 'https://cdn.abros.dev/tilda/audioplayer.js'></script>
+          </code>
+        </pre>
+        <p>Если вы не знаете где найти ID Storepart, то под каталогом создайте T123, вставте код ниже, опубликуйте и зайдите на сайт, вы увидите свой ID Storepart. После чего код можно удалить</p>
+        <pre>
+          <code>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              var scripts = document.querySelectorAll('script');
+              var alertShown = false;
+              scripts.forEach(function(script) {
+                if (alertShown) return;
+                var scriptText = script.textContent || script.innerText;
+                if (scriptText.includes('storepart')) {
+                  var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);
+                  if (match && match[1]) {
+                    var storepartValue = match[1];
+                    alert('Ваш storepart: "' + storepartValue + '"');
+                    alertShown = true;
+                  }
+                }
+              });
+            });
+            </script>
+          </code>
+        </pre>
+      en: |
+        <h2>Player with Playlist for the Website</h2>
+        <img src="main/projects/Tilda/Player/logo_mini.svg">
+        <h3>A website for a famous composer approached me to create a player for their site.</h3>
+        <h3>The player was implemented using a library, making this modification usable in other projects.</h3>
+        <img src="main/projects/Tilda/Player/site.gif">
+        <h3>Instructions</h3>
+        <h4>Creating the Playlist</h4>
+        <p>1. In the products section, create a product with the following details:</p>
+        <ul>
+          <li>Title: Track Name</li>
+          <li>Image: Track Cover</li>
+          <li>Catalog Sections: You can place it in a section if you have other products or different playlists</li>
+          <li>In the specifications, add a new characteristic (Name: music, Value: direct link to the track)</li>
+          <li>Add a link to the product page in the link for the button (you'll understand which buttons below)</li>
+        </ul>
+        <p>2. Add all tracks following instruction 1.</p>
+        <h4>Creating the Player</h4>
+        <p>1. Add catalog ST310N</p>
+        <p>2. Connect the product section with your music</p>
+        <p>3. Configure the catalog style, ensuring the following settings:</p>
+        <ul>
+          <li>Cards -> Show second image on hover - disabled</li>
+          <li>Cards -> Show pagination (instead of the "Load more" button) - enabled</li>
+          <li>Cards -> Two items per row on mobile devices - enabled</li>
+          <li>Cards -> Number of visible items before "Load more" button - any, optimally 12</li>
+          <li>"You might also like" section -> Do not display the "You might also like" block</li>
+          <li>Gallery style -> Aspect ratio - 1:1 square</li>
+          <li>Filters & Sections -> Hide filters - enabled</li>
+          <li>Filters & Sections -> Hide catalog section list - enabled</li>
+          <li>Filters & Sections -> Default product sorting - default order</li>
+        </ul>
+        <p>4. Under the catalog block, create a zero block and assign it any class you want (e.g., uc-player)</p>
+        <p>5. In this zero block, create the player with the following requirements:</p>
+        <ul>
+          <li>Container height 70px on all screens</li>
+          <li>HTML block spanning the entire page length for the track progress bar, with the following code:</li>
+        </ul>
+        <pre>
+          <code>
+            <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">
+          </code>
+        </pre>
+        <ul>
+          <li>HTML block for the volume progress bar with the following code:</li>
+        </ul>
+        <pre>
+          <code>
+            <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
+          </code>
+        </pre>
+        <ul>
+          <li>Two buttons/images with classes player-btn-buy and player-text that will redirect to the playing track's page. If this functionality is not needed, hide them out of view.</li>
+          <li>An image with class player-play that will be the Play|Pause button</li>
+          <li>An image with class player-next that will be the next track button</li>
+          <li>An image with class player-prev that will be the previous track button</li>
+          <li>An image with class player-volume that will be the mute/unmute button</li>
+          <li>Text with "Nothing is playing" and class player-title that will be the track title</li>
+          <li>A shape with class player-cover that will be the playing track's cover image</li>
+        </ul>
+        <p>6. Customize everything else to your liking</p>
+        <p>7. Add T123 under the player block</p>
+        <p>8. Insert the code below into T123 and set all variables for the player</p>
+        <pre>
+          <code>
+            <!--Player from the product catalog by ABROS-->
+            
+            <audio id="audio" data-track-number="0"></audio>
+            <div id="area-player"></div>
+            
+            <script>
+            window.AbrosTildaPlayer = {
+              // Settings
+              catalogID: '#recXXXXXXXXX', // Catalog block ID
+              playerID: '.uc-player', // Player class
+              audioID: '#audio', // Player block ID
+              areaID: '#area-player', // Trigger block ID
+              cards: '12', // Number of cards per page
+              storepart: 'XXXXXXXXXXXX', // Storepart ID
+              // Styles
+              // Cover for cards
+              WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Card cover color (use rgba for transparency)
+              WrapperBorderRadius: '50px', // Card cover border radius
+              WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Play button icon
+              WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Pause button icon
+              // Volume and track progress inputs
+              TrackSlideColorStart: 'rgba(255,255,255,1)', // Bar color
+              TrackSlideColorEnd: 'rgba(126,112,255,1)', // Bar fill color
+              TrackSlideBorderRadius: '10px', // Bar border radius
+              TrackThumbColor: '#fff', // Progress bar thumb color
+              TrackThumbBorderRadius: '50%', // Progress bar thumb border radius
+              // Player styles
+              PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Play button icon
+              PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Pause button icon
+              PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Mute button icon
+              PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Unmute button icon
+            };
+            </script>
+            <script src = 'https://cdn.abros.dev/tilda/audioplayer.js'></script>
+          </code>
+        </pre>
+        <p>If you don't know where to find the Storepart ID, create T123 under the catalog, insert the code below, publish it, and visit the site to see your Storepart ID. You can then delete the code.</p>
+        <pre>
+          <code>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              var scripts = document.querySelectorAll('script');
+              var alertShown = false;
+              scripts.forEach(function(script) {
+                if (alertShown) return;
+                var scriptText = script.textContent || script.innerText;
+                if (scriptText.includes('storepart')) {
+                  var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);
+                  if (match && match[1]) {
+                    var storepartValue = match[1];
+                    alert('Your storepart: "' + storepartValue + '"');
+                    alertShown = true;
+                  }
+                }
+              });
+            });
+            </script>
+          </code>
+        </pre>
+      pl: |
+        <h2>Odtwarzacz z Playlistą na Stronę Internetową</h2>
+        <img src="main/projects/Tilda/Player/logo_mini.svg">
+        <h3>Strona znanego kompozytora zwróciła się do mnie z prośbą o stworzenie odtwarzacza na ich stronę.</h3>
+        <h3>Odtwarzacz został zaimplementowany za pomocą biblioteki, co umożliwia wykorzystanie tej modyfikacji w innych projektach.</h3>
+        <img src="main/projects/Tilda/Player/site.gif">
+        <h3>Instrukcja</h3>
+        <h4>Tworzenie Playlisty</h4>
+        <p>1. W sekcji produktów utwórz produkt z następującymi danymi:</p>
+        <ul>
+          <li>Tytuł: Nazwa utworu</li>
+          <li>Obraz: Okładka utworu</li>
+          <li>Sekcje katalogu: Możesz umieścić go w sekcji, jeśli masz inne produkty lub różne playlisty</li>
+          <li>W specyfikacjach dodaj nową cechę (Nazwa: music, Wartość: bezpośredni link do utworu)</li>
+          <li>Dodaj link do strony produktu w linku dla przycisku (zrozumiesz, do których przycisków poniżej)</li>
+        </ul>
+        <p>2. Dodaj wszystkie utwory zgodnie z instrukcją 1.</p>
+        <h4>Tworzenie Odtwarzacza</h4>
+        <p>1. Dodaj katalog ST310N</p>
+        <p>2. Połącz sekcję produktów z Twoją muzyką</p> 
+        <p>3. Skonfiguruj styl katalogu, upewniając się, że ustawienia są następujące:</p>
+        <ul>
+          <li>Karty -> Pokaż drugie zdjęcie przy najechaniu - wyłączone</li>
+          <li>Karty -> Pokaż paginację (zamiast przycisku "Załaduj więcej") - włączone</li>
+          <li>Karty -> Dwa produkty w rzędzie na urządzeniach mobilnych - włączone</li>
+          <li>Karty -> Liczba widocznych produktów przed przyciskiem "Załaduj więcej" - dowolna, optymalnie 12</li>
+          <li>Sekcja "Możesz także polubić" -> Nie wyświetlaj bloku "Możesz także polubić"</li>
+          <li>Styl galerii -> Proporcje - kwadrat 1:1</li>
+          <li>Filtry i Sekcje -> Ukryj filtry - włączone</li>
+          <li>Filtry i Sekcje -> Ukryj listę sekcji katalogu - włączone</li>
+          <li>Filtry i Sekcje -> Domyślne sortowanie produktów - domyślny porządek</li>
+        </ul>
+        <p>4. Pod blokiem katalogu stwórz zeroblok i nadaj mu dowolną klasę (np. uc-player)</p>
+        <p>5. W tym zerobloku stwórz odtwarzacz z następującymi wymaganiami:</p>
+        <ul>
+          <li>Wysokość kontenera 70px na wszystkich ekranach</li>
+          <li>Blok HTML na całą długość strony jako pasek postępu utworu, z poniższym kodem:</li>
+        </ul>
+        <pre>
+          <code>
+            <input type="range" name="progress" class="music-range progress" min="0" max="100" value="0">
+          </code>
+        </pre>
+        <ul>
+          <li>Blok HTML jako pasek postępu głośności z poniższym kodem:</li>
+        </ul>
+        <pre>
+          <code>
+            <input type="range" name="volume" class="music-range volume" min="0" max="100" value="100">
+          </code>
+        </pre>
+        <ul>
+          <li>Dwa przyciski/obrazki z klasami player-btn-buy i player-text będą przekierowywać na stronę grającego utworu. Jeśli ta funkcjonalność nie jest potrzebna, ukryj je poza widocznością.</li>
+          <li>Obrazek z klasą player-play będzie przyciskiem Play|Pause</li>
+          <li>Obrazek z klasą player-next będzie przyciskiem następnego utworu</li>
+          <li>Obrazek z klasą player-prev będzie przyciskiem poprzedniego utworu</li>
+          <li>Obrazek z klasą player-volume będzie przyciskiem włączania/wyłączania dźwięku</li>
+          <li>Tekst "Nic nie jest odtwarzane" z klasą player-title będzie nazwą grającego utworu</li>
+          <li>Kształt z klasą player-cover będzie obrazkiem grającego utworu</li>
+        </ul>
+        <p>6. Resztę można dostosować według własnych upodobań</p> 
+        <p>7. Pod blokiem odtwarzacza dodaj T123</p> 
+        <p>8. Wstaw poniższy kod do T123 i ustaw wszystkie zmienne dla odtwarzacza</p>
+        <pre>
+          <code>
+            <!--Odtwarzacz z katalogu produktów by ABROS-->
+            
+            <audio id="audio" data-track-number="0"></audio>
+            <div id="area-player"></div>
+
+            <script>
+            window.AbrosTildaPlayer = {
+              // Ustawienia
+              catalogID: '#recXXXXXXXXX', // ID bloku katalogu
+              playerID: '.uc-player', // Klasa odtwarzacza
+              audioID: '#audio', // ID bloku odtwarzacza
+              areaID: '#area-player', // ID bloku wyzwalacza
+              cards: '12', // Liczba kart na stronie
+              storepart: 'XXXXXXXXXXXX', // ID Storepart
+              // Style
+              // Okładka dla kart
+              WrapperBackgroundColor: 'rgba(0, 0, 0, .4)', // Kolor okładki dla kart (ważne, aby użyć rgba dla ustawienia przezroczystości)
+              WrapperBorderRadius: '50px', // Zaokrąglenie okładki dla kart
+              WrapperPlay: 'url(https://static.tildacdn.com/tild6466-3638-4435-b039-396535616330/icons8-play_button_c.svg)', // Ikona przycisku Play
+              WrapperPause: 'url(https://static.tildacdn.com/tild6466-3336-4639-b836-633830616365/icons8-pause.svg)', // Ikona przycisku Pause
+              // Pasek głośności i postępu utworu
+              TrackSlideColorStart: 'rgba(255,255,255,1)', // Kolor paska
+              TrackSlideColorEnd: 'rgba(126,112,255,1)', // Kolor wypełnienia paska
+              TrackSlideBorderRadius: '10px', // Zaokrąglenie paska
+              TrackThumbColor: '#fff', // Kolor tumblera na pasku postępu
+              TrackThumbBorderRadius: '50%', // Zaokrąglenie tumblera
+              // Style odtwarzacza
+              PlayerPlay: 'https://static.tildacdn.com/tild6535-3638-4431-b032-663236313135/btn-play.svg', // Ikona przycisku Play
+              PlayerPause: 'https://static.tildacdn.com/tild6232-3534-4633-b165-356465643735/btn-pause.svg', // Ikona przycisku Pause
+              PlayerVolumeOn: 'https://static.tildacdn.com/tild6637-6564-4462-b836-623963626335/btn-volume.svg', // Ikona przycisku Włącz dźwięk
+              PlayerVolumeOff: 'https://static.tildacdn.com/tild3130-3635-4865-a463-376438393336/btn-volume-off.svg', // Ikona przycisku Wyłącz dźwięk
+            };
+            </script>
+            <script src = 'https://cdn.abros.dev/tilda/audioplayer.js'></script>
+          </code>
+        </pre>
+        <p>Jeśli nie wiesz, gdzie znaleźć ID Storepart, utwórz T123 pod katalogiem, wstaw poniższy kod, opublikuj go i wejdź na stronę, aby zobaczyć swój ID Storepart. Następnie możesz usunąć ten kod.</p>
+        <pre>
+          <code>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              var scripts = document.querySelectorAll('script');
+              var alertShown = false;
+              scripts.forEach(function(script) {
+                if (alertShown) return;
+                var scriptText = script.textContent || script.innerText;
+                if (scriptText includes('storepart')) {
+                  var match = scriptText.match(/storepart: ['\"]([^'\"]+)['\"]/);
+                  if (match && match[1]) {
+                    var storepartValue = match[1];
+                    alert('Twój storepart: "' + storepartValue + '"');
+                    alertShown = true;
+                  }
+                }
+              });
+            });
+            </script>
+          </code>
+        </pre>
+    hash: "TildaPlayer"
+    buttonText:
+      ru: "Посмотреть на сайте"
+      en: "View on website"
+      pl: "Zobacz na stronie"
+    url: "https://tvoy-hit.ru"
+
+  - id: 4
+    title: "Abros Noti"
+    img: "main/projects/AbrosNoti/avatar.png"
+    overlay: "main/projects/AbrosNoti/overlay.png"
+    outline: "#00aee1"
+    category: "MyProject Library"
+    content:
+      ru: |
+        <h2>Уведомления для твоего сайта</h2>
+        <h3>Данная библиотека была разработанна для моего сайта, но так как она получилась модульной. То вы тоже сможете её использовать.</h3>
+        <h3>Уведомления очень полезный инструмент. Не отвлекает пользователя от потребления контента, а так же занимает мало места на сайте.</h3>
+        <h3>С этой целью я разработал библиотеку, которая дает возможность выводить ваши уведомления на сайте.</h3>
+        <img src="main/projects/AbrosNoti/noti.gif">
+        <h3>Выглядит круто, а самое главное, что очень просто с этим работать!</h3>
+        <h3>Всё что нужно сделать, это подключить библиотеку к сайту используя код:</h3>
+        <pre>
+          <code>
+            <script src='https://cdn.abros.dev/noti/noti.js'></script>
+          </code>
+        </pre>
+        <h3>После чего можно вызывать функцию уведомлений следующим образом:</h3>
+        <p>Создавайте уведомления с помощью abrosnoti.create()</p>           
+        <p>Параметры abrosnoti.create():</p>
+        <ul>
+          <li>Иконка: string,</li>
+          <li>Заголовок: string,</li>
+          <li>Описание: string,</li>
+          <li>Продолжительность: секунды,
+            (по умолчанию: 2 секунды, 0 означает бесконечное время)</li>
+          <li>Уничтожить при клике: boolean,
+            (определяет, должно ли уведомление исчезнуть при нажатии, по умолчанию: false)</li>
+          <li>Функция клика: function,
+            (вызывается при нажатии на уведомление, если не определено, по умолчанию: undefined)</li>
+        </ul>
+        <h3>Вы можете проверить как это работает, просто смените язык на моем сайте :)</h3>
+      en: |
+        <h2>Notifications for Your Website</h2>
+        <h3>This library was developed for my website, but since it turned out to be modular, you can also use it.</h3>
+        <h3>Notifications are a very useful tool. They don't distract users from consuming content and take up little space on the website.</h3>
+        <h3>For this purpose, I have developed a library that allows you to display notifications on your website.</h3>
+        <img src="main/projects/AbrosNoti/noti.gif">
+        <h3>It looks cool, and most importantly, it's very easy to work with!</h3>
+        <h3>All you need to do is to connect the library to your website using the code:</h3>
+        <pre>
+          <code>
+            <script src='https://cdn.abros.dev/noti/noti.js'></script>
+          </code>
+        </pre>
+        <h3>After that, you can call the notification function as follows:</h3>
+        <p>Create notifications using abrosnoti.create()</p>           
+        <p>Parameters for abrosnoti.create():</p>
+        <ul>
+          <li>Icon: string,</li>
+          <li>Title: string,</li>
+          <li>Description: string,</li>
+          <li>Duration: seconds,
+            (default: 2 seconds, 0 means infinite time)</li>
+          <li>Destroy on click: boolean,
+            (determines whether the notification should disappear when clicked, default: false)</li>
+          <li>Click function: function,
+            (called when the notification is clicked, if not defined, default: undefined)</li>
+        </ul>
+        <h3>You can see how it works by simply changing the language on my website :)</h3>
+      pl: |
+        <h2>Powiadomienia dla Twojej witryny</h2>
+        <h3>Ta biblioteka została opracowana dla mojej witryny, ale ponieważ okazała się modułowa, możesz również z niej korzystać.</h3>
+        <h3>Powiadomienia są bardzo przydatnym narzędziem. Nie rozpraszają użytkowników od konsumowania treści i zajmują niewiele miejsca na stronie.</h3>
+        <h3>W tym celu opracowałem bibliotekę, która pozwala wyświetlać powiadomienia na Twojej witrynie.</h3>
+        <img src="main/projects/AbrosNoti/noti.gif">
+        <h3>Wygląda świetnie, a co najważniejsze, jest bardzo łatwa w użyciu!</h3>
+        <h3>Wszystko, co musisz zrobić, to podłączyć bibliotekę do swojej witryny za pomocą poniższego kodu:</h3>
+        <pre>
+          <code>
+            <script src='https://cdn.abros.dev/noti/noti.js'></script>
+          </code>
+        </pre>
+        <h3>Po tym możesz wywołać funkcję powiadomień w następujący sposób:</h3>
+        <p>Twórz powiadomienia za pomocą abrosnoti.create()</p>           
+        <p>Parametry dla abrosnoti.create():</p>
+        <ul>
+          <li>Ikona: string,</li>
+          <li>Tytuł: string,</li>
+          <li>Opis: string,</li>
+          <li>Czas trwania: sekundy,
+            (domyślnie: 2 sekundy, 0 oznacza czas nieskończony)</li>
+          <li>Usunąć po kliknięciu: boolean,
+            (określa, czy powiadomienie powinno zniknąć po kliknięciu, domyślnie: false)</li>
+          <li>Funkcja kliknięcia: function,
+            (wywoływana po kliknięciu powiadomienia, jeśli nie zdefiniowano, domyślnie: undefined)</li>
+        </ul>
+        <h3>Możesz zobaczyć, jak to działa, po prostu zmieniając język na mojej witrynie :)</h3>
+    hash: "AbrosNoti"
+    buttonText:
+      ru: " "
+      en: " "
+      pl: " "
+    url: " "
+
+  - id: 3
+    title: "Grushka Endoterapia"
+    img: "main/projects/GrushkaEndo/avatar.png"
+    overlay: "main/projects/GrushkaEndo/overlay.png"
+    outline: "#73afe1"
+    category: "Layout"
+    content:
+      ru: |
+        <h2>Вёрстка лендинга для салона красоты Grushka</h2>
+        <img src="main/projects/GrushkaEndo/logo_mini.png">
+        <h3>Задача состояла в том, чтобы перенести уже имеющийся сайт на платформе Tilda на отдельный хостинг.</h3>
+        <h3>Сложность заключалась в том, что Tilda наложила ограничения на аккаунт из-за чего сайт был заблокирован, а экспорт не доступен. Поэтому они обратились ко мне.</h3>
+        <h3>И вот конечный результат!</h3>
+        <img src="main/projects/GrushkaEndo/site.png">
+        <h3>Посмотреть сайт можно кликнув по кнопке ниже."</h3>
+      en: |
+        <h2>Layout of the Landing Page for Grushka Beauty Salon</h2>
+        <img src="main/projects/GrushkaEndo/logo_mini.png">
+        <h3>The task was to transfer an existing website from the Tilda platform to a separate hosting.</h3>
+        <h3>The difficulty was that Tilda imposed restrictions on the account, which led to the website being blocked, and export was not available. That's why they turned to me.</h3>
+        <h3>And here is the final result!</h3>
+        <img src="main/projects/GrushkaEndo/site.png">
+        <h3>You can view the website by clicking on the button below."</h3>
+      pl: |
+        <h2>Projektowanie strony docelowej dla salonu urody Grushka</h2>
+        <img src="main/projects/GrushkaEndo/logo_mini.png">
+        <h3>Zadanie polegało na przeniesieniu istniejącej strony internetowej z platformy Tilda na oddzielny hosting.</h3>
+        <h3>Problemem było to, że Tilda nałożyła ograniczenia na konto, co spowodowało zablokowanie strony internetowej, a eksport był niedostępny. Dlatego zwrócili się do mnie.</h3>
+        <h3>A oto ostateczny rezultat!</h3>
+        <img src="main/projects/GrushkaEndo/site.png">
+        <h3>Możesz zobaczyć stronę, klikając poniższy przycisk."</h3>
+    hash: "GrushkaEndo"
+    buttonText:
+      ru: "Перейти на сайт"
+      en: "Go to website"
+      pl: "Przejdź do strony"
+    url: "https://cosmetologia.site"
+
+  - id: 2
+    title: "Lampa Abros"
+    img: "main/projects/LampaAbros/avatar.png"
+    overlay: "main/projects/LampaAbros/overlay.png"
+    outline: "#ffffff"
+    category: "MyProject"
+    content:
+      ru: |
+        <h2>Abros - магазин плагинов для Lampa</h2>
+        <img src="main/projects/LampaAbros/logo_mini.png">
+        <h3>Данный проект представляет из себя плагин для онлайн кинотеатра Lampa. С его помощью можно в один клик устанавливать все возможные доступные плагины для данного кинотеатра.</h3>
+        <h3>Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros.</h3>
+        <img src="main/projects/LampaAbros/storemenu.png">
+        <h3>На данный момент добавлены лишь основные известные плагины, со временем магазин будет расширяться.</h3>
+        <h3>Подключить плагин можно добавив ссылку ниже в Lampa.</h3>
+        <pre>
+          <code>
+            https://cdn.abros.dev/lampa/mod.js
+          </code>
+        </pre>
+        <h3>Переходи по кнопке ниже в Lampa и проверяй!</h3>
+      en: |
+        <h2>Abros - plugin store for Lampa</h2>
+        <img src="main/projects/LampaAbros/logo_mini.png">
+        <h3>This project is a plugin for the online cinema Lampa. With it, you can install all available plugins for this cinema in one click.</h3>
+        <h3>This store simplifies interaction with the Lampa service. Now you don't need to search for plugins on the internet and add them manually, everything is already in Abros.</h3>
+        <img src="main/projects/LampaAbros/storemenu.png">
+        <h3>Currently, only the basic, well-known plugins have been added. Over time, the store will expand.</h3>
+        <h3>To connect the plugin, add the link below to Lampa.</h3>
+        <pre>
+          <code>
+            https://cdn.abros.dev/lampa/mod.js
+          </code>
+        </pre>
+        <h3>Click the button below in Lampa and check it out!</h3>
+      pl: |
+        <h2>Abros - sklep z pluginami dla Lampa</h2>
+        <img src="main/projects/LampaAbros/logo_mini.png">
+        <h3>Ten projekt to plugin dla internetowego kina Lampa. Dzięki niemu można w jednym kliknięciu zainstalować wszystkie dostępne pluginy dla tego kina.</h3>
+        <h3>Ten sklep ułatwia interakcję z serwisem Lampa. Teraz nie trzeba szukać pluginów w internecie i dodawać ich ręcznie, wszystko jest już w Abros.</h3>
+        <img src="main/projects/LampaAbros/storemenu.png">
+        <h3>Na razie dodane są tylko podstawowe, znane pluginy. Z czasem sklep będzie się rozszerzać.</h3>
+        <h3>Aby podłączyć plugin, dodaj poniższy link do Lampa.</h3>
+        <pre>
+          <code>
+            https://cdn.abros.dev/lampa/mod.js
+          </code>
+        </pre>
+        <h3>Kliknij przycisk poniżej w Lampa i sprawdź!</h3>
+    hash: "LampaAbros"
+    buttonText:
+      ru: "Перейти к Lampa"
+      en: "Go to Lampa"
+      pl: "Przejdź do Lampa"
+    url: "http://lampa.mx"
+
+  - id: 1
+    title: "DEUS"
+    img: "main/projects/DEUS/avatar.png"
+    overlay: "main/projects/DEUS/overlay.png"
+    outline: "#00ff00"
+    category: "Library"
+    content:
+      ru: |
+        <h2>DEUS - защита контента</h2>
+        <img src="main/projects/DEUS/logo_mini.jpeg">
+        <h3>DEUS - система-библиотека для удалённого контроля принадлежащих ей модулей.</h3>
+        <h3>Простыми словами это система, которая подключается к сайту и следует определенным правилам, которые ей передают сами пользователи.</h3>
+        <h3>Модуль BD - это системный модуль, он отвечает за проверку правил для сайта и подключение остальных модулей. На момент разработки являлся главным модулем системы и визуальную часть не имел.</h3>
+        <img src="main/projects/DEUS/module_bd.jpeg">
+        <h3>Модуль Blocker - это модуль отвечающий за наказания. Данный модуль применяется в случаях когда заказчик не оплатил работу и сменил все доступы так, что вы остались без денег и ваш труд отдан за бесплатно. В этом случае в работу вступает этот модуль применяя выбранный вами эффект к проекту.</h3>
+        <img src="main/projects/DEUS/module_blocker.gif">
+        <h3>Альфа версия (когда проект был только для меня) находилась непосредственно в проекте, что немного затрудняло работу с ним напрямую. Но так как это было только для личного использования - меня устраивало.</h3>
+        <img src="main/projects/DEUS/alpha_1.jpeg">
+        <h3>Как только этот проект пошёл по знакомым было решено переписать структуру, логику и принцип работы полностью. Ведь большинство тех, кто этим пользовался никогда не работал с кодом.</h3>
+        <h3>Первым лучшим решением было - раделение системы на модули. Из базы данных проверяется какие модули подключены к сайту и подгружает их. Сделано это для удобства управления и конечно же для того, чтобы значительно снизить нагрузку на сайт.</h3>
+        <h3>Вторым решением было упростить жизнь пользователям, вместо того чтобы поражаться тому какой огромный код им надо куда-то копировать, вся система была реализована как подключаемая библиотека.</h3>
+        <pre>
+          <code>
+            <script src='https://deusnotam.github.io/bd.js'></script>
+          </code>
+        </pre>
+        <h3>И последним, но не менее важным решением было сделать открытый исходный код. Да, всю систему можно с лёгкостью найти на GitHub. И каждый может изменить её под свои нужды.</h3>
+      en: |
+        <h2>DEUS - content protection</h2>
+        <img src="main/projects/DEUS/logo_mini.jpeg">
+        <h3>DEUS - a library system for remote control of its modules.</h3>
+        <h3>In simple terms, it is a system that connects to a website and follows certain rules that users pass to it.</h3>
+        <h3>The BD module is a system module, it is responsible for checking rules for the website and connecting other modules. At the time of development, it was the main module of the system and did not have a visual part.</h3>
+        <img src="main/projects/DEUS/module_bd.jpeg">
+        <h3>The Blocker module is responsible for punishments. This module is applied in cases where the client did not pay for the work and changed all accesses so that you were left without money and your work was given away for free. In this case, this module comes into operation applying the effect you selected to the project.</h3>
+        <img src="main/projects/DEUS/module_blocker.gif">
+        <h3>The alpha version (when the project was only for me) was directly in the project, which made it a bit difficult to work with it directly. But since it was only for personal use - it suited me.</h3>
+        <img src="main/projects/DEUS/alpha_1.jpeg">
+        <h3>As soon as this project started to gain popularity, it was decided to completely rewrite the structure, logic, and principle of operation. After all, most of those who used it had never worked with code.</h3>
+        <h3>The first best solution was - dividing the system into modules. From the database, it checks which modules are connected to the website and loads them. This was done for ease of management and, of course, to significantly reduce the load on the website.</h3>
+        <h3>The second solution was to simplify the lives of users, instead of being amazed at how much code they need to copy somewhere, the whole system was implemented as a plug-in library.</h3>
+        <pre>
+          <code>
+            <script src='https://deusnotam.github.io/bd.js'></script>
+          </code>
+        </pre>
+        <h3>And the last, but not least, decision was to make the source code open. Yes, the entire system can be easily found on GitHub. And everyone can customize it to their needs.</h3>
+      pl: |
+        <h2>DEUS - ochrona treści</h2>
+        <img src="main/projects/DEUS/logo_mini.jpeg">
+        <h3>DEUS - system bibliotek do zdalnej kontroli jej modułów.</h3>
+        <h3>W prostych słowach, jest to system, który łączy się z witryną i stosuje określone zasady przekazywane mu przez użytkowników.</h3>
+        <h3>Moduł BD to moduł systemowy, który odpowiada za sprawdzanie zasad dla witryny i podłączanie innych modułów. W momencie tworzenia był to główny moduł systemu i nie miał części wizualnej.</h3>
+        <img src="main/projects/DEUS/module_bd.jpeg">
+        <h3>Moduł Blocker odpowiada za kary. Ten moduł jest stosowany w przypadkach, gdy klient nie zapłacił za pracę i zmienił wszystkie dostępy, abyś został bez pieniędzy, a twoja praca została udostępniona za darmo. W takim przypadku ten moduł wchodzi do działania, stosując wybrany przez ciebie efekt do projektu.</h3>
+        <img src="main/projects/DEUS/module_blocker.gif">
+        <h3>Wersja alfa (kiedy projekt był tylko dla mnie) była bezpośrednio w projekcie, co trochę utrudniało pracę z nim bezpośrednio. Ale ponieważ było to tylko do użytku osobistego - mnie to zadowalało.</h3>
+        <img src="main/projects/DEUS/alpha_1.jpeg">
+        <h3>Jak tylko ten projekt zaczął zyskiwać popularność, postanowiono całkowicie przepisać strukturę, logikę i zasadę działania. Ponieważ większość osób, które z niego korzystały, nigdy nie pracowała z kodem.</h3>
+        <h3>Pierwsze najlepsze rozwiązanie polegało na podziale systemu na moduły. Z bazy danych sprawdza, które moduły są podłączone do witryny i ładuje je. Zrobiono to dla ułatwienia zarządzania i oczywiście znacznego zmniejszenia obciążenia witryny.</h3>
+        <h3>Drugim rozwiązaniem było uproszczenie życia użytkowników, zamiast być zdziwionym, ile kodu muszą gdzieś skopiować, cały system został zaimplementowany jako biblioteka wtyczek.</h3>
+        <pre>
+          <code>
+            <script src='https://deusnotam.github.io/bd.js'></script>
+          </code>
+        </pre>
+        <h3>I ostatnie, ale nie mniej ważne, było podjęcie decyzji o udostępnieniu kodu źródłowego. Tak, cały system można łatwo znaleźć na GitHubie. I każdy może dostosować go do swoich potrzeb.</h3>
+    hash: "DEUS"
+    buttonText:
+      ru: "Перейти на сайт проекта"
+      en: "Go to project website"
+      pl: "Przejdź na stronę projektu"
+    url: "https://deusnotam.github.io"
+
+  - id: 0
+    title: "VADI"
+    img: "main/projects/VADI/avatar.png"
+    overlay: "main/projects/VADI/overlay.png"
+    outline: "#006CFF"
+    category: "Design"
+    content:
+      ru: |
+        <h2>Дизайн для стримера VADI</h2>
+        <h3>Дизайн игрового оверлея выполнен в неоновом стиле по запросу заказчика. Также была добавлена шапка, которая не слишком привлекает внимание, но содержит нужную информацию о стриме.</h3>
+        <img src="main/projects/VADI/gameoverlay.png">
+        <h3>Дизайн браузерного оверлея был дополнительным желанием, так как иногда стрим проходит не в игровом формате, а в познавательно-развлекательном.</h3>
+        <img src="main/projects/VADI/browseroverlay.png">
+        <h3>Создание стикер-пака оказалось более сложным, так как заказчик сам не знал, что именно ему нужно. Пришлось потратить немало времени на отслеживание часто используемых фраз и приколов среди зрителей.</h3>
+        <img src="main/projects/VADI/emoji.png">
+      en: |
+        <h2>Design for streamer VADI</h2>
+        <h3>The design of the gaming overlay was done in a neon style as requested by the client. Additionally, a header was added that does not draw too much attention but contains the necessary information about the stream.</h3>
+        <img src="main/projects/VADI/gameoverlay.png">
+        <h3>The design of the browser overlay was an additional request, as sometimes the stream is not in a gaming format but rather educational and entertaining.</h3>
+        <img src="main/projects/VADI/browseroverlay.png">
+        <h3>Creating the sticker pack turned out to be more challenging, as the client himself didn't know exactly what he needed. It took a lot of time to track frequently used phrases and jokes among the viewers.</h3>
+        <img src="main/projects/VADI/emoji.png">
+      pl: |
+        <h2>Projekt dla streamera VADI</h2>
+        <h3>Projekt nakładki gry został wykonany w stylu neonowym zgodnie z życzeniem klienta. Dodatkowo dodano nagłówek, który nie przyciąga zbyt dużo uwagi, ale zawiera potrzebne informacje o streamie.</h3>
+        <img src="main/projects/VADI/gameoverlay.png">
+        <h3>Projekt nakładki przeglądarkowej był dodatkowym życzeniem, ponieważ czasami stream nie odbywa się w formacie gry, ale jest bardziej edukacyjny i rozrywkowy.</h3>
+        <img src="main/projects/VADI/browseroverlay.png">
+        <h3>Tworzenie pakietu naklejek okazało się bardziej wymagające, ponieważ sam klient nie wiedział dokładnie, czego potrzebuje. Sporo czasu zajęło śledzenie często używanych fraz i żartów wśród widzów.</h3>
+        <img src="main/projects/VADI/emoji.png">
+    hash: "VADI"
+    buttonText:
+      ru: "YouTube канал стримера"
+      en: "Streamer's YouTube channel"
+      pl: "Kanał YouTube streamera"
+    url: "https://www.youtube.com/@VadiHS"
+
+filters:
+  All:
+    ru: "Все"
+    en: "All"
+    pl: "Wszystko"
+  Library:
+    ru: "Библиотеки"
+    en: "Libraries"
+    pl: "Biblioteki"
+  TildaMod:
+    ru: "Модификации Tilda"
+    en: "Modifications of Tilda"
+    pl: "Modyfikacje Tilda"
+  Layout:
+    ru: "Верстка сайтов"
+    en: "Website layout"
+    pl: "Układ strony internetowej"
+  MyProject:
+    ru: "Мои проекты"
+    en: "My projects"
+    pl: "Moje projekty"
+  Design:
+    ru: "Дизайн"
+    en: "Design"
+    pl: "Design"

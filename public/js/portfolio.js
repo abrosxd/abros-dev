@@ -104,7 +104,7 @@ function handleTouchEnd() {
 }
 
 // Создание карточек
-fetch("main/yaml/portfolio.yaml")
+fetch("/public/locales/portfolio.yaml")
   .then((response) => response.text())
   .then((yamlData) => {
     const data = jsyaml.load(yamlData);

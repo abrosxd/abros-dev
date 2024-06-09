@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Смена языка 404
   function changeinfo404(language) {
-    fetch(".././locales/404.yaml")
+    fetch("/public/locales/404.yaml")
       .then((response) => response.text())
       .then((yamlData) => {
         const data = jsyaml.load(yamlData);

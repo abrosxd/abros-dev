@@ -110,7 +110,7 @@ reviews:
   pl: "Opinie"
 
 reviewsData:
-  - img: "../.././src/assets/no-image.jpeg"
+  - img: "/src/assets/no-image.jpeg"
     name:
       ru: "Адель (Сонграйтинг О. Шаумаров)"
       en: "Adele (Songwriting by O. Shaumarov)"
@@ -120,7 +120,7 @@ reviewsData:
       en: "Daniel, good day! I personally thank you for your fast and high-quality work!!! Thank you very much!!! I will definitely keep your contact and recommend you!"
       pl: "Danielu, dzień dobry! Serdecznie dziękuję Ci za szybką i wysokiej jakości pracę!!! Bardzo Ci dziękuję!!! Z pewnością zachowam Twój kontakt i będę polecać!"
 
-  - img: ".././assets/about/reviews/AnnaMoiseenko.jpeg"
+  - img: "/public/assets/about/reviews/AnnaMoiseenko.jpeg"
     name:
       ru: "Анна Моисеенко"
       en: "Anna Moiseenko"
@@ -169,11 +169,11 @@ gallery:
   pl: "Album zdjęć"
 
 galleryData:
-  - img: ".././assets/gallery/1.jpeg"
-  - img: ".././assets/gallery/2.jpeg"
-  - img: ".././assets/gallery/3.png"
-  - img: ".././assets/gallery/4.png"
-  - img: ".././assets/gallery/5.png"
+  - img: "/public/assets/gallery/1.jpeg"
+  - img: "/public/assets/gallery/2.jpeg"
+  - img: "/public/assets/gallery/3.png"
+  - img: "/public/assets/gallery/4.png"
+  - img: "/public/assets/gallery/5.png"
 
 stack:
   ru: "Стек"
@@ -249,7 +249,7 @@ facts:
       en: "Worried that the client won't pay? Or maybe you want to protect yourself from this just in case? Then be sure to check out the DEUS project."
       pl: "Obawiasz się, że klient nie zapłaci? A może chcesz się przed tym zabezpieczyć na wszelki wypadek? W takim razie koniecznie sprawdź projekt DEUS."
 
-  - img: ".././assets/facts/music.gif"
+  - img: "/public/assets/facts/music.gif"
     text:
       ru: "А вы знали, что по сайту можно путешествовать с приятной музыкой? Просто кликните по иконке с волной 😉"
       en: "Did you know that you can browse the site with nice music? Just click on the wave icon 😉"

@@ -53,7 +53,7 @@ if (isFilterPage()) {
 document.addEventListener("DOMContentLoaded", function () {
   // Смена языка меню
   function changeMenuText(language) {
-    fetch(".././locales/menu.yaml")
+    fetch("/public/locales/menu.yaml")
       .then((response) => response.text())
       .then((yamlData) => {
         const data = jsyaml.load(yamlData);

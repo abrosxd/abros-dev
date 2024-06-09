@@ -1,4 +1,4 @@
-fetch(".././locales/about.yaml")
+fetch("/public/locales/about.yaml")
   .then((response) => response.text())
   .then((yamlData) => {
     const data = jsyaml.load(yamlData);

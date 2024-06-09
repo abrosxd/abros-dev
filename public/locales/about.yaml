@@ -169,11 +169,11 @@ gallery:
   pl: "Album zdjęć"
 
 galleryData:
-  - img: "/public/assets/gallery/1.jpeg"
-  - img: "/public/assets/gallery/2.jpeg"
-  - img: "/public/assets/gallery/3.png"
-  - img: "/public/assets/gallery/4.png"
-  - img: "/public/assets/gallery/5.png"
+  - img: "/public/assets/about/gallery/1.jpeg"
+  - img: "/public/assets/about/gallery/2.jpeg"
+  - img: "/public/assets/about/gallery/3.png"
+  - img: "/public/assets/about/gallery/4.png"
+  - img: "/public/assets/about/gallery/5.png"
 
 stack:
   ru: "Стек"

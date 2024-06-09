@@ -1,0 +1,60 @@
+ru: |
+  <h2>DEUS - защита контента</h2>
+  <img src="main/projects/DEUS/logo_mini.jpeg">
+  <h3>DEUS - система-библиотека для удалённого контроля принадлежащих ей модулей.</h3>
+  <h3>Простыми словами это система, которая подключается к сайту и следует определенным правилам, которые ей передают сами пользователи.</h3>
+  <h3>Модуль BD - это системный модуль, он отвечает за проверку правил для сайта и подключение остальных модулей. На момент разработки являлся главным модулем системы и визуальную часть не имел.</h3>
+  <img src="main/projects/DEUS/module_bd.jpeg">
+  <h3>Модуль Blocker - это модуль отвечающий за наказания. Данный модуль применяется в случаях когда заказчик не оплатил работу и сменил все доступы так, что вы остались без денег и ваш труд отдан за бесплатно. В этом случае в работу вступает этот модуль применяя выбранный вами эффект к проекту.</h3>
+  <img src="main/projects/DEUS/module_blocker.gif">
+  <h3>Альфа версия (когда проект был только для меня) находилась непосредственно в проекте, что немного затрудняло работу с ним напрямую. Но так как это было только для личного использования - меня устраивало.</h3>
+  <img src="main/projects/DEUS/alpha_1.jpeg">
+  <h3>Как только этот проект пошёл по знакомым было решено переписать структуру, логику и принцип работы полностью. Ведь большинство тех, кто этим пользовался никогда не работал с кодом.</h3>
+  <h3>Первым лучшим решением было - раделение системы на модули. Из базы данных проверяется какие модули подключены к сайту и подгружает их. Сделано это для удобства управления и конечно же для того, чтобы значительно снизить нагрузку на сайт.</h3>
+  <h3>Вторым решением было упростить жизнь пользователям, вместо того чтобы поражаться тому какой огромный код им надо куда-то копировать, вся система была реализована как подключаемая библиотека.</h3>
+  <pre>
+    <code>
+      <script src='https://deusnotam.github.io/bd.js'></script>
+    </code>
+  </pre>
+  <h3>И последним, но не менее важным решением было сделать открытый исходный код. Да, всю систему можно с лёгкостью найти на GitHub. И каждый может изменить её под свои нужды.</h3>
+en: |
+  <h2>DEUS - content protection</h2>
+  <img src="main/projects/DEUS/logo_mini.jpeg">
+  <h3>DEUS - a library system for remote control of its modules.</h3>
+  <h3>In simple terms, it is a system that connects to a website and follows certain rules that users pass to it.</h3>
+  <h3>The BD module is a system module, it is responsible for checking rules for the website and connecting other modules. At the time of development, it was the main module of the system and did not have a visual part.</h3>
+  <img src="main/projects/DEUS/module_bd.jpeg">
+  <h3>The Blocker module is responsible for punishments. This module is applied in cases where the client did not pay for the work and changed all accesses so that you were left without money and your work was given away for free. In this case, this module comes into operation applying the effect you selected to the project.</h3>
+  <img src="main/projects/DEUS/module_blocker.gif">
+  <h3>The alpha version (when the project was only for me) was directly in the project, which made it a bit difficult to work with it directly. But since it was only for personal use - it suited me.</h3>
+  <img src="main/projects/DEUS/alpha_1.jpeg">
+  <h3>As soon as this project started to gain popularity, it was decided to completely rewrite the structure, logic, and principle of operation. After all, most of those who used it had never worked with code.</h3>
+  <h3>The first best solution was - dividing the system into modules. From the database, it checks which modules are connected to the website and loads them. This was done for ease of management and, of course, to significantly reduce the load on the website.</h3>
+  <h3>The second solution was to simplify the lives of users, instead of being amazed at how much code they need to copy somewhere, the whole system was implemented as a plug-in library.</h3>
+  <pre>
+    <code>
+      <script src='https://deusnotam.github.io/bd.js'></script>
+    </code>
+  </pre>
+  <h3>And the last, but not least, decision was to make the source code open. Yes, the entire system can be easily found on GitHub. And everyone can customize it to their needs.</h3>
+pl: |
+  <h2>DEUS - ochrona treści</h2>
+  <img src="main/projects/DEUS/logo_mini.jpeg">
+  <h3>DEUS - system bibliotek do zdalnej kontroli jej modułów.</h3>
+  <h3>W prostych słowach, jest to system, który łączy się z witryną i stosuje określone zasady przekazywane mu przez użytkowników.</h3>
+  <h3>Moduł BD to moduł systemowy, który odpowiada za sprawdzanie zasad dla witryny i podłączanie innych modułów. W momencie tworzenia był to główny moduł systemu i nie miał części wizualnej.</h3>
+  <img src="main/projects/DEUS/module_bd.jpeg">
+  <h3>Moduł Blocker odpowiada za kary. Ten moduł jest stosowany w przypadkach, gdy klient nie zapłacił za pracę i zmienił wszystkie dostępy, abyś został bez pieniędzy, a twoja praca została udostępniona za darmo. W takim przypadku ten moduł wchodzi do działania, stosując wybrany przez ciebie efekt do projektu.</h3>
+  <img src="main/projects/DEUS/module_blocker.gif">
+  <h3>Wersja alfa (kiedy projekt był tylko dla mnie) była bezpośrednio w projekcie, co trochę utrudniało pracę z nim bezpośrednio. Ale ponieważ było to tylko do użytku osobistego - mnie to zadowalało.</h3>
+  <img src="main/projects/DEUS/alpha_1.jpeg">
+  <h3>Jak tylko ten projekt zaczął zyskiwać popularność, postanowiono całkowicie przepisać strukturę, logikę i zasadę działania. Ponieważ większość osób, które z niego korzystały, nigdy nie pracowała z kodem.</h3>
+  <h3>Pierwsze najlepsze rozwiązanie polegało na podziale systemu na moduły. Z bazy danych sprawdza, które moduły są podłączone do witryny i ładuje je. Zrobiono to dla ułatwienia zarządzania i oczywiście znacznego zmniejszenia obciążenia witryny.</h3>
+  <h3>Drugim rozwiązaniem było uproszczenie życia użytkowników, zamiast być zdziwionym, ile kodu muszą gdzieś skopiować, cały system został zaimplementowany jako biblioteka wtyczek.</h3>
+  <pre>
+    <code>
+      <script src='https://deusnotam.github.io/bd.js'></script>
+    </code>
+  </pre>
+  <h3>I ostatnie, ale nie mniej ważne, było podjęcie decyzji o udostępnieniu kodu źródłowego. Tak, cały system można łatwo znaleźć na GitHubie. I każdy może dostosować go do swoich potrzeb.</h3>

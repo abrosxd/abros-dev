@@ -1,0 +1,84 @@
+ru: |
+  <h2>Уведомления для твоего сайта</h2>
+  <h3>Данная библиотека была разработанна для моего сайта, но так как она получилась модульной. То вы тоже сможете её использовать.</h3>
+  <h3>Уведомления очень полезный инструмент. Не отвлекает пользователя от потребления контента, а так же занимает мало места на сайте.</h3>
+  <h3>С этой целью я разработал библиотеку, которая дает возможность выводить ваши уведомления на сайте.</h3>
+  <img src="main/projects/AbrosNoti/noti.gif">
+  <h3>Выглядит круто, а самое главное, что очень просто с этим работать!</h3>
+  <h3>Всё что нужно сделать, это подключить библиотеку к сайту используя код:</h3>
+  <pre>
+    <code>
+      <script src='https://cdn.abros.dev/noti/noti.js'></script>
+    </code>
+  </pre>
+  <h3>После чего можно вызывать функцию уведомлений следующим образом:</h3>
+  <p>Создавайте уведомления с помощью abrosnoti.create()</p>           
+  <p>Параметры abrosnoti.create():</p>
+  <ul>
+    <li>Иконка: string,</li>
+    <li>Заголовок: string,</li>
+    <li>Описание: string,</li>
+    <li>Продолжительность: секунды,
+      (по умолчанию: 2 секунды, 0 означает бесконечное время)</li>
+    <li>Уничтожить при клике: boolean,
+      (определяет, должно ли уведомление исчезнуть при нажатии, по умолчанию: false)</li>
+    <li>Функция клика: function,
+      (вызывается при нажатии на уведомление, если не определено, по умолчанию: undefined)</li>
+  </ul>
+  <h3>Вы можете проверить как это работает, просто смените язык на моем сайте :)</h3>
+en: |
+  <h2>Notifications for Your Website</h2>
+  <h3>This library was developed for my website, but since it turned out to be modular, you can also use it.</h3>
+  <h3>Notifications are a very useful tool. They don't distract users from consuming content and take up little space on the website.</h3>
+  <h3>For this purpose, I have developed a library that allows you to display notifications on your website.</h3>
+  <img src="main/projects/AbrosNoti/noti.gif">
+  <h3>It looks cool, and most importantly, it's very easy to work with!</h3>
+  <h3>All you need to do is to connect the library to your website using the code:</h3>
+  <pre>
+    <code>
+      <script src='https://cdn.abros.dev/noti/noti.js'></script>
+    </code>
+  </pre>
+  <h3>After that, you can call the notification function as follows:</h3>
+  <p>Create notifications using abrosnoti.create()</p>           
+  <p>Parameters for abrosnoti.create():</p>
+  <ul>
+    <li>Icon: string,</li>
+    <li>Title: string,</li>
+    <li>Description: string,</li>
+    <li>Duration: seconds,
+      (default: 2 seconds, 0 means infinite time)</li>
+    <li>Destroy on click: boolean,
+      (determines whether the notification should disappear when clicked, default: false)</li>
+    <li>Click function: function,
+      (called when the notification is clicked, if not defined, default: undefined)</li>
+  </ul>
+  <h3>You can see how it works by simply changing the language on my website :)</h3>
+pl: |
+  <h2>Powiadomienia dla Twojej witryny</h2>
+  <h3>Ta biblioteka została opracowana dla mojej witryny, ale ponieważ okazała się modułowa, możesz również z niej korzystać.</h3>
+  <h3>Powiadomienia są bardzo przydatnym narzędziem. Nie rozpraszają użytkowników od konsumowania treści i zajmują niewiele miejsca na stronie.</h3>
+  <h3>W tym celu opracowałem bibliotekę, która pozwala wyświetlać powiadomienia na Twojej witrynie.</h3>
+  <img src="main/projects/AbrosNoti/noti.gif">
+  <h3>Wygląda świetnie, a co najważniejsze, jest bardzo łatwa w użyciu!</h3>
+  <h3>Wszystko, co musisz zrobić, to podłączyć bibliotekę do swojej witryny za pomocą poniższego kodu:</h3>
+  <pre>
+    <code>
+      <script src='https://cdn.abros.dev/noti/noti.js'></script>
+    </code>
+  </pre>
+  <h3>Po tym możesz wywołać funkcję powiadomień w następujący sposób:</h3>
+  <p>Twórz powiadomienia za pomocą abrosnoti.create()</p>           
+  <p>Parametry dla abrosnoti.create():</p>
+  <ul>
+    <li>Ikona: string,</li>
+    <li>Tytuł: string,</li>
+    <li>Opis: string,</li>
+    <li>Czas trwania: sekundy,
+      (domyślnie: 2 sekundy, 0 oznacza czas nieskończony)</li>
+    <li>Usunąć po kliknięciu: boolean,
+      (określa, czy powiadomienie powinno zniknąć po kliknięciu, domyślnie: false)</li>
+    <li>Funkcja kliknięcia: function,
+      (wywoływana po kliknięciu powiadomienia, jeśli nie zdefiniowano, domyślnie: undefined)</li>
+  </ul>
+  <h3>Możesz zobaczyć, jak to działa, po prostu zmieniając język na mojej witrynie :)</h3>

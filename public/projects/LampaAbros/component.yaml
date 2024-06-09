@@ -1,0 +1,42 @@
+ru: |
+  <h2>Abros - магазин плагинов для Lampa</h2>
+  <img src="main/projects/LampaAbros/logo_mini.png">
+  <h3>Данный проект представляет из себя плагин для онлайн кинотеатра Lampa. С его помощью можно в один клик устанавливать все возможные доступные плагины для данного кинотеатра.</h3>
+  <h3>Этот магазин упрощает взаимодействие с сервисом Lampa. Ведь теперь не нужно искать в интернете плагины и добавлять их вручную, всё уже есть в Abros.</h3>
+  <img src="main/projects/LampaAbros/storemenu.png">
+  <h3>На данный момент добавлены лишь основные известные плагины, со временем магазин будет расширяться.</h3>
+  <h3>Подключить плагин можно добавив ссылку ниже в Lampa.</h3>
+  <pre>
+    <code>
+      https://cdn.abros.dev/lampa/mod.js
+    </code>
+  </pre>
+  <h3>Переходи по кнопке ниже в Lampa и проверяй!</h3>
+en: |
+  <h2>Abros - plugin store for Lampa</h2>
+  <img src="main/projects/LampaAbros/logo_mini.png">
+  <h3>This project is a plugin for the online cinema Lampa. With it, you can install all available plugins for this cinema in one click.</h3>
+  <h3>This store simplifies interaction with the Lampa service. Now you don't need to search for plugins on the internet and add them manually, everything is already in Abros.</h3>
+  <img src="main/projects/LampaAbros/storemenu.png">
+  <h3>Currently, only the basic, well-known plugins have been added. Over time, the store will expand.</h3>
+  <h3>To connect the plugin, add the link below to Lampa.</h3>
+  <pre>
+    <code>
+      https://cdn.abros.dev/lampa/mod.js
+    </code>
+  </pre>
+  <h3>Click the button below in Lampa and check it out!</h3>
+pl: |
+  <h2>Abros - sklep z pluginami dla Lampa</h2>
+  <img src="main/projects/LampaAbros/logo_mini.png">
+  <h3>Ten projekt to plugin dla internetowego kina Lampa. Dzięki niemu można w jednym kliknięciu zainstalować wszystkie dostępne pluginy dla tego kina.</h3>
+  <h3>Ten sklep ułatwia interakcję z serwisem Lampa. Teraz nie trzeba szukać pluginów w internecie i dodawać ich ręcznie, wszystko jest już w Abros.</h3>
+  <img src="main/projects/LampaAbros/storemenu.png">
+  <h3>Na razie dodane są tylko podstawowe, znane pluginy. Z czasem sklep będzie się rozszerzać.</h3>
+  <h3>Aby podłączyć plugin, dodaj poniższy link do Lampa.</h3>
+  <pre>
+    <code>
+      https://cdn.abros.dev/lampa/mod.js
+    </code>
+  </pre>
+  <h3>Kliknij przycisk poniżej w Lampa i sprawdź!</h3>

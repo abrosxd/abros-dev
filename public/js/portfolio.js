@@ -150,62 +150,81 @@ fetch("/public/locales/portfolio.yaml")
         .replace(/'/g, "&#039;");
     }
 
+    function loadComponentContent(url) {
+      return fetch(url)
+        .then((response) => response.text())
+        .then((yamlData) => jsyaml.load(yamlData))
+        .catch((error) => {
+          console.error("Ошибка загрузки component.yaml:", error);
+          return null;
+        });
+    }
+
     function openPopup(id) {
       const project = data.projects.find((project) => project.id === id);
       const popupContent = document.getElementById("popup-content");
-      const content = project.content[currentLanguage];
-      const escapedContent = escapeHTMLInsideCode(content);
-      popupContent.innerHTML = escapedContent;
 
-      const popupMenu = document.getElementById("popup-menu");
-      if (project.url && project.url.trim() !== "") {
-        popupMenu.innerHTML = `
-        <a class="button" href="${project.url}" target="_blank">${project.buttonText[currentLanguage]}</a>
-        <span class="button close-btn" id="close-btn" onclick="closePopup()">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0,0,256,256">
-            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-              <g transform="scale(8.53333,8.53333)">
-                <path d="M7,4c-0.25587,0 -0.51203,0.09747 -0.70703,0.29297l-2,2c-0.391,0.391 -0.391,1.02406 0,1.41406l7.29297,7.29297l-7.29297,7.29297c-0.391,0.391 -0.391,1.02406 0,1.41406l2,2c0.391,0.391 1.02406,0.391 1.41406,0l7.29297,-7.29297l7.29297,7.29297c0.39,0.391 1.02406,0.391 1.41406,0l2,-2c0.391,-0.391 0.391,-1.02406 0,-1.41406l-7.29297,-7.29297l7.29297,-7.29297c0.391,-0.39 0.391,-1.02406 0,-1.41406l-2,-2c-0.391,-0.391 -1.02406,-0.391 -1.41406,0l-7.29297,7.29297l-7.29297,-7.29297c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297z"></path>
-              </g>
-            </g>
-           </svg>
-        </span>
-      `;
-      } else {
-        popupMenu.innerHTML = `
-        <span class="button close-btn" id="close-btn" onclick="closePopup()">
-          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0,0,256,256">
-            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-              <g transform="scale(8.53333,8.53333)">
-                <path d="M7,4c-0.25587,0 -0.51203,0.09747 -0.70703,0.29297l-2,2c-0.391,0.391 -0.391,1.02406 0,1.41406l7.29297,7.29297l-7.29297,7.29297c-0.391,0.391 -0.391,1.02406 0,1.41406l2,2c0.391,0.391 1.02406,0.391 1.41406,0l7.29297,-7.29297l7.29297,7.29297c0.39,0.391 1.02406,0.391 1.41406,0l2,-2c0.391,-0.391 0.391,-1.02406 0,-1.41406l-7.29297,-7.29297l7.29297,-7.29297c0.391,-0.39 0.391,-1.02406 0,-1.41406l-2,-2c-0.391,-0.391 -1.02406,-0.391 -1.41406,0l-7.29297,7.29297l-7.29297,-7.29297c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297z"></path>
-              </g>
-            </g>
-           </svg>
-        </span>
-      `;
-      }
-      const overlay = document.getElementById("overlay-popup");
-      const popup = document.getElementById("popup");
+      loadComponentContent(project.content).then((content) => {
+        if (!content) {
+          popupContent.innerHTML = "<p>Ошибка загрузки контента проекта.</p>";
+          return;
+        }
 
-      overlay.style.opacity = 1;
-      overlay.style.visibility = "visible";
-      popup.style.opacity = 1;
-      popup.style.visibility = "visible";
-      popupMenu.style.opacity = 1;
-      popupMenu.style.visibility = "visible";
+        const projectContent = content[currentLanguage];
+        const escapedContent = escapeHTMLInsideCode(projectContent);
+        popupContent.innerHTML = escapedContent;
 
-      document.body.classList.add("no-scroll");
+        const popupMenu = document.getElementById("popup-menu");
+        if (project.url && project.url.trim() !== "") {
+          popupMenu.innerHTML = `
+            <a class="button" href="${project.url}" target="_blank">${project.buttonText[currentLanguage]}</a>
+            <span class="button close-btn" id="close-btn" onclick="closePopup()">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                  <g transform="scale(8.53333,8.53333)">
+                    <path d="M7,4c-0.25587,0 -0.51203,0.09747 -0.70703,0.29297l-2,2c-0.391,0.391 -0.391,1.02406 0,1.41406l7.29297,7.29297l-7.29297,7.29297c-0.391,0.391 -0.391,1.02406 0,1.41406l2,2c0.391,0.391 1.02406,0.391 1.41406,0l7.29297,-7.29297l7.29297,7.29297c0.39,0.391 1.02406,0.391 1.41406,0l2,-2c0.391,-0.391 0.391,-1.02406 0,-1.41406l-7.29297,-7.29297l7.29297,-7.29297c0.391,-0.39 0.391,-1.02406 0,-1.41406l-2,-2c-0.391,-0.391 -1.02406,-0.391 -1.41406,0l-7.29297,7.29297l-7.29297,-7.29297c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297z"></path>
+                  </g>
+                </g>
+               </svg>
+            </span>
+          `;
+        } else {
+          popupMenu.innerHTML = `
+            <span class="button close-btn" id="close-btn" onclick="closePopup()">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                  <g transform="scale(8.53333,8.53333)">
+                    <path d="M7,4c-0.25587,0 -0.51203,0.09747 -0.70703,0.29297l-2,2c-0.391,0.391 -0.391,1.02406 0,1.41406l7.29297,7.29297l-7.29297,7.29297c-0.391,0.391 -0.391,1.02406 0,1.41406l2,2c0.391,0.391 1.02406,0.391 1.41406,0l7.29297,-7.29297l7.29297,7.29297c0.39,0.391 1.02406,0.391 1.41406,0l2,-2c0.391,-0.391 0.391,-1.02406 0,-1.41406l-7.29297,-7.29297l7.29297,-7.29297c0.391,-0.39 0.391,-1.02406 0,-1.41406l-2,-2c-0.391,-0.391 -1.02406,-0.391 -1.41406,0l-7.29297,7.29297l-7.29297,-7.29297c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297z"></path>
+                  </g>
+                </g>
+               </svg>
+            </span>
+          `;
+        }
 
-      popup.scrollTop = 0;
+        const overlay = document.getElementById("overlay-popup");
+        const popup = document.getElementById("popup");
 
-      window.location.hash = `#${project.hash}`;
-      Prism.highlightAll();
+        overlay.style.opacity = 1;
+        overlay.style.visibility = "visible";
+        popup.style.opacity = 1;
+        popup.style.visibility = "visible";
+        popupMenu.style.opacity = 1;
+        popupMenu.style.visibility = "visible";
 
-      const elements = popupContent.children;
-      Array.from(elements).forEach((element, index) => {
-        setTimeout(() => {
-          element.classList.add("fade-in");
-        }, index * 200);
+        document.body.classList.add("no-scroll");
+
+        popup.scrollTop = 0;
+
+        window.location.hash = `#${project.hash}`;
+        Prism.highlightAll();
+
+        const elements = popupContent.children;
+        Array.from(elements).forEach((element, index) => {
+          setTimeout(() => {
+            element.classList.add("fade-in");
+          }, index * 200);
+        });
       });
     }
 

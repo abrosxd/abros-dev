@@ -1,6 +1,5 @@
 // Поведение карточек
 const container = document.querySelector(".container");
-const preload = document.querySelector(".preloadbg");
 const projectCards = [];
 let loadedImages = 0;
 
@@ -14,28 +13,27 @@ function loadImage(url, callback) {
 }
 
 function checkLoad(projects) {
+  const loader = document.querySelector(".loader");
   loadedImages++;
   if (loadedImages === projects.length * 2) {
-    window.addEventListener(
-      "load",
-      function () {
+    // window.addEventListener(
+    //   "load",
+    //   function () {
+    setTimeout(function () {
+      var loaderSquares = document.querySelectorAll(".loader-bg li");
+      loaderSquares.forEach(function (square) {
+        var randomDelay = Math.random() * 1000;
         setTimeout(function () {
-          var preloadSquares = document.querySelectorAll(".preload-bg li");
-          preloadSquares.forEach(function (square) {
-            var randomDelay = Math.random() * 1000;
-            setTimeout(function () {
-              square.style.opacity = "0";
-              square.style.visibility = "hidden";
-            }, randomDelay);
-          });
-        });
+          square.style.opacity = "0";
+          square.style.visibility = "hidden";
+        }, randomDelay);
+        // });
+      });
 
-        setTimeout(function () {
-          preloadDiv.style.display = "none";
-        }, 1500);
-      },
-      500
-    );
+      setTimeout(function () {
+        loader.style.display = "none";
+      }, 1500);
+    }, 500);
     projectCards.forEach((card) => (card.style.display = "block"));
 
     if (!("ontouchstart" in window)) {

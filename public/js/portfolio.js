@@ -16,26 +16,26 @@ function loadImage(url, callback) {
 function checkLoad(projects) {
   loadedImages++;
   if (loadedImages === projects.length * 2) {
-    setTimeout(function () {
-      var preloadDiv = document.querySelector(".preload");
-      var preloadIconDiv = document.querySelector(".preload-icon");
-      if (preloadIconDiv) {
-        preloadIconDiv.style.opacity = "0";
-        preloadIconDiv.style.visibility = "hidden";
-      }
-      var preloadSquares = document.querySelectorAll(".preload-bg li");
-      preloadSquares.forEach(function (square) {
-        var randomDelay = Math.random() * 1000;
+    window.addEventListener(
+      "load",
+      function () {
         setTimeout(function () {
-          square.style.opacity = "0";
-          square.style.visibility = "hidden";
-        }, randomDelay);
-      });
+          var preloadSquares = document.querySelectorAll(".preload-bg li");
+          preloadSquares.forEach(function (square) {
+            var randomDelay = Math.random() * 1000;
+            setTimeout(function () {
+              square.style.opacity = "0";
+              square.style.visibility = "hidden";
+            }, randomDelay);
+          });
+        });
 
-      setTimeout(function () {
-        preloadDiv.style.display = "none";
-      }, 1500);
-    }, 500);
+        setTimeout(function () {
+          preloadDiv.style.display = "none";
+        }, 1500);
+      },
+      500
+    );
     projectCards.forEach((card) => (card.style.display = "block"));
 
     if (!("ontouchstart" in window)) {

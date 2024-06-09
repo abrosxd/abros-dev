@@ -179,16 +179,15 @@
     <div class="dot-grid"></div>
 
     <div class="loader">
-      <div class="loader-bg">
-        <script>
-          {
-            Array.from({ length: 200 }).map((_, index) => (
-              <li key={index}></li>
-            ));
-          }
-        </script>
-      </div>
+      <div class="loader-bg"></div>
     </div>
+    <script>
+      const loaderBg = document.querySelector(".loader-bg");
+      for (let i = 0; i < 200; i++) {
+        const li = document.createElement("li");
+        loaderBg.appendChild(li);
+      }
+    </script>
 
     <div class="aboutcontainer">
       <div class="aboutgrid aboutgrid-cols aboutgap-4">

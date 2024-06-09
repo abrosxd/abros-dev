@@ -249,7 +249,7 @@ facts:
       en: "Worried that the client won't pay? Or maybe you want to protect yourself from this just in case? Then be sure to check out the DEUS project."
       pl: "Obawiasz się, że klient nie zapłaci? A może chcesz się przed tym zabezpieczyć na wszelki wypadek? W takim razie koniecznie sprawdź projekt DEUS."
 
-  - img: "/public/assets/facts/music.gif"
+  - img: "/public/assets/about/facts/music.gif"
     text:
       ru: "А вы знали, что по сайту можно путешествовать с приятной музыкой? Просто кликните по иконке с волной 😉"
       en: "Did you know that you can browse the site with nice music? Just click on the wave icon 😉"

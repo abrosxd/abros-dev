@@ -16,9 +16,6 @@ function checkLoad(projects) {
   const loader = document.querySelector(".loader");
   loadedImages++;
   if (loadedImages === projects.length * 2) {
-    // window.addEventListener(
-    //   "load",
-    //   function () {
     setTimeout(function () {
       var loaderSquares = document.querySelectorAll(".loader-bg li");
       loaderSquares.forEach(function (square) {
@@ -27,7 +24,6 @@ function checkLoad(projects) {
           square.style.opacity = "0";
           square.style.visibility = "hidden";
         }, randomDelay);
-        // });
       });
 
       setTimeout(function () {

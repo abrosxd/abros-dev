@@ -247,7 +247,7 @@
   right: 0;
   width: 40px;
   height: 100%;
-  background: url(./src/assets/icons/arrow.svg) no-repeat 50%;
+  background: url(/src/assets/icons/arrow.svg) no-repeat 50%;
 }
 
 .filter-wrap {

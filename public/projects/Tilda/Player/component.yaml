@@ -1,9 +1,9 @@
 ru: |
   <h2>Плеер с плейлистом для сайта</h2>
-  <img src="main/projects/Tilda/Player/logo_mini.svg">
+  <img src="/public/projects/Tilda/Player/assets/logo_mini.svg">
   <h3>Сайт известного композитора. Обратились ко мне с задачей создать для сайта плеер.</h3>
   <h3>Плеер был реализован библиотекой, поэтому данную модификацию можно использовать в других проектах.</h3>
-  <img src="main/projects/Tilda/Player/site.gif">
+  <img src="/public/projects/Tilda/Player/assets/site.gif">
   <h3>Инструкция</h3>
   <h4>Создание плейлиста</h4>  
   <p>1. В товарах создать товар в котором:</p>
@@ -126,10 +126,10 @@ ru: |
   </pre>
 en: |
   <h2>Player with Playlist for the Website</h2>
-  <img src="main/projects/Tilda/Player/logo_mini.svg">
+  <img src="/public/projects/Tilda/Player/assets/logo_mini.svg">
   <h3>A website for a famous composer approached me to create a player for their site.</h3>
   <h3>The player was implemented using a library, making this modification usable in other projects.</h3>
-  <img src="main/projects/Tilda/Player/site.gif">
+  <img src="/public/projects/Tilda/Player/assets/site.gif">
   <h3>Instructions</h3>
   <h4>Creating the Playlist</h4>
   <p>1. In the products section, create a product with the following details:</p>
@@ -250,10 +250,10 @@ en: |
   </pre>
 pl: |
   <h2>Odtwarzacz z Playlistą na Stronę Internetową</h2>
-  <img src="main/projects/Tilda/Player/logo_mini.svg">
+  <img src="/public/projects/Tilda/Player/assets/logo_mini.svg">
   <h3>Strona znanego kompozytora zwróciła się do mnie z prośbą o stworzenie odtwarzacza na ich stronę.</h3>
   <h3>Odtwarzacz został zaimplementowany za pomocą biblioteki, co umożliwia wykorzystanie tej modyfikacji w innych projektach.</h3>
-  <img src="main/projects/Tilda/Player/site.gif">
+  <img src="/public/projects/Tilda/Player/assets/site.gif">
   <h3>Instrukcja</h3>
   <h4>Tworzenie Playlisty</h4>
   <p>1. W sekcji produktów utwórz produkt z następującymi danymi:</p>

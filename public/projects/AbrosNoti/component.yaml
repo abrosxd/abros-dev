@@ -3,7 +3,7 @@ ru: |
   <h3>Данная библиотека была разработанна для моего сайта, но так как она получилась модульной. То вы тоже сможете её использовать.</h3>
   <h3>Уведомления очень полезный инструмент. Не отвлекает пользователя от потребления контента, а так же занимает мало места на сайте.</h3>
   <h3>С этой целью я разработал библиотеку, которая дает возможность выводить ваши уведомления на сайте.</h3>
-  <img src="main/projects/AbrosNoti/noti.gif">
+  <img src="/public/projects/AbrosNoti/assets/noti.gif">
   <h3>Выглядит круто, а самое главное, что очень просто с этим работать!</h3>
   <h3>Всё что нужно сделать, это подключить библиотеку к сайту используя код:</h3>
   <pre>
@@ -31,7 +31,7 @@ en: |
   <h3>This library was developed for my website, but since it turned out to be modular, you can also use it.</h3>
   <h3>Notifications are a very useful tool. They don't distract users from consuming content and take up little space on the website.</h3>
   <h3>For this purpose, I have developed a library that allows you to display notifications on your website.</h3>
-  <img src="main/projects/AbrosNoti/noti.gif">
+  <img src="/public/projects/AbrosNoti/assets/noti.gif">
   <h3>It looks cool, and most importantly, it's very easy to work with!</h3>
   <h3>All you need to do is to connect the library to your website using the code:</h3>
   <pre>
@@ -59,7 +59,7 @@ pl: |
   <h3>Ta biblioteka została opracowana dla mojej witryny, ale ponieważ okazała się modułowa, możesz również z niej korzystać.</h3>
   <h3>Powiadomienia są bardzo przydatnym narzędziem. Nie rozpraszają użytkowników od konsumowania treści i zajmują niewiele miejsca na stronie.</h3>
   <h3>W tym celu opracowałem bibliotekę, która pozwala wyświetlać powiadomienia na Twojej witrynie.</h3>
-  <img src="main/projects/AbrosNoti/noti.gif">
+  <img src="/public/projects/AbrosNoti/assets/noti.gif">
   <h3>Wygląda świetnie, a co najważniejsze, jest bardzo łatwa w użyciu!</h3>
   <h3>Wszystko, co musisz zrobić, to podłączyć bibliotekę do swojej witryny za pomocą poniższego kodu:</h3>
   <pre>

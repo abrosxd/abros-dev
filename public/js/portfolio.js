@@ -170,7 +170,7 @@ fetch("/public/locales/portfolio.yaml")
 
         const popupMenu = document.getElementById("popup-menu");
         let buttonAddHtml = "";
-        if (project.buttonAdd && project.buttonAdd.url.trim() !== "") {
+        if (project.buttonAdd.url && project.buttonAdd.url.trim() !== "") {
           buttonAddHtml = `
           <a class="button" href="${project.buttonAdd.url}" target="_blank">
           <img src="${project.buttonAdd.icon}">
@@ -178,7 +178,7 @@ fetch("/public/locales/portfolio.yaml")
           `;
         }
         let buttonMainHtml = "";
-        if (project.url && project.url.trim() !== "") {
+        if (project.buttonMain.url && project.buttonMain.url.trim() !== "") {
           buttonMainHtml = `
           <a class="button" href="${project.url}" target="_blank">${project.buttonMain[currentLanguage]}</a>
           `;

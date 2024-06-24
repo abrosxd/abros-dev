@@ -121,7 +121,10 @@ nav {
 }
 
 .section {
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: min-content;
 }
 
 .button {

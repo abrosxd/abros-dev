@@ -121,10 +121,15 @@ nav {
 }
 
 .section {
-  /* white-space: nowrap; */
   display: flex;
   flex-wrap: wrap-reverse;
   width: min-content;
+}
+.section.up {
+  flex-wrap: wrap;
+}
+.section.down {
+  flex-wrap: wrap-reverse;
 }
 
 .button {
@@ -201,10 +206,6 @@ nav {
   right: 24px;
 }
 
-/* #lang-submenu {
-  flex-wrap: wrap;
-} */
-
 .links {
   position: fixed;
   bottom: 24px;
@@ -218,19 +219,8 @@ nav {
   }
 }
 
-/* #links-submenu {
-  top: -160px;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 767px) {
-  #links-submenu {
-    top: 32px;
-  }
-} */
-
 .submenu {
-  /* position: absolute; */
+  flex-wrap: wrap;
   z-index: 2;
   opacity: 0;
   visibility: hidden;

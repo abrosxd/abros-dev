@@ -52,58 +52,6 @@ pay:
     en: "Copied"
     pl: "Skopiowano"
 
-coinData:
-  BTC:
-    coin:
-      ru: 'Отправляйте только монеты:<br><span style="color: #f80; padding: 0 6px; font-weight: 600;">BTC</span>'
-      en: 'Send coins only:<br><span style="color: #f80; padding: 0 6px; font-weight: 600;">BTC</span>'
-      pl: 'Wysyłajcie tylko monety:<br><span style="color: #f80; padding: 0 6px; font-weight: 600;">BTC</span>'
-    net:
-      ru: 'Сеть: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
-      en: 'Network: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
-      pl: 'Sieć: <span style="color: #f80; padding: 0 6px; font-weight: 600;">Bitcoin</span>'
-    address: "bc1qlxj5cklq893a9aqusw382esk92rrxkn52v6cuv"
-  ETH:
-    coin:
-      ru: 'Отправляйте только монеты:<br><span style="color: #9da2ff; padding: 0 6px; font-weight: 600;">ETH</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-      en: 'Send coins only:<br><span style="color: #9da2ff; padding: 0 6px; font-weight: 600;">ETH</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-      pl: 'Wysyłajcie tylko monety:<br><span style="color: #9da2ff; padding: 0 6px; font-weight: 600;">ETH</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-    net:
-      ru: 'Сеть: <span style="color: #9da2ff; padding: 0 6px; font-weight: 600;">Ethereum(ERC20)</span>'
-      en: 'Network: <span style="color: #9da2ff; padding: 0 6px; font-weight: 600;">Ethereum(ERC20)</span>'
-      pl: 'Sieć: <span style="color: #9da2ff; padding: 0 6px; font-weight: 600;">Ethereum(ERC20)</span>'
-    address: "0x849a1f60cCBA76CcD124263cF0F6A4B5f5640423"
-  TRX:
-    coin:
-      ru: 'Отправляйте только монеты:<br><span style="color: #ff3f3f; padding: 0 6px; font-weight: 600;">TRX</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-      en: 'Send coins only:<br><span style="color: #ff3f3f; padding: 0 6px; font-weight: 600;">TRX</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-      pl: 'Wysyłajcie tylko monety:<br><span style="color: #ff3f3f; padding: 0 6px; font-weight: 600;">TRX</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-    net:
-      ru: 'Сеть: <span style="color: #ff3f3f; padding: 0 6px; font-weight: 600;">Tron(TRС20)</span>'
-      en: 'Network: <span style="color: #ff3f3f; padding: 0 6px; font-weight: 600;">Tron(TRС20)</span>'
-      pl: 'Sieć: <span style="color: #ff3f3f; padding: 0 6px; font-weight: 600;">Tron(TRС20)</span>'
-    address: "TFoJe2GRYhVm5qFJj5pnrHn28P9WUpMJ7d"
-  TON:
-    coin:
-      ru: 'Отправляйте только монеты:<br><span style="color: #00b3ff; padding: 0 6px; font-weight: 600;">TON</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-      en: 'Send coins only:<br><span style="color: #00b3ff; padding: 0 6px; font-weight: 600;">TON</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-      pl: 'Wysyłajcie tylko monety:<br><span style="color: #00b3ff; padding: 0 6px; font-weight: 600;">TON</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-    net:
-      ru: 'Сеть: <span style="color: #00b3ff; padding: 0 6px; font-weight: 600;">The Open Network (TON)</span>'
-      en: 'Network: <span style="color: #00b3ff; padding: 0 6px; font-weight: 600;">The Open Network (TON)</span>'
-      pl: 'Sieć: <span style="color: #00b3ff; padding: 0 6px; font-weight: 600;">The Open Network (TON)</span>'
-    address: "UQD8pfLYMRAMf7ix8qicKKXG2-4CwjH8Epmk0I6XsoReY4n4"
-  SOL:
-    coin:
-      ru: 'Отправляйте только монеты:<br><span style="color: #00ffc3; padding: 0 6px; font-weight: 600;">SOL</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-      en: 'Send coins only:<br><span style="color: #00ffc3; padding: 0 6px; font-weight: 600;">SOL</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-      pl: 'Wysyłajcie tylko monety:<br><span style="color: #00ffc3; padding: 0 6px; font-weight: 600;">SOL</span> <span style="color: #25cc00; padding: 0 6px; font-weight: 600;">USDT</span>'
-    net:
-      ru: 'Сеть: <span style="color: #00ffc3; padding: 0 6px; font-weight: 600;">Solana(SPL)</span>'
-      en: 'Network: <span style="color: #00ffc3; padding: 0 6px; font-weight: 600;">Solana(SPL)</span>'
-      pl: 'Sieć: <span style="color: #00ffc3; padding: 0 6px; font-weight: 600;">Solana(SPL)</span>'
-    address: "DWSHfe1ZLkeB5M1Reu4AAeD4P6iCDtRzLv5pLL6YHUQV"
-
 reviews:
   ru: "Отзывы"
   en: "Reviews"

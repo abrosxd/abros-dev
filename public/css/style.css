@@ -201,9 +201,9 @@ nav {
   right: 24px;
 }
 
-#lang-submenu {
+/* #lang-submenu {
   flex-wrap: wrap;
-}
+} */
 
 .links {
   position: fixed;
@@ -218,7 +218,7 @@ nav {
   }
 }
 
-#links-submenu {
+/* #links-submenu {
   top: -160px;
   flex-wrap: wrap;
 }
@@ -227,10 +227,10 @@ nav {
   #links-submenu {
     top: 32px;
   }
-}
+} */
 
 .submenu {
-  position: absolute;
+  /* position: absolute; */
   z-index: 2;
   opacity: 0;
   visibility: hidden;

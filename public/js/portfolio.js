@@ -180,7 +180,7 @@ fetch("/public/locales/portfolio.yaml")
         let buttonMainHtml = "";
         if (project.buttonMain && project.buttonMain.url.trim() !== "") {
           buttonMainHtml = `
-          <a class="button" href="${project.url}" target="_blank">${project.buttonMain[currentLanguage]}</a>
+          <a class="button" href="${project.buttonMain.url}" target="_blank">${project.buttonMain[currentLanguage]}</a>
           `;
         }
 

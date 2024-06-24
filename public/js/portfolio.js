@@ -185,8 +185,8 @@ fetch("/public/locales/portfolio.yaml")
         }
 
         popupMenu.innerHTML = `
-        ${buttonMainHtml}
         ${buttonAddHtml}
+        ${buttonMainHtml}
         <span class="button close-btn" id="close-btn" onclick="closePopup()">
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20px" viewBox="0,0,256,256">
             <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">

@@ -131,6 +131,11 @@ nav {
 .section.down {
   flex-wrap: wrap-reverse;
 }
+@media (max-width: 767px) {
+  .section.down {
+    flex-wrap: wrap;
+  }
+}
 
 .button {
   border: none;

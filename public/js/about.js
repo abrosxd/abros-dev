@@ -178,9 +178,6 @@ fetch("/public/locales/about.yaml")
     const changeabout = (language) => {
       document.querySelector(".thello").textContent = data.hello[language];
       document.querySelector(".ttime").textContent = data.time.title[language];
-      document.querySelector(".tpay").textContent = data.pay.title[language];
-      document.querySelector(".tpaybutton").textContent =
-        data.pay.button[language];
       document.querySelector(".treviews").textContent = data.reviews[language];
       document.querySelector(".tfaq").textContent = data.faq[language];
       document.querySelector(".tgallery").textContent = data.gallery[language];

@@ -7,11 +7,14 @@ projects:
     category: "TildaMod"
     content: "/public/projects/Tilda/Player/component.yaml"
     hash: "TildaPlayer"
-    buttonText:
+    buttonAdd:
+      icon: "/src/assets/icons/social/telegram.svg"
+      url: "https://t.me/tribute/app?startapp=s9lN"
+    buttonMain:
       ru: "Посмотреть на сайте"
       en: "View on website"
       pl: "Zobacz na stronie"
-    url: "https://tvoy-hit.ru"
+      url: "https://tvoy-hit.ru"
 
   - id: 4
     title: "Abros Noti"
@@ -21,11 +24,14 @@ projects:
     category: "MyProject Library"
     content: "/public/projects/AbrosNoti/component.yaml"
     hash: "AbrosNoti"
-    buttonText:
+    buttonAdd:
+      icon: " "
+      url: " "
+    buttonMain:
       ru: " "
       en: " "
       pl: " "
-    url: " "
+      url: " "
 
   - id: 3
     title: "Grushka Endoterapia"
@@ -35,11 +41,14 @@ projects:
     category: "Layout"
     content: "/public/projects/GrushkaEndo/component.yaml"
     hash: "GrushkaEndo"
-    buttonText:
+    buttonAdd:
+      icon: " "
+      url: " "
+    buttonMain:
       ru: " "
       en: " "
       pl: " "
-    url: " "
+      url: " "
 
   - id: 2
     title: "Lampa Abros"
@@ -49,11 +58,14 @@ projects:
     category: "MyProject"
     content: "/public/projects/LampaAbros/component.yaml"
     hash: "LampaAbros"
-    buttonText:
+    buttonAdd:
+      icon: " "
+      url: " "
+    buttonMain:
       ru: "Перейти к Lampa"
       en: "Go to Lampa"
       pl: "Przejdź do Lampa"
-    url: "http://lampa.mx"
+      url: "http://lampa.mx"
 
   - id: 1
     title: "DEUS"
@@ -63,11 +75,14 @@ projects:
     category: "Library"
     content: "/public/projects/DEUS/component.yaml"
     hash: "DEUS"
-    buttonText:
+    buttonAdd:
+      icon: " "
+      url: " "
+    buttonMain:
       ru: "Перейти на сайт проекта"
       en: "Go to project website"
       pl: "Przejdź na stronę projektu"
-    url: "https://deusnotam.github.io"
+      url: "https://deusnotam.github.io"
 
   - id: 0
     title: "VADI"
@@ -77,11 +92,14 @@ projects:
     category: "Design"
     content: "/public/projects/VADI/component.yaml"
     hash: "VADI"
-    buttonText:
+    buttonAdd:
+      icon: " "
+      url: " "
+    buttonMain:
       ru: "YouTube канал стримера"
       en: "Streamer's YouTube channel"
       pl: "Kanał YouTube streamera"
-    url: "https://www.youtube.com/@VadiHS"
+      url: "https://www.youtube.com/@VadiHS"
 
 filters:
   All:

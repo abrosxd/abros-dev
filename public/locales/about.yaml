@@ -38,20 +38,6 @@ notes:
     color: "azure"
     img: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTkxcXFtajBnZnFrNzUzdmhqdWU5anUyNnB0aHVzdHpuZ25oNWU5ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SwOyrG5xAmOI1pv0Rf/giphy.gif"
 
-pay:
-  title:
-    ru: "Донаты и реквизиты"
-    en: "Donations and details"
-    pl: "Darowizny i szczegóły"
-  button:
-    ru: "Скопировать"
-    en: "Copy"
-    pl: "Kopiuj"
-  buttonclick:
-    ru: "Скопировано"
-    en: "Copied"
-    pl: "Skopiowano"
-
 reviews:
   ru: "Отзывы"
   en: "Reviews"

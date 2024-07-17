@@ -227,18 +227,19 @@ nav {
 
 .lang {
   position: fixed;
-  bottom: 24px;
+  /* bottom: 24px; */
+  top: 24px;
   right: 24px;
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .lang {
     top: 24px;
     bottom: auto;
     left: 24px;
     right: auto;
   }
-}
+} */
 
 .nav-icon {
   width: 20px;

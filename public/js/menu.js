@@ -92,43 +92,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   }
   setInterval(updateColor, 5000);
-
-  // Wallet Connect
-  async function connectWallet() {
-    const UniversalProvider = window.WalletConnectUniversalProvider;
-    const provider = await UniversalProvider.init({
-      projectId: "7c1ec223aa45afc10ffc4bb66e99f740",
-      metadata: {
-        name: "ABROS",
-        description: "ABROS Web Developer",
-        url: "https://abros.dev",
-        icons: [
-          "https://abros.dev/public/assets/logo/android-chrome-512x512.png",
-        ],
-      },
-    });
-
-    await provider.connect({
-      requiredNamespaces: {
-        eip155: {
-          methods: ["eth_sendTransaction", "personal_sign"],
-          chains: ["eip155:1"],
-          events: ["chainChanged", "accountsChanged"],
-        },
-      },
-    });
-
-    const accounts = provider.accounts;
-    const walletAddress = accounts[0];
-    const wallet = document.querySelector(".wallet");
-    const address = wallet.querySelector(".wallet-address");
-    address.textContent = walletAddress;
-    address.style.display = "block";
-    const button = wallet.querySelector(".connect-wallet-button");
-    button.style.display = "none";
-  }
-
-  document
-    .querySelector(".connect-wallet-button")
-    .addEventListener("click", connectWallet);
 });

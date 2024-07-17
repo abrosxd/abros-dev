@@ -93,3 +93,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   setInterval(updateColor, 5000);
 });
+
+// Wallet Connect
+async function connectWallet() {
+  const WalletConnectProvider = window.WalletConnectProvider.default;
+  const provider = new WalletConnectProvider({
+    infuraId: "cd25a8053e3e4276827befb38d48e2ba",
+  });
+
+  await provider.enable();
+
+  const accounts = provider.accounts;
+  const walletAddress = accounts[0];
+  const wallet = document.querySelector(".wallet");
+  const address = wallet.querySelector(".wallet-address");
+  address.textContent = walletAddress;
+  address.style.display = "block";
+  const button = wallet.querySelector("connect-wallet-button");
+  button.style.display = "none";
+}
+
+document
+  .querySelector("connect-wallet-button")
+  .addEventListener("click", connectWallet);

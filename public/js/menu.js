@@ -95,7 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Wallet Connect
   async function connectWallet() {
-    const provider = await WalletConnectProvider.init({
+    const UniversalProvider = window.WalletConnectUniversalProvider.default;
+    const provider = await UniversalProvider.init({
       projectId: "7c1ec223aa45afc10ffc4bb66e99f740",
       metadata: {
         name: "ABROS",

@@ -217,17 +217,17 @@ nav {
   left: 24px;
 }
 
-.lang {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-}
-
 @media (max-width: 767px) {
   .links {
     top: 24px;
     bottom: auto;
   }
+}
+
+.lang {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
 }
 
 .submenu {
@@ -236,11 +236,9 @@ nav {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
-  height: 0px;
 }
 
 .submenu.active {
   opacity: 1;
   visibility: visible;
-  height: max-content;
 }

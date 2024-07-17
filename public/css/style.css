@@ -205,7 +205,7 @@ nav {
   margin-right: 10px;
 }
 
-.lang {
+.wallet {
   position: fixed;
   top: 24px;
   right: 24px;
@@ -215,6 +215,12 @@ nav {
   position: fixed;
   bottom: 24px;
   left: 24px;
+}
+
+.lang {
+  position: fixed;
+  top: 24px;
+  right: 24px;
 }
 
 @media (max-width: 767px) {

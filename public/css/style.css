@@ -221,6 +221,7 @@ nav {
   .links {
     top: 24px;
     bottom: auto;
+    left: 80px;
   }
 }
 
@@ -228,6 +229,15 @@ nav {
   position: fixed;
   bottom: 24px;
   right: 24px;
+}
+
+@media (max-width: 767px) {
+  .lang {
+    top: 24px;
+    bottom: auto;
+    left: 24px;
+    right: auto;
+  }
 }
 
 .nav-icon {

@@ -108,11 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const address = wallet.querySelector(".wallet-address");
     address.textContent = walletAddress;
     address.style.display = "block";
-    const button = wallet.querySelector("connect-wallet-button");
+    const button = wallet.querySelector(".connect-wallet-button");
     button.style.display = "none";
   }
 
   document
-    .querySelector("connect-wallet-button")
+    .querySelector(".connect-wallet-button")
     .addEventListener("click", connectWallet);
 });

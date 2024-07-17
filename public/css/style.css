@@ -230,6 +230,10 @@ nav {
   right: 24px;
 }
 
+.nav-icon {
+  width: 40px;
+}
+
 .submenu {
   flex-wrap: wrap;
   z-index: 2;

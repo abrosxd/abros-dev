@@ -95,12 +95,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Wallet Connect
   async function connectWallet() {
-    const WalletConnectProvider = window.WalletConnectProvider.default;
-    const provider = new WalletConnectProvider({
-      infuraId: "cd25a8053e3e4276827befb38d48e2ba",
+    const provider = await WalletConnectProvider.init({
+      projectId: "7c1ec223aa45afc10ffc4bb66e99f740",
+      metadata: {
+        name: "ABROS",
+        description: "ABROS Web Developer",
+        url: "https://abros.dev",
+        icons: [
+          "https://abros.dev/public/assets/logo/android-chrome-512x512.png",
+        ],
+      },
     });
 
-    await provider.enable();
+    await provider.connect({
+      requiredNamespaces: {
+        eip155: {
+          methods: ["eth_sendTransaction", "personal_sign"],
+          chains: ["eip155:1"],
+          events: ["chainChanged", "accountsChanged"],
+        },
+      },
+    });
 
     const accounts = provider.accounts;
     const walletAddress = accounts[0];

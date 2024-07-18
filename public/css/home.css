@@ -81,6 +81,21 @@ h2 span {
   font-size: 0.5em;
 }
 
+.typing-text::after {
+  content: "|";
+  animation: blink ease 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 /* Main section */
 main {
   view-timeline: --main;

@@ -1,0 +1,20 @@
+defaultText:
+  ru: "Люблю делать "
+  en: "I love making "
+  pl: "Lubię robić "
+typingText:
+  ru:
+    - "сайты."
+    - "красиво."
+    - "сложно."
+    - "анимацию."
+  en:
+    - "sites."
+    - "beautiful."
+    - "complex."
+    - "animation."
+  pl:
+    - "strony."
+    - "pięknie."
+    - "trudne."
+    - "animacja."

@@ -70,8 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (wordIndex === words.length) {
           wordIndex = 0;
         }
-
-        startTyping();
       }
     }
   }

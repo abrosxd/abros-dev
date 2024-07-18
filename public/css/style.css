@@ -221,7 +221,7 @@ nav {
   .links {
     top: 24px;
     bottom: auto;
-    left: 80px;
+    /* left: 80px; */
   }
 }
 

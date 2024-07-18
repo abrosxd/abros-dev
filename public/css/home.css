@@ -1,11 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
 :root {
   --nav-height: 60px;
   --black: hsl(0 0% 2%);
@@ -20,55 +12,6 @@
   --zoom: contain 25% exit -20%;
 }
 
-body {
-  min-height: 100vh;
-  font-family: sans-serif, system-ui;
-  background: var(--white);
-}
-
-body::before {
-  --line: color-mix(in lch, canvasText 45%, transparent);
-  --size: 60px;
-  content: "";
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background: linear-gradient(
-        90deg,
-        var(--line) 1px,
-        transparent 1px var(--size)
-      )
-      50% 50% / var(--size) var(--size),
-    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
-      var(--size) var(--size);
-  mask: linear-gradient(-15deg, transparent 40%, white);
-  top: 0;
-  transform-style: flat;
-  pointer-events: none;
-  z-index: -1;
-}
-
-footer {
-  padding: 2rem;
-  background: var(--black);
-  color: var(--white);
-  text-align: center;
-}
-
-h1 {
-  font-size: clamp(2rem, 5vw + 1rem, 8rem);
-  font-family: "EB Garamond", serif;
-  line-height: 0.9;
-  font-weight: 500;
-  translate: 0 -100%;
-  margin: 0;
-}
-
-h1 span {
-  font-variant: small-caps;
-  font-size: 0.5em;
-}
-
 /* Header section */
 header {
   height: 100vh;
@@ -81,6 +24,27 @@ header {
   translate: -50% 0;
   display: grid;
   align-content: center;
+}
+
+footer {
+  padding: 2rem;
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw + 1rem, 8rem);
+  font-family: var(--font-basic);
+  line-height: 0.9;
+  font-weight: 500;
+  translate: 0 -100%;
+  margin: 0;
+}
+
+h2 span {
+  font-variant: small-caps;
+  font-size: 0.5em;
 }
 
 .sr-only {

@@ -57,7 +57,7 @@
 header {
   height: 100vh;
   position: absolute;
-  padding: 2rem;
+  padding: 1rem;
   width: 800px;
   max-width: calc(100% - 4rem);
   left: 50%;

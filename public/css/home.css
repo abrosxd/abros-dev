@@ -84,6 +84,7 @@ h2 span {
 /* Main section */
 main {
   view-timeline: --main;
+  font-family: var(--font-basic);
 }
 
 .scroll-section.laptop {
@@ -106,8 +107,7 @@ main {
   z-index: 2;
 }
 
-.shell--top .cuboid__side:nth-of-type(5):after {
-  content: "ABROS";
+.sticker-abros {
   padding: 0.5vmin;
   font-size: 3vmin;
   position: absolute;

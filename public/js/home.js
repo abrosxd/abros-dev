@@ -6,9 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const data = jsyaml.load(yamlData);
         const defaultElement = document.querySelector(".default-text");
         const defaultText = data.defaultText[language];
-        defaultElement.innerHTML =
-          defaultText + '<span class="typing-text"></span>';
-        const typingTextElement = defaultElement.querySelector(".typing-text");
+        defaultElement.textContent = defaultText;
+        const typingTextElement = document.querySelector(".typing-text");
         const dataText = data.typingText[language];
         typingText(typingTextElement, dataText);
       })

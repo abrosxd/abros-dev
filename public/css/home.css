@@ -78,10 +78,10 @@ h2 {
 
 .typing-text::after {
   content: "|";
-  animation: blink ease 1s infinite;
+  animation: typing ease 1s infinite;
 }
 
-@keyframes blink {
+@keyframes typing {
   0%,
   100% {
     opacity: 0;

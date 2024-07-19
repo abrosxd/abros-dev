@@ -91,6 +91,20 @@
   }
 }
 
+/* Stickers for laptop */
+.sticker-abros {
+  padding: 0.5vmin;
+  font-size: 3vmin;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  background: var(--black);
+  top: 60%;
+  left: 56%;
+  rotate: 140deg;
+  margin: 0;
+}
+
 /* Laptop section */
 .block-laptop {
   view-timeline: --main;
@@ -114,19 +128,6 @@
   position: sticky;
   top: 0;
   z-index: 2;
-}
-
-.sticker-abros {
-  padding: 0.5vmin;
-  font-size: 3vmin;
-  position: absolute;
-  color: white;
-  font-weight: bold;
-  background: var(--black);
-  top: 60%;
-  left: 56%;
-  rotate: 140deg;
-  margin: 0;
 }
 
 .laptop section {
@@ -224,22 +225,6 @@
   transform: translate3d(0, 0, 2vmin);
 }
 
-.screen-bear {
-  position: absolute;
-  width: 25%;
-  --base-coat: var(--white);
-  rotate: 180deg;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-}
-
-.screen-bear__eyes {
-  transform-box: fill-box;
-  transform-origin: 50% 50%;
-  animation: blink 6s -2s infinite;
-}
-
 .laptop-keyboard {
   width: 90%;
   position: absolute;
@@ -301,16 +286,6 @@
   left: 50%;
   translate: -50% 0;
   border-radius: 0.5vmin;
-}
-
-.shell-bear {
-  --base-coat: var(--black);
-  rotate: 180deg;
-  width: 20%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
 }
 
 @keyframes book-spin {
@@ -478,6 +453,86 @@
   left: 0;
 }
 
+/* Periphery */
+.laptop .hdmi {
+  position: absolute;
+  width: 65%;
+  aspect-ratio: 1 / 3;
+  background: var(--black);
+  left: 50%;
+  top: 10%;
+  translate: -50% 0;
+  border-radius: 0 1px 1px 0;
+}
+
+.laptop .type-c {
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1 / 4;
+  background: var(--black);
+  translate: -50% 0;
+  border-radius: 25px;
+}
+.cuboid__side.right .laptop .type-c {
+  left: 50%;
+  top: 17%;
+}
+
+.laptop .card-rider {
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1 / 15;
+  background: var(--black);
+  left: 50%;
+  top: 22%;
+  translate: -50% 0;
+  border-radius: 25px;
+}
+
+.laptop .mag-charge {
+  position: absolute;
+  width: 65%;
+  aspect-ratio: 1 / 4;
+  background: hsl(0deg 0% 71.4%);
+  left: 50%;
+  top: 10%;
+  translate: -50% 0;
+  border-radius: 5px;
+  border: 1px solid #999999;
+}
+
+.laptop .air-duct {
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1 / 80;
+  background: var(--black);
+  left: 50%;
+  top: 35%;
+  translate: -50% 0;
+  border-radius: 1px 0 0 1px;
+}
+.cuboid__side.right .laptop .air-duct {
+  left: 95%;
+  top: 36%;
+}
+
+/* Screen-window */
+.screen-bear {
+  position: absolute;
+  width: 25%;
+  --base-coat: var(--white);
+  rotate: 180deg;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.screen-bear__eyes {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: blink 6s -2s infinite;
+}
+
 @keyframes blink {
   0%,
   46%,
@@ -490,4 +545,15 @@
   49% {
     scale: 1 0.01;
   }
+}
+
+/* Logo */
+.shell-bear {
+  --base-coat: var(--black);
+  rotate: 180deg;
+  width: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
 }

@@ -528,6 +528,14 @@
   translate: -50% 0;
   border-radius: 1px 0 0 1px;
 }
+.laptop .cuboid__side.down .air-duct {
+  width: auto;
+  height: 30%;
+}
+.laptop .cuboid__side.down .air-duct:nth-of-type(1) {
+  top: 65%;
+  left: 36%;
+}
 .laptop .cuboid__side.right .air-duct {
   left: 95%;
   top: 36%;

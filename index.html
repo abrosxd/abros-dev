@@ -85,173 +85,185 @@
     <script src="./src/js/lang.js"></script>
   </head>
   <body>
-    <h1 class="logo">ABROS</h1>
+    <header>
+      <h1 class="logo">ABROS</h1>
 
-    <nav class="navigation">
-      <ul class="menu">
-        <li class="section">
-          <a class="button active tportfolio" href="/">Портфолио</a>
-        </li>
-        <li class="section">
-          <a class="button tabout" href="/about">Обо мне</a>
-        </li>
-      </ul>
+      <nav class="navigation">
+        <ul class="menu">
+          <li class="section">
+            <a class="button active tportfolio" href="/">Портфолио</a>
+          </li>
+          <li class="section">
+            <a class="button tabout" href="/about">Обо мне</a>
+          </li>
+        </ul>
 
-      <ul class="links">
-        <li class="section down" id="links-trigger">
-          <a class="button">
-            <img class="nav-icon" src="./src/assets/icons/link.svg" />
-          </a>
-          <ul class="submenu" id="links-submenu">
-            <li>
-              <a
-                class="button"
-                title="Telegram"
-                href="https://t.me/abrosxd"
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/social/telegram.svg"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                class="button"
-                title="VK"
-                href="https://vk.com/abrosxd"
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <img class="nav-icon" src="./src/assets/icons/social/vk.svg" />
-              </a>
-            </li>
-            <li>
-              <a
-                class="button"
-                title="Instagram"
-                href="https://www.instagram.com/abrosxd"
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/social/instagram.svg"
-                />
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+        <ul class="links">
+          <li class="section down" id="links-trigger">
+            <a class="button">
+              <img class="nav-icon" src="./src/assets/icons/link.svg" />
+            </a>
+            <ul class="submenu" id="links-submenu">
+              <li>
+                <a
+                  class="button"
+                  title="Telegram"
+                  href="https://t.me/abrosxd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/social/telegram.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="button"
+                  title="VK"
+                  href="https://vk.com/abrosxd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/social/vk.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="button"
+                  title="Instagram"
+                  href="https://www.instagram.com/abrosxd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/social/instagram.svg"
+                  />
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
 
-      <ul class="lang">
-        <li class="section up" id="lang-trigger">
-          <div class="button">
-            <img class="nav-icon" src="./src/assets/icons/lang.svg" />
-          </div>
-          <ul class="submenu lang-sub" id="lang-submenu">
-            <li>
-              <a class="button" lang="en">
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/language/en.svg"
-                />
-              </a>
-            </li>
-            <li>
-              <a class="button" lang="ru">
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/language/ru.svg"
-                />
-              </a>
-            </li>
-            <li>
-              <a class="button" lang="pl">
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/language/pl.svg"
-                />
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+        <ul class="lang">
+          <li class="section up" id="lang-trigger">
+            <div class="button">
+              <img class="nav-icon" src="./src/assets/icons/lang.svg" />
+            </div>
+            <ul class="submenu lang-sub" id="lang-submenu">
+              <li>
+                <a class="button" lang="en">
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/language/en.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a class="button" lang="ru">
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/language/ru.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a class="button" lang="pl">
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/language/pl.svg"
+                  />
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="dot-grid"></div>
 
-    <div class="dot-grid"></div>
-
-    <div class="loader">
-      <div class="loader-bg"></div>
-    </div>
-    <script>
-      const loaderBg = document.querySelector(".loader-bg");
-      for (let i = 0; i < 200; i++) {
-        const li = document.createElement("li");
-        loaderBg.appendChild(li);
-      }
-    </script>
-
-    <div class="container"></div>
-    <div class="filter" id="filter-trigger">
-      <div class="button tfilter">
-        <span class="text">Все</span>
-        <span class="arrow"></span>
+      <div class="loader">
+        <div class="loader-bg"></div>
       </div>
-      <ul class="filter-wrap submenu" id="filter-submenu">
-        <li class="filter-section tFilterAll" data-category="All">Все</li>
-        <li class="filter-section tFilterMyProject" data-category="MyProject">
-          Мои проекты
-        </li>
-        <li class="filter-section tFilterLayout" data-category="Layout">
-          Верстка
-        </li>
-        <li class="filter-section tFilterLibrary" data-category="Library">
-          Библиотеки
-        </li>
-        <li class="filter-section tFilterDesign" data-category="Design">
-          Дизайн
-        </li>
-        <li class="filter-section tFilterTildaMod" data-category="TildaMod">
-          Tilda
-        </li>
-      </ul>
-    </div>
+      <script>
+        const loaderBg = document.querySelector(".loader-bg");
+        for (let i = 0; i < 200; i++) {
+          const li = document.createElement("li");
+          loaderBg.appendChild(li);
+        }
+      </script>
 
-    <div class="overlay-popup" id="overlay-popup" onclick="closePopup()"></div>
-    <div>
-      <div class="popup-menu" id="popup-menu"></div>
-      <div id="popup" class="popup">
-        <div id="popup-content"></div>
+      <div class="container"></div>
+      <div class="filter" id="filter-trigger">
+        <div class="button tfilter">
+          <span class="text">Все</span>
+          <span class="arrow"></span>
+        </div>
+        <ul class="filter-wrap submenu" id="filter-submenu">
+          <li class="filter-section tFilterAll" data-category="All">Все</li>
+          <li class="filter-section tFilterMyProject" data-category="MyProject">
+            Мои проекты
+          </li>
+          <li class="filter-section tFilterLayout" data-category="Layout">
+            Верстка
+          </li>
+          <li class="filter-section tFilterLibrary" data-category="Library">
+            Библиотеки
+          </li>
+          <li class="filter-section tFilterDesign" data-category="Design">
+            Дизайн
+          </li>
+          <li class="filter-section tFilterTildaMod" data-category="TildaMod">
+            Tilda
+          </li>
+        </ul>
       </div>
-    </div>
-    <script>
-      function closePopup() {
-        const overlay = document.getElementById("overlay-popup");
-        const popup = document.getElementById("popup");
-        const popupMenu = document.getElementById("popup-menu");
 
-        overlay.style.opacity = 0;
-        overlay.style.visibility = "hidden";
-        popup.style.opacity = 0;
-        popup.style.visibility = "hidden";
-        popupMenu.style.opacity = 0;
-        popupMenu.style.visibility = "hidden";
+      <div
+        class="overlay-popup"
+        id="overlay-popup"
+        onclick="closePopup()"
+      ></div>
+      <div>
+        <div class="popup-menu" id="popup-menu"></div>
+        <div id="popup" class="popup">
+          <div id="popup-content"></div>
+        </div>
+      </div>
+      <script>
+        function closePopup() {
+          const overlay = document.getElementById("overlay-popup");
+          const popup = document.getElementById("popup");
+          const popupMenu = document.getElementById("popup-menu");
 
-        document.body.classList.remove("no-scroll");
+          overlay.style.opacity = 0;
+          overlay.style.visibility = "hidden";
+          popup.style.opacity = 0;
+          popup.style.visibility = "hidden";
+          popupMenu.style.opacity = 0;
+          popupMenu.style.visibility = "hidden";
 
-        history.replaceState(
-          null,
-          document.title,
-          window.location.pathname + window.location.search
-        );
-      }
-    </script>
-    <script src="./public/js/menu.js"></script>
-    <script src="./public/js/portfolio.js"></script>
-    <script src="https://cdn.abros.dev/noti/noti.js"></script>
-    <script src="./src/js/prism.js"></script>
+          document.body.classList.remove("no-scroll");
+
+          history.replaceState(
+            null,
+            document.title,
+            window.location.pathname + window.location.search
+          );
+        }
+      </script>
+    </main>
+    <footer>
+      <script src="./public/js/menu.js"></script>
+      <script src="./public/js/portfolio.js"></script>
+      <script src="https://cdn.abros.dev/noti/noti.js"></script>
+      <script src="./src/js/prism.js"></script>
+    </footer>
   </body>
 </html>

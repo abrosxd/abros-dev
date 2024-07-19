@@ -84,124 +84,132 @@
     <script src="./src/js/lang.js"></script>
   </head>
   <body>
-    <h1 class="logo">ABROS</h1>
+    <header>
+      <h1 class="logo">ABROS</h1>
 
-    <nav class="navigation">
-      <ul class="menu">
-        <li class="section">
-          <a class="button tportfolio" href="/">Портфолио</a>
-        </li>
-        <li class="section">
-          <a class="button tabout" href="/about">Обо мне</a>
-        </li>
-      </ul>
+      <nav class="navigation">
+        <ul class="menu">
+          <li class="section">
+            <a class="button tportfolio" href="/">Портфолио</a>
+          </li>
+          <li class="section">
+            <a class="button tabout" href="/about">Обо мне</a>
+          </li>
+        </ul>
 
-      <ul class="links">
-        <li class="section down" id="links-trigger">
-          <a class="button">
-            <img class="nav-icon" src="./src/assets/icons/link.svg" />
-          </a>
-          <ul class="submenu" id="links-submenu">
-            <li>
-              <a
-                class="button"
-                title="Telegram"
-                href="https://t.me/abrosxd"
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/social/telegram.svg"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                class="button"
-                title="VK"
-                href="https://vk.com/abrosxd"
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <img class="nav-icon" src="./src/assets/icons/social/vk.svg" />
-              </a>
-            </li>
-            <li>
-              <a
-                class="button"
-                title="Instagram"
-                href="https://www.instagram.com/abrosxd"
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/social/instagram.svg"
-                />
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+        <ul class="links">
+          <li class="section down" id="links-trigger">
+            <a class="button">
+              <img class="nav-icon" src="./src/assets/icons/link.svg" />
+            </a>
+            <ul class="submenu" id="links-submenu">
+              <li>
+                <a
+                  class="button"
+                  title="Telegram"
+                  href="https://t.me/abrosxd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/social/telegram.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="button"
+                  title="VK"
+                  href="https://vk.com/abrosxd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/social/vk.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="button"
+                  title="Instagram"
+                  href="https://www.instagram.com/abrosxd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/social/instagram.svg"
+                  />
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
 
-      <ul class="lang">
-        <li class="section up" id="lang-trigger">
-          <div class="button">
-            <img class="nav-icon" src="./src/assets/icons/lang.svg" />
-          </div>
-          <ul class="submenu lang-sub" id="lang-submenu">
-            <li>
-              <a class="button" lang="en">
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/language/en.svg"
-                />
-              </a>
-            </li>
-            <li>
-              <a class="button" lang="ru">
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/language/ru.svg"
-                />
-              </a>
-            </li>
-            <li>
-              <a class="button" lang="pl">
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/language/pl.svg"
-                />
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+        <ul class="lang">
+          <li class="section up" id="lang-trigger">
+            <div class="button">
+              <img class="nav-icon" src="./src/assets/icons/lang.svg" />
+            </div>
+            <ul class="submenu lang-sub" id="lang-submenu">
+              <li>
+                <a class="button" lang="en">
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/language/en.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a class="button" lang="ru">
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/language/ru.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a class="button" lang="pl">
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/language/pl.svg"
+                  />
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="dot-grid"></div>
 
-    <div class="dot-grid"></div>
-
-    <div class="loader">
-      <div class="loader-bg"></div>
-    </div>
-    <script>
-      const loaderBg = document.querySelector(".loader-bg");
-      for (let i = 0; i < 200; i++) {
-        const li = document.createElement("li");
-        loaderBg.appendChild(li);
-      }
-    </script>
-
-    <div class="404">
-      <div class="fof">
-        <canvas></canvas>
+      <div class="loader">
+        <div class="loader-bg"></div>
       </div>
-      <p class="info404">404</p>
-    </div>
-    <script src="./public/js/menu.js"></script>
-    <script src="./public/js/404.js"></script>
-    <!-- <script src="./src/js/preload.js"></script> -->
-    <script src="https://cdn.abros.dev/noti/noti.js"></script>
+      <script>
+        const loaderBg = document.querySelector(".loader-bg");
+        for (let i = 0; i < 200; i++) {
+          const li = document.createElement("li");
+          loaderBg.appendChild(li);
+        }
+      </script>
+
+      <div class="404">
+        <div class="fof">
+          <canvas></canvas>
+        </div>
+        <p class="info404">404</p>
+      </div>
+    </main>
+    <footer>
+      <script src="./public/js/menu.js"></script>
+      <script src="./public/js/404.js"></script>
+      <script src="./src/js/preload.js"></script>
+      <script src="https://cdn.abros.dev/noti/noti.js"></script>
+    </footer>
   </body>
 </html>

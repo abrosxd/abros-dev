@@ -88,240 +88,248 @@
     <script src="./src/js/slick.min.js"></script>
   </head>
   <body>
-    <h1 class="logo">ABROS</h1>
+    <header>
+      <h1 class="logo">ABROS</h1>
 
-    <nav class="navigation">
-      <ul class="menu">
-        <li class="section">
-          <a class="button tportfolio" href="/">Портфолио</a>
-        </li>
-        <li class="section">
-          <a class="button active tabout" href="/about">Обо мне</a>
-        </li>
-      </ul>
+      <nav class="navigation">
+        <ul class="menu">
+          <li class="section">
+            <a class="button tportfolio" href="/">Портфолио</a>
+          </li>
+          <li class="section">
+            <a class="button active tabout" href="/about">Обо мне</a>
+          </li>
+        </ul>
 
-      <ul class="links">
-        <li class="section down" id="links-trigger">
-          <a class="button">
-            <img class="nav-icon" src="./src/assets/icons/link.svg" />
-          </a>
-          <ul class="submenu" id="links-submenu">
-            <li>
-              <a
-                class="button"
-                title="Telegram"
-                href="https://t.me/abrosxd"
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/social/telegram.svg"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                class="button"
-                title="VK"
-                href="https://vk.com/abrosxd"
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <img class="nav-icon" src="./src/assets/icons/social/vk.svg" />
-              </a>
-            </li>
-            <li>
-              <a
-                class="button"
-                title="Instagram"
-                href="https://www.instagram.com/abrosxd"
-                target="_blank"
-                rel="nofollow noopener"
-              >
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/social/instagram.svg"
-                />
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+        <ul class="links">
+          <li class="section down" id="links-trigger">
+            <a class="button">
+              <img class="nav-icon" src="./src/assets/icons/link.svg" />
+            </a>
+            <ul class="submenu" id="links-submenu">
+              <li>
+                <a
+                  class="button"
+                  title="Telegram"
+                  href="https://t.me/abrosxd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/social/telegram.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="button"
+                  title="VK"
+                  href="https://vk.com/abrosxd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/social/vk.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="button"
+                  title="Instagram"
+                  href="https://www.instagram.com/abrosxd"
+                  target="_blank"
+                  rel="nofollow noopener"
+                >
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/social/instagram.svg"
+                  />
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
 
-      <ul class="lang">
-        <li class="section up" id="lang-trigger">
-          <div class="button">
-            <img class="nav-icon" src="./src/assets/icons/lang.svg" />
-          </div>
-          <ul class="submenu lang-sub" id="lang-submenu">
-            <li>
-              <a class="button" lang="en">
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/language/en.svg"
-                />
-              </a>
-            </li>
-            <li>
-              <a class="button" lang="ru">
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/language/ru.svg"
-                />
-              </a>
-            </li>
-            <li>
-              <a class="button" lang="pl">
-                <img
-                  class="nav-icon"
-                  src="./src/assets/icons/language/pl.svg"
-                />
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="bgvid">
-      <video autoplay muted loop playsinline>
-        <source src="./public/assets/about/tetra.mp4" type="video/mp4" />
-        Ваш браузер не поддерживает тег video.
-      </video>
-    </div>
-
-    <div class="dot-grid"></div>
-
-    <div class="loader">
-      <div class="loader-bg"></div>
-    </div>
-    <script>
-      const loaderBg = document.querySelector(".loader-bg");
-      for (let i = 0; i < 200; i++) {
-        const li = document.createElement("li");
-        loaderBg.appendChild(li);
-      }
-    </script>
-
-    <div class="aboutcontainer">
-      <div class="aboutgrid aboutgrid-cols aboutgap-4">
-        <div class="aboutflex aboutflex-col aboutgap-4">
-          <div class="aboutcard hello">
-            <img src="./public/assets/about/me.jpg" />
-            <p class="thello">
-              👋 Хай — Я Данил , Веб-разработчик / Веб-дизайнер. Здесь ты
-              сможешь найти всё обо мне и даже больше.
-            </p>
-          </div>
-
-          <div class="aboutcard time" id="timeCard">
-            <div style="align-self: center; display: flex">
-              <span class="ttime" style="margin-right: 5px">Мое время</span>
-              <span
-                class="tag"
-                style="background-color: #a8cfff80; color: #0051ff"
-                >Warszawa</span
-              >
+        <ul class="lang">
+          <li class="section up" id="lang-trigger">
+            <div class="button">
+              <img class="nav-icon" src="./src/assets/icons/lang.svg" />
             </div>
-            <div class="timeblock">
-              <div class="date">
-                <p class="day" id="currentDay">ЧТ</p>
-                <p id="currentDate">09/03</p>
+            <ul class="submenu lang-sub" id="lang-submenu">
+              <li>
+                <a class="button" lang="en">
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/language/en.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a class="button" lang="ru">
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/language/ru.svg"
+                  />
+                </a>
+              </li>
+              <li>
+                <a class="button" lang="pl">
+                  <img
+                    class="nav-icon"
+                    src="./src/assets/icons/language/pl.svg"
+                  />
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="bgvid">
+        <video autoplay muted loop playsinline>
+          <source src="./public/assets/about/tetra.mp4" type="video/mp4" />
+          Ваш браузер не поддерживает тег video.
+        </video>
+      </div>
+
+      <div class="dot-grid"></div>
+
+      <div class="loader">
+        <div class="loader-bg"></div>
+      </div>
+      <script>
+        const loaderBg = document.querySelector(".loader-bg");
+        for (let i = 0; i < 200; i++) {
+          const li = document.createElement("li");
+          loaderBg.appendChild(li);
+        }
+      </script>
+
+      <div class="aboutcontainer">
+        <div class="aboutgrid aboutgrid-cols aboutgap-4">
+          <div class="aboutflex aboutflex-col aboutgap-4">
+            <div class="aboutcard hello">
+              <img src="./public/assets/about/me.jpg" />
+              <p class="thello">
+                👋 Хай — Я Данил , Веб-разработчик / Веб-дизайнер. Здесь ты
+                сможешь найти всё обо мне и даже больше.
+              </p>
+            </div>
+
+            <div class="aboutcard time" id="timeCard">
+              <div style="align-self: center; display: flex">
+                <span class="ttime" style="margin-right: 5px">Мое время</span>
+                <span
+                  class="tag"
+                  style="background-color: #a8cfff80; color: #0051ff"
+                  >Warszawa</span
+                >
               </div>
-              <div class="time">
-                <span id="currentTime">15:01:36</span>
+              <div class="timeblock">
+                <div class="date">
+                  <p class="day" id="currentDay">ЧТ</p>
+                  <p id="currentDate">09/03</p>
+                </div>
+                <div class="time">
+                  <span id="currentTime">15:01:36</span>
+                </div>
               </div>
+            </div>
+
+            <div class="aboutcard notes" style="padding: 0">
+              <div class="notescontainer" id="notesContainer"></div>
+            </div>
+
+            <div class="aboutcard reviews">
+              <span class="treviews">Отзывы</span>
+              <div class="reviewscontainer" id="reviewsContainer"></div>
+            </div>
+
+            <div class="aboutcard faq">
+              <span class="tfaq">Ответы на вопросы</span>
+              <div class="faqcontainer" id="faqContainer"></div>
             </div>
           </div>
 
-          <div class="aboutcard notes" style="padding: 0">
-            <div class="notescontainer" id="notesContainer"></div>
-          </div>
+          <div class="aboutflex aboutflex-col aboutgap-4">
+            <div class="aboutcard gallery">
+              <span class="tgallery">Фотоальбом</span>
+              <div id="imageGallery" class="slick-carousel"></div>
+            </div>
 
-          <div class="aboutcard reviews">
-            <span class="treviews">Отзывы</span>
-            <div class="reviewscontainer" id="reviewsContainer"></div>
-          </div>
-
-          <div class="aboutcard faq">
-            <span class="tfaq">Ответы на вопросы</span>
-            <div class="faqcontainer" id="faqContainer"></div>
-          </div>
-        </div>
-
-        <div class="aboutflex aboutflex-col aboutgap-4">
-          <div class="aboutcard gallery">
-            <span class="tgallery">Фотоальбом</span>
-            <div id="imageGallery" class="slick-carousel"></div>
-          </div>
-
-          <div class="aboutcard stack">
-            <span class="tstack">Стек</span>
-            <div
-              id="stackGallery"
-              style="
-                line-height: 1.7;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-              "
-            ></div>
-          </div>
-
-          <div class="aboutcard randomfacts">
-            <span class="tfacts">Случайный факт</span>
-            <div>
-              <img
-                style="height: 50px; border-radius: 10px"
-                id="factImage"
-                src=""
-              />
-              <p id="factText"></p>
-              <span
-                class="button"
-                id="showFactButton"
+            <div class="aboutcard stack">
+              <span class="tstack">Стек</span>
+              <div
+                id="stackGallery"
                 style="
+                  line-height: 1.7;
                   display: flex;
-                  align-items: center;
+                  flex-wrap: wrap;
                   justify-content: center;
-                  border-radius: 10px;
                 "
-              >
-                <img src="./src/assets/icons/game-cube.svg" />
-                <p class="tfactsbutton" style="margin: 0; padding-left: 10px">
-                  Другой факт
-                </p>
-              </span>
+              ></div>
             </div>
-          </div>
 
-          <div class="aboutcard tools">
-            <div
-              class="aboutgrid aboutgap-4"
-              style="grid-template-columns: repeat(2, minmax(0, 1fr))"
-            >
-              <div
-                class="aboutflex aboutflex-col aboutgap-4"
-                id="softContainer"
-              >
-                <p class="tsoft" style="margin: 0">Софт</p>
+            <div class="aboutcard randomfacts">
+              <span class="tfacts">Случайный факт</span>
+              <div>
+                <img
+                  style="height: 50px; border-radius: 10px"
+                  id="factImage"
+                  src=""
+                />
+                <p id="factText"></p>
+                <span
+                  class="button"
+                  id="showFactButton"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                  "
+                >
+                  <img src="./src/assets/icons/game-cube.svg" />
+                  <p class="tfactsbutton" style="margin: 0; padding-left: 10px">
+                    Другой факт
+                  </p>
+                </span>
               </div>
+            </div>
 
+            <div class="aboutcard tools">
               <div
-                class="aboutflex aboutflex-col aboutgap-4"
-                id="lessonsContainer"
+                class="aboutgrid aboutgap-4"
+                style="grid-template-columns: repeat(2, minmax(0, 1fr))"
               >
-                <p class="tmaterials" style="margin: 0">Материал</p>
+                <div
+                  class="aboutflex aboutflex-col aboutgap-4"
+                  id="softContainer"
+                >
+                  <p class="tsoft" style="margin: 0">Софт</p>
+                </div>
+
+                <div
+                  class="aboutflex aboutflex-col aboutgap-4"
+                  id="lessonsContainer"
+                >
+                  <p class="tmaterials" style="margin: 0">Материал</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <script src="./public/js/menu.js"></script>
-    <script src="./public/js/about.js"></script>
-    <script src="./src/js/preload.js"></script>
-    <script src="https://cdn.abros.dev/noti/noti.js"></script>
+    </main>
+    <footer>
+      <script src="./public/js/menu.js"></script>
+      <script src="./public/js/about.js"></script>
+      <script src="./src/js/preload.js"></script>
+      <script src="https://cdn.abros.dev/noti/noti.js"></script>
+    </footer>
   </body>
 </html>

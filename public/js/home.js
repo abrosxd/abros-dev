@@ -76,3 +76,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
   changeHome(currentLanguage);
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".scene__zoom", {
+  scale: 9,
+  scrollTrigger: {
+    trigger: ".scene__zoom",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+gsap.to(".scene__spin", {
+  rotateZ: -360,
+  scrollTrigger: {
+    trigger: ".scene__spin",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+gsap.to(".scene__flip", {
+  rotateX: 360,
+  scrollTrigger: {
+    trigger: ".scene__flip",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+gsap.to(".scene__jump", {
+  y: 40 * 16, // 40vmin converted to px assuming 1vmin = 1% of viewport height
+  scrollTrigger: {
+    trigger: ".scene__jump",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+gsap.to(".shell--top", {
+  rotateX: 90,
+  scrollTrigger: {
+    trigger: ".shell--top",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+});

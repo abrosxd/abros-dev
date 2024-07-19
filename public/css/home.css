@@ -473,7 +473,7 @@
   translate: -50% 0;
   border-radius: 25px;
 }
-.cuboid__side.right .laptop .type-c {
+.laptop .cuboid__side.right .type-c {
   left: 50%;
   top: 17%;
 }
@@ -506,12 +506,10 @@
   width: 30%;
   aspect-ratio: 1 / 80;
   background: var(--black);
-  left: 50%;
-  top: 35%;
   translate: -50% 0;
   border-radius: 1px 0 0 1px;
 }
-.cuboid__side.right .laptop .air-duct {
+.laptop .cuboid__side.right .air-duct {
   left: 95%;
   top: 36%;
 }

@@ -76,3 +76,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   changeHome(currentLanguage);
 });
+
+document.addEventListener("scroll", function () {
+  const scrollPosition =
+    window.scrollY / (document.body.scrollHeight - window.innerHeight);
+
+  const jumpElement = document.querySelector(".scene__jump");
+  const spinElement = document.querySelector(".scene__spin");
+  const flipElement = document.querySelector(".scene__flip");
+  const zoomElement = document.querySelector(".scene__zoom");
+
+  if (jumpElement) {
+    jumpElement.style.animationDelay = `${scrollPosition * 5}s`;
+  }
+  if (spinElement) {
+    spinElement.style.animationDelay = `${scrollPosition * 5}s`;
+  }
+  if (flipElement) {
+    flipElement.style.animationDelay = `${scrollPosition * 5}s`;
+  }
+  if (zoomElement) {
+    zoomElement.style.animationDelay = `${scrollPosition * 5}s`;
+  }
+});

@@ -477,6 +477,14 @@
   left: 50%;
   top: 17%;
 }
+.laptop .cuboid__side.left .type-c:nth-of-type(1) {
+  left: 50%;
+  top: 18%;
+}
+.laptop .cuboid__side.left .type-c:nth-of-type(2) {
+  left: 50%;
+  top: 22%;
+}
 
 .laptop .card-rider {
   position: absolute;
@@ -499,6 +507,17 @@
   translate: -50% 0;
   border-radius: 5px;
   border: 1px solid #999999;
+}
+
+.laptop .aux {
+  position: absolute;
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  background: var(--black);
+  left: 50%;
+  top: 26%;
+  translate: -50% 0;
+  border-radius: 50px;
 }
 
 .laptop .air-duct {

@@ -54,7 +54,7 @@
   }
 }
 /* Header section */
-header {
+.block-welcome {
   height: 100vh;
   position: absolute;
   padding: 1rem;
@@ -67,7 +67,7 @@ header {
   align-content: center;
 }
 
-h2 {
+.block-welcome h2 {
   font-size: clamp(2rem, 5vw + 1rem, 8rem);
   font-family: var(--font-basic);
   line-height: 0.9;
@@ -91,8 +91,8 @@ h2 {
   }
 }
 
-/* Main section */
-main {
+/* Laptop section */
+.block-laptop {
   view-timeline: --main;
   font-family: var(--font-basic);
 }

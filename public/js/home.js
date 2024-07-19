@@ -77,7 +77,17 @@ document.addEventListener("DOMContentLoaded", function () {
   changeHome(currentLanguage);
 });
 
-document.addEventListener("scroll", function () {
+function debounce(func, wait) {
+  let timeout;
+  return function () {
+    const context = this,
+      args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), wait);
+  };
+}
+
+const handleScroll = debounce(function () {
   const scrollPosition =
     window.scrollY / (document.body.scrollHeight - window.innerHeight);
 
@@ -98,4 +108,6 @@ document.addEventListener("scroll", function () {
   if (zoomElement) {
     zoomElement.style.animationDelay = `${scrollPosition * 5}s`;
   }
-});
+}, 50);
+
+document.addEventListener("scroll", handleScroll);

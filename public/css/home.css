@@ -12,6 +12,85 @@
   --zoom: contain 25% exit -20%;
 }
 
+/* Scrool icon section */
+.scroll-icon {
+  height: 30px;
+  position: fixed;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  color: currentColor;
+  opacity: 0.5;
+  overflow: visible !important;
+  animation: fade-away both linear;
+  animation-timeline: scroll(root);
+  animation-range: 50px 100px;
+}
+
+@keyframes fade-away {
+  to {
+    translate: 0 -100%;
+    opacity: 0;
+  }
+}
+
+.scroll-icon path {
+  animation: active 4s infinite ease-in-out;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes active {
+  0%,
+  20%,
+  30%,
+  40%,
+  100% {
+    translate: 0 0;
+  }
+  25%,
+  35% {
+    translate: 0 -50%;
+  }
+}
+/* Header section */
+.block-welcome {
+  height: 100vh;
+  position: absolute;
+  padding: 1rem;
+  width: 800px;
+  max-width: calc(100% - 4rem);
+  left: 50%;
+  top: 0;
+  translate: -50% 0;
+  display: grid;
+  align-content: center;
+}
+
+.block-welcome h2 {
+  font-size: clamp(2rem, 5vw + 1rem, 8rem);
+  font-family: var(--font-basic);
+  line-height: 0.9;
+  font-weight: 500;
+  translate: 0 -100%;
+  margin: 0;
+}
+
+.typing-text::after {
+  content: "|";
+  animation: typing ease 1s infinite;
+}
+
+@keyframes typing {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 /* Laptop section */
 .block-laptop {
   view-timeline: --main;

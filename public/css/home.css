@@ -93,6 +93,7 @@
 
 /* Laptop section */
 .block-laptop {
+  view-timeline: --main;
   font-family: var(--font-basic);
 }
 
@@ -100,6 +101,7 @@
   padding: 0;
 }
 
+/* Laptop section */
 .laptop *,
 .laptop *:before,
 .laptop *:after {
@@ -109,6 +111,7 @@
 
 .laptop {
   height: 500vh;
+  view-timeline: --laptop;
   position: sticky;
   top: 0;
   z-index: 2;
@@ -144,6 +147,8 @@
 
 .scene__jump {
   animation: book-jump both ease-in-out;
+  animation-timeline: --laptop;
+  animation-range: var(--jump);
 }
 
 @keyframes jump {
@@ -154,10 +159,14 @@
 
 .scene__spin {
   animation: book-spin both ease-in-out;
+  animation-timeline: --laptop;
+  animation-range: var(--spin);
 }
 
 .scene__flip {
   animation: book-flip both ease-in-out;
+  animation-timeline: --laptop;
+  animation-range: var(--flip);
 }
 
 @keyframes book-flip {
@@ -251,6 +260,8 @@
   inset: 5%;
   filter: blur(10px);
   animation: shadow-in-out both linear;
+  animation-timeline: --laptop;
+  animation-range: var(--jump);
 }
 
 @keyframes shadow-in-out {
@@ -311,6 +322,8 @@
 
 .scene {
   animation: scale-to-view both linear;
+  animation-timeline: --laptop;
+  animation-range: var(--straighten);
   transform: translate3d(0, 0, 100vmin);
 }
 
@@ -326,6 +339,8 @@
 
 .scene__zoom {
   animation: scene-zoom both linear;
+  animation-timeline: --laptop;
+  animation-range: var(--zoom);
 }
 
 @keyframes scene-zoom {
@@ -349,6 +364,8 @@
   transform: rotateX(0deg);
   transform-origin: 50% 0;
   animation: book-open-top both linear;
+  animation-timeline: --laptop;
+  animation-range: var(--open);
 }
 
 .shell--top:after {
@@ -391,6 +408,8 @@
   background: hsl(0 0% 50%);
   transform-origin: 50% 0;
   animation: book-open-bottom both linear;
+  animation-timeline: --laptop;
+  animation-range: var(--open);
 }
 
 .shell--top .cuboid {

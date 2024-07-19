@@ -357,7 +357,7 @@
 }
 
 .shell--top {
-  --depth: 2;
+  --depth: 0.2;
   --color: hsl(0 0% 80%);
   background: var(--black);
   transform: rotateX(0deg);
@@ -371,7 +371,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  border: 1vmin solid hsl(0 0% 10%);
+  border: 0.3vmin solid hsl(0 0% 10%);
 }
 
 @keyframes book-open-top {
@@ -402,7 +402,7 @@
 }
 
 .shell--bottom {
-  --depth: 2;
+  --depth: 0.5;
   --color: hsl(0 0% 80%);
   background: hsl(0 0% 50%);
   transform-origin: 50% 0;
@@ -412,10 +412,10 @@
 }
 
 .shell--top .cuboid {
-  transform: translate3d(0, 0, calc(1vmin + 1px));
+  transform: translate3d(0, 0, calc(1vmin - 8.7px));
 }
 .shell--bottom .cuboid {
-  transform: translate3d(0, 0, calc(-1vmin - 1px));
+  transform: translate3d(0, 0, calc(-1vmin + 7.2px));
 }
 
 /* Cuboid related stuff */

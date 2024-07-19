@@ -536,6 +536,10 @@
   top: 65%;
   left: 36%;
 }
+.laptop .cuboid__side.down .air-duct:nth-of-type(2) {
+  top: 65%;
+  right: 36%;
+}
 .laptop .cuboid__side.right .air-duct {
   left: 95%;
   top: 36%;

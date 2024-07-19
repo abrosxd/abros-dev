@@ -477,11 +477,11 @@
   left: 50%;
   top: 17%;
 }
-.laptop .cuboid__side.left .type-c:nth-of-type(1) {
+.laptop .cuboid__side.left .type-c:nth-of-type(2) {
   left: 50%;
   top: 18%;
 }
-.laptop .cuboid__side.left .type-c:nth-of-type(2) {
+.laptop .cuboid__side.left .type-c:nth-of-type(3) {
   left: 50%;
   top: 22%;
 }
@@ -529,6 +529,10 @@
   border-radius: 1px 0 0 1px;
 }
 .laptop .cuboid__side.right .air-duct {
+  left: 95%;
+  top: 36%;
+}
+.laptop .cuboid__side.left .air-duct {
   left: 95%;
   top: 36%;
 }

@@ -76,86 +76,104 @@ document.addEventListener("DOMContentLoaded", function () {
 
   changeHome(currentLanguage);
 
-  // Создание общей временной шкалы
-  const laptopTimeline = gsap.timeline({
+  // Анимация для прыжка книги (ноутбука)
+  gsap.to(".scene__jump", {
     scrollTrigger: {
       trigger: ".laptop",
       start: "top top",
       end: "bottom bottom",
       scrub: true,
-      pin: true,
+    },
+    keyframes: {
+      "0%": { y: "0" },
+      "50%": { y: "40vmin" },
+      "100%": { y: "0" },
     },
   });
 
   // Анимация для вращения книги (ноутбука)
-  laptopTimeline.to(
-    ".scene__spin",
-    {
-      rotateZ: 360,
-      duration: 2,
+  gsap.to(".scene__spin", {
+    scrollTrigger: {
+      trigger: ".laptop",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
     },
-    0
-  );
-
-  // Анимация для прыжка книги (ноутбука)
-  laptopTimeline.to(
-    ".scene__jump",
-    {
-      y: 100,
-      duration: 2,
+    keyframes: {
+      "0%": { rotateZ: "0" },
+      "100%": { rotateZ: "-360deg" },
     },
-    0
-  );
+  });
 
   // Анимация для переворота книги (ноутбука)
-  laptopTimeline.to(
-    ".scene__flip",
-    {
-      rotateX: 360,
-      duration: 2,
+  gsap.to(".scene__flip", {
+    scrollTrigger: {
+      trigger: ".laptop",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
     },
-    0
-  );
+    keyframes: {
+      "0%, 20%": { rotateX: "0deg" },
+      "80%, 100%": { rotateX: "360deg" },
+    },
+  });
 
   // Анимация для увеличения сцены
-  laptopTimeline.to(
-    ".scene__zoom",
-    {
-      scale: 9,
-      duration: 2,
+  gsap.to(".scene__zoom", {
+    scrollTrigger: {
+      trigger: ".laptop",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
     },
-    0
-  );
+    keyframes: {
+      "0%": { scale: 1 },
+      "100%": { scale: 9 },
+    },
+  });
 
   // Анимация для тени
-  laptopTimeline.to(
-    ".scene__shadow:after",
-    {
-      opacity: 0,
-      duration: 1,
-      yoyo: true,
-      repeat: -1,
+  gsap.to(".scene__shadow:after", {
+    scrollTrigger: {
+      trigger: ".laptop",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
     },
-    0
-  );
+    keyframes: {
+      "0%, 5%, 95%, 100%": { opacity: 1 },
+      "35%, 65%": { opacity: 0 },
+    },
+  });
 
   // Анимация открытия верхней крышки книги (ноутбука)
-  laptopTimeline.to(
-    ".shell--top",
-    {
-      rotateX: 90,
-      duration: 2,
+  gsap.to(".shell--top", {
+    scrollTrigger: {
+      trigger: ".laptop",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
     },
-    0
-  );
+    keyframes: {
+      "0%, 30%": { rotateX: "0deg" },
+      "40%": { rotateX: "120deg" },
+      "75%, 100%": { rotateX: "90deg" },
+    },
+  });
 
   // Анимация открытия нижней крышки книги (ноутбука)
-  laptopTimeline.to(
-    ".shell--bottom",
-    {
-      rotateX: 50,
-      duration: 2,
+  gsap.to(".shell--bottom", {
+    scrollTrigger: {
+      trigger: ".laptop",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
     },
-    0
-  );
+    keyframes: {
+      "0%, 45%": { rotateX: "0deg" },
+      "65%": { rotateX: "50deg" },
+      "100%": { rotateX: "0deg" },
+    },
+  });
 });

@@ -107,6 +107,7 @@
 
 /* Laptop section */
 .block-laptop {
+  view-timeline: --main;
   font-family: var(--font-basic);
 }
 
@@ -123,6 +124,7 @@
 
 .laptop {
   height: 500vh;
+  view-timeline: --laptop;
   position: sticky;
   top: 0;
   z-index: 2;
@@ -141,6 +143,79 @@
 .laptop .scene {
   transform: rotateX(-24deg) rotateY(-32deg) rotateX(90deg)
     translate3d(0, 0, -20vmin);
+}
+
+.scene__jump {
+  animation: book-jump both ease-in-out;
+  animation-timeline: --laptop;
+  animation-range: var(--jump);
+}
+
+@keyframes jump {
+  50% {
+    transform: translate3d(0, 0, 30vmin);
+  }
+}
+
+.scene__spin {
+  animation: book-spin both ease-in-out;
+  animation-timeline: --laptop;
+  animation-range: var(--spin);
+}
+
+.scene__flip {
+  animation: book-flip both ease-in-out;
+  animation-timeline: --laptop;
+  animation-range: var(--flip);
+}
+
+@keyframes book-flip {
+  0%,
+  20% {
+    transform: rotateX(0deg);
+  }
+  80%,
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes book-jump {
+  50% {
+    transform: translate3d(0, 0, 40vmin);
+  }
+}
+
+@keyframes rock {
+  0% {
+    transform-origin: 0 50%;
+  }
+  20% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    transform: rotateY(-20deg);
+  }
+  30% {
+    transform: rotateY(0deg);
+    transform-origin: 0 50%;
+  }
+  50% {
+    transform-origin: 100% 50%;
+  }
+  70% {
+    transform: rotateY(0deg);
+  }
+  75% {
+    transform: rotateY(20deg);
+  }
+  80% {
+    transform: rotateY(0deg);
+    transform-origin: 100% 50%;
+  }
+  100% {
+    transform-origin: 0 50%;
+  }
 }
 
 .jbook {
@@ -168,6 +243,22 @@
   position: absolute;
   inset: 5%;
   filter: blur(10px);
+  animation: shadow-in-out both linear;
+  animation-timeline: --laptop;
+  animation-range: var(--jump);
+}
+
+@keyframes shadow-in-out {
+  0%,
+  5%,
+  95%,
+  100% {
+    opacity: 1;
+  }
+  35%,
+  65% {
+    opacity: 0;
+  }
 }
 
 .shell--bottom .cuboid__side:nth-of-type(6) {
@@ -184,6 +275,111 @@
   left: 50%;
   translate: -50% 0;
   border-radius: 0.5vmin;
+}
+
+@keyframes book-spin {
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
+
+.scene {
+  animation: scale-to-view both linear;
+  animation-timeline: --laptop;
+  animation-range: var(--straighten);
+  transform: translate3d(0, 0, 100vmin);
+}
+
+@keyframes scale-to-view {
+  0% {
+    transform: rotateX(-24deg) rotateY(-32deg) rotateX(90deg)
+      translate3d(0, 0, -20vmin);
+  }
+  to {
+    transform: rotateX(0) rotateY(0) rotateX(90deg) translate3d(0, 0, -12vmin);
+  }
+}
+
+.scene__zoom {
+  animation: scene-zoom both linear;
+  animation-timeline: --laptop;
+  animation-range: var(--zoom);
+}
+
+@keyframes scene-zoom {
+  0% {
+    scale: 1;
+  }
+  to {
+    scale: 9;
+  }
+}
+
+.shell {
+  position: absolute;
+  inset: 0;
+}
+
+.shell--top {
+  --depth: 0.2;
+  --color: hsl(0 0% 80%);
+  background: var(--black);
+  transform: rotateX(0deg);
+  transform-origin: 50% 0;
+  animation: book-open-top both linear;
+  animation-timeline: --laptop;
+  animation-range: var(--open);
+}
+
+.shell--top:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 0.3vmin solid hsl(0 0% 10%);
+}
+
+@keyframes book-open-top {
+  0%,
+  30% {
+    transform: rotateX(0deg);
+  }
+  40% {
+    transform: rotateX(120deg);
+  }
+  75%,
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes book-open-bottom {
+  0%,
+  45% {
+    transform: rotateX(0deg);
+  }
+  65% {
+    transform: rotateX(50deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.shell--bottom {
+  --depth: 0.5;
+  --color: hsl(0 0% 80%);
+  background: hsl(0 0% 50%);
+  transform-origin: 50% 0;
+  animation: book-open-bottom both linear;
+  animation-timeline: --laptop;
+  animation-range: var(--open);
+}
+
+.shell--top .cuboid {
+  transform: translate3d(0, 0, calc(1vmin - 8.7px));
+}
+.shell--bottom .cuboid {
+  transform: translate3d(0, 0, calc(-1vmin + 7.2px));
 }
 
 /* Cuboid related stuff */

@@ -85,9 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
       scrub: true,
     },
     keyframes: {
-      "0%": { y: "0" },
-      "50%": { y: "40vmin" },
-      "100%": { y: "0" },
+      "0%": { z: "0" },
+      "10%": { z: "40vmin" },
+      "100%": { z: "0" },
     },
   });
 
@@ -101,7 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     keyframes: {
       "0%": { rotateZ: "0" },
-      "100%": { rotateZ: "-360deg" },
+      "10%": { rotateZ: "-90deg" },
+      "100%": { rotateZ: "-392deg" },
     },
   });
 
@@ -114,36 +115,8 @@ document.addEventListener("DOMContentLoaded", function () {
       scrub: true,
     },
     keyframes: {
-      "0%, 20%": { rotateX: "0deg" },
+      "0%, 10%": { rotateX: "0deg" },
       "80%, 100%": { rotateX: "360deg" },
-    },
-  });
-
-  // Анимация для увеличения сцены
-  gsap.to(".scene__zoom", {
-    scrollTrigger: {
-      trigger: ".laptop",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-    },
-    keyframes: {
-      "0%": { scale: 1 },
-      "100%": { scale: 9 },
-    },
-  });
-
-  // Анимация для тени
-  gsap.to(".scene__shadow:after", {
-    scrollTrigger: {
-      trigger: ".laptop",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-    },
-    keyframes: {
-      "0%, 5%, 95%, 100%": { opacity: 1 },
-      "35%, 65%": { opacity: 0 },
     },
   });
 
@@ -156,8 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
       scrub: true,
     },
     keyframes: {
-      "0%, 30%": { rotateX: "0deg" },
-      "40%": { rotateX: "120deg" },
+      "0%, 40%": { rotateX: "0deg" },
+      "50%": { rotateX: "120deg" },
       "75%, 100%": { rotateX: "90deg" },
     },
   });
@@ -174,6 +147,20 @@ document.addEventListener("DOMContentLoaded", function () {
       "0%, 45%": { rotateX: "0deg" },
       "65%": { rotateX: "50deg" },
       "100%": { rotateX: "0deg" },
+    },
+  });
+
+  // Анимация для увеличения сцены
+  gsap.to(".scene__zoom", {
+    scrollTrigger: {
+      trigger: ".laptop",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+    },
+    keyframes: {
+      "80%": { scale: 1 },
+      "100%": { scale: 9 },
     },
   });
 });

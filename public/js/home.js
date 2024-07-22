@@ -76,14 +76,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   changeHome(currentLanguage);
 
-  // Анимация для прыжка книги (ноутбука)
-  gsap.to(".scene__jump", {
-    scrollTrigger: {
-      trigger: ".laptop",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
+  // Общие настройки для всех анимаций
+  const scrollSettings = {
+    trigger: ".laptop",
+    start: "top top",
+    end: "bottom bottom",
+    scrub: true,
+  };
+
+  // Анимация для иконок
+  gsap.to([".scroll-icon", ".swipe-icon"], {
+    scrollTrigger: scrollSettings,
+    keyframes: {
+      "0%": { opacity: "0.5" },
+      "5%": { opacity: "0" },
     },
+  });
+
+  // Анимация для прыжка ноутбука
+  gsap.to(".scene__jump", {
+    scrollTrigger: scrollSettings,
     keyframes: {
       "0%": { z: "0" },
       "10%": { z: "40vmin" },
@@ -91,14 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // Анимация для вращения книги (ноутбука)
+  // Анимация для вращения ноутбука
   gsap.to(".scene__spin", {
-    scrollTrigger: {
-      trigger: ".laptop",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-    },
+    scrollTrigger: scrollSettings,
     keyframes: {
       "0%": { rotateZ: "0" },
       "10%": { rotateZ: "-90deg" },
@@ -106,28 +113,18 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // Анимация для переворота книги (ноутбука)
+  // Анимация для переворота ноутбука
   gsap.to(".scene__flip", {
-    scrollTrigger: {
-      trigger: ".laptop",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-    },
+    scrollTrigger: scrollSettings,
     keyframes: {
       "0%, 10%": { rotateX: "0deg" },
       "80%, 100%": { rotateX: "360deg" },
     },
   });
 
-  // Анимация открытия верхней крышки книги (ноутбука)
+  // Анимация открытия верхней крышки ноутбука
   gsap.to(".shell--top", {
-    scrollTrigger: {
-      trigger: ".laptop",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-    },
+    scrollTrigger: scrollSettings,
     keyframes: {
       "0%, 40%": { rotateX: "0deg" },
       "50%": { rotateX: "120deg" },
@@ -135,14 +132,9 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // Анимация открытия нижней крышки книги (ноутбука)
+  // Анимация открытия нижней крышки ноутбука
   gsap.to(".shell--bottom", {
-    scrollTrigger: {
-      trigger: ".laptop",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-    },
+    scrollTrigger: scrollSettings,
     keyframes: {
       "0%, 45%": { rotateX: "0deg" },
       "65%": { rotateX: "50deg" },
@@ -152,12 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Анимация для увеличения сцены
   gsap.to(".scene__zoom", {
-    scrollTrigger: {
-      trigger: ".laptop",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-    },
+    scrollTrigger: scrollSettings,
     keyframes: {
       "80%": { scale: 1 },
       "100%": { scale: 9 },

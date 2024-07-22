@@ -12,8 +12,9 @@
   --zoom: contain 25% exit -20%;
 }
 
-/* Scrool icon section */
-.scroll-icon {
+/* Icon section */
+.scroll-icon,
+.swipe-icon {
   height: 30px;
   position: fixed;
   bottom: 50%;
@@ -23,11 +24,29 @@
   opacity: 0.5;
   overflow: visible !important;
 }
+.scroll-icon {
+  display: block;
+}
 
-.scroll-icon path {
+.swipe-icon {
+  display: none;
+}
+
+.scroll-icon path,
+.swipe-icon path {
   animation: active 4s infinite ease-in-out;
   transform-box: fill-box;
   transform-origin: center;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .scroll-icon {
+    display: none;
+  }
+
+  .swipe-icon {
+    display: block;
+  }
 }
 
 @keyframes active {
@@ -94,17 +113,19 @@
   left: 56%;
   rotate: 140deg;
   margin: 0;
+  border-radius: 10px;
 }
 
-/* Laptop section */
-.block-laptop {
+/* Anim section */
+.block-animate {
   font-family: var(--font-basic);
 }
 
-.scroll-section.laptop {
+.scroll-section {
   padding: 0;
 }
 
+/* Laptop section */
 .laptop *,
 .laptop *:before,
 .laptop *:after {
@@ -157,8 +178,7 @@
   --b: 0.8;
 }
 
-.shell--bottom:after {
-  content: "";
+.laptop-trackpad {
   width: 32%;
   aspect-ratio: 4 / 3;
   background: hsl(0 0% 40%);
@@ -181,22 +201,32 @@
 .shell--top {
   --depth: 2;
   --color: hsl(0 0% 80%);
-  background: var(--black);
   transform: rotateX(0deg);
   transform-origin: 50% 0;
 }
 
-.shell--top:after {
-  content: "";
+.shell--top .window {
+  height: 100%;
+  width: 100%;
+}
+
+.shell--top .window .border {
   position: absolute;
   inset: 0;
   border: 1vmin solid hsl(0 0% 10%);
+  z-index: 1;
+}
+
+.shell--top .window .screen {
+  position: absolute;
+  inset: 0;
+  background: var(--black);
+  z-index: 0;
 }
 
 .shell--bottom {
   --depth: 2;
   --color: hsl(0 0% 80%);
-  background: hsl(0 0% 50%);
   transform-origin: 50% 0;
 }
 
@@ -205,6 +235,10 @@
 }
 .shell--bottom .cuboid {
   transform: translate3d(0, 0, calc(-1vmin - 1px));
+}
+
+.shell--bottom .cuboid__side.up {
+  background: hsl(0 0% 50%);
 }
 
 /* Cuboid related stuff */
@@ -268,23 +302,28 @@
 }
 
 /* Periphery */
-.laptop .hdmi {
+.laptop .hdmi,
+.laptop .type-c,
+.laptop .card-rider,
+.laptop .mag-charge,
+.laptop .aux,
+.laptop .stand {
   position: absolute;
+  background: var(--black);
+  translate: -50% 0;
+}
+
+.laptop .hdmi {
   width: 35%;
   aspect-ratio: 1 / 3;
-  background: var(--black);
   left: 50%;
   top: 5%;
-  translate: -50% 0;
   border-radius: 0 7px 7px 0;
 }
 
 .laptop .type-c {
-  position: absolute;
   width: 15%;
   aspect-ratio: 1 / 4;
-  background: var(--black);
-  translate: -50% 0;
   border-radius: 50px;
 }
 .laptop .cuboid__side.right .type-c {
@@ -301,45 +340,34 @@
 }
 
 .laptop .card-rider {
-  position: absolute;
   width: 18%;
   aspect-ratio: 1 / 15;
-  background: var(--black);
   left: 50%;
   top: 26%;
-  translate: -50% 0;
   border-radius: 50px;
 }
 
 .laptop .mag-charge {
-  position: absolute;
   width: 35%;
   aspect-ratio: 1 / 4;
   background: hsl(0deg 0% 71.4%);
   left: 50%;
   top: 5%;
-  translate: -50% 0;
   border-radius: 5px;
   border: 1px solid #999999;
 }
 
 .laptop .aux {
-  position: absolute;
   width: 25%;
   aspect-ratio: 1 / 1;
-  background: var(--black);
   left: 50%;
   top: 35%;
-  translate: -50% 0;
   border-radius: 50px;
 }
 
 .laptop .stand {
-  position: absolute;
   height: 9%;
   aspect-ratio: 1 / 1;
-  background: var(--black);
-  translate: -50% 0;
   border-radius: 50px;
 }
 .laptop .stand:nth-of-type(1) {
@@ -360,14 +388,22 @@
 }
 
 /* Screen-window */
-.screen-bear {
+.screen-bear,
+.logo-abros {
   position: absolute;
+  rotate: 180deg;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.screen-bear {
   width: 25%;
   --base-coat: var(--white);
-  rotate: 180deg;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
+}
+
+.logo-abros {
+  width: 25%;
 }
 
 .screen-bear__eyes {
@@ -390,13 +426,114 @@
   }
 }
 
-/* Logo */
-.shell-bear {
-  --base-coat: var(--black);
-  rotate: 180deg;
-  width: 20%;
+/* Skills section */
+.block-skills {
   position: absolute;
-  top: 50%;
+  top: 100vh;
+  width: 100%;
+  z-index: 1;
+  --color: hsl(0 0% 80%);
+}
+
+.block-skills .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem 29rem;
+  margin: 50px 50px 0;
+}
+
+@media (max-width: 767px) {
+  .block-skills .grid {
+    gap: 3rem;
+    grid-template-columns: 1fr;
+    margin: 30px 30px 0;
+  }
+}
+
+@media (min-width: 2000px) {
+  .block-skills .grid {
+    gap: 5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 50px 50px 0;
+  }
+}
+
+.block-skills .window {
+  position: relative;
+  height: max-content;
+}
+
+.block-skills .border {
+  position: absolute;
+  inset: 0;
+  border-width: 30px 10px 10px 10px;
+  border-style: solid;
+  border-color: var(--color);
+  border-radius: 10px;
+}
+
+.block-skills .butmin {
+  position: absolute;
+  top: -20px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50px;
+}
+
+.block-skills .butmin:nth-of-type(1) {
+  background-color: #ff6057;
+}
+.block-skills .butmin:nth-of-type(2) {
+  background-color: #febd2e;
+  left: 25px;
+}
+.block-skills .butmin:nth-of-type(3) {
+  background-color: #28c840;
+  left: 50px;
+}
+
+.block-skills .title {
+  position: absolute;
+  top: -24px;
   left: 50%;
-  translate: -50% -50%;
+  margin: 0;
+  font-family: var(--font-basic);
+  font-size: medium;
+  color: black;
+  font-weight: 600;
+  transform: translateX(-50%);
+}
+
+.block-skills .content {
+  margin: 3vmin 1vmin 1vmin 1vmin;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.block-skills .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* Rotate cards */
+.block-skills .window.three-js {
+  rotate: -9deg;
+}
+.block-skills .window.js {
+  rotate: 5deg;
+}
+.block-skills .window.gsap {
+  rotate: -8deg;
+}
+.block-skills .window.figma {
+  rotate: 7deg;
+}
+.block-skills .window.tilda-code {
+  rotate: -4deg;
+}
+.block-skills .window.cdn-appmod {
+  rotate: 6deg;
 }

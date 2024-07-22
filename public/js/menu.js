@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.text())
       .then((yamlData) => {
         const data = jsyaml.load(yamlData);
+        document.querySelector(".thome").textContent = data.menu.home[language];
         document.querySelector(".tportfolio").textContent =
           data.menu.portfolio[language];
         // document.querySelector('.tlibrary').textContent = data.menu.library[language];

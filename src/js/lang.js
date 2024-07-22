@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
           abrosnoti.create(
             "dark",
             "lang",
-            "Język został zmieniony. Miłego просмотра!",
+            "Język został zmieniony. Miłego oglądania!",
             3
           );
           break;

@@ -1,5 +1,8 @@
 let touchStartY = 0;
 let lastTouchY = 0;
+let isTouching = false;
+let scrollVelocity = 0;
+let animationFrameId = null;
 
 window.addEventListener(
   "wheel",
@@ -19,6 +22,10 @@ window.addEventListener(
   function (event) {
     touchStartY = event.touches[0].clientY;
     lastTouchY = touchStartY;
+    isTouching = true;
+    if (animationFrameId !== null) {
+      cancelAnimationFrame(animationFrameId);
+    }
   },
   { passive: false }
 );
@@ -36,6 +43,7 @@ window.addEventListener(
       behavior: "auto", // Используем "auto" для реального времени
     });
 
+    scrollVelocity = deltaY * 0.3;
     lastTouchY = touchCurrentY;
   },
   { passive: false }
@@ -44,12 +52,33 @@ window.addEventListener(
 window.addEventListener(
   "touchend",
   function (event) {
-    // Сброс значений
-    touchStartY = 0;
-    lastTouchY = 0;
+    isTouching = false;
+    animateScroll();
   },
   { passive: false }
 );
+
+function animateScroll() {
+  if (isTouching) {
+    return;
+  }
+
+  scrollVelocity *= 0.95; // Коэффициент затухания
+
+  if (Math.abs(scrollVelocity) > 0.5) {
+    // Порог остановки анимации
+    window.scrollBy({
+      top: scrollVelocity,
+      left: 0,
+      behavior: "smooth",
+    });
+
+    animationFrameId = requestAnimationFrame(animateScroll);
+  } else {
+    scrollVelocity = 0;
+    animationFrameId = null;
+  }
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   function changeHome(language) {

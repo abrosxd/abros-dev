@@ -1,7 +1,3 @@
-Scrollbar.init(document.body, {
-  damping: 0.1, // Коэффициент затухания (чем меньше значение, тем больше инерция)
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   function changeHome(language) {
     fetch("/public/locales/home.yaml")

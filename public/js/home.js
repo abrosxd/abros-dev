@@ -154,4 +154,36 @@ document.addEventListener("DOMContentLoaded", function () {
       "100%": { scale: 9 },
     },
   });
+
+  // Анимация для выключения экрана
+  gsap.to(".light-effect", {
+    scrollTrigger: scrollSettings,
+    keyframes: {
+      "90%": {
+        height: "1px",
+        width: 0,
+      },
+      "95%": {
+        height: "1px",
+        width: "100%",
+      },
+      "100%": {
+        height: "100%",
+        width: "100%",
+      },
+    },
+  });
+
+  // Анимация перехода
+  gsap.to(".block-animate", {
+    scrollTrigger: scrollSettings,
+    keyframes: {
+      "99%": {
+        visibility: "visible",
+      },
+      "100%": {
+        visibility: "hidden",
+      },
+    },
+  });
 });

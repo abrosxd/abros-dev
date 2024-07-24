@@ -1,4 +1,5 @@
 let touchStartY = 0;
+let lastTouchY = 0;
 
 window.addEventListener(
   "wheel",
@@ -17,6 +18,7 @@ window.addEventListener(
   "touchstart",
   function (event) {
     touchStartY = event.touches[0].clientY;
+    lastTouchY = touchStartY;
   },
   { passive: false }
 );
@@ -25,6 +27,16 @@ window.addEventListener(
   "touchmove",
   function (event) {
     event.preventDefault();
+    let touchCurrentY = event.touches[0].clientY;
+    let deltaY = lastTouchY - touchCurrentY;
+
+    window.scrollBy({
+      top: deltaY * 0.3, // Умножаем на коэффициент меньше 1 для замедления
+      left: 0,
+      behavior: "auto", // Используем "auto" для реального времени
+    });
+
+    lastTouchY = touchCurrentY;
   },
   { passive: false }
 );
@@ -32,14 +44,9 @@ window.addEventListener(
 window.addEventListener(
   "touchend",
   function (event) {
-    let touchEndY = event.changedTouches[0].clientY;
-    let deltaY = touchStartY - touchEndY;
-
-    window.scrollBy({
-      top: deltaY * 0.3, // Умножаем на коэффициент меньше 1 для замедления
-      left: 0,
-      behavior: "smooth",
-    });
+    // Сброс значений
+    touchStartY = 0;
+    lastTouchY = 0;
   },
   { passive: false }
 );

@@ -541,7 +541,7 @@ ul {
   background-image: radial-gradient(
     circle at 10px 10px,
     #fff 0.7px,
-    transparent 1px
+    transparent 2px
   );
   background-size: 10px 10px;
   opacity: 0.3;

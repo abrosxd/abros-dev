@@ -1,3 +1,16 @@
+window.addEventListener(
+  "wheel",
+  function (event) {
+    event.preventDefault();
+    window.scrollBy({
+      top: event.deltaY * 0.3, // Умножаем на коэффициент меньше 1 для замедления
+      left: 0,
+      behavior: "smooth",
+    });
+  },
+  { passive: false }
+);
+
 document.addEventListener("DOMContentLoaded", function () {
   function changeHome(language) {
     fetch("/public/locales/home.yaml")

@@ -68,7 +68,7 @@
   height: 100vh;
   position: absolute;
   padding: 1rem;
-  width: 1000px;
+  width: 1100px;
   max-width: calc(100% - 4rem);
   left: 50%;
   top: 0;
@@ -101,6 +101,24 @@
   }
 }
 
+/* Anim section */
+.block-animate {
+  font-family: var(--font-basic);
+  pointer-events: none;
+}
+
+.scroll-section {
+  padding: 0;
+}
+
+/* Laptop section */
+.laptop *,
+.laptop *:before,
+.laptop *:after {
+  transform-style: preserve-3d;
+  box-sizing: border-box;
+}
+
 /* Stickers for laptop */
 .sticker-abros {
   padding: 0.5vmin;
@@ -114,23 +132,6 @@
   rotate: 140deg;
   margin: 0;
   border-radius: 10px;
-}
-
-/* Anim section */
-.block-animate {
-  font-family: var(--font-basic);
-}
-
-.scroll-section {
-  padding: 0;
-}
-
-/* Laptop section */
-.laptop *,
-.laptop *:before,
-.laptop *:after {
-  transform-style: preserve-3d;
-  box-sizing: border-box;
 }
 
 .laptop {
@@ -433,6 +434,7 @@
   width: 100%;
   z-index: 1;
   --color: hsl(0 0% 80%);
+  pointer-events: none;
 }
 
 .block-skills .grid {
@@ -466,7 +468,7 @@
 .block-skills .border {
   position: absolute;
   inset: 0;
-  border-width: 30px 10px 10px 10px;
+  border-width: 30px 10px 10px;
   border-style: solid;
   border-color: var(--color);
   border-radius: 10px;
@@ -505,7 +507,7 @@
 }
 
 .block-skills .content {
-  margin: 3vmin 1vmin 1vmin 1vmin;
+  margin: 28px 8px 8px;
   align-items: center;
   justify-content: center;
   display: flex;

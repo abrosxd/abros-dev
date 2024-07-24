@@ -101,8 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
     keyframes: {
       "0%": { z: "0" },
       "10%": { z: "30vmin" },
-      "50%": { z: "10vmin" },
-      "100%": { z: "0" },
+      "30%": { z: "30vmin" },
+      "50%": { z: "0" },
+      "100%": { z: "-15vmin" },
     },
   });
 

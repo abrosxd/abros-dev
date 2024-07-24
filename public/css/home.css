@@ -539,3 +539,6 @@
 .block-skills .window.cdn-appmod {
   rotate: 6deg;
 }
+.block-skills .window.js-library {
+  rotate: -9deg;
+}

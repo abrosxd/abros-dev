@@ -77,7 +77,7 @@
       href="./public/assets/logo/android-chrome-512x512.png"
     />
     <!-- Assets -->
-    <link rel="stylesheet" href="./public/css/style.css" />
+    <link rel="stylesheet" href="./public/css/main.css" />
     <link rel="stylesheet" href="./public/css/404.css" />
     <script src="./src/js/jquery-3.7.1.min.js"></script>
     <script src="./src/js/js-yaml.min.js"></script>
@@ -186,9 +186,6 @@
           </li>
         </ul>
       </nav>
-    </header>
-    <main>
-      <div class="dot-grid"></div>
 
       <div class="loader">
         <div class="loader-icon">
@@ -212,15 +209,16 @@
           <div class="Z aK"></div>
         </div>
         <div class="loader-bg"></div>
+        <script>
+          const loaderBg = document.querySelector(".loader-bg");
+          for (let i = 0; i < 200; i++) {
+            const li = document.createElement("li");
+            loaderBg.appendChild(li);
+          }
+        </script>
       </div>
-      <script>
-        const loaderBg = document.querySelector(".loader-bg");
-        for (let i = 0; i < 200; i++) {
-          const li = document.createElement("li");
-          loaderBg.appendChild(li);
-        }
-      </script>
-
+    </header>
+    <main>
       <div class="404">
         <div class="fof">
           <canvas></canvas>
@@ -229,7 +227,7 @@
       </div>
     </main>
     <footer>
-      <script src="./public/js/menu.js"></script>
+      <script src="./public/js/main.js"></script>
       <script src="./public/js/404.js"></script>
       <script src="./src/js/preload.js"></script>
       <script src="https://cdn.abros.dev/noti/noti.js"></script>

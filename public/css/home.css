@@ -200,7 +200,7 @@
 }
 
 .shell--top {
-  --depth: 0.2;
+  --depth: 0.4;
   --color: hsl(0 0% 80%);
   transform: rotateX(0deg);
   transform-origin: 50% 0;

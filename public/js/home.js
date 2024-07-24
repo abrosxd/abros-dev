@@ -76,6 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   changeHome(currentLanguage);
 
+  gsap.registerPlugin(ScrollTrigger);
+
   // Общие настройки для всех анимаций
   const scrollSettings = {
     trigger: ".laptop",
@@ -98,7 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: scrollSettings,
     keyframes: {
       "0%": { z: "0" },
-      "10%": { z: "40vmin" },
+      "10%": { z: "30vmin" },
+      "50%": { z: "10vmin" },
       "100%": { z: "0" },
     },
   });

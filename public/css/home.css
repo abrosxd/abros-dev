@@ -200,7 +200,7 @@
 }
 
 .shell--top {
-  --depth: 2;
+  --depth: 0.2;
   --color: hsl(0 0% 80%);
   transform: rotateX(0deg);
   transform-origin: 50% 0;
@@ -226,16 +226,16 @@
 }
 
 .shell--bottom {
-  --depth: 2;
+  --depth: 1;
   --color: hsl(0 0% 80%);
   transform-origin: 50% 0;
 }
 
 .shell--top .cuboid {
-  transform: translate3d(0, 0, calc(1vmin + 1px));
+  transform: translate3d(0, 0, calc(0vmin + 1px));
 }
 .shell--bottom .cuboid {
-  transform: translate3d(0, 0, calc(-1vmin - 1px));
+  transform: translate3d(0, 0, calc(-0.4vmin - 1px));
 }
 
 .shell--bottom .cuboid__side.up {
@@ -329,22 +329,22 @@
 }
 .laptop .cuboid__side.right .type-c {
   left: 50%;
-  top: 17%;
+  top: 12%;
 }
 .laptop .cuboid__side.left .type-c:nth-of-type(2) {
   left: 50%;
-  top: 19%;
+  top: 13%;
 }
 .laptop .cuboid__side.left .type-c:nth-of-type(3) {
   left: 50%;
-  top: 27%;
+  top: 18%;
 }
 
 .laptop .card-rider {
   width: 18%;
   aspect-ratio: 1 / 15;
   left: 50%;
-  top: 26%;
+  top: 19%;
   border-radius: 50px;
 }
 
@@ -362,7 +362,7 @@
   width: 25%;
   aspect-ratio: 1 / 1;
   left: 50%;
-  top: 35%;
+  top: 23%;
   border-radius: 50px;
 }
 

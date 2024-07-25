@@ -1,4 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    multiplier: 0.5, // Скорость скролла (0.5 - замедление скролла)
+    smartphone: {
+      smooth: true,
+    },
+    tablet: {
+      smooth: true,
+    },
+  });
+
+  // Подключение ScrollTrigger к locomotive-scroll
+  gsap.registerPlugin(ScrollTrigger);
+
+  scroll.on("scroll", ScrollTrigger.update);
+
+  ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+    scrollTop(value) {
+      return arguments.length
+        ? scroll.scrollTo(value, 0, 0)
+        : scroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+    pinType: document.querySelector("[data-scroll-container]").style.transform
+      ? "transform"
+      : "fixed",
+  });
+
+  ScrollTrigger.addEventListener("refresh", () => scroll.update());
+  ScrollTrigger.refresh();
+
   function changeHome(language) {
     fetch("/public/locales/home.yaml")
       .then((response) => response.text())
@@ -79,11 +118,16 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
 
   // Общие настройки для всех анимаций
+  function isMobile() {
+    return window.innerWidth <= 860;
+  }
+
   const scrollSettings = {
-    trigger: ".laptop",
+    trigger: ".scroll-container",
     start: "top top",
     end: "bottom bottom",
     scrub: true,
+    scroller: "[data-scroll-container]",
   };
 
   // Анимация для иконок
@@ -149,41 +193,80 @@ document.addEventListener("DOMContentLoaded", function () {
   // Анимация для увеличения сцены
   gsap.to(".scene__zoom", {
     scrollTrigger: scrollSettings,
-    keyframes: {
-      "80%": { scale: 1 },
-      "100%": { scale: 9 },
-    },
+    keyframes: isMobile()
+      ? {
+          "80%": { scale: 1 },
+          "100%": { scale: 12 },
+        }
+      : {
+          "80%": { scale: 1 },
+          "100%": { scale: 9 },
+        },
   });
 
   // Анимация для выключения экрана
   gsap.to(".light-effect", {
     scrollTrigger: scrollSettings,
-    keyframes: {
-      "90%": {
-        height: "1px",
-        width: 0,
-      },
-      "95%": {
-        height: "1px",
-        width: "100%",
-      },
-      "100%": {
-        height: "100%",
-        width: "100%",
-      },
-    },
+    keyframes: isMobile()
+      ? {
+          "95%": {
+            height: "100%",
+            width: "100%",
+            visibility: "hidden",
+          },
+          "97%": {
+            height: "1px",
+            width: "100%",
+            visibility: "visible",
+          },
+          "99.99%": {
+            height: "1px",
+          },
+          "100%": {
+            height: 0,
+            width: 0,
+          },
+        }
+      : {
+          "90%": {
+            height: "100%",
+            width: "100%",
+            visibility: "hidden",
+          },
+          "95%": {
+            height: "1px",
+            width: "100%",
+            visibility: "visible",
+          },
+          "99.99%": {
+            height: "1px",
+          },
+          "100%": {
+            height: 0,
+            width: 0,
+          },
+        },
   });
 
   // Анимация перехода
-  gsap.to(".block-animate", {
+  gsap.to(".laptop .scene__visible", {
     scrollTrigger: scrollSettings,
-    keyframes: {
-      "99%": {
-        visibility: "visible",
-      },
-      "100%": {
-        visibility: "hidden",
-      },
-    },
+    keyframes: isMobile()
+      ? {
+          "95%": {
+            visibility: "visible",
+          },
+          "100%": {
+            visibility: "hidden",
+          },
+        }
+      : {
+          "90%": {
+            visibility: "visible",
+          },
+          "100%": {
+            visibility: "hidden",
+          },
+        },
   });
 });

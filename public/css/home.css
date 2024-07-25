@@ -403,7 +403,6 @@
 }
 
 /* Screen-window */
-.screen-bear,
 .logo-abros {
   position: absolute;
   rotate: 180deg;
@@ -412,33 +411,8 @@
   translate: -50% -50%;
 }
 
-.screen-bear {
-  width: 25%;
-  --base-coat: var(--white);
-}
-
 .logo-abros {
   width: 25%;
-}
-
-.screen-bear__eyes {
-  transform-box: fill-box;
-  transform-origin: 50% 50%;
-  animation: blink 6s -2s infinite;
-}
-
-@keyframes blink {
-  0%,
-  46%,
-  48%,
-  50%,
-  100% {
-    scale: 1 1;
-  }
-  47%,
-  49% {
-    scale: 1 0.01;
-  }
 }
 
 /* Skills section */

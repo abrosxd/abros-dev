@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
-    multiplier: 0.5, // Скорость скролла (0.5 - замедление скролла)
+    multiplier: 0.3, // Скорость скролла (0.5 - замедление скролла)
     smartphone: {
       smooth: true,
     },
@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
     return window.innerWidth <= 860;
   }
 
-  const scrollSettings = {
-    trigger: ".scroll-container",
+  const scrollLaptop = {
+    trigger: ".animate-trigger-laptop",
     start: "top top",
     end: "bottom bottom",
     scrub: true,
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Анимация для иконок
   gsap.to([".scroll-icon", ".swipe-icon"], {
-    scrollTrigger: scrollSettings,
+    scrollTrigger: scrollLaptop,
     keyframes: {
       "0%": { opacity: "0.5" },
       "5%": { opacity: "0" },
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Анимация для прыжка ноутбука
   gsap.to(".scene__jump", {
-    scrollTrigger: scrollSettings,
+    scrollTrigger: scrollLaptop,
     keyframes: {
       "0%": { z: "0" },
       "10%": { z: "30vmin" },
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Анимация для вращения ноутбука
   gsap.to(".scene__spin", {
-    scrollTrigger: scrollSettings,
+    scrollTrigger: scrollLaptop,
     keyframes: {
       "0%": { rotateZ: "0" },
       "10%": { rotateZ: "-90deg" },
@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Анимация для переворота ноутбука
   gsap.to(".scene__flip", {
-    scrollTrigger: scrollSettings,
+    scrollTrigger: scrollLaptop,
     keyframes: {
       "0%, 10%": { rotateX: "0deg" },
       "80%, 100%": { rotateX: "360deg" },
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Анимация открытия верхней крышки ноутбука
   gsap.to(".shell--top", {
-    scrollTrigger: scrollSettings,
+    scrollTrigger: scrollLaptop,
     keyframes: {
       "0%, 40%": { rotateX: "0deg" },
       "50%": { rotateX: "120deg" },
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Анимация открытия нижней крышки ноутбука
   gsap.to(".shell--bottom", {
-    scrollTrigger: scrollSettings,
+    scrollTrigger: scrollLaptop,
     keyframes: {
       "0%, 45%": { rotateX: "0deg" },
       "65%": { rotateX: "50deg" },
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Анимация для увеличения сцены
   gsap.to(".scene__zoom", {
-    scrollTrigger: scrollSettings,
+    scrollTrigger: scrollLaptop,
     keyframes: isMobile()
       ? {
           "80%": { scale: 1 },
@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Анимация для выключения экрана
   gsap.to(".light-effect", {
-    scrollTrigger: scrollSettings,
+    scrollTrigger: scrollLaptop,
     keyframes: isMobile()
       ? {
           "95%": {
@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Анимация перехода
   gsap.to(".laptop .scene__visible", {
-    scrollTrigger: scrollSettings,
+    scrollTrigger: scrollLaptop,
     keyframes: isMobile()
       ? {
           "95%": {
@@ -268,5 +268,17 @@ document.addEventListener("DOMContentLoaded", function () {
             visibility: "hidden",
           },
         },
+  });
+});
+
+// Clients block
+$(document).ready(function () {
+  $(".block-clients .gallery").slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
   });
 });

@@ -693,3 +693,7 @@ nav {
   opacity: 1;
   visibility: visible;
 }
+
+.glyph {
+  line-height: 20px;
+}

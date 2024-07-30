@@ -569,6 +569,9 @@ main {
 .block-skills .window.js-library {
   rotate: -9deg;
 }
+.block-skills .window.window.tilda-custom {
+  rotate: 9deg;
+}
 
 .laptop .light-effect {
   position: fixed;

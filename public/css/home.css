@@ -17,6 +17,10 @@ main {
   z-index: 1;
 }
 
+/* .animate-trigger-laptop {
+  padding-bottom: 30%;
+} */
+
 /* Icon section */
 .scroll-icon,
 .swipe-icon {
@@ -179,6 +183,7 @@ main {
   translate: -50% -80%;
   border-radius: 4px;
   transform-style: preserve-3d;
+  background: hsl(0 0% 40%);
   background-image: linear-gradient(
     30deg,
     rgba(0, 0, 0, 0.24) 0%,
@@ -187,25 +192,6 @@ main {
   box-shadow: inset 0 0 3px #777;
   padding: 0 0 0 2px;
   rotate: 180deg;
-}
-
-.laptop-keyboard .key {
-  width: 2.2vmin;
-  height: 2.2vmin;
-  background: #000;
-  float: left;
-  margin: 0.3vmin;
-  transform: translateZ(3px);
-  border-radius: 2px;
-  box-shadow: 0 -2px 0 #222;
-}
-
-.laptop-keyboard .key.space {
-  width: 16vmin;
-}
-
-.laptop-keyboard .key.f {
-  height: 1.2vmin;
 }
 
 .scene__shadow {
@@ -420,54 +406,65 @@ main {
 }
 
 .laptop .hdmi {
-  width: 35%;
-  aspect-ratio: 1 / 3;
+  width: 60%;
+  aspect-ratio: 1 / 4;
   left: 50%;
   top: 5%;
   border-radius: 0 7px 7px 0;
 }
 
 .laptop .type-c {
-  width: 15%;
+  width: 30%;
   aspect-ratio: 1 / 4;
   border-radius: 50px;
 }
 .laptop .cuboid__side.right .type-c {
   left: 50%;
-  top: 12%;
+  top: 15%;
 }
 .laptop .cuboid__side.left .type-c:nth-of-type(2) {
   left: 50%;
-  top: 13%;
+  top: 15%;
 }
 .laptop .cuboid__side.left .type-c:nth-of-type(3) {
   left: 50%;
-  top: 18%;
+  top: 20%;
 }
 
 .laptop .card-rider {
-  width: 18%;
-  aspect-ratio: 1 / 15;
+  width: 30%;
+  aspect-ratio: 1 / 18;
   left: 50%;
-  top: 19%;
+  top: 22%;
   border-radius: 50px;
 }
 
 .laptop .mag-charge {
-  width: 35%;
+  width: 70%;
   aspect-ratio: 1 / 4;
   background: hsl(0deg 0% 71.4%);
   left: 50%;
   top: 5%;
   border-radius: 5px;
   border: 1px solid #999999;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 30% 0;
+}
+.laptop .mag-charge .dot {
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  background-color: #e4c100;
+  border-radius: 50px;
 }
 
 .laptop .aux {
-  width: 25%;
+  width: 50%;
   aspect-ratio: 1 / 1;
   left: 50%;
-  top: 23%;
+  top: 26%;
   border-radius: 50px;
 }
 

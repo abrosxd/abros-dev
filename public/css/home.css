@@ -495,6 +495,18 @@ main {
   bottom: 8%;
 }
 
+.laptop .light-effect {
+  position: fixed;
+  width: 0;
+  height: 0;
+  background: var(--white);
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
 /* Screen-window */
 .logo-abros {
   position: absolute;
@@ -601,39 +613,27 @@ main {
 }
 
 /* Rotate cards */
-.block-skills .window.three-js {
+.block-skills .window:nth-of-type(1) {
   rotate: -9deg;
 }
-.block-skills .window.js {
+.block-skills .window:nth-of-type(2) {
   rotate: 5deg;
 }
-.block-skills .window.gsap {
+.block-skills .window:nth-of-type(3) {
   rotate: -8deg;
 }
-.block-skills .window.figma {
+.block-skills .window:nth-of-type(4) {
   rotate: 7deg;
 }
-.block-skills .window.tilda-code {
+.block-skills .window:nth-of-type(5) {
   rotate: -4deg;
 }
-.block-skills .window.cdn-appmod {
+.block-skills .window:nth-of-type(6) {
   rotate: 6deg;
 }
-.block-skills .window.js-library {
+.block-skills .window:nth-of-type(7) {
   rotate: -9deg;
 }
-.block-skills .window.window.tilda-custom {
+.block-skills .window:nth-of-type(8) {
   rotate: 9deg;
-}
-
-.laptop .light-effect {
-  position: fixed;
-  width: 0;
-  height: 0;
-  background: var(--white);
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
 }
